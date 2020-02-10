@@ -1,0 +1,1210 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Coupling Reaktoro into other reactive transport codes &mdash; Reaktoro  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Thermodynamic Databases" href="../../thermodynamic-databases.html" />
+    <link rel="prev" title="Reactive transport of CO2-saturated brine along a porous rock column" href="reactivetransportsolver-calcite-brine.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Reaktoro
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Programming Reference</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../equilibrium/index.html">Chemical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kinetics/index.html">Chemical Kinetics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chemical Transport</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="reactivetransportsolver-calcite-brine.html">Reactive transport of CO<sub>2</sub>-saturated brine along a porous rock column</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Coupling Reaktoro into other reactive transport codes</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../thermodynamic-databases.html">Thermodynamic Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermodynamic-backends.html">Thermodynamic Backends</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Reaktoro</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorials: Chemical Transport</a> &raquo;</li>
+        
+      <li>Coupling Reaktoro into other reactive transport codes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/transport/reactive-transport-calcite-dolomite-custom.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="coupling-reaktoro-into-other-reactive-transport-codes">
+<h1>Coupling Reaktoro into other reactive transport codes<a class="headerlink" href="#coupling-reaktoro-into-other-reactive-transport-codes" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, we show how Reaktoro can be used in other codes for reactive
+transport modeling. Here, you will find that we have split the mass transport
+and chemical reaction calculations so that you can clearly see how a dedicated
+and advanced transport solver could be combined with Reaktoro’s solvers for
+chemical reaction calculations. A basic transport solver is used here instead
+for the sake of software coupling demonstration.</p>
+<p>The reactive transport problem we consider here is also relatively simple,
+similar to the one presented in the tutorial
+<a class="reference internal" href="reactivetransportsolver-calcite-brine.html"><span class="doc">Reactive transport of CO2-saturated brine along a porous rock column</span></a>.
+Unlike other tutorials, we proceed here first with a step-by-step
+explanation of the full script found at the end of this tutorial.</p>
+<div class="section" id="importing-python-packages">
+<h2>Importing python packages<a class="headerlink" href="#importing-python-packages" title="Permalink to this headline">¶</a></h2>
+<p>First, we need to import a few Python packages to enable us to perform the
+numerical calculations and plotting.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">delayed</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">time</span>
+</pre></div>
+</div>
+<p>We import the <strong>reaktoro</strong> Python package so that we can use its classes and
+methods for performing chemical reaction calculations, <strong>numpy</strong> for working
+with arrays, <strong>matplotlib</strong> for plotting capabilities, <strong>joblib</strong> for simple
+parallel computing, and, finally, <strong>os</strong>, to provide a portable way of using
+operating system dependent functionality.</p>
+</div>
+<div class="section" id="initializing-auxiliary-time-related-constants">
+<h2>Initializing auxiliary time-related constants<a class="headerlink" href="#initializing-auxiliary-time-related-constants" title="Permalink to this headline">¶</a></h2>
+<p>In this step, we initialize auxiliary time-related constants from seconds up to
+years used in the rest of the code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">second</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">minute</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">hour</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">minute</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">hour</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="n">day</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="defining-parameters-for-the-reactive-transport-simulation">
+<h2>Defining parameters for the reactive transport simulation<a class="headerlink" href="#defining-parameters-for-the-reactive-transport-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Next, we define reactive transport and numerical discretization parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xl</span> <span class="o">=</span> <span class="mf">0.0</span>          <span class="c1"># the x-coordinate of the left boundary</span>
+<span class="n">xr</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># the x-coordinate of the right boundary</span>
+<span class="n">nsteps</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># the number of steps in the reactive transport simulation</span>
+<span class="n">ncells</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># the number of cells in the discretization</span>
+
+<span class="n">D</span>  <span class="o">=</span> <span class="mf">1.0e-9</span>       <span class="c1"># the diffusion coefficient (in units of m2/s)</span>
+<span class="n">v</span>  <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">day</span>      <span class="c1"># the fluid pore velocity (in units of m/s)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">minute</span>    <span class="c1"># the time step (in units of s)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">60.0</span> <span class="o">+</span> <span class="mf">273.15</span> <span class="c1"># the temperature (in units of K)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="mf">1e5</span>     <span class="c1"># the pressure (in units of Pa)</span>
+
+<span class="n">dirichlet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">False</span>  <span class="c1"># the parameter that determines whether Dirichlet BC must be used</span>
+</pre></div>
+</div>
+<p>We specify the considered rock domain by setting coordinates of its left and
+right boundaries to 0.0 m and 100.0 m, respectively. The discretization parameters,
+i.e., the number of cells and steps in time, are both set to 100. The reactive
+transport modeling procedure assumes a constant fluid velocity of 1 m/day
+(1.16 · 10<sup>-5</sup> m/s) and the same diffusion coefficient of 10<sup>-9</sup> m2/s for all
+fluid species (without dispersivity). The size of the time-step is set to 10
+minutes. Temperature and pressure are set to 60 °C and 100 bar, respectively,
+throughout the whole tutorial.
+The chemical equilibrium calculations performed in each mesh cell, at every
+time step, using <em>Gibbs energy minimisation</em> algorithm (provided by the class
+<a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a>).</p>
+<p>The boolean variable <code class="docutils literal notranslate"><span class="pre">dirichlet</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> depending on
+which boundary condition is considered in the numerical calculation. Set to
+<code class="docutils literal notranslate"><span class="pre">False</span></code> for imposing the flux of the injected fluid, otherwise, set to
+<code class="docutils literal notranslate"><span class="pre">True</span></code> for imposing the composition of the fluid on the left boundary.</p>
+</div>
+<div class="section" id="specifying-the-quantities-and-properties-to-be-outputted">
+<h2>Specifying the quantities and properties to be outputted<a class="headerlink" href="#specifying-the-quantities-and-properties-to-be-outputted" title="Permalink to this headline">¶</a></h2>
+<p>Before running the reactive transport simulations, we specify the list of
+parameters we are interested in outputting. In this case, it is pH, molality of
+H<sup>+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, HCO<sub>3</sub><sup>-</sup>, CO<sub>2</sub> (aq), as well as a phase volume of calcite
+and dolomite.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">output_quantities</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    pH</span>
+<span class="s2">    speciesMolality(H+)</span>
+<span class="s2">    speciesMolality(Ca++)</span>
+<span class="s2">    speciesMolality(Mg++)</span>
+<span class="s2">    speciesMolality(HCO3-)</span>
+<span class="s2">    speciesMolality(CO2(aq))</span>
+<span class="s2">    phaseVolume(Calcite)</span>
+<span class="s2">    phaseVolume(Dolomite)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="nf">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="organizing-the-main-function-in-three-parts">
+<h2>Organizing the main function in three parts<a class="headerlink" href="#organizing-the-main-function-in-three-parts" title="Permalink to this headline">¶</a></h2>
+<p>Below is the main function in our script, which shows three parts, each
+represented by a Python function documented in the next sections:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="c1"># Create folders for the results</span>
+    <span class="nf">make_results_folders</span><span class="p">()</span>
+
+    <span class="c1"># Run the reactive transport simulations</span>
+    <span class="nf">simulate</span><span class="p">()</span>
+
+    <span class="c1"># Plotting the result</span>
+    <span class="nf">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here, we first create the required folders for the results, we then run the
+reactive transport simulation, and, finally, plot the outputted results.</p>
+</div>
+<div class="section" id="creating-folders-for-the-outputted-results">
+<h2>Creating folders for the outputted results<a class="headerlink" href="#creating-folders-for-the-outputted-results" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_results_folders</span><span class="p">():</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p results&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p figures/ph&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p figures/aqueous-species&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p figures/calcite-dolomite&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p videos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using <strong>os</strong> package, we create required folders for outputting the obtained
+results and for the plot and video files later.</p>
+</div>
+<div class="section" id="perform-the-reactive-transport-simulation">
+<h2>Perform the reactive transport simulation<a class="headerlink" href="#perform-the-reactive-transport-simulation" title="Permalink to this headline">¶</a></h2>
+<p>The reactive transport simulation is performed in the function <code class="docutils literal notranslate"><span class="pre">simulate</span></code>
+(you may want to have a quick look in the code below and move to a
+detailed explanation in the subsequent sections):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate</span><span class="p">():</span>
+
+    <span class="c1"># Step 7.1: Construct the chemical system with its phases and species</span>
+    <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="p">(</span><span class="s1">&#39;supcrt98.xml&#39;</span><span class="p">)</span>
+
+    <span class="n">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalEditor</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addAqueousPhase</span><span class="p">([</span>
+        <span class="s1">&#39;H2O(l)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;H+&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;OH-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Na+&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Cl-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Ca++&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Mg++&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HCO3-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CO2(aq)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CO3--&#39;</span><span class="p">])</span>  <span class="c1"># aqueous species are individually selected for performance reasons</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">)</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">)</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.2: Create the ChemicalSystem object using the configured editor</span>
+    <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">editor</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.3: Define the initial condition of the reactive transport modeling problem</span>
+    <span class="n">problem_ic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCO3&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;SiO2&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.4: Define the boundary condition of the reactive transport modeling problem</span>
+    <span class="n">problem_bc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;MgCl2&#39;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCl2&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.5: Calculate the equilibrium states for the initial and boundary conditions</span>
+    <span class="n">state_ic</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_ic</span><span class="p">)</span>
+    <span class="n">state_bc</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_bc</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.6: Scale the volumes of the phases in the initial condition</span>
+    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Aqueous&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">,</span> <span class="mf">0.882</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">,</span> <span class="mf">0.018</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Scale the boundary condition state to 1 m3</span>
+    <span class="n">state_bc</span><span class="p">.</span><span class="nf">scaleVolume</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.7: Partitioning fluid and solid species</span>
+
+    <span class="c1"># The number of elements in the chemical system</span>
+    <span class="n">nelems</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">numElements</span><span class="p">()</span>
+
+    <span class="c1"># The indices of the fluid and solid species</span>
+    <span class="n">ifluid_species</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">indicesFluidSpecies</span><span class="p">()</span>
+    <span class="n">isolid_species</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">indicesSolidSpecies</span><span class="p">()</span>
+
+    <span class="c1"># The concentrations of each element in each mesh cell (in the current time step)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># The concentrations (mol/m3) of each element in the fluid partition, in each mesh cell</span>
+    <span class="n">bfluid</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># The concentrations (mol/m3) of each element in the solid partition, in each mesh cell</span>
+    <span class="n">bsolid</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># Initialize the concentrations (mol/m3) of the elements in each mesh cell</span>
+    <span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">state_ic</span><span class="p">.</span><span class="nf">elementAmounts</span><span class="p">()</span>
+
+    <span class="c1"># Initialize the concentrations (mol/m3) of each element on the boundary</span>
+    <span class="n">b_bc</span> <span class="o">=</span> <span class="n">state_bc</span><span class="p">.</span><span class="nf">elementAmounts</span><span class="p">()</span>
+
+    <span class="c1"># Step 7.8: Create a list of chemical states for the mesh cells</span>
+
+    <span class="c1"># The list of chemical states, one for each cell, initialized to state_ic</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="n">state_ic</span><span class="p">.</span><span class="nf">clone</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">)]</span>
+
+    <span class="c1"># Step 7.9: Create the equilibrium solver object for the repeated equilibrium calculation</span>
+
+    <span class="c1"># The interval [xl, xr] split into ncells</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nf">linspace</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span> <span class="n">xr</span><span class="p">,</span> <span class="n">ncells</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># The length of each mesh cell (in units of m)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">xr</span> <span class="o">-</span> <span class="n">xl</span><span class="p">)</span><span class="o">/</span><span class="n">ncells</span>
+
+    <span class="c1"># Step 7.10: Create the equilibrium solver object for the repeated equilibrium calculation</span>
+    <span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.11: The auxiliary function to create an output file each time step</span>
+    <span class="k">def</span> <span class="nf">outputstate</span><span class="p">():</span>
+        <span class="c1"># Create the instance of ChemicalOutput class</span>
+        <span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalOutput</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+
+        <span class="c1"># The number of digits in number of steps (e.g., 100 has 3 digits)</span>
+        <span class="n">ndigits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nsteps</span><span class="p">))</span>
+
+        <span class="c1"># Provide the output file name, which will correspond</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/{}.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+
+        <span class="c1"># We define the columns&#39; tags filled with the name of the quantities</span>
+        <span class="c1"># The first column has a tag &#39;x&#39; (which corresponds to the center coordinates of the cells )</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="c1"># The value of the center coordinates of the cells</span>
+
+        <span class="c1"># The rest of the columns correspond to the requested properties</span>
+        <span class="k">for</span> <span class="n">quantity</span> <span class="ow">in</span> <span class="n">output_quantities</span><span class="p">:</span>
+            <span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span>
+
+        <span class="c1"># We update the file with states that correspond to the cells&#39; coordinates stored in x</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">open</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">tag</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+            <span class="n">output</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+
+    <span class="c1"># Step 7.12: Running the reactive transport simulation loop</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># the current step number</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># the current time (in seconds)</span>
+
+    <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="n">nsteps</span><span class="p">:</span>
+        <span class="c1"># Print the progress of the simulation</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Progress: {}/{} steps, {} min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
+
+        <span class="c1"># Output the current state of the reactive transport calculation</span>
+        <span class="nf">outputstate</span><span class="p">()</span>
+
+        <span class="c1"># Collect the amounts of elements from fluid and solid partitions</span>
+        <span class="k">for</span> <span class="n">icell</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">):</span>
+            <span class="n">bfluid</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span><span class="o">.</span><span class="nf">elementAmountsInSpecies</span><span class="p">(</span><span class="n">ifluid_species</span><span class="p">)</span>
+            <span class="n">bsolid</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span><span class="o">.</span><span class="nf">elementAmountsInSpecies</span><span class="p">(</span><span class="n">isolid_species</span><span class="p">)</span>
+
+        <span class="c1"># Transport each element in the fluid phase</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nelems</span><span class="p">):</span>
+            <span class="nf">transport</span><span class="p">(</span><span class="n">bfluid</span><span class="p">[:,</span> <span class="n">j</span><span class="p">],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">b_bc</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+        <span class="c1"># Update the amounts of elements in both fluid and solid partitions</span>
+        <span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">bsolid</span> <span class="o">+</span> <span class="n">bfluid</span>
+
+        <span class="c1"># Equilibrating all cells with the updated element amounts</span>
+        <span class="k">for</span> <span class="n">icell</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">):</span>
+            <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">],</span> <span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">icell</span><span class="p">])</span>
+
+        <span class="c1"># Increment time step and number of time steps</span>
+        <span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span>
+        <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We now explain step-by-step the function <code class="docutils literal notranslate"><span class="pre">simulate</span></code>. We begin by defining the
+chemical system using the <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalEditor.html">ChemicalEditor</a> class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="p">(</span><span class="s1">&#39;supcrt98.xml&#39;</span><span class="p">)</span>
+
+    <span class="n">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalEditor</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addAqueousPhase</span><span class="p">([</span>
+        <span class="s1">&#39;H2O(l)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;H+&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;OH-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Na+&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Cl-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Ca++&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Mg++&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HCO3-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CO2(aq)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CO3--&#39;</span><span class="p">])</span>  <span class="c1"># aqueous species are individually selected for performance reasons</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">)</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">)</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We specify aqueous and mineral phases that should be considered in the chemical
+system. For performance reasons, the aqueous phase is defined by manually
+specifying the chemical species, instead of automatic collection of species
+from database. There are three pure mineral phase considered: quartz (SiO<sub>2</sub>),
+calcite (CaCO<sub>3</sub>), and dolomite (CaMg(CO<sub>3</sub>)<sub>2</sub>).</p>
+<div class="section" id="creating-the-chemical-system">
+<h3>Creating the chemical system<a class="headerlink" href="#creating-the-chemical-system" title="Permalink to this headline">¶</a></h3>
+<p>This step is where we create an object of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> using the
+chemical system definition details stored in the object <code class="docutils literal notranslate"><span class="pre">editor</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">editor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="initial-condition-ic-of-the-reactive-transport-problem">
+<h3>Initial condition (IC) of the reactive transport problem<a class="headerlink" href="#initial-condition-ic-of-the-reactive-transport-problem" title="Permalink to this headline">¶</a></h3>
+<p>After constructing the chemical system of interest, we can proceed to the
+definition of a chemical equilibrium problem to set the <strong>initial condition</strong>
+for the fluid and rock composition that is consistent with our intention of
+modeling reactive transport in a porous rock column composed of quartz and
+calcite, at 60 °C and 100 bar, with a 0.7 NaCl molal brine in equilibrium
+with the rock minerals. To ensure equilibrium with both quartz and calcite, the
+equilibrium problem setup below considers a relatively large amount for these
+minerals (10 moles each).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">problem_ic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCO3&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;SiO2&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We will later scale the volumes of the aqueous and mineral phases so that they
+are consistent with a 10 % porosity and the required volume percentages of the
+rock minerals (98 %<sub>vol</sub> of quartz and 2 %<sub>vol</sub> of calcite).</p>
+</div>
+<div class="section" id="boundary-condition-bc-of-the-reactive-transport-problem">
+<h3>Boundary condition (BC) of the reactive transport problem<a class="headerlink" href="#boundary-condition-bc-of-the-reactive-transport-problem" title="Permalink to this headline">¶</a></h3>
+<p>For the boundary condition, we need to specify the composition of the fluid
+that is injected into the rock. This is done below, by defining an equilibrium
+problem that will later be solved to produce an aqueous fluid with 0.9 molal
+NaCl, 0.05 molal MgCl<sub>2</sub>, 0.01 CaCl<sub>2</sub>, and 0.75 molal CO<sub>2</sub>, in a state very
+close to CO<sub>2</sub> saturation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">problem_bc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;MgCl2&#39;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCl2&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The composition of the injected aqueous fluid results from the solution of the
+above equilibrium problem, in which 1 kg of H<sub>2</sub>O is mixed with 0.90 moles of
+NaCl, 0.05 moles of MgCl<sub>2</sub>, 0.01 moles of CaCl<sub>2</sub>, and 0.75 moles of CO<sub>2</sub>.</p>
+</div>
+<div class="section" id="calculate-the-equilibrium-states-for-the-initial-and-boundary-conditions">
+<h3>Calculate the equilibrium states for the initial and boundary conditions<a class="headerlink" href="#calculate-the-equilibrium-states-for-the-initial-and-boundary-conditions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">state_ic</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_ic</span><span class="p">)</span>
+    <span class="n">state_bc</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_bc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this step, we use method <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code> to calculate the chemical
+equilibrium state of the system with the given initial and boundary equilibrium
+conditions stored in the objects <code class="docutils literal notranslate"><span class="pre">problem_ic</span></code> and <code class="docutils literal notranslate"><span class="pre">problem_bc</span></code>. The
+numerical solution of each problem results in the objects <code class="docutils literal notranslate"><span class="pre">state_ic</span></code>
+and <code class="docutils literal notranslate"><span class="pre">state_bc</span></code>, respectively, of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a>, which stores the
+temperature, pressure, and the amounts of every species in the system.</p>
+</div>
+<div class="section" id="scaling-the-volumes-of-the-phases">
+<h3>Scaling the volumes of the phases<a class="headerlink" href="#scaling-the-volumes-of-the-phases" title="Permalink to this headline">¶</a></h3>
+<p>We scale the volumes of the phases in the initial condition according to the
+condition that porosity is 10 % (ratio of fluid volume to total volume), and
+the volume fractions of minerals are 98 %<sub>vol</sub> of quartz (SiO<sub>2</sub>) and 2 %<sub>vol</sub>
+of calcite (ratio of mineral volume to solid volume).</p>
+<p>For the chemical state representing the boundary condition for the injected
+fluid composition, we scale its volume to 1 m<sup>3</sup>. This is done so that the
+amounts of the species in the fluid is consistent with a mol/m<sup>3</sup> scale.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Aqueous&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">,</span> <span class="mf">0.882</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">,</span> <span class="mf">0.018</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Scale the boundary condition state to 1 m3</span>
+    <span class="n">state_bc</span><span class="p">.</span><span class="nf">scaleVolume</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="partitioning-fluid-and-solid-species">
+<h3>Partitioning fluid and solid species<a class="headerlink" href="#partitioning-fluid-and-solid-species" title="Permalink to this headline">¶</a></h3>
+<p>Only species in fluid phases are mobile and transported by advection and
+diffusion mechanisms. The solid phases are immobile.</p>
+<p>The code below identify the indices of the fluid and solid species, and also
+create arrays to keep track of the amounts of elements in the fluid and solid
+partition (i.e., the amounts of elements among all fluid phases, here only an
+aqueous phase, and the amounts of elements among all solid phases, here the
+mineral phases).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># The number of elements in the chemical system</span>
+    <span class="n">nelems</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">numElements</span><span class="p">()</span>
+
+    <span class="c1"># The indices of the fluid and solid species</span>
+    <span class="n">ifluid_species</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">indicesFluidSpecies</span><span class="p">()</span>
+    <span class="n">isolid_species</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">indicesSolidSpecies</span><span class="p">()</span>
+
+    <span class="c1"># The concentrations of each element in each mesh cell (in the current time step)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># The concentrations (mol/m3) of each element in the fluid partition, in each mesh cell</span>
+    <span class="n">bfluid</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># The concentrations (mol/m3) of each element in the solid partition, in each mesh cell</span>
+    <span class="n">bsolid</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># Initialize the concentrations (mol/m3) of the elements in each mesh cell</span>
+    <span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">state_ic</span><span class="p">.</span><span class="nf">elementAmounts</span><span class="p">()</span>
+
+    <span class="c1"># Initialize the concentrations (mol/m3) of each element on the boundary</span>
+    <span class="n">b_bc</span> <span class="o">=</span> <span class="n">state_bc</span><span class="p">.</span><span class="nf">elementAmounts</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We use methods <code class="docutils literal notranslate"><span class="pre">indicesFluidSpecies</span></code> and <code class="docutils literal notranslate"><span class="pre">indicesSolidSpecies</span></code> of class
+<a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> to get the indices of the fluid and solid species, which are
+then stored in the lists <code class="docutils literal notranslate"><span class="pre">ifluid_species</span></code> and <code class="docutils literal notranslate"><span class="pre">isolid_species</span></code>,
+respectively. Then, we define the arrays <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">bfluid</span></code>, <code class="docutils literal notranslate"><span class="pre">bsolid</span></code>, that
+will store, respectively, the concentrations (mol/m<sup>3</sup>) of each element in the
+system, in the fluid partition, and in the solid partition at every time step.</p>
+<p>The array <code class="docutils literal notranslate"><span class="pre">b</span></code> is initialized with the concentrations of the elements at the
+initial chemical state, <code class="docutils literal notranslate"><span class="pre">state_ic</span></code>, using method <code class="docutils literal notranslate"><span class="pre">elementAmounts</span></code> of class
+<a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a>. The array <code class="docutils literal notranslate"><span class="pre">b_bc</span></code> stores the concentrations of each element
+on the boundary.</p>
+</div>
+<div class="section" id="create-a-list-of-chemical-states-for-the-mesh-cells">
+<h3>Create a list of chemical states for the mesh cells<a class="headerlink" href="#create-a-list-of-chemical-states-for-the-mesh-cells" title="Permalink to this headline">¶</a></h3>
+<p>Every mesh cell needs a <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a> object, which is done below with the
+creation of a list <code class="docutils literal notranslate"><span class="pre">states</span></code> of length <code class="docutils literal notranslate"><span class="pre">ncells</span></code>, initialized with <code class="docutils literal notranslate"><span class="pre">state_ic</span></code>
+for each cell (i.e., all cells have initially the same fluid and rock composition).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># The list of chemical states, one for each cell, initialized to state_ic</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="n">state_ic</span><span class="p">.</span><span class="nf">clone</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cell-coordinates-and-lengths">
+<h3>Cell coordinates and lengths<a class="headerlink" href="#cell-coordinates-and-lengths" title="Permalink to this headline">¶</a></h3>
+<p>Next, we generate the coordinates of the mesh nodes (array <code class="docutils literal notranslate"><span class="pre">x</span></code>) by equally
+dividing the interval <em>[xr, xl]</em> into <code class="docutils literal notranslate"><span class="pre">ncells</span></code>. The length between each
+consecutive mesh nodes is computed and stored in <code class="docutils literal notranslate"><span class="pre">dx</span></code> (the length of the mesh
+cells).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># The interval [xl, xr] split into ncells</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nf">linspace</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span> <span class="n">xr</span><span class="p">,</span> <span class="n">ncells</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># The length of each mesh cell (in units of m)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">xr</span> <span class="o">-</span> <span class="n">xl</span><span class="p">)</span><span class="o">/</span><span class="n">ncells</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-the-equilibrium-solver">
+<h3>Creating the equilibrium solver<a class="headerlink" href="#creating-the-equilibrium-solver" title="Permalink to this headline">¶</a></h3>
+<p>For the repeated equilibrium calculation, we define an equilibrium solver
+object using <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a>  class.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="define-an-auxiliary-function-for-creating-the-output-file">
+<h3>Define an auxiliary function for creating the output file<a class="headerlink" href="#define-an-auxiliary-function-for-creating-the-output-file" title="Permalink to this headline">¶</a></h3>
+<p>The auxiliary function <code class="docutils literal notranslate"><span class="pre">outputstate</span></code> uses the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalOutput.html">ChemicalOutput</a> to
+output quantities and properties at each mesh cell, at every time step.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">outputstate</span><span class="p">():</span>
+        <span class="c1"># Create the instance of ChemicalOutput class</span>
+        <span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalOutput</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+
+        <span class="c1"># The number of digits in number of steps (e.g., 100 has 3 digits)</span>
+        <span class="n">ndigits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nsteps</span><span class="p">))</span>
+
+        <span class="c1"># Provide the output file name, which will correspond</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/{}.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+
+        <span class="c1"># We define the columns&#39; tags filled with the name of the quantities</span>
+        <span class="c1"># The first column has a tag &#39;x&#39; (which corresponds to the center coordinates of the cells )</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="c1"># The value of the center coordinates of the cells</span>
+
+        <span class="c1"># The rest of the columns correspond to the requested properties</span>
+        <span class="k">for</span> <span class="n">quantity</span> <span class="ow">in</span> <span class="n">output_quantities</span><span class="p">:</span>
+            <span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span>
+
+        <span class="c1"># We update the file with states that correspond to the cells&#39; coordinates stored in x</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">open</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">tag</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+            <span class="n">output</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-reactive-transport-simulation">
+<h3>Running the reactive transport simulation<a class="headerlink" href="#running-the-reactive-transport-simulation" title="Permalink to this headline">¶</a></h3>
+<p>Before proceeding to the reactive transport calculations, we set the initial
+time and a counter for the number of time steps.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># the current step number</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># the current time (in seconds)</span>
+
+    <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="n">nsteps</span><span class="p">:</span>
+        <span class="c1"># Print the progress of the simulation</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Progress: {}/{} steps, {} min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
+
+        <span class="c1"># Output the current state of the reactive transport calculation</span>
+        <span class="nf">outputstate</span><span class="p">()</span>
+
+        <span class="c1"># Collect the amounts of elements from fluid and solid partitions</span>
+        <span class="k">for</span> <span class="n">icell</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">):</span>
+            <span class="n">bfluid</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span><span class="o">.</span><span class="nf">elementAmountsInSpecies</span><span class="p">(</span><span class="n">ifluid_species</span><span class="p">)</span>
+            <span class="n">bsolid</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span><span class="o">.</span><span class="nf">elementAmountsInSpecies</span><span class="p">(</span><span class="n">isolid_species</span><span class="p">)</span>
+
+        <span class="c1"># Transport each element in the fluid phase</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nelems</span><span class="p">):</span>
+            <span class="nf">transport</span><span class="p">(</span><span class="n">bfluid</span><span class="p">[:,</span> <span class="n">j</span><span class="p">],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">b_bc</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+        <span class="c1"># Update the amounts of elements in both fluid and solid partitions</span>
+        <span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">bsolid</span> <span class="o">+</span> <span class="n">bfluid</span>
+
+        <span class="c1"># Equilibrating all cells with the updated element amounts</span>
+        <span class="k">for</span> <span class="n">icell</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">):</span>
+            <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">],</span> <span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">icell</span><span class="p">])</span>
+
+        <span class="c1"># Increment time step and number of time steps</span>
+        <span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span>
+        <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The reactive transport simulation continues until the maximum number of time
+steps is achieved. At each time step, we output the progress of the simulation
+using function <code class="docutils literal notranslate"><span class="pre">outputstate</span></code>. Then, we collect the amounts of elements from
+fluid and solid partition. We now apply an <em>operator splitting procedure</em>, in
+which we first update the amounts of elements in the fluid partition
+(<code class="docutils literal notranslate"><span class="pre">bfluid</span></code>) using the transport equations (without reactions). These updated
+amounts of elements in the fluid partition are now summed with the amounts of
+elements in the solid partition (<code class="docutils literal notranslate"><span class="pre">bsolid</span></code>, which remained constant during the
+transport step), and thus updating the amounts of elements in the chemical
+system (<code class="docutils literal notranslate"><span class="pre">b</span></code>). We now use these updated amounts of elements in the cell
+(<code class="docutils literal notranslate"><span class="pre">b</span></code>) to evaluate its new chemical equilibrium state, thus producing new
+amounts of the species in both the fluid and solid phases (available in the
+list <code class="docutils literal notranslate"><span class="pre">states</span></code> of <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a> objects). This chemical reaction
+equilibrium calculation step, at each mesh cell, permits, for example,
+aqueous species and minerals to react, and thus causes mineral dissolution or
+precipitation, depending on how much the amount of mineral species changes. This
+can then be used, for example, to compute new porosity value for the cell.</p>
+</div>
+<div class="section" id="solving-the-transport-equations">
+<h3>Solving the transport equations<a class="headerlink" href="#solving-the-transport-equations" title="Permalink to this headline">¶</a></h3>
+<p>Reactive transport calculations involve the solution of a system of
+advection-diffusion-reaction equations. Due to the use of operator splitting
+scheme in this tutorial, we solve the transport equations and then perform the
+chemical reaction calculations for each cell before proceeding to the next time
+step.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">transport</span></code> function below is responsible for solving an
+advection-diffusion equation, that is later applied to transport the
+concentrations (mol/m<sup>3</sup>) of elements in the fluid partition (<em>a simplification
+that is possible because of common diffusion coefficients and velocities of the
+fluid species, otherwise the transport of individual fluid species would be
+needed</em>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">transport</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    <span class="c1"># Number of DOFs</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">D</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">v</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nf">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="n">beta</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nf">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nf">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="n">alpha</span><span class="p">)</span>
+
+    <span class="c1"># Set the boundary condition</span>
+    <span class="k">if</span> <span class="n">dirichlet</span><span class="p">:</span>
+        <span class="c1"># Use Dirichlet BC boundary conditions</span>
+        <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Use flux boundary conditions</span>
+        <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">beta</span><span class="o">*</span><span class="n">g</span>
+        <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">+</span> <span class="n">alpha</span>
+        <span class="n">b</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">+</span> <span class="n">alpha</span>
+
+    <span class="c1"># Solve a tridiagonal matrix equation</span>
+    <span class="nf">thomas</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">transport</span></code> expects a conservative property (argument <code class="docutils literal notranslate"><span class="pre">u</span></code>)
+(e.g., the concentration (mol/m<sup>3</sup>) of <em>j</em>-th element in the fluid given by
+<code class="docutils literal notranslate"><span class="pre">bfluid[j]</span></code>), the time step (<code class="docutils literal notranslate"><span class="pre">dt</span></code>), the mesh cell length (<code class="docutils literal notranslate"><span class="pre">dx</span></code>), the
+fluid velocity (<code class="docutils literal notranslate"><span class="pre">v</span></code>), the diffusion coefficient (<code class="docutils literal notranslate"><span class="pre">D</span></code>), and the boundary
+condition of the conservative property (<code class="docutils literal notranslate"><span class="pre">g</span></code>) (e.g., the concentration of the
+<em>j</em>-th element in the fluid on the left boundary).</p>
+<p>The transport equations are solved with a finite volume method. Its
+discretization in space and time (implicit) results in the constants <code class="docutils literal notranslate"><span class="pre">alpha</span></code>
+and <code class="docutils literal notranslate"><span class="pre">beta</span></code>. These correspond to the diffusion and advection terms in the
+equation: <code class="docutils literal notranslate"><span class="pre">D*dt/dx**2</span></code> and <code class="docutils literal notranslate"><span class="pre">v*dt/dx</span></code>, respectively.</p>
+<p>Arrays <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code> are the diagonals in the tridiagonal matrix that
+results by writing all discretized equations in a matrix equation. This system
+of linear equations is solved by the tridiagonal matrix algorithm, also known
+as the Thomas algorithm:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">thomas</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/=</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/=</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">d</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-of-the-results">
+<h2>Plotting of the results<a class="headerlink" href="#plotting-of-the-results" title="Permalink to this headline">¶</a></h2>
+<p>The last block of the main routine is plotting of the results.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">():</span>
+    <span class="c1"># Plot all result files</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">(</span><span class="s1">&#39;results&#39;</span><span class="p">))</span>
+    <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">16</span><span class="p">)(</span><span class="nf">delayed</span><span class="p">(</span><span class="n">plotfile</span><span class="p">)(</span><span class="nb">file</span><span class="p">)</span> <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">)</span>
+    <span class="c1"># Create videos for the figures</span>
+    <span class="n">ffmpegstr</span> <span class="o">=</span> <span class="s1">&#39;ffmpeg -y -r 30 -i figures/{0}/</span><span class="si">%03d</span><span class="s1">.png -codec:v mpeg4 -flags:v +qscale -global_quality:v 0 videos/{0}.mp4&#39;</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;calcite-dolomite&#39;</span><span class="p">))</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;aqueous-species&#39;</span><span class="p">))</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;ph&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The full script for the reactive transport calculation is shown below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">delayed</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">time</span>
+
+<span class="c1"># Step 2: Auxiliary time related constants</span>
+<span class="n">second</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">minute</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">hour</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">minute</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">hour</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="n">day</span>
+
+<span class="c1"># Step 3: Parameters for the reactive transport simulation</span>
+<span class="n">xl</span> <span class="o">=</span> <span class="mf">0.0</span>          <span class="c1"># the x-coordinate of the left boundary</span>
+<span class="n">xr</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># the x-coordinate of the right boundary</span>
+<span class="n">nsteps</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># the number of steps in the reactive transport simulation</span>
+<span class="n">ncells</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># the number of cells in the discretization</span>
+
+<span class="n">D</span>  <span class="o">=</span> <span class="mf">1.0e-9</span>       <span class="c1"># the diffusion coefficient (in units of m2/s)</span>
+<span class="n">v</span>  <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">day</span>      <span class="c1"># the fluid pore velocity (in units of m/s)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">minute</span>    <span class="c1"># the time step (in units of s)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">60.0</span> <span class="o">+</span> <span class="mf">273.15</span> <span class="c1"># the temperature (in units of K)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="mf">1e5</span>     <span class="c1"># the pressure (in units of Pa)</span>
+
+<span class="n">dirichlet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">False</span>  <span class="c1"># the parameter that determines whether Dirichlet BC must be used</span>
+
+<span class="c1"># Step 4: The list of quantities to be output for each mesh cell, each time step</span>
+<span class="n">output_quantities</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    pH</span>
+<span class="s2">    speciesMolality(H+)</span>
+<span class="s2">    speciesMolality(Ca++)</span>
+<span class="s2">    speciesMolality(Mg++)</span>
+<span class="s2">    speciesMolality(HCO3-)</span>
+<span class="s2">    speciesMolality(CO2(aq))</span>
+<span class="s2">    phaseVolume(Calcite)</span>
+<span class="s2">    phaseVolume(Dolomite)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="nf">split</span><span class="p">()</span>
+
+<span class="c1"># Step 7: Perform the reactive transport simulation</span>
+<span class="k">def</span> <span class="nf">simulate</span><span class="p">():</span>
+
+    <span class="c1"># Step 7.1: Construct the chemical system with its phases and species</span>
+    <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="p">(</span><span class="s1">&#39;supcrt98.xml&#39;</span><span class="p">)</span>
+
+    <span class="n">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalEditor</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addAqueousPhase</span><span class="p">([</span>
+        <span class="s1">&#39;H2O(l)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;H+&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;OH-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Na+&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Cl-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Ca++&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Mg++&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HCO3-&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CO2(aq)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CO3--&#39;</span><span class="p">])</span>  <span class="c1"># aqueous species are individually selected for performance reasons</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">)</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">)</span>
+    <span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.2: Create the ChemicalSystem object using the configured editor</span>
+    <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">editor</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.3: Define the initial condition of the reactive transport modeling problem</span>
+    <span class="n">problem_ic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCO3&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;SiO2&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.4: Define the boundary condition of the reactive transport modeling problem</span>
+    <span class="n">problem_bc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;MgCl2&#39;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCl2&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+    <span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.5: Calculate the equilibrium states for the initial and boundary conditions</span>
+    <span class="n">state_ic</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_ic</span><span class="p">)</span>
+    <span class="n">state_bc</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_bc</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.6: Scale the volumes of the phases in the initial condition</span>
+    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Aqueous&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">,</span> <span class="mf">0.882</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+    <span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">,</span> <span class="mf">0.018</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Scale the boundary condition state to 1 m3</span>
+    <span class="n">state_bc</span><span class="p">.</span><span class="nf">scaleVolume</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.7: Partitioning fluid and solid species</span>
+
+    <span class="c1"># The number of elements in the chemical system</span>
+    <span class="n">nelems</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">numElements</span><span class="p">()</span>
+
+    <span class="c1"># The indices of the fluid and solid species</span>
+    <span class="n">ifluid_species</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">indicesFluidSpecies</span><span class="p">()</span>
+    <span class="n">isolid_species</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">indicesSolidSpecies</span><span class="p">()</span>
+
+    <span class="c1"># The concentrations of each element in each mesh cell (in the current time step)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># The concentrations (mol/m3) of each element in the fluid partition, in each mesh cell</span>
+    <span class="n">bfluid</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># The concentrations (mol/m3) of each element in the solid partition, in each mesh cell</span>
+    <span class="n">bsolid</span> <span class="o">=</span> <span class="nf">zeros</span><span class="p">((</span><span class="n">ncells</span><span class="p">,</span> <span class="n">nelems</span><span class="p">))</span>
+
+    <span class="c1"># Initialize the concentrations (mol/m3) of the elements in each mesh cell</span>
+    <span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">state_ic</span><span class="p">.</span><span class="nf">elementAmounts</span><span class="p">()</span>
+
+    <span class="c1"># Initialize the concentrations (mol/m3) of each element on the boundary</span>
+    <span class="n">b_bc</span> <span class="o">=</span> <span class="n">state_bc</span><span class="p">.</span><span class="nf">elementAmounts</span><span class="p">()</span>
+
+    <span class="c1"># Step 7.8: Create a list of chemical states for the mesh cells</span>
+
+    <span class="c1"># The list of chemical states, one for each cell, initialized to state_ic</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="n">state_ic</span><span class="p">.</span><span class="nf">clone</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">)]</span>
+
+    <span class="c1"># Step 7.9: Create the equilibrium solver object for the repeated equilibrium calculation</span>
+
+    <span class="c1"># The interval [xl, xr] split into ncells</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nf">linspace</span><span class="p">(</span><span class="n">xl</span><span class="p">,</span> <span class="n">xr</span><span class="p">,</span> <span class="n">ncells</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># The length of each mesh cell (in units of m)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">xr</span> <span class="o">-</span> <span class="n">xl</span><span class="p">)</span><span class="o">/</span><span class="n">ncells</span>
+
+    <span class="c1"># Step 7.10: Create the equilibrium solver object for the repeated equilibrium calculation</span>
+    <span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+
+    <span class="c1"># Step 7.11: The auxiliary function to create an output file each time step</span>
+    <span class="k">def</span> <span class="nf">outputstate</span><span class="p">():</span>
+        <span class="c1"># Create the instance of ChemicalOutput class</span>
+        <span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalOutput</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+
+        <span class="c1"># The number of digits in number of steps (e.g., 100 has 3 digits)</span>
+        <span class="n">ndigits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nsteps</span><span class="p">))</span>
+
+        <span class="c1"># Provide the output file name, which will correspond</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/{}.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+
+        <span class="c1"># We define the columns&#39; tags filled with the name of the quantities</span>
+        <span class="c1"># The first column has a tag &#39;x&#39; (which corresponds to the center coordinates of the cells )</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">)</span> <span class="c1"># The value of the center coordinates of the cells</span>
+
+        <span class="c1"># The rest of the columns correspond to the requested properties</span>
+        <span class="k">for</span> <span class="n">quantity</span> <span class="ow">in</span> <span class="n">output_quantities</span><span class="p">:</span>
+            <span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span>
+
+        <span class="c1"># We update the file with states that correspond to the cells&#39; coordinates stored in x</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">open</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">tag</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+            <span class="n">output</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+
+    <span class="c1"># Step 7.12: Running the reactive transport simulation loop</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># the current step number</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># the current time (in seconds)</span>
+
+    <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="n">nsteps</span><span class="p">:</span>
+        <span class="c1"># Print the progress of the simulation</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Progress: {}/{} steps, {} min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
+
+        <span class="c1"># Output the current state of the reactive transport calculation</span>
+        <span class="nf">outputstate</span><span class="p">()</span>
+
+        <span class="c1"># Collect the amounts of elements from fluid and solid partitions</span>
+        <span class="k">for</span> <span class="n">icell</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">):</span>
+            <span class="n">bfluid</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span><span class="o">.</span><span class="nf">elementAmountsInSpecies</span><span class="p">(</span><span class="n">ifluid_species</span><span class="p">)</span>
+            <span class="n">bsolid</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">]</span><span class="o">.</span><span class="nf">elementAmountsInSpecies</span><span class="p">(</span><span class="n">isolid_species</span><span class="p">)</span>
+
+        <span class="c1"># Transport each element in the fluid phase</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nelems</span><span class="p">):</span>
+            <span class="nf">transport</span><span class="p">(</span><span class="n">bfluid</span><span class="p">[:,</span> <span class="n">j</span><span class="p">],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">b_bc</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+        <span class="c1"># Update the amounts of elements in both fluid and solid partitions</span>
+        <span class="n">b</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">bsolid</span> <span class="o">+</span> <span class="n">bfluid</span>
+
+        <span class="c1"># Equilibrating all cells with the updated element amounts</span>
+        <span class="k">for</span> <span class="n">icell</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ncells</span><span class="p">):</span>
+            <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="n">icell</span><span class="p">],</span> <span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">icell</span><span class="p">])</span>
+
+        <span class="c1"># Increment time step and number of time steps</span>
+        <span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span>
+        <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Step 10: Return a string for the title of a figure in the format Time: #h##m</span>
+<span class="k">def</span> <span class="nf">titlestr</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">/</span> <span class="n">minute</span>   <span class="c1"># Convert from seconds to minutes</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span>  <span class="c1"># The number of hours</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">%</span> <span class="mi">60</span>  <span class="c1"># The number of remaining minutes</span>
+    <span class="k">return</span> <span class="s1">&#39;Time: {:&gt;3}h{:&gt;2}m&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+
+<span class="c1"># Step 9: Generate figures for a result file</span>
+<span class="k">def</span> <span class="nf">plotfile</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Plotting figure&#39;</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="s1">&#39;...&#39;</span><span class="p">)</span>
+
+    <span class="n">t</span> <span class="o">=</span> <span class="n">step</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="n">filearray</span> <span class="o">=</span> <span class="nf">loadtxt</span><span class="p">(</span><span class="s1">&#39;results/&#39;</span> <span class="o">+</span> <span class="nb">file</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">filearray</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="n">ndigits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nsteps</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">xlim</span><span class="p">(</span><span class="n">left</span><span class="o">=-</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.52</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">10.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="nf">titlestr</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="s1">&#39;Distance [m]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/ph/{}.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+
+    <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">xlim</span><span class="p">(</span><span class="n">left</span><span class="o">=-</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.52</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">2.1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ticklabel_format</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;sci&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">scilimits</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="nf">titlestr</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="s1">&#39;Distance [m]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="s1">&#39;Mineral Volume [%$_{\mathsf{vol}}$]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Calcite&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center right&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/calcite-dolomite/{}.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+
+    <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">xlim</span><span class="p">(</span><span class="n">left</span><span class="o">=-</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.52</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mf">0.5e-5</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="nf">titlestr</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="s1">&#39;Distance [m]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration [molal]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ca++&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mg++&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;HCO3-&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;CO2(aq)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;H+&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/aqueous-species/{}.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+
+    <span class="n">plt</span><span class="p">.</span><span class="nf">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Step 8: Plot all result files and generate a video</span>
+<span class="k">def</span> <span class="nf">plot</span><span class="p">():</span>
+    <span class="c1"># Plot all result files</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">(</span><span class="s1">&#39;results&#39;</span><span class="p">))</span>
+    <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">16</span><span class="p">)(</span><span class="nf">delayed</span><span class="p">(</span><span class="n">plotfile</span><span class="p">)(</span><span class="nb">file</span><span class="p">)</span> <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">)</span>
+    <span class="c1"># Create videos for the figures</span>
+    <span class="n">ffmpegstr</span> <span class="o">=</span> <span class="s1">&#39;ffmpeg -y -r 30 -i figures/{0}/</span><span class="si">%03d</span><span class="s1">.png -codec:v mpeg4 -flags:v +qscale -global_quality:v 0 videos/{0}.mp4&#39;</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;calcite-dolomite&#39;</span><span class="p">))</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;aqueous-species&#39;</span><span class="p">))</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;ph&#39;</span><span class="p">))</span>
+
+<span class="c1"># Step 7.10.2: Solve a tridiagonal matrix equation using Thomas algorithm (or TriDiagonal Matrix Algorithm (TDMA))</span>
+<span class="k">def</span> <span class="nf">thomas</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/=</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/=</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">d</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Step 7.10.1: Perform a transport step</span>
+<span class="k">def</span> <span class="nf">transport</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    <span class="c1"># Number of DOFs</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">D</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">v</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nf">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="n">beta</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nf">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nf">full</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="n">alpha</span><span class="p">)</span>
+
+    <span class="c1"># Set the boundary condition</span>
+    <span class="k">if</span> <span class="n">dirichlet</span><span class="p">:</span>
+        <span class="c1"># Use Dirichlet BC boundary conditions</span>
+        <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Use flux boundary conditions</span>
+        <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">beta</span><span class="o">*</span><span class="n">g</span>
+        <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">+</span> <span class="n">alpha</span>
+        <span class="n">b</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span> <span class="o">+</span> <span class="n">alpha</span>
+
+    <span class="c1"># Solve a tridiagonal matrix equation</span>
+    <span class="nf">thomas</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+
+<span class="c1"># Step 6: Creating folders for the results&#39; output</span>
+<span class="k">def</span> <span class="nf">make_results_folders</span><span class="p">():</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p results&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p figures/ph&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p figures/aqueous-species&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p figures/calcite-dolomite&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p videos&#39;</span><span class="p">)</span>
+
+<span class="c1"># Step 5: Define the main function</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="c1"># Create folders for the results</span>
+    <span class="nf">make_results_folders</span><span class="p">()</span>
+
+    <span class="c1"># Run the reactive transport simulations</span>
+    <span class="nf">simulate</span><span class="p">()</span>
+
+    <span class="c1"># Plotting the result</span>
+    <span class="nf">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Add figures and videos here in this tutorial.</p>
+</div>
+</div>
+<div class="section" id="have-you-got-an-issue">
+<h2>Have you got an issue?<a class="headerlink" href="#have-you-got-an-issue" title="Permalink to this headline">¶</a></h2>
+<p>Have you found any issue or error in this tutorial? Do you have any
+recommendations or you think something is not clear enough? Please, let us know
+by filling a new issue here:</p>
+<p class="centered">
+<strong><a class="reference external" href="https://github.com/reaktoro/reaktoro/issues/new">Reaktoro’s GitHub Issues</a></strong></p><p>You’ll need a GitHub account - but this is easy to sort out if you don’t have
+one yet!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../thermodynamic-databases.html" class="btn btn-neutral float-right" title="Thermodynamic Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reactivetransportsolver-calcite-brine.html" class="btn btn-neutral float-left" title="Reactive transport of CO2-saturated brine along a porous rock column" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Allan Leal and Reaktoro contributors
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

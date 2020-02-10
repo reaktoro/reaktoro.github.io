@@ -1,0 +1,5 @@
+<map id="FluidPhase" name="FluidPhase">
+<area shape="rect" id="node3" href="$classReaktoro_1_1GaseousPhase.html" title="GaseousPhase" alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1LiquidPhase.html" title="LiquidPhase" alt="" coords="141,155,234,181"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes. " alt="" coords="94,5,153,32"/>
+</map>
