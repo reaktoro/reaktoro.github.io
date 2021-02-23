@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type that describes the options for the solution of a non&#45;linear problem.">
 <polygon fill="#bfbfbf" stroke="black" points="44.19,-0.5 44.19,-19.5 136.19,-19.5 136.19,-0.5 44.19,-0.5"/>
 <text text-anchor="middle" x="90.19" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">NonlinearOptions</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1NonlinearOutput.html" target="_top" xlink:title="A type that describes the options for the output of a non&#45;linear problem calculation. ">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1NonlinearOutput.html" target="_top" xlink:title="A type that describes the options for the output of a non&#45;linear problem calculation.">
 <polygon fill="white" stroke="black" points="46.69,-67.5 46.69,-86.5 133.69,-86.5 133.69,-67.5 46.69,-67.5"/>
 <text text-anchor="middle" x="90.19" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">NonlinearOutput</text>
 </a>
@@ -34,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structReaktoro_1_1OutputterOptions.html" target="_top" xlink:title="OutputterOptions">
+<g id="a_node3"><a xlink:href="structReaktoro_1_1OutputterOptions.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="44.69,-146.5 44.69,-165.5 135.69,-165.5 135.69,-146.5 44.69,-146.5"/>
 <text text-anchor="middle" x="90.19" y="-153.5" font-family="Helvetica,sans-Serif" font-size="10.00">OutputterOptions</text>
 </a>
@@ -49,7 +52,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:title="STL class. ">
+<g id="a_node4"><a xlink:title="STL class.">
 <polygon fill="white" stroke="#bfbfbf" points="69.69,-214.5 69.69,-233.5 110.69,-233.5 110.69,-214.5 69.69,-214.5"/>
 <text text-anchor="middle" x="90.19" y="-221.5" font-family="Helvetica,sans-Serif" font-size="10.00">string</text>
 </a>
@@ -73,8 +76,11 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
+<g id="a_node6"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="153.69,-146.5 153.69,-165.5 258.69,-165.5 258.69,-146.5 153.69,-146.5"/>
 <text text-anchor="middle" x="206.19" y="-153.5" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; std::string &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node4&#45;&gt;Node6 -->
 <g id="edge7" class="edge">
@@ -86,7 +92,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:title="STL class. ">
+<g id="a_node5"><a xlink:title="STL class.">
 <polygon fill="white" stroke="#bfbfbf" points="37.19,-271.5 37.19,-290.5 143.19,-290.5 143.19,-271.5 37.19,-271.5"/>
 <text text-anchor="middle" x="90.19" y="-278.5" font-family="Helvetica,sans-Serif" font-size="10.00">basic_string&lt; char &gt;</text>
 </a>

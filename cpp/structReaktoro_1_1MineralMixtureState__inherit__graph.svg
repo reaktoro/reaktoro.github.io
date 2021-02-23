@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type used to describe the state of a mineral mixture.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 104,-19.5 104,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="52" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MineralMixtureState</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1MixtureState.html" target="_top" xlink:title="A type used to describe the state of a mixture. ">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1MixtureState.html" target="_top" xlink:title="A type used to describe the state of a mixture.">
 <polygon fill="white" stroke="black" points="16,-56.5 16,-75.5 88,-75.5 88,-56.5 16,-56.5"/>
 <text text-anchor="middle" x="52" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">MixtureState</text>
 </a>

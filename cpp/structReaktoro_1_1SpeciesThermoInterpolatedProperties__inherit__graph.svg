@@ -12,14 +12,17 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type for storing thermodynamic properties of a species over a range of temperatures and pressures.">
 <polygon fill="#bfbfbf" stroke="black" points="2,-67.5 2,-97.5 138,-97.5 138,-67.5 2,-67.5"/>
 <text text-anchor="start" x="10" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">SpeciesThermoInterpolated</text>
 <text text-anchor="middle" x="70" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">Properties</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1ReactionThermoInterpolatedProperties.html" target="_top" xlink:title="A type for storing thermodynamic properties of a reaction over a range of temperatures and pressures...">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1ReactionThermoInterpolatedProperties.html" target="_top" xlink:title="A type for storing thermodynamic properties of a reaction over a range of temperatures and pressures.">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-30.5 140,-30.5 140,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ReactionThermoInterpolated</text>
 <text text-anchor="middle" x="70" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Properties</text>

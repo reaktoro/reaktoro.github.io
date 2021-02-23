@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A struct that describes the options from an equilibrium path calculation.">
 <polygon fill="#bfbfbf" stroke="black" points="1080,-153.65 1080,-172.65 1199,-172.65 1199,-153.65 1080,-153.65"/>
 <text text-anchor="middle" x="1139.5" y="-160.65" font-family="Helvetica,sans-Serif" font-size="10.00">EquilibriumPathOptions</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1ODEOptions.html" target="_top" xlink:title="A struct that defines the options for the ODESolver. ">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1ODEOptions.html" target="_top" xlink:title="A struct that defines the options for the ODESolver.">
 <polygon fill="white" stroke="black" points="909,-172.65 909,-191.65 981,-191.65 981,-172.65 909,-172.65"/>
 <text text-anchor="middle" x="945" y="-179.65" font-family="Helvetica,sans-Serif" font-size="10.00">ODEOptions</text>
 </a>
@@ -34,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structReaktoro_1_1EquilibriumOptions.html" target="_top" xlink:title="The options for the equilibrium calculations. ">
+<g id="a_node3"><a xlink:href="structReaktoro_1_1EquilibriumOptions.html" target="_top" xlink:title="The options for the equilibrium calculations.">
 <polygon fill="white" stroke="black" points="896,-134.65 896,-153.65 994,-153.65 994,-134.65 896,-134.65"/>
 <text text-anchor="middle" x="945" y="-141.65" font-family="Helvetica,sans-Serif" font-size="10.00">EquilibriumOptions</text>
 </a>
@@ -50,7 +53,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="structReaktoro_1_1OptimumOptions.html" target="_top" xlink:title="A type that describes the options of a optimisation calculation. ">
+<g id="a_node4"><a xlink:href="structReaktoro_1_1OptimumOptions.html" target="_top" xlink:title="A type that describes the options of a optimisation calculation.">
 <polygon fill="white" stroke="black" points="709.5,-244.65 709.5,-263.65 799.5,-263.65 799.5,-244.65 709.5,-244.65"/>
 <text text-anchor="middle" x="754.5" y="-251.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumOptions</text>
 </a>
@@ -66,7 +69,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="structReaktoro_1_1OptimumParamsIpAction.html" target="_top" xlink:title="OptimumParamsIpAction">
+<g id="a_node5"><a xlink:href="structReaktoro_1_1OptimumParamsIpAction.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="456,-434.65 456,-453.65 582,-453.65 582,-434.65 456,-434.65"/>
 <text text-anchor="middle" x="519" y="-441.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsIpAction</text>
 </a>
@@ -82,7 +85,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="structReaktoro_1_1OptimumParamsIpOpt.html" target="_top" xlink:title="OptimumParamsIpOpt">
+<g id="a_node6"><a xlink:href="structReaktoro_1_1OptimumParamsIpOpt.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="462,-396.65 462,-415.65 576,-415.65 576,-396.65 462,-396.65"/>
 <text text-anchor="middle" x="519" y="-403.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsIpOpt</text>
 </a>
@@ -98,8 +101,11 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
+<g id="a_node7"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="271.5,-396.65 271.5,-415.65 361.5,-415.65 361.5,-396.65 271.5,-396.65"/>
 <text text-anchor="middle" x="316.5" y="-403.65" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; double &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
@@ -111,7 +117,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="structReaktoro_1_1OptimumParamsIpActive.html" target="_top" xlink:title="OptimumParamsIpActive">
+<g id="a_node8"><a xlink:href="structReaktoro_1_1OptimumParamsIpActive.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="456,-358.65 456,-377.65 582,-377.65 582,-358.65 456,-358.65"/>
 <text text-anchor="middle" x="519" y="-365.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsIpActive</text>
 </a>
@@ -127,7 +133,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="structReaktoro_1_1OptimumParamsIpNewton.html" target="_top" xlink:title="OptimumParamsIpNewton">
+<g id="a_node9"><a xlink:href="structReaktoro_1_1OptimumParamsIpNewton.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="453,-320.65 453,-339.65 585,-339.65 585,-320.65 453,-320.65"/>
 <text text-anchor="middle" x="519" y="-327.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsIpNewton</text>
 </a>
@@ -143,7 +149,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="structReaktoro_1_1KktOptions.html" target="_top" xlink:title="A type to describe the options for the KKT calculation. ">
+<g id="a_node10"><a xlink:href="structReaktoro_1_1KktOptions.html" target="_top" xlink:title="A type to describe the options for the KKT calculation.">
 <polygon fill="white" stroke="black" points="486.5,-282.65 486.5,-301.65 551.5,-301.65 551.5,-282.65 486.5,-282.65"/>
 <text text-anchor="middle" x="519" y="-289.65" font-family="Helvetica,sans-Serif" font-size="10.00">KktOptions</text>
 </a>
@@ -159,7 +165,7 @@
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="structReaktoro_1_1OptimumParamsRegularization.html" target="_top" xlink:title="A type that describes the regularization options for the optimisation calculation. ">
+<g id="a_node11"><a xlink:href="structReaktoro_1_1OptimumParamsRegularization.html" target="_top" xlink:title="A type that describes the regularization options for the optimisation calculation.">
 <polygon fill="white" stroke="black" points="443,-244.65 443,-263.65 595,-263.65 595,-244.65 443,-244.65"/>
 <text text-anchor="middle" x="519" y="-251.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsRegularization</text>
 </a>
@@ -175,7 +181,7 @@
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="structReaktoro_1_1RegularizerOptions.html" target="_top" xlink:title="A type that describes the options for regularizing linear constraints. ">
+<g id="a_node12"><a xlink:href="structReaktoro_1_1RegularizerOptions.html" target="_top" xlink:title="A type that describes the options for regularizing linear constraints.">
 <polygon fill="white" stroke="black" points="266.5,-244.65 266.5,-263.65 366.5,-263.65 366.5,-244.65 266.5,-244.65"/>
 <text text-anchor="middle" x="316.5" y="-251.65" font-family="Helvetica,sans-Serif" font-size="10.00">RegularizerOptions</text>
 </a>
@@ -190,7 +196,7 @@
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="structReaktoro_1_1OptimumParamsRefiner.html" target="_top" xlink:title="OptimumParamsRefiner">
+<g id="a_node13"><a xlink:href="structReaktoro_1_1OptimumParamsRefiner.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="458,-206.65 458,-225.65 580,-225.65 580,-206.65 458,-206.65"/>
 <text text-anchor="middle" x="519" y="-213.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsRefiner</text>
 </a>
@@ -206,7 +212,7 @@
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="structReaktoro_1_1OptimumParamsKarpov.html" target="_top" xlink:title="OptimumParamsKarpov">
+<g id="a_node14"><a xlink:href="structReaktoro_1_1OptimumParamsKarpov.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="458.5,-168.65 458.5,-187.65 579.5,-187.65 579.5,-168.65 458.5,-168.65"/>
 <text text-anchor="middle" x="519" y="-175.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsKarpov</text>
 </a>
@@ -222,7 +228,7 @@
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="structReaktoro_1_1OptimumParamsActNewton.html" target="_top" xlink:title="OptimumParamsActNewton">
+<g id="a_node15"><a xlink:href="structReaktoro_1_1OptimumParamsActNewton.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="449.5,-130.65 449.5,-149.65 588.5,-149.65 588.5,-130.65 449.5,-130.65"/>
 <text text-anchor="middle" x="519" y="-137.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsActNewton</text>
 </a>
@@ -238,7 +244,7 @@
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="structReaktoro_1_1OptimumOutputOptions.html" target="_top" xlink:title="A type that describes the options for the output of a optimisation calculation. ">
+<g id="a_node16"><a xlink:href="structReaktoro_1_1OptimumOutputOptions.html" target="_top" xlink:title="A type that describes the options for the output of a optimisation calculation.">
 <polygon fill="white" stroke="black" points="459.5,-92.65 459.5,-111.65 578.5,-111.65 578.5,-92.65 459.5,-92.65"/>
 <text text-anchor="middle" x="519" y="-99.65" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumOutputOptions</text>
 </a>
@@ -254,7 +260,7 @@
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="structReaktoro_1_1OutputterOptions.html" target="_top" xlink:title="OutputterOptions">
+<g id="a_node17"><a xlink:href="structReaktoro_1_1OutputterOptions.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="271,-100.65 271,-119.65 362,-119.65 362,-100.65 271,-100.65"/>
 <text text-anchor="middle" x="316.5" y="-107.65" font-family="Helvetica,sans-Serif" font-size="10.00">OutputterOptions</text>
 </a>
@@ -269,7 +275,7 @@
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="structReaktoro_1_1NonlinearOutput.html" target="_top" xlink:title="A type that describes the options for the output of a non&#45;linear problem calculation. ">
+<g id="a_node22"><a xlink:href="structReaktoro_1_1NonlinearOutput.html" target="_top" xlink:title="A type that describes the options for the output of a non&#45;linear problem calculation.">
 <polygon fill="white" stroke="black" points="475.5,-47.65 475.5,-66.65 562.5,-66.65 562.5,-47.65 475.5,-47.65"/>
 <text text-anchor="middle" x="519" y="-54.65" font-family="Helvetica,sans-Serif" font-size="10.00">NonlinearOutput</text>
 </a>
@@ -284,7 +290,7 @@
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:title="STL class. ">
+<g id="a_node18"><a xlink:title="STL class.">
 <polygon fill="white" stroke="#bfbfbf" points="143,-83.65 143,-102.65 184,-102.65 184,-83.65 143,-83.65"/>
 <text text-anchor="middle" x="163.5" y="-90.65" font-family="Helvetica,sans-Serif" font-size="10.00">string</text>
 </a>
@@ -309,8 +315,11 @@
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
+<g id="a_node20"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="264,-52.65 264,-71.65 369,-71.65 369,-52.65 264,-52.65"/>
 <text text-anchor="middle" x="316.5" y="-59.65" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; std::string &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node18&#45;&gt;Node20 -->
 <g id="edge21" class="edge">
@@ -330,7 +339,7 @@
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:title="STL class. ">
+<g id="a_node19"><a xlink:title="STL class.">
 <polygon fill="white" stroke="#bfbfbf" points="0,-83.65 0,-102.65 106,-102.65 106,-83.65 0,-83.65"/>
 <text text-anchor="middle" x="53" y="-90.65" font-family="Helvetica,sans-Serif" font-size="10.00">basic_string&lt; char &gt;</text>
 </a>
@@ -347,9 +356,9 @@
 <title>Node20&#45;&gt;Node16</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M375.22,-73.67C405.34,-79.68 441.74,-86.94 470.25,-92.63"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="375.76,-70.21 365.27,-71.68 374.39,-77.07 375.76,-70.21"/>
-<text text-anchor="middle" x="406" y="-109.15" font-family="Helvetica,sans-Serif" font-size="10.00"> znames</text>
+<text text-anchor="middle" x="406" y="-109.15" font-family="Helvetica,sans-Serif" font-size="10.00"> xnames</text>
 <text text-anchor="middle" x="406" y="-98.15" font-family="Helvetica,sans-Serif" font-size="10.00">ynames</text>
-<text text-anchor="middle" x="406" y="-87.15" font-family="Helvetica,sans-Serif" font-size="10.00">xnames</text>
+<text text-anchor="middle" x="406" y="-87.15" font-family="Helvetica,sans-Serif" font-size="10.00">znames</text>
 </g>
 <!-- Node20&#45;&gt;Node22 -->
 <g id="edge26" class="edge">
@@ -362,7 +371,7 @@
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="structReaktoro_1_1NonlinearOptions.html" target="_top" xlink:title="A type that describes the options for the solution of a non&#45;linear problem. ">
+<g id="a_node21"><a xlink:href="structReaktoro_1_1NonlinearOptions.html" target="_top" xlink:title="A type that describes the options for the solution of a non&#45;linear problem.">
 <polygon fill="white" stroke="black" points="708.5,-134.65 708.5,-153.65 800.5,-153.65 800.5,-134.65 708.5,-134.65"/>
 <text text-anchor="middle" x="754.5" y="-141.65" font-family="Helvetica,sans-Serif" font-size="10.00">NonlinearOptions</text>
 </a>
@@ -385,7 +394,7 @@
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="structReaktoro_1_1SmartEquilibriumOptions.html" target="_top" xlink:title="The options for the smart equilibrium calculations. ">
+<g id="a_node23"><a xlink:href="structReaktoro_1_1SmartEquilibriumOptions.html" target="_top" xlink:title="The options for the smart equilibrium calculations.">
 <polygon fill="white" stroke="black" points="692,-96.65 692,-115.65 817,-115.65 817,-96.65 692,-96.65"/>
 <text text-anchor="middle" x="754.5" y="-103.65" font-family="Helvetica,sans-Serif" font-size="10.00">SmartEquilibriumOptions</text>
 </a>

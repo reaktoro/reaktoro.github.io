@@ -12,14 +12,17 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="black" points="24.5,-0.5 24.5,-30.5 179.5,-30.5 179.5,-0.5 24.5,-0.5"/>
 <text text-anchor="start" x="32.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">SpeciesThermoParamsPhreeqc</text>
 <text text-anchor="middle" x="102" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">::ReactionParams</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classReaktoro_1_1ReactionEquation.html" target="_top" xlink:title="Define a type that describes the equation of a reaction. ">
+<g id="a_node2"><a xlink:href="classReaktoro_1_1ReactionEquation.html" target="_top" xlink:title="Define a type that describes the equation of a reaction.">
 <polygon fill="white" stroke="black" points="0,-78.5 0,-97.5 94,-97.5 94,-78.5 0,-78.5"/>
 <text text-anchor="middle" x="47" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">ReactionEquation</text>
 </a>
@@ -35,8 +38,11 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
+<g id="a_node3"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="112,-78.5 112,-97.5 202,-97.5 202,-78.5 112,-78.5"/>
 <text text-anchor="middle" x="157" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; double &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">

@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="Class that defines a fluid (gaseous or liquid) phase.">
 <polygon fill="#bfbfbf" stroke="black" points="56,-56.5 56,-75.5 121,-75.5 121,-56.5 56,-56.5"/>
 <text text-anchor="middle" x="88.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">FluidPhase</text>
+</a>
+</g>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classReaktoro_1_1GaseousPhase.html" target="_top" xlink:title="GaseousPhase">
+<g id="a_node3"><a xlink:href="classReaktoro_1_1GaseousPhase.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-19.5 83,-19.5 83,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="41.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">GaseousPhase</text>
 </a>
@@ -33,7 +36,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classReaktoro_1_1LiquidPhase.html" target="_top" xlink:title="LiquidPhase">
+<g id="a_node4"><a xlink:href="classReaktoro_1_1LiquidPhase.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="101.5,-0.5 101.5,-19.5 171.5,-19.5 171.5,-0.5 101.5,-0.5"/>
 <text text-anchor="middle" x="136.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">LiquidPhase</text>
 </a>
@@ -48,7 +51,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classReaktoro_1_1Phase.html" target="_top" xlink:title="A type used to define a phase and its attributes. ">
+<g id="a_node2"><a xlink:href="classReaktoro_1_1Phase.html" target="_top" xlink:title="A type used to define a phase and its attributes.">
 <polygon fill="white" stroke="black" points="66.5,-112.5 66.5,-131.5 110.5,-131.5 110.5,-112.5 66.5,-112.5"/>
 <text text-anchor="middle" x="88.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">Phase</text>
 </a>

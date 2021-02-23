@@ -1,3 +1,4 @@
 <map id="FluidMixture" name="FluidMixture">
-<area shape="rect" id="node2" href="$classReaktoro_1_1GeneralMixture.html" title="GeneralMixture\&lt; FluidSpecies \&gt;" alt="" coords="5,5,215,32"/>
+<area shape="rect" id="node1" title="Provides a computational representation of a fluid (gaseous or liquid) mixture." alt="" coords="63,80,157,107"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1GeneralMixture.html" title=" " alt="" coords="5,5,215,32"/>
 </map>

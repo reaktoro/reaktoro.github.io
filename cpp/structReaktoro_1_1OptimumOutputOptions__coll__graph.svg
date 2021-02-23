@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type that describes the options for the output of a optimisation calculation.">
 <polygon fill="#bfbfbf" stroke="black" points="33.76,-0.5 33.76,-19.5 152.76,-19.5 152.76,-0.5 33.76,-0.5"/>
 <text text-anchor="middle" x="93.26" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumOutputOptions</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1OutputterOptions.html" target="_top" xlink:title="OutputterOptions">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1OutputterOptions.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="47.76,-96 47.76,-115 138.76,-115 138.76,-96 47.76,-96"/>
 <text text-anchor="middle" x="93.26" y="-103" font-family="Helvetica,sans-Serif" font-size="10.00">OutputterOptions</text>
 </a>
@@ -33,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:title="STL class. ">
+<g id="a_node3"><a xlink:title="STL class.">
 <polygon fill="white" stroke="#bfbfbf" points="72.76,-169.5 72.76,-188.5 113.76,-188.5 113.76,-169.5 72.76,-169.5"/>
 <text text-anchor="middle" x="93.26" y="-176.5" font-family="Helvetica,sans-Serif" font-size="10.00">string</text>
 </a>
@@ -58,8 +61,11 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
+<g id="a_node5"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="156.76,-96 156.76,-115 261.76,-115 261.76,-96 156.76,-96"/>
 <text text-anchor="middle" x="209.26" y="-103" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; std::string &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node3&#45;&gt;Node5 -->
 <g id="edge6" class="edge">
@@ -71,7 +77,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:title="STL class. ">
+<g id="a_node4"><a xlink:title="STL class.">
 <polygon fill="white" stroke="#bfbfbf" points="40.26,-226.5 40.26,-245.5 146.26,-245.5 146.26,-226.5 40.26,-226.5"/>
 <text text-anchor="middle" x="93.26" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">basic_string&lt; char &gt;</text>
 </a>
@@ -88,9 +94,9 @@
 <title>Node5&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M190.69,-89.53C166.14,-69.74 123.69,-35.53 103.94,-19.61"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="188.58,-92.32 198.56,-95.87 192.97,-86.87 188.58,-92.32"/>
-<text text-anchor="middle" x="183.26" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00"> znames</text>
+<text text-anchor="middle" x="183.26" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00"> xnames</text>
 <text text-anchor="middle" x="183.26" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">ynames</text>
-<text text-anchor="middle" x="183.26" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">xnames</text>
+<text text-anchor="middle" x="183.26" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">znames</text>
 </g>
 </g>
 </svg>

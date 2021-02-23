@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 617;
+var viewWidth = 620;
 var viewHeight = 228;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,17 +54,20 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>AqueousMixtureState</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-223.5 613,-223.5 613,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-223.5 616,-223.5 616,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<polygon fill="#bfbfbf" stroke="black" points="499,-73 499,-92 609,-92 609,-73 499,-73"/>
-<text text-anchor="middle" x="554" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">AqueousMixtureState</text>
+<g id="a_node1"><a xlink:title="A type used to describe the state of an aqueous mixture.">
+<polygon fill="#bfbfbf" stroke="black" points="502,-73 502,-92 612,-92 612,-73 502,-73"/>
+<text text-anchor="middle" x="557" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">AqueousMixtureState</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1MixtureState.html" target="_top" xlink:title="A type used to describe the state of a mixture. ">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1MixtureState.html" target="_top" xlink:title="A type used to describe the state of a mixture.">
 <polygon fill="white" stroke="black" points="323,-155 323,-174 395,-174 395,-155 323,-155"/>
 <text text-anchor="middle" x="359" y="-162" font-family="Helvetica,sans-Serif" font-size="10.00">MixtureState</text>
 </a>
@@ -73,13 +76,13 @@ var sectionId = 'dynsection-1';
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M398.22,-151.59C422.27,-143.15 453.78,-131.5 481,-119.5 500.16,-111.05 521.41,-99.9 535.82,-92.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="397.04,-148.3 388.74,-154.89 399.34,-154.91 397.04,-148.3"/>
+<path fill="none" stroke="midnightblue" d="M399.19,-151.7C423.84,-143.3 456.14,-131.65 484,-119.5 503.19,-111.13 524.43,-99.97 538.84,-92.1"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="397.83,-148.47 389.47,-154.98 400.07,-155.1 397.83,-148.47"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classReaktoro_1_1Temperature.html" target="_top" xlink:title="A type that describes temperature in units of K. ">
+<g id="a_node3"><a xlink:href="classReaktoro_1_1Temperature.html" target="_top" xlink:title="A type that describes temperature in units of K.">
 <polygon fill="white" stroke="black" points="141.5,-200 141.5,-219 212.5,-219 212.5,-200 141.5,-200"/>
 <text text-anchor="middle" x="177" y="-207" font-family="Helvetica,sans-Serif" font-size="10.00">Temperature</text>
 </a>
@@ -95,7 +98,7 @@ var sectionId = 'dynsection-1';
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title="ThermoScalar">
+<g id="a_node4"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title="A template base class to represent a thermodynamic scalar and its partial derivatives.">
 <polygon fill="white" stroke="black" points="0,-180 0,-199 77,-199 77,-180 0,-180"/>
 <text text-anchor="middle" x="38.5" y="-187" font-family="Helvetica,sans-Serif" font-size="10.00">ThermoScalar</text>
 </a>
@@ -110,7 +113,7 @@ var sectionId = 'dynsection-1';
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classReaktoro_1_1Pressure.html" target="_top" xlink:title="A type that describes pressure in units of Pa. ">
+<g id="a_node5"><a xlink:href="classReaktoro_1_1Pressure.html" target="_top" xlink:title="A type that describes pressure in units of Pa.">
 <polygon fill="white" stroke="black" points="149,-162 149,-181 205,-181 205,-162 149,-162"/>
 <text text-anchor="middle" x="177" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">Pressure</text>
 </a>
@@ -132,7 +135,7 @@ var sectionId = 'dynsection-1';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classReaktoro_1_1ChemicalVectorBase.html" target="_top" xlink:title="ChemicalVectorBase\l\&lt; Vector, Vector, Vector,\l Matrix \&gt;">
+<g id="a_node6"><a xlink:href="classReaktoro_1_1ChemicalVectorBase.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="114,-95 114,-136 240,-136 240,-95 114,-95"/>
 <text text-anchor="start" x="122" y="-124" font-family="Helvetica,sans-Serif" font-size="10.00">ChemicalVectorBase</text>
 <text text-anchor="start" x="122" y="-113" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Vector, Vector, Vector,</text>
@@ -143,10 +146,10 @@ var sectionId = 'dynsection-1';
 <!-- Node6&#45;&gt;Node1 -->
 <g id="edge9" class="edge">
 <title>Node6&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M250.15,-110.71C311.59,-106.41 402.18,-99.54 481,-91.5 486.76,-90.91 492.78,-90.24 498.78,-89.55"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="249.9,-107.22 240.17,-111.4 250.39,-114.2 249.9,-107.22"/>
-<text text-anchor="middle" x="359" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00"> ms</text>
-<text text-anchor="middle" x="359" y="-110.5" font-family="Helvetica,sans-Serif" font-size="10.00">m</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M250.28,-110.77C312.34,-106.49 404.15,-99.62 484,-91.5 489.77,-90.91 495.78,-90.25 501.78,-89.55"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="249.94,-107.29 240.2,-111.47 250.41,-114.27 249.94,-107.29"/>
+<text text-anchor="middle" x="359" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00"> m</text>
+<text text-anchor="middle" x="359" y="-110.5" font-family="Helvetica,sans-Serif" font-size="10.00">ms</text>
 </g>
 <!-- Node6&#45;&gt;Node2 -->
 <g id="edge6" class="edge">
@@ -158,7 +161,7 @@ var sectionId = 'dynsection-1';
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title="ThermoScalarBase\&lt; double \&gt;">
+<g id="a_node7"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="286,-50 286,-69 432,-69 432,-50 286,-50"/>
 <text text-anchor="middle" x="359" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">ThermoScalarBase&lt; double &gt;</text>
 </a>
@@ -167,15 +170,15 @@ var sectionId = 'dynsection-1';
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge7" class="edge">
 <title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M442.4,-65.24C455.34,-66.45 468.55,-67.87 481,-69.5 488.43,-70.48 496.26,-71.69 503.91,-72.99"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="442.38,-61.72 432.1,-64.31 441.75,-68.7 442.38,-61.72"/>
-<text text-anchor="middle" x="465.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00"> rho</text>
-<text text-anchor="middle" x="465.5" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">epsilon</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M442.32,-65C456.25,-66.26 470.56,-67.75 484,-69.5 491.43,-70.47 499.26,-71.68 506.91,-72.97"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="442.52,-61.5 432.25,-64.12 441.91,-68.48 442.52,-61.5"/>
+<text text-anchor="middle" x="467" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00"> epsilon</text>
+<text text-anchor="middle" x="467" y="-72.5" font-family="Helvetica,sans-Serif" font-size="10.00">rho</text>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classReaktoro_1_1ChemicalScalarBase.html" target="_top" xlink:title="ChemicalScalarBase\l\&lt; double, RowVector \&gt;">
+<g id="a_node8"><a xlink:href="classReaktoro_1_1ChemicalScalarBase.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="300,-0.5 300,-30.5 418,-30.5 418,-0.5 300,-0.5"/>
 <text text-anchor="start" x="308" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChemicalScalarBase</text>
 <text text-anchor="middle" x="359" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; double, RowVector &gt;</text>
@@ -185,10 +188,10 @@ var sectionId = 'dynsection-1';
 <!-- Node8&#45;&gt;Node1 -->
 <g id="edge8" class="edge">
 <title>Node8&#45;&gt;Node1</title>
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M428.25,-24.8C445.78,-28.33 464.37,-33.11 481,-39.5 503.15,-48.02 526.28,-63.12 540.17,-72.97"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="428.55,-21.3 418.07,-22.87 427.24,-28.18 428.55,-21.3"/>
-<text text-anchor="middle" x="465.5" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00"> Is</text>
-<text text-anchor="middle" x="465.5" y="-42.5" font-family="Helvetica,sans-Serif" font-size="10.00">Ie</text>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M428.35,-24.34C446.77,-27.9 466.46,-32.8 484,-39.5 506.17,-47.97 529.3,-63.08 543.18,-72.95"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="428.73,-20.85 418.26,-22.5 427.47,-27.74 428.73,-20.85"/>
+<text text-anchor="middle" x="467" y="-53.5" font-family="Helvetica,sans-Serif" font-size="10.00"> Ie</text>
+<text text-anchor="middle" x="467" y="-42.5" font-family="Helvetica,sans-Serif" font-size="10.00">Is</text>
 </g>
 </g>
 </svg>

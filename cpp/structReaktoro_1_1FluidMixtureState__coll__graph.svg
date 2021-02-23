@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type used to describe the state of a fluid (gaseous or liquid) mixture.">
 <polygon fill="#bfbfbf" stroke="black" points="71,-0.5 71,-19.5 164,-19.5 164,-0.5 71,-0.5"/>
 <text text-anchor="middle" x="117.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">FluidMixtureState</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1MixtureState.html" target="_top" xlink:title="A type used to describe the state of a mixture. ">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1MixtureState.html" target="_top" xlink:title="A type used to describe the state of a mixture.">
 <polygon fill="white" stroke="black" points="81.5,-57.5 81.5,-76.5 153.5,-76.5 153.5,-57.5 81.5,-57.5"/>
 <text text-anchor="middle" x="117.5" y="-64.5" font-family="Helvetica,sans-Serif" font-size="10.00">MixtureState</text>
 </a>
@@ -33,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classReaktoro_1_1Temperature.html" target="_top" xlink:title="A type that describes temperature in units of K. ">
+<g id="a_node3"><a xlink:href="classReaktoro_1_1Temperature.html" target="_top" xlink:title="A type that describes temperature in units of K.">
 <polygon fill="white" stroke="black" points="0,-135.5 0,-154.5 71,-154.5 71,-135.5 0,-135.5"/>
 <text text-anchor="middle" x="35.5" y="-142.5" font-family="Helvetica,sans-Serif" font-size="10.00">Temperature</text>
 </a>
@@ -49,7 +52,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title="ThermoScalar">
+<g id="a_node4"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title="A template base class to represent a thermodynamic scalar and its partial derivatives.">
 <polygon fill="white" stroke="black" points="37,-203.5 37,-222.5 114,-222.5 114,-203.5 37,-203.5"/>
 <text text-anchor="middle" x="75.5" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">ThermoScalar</text>
 </a>
@@ -64,7 +67,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classReaktoro_1_1Pressure.html" target="_top" xlink:title="A type that describes pressure in units of Pa. ">
+<g id="a_node5"><a xlink:href="classReaktoro_1_1Pressure.html" target="_top" xlink:title="A type that describes pressure in units of Pa.">
 <polygon fill="white" stroke="black" points="89.5,-135.5 89.5,-154.5 145.5,-154.5 145.5,-135.5 89.5,-135.5"/>
 <text text-anchor="middle" x="117.5" y="-142.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pressure</text>
 </a>
@@ -86,7 +89,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classReaktoro_1_1ChemicalVectorBase.html" target="_top" xlink:title="ChemicalVectorBase\l\&lt; Vector, Vector, Vector,\l Matrix \&gt;">
+<g id="a_node6"><a xlink:href="classReaktoro_1_1ChemicalVectorBase.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="163.5,-124.5 163.5,-165.5 289.5,-165.5 289.5,-124.5 163.5,-124.5"/>
 <text text-anchor="start" x="171.5" y="-153.5" font-family="Helvetica,sans-Serif" font-size="10.00">ChemicalVectorBase</text>
 <text text-anchor="start" x="171.5" y="-142.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; Vector, Vector, Vector,</text>

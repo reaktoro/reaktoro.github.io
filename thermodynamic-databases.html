@@ -1,42 +1,46 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Thermodynamic Databases &mdash; Reaktoro  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Thermodynamic Backends" href="thermodynamic-backends.html" />
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -110,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -144,18 +150,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Thermodynamic Databases</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/thermodynamic-databases.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -180,8 +188,8 @@ reactions and their accompanying data, which include substance’s name and
 chemical formula, reaction equations, thermodynamic data and/or model
 parameters.</p>
 <div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>There are many thermodynamic databases available in the literature and they
+<p class="first admonition-title">Attention</p>
+<p class="last">There are many thermodynamic databases available in the literature and they
 are in general very different from each other. At the moment, there is no
 standard on how thermodynamic databases should be formatted. Some databases
 are based on chemical reactions and their equilibrium constants (e.g.,
@@ -191,19 +199,19 @@ temperature and pressure of interest (e.g., SUPCRT92 databases).</p>
 </div>
 <p>Reaktoro currently supports the following thermodynamic databases:</p>
 <ul class="simple">
-<li><p>SUPCRT92 databases;</p></li>
-<li><p>PHREEQC databases; and</p></li>
-<li><p>GEMS databases.</p></li>
+<li>SUPCRT92 databases;</li>
+<li>PHREEQC databases; and</li>
+<li>GEMS databases.</li>
 </ul>
 <div class="section" id="supcrt92-databases">
 <h2>SUPCRT92 Databases<a class="headerlink" href="#supcrt92-databases" title="Permalink to this headline">¶</a></h2>
 <div class="sidebar">
-<p class="sidebar-title">SUPCRT92 Database Files</p>
-<div class="line-block">
-<div class="line"><a class="reference download internal" download="" href="_downloads/46d8420cb9f33d28a7edb44a7f894f88/supcrt98.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt98.xml</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/8305025907f0c0196e0e180f2ed6d4c2/supcrt98-organics.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt98-organics.xml</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/8183b5fc52701dbee9830c5ca767d396/supcrt07.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt07.xml</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/2f52d97bc430441c793fdeb5ea7f7b06/supcrt07-organics.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt07-organics.xml</span></code></a></div>
+<p class="first sidebar-title">SUPCRT92 Database Files</p>
+<div class="last line-block">
+<div class="line"><a class="reference download internal" download="" href="_downloads/495cb2085fd30abcad27d902741016e2/supcrt98.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt98.xml</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/6300ea7ab2f8d134dc00ed9dab908358/supcrt98-organics.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt98-organics.xml</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/283cbff9c0215322e5b7d53167145a48/supcrt07.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt07.xml</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/723198f0e515339920c05da784b35f18/supcrt07-organics.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt07-organics.xml</span></code></a></div>
 </div>
 </div>
 <p>The SUPCRT92 thermodynamic databases supported in Reaktoro are presented next.
@@ -214,16 +222,16 @@ calculated using the revised <em>Helgeson-Kirkham-Flowers</em> (HKF) equations o
 state and, for the gases and minerals, a thermodynamic model based on
 Maier–Kelly heat capacity polynomial equation.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The thermodynamic databases <code class="docutils literal notranslate"><span class="pre">supcrt98.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">supcrt07.xml</span></code>, in XML
+<p class="first admonition-title">Note</p>
+<p class="last">The thermodynamic databases <code class="docutils literal notranslate"><span class="pre">supcrt98.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">supcrt07.xml</span></code>, in XML
 format, were derived, respectively, from the original SUPCRT92 database
-files <a class="reference download internal" download="" href="_downloads/0a6b6dfe14cc3ed477ab090343a6d4e9/slop98.dat"><code class="xref download docutils literal notranslate"><span class="pre">slop98.dat</span></code></a> and <a class="reference download internal" download="" href="_downloads/968d2637941604c918976bfa75dd9bfc/slop07.dat"><code class="xref download docutils literal notranslate"><span class="pre">slop07.dat</span></code></a>. In the process, <strong>all organic aqueous species
+files <a class="reference download internal" download="" href="_downloads/d140675a8961284c214411fb93dc2e64/slop98.dat"><code class="xref download docutils literal notranslate"><span class="pre">slop98.dat</span></code></a> and <a class="reference download internal" download="" href="_downloads/a0a1e0b4c201c5bc0c47c4f2e0fa180f/slop07.dat"><code class="xref download docutils literal notranslate"><span class="pre">slop07.dat</span></code></a>. In the process, <strong>all organic aqueous species
 were removed</strong>! If you need them in your modeling problem, you should then
 use instead <code class="docutils literal notranslate"><span class="pre">supcrt98-organics.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">supcrt07-organics.xml</span></code>.</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If your problem requires an aqueous phase without organic species and you
+<p class="first admonition-title">Tip</p>
+<p class="last">If your problem requires an aqueous phase without organic species and you
 are using an automatic initialization scheme for its construction (e.g.,
 creating an aqueous phase with all species in the database whose elements
 are H, O, C, or Ca), then make sure you are using one of the SUPCRT92
@@ -232,8 +240,8 @@ aqueous phase containing an extremely long list of organic species that
 will only serve to decrease the performance of the calculations.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The equation of state of Wagner and Pruss (2002) is used to calculate the
+<p class="first admonition-title">Note</p>
+<p class="last">The equation of state of Wagner and Pruss (2002) is used to calculate the
 thermodynamic properties of water and its temperature and pressure
 derivatives.</p>
 </div>
@@ -243,27 +251,27 @@ derivatives.</p>
 <p>Reaktoro can use <a class="reference external" href="https://wwwbrr.cr.usgs.gov/projects/GWC_coupled/phreeqc/">PHREEQC</a> as a <a class="reference internal" href="thermodynamic-backends.html#thermodynamic-backends"><span class="std std-ref">thermodynamic backend</span></a>, which permits us to take advantage of the rich collection of
 PHREEQC thermodynamic databases that are listed next.</p>
 <div class="sidebar">
-<p class="sidebar-title">PHREEQC Database Files</p>
-<div class="line-block">
-<div class="line"><a class="reference download internal" download="" href="_downloads/09a31449d17eb4c534ec4fd9446c9de4/Amm.dat"><code class="xref download docutils literal notranslate"><span class="pre">Amm.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/fe0a01f4dcf548f08fdd20540c037f4b/frezchem.dat"><code class="xref download docutils literal notranslate"><span class="pre">frezchem.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/f4a6b3016ebef45d2560b0ec4c66c68a/iso.dat"><code class="xref download docutils literal notranslate"><span class="pre">iso.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/aa9fd687f0e8c996d06556c7983b5e95/llnl.dat"><code class="xref download docutils literal notranslate"><span class="pre">llnl.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/b080234bbc9f5b0d057359f15b6e5653/minteq.dat"><code class="xref download docutils literal notranslate"><span class="pre">minteq.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/a66f7cb73fba207df13c5a3e7c06e7cc/minteq.v4.dat"><code class="xref download docutils literal notranslate"><span class="pre">minteq.v4.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/1620356b3bb3f18596e4d59933d58fd5/phreeqc.dat"><code class="xref download docutils literal notranslate"><span class="pre">phreeqc.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/e5eb26a501650ae16b2f161292fc1e84/pitzer.dat"><code class="xref download docutils literal notranslate"><span class="pre">pitzer.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/fbbc97e1b52d207c56e74ba8c9d76269/sit.dat"><code class="xref download docutils literal notranslate"><span class="pre">sit.dat</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/559d241aed6148db83733db70fe3923e/wateq4f.dat"><code class="xref download docutils literal notranslate"><span class="pre">wateq4f.dat</span></code></a></div>
+<p class="first sidebar-title">PHREEQC Database Files</p>
+<div class="last line-block">
+<div class="line"><a class="reference download internal" download="" href="_downloads/2da50f5730491a2c0bebc0ead6c962a3/Amm.dat"><code class="xref download docutils literal notranslate"><span class="pre">Amm.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/bb5b8834981205a1a85241fe1fec373c/frezchem.dat"><code class="xref download docutils literal notranslate"><span class="pre">frezchem.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/f673763f9e41e59c5b250e021dab935d/iso.dat"><code class="xref download docutils literal notranslate"><span class="pre">iso.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/82a38ffbd7df999a42475925897f9ea3/llnl.dat"><code class="xref download docutils literal notranslate"><span class="pre">llnl.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/be9779c4f3b6d326ddd0c6311baa9b57/minteq.dat"><code class="xref download docutils literal notranslate"><span class="pre">minteq.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/a8a2409ca9f9351a0a9fca31017300f6/minteq.v4.dat"><code class="xref download docutils literal notranslate"><span class="pre">minteq.v4.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/7a5e17848f01647656e063623ac77bd3/phreeqc.dat"><code class="xref download docutils literal notranslate"><span class="pre">phreeqc.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/87d349f87f65b660a0facde84bd94f53/pitzer.dat"><code class="xref download docutils literal notranslate"><span class="pre">pitzer.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/a042d3fda6fbddfb314aa0ad6393f0c8/sit.dat"><code class="xref download docutils literal notranslate"><span class="pre">sit.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/7ee80dcfe45e3339e1e56b37bdcb5984/wateq4f.dat"><code class="xref download docutils literal notranslate"><span class="pre">wateq4f.dat</span></code></a></div>
 </div>
 </div>
 </div>
 <div class="section" id="gems-databases">
 <h2>GEMS Databases<a class="headerlink" href="#gems-databases" title="Permalink to this headline">¶</a></h2>
 <p>Reaktoro can also use GEMS as a <a class="reference internal" href="thermodynamic-backends.html#thermodynamic-backends"><span class="std std-ref">thermodynamic backend</span></a> and take advantage of its databases.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Write about GEMS databases.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Write about GEMS databases.</p>
 </div>
 </div>
 </div>
@@ -273,29 +281,29 @@ PHREEQC thermodynamic databases that are listed next.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="thermodynamic-backends.html" class="btn btn-neutral float-right" title="Thermodynamic Backends" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="tutorials/transport/reactive-transport-calcite-dolomite-custom.html" class="btn btn-neutral float-left" title="Coupling Reaktoro into other reactive transport codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="thermodynamic-backends.html" class="btn btn-neutral float-right" title="Thermodynamic Backends" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorials/transport/reactive-transport-calcite-dolomite-custom.html" class="btn btn-neutral float-left" title="Coupling Reaktoro into other reactive transport codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Allan Leal and Reaktoro contributors
+        &#169; Copyright 2018, Allan Leal and Reaktoro contributors.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -303,7 +311,6 @@ PHREEQC thermodynamic databases that are listed next.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

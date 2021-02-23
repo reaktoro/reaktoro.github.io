@@ -1,42 +1,46 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Solubility of CO2 in NaCl brines &mdash; Reaktoro  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Tutorials: Chemical Kinetics" href="../kinetics/index.html" />
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -113,6 +118,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -147,11 +153,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">Tutorials: Chemical Equilibrium</a> &raquo;</li>
         
@@ -160,7 +168,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../_sources/tutorials/equilibrium/co2-solubility-nacl-brine.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -191,13 +199,13 @@ equilibrium state</em>, from which we can inspect how much CO<sub>2</sub> exists
 gaseous phase and compare this with the initial amount of CO<sub>2</sub> we used to mix
 with H<sub>2</sub>O and NaCl.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Our <strong>1 molal NaCl brine</strong> is here represented by the mixture of 1 kg of H<sub>2</sub>O
+<p class="first admonition-title">Note</p>
+<p class="last">Our <strong>1 molal NaCl brine</strong> is here represented by the mixture of 1 kg of H<sub>2</sub>O
 and 1 mol of NaCl.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Given that the mole mass of CO<sub>2</sub> is roughly 44 g/mol, 10 mol of CO<sub>2</sub> is
+<p class="first admonition-title">Note</p>
+<p class="last">Given that the mole mass of CO<sub>2</sub> is roughly 44 g/mol, 10 mol of CO<sub>2</sub> is
 approximately 440 g! Mixing this amount of CO<sub>2</sub> with 1 kg of H<sub>2</sub>O will most
 likely result in a chemical equilibrium state in which the aqueous phase is
 saturated with CO<sub>2</sub> and the remaining CO<sub>2</sub> exists as a gas (or super-critical
@@ -238,13 +246,13 @@ CO<sub>2</sub> in a 1 molal NaCl brine at temperature 60 °C and pressure 100 ba
 <span class="n">state</span><span class="p">.</span><span class="nf">output</span><span class="p">(</span><span class="s1">&#39;result.txt&#39;</span><span class="p">)</span>
 
 <span class="c1"># Step 8: Print the amounts of some aqueous species</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of CO2(aq):&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CO2(aq)&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of HCO3-:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;HCO3-&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of CO3--:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CO3--&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of CO2(aq):&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CO2(aq)&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of HCO3-:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;HCO3-&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of CO3--:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CO3--&#39;</span><span class="p">))</span>
 
 <span class="c1"># Step 9: Print the amounts of element C in both aqueous and gaseous phases</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of C in aqueous phase:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">elementAmountInPhase</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Aqueous&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of C in gaseous phase:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">elementAmountInPhase</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaseous&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of C in aqueous phase:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">elementAmountInPhase</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Aqueous&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of C in gaseous phase:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">elementAmountInPhase</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaseous&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>You find next a step-by-step explanation of the above script.</p>
@@ -259,8 +267,8 @@ CO<sub>2</sub> in a 1 molal NaCl brine at temperature 60 °C and pressure 100 ba
 Reaktoro (classes, methods, constants), which are needed to define our chemical
 system and chemical reaction modeling problems.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To simplify the tutorials, we use <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">reaktoro</span> <span class="pre">import</span> <span class="pre">*</span></code>, which imports
+<p class="first admonition-title">Note</p>
+<p class="last">To simplify the tutorials, we use <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">reaktoro</span> <span class="pre">import</span> <span class="pre">*</span></code>, which imports
 all components of the <strong>reaktoro</strong> package into the default Python
 namespace, which can potentially create name conflicts. For your
 applications, consider instead using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">reaktoro</span> <span class="pre">as</span> <span class="pre">rkt</span></code>,
@@ -281,22 +289,22 @@ Gibbs energies, equilibrium constants).</p>
 <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="p">(</span><span class="s1">&#39;supcrt98.xml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>we initialize a <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1Database.html">Database</a> object with the <a class="reference download internal" download="" href="../../_downloads/94b1041af6e0e9abfea72a98d75ef149/supcrt98.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt98.xml</span></code></a> database
+<p>we initialize a <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1Database.html">Database</a> object with the <a class="reference download internal" download="" href="../../_downloads/495cb2085fd30abcad27d902741016e2/supcrt98.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt98.xml</span></code></a> database
 file. This database was generated from the original SUPCRT92 database file
-<a class="reference download internal" download="" href="../../_downloads/377362af7c579c23cea33781c5a669f5/slop98.dat"><code class="xref download docutils literal notranslate"><span class="pre">slop98.dat</span></code></a>. You are welcome to inspect these files and learn more about the
+<a class="reference download internal" download="" href="../../_downloads/d140675a8961284c214411fb93dc2e64/slop98.dat"><code class="xref download docutils literal notranslate"><span class="pre">slop98.dat</span></code></a>. You are welcome to inspect these files and learn more about the
 chemical species available in them. You can also read more about the available
 thermodynamic databases supported in Reaktoro at <a class="reference internal" href="../../thermodynamic-databases.html#thermodynamic-databases"><span class="std std-ref">Thermodynamic Databases</span></a>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>All SUPCRT92 thermodynamic databases have been embedded into Reaktoro.
+<p class="first admonition-title">Note</p>
+<p class="last">All SUPCRT92 thermodynamic databases have been embedded into Reaktoro.
 Thus, you don’t actually need to have a database file named
 <code class="docutils literal notranslate"><span class="pre">supcrt98.xml</span></code> in a local directory when initializing the <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1Database.html">Database</a>
 object. If you want to use a customized database file, however, also named
 <code class="docutils literal notranslate"><span class="pre">supcrt98.xml</span></code>, then your local file will be used instead.</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you are using a customized version of a thermodynamic database, consider
+<p class="first admonition-title">Tip</p>
+<p class="last">If you are using a customized version of a thermodynamic database, consider
 changing its name (e.g., <code class="docutils literal notranslate"><span class="pre">custom-supcrt98.xml</span></code>) to avoid accidental
 use of an embedded database. This can happen if you do not give a correct
 path to your custom database file.</p>
@@ -323,8 +331,8 @@ those aqueous species in the selected thermodynamic database that can be
 created by combining the chemical elements H, O, Na, Cl, and C. The gaseous
 phase is defined with only one gaseous species: CO<sub>2</sub>(g).</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The selected elements H, O, Na, Cl, and C in the definition of the aqueous
+<p class="first admonition-title">Note</p>
+<p class="last">The selected elements H, O, Na, Cl, and C in the definition of the aqueous
 phase and the choice of CO<sub>2</sub>(g) as the single gaseous species composing the
 gaseous phase consistently represent our intentions of calculating the
 solubility of CO<sub>2</sub> in a NaCl brine. If we decide to do a similar
@@ -332,7 +340,7 @@ computation, but with a NaCl-MgCl<sub>2</sub>-CaCl<sub>2</sub> brine, then that 
 of elements would need to be incremented with Mg and Ca.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>An automatic search for chemical species can result in a large number of
 species in the phase, potentially causing the chemical reaction
 calculations to be more computationally expensive. If you are using
@@ -357,19 +365,19 @@ had done instead:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">editor</span><span class="p">.</span><span class="nf">addGaseousPhase</span><span class="p">(</span><span class="s1">&#39;C O&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>then other gases would be considered, such as CO(g) and O2(g), which are
+<p class="last">then other gases would be considered, such as CO(g) and O2(g), which are
 not of interest in our modeling problem.</p>
 </div>
 <div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>If you manually specify the chemical species in a phase, you need to make
+<p class="first admonition-title">Caution</p>
+<p class="last">If you manually specify the chemical species in a phase, you need to make
 sure that they exist in the thermodynamic database with the <strong>exact same
 name</strong>! Replacing <code class="docutils literal notranslate"><span class="pre">'CO2(g)'</span></code> above with <code class="docutils literal notranslate"><span class="pre">'CO2'</span></code> will cause an error if
 the database has no gaseous species with such a name.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>By default, <em>activities</em> of the aqueous species are calculated using the
+<p class="first admonition-title">Note</p>
+<p class="last">By default, <em>activities</em> of the aqueous species are calculated using the
 <em>HKF extended Debye-Hückel model</em> for solvent water and ionic species,
 except for the aqueous species CO<sub>2</sub> (aq), for which the <em>Drummond model</em>
 is used. For gases, Peng-Robinson equation of state is used. For different
@@ -386,8 +394,8 @@ classes <a class="reference external" href="https://reaktoro.org/cpp/classReakto
 <p>This step is where we create an object of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> using the
 chemical system definition details stored in the object <code class="docutils literal notranslate"><span class="pre">editor</span></code>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> is perhaps the main class in Reaktoro. An object of this
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> is perhaps the main class in Reaktoro. An object of this
 class stores the phases, species and elements in our defined chemical
 system, as well as provides the means to compute many types of thermodynamic
 properties, such as <em>standard thermodynamic properties</em> (e.g., standard
@@ -416,8 +424,8 @@ solubility of CO<sub>2</sub> at 60 °C and 100 bar in a 1 molal NaCl brine.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Did you pay attention we said prescribed equilibrium conditions for the
+<p class="first admonition-title">Note</p>
+<p class="last">Did you pay attention we said prescribed equilibrium conditions for the
 <em>amounts of elements</em>? Since we actually provided the amounts of substances
 H<sub>2</sub>O, NaCl, and CO<sub>2</sub> in the above code, this statement seems a little bit
 confusing at least. Here is what happens behind the scenes: Reaktoro parses
@@ -432,7 +440,7 @@ Gibbs energy and at the same time satisfying the <em>element amounts
 constraints</em>).</p>
 </div>
 <div class="admonition danger">
-<p class="admonition-title">Danger</p>
+<p class="first admonition-title">Danger</p>
 <p>Now that you know that an equivalent chemical equilibrium problem could be defined with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">problem</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H&#39;</span> <span class="mf">111.0</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
 <span class="n">problem</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;O&#39;</span> <span class="mf">75.5</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
@@ -445,15 +453,15 @@ constraints</em>).</p>
 <em>adventure</em> in manually specifying different values for the amounts of
 elements. Just be extra careful with the values you provide as this could
 accidentally result in an <em>infeasible</em> chemical equilibrium state.</p>
-<p>Here is a simple example of element amount conditions that result in an
+<p class="last">Here is a simple example of element amount conditions that result in an
 infeasible equilibrium state. Consider a chemical system containing only a
 gaseous phase with gases H<sub>2</sub>O(g) and CO<sub>2</sub>(g). Find non-negative amounts for
 H<sub>2</sub>O(g) and CO<sub>2</sub>(g) when the given amounts of elements are: 2 mol of H, 1 mol
 of O, and 1 mol of C.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Please note that we are not condemning the input form shown above in terms
+<p class="first admonition-title">Note</p>
+<p class="last">Please note that we are not condemning the input form shown above in terms
 of element amounts, but only telling you to be attentive with the values
 you input. If you are using Reaktoro as a chemical reaction solver in a
 reactive transport simulator, for example, you’ll most likely need to work
@@ -463,8 +471,8 @@ often only need to ensure that the initial conditions for elements amounts
 result in feasible initial species’ amounts.</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The substance formulas given in the method <code class="docutils literal notranslate"><span class="pre">add</span></code> of class
+<p class="first admonition-title">Tip</p>
+<p class="last">The substance formulas given in the method <code class="docutils literal notranslate"><span class="pre">add</span></code> of class
 <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumProblem.html">EquilibriumProblem</a> <strong>can, but do not need to</strong>, correspond to names of
 chemical species in the thermodynamic database. Even unusual, if not
 strange, substance formulas, such as HCl3(NaO)4C13, would be understood by
@@ -472,8 +480,8 @@ that method. <em>We do not promise, however, that you will obtain a feasible
 chemical equilibrium state with unrealistic conditions!</em></p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In Reaktoro, the word <em>element</em> is used as a synonym of <em>components</em> of
+<p class="first admonition-title">Note</p>
+<p class="last">In Reaktoro, the word <em>element</em> is used as a synonym of <em>components</em> of
 chemical species, and not necessarily chemical elements. Electric charge,
 for example, is considered as an element, even though it is technically not.
 Thus, we say the ionic species CO<sub>3</sub><sup>2-</sup> is composed
@@ -481,7 +489,7 @@ of elements C, O, and Z, with coefficients 1, 3, and -2 respectively, where
 Z is the symbol we use to denote the electric charge element.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="first admonition-title">Warning</p>
 <p>Prefer the use of neutral substances when using the method <code class="docutils literal notranslate"><span class="pre">add</span></code> of class
 <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumProblem.html">EquilibriumProblem</a>, unless you definitely need to add a charged, ionic
 species in the recipe. The following code:</p>
@@ -496,7 +504,7 @@ your intention. The following:</p>
 <span class="n">problem</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;Cl-&#39;</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;mmol&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>would result in the amount of element Z equal to zero.</p>
+<p class="last">would result in the amount of element Z equal to zero.</p>
 </div>
 </div>
 <div class="section" id="calculating-the-chemical-equilibrium-state">
@@ -514,15 +522,15 @@ the prescribed amount conditions for the temperature, pressure, and element
 amounts. The result is stored in the object <code class="docutils literal notranslate"><span class="pre">state</span></code>, of class
 <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a>.</p>
 <div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>In the vast majority of cases, you’ll only have one object of class
+<p class="first admonition-title">Attention</p>
+<p class="last">In the vast majority of cases, you’ll only have one object of class
 <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> in your code and one or more objects of class
 <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a> describing different states of your chemical system!
 Reaktoro differentiates these two independent concepts: <em>chemical system
 definition</em> and <em>chemical system state</em>.</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="first admonition-title">Tip</p>
 <p>The method <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code> is a convenient function in Reaktoro. Consider
 using the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a> for more advanced requirements. For
 example, if you have to perform many equilibrium calculations in sequence.
@@ -530,7 +538,7 @@ The <code class="docutils literal notranslate"><span class="pre">equilibrate</sp
 creates a new object of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a>. Preferably, this
 object should be created only once, and then used subsequently for all
 other equilibrium calculations. Here is a demonstration:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span> <span class="c1"># Our chemical equilibrium solver</span>
+<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span> <span class="c1"># Our chemical equilibrium solver</span>
 <span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>  <span class="c1"># Our chemical state</span>
 
 <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">problem</span><span class="p">)</span>  <span class="c1"># Initial equilibrium calculation</span>
@@ -562,9 +570,9 @@ which can be done by outputting the chemical state to a file, here named
 <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a> to extract the amount of a few chemical species. Please
 inspect the API of <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a> class to learn more about its methods.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 8: Print the amounts of some aqueous species</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of CO2(aq):&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CO2(aq)&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of HCO3-:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;HCO3-&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of CO3--:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CO3--&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of CO2(aq):&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CO2(aq)&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of HCO3-:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;HCO3-&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of CO3--:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CO3--&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -573,8 +581,8 @@ inspect the API of <a class="reference external" href="https://reaktoro.org/cpp/
 <p>Finally, we print the amounts of element C in both aqueous and gaseous
 phases:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 9: Print the amounts of element C in both aqueous and gaseous phases</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of C in aqueous phase:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">elementAmountInPhase</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Aqueous&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Amount of C in gaseous phase:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">elementAmountInPhase</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaseous&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of C in aqueous phase:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">elementAmountInPhase</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Aqueous&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Amount of C in gaseous phase:&#39;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">elementAmountInPhase</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaseous&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>In this specific case, in which there was no initial element C in the aqueous
@@ -582,8 +590,8 @@ phase, the value corresponding to the amount of element C in the aqueous phase
 is our solubility of CO<sub>2</sub> in the NaCl brine with the previously prescribed
 conditions.</p>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If we had used 2 kg of H<sub>2</sub>O, we would have needed to divide the calculated
+<p class="first admonition-title">Tip</p>
+<p class="last">If we had used 2 kg of H<sub>2</sub>O, we would have needed to divide the calculated
 amount of element C in the aqueous phase by 2 to obtain the solubility in
 molal (mol per kg of H<sub>2</sub>O).</p>
 </div>
@@ -604,29 +612,29 @@ one yet!</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../kinetics/index.html" class="btn btn-neutral float-right" title="Tutorials: Chemical Kinetics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Tutorials: Chemical Equilibrium" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../kinetics/index.html" class="btn btn-neutral float-right" title="Tutorials: Chemical Kinetics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Tutorials: Chemical Equilibrium" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Allan Leal and Reaktoro contributors
+        &#169; Copyright 2018, Allan Leal and Reaktoro contributors.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -634,7 +642,6 @@ one yet!</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,42 +1,46 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Coupling Reaktoro into other reactive transport codes &mdash; Reaktoro  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Thermodynamic Databases" href="../../thermodynamic-databases.html" />
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -114,6 +119,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -148,11 +154,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">Tutorials: Chemical Transport</a> &raquo;</li>
         
@@ -161,7 +169,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../_sources/tutorials/transport/reactive-transport-calcite-dolomite-custom.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -194,7 +202,7 @@ explanation of the full script found at the end of this tutorial.</p>
 numerical calculations and plotting.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">delayed</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">time</span>
 </pre></div>
@@ -411,7 +419,7 @@ detailed explanation in the subsequent sections):</p>
         <span class="n">ndigits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nsteps</span><span class="p">))</span>
 
         <span class="c1"># Provide the output file name, which will correspond</span>
-        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/{}.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/</span><span class="si">{}</span><span class="s1">.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
 
         <span class="c1"># We define the columns&#39; tags filled with the name of the quantities</span>
         <span class="c1"># The first column has a tag &#39;x&#39; (which corresponds to the center coordinates of the cells )</span>
@@ -433,7 +441,7 @@ detailed explanation in the subsequent sections):</p>
 
     <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="n">nsteps</span><span class="p">:</span>
         <span class="c1"># Print the progress of the simulation</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Progress: {}/{} steps, {} min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Progress: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2"> steps, </span><span class="si">{}</span><span class="s2"> min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
 
         <span class="c1"># Output the current state of the reactive transport calculation</span>
         <span class="nf">outputstate</span><span class="p">()</span>
@@ -458,7 +466,7 @@ detailed explanation in the subsequent sections):</p>
         <span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span>
         <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We now explain step-by-step the function <code class="docutils literal notranslate"><span class="pre">simulate</span></code>. We begin by defining the
@@ -658,7 +666,7 @@ output quantities and properties at each mesh cell, at every time step.</p>
         <span class="n">ndigits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nsteps</span><span class="p">))</span>
 
         <span class="c1"># Provide the output file name, which will correspond</span>
-        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/{}.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/</span><span class="si">{}</span><span class="s1">.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
 
         <span class="c1"># We define the columns&#39; tags filled with the name of the quantities</span>
         <span class="c1"># The first column has a tag &#39;x&#39; (which corresponds to the center coordinates of the cells )</span>
@@ -685,7 +693,7 @@ time and a counter for the number of time steps.</p>
 
     <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="n">nsteps</span><span class="p">:</span>
         <span class="c1"># Print the progress of the simulation</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Progress: {}/{} steps, {} min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Progress: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2"> steps, </span><span class="si">{}</span><span class="s2"> min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
 
         <span class="c1"># Output the current state of the reactive transport calculation</span>
         <span class="nf">outputstate</span><span class="p">()</span>
@@ -710,7 +718,7 @@ time and a counter for the number of time steps.</p>
         <span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span>
         <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The reactive transport simulation continues until the maximum number of time
@@ -805,9 +813,9 @@ as the Thomas algorithm:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">():</span>
     <span class="c1"># Plot all result files</span>
     <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">(</span><span class="s1">&#39;results&#39;</span><span class="p">))</span>
-    <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">16</span><span class="p">)(</span><span class="nf">delayed</span><span class="p">(</span><span class="n">plotfile</span><span class="p">)(</span><span class="nb">file</span><span class="p">)</span> <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">)</span>
+    <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">16</span><span class="p">)(</span><span class="nf">delayed</span><span class="p">(</span><span class="n">plotfile</span><span class="p">)(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">)</span>
     <span class="c1"># Create videos for the figures</span>
-    <span class="n">ffmpegstr</span> <span class="o">=</span> <span class="s1">&#39;ffmpeg -y -r 30 -i figures/{0}/</span><span class="si">%03d</span><span class="s1">.png -codec:v mpeg4 -flags:v +qscale -global_quality:v 0 videos/{0}.mp4&#39;</span>
+    <span class="n">ffmpegstr</span> <span class="o">=</span> <span class="s1">&#39;ffmpeg -y -r 30 -i figures/</span><span class="si">{0}</span><span class="s1">/</span><span class="si">%03d</span><span class="s1">.png -codec:v mpeg4 -flags:v +qscale -global_quality:v 0 videos/</span><span class="si">{0}</span><span class="s1">.mp4&#39;</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;calcite-dolomite&#39;</span><span class="p">))</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;aqueous-species&#39;</span><span class="p">))</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;ph&#39;</span><span class="p">))</span>
@@ -816,7 +824,7 @@ as the Thomas algorithm:</p>
 <p>The full script for the reactive transport calculation is shown below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">delayed</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">time</span>
 
@@ -959,7 +967,7 @@ as the Thomas algorithm:</p>
         <span class="n">ndigits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nsteps</span><span class="p">))</span>
 
         <span class="c1"># Provide the output file name, which will correspond</span>
-        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/{}.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+        <span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/</span><span class="si">{}</span><span class="s1">.txt&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
 
         <span class="c1"># We define the columns&#39; tags filled with the name of the quantities</span>
         <span class="c1"># The first column has a tag &#39;x&#39; (which corresponds to the center coordinates of the cells )</span>
@@ -981,7 +989,7 @@ as the Thomas algorithm:</p>
 
     <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="n">nsteps</span><span class="p">:</span>
         <span class="c1"># Print the progress of the simulation</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Progress: {}/{} steps, {} min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Progress: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2"> steps, </span><span class="si">{}</span><span class="s2"> min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
 
         <span class="c1"># Output the current state of the reactive transport calculation</span>
         <span class="nf">outputstate</span><span class="p">()</span>
@@ -1006,7 +1014,7 @@ as the Thomas algorithm:</p>
         <span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span>
         <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># Step 10: Return a string for the title of a figure in the format Time: #h##m</span>
@@ -1014,17 +1022,17 @@ as the Thomas algorithm:</p>
     <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">/</span> <span class="n">minute</span>   <span class="c1"># Convert from seconds to minutes</span>
     <span class="n">h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span>  <span class="c1"># The number of hours</span>
     <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">%</span> <span class="mi">60</span>  <span class="c1"># The number of remaining minutes</span>
-    <span class="k">return</span> <span class="s1">&#39;Time: {:&gt;3}h{:&gt;2}m&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="s1">&#39;Time: </span><span class="si">{:&gt;3}</span><span class="s1">h</span><span class="si">{:&gt;2}</span><span class="s1">m&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 
 
 <span class="c1"># Step 9: Generate figures for a result file</span>
-<span class="k">def</span> <span class="nf">plotfile</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
-    <span class="n">step</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">plotfile</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Plotting figure&#39;</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="s1">&#39;...&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Plotting figure&#39;</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="s1">&#39;...&#39;</span><span class="p">)</span>
 
     <span class="n">t</span> <span class="o">=</span> <span class="n">step</span> <span class="o">*</span> <span class="n">dt</span>
-    <span class="n">filearray</span> <span class="o">=</span> <span class="nf">loadtxt</span><span class="p">(</span><span class="s1">&#39;results/&#39;</span> <span class="o">+</span> <span class="nb">file</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">filearray</span> <span class="o">=</span> <span class="nf">loadtxt</span><span class="p">(</span><span class="s1">&#39;results/&#39;</span> <span class="o">+</span> <span class="n">file</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">filearray</span><span class="o">.</span><span class="n">T</span>
 
     <span class="n">ndigits</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nsteps</span><span class="p">))</span>
@@ -1037,7 +1045,7 @@ as the Thomas algorithm:</p>
     <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/ph/{}.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/ph/</span><span class="si">{}</span><span class="s1">.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
 
     <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">xlim</span><span class="p">(</span><span class="n">left</span><span class="o">=-</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.52</span><span class="p">)</span>
@@ -1045,12 +1053,12 @@ as the Thomas algorithm:</p>
     <span class="n">plt</span><span class="p">.</span><span class="nf">ticklabel_format</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;sci&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">scilimits</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="nf">titlestr</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="s1">&#39;Distance [m]&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="s1">&#39;Mineral Volume [%$_{\mathsf{vol}}$]&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="s1">&#39;Mineral Volume [%$_{\mathsf</span><span class="si">{vol}</span><span class="s1">}$]&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Calcite&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center right&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/calcite-dolomite/{}.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/calcite-dolomite/</span><span class="si">{}</span><span class="s1">.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
 
     <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
@@ -1066,7 +1074,7 @@ as the Thomas algorithm:</p>
     <span class="n">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;H+&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
-    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/aqueous-species/{}.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="s1">&#39;figures/aqueous-species/</span><span class="si">{}</span><span class="s1">.png&#39;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span><span class="o">.</span><span class="nf">zfill</span><span class="p">(</span><span class="n">ndigits</span><span class="p">)))</span>
 
     <span class="n">plt</span><span class="p">.</span><span class="nf">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 
@@ -1075,9 +1083,9 @@ as the Thomas algorithm:</p>
 <span class="k">def</span> <span class="nf">plot</span><span class="p">():</span>
     <span class="c1"># Plot all result files</span>
     <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">(</span><span class="s1">&#39;results&#39;</span><span class="p">))</span>
-    <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">16</span><span class="p">)(</span><span class="nf">delayed</span><span class="p">(</span><span class="n">plotfile</span><span class="p">)(</span><span class="nb">file</span><span class="p">)</span> <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">)</span>
+    <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">16</span><span class="p">)(</span><span class="nf">delayed</span><span class="p">(</span><span class="n">plotfile</span><span class="p">)(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">)</span>
     <span class="c1"># Create videos for the figures</span>
-    <span class="n">ffmpegstr</span> <span class="o">=</span> <span class="s1">&#39;ffmpeg -y -r 30 -i figures/{0}/</span><span class="si">%03d</span><span class="s1">.png -codec:v mpeg4 -flags:v +qscale -global_quality:v 0 videos/{0}.mp4&#39;</span>
+    <span class="n">ffmpegstr</span> <span class="o">=</span> <span class="s1">&#39;ffmpeg -y -r 30 -i figures/</span><span class="si">{0}</span><span class="s1">/</span><span class="si">%03d</span><span class="s1">.png -codec:v mpeg4 -flags:v +qscale -global_quality:v 0 videos/</span><span class="si">{0}</span><span class="s1">.mp4&#39;</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;calcite-dolomite&#39;</span><span class="p">))</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;aqueous-species&#39;</span><span class="p">))</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="n">ffmpegstr</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s1">&#39;ph&#39;</span><span class="p">))</span>
@@ -1142,9 +1150,9 @@ as the Thomas algorithm:</p>
     <span class="nf">plot</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Add figures and videos here in this tutorial.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add figures and videos here in this tutorial.</p>
 </div>
 </div>
 <div class="section" id="have-you-got-an-issue">
@@ -1163,29 +1171,29 @@ one yet!</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../../thermodynamic-databases.html" class="btn btn-neutral float-right" title="Thermodynamic Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="reactivetransportsolver-calcite-brine.html" class="btn btn-neutral float-left" title="Reactive transport of CO2-saturated brine along a porous rock column" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../../thermodynamic-databases.html" class="btn btn-neutral float-right" title="Thermodynamic Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="reactivetransportsolver-calcite-brine.html" class="btn btn-neutral float-left" title="Reactive transport of CO2-saturated brine along a porous rock column" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Allan Leal and Reaktoro contributors
+        &#169; Copyright 2018, Allan Leal and Reaktoro contributors.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1193,7 +1201,6 @@ one yet!</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

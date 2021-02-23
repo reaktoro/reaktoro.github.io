@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A wrapper class for Gems code.">
 <polygon fill="#bfbfbf" stroke="black" points="6,-0.5 6,-19.5 49,-19.5 49,-0.5 6,-0.5"/>
 <text text-anchor="middle" x="27.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Gems</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classReaktoro_1_1Interface.html" target="_top" xlink:title="A class used to interface other codes with Reaktoro. ">
+<g id="a_node2"><a xlink:href="classReaktoro_1_1Interface.html" target="_top" xlink:title="A class used to interface other codes with Reaktoro.">
 <polygon fill="white" stroke="black" points="0,-56.5 0,-75.5 55,-75.5 55,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="27.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">Interface</text>
 </a>

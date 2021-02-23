@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="black" points="18,-0.5 18,-19.5 128,-19.5 128,-0.5 18,-0.5"/>
 <text text-anchor="middle" x="73" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">WaterHelmholtzState</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title="ThermoScalarBase\&lt; double \&gt;">
+<g id="a_node2"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="0,-177.5 0,-196.5 146,-196.5 146,-177.5 0,-177.5"/>
 <text text-anchor="middle" x="73" y="-184.5" font-family="Helvetica,sans-Serif" font-size="10.00">ThermoScalarBase&lt; double &gt;</text>
 </a>
@@ -29,16 +32,16 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M73,-166.95C73,-129.3 73,-46.65 73,-19.69"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="69.5,-167.08 73,-177.08 76.5,-167.08 69.5,-167.08"/>
-<text text-anchor="middle" x="105.5" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00"> helmholtzTD</text>
-<text text-anchor="middle" x="105.5" y="-140" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzDD</text>
-<text text-anchor="middle" x="105.5" y="-129" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzTT</text>
+<text text-anchor="middle" x="105.5" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00"> helmholtz</text>
+<text text-anchor="middle" x="105.5" y="-140" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzD</text>
+<text text-anchor="middle" x="105.5" y="-129" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzDD</text>
 <text text-anchor="middle" x="105.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzDDD</text>
-<text text-anchor="middle" x="105.5" y="-107" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzTTD</text>
-<text text-anchor="middle" x="105.5" y="-96" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtz</text>
+<text text-anchor="middle" x="105.5" y="-107" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzT</text>
+<text text-anchor="middle" x="105.5" y="-96" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzTD</text>
 <text text-anchor="middle" x="105.5" y="-85" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzTDD</text>
-<text text-anchor="middle" x="105.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzTTT</text>
-<text text-anchor="middle" x="105.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzD</text>
-<text text-anchor="middle" x="105.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzT</text>
+<text text-anchor="middle" x="105.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzTT</text>
+<text text-anchor="middle" x="105.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzTTD</text>
+<text text-anchor="middle" x="105.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">helmholtzTTT</text>
 <text text-anchor="middle" x="105.5" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">...</text>
 </g>
 </g>

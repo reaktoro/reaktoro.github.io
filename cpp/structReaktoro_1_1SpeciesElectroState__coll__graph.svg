@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#bfbfbf" stroke="black" points="20,-0.5 20,-19.5 126,-19.5 126,-0.5 20,-0.5"/>
 <text text-anchor="middle" x="73" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SpeciesElectroState</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title="ThermoScalarBase\&lt; double \&gt;">
+<g id="a_node2"><a xlink:href="classReaktoro_1_1ThermoScalarBase.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="0,-144.5 0,-163.5 146,-163.5 146,-144.5 0,-144.5"/>
 <text text-anchor="middle" x="73" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00">ThermoScalarBase&lt; double &gt;</text>
 </a>
@@ -29,14 +32,14 @@
 <title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M73,-134.11C73,-102.93 73,-41.93 73,-19.52"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="69.5,-134.12 73,-144.12 76.5,-134.12 69.5,-134.12"/>
-<text text-anchor="middle" x="85.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00"> wPP</text>
-<text text-anchor="middle" x="85.5" y="-107" font-family="Helvetica,sans-Serif" font-size="10.00">wTT</text>
-<text text-anchor="middle" x="85.5" y="-96" font-family="Helvetica,sans-Serif" font-size="10.00">w</text>
-<text text-anchor="middle" x="85.5" y="-85" font-family="Helvetica,sans-Serif" font-size="10.00">re</text>
-<text text-anchor="middle" x="85.5" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">reref</text>
-<text text-anchor="middle" x="85.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">wP</text>
-<text text-anchor="middle" x="85.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">wTP</text>
-<text text-anchor="middle" x="85.5" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">wT</text>
+<text text-anchor="middle" x="84" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00"> re</text>
+<text text-anchor="middle" x="84" y="-107" font-family="Helvetica,sans-Serif" font-size="10.00">reref</text>
+<text text-anchor="middle" x="84" y="-96" font-family="Helvetica,sans-Serif" font-size="10.00">w</text>
+<text text-anchor="middle" x="84" y="-85" font-family="Helvetica,sans-Serif" font-size="10.00">wP</text>
+<text text-anchor="middle" x="84" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">wPP</text>
+<text text-anchor="middle" x="84" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">wT</text>
+<text text-anchor="middle" x="84" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">wTP</text>
+<text text-anchor="middle" x="84" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">wTT</text>
 </g>
 </g>
 </svg>

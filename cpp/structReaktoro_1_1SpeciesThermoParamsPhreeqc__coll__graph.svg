@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type for storing Phreeqc parameters of a species.">
 <polygon fill="#bfbfbf" stroke="black" points="24.5,-0.5 24.5,-19.5 179.5,-19.5 179.5,-0.5 24.5,-0.5"/>
 <text text-anchor="middle" x="102" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SpeciesThermoParamsPhreeqc</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1SpeciesThermoParamsPhreeqc_1_1ReactionParams.html" target="_top" xlink:title="ReactionParams">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1SpeciesThermoParamsPhreeqc_1_1ReactionParams.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="57.5,-67.5 57.5,-86.5 146.5,-86.5 146.5,-67.5 57.5,-67.5"/>
 <text text-anchor="middle" x="102" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">ReactionParams</text>
 </a>
@@ -34,7 +37,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classReaktoro_1_1ReactionEquation.html" target="_top" xlink:title="Define a type that describes the equation of a reaction. ">
+<g id="a_node3"><a xlink:href="classReaktoro_1_1ReactionEquation.html" target="_top" xlink:title="Define a type that describes the equation of a reaction.">
 <polygon fill="white" stroke="black" points="0,-134.5 0,-153.5 94,-153.5 94,-134.5 0,-134.5"/>
 <text text-anchor="middle" x="47" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">ReactionEquation</text>
 </a>
@@ -50,8 +53,11 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
+<g id="a_node4"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="112,-134.5 112,-153.5 202,-153.5 202,-134.5 112,-134.5"/>
 <text text-anchor="middle" x="157" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; double &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node4&#45;&gt;Node2 -->
 <g id="edge3" class="edge">

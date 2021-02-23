@@ -1,42 +1,46 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Dissolution of carbonate minerals in a CO2-saturated brine &mdash; Reaktoro  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/language_data.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Dissolution of calcite in an acidic HCl-solution" href="kineticpath-calcite-hcl.html" />
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -114,6 +119,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -148,11 +154,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="index.html">Tutorials: Chemical Kinetics</a> &raquo;</li>
         
@@ -161,7 +169,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../_sources/tutorials/kinetics/kineticpath-carbonates-co2.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -250,7 +258,7 @@ detailed discussion!</p>
 <span class="n">plot0</span><span class="p">.</span><span class="nf">y</span><span class="p">(</span><span class="s2">&quot;pH&quot;</span><span class="p">)</span>
 <span class="n">plot0</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="s2">&quot;Time [hour]&quot;</span><span class="p">)</span>
 <span class="n">plot0</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="s2">&quot;pH&quot;</span><span class="p">)</span>
-<span class="n">plot0</span><span class="p">.</span><span class="nf">showlegend</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">plot0</span><span class="p">.</span><span class="nf">showlegend</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">plot1</span> <span class="o">=</span> <span class="n">path</span><span class="p">.</span><span class="nf">plot</span><span class="p">()</span>
 <span class="n">plot1</span><span class="p">.</span><span class="nf">x</span><span class="p">(</span><span class="s2">&quot;time(units=hour)&quot;</span><span class="p">)</span>
@@ -297,8 +305,8 @@ and four pure <em>mineral phases</em>: halite, calcite, magnesite, and dolomite.
 are the phases that will either exist initially during the simulation, or that
 could potentially appear later as the calculations proceed.</p>
 <div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>All potential phases that could appear in a reactive process should ideally
+<p class="first admonition-title">Attention</p>
+<p class="last">All potential phases that could appear in a reactive process should ideally
 be considered when defining the chemical system. If one or more of these
 phases are ignored, then the equilibrium and kinetics calculations cannot
 identify if they should actually exist or not with positive amounts.
@@ -367,9 +375,9 @@ below:</p>
 </div>
 <p>We set the equation of each mineral reaction using method <code class="docutils literal notranslate"><span class="pre">setEquation</span></code> of
 class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1MineralReaction.html">MineralReaction</a>.</p>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>The current need for setting a reaction equation for mineral reactions will
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">The current need for setting a reaction equation for mineral reactions will
 be removed in the future, which will simplify the setup of the problem.</p>
 </div>
 <p>We then prescribe neutral and acidic mechanisms for each mineral reaction using
@@ -381,9 +389,9 @@ as shown in the example, and other compatible units are allowed.</p>
 <code class="docutils literal notranslate"><span class="pre">setSpecificSurfaceArea</span></code> of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1MineralReaction.html">MineralReaction</a>. Any units compatible to
 <code class="docutils literal notranslate"><span class="pre">m2/kg</span></code> or <code class="docutils literal notranslate"><span class="pre">m2/m3</span></code> are allowed (e.g., <code class="docutils literal notranslate"><span class="pre">cm2/g</span></code>, <code class="docutils literal notranslate"><span class="pre">mm2/mm3</span></code>).</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>The values shown for <code class="docutils literal notranslate"><span class="pre">logk</span></code> and <code class="docutils literal notranslate"><span class="pre">Ea</span></code> were collected from</p>
-<p><em>Palandri,
+<p class="last"><em>Palandri,
 J.L., Kharaka, Y.K. (2004). A compilation of rate parameters of
 water-mineral interaction kinetics for application to geochemical modeling.
 U.S. Geological Survey Open File Report (Vol. 2004–1068). Menlo Park,
@@ -415,9 +423,9 @@ equilibrium constants, reaction quotients, and rates of the reactions.</p>
 <h2>Specifying equilibrium and kinetic species<a class="headerlink" href="#specifying-equilibrium-and-kinetic-species" title="Permalink to this headline">¶</a></h2>
 <p>In Reaktoro, the species in a chemical system can be partitioned into groups of:</p>
 <ul class="simple">
-<li><p><em>equilibrium species</em>,</p></li>
-<li><p><em>kinetic species</em>, and</p></li>
-<li><p><em>inert species</em>.</p></li>
+<li><em>equilibrium species</em>,</li>
+<li><em>kinetic species</em>, and</li>
+<li><em>inert species</em>.</li>
 </ul>
 <p>For the <em>equilibrium species</em>, their amounts are governed by chemical
 equilibrium (calculated via a Gibbs energy minimization). The amount of <em>kinetic
@@ -436,8 +444,8 @@ Thus, we only need to specify which ones are kinetic species:</p>
 <p>In this case, the mineral species calcite, magnesite and dolomite are specified
 to be <em>kinetic species</em> using method <code class="docutils literal notranslate"><span class="pre">setKineticSpecies</span></code> of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1Partition.html">Partition</a>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Method <code class="docutils literal notranslate"><span class="pre">setKineticPhases</span></code> of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1Partition.html">Partition</a> could also be used here.
+<p class="first admonition-title">Note</p>
+<p class="last">Method <code class="docutils literal notranslate"><span class="pre">setKineticPhases</span></code> of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1Partition.html">Partition</a> could also be used here.
 This method sets all species in the given phases to be kinetic species, and
 it is more convenient if a phase has many species. However, since each of
 the mineral phases considered here only contains a single mineral species,
@@ -465,7 +473,7 @@ excess will exist in the CO<sub>2</sub>-rich gaseous phase.</p>
 </pre></div>
 </div>
 <div class="admonition attention">
-<p class="admonition-title">Attention</p>
+<p class="first admonition-title">Attention</p>
 <p>To ensure that that the equilibrium calculation performed in the next step
 ignores the kinetic species in the system so that we maintain a
 disequilibrium state between equilibrium and kinetic species, it is
@@ -473,7 +481,7 @@ important not to forget the following command:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">problem</span><span class="p">.</span><span class="nf">setPartition</span><span class="p">(</span><span class="n">partition</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Ignoring this step will produce an initial condition for the amounts of
+<p class="last">Ignoring this step will produce an initial condition for the amounts of
 equilibrium and kinetic species that correspond to a complete equilibrium
 state in the system so that no kinetics calculation makes sense
 afterwards!</p>
@@ -518,8 +526,8 @@ dissolution/precipitation, we introduce the instance of the class
 <p>The instance of kinetic path solver is provided with the partition to the
 equilibrium, kinetic, and inert species defined above.</p>
 <div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>For repeated chemical kinetics calculations (e.g., in a reactive transport
+<p class="first admonition-title">Attention</p>
+<p class="last">For repeated chemical kinetics calculations (e.g., in a reactive transport
 simulation, where kinetics is performed for each mesh cell/node), consider
 using the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1KineticSolver.html">KineticSolver</a> instead for avoiding some overhead of
 class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1KineticPath.html">KineticPath</a>. Consider also the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a>,
@@ -537,7 +545,7 @@ in which kinetics is calculated.</p>
 <span class="n">plot0</span><span class="p">.</span><span class="nf">y</span><span class="p">(</span><span class="s2">&quot;pH&quot;</span><span class="p">)</span>
 <span class="n">plot0</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="s2">&quot;Time [hour]&quot;</span><span class="p">)</span>
 <span class="n">plot0</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="s2">&quot;pH&quot;</span><span class="p">)</span>
-<span class="n">plot0</span><span class="p">.</span><span class="nf">showlegend</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">plot0</span><span class="p">.</span><span class="nf">showlegend</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">plot1</span> <span class="o">=</span> <span class="n">path</span><span class="p">.</span><span class="nf">plot</span><span class="p">()</span>
 <span class="n">plot1</span><span class="p">.</span><span class="nf">x</span><span class="p">(</span><span class="s2">&quot;time(units=hour)&quot;</span><span class="p">)</span>
@@ -569,8 +577,8 @@ respectively. The arguments of the function <code class="docutils literal notran
 <span class="pre">&quot;Ca&quot;)</span></code> stand for the name of the property we want to fetch from the chemical
 state and the tag, we want to illustrate it with.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A list of all possible quantities that can be plotted is shown in the class
+<p class="first admonition-title">Note</p>
+<p class="last">A list of all possible quantities that can be plotted is shown in the class
 <a class="reference external" href="https://www.reaktoro.org/cpp/classReaktoro_1_1ChemicalQuantity.html">ChemicalQuantity</a>.</p>
 </div>
 </div>
@@ -604,29 +612,29 @@ one yet!</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="kineticpath-calcite-hcl.html" class="btn btn-neutral float-right" title="Dissolution of calcite in an acidic HCl-solution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="Tutorials: Chemical Kinetics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="kineticpath-calcite-hcl.html" class="btn btn-neutral float-right" title="Dissolution of calcite in an acidic HCl-solution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Tutorials: Chemical Kinetics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Allan Leal and Reaktoro contributors
+        &#169; Copyright 2018, Allan Leal and Reaktoro contributors.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -634,7 +642,6 @@ one yet!</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

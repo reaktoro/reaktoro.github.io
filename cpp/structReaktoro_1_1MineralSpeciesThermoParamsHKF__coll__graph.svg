@@ -12,14 +12,20 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type for storing the parameters of the HKF equation of state for a mineral species.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-19.5 170,-19.5 170,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="85" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MineralSpeciesThermoParamsHKF</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
+<g id="a_node2"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="40,-133.5 40,-152.5 130,-152.5 130,-133.5 40,-133.5"/>
 <text text-anchor="middle" x="85" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; double &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
@@ -27,12 +33,12 @@
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M85,-123.09C85,-94.36 85,-40.82 85,-19.8"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="81.5,-123.4 85,-133.4 88.5,-123.4 81.5,-123.4"/>
 <text text-anchor="middle" x="100" y="-107" font-family="Helvetica,sans-Serif" font-size="10.00"> Htr</text>
-<text text-anchor="middle" x="100" y="-96" font-family="Helvetica,sans-Serif" font-size="10.00">a</text>
-<text text-anchor="middle" x="100" y="-85" font-family="Helvetica,sans-Serif" font-size="10.00">dPdTtr</text>
-<text text-anchor="middle" x="100" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">b</text>
-<text text-anchor="middle" x="100" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">Ttr</text>
+<text text-anchor="middle" x="100" y="-96" font-family="Helvetica,sans-Serif" font-size="10.00">Ttr</text>
+<text text-anchor="middle" x="100" y="-85" font-family="Helvetica,sans-Serif" font-size="10.00">Vtr</text>
+<text text-anchor="middle" x="100" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">a</text>
+<text text-anchor="middle" x="100" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">b</text>
 <text text-anchor="middle" x="100" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00">c</text>
-<text text-anchor="middle" x="100" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">Vtr</text>
+<text text-anchor="middle" x="100" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">dPdTtr</text>
 </g>
 </g>
 </svg>

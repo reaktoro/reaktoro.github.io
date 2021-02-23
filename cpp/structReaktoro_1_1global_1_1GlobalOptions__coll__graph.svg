@@ -58,13 +58,16 @@ var sectionId = 'dynsection-0';
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type used to describe all options related to chemical calculations.">
 <polygon fill="#bfbfbf" stroke="black" points="1390,-337.5 1390,-356.5 1468,-356.5 1468,-337.5 1390,-337.5"/>
 <text text-anchor="middle" x="1429" y="-344.5" font-family="Helvetica,sans-Serif" font-size="10.00">GlobalOptions</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1global_1_1ExceptionOptions.html" target="_top" xlink:title="A type used to describe all options related to exception handling. ">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1global_1_1ExceptionOptions.html" target="_top" xlink:title="A type used to describe all options related to exception handling.">
 <polygon fill="white" stroke="black" points="1178.5,-493.5 1178.5,-512.5 1272.5,-512.5 1272.5,-493.5 1178.5,-493.5"/>
 <text text-anchor="middle" x="1225.5" y="-500.5" font-family="Helvetica,sans-Serif" font-size="10.00">ExceptionOptions</text>
 </a>
@@ -80,7 +83,7 @@ var sectionId = 'dynsection-0';
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structReaktoro_1_1KineticOptions.html" target="_top" xlink:title="A struct to describe the options for a chemical kinetics calculation. ">
+<g id="a_node3"><a xlink:href="structReaktoro_1_1KineticOptions.html" target="_top" xlink:title="A struct to describe the options for a chemical kinetics calculation.">
 <polygon fill="white" stroke="black" points="1185.5,-390.5 1185.5,-409.5 1265.5,-409.5 1265.5,-390.5 1185.5,-390.5"/>
 <text text-anchor="middle" x="1225.5" y="-397.5" font-family="Helvetica,sans-Serif" font-size="10.00">KineticOptions</text>
 </a>
@@ -96,7 +99,7 @@ var sectionId = 'dynsection-0';
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="structReaktoro_1_1ODEOptions.html" target="_top" xlink:title="A struct that defines the options for the ODESolver. ">
+<g id="a_node4"><a xlink:href="structReaktoro_1_1ODEOptions.html" target="_top" xlink:title="A struct that defines the options for the ODESolver.">
 <polygon fill="white" stroke="black" points="981,-396.5 981,-415.5 1053,-415.5 1053,-396.5 981,-396.5"/>
 <text text-anchor="middle" x="1017" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">ODEOptions</text>
 </a>
@@ -112,7 +115,7 @@ var sectionId = 'dynsection-0';
 <!-- Node27 -->
 <g id="node27" class="node">
 <title>Node27</title>
-<g id="a_node27"><a xlink:href="structReaktoro_1_1EquilibriumPathOptions.html" target="_top" xlink:title="A struct that describes the options from an equilibrium path calculation. ">
+<g id="a_node27"><a xlink:href="structReaktoro_1_1EquilibriumPathOptions.html" target="_top" xlink:title="A struct that describes the options from an equilibrium path calculation.">
 <polygon fill="white" stroke="black" points="1166,-337.5 1166,-356.5 1285,-356.5 1285,-337.5 1166,-337.5"/>
 <text text-anchor="middle" x="1225.5" y="-344.5" font-family="Helvetica,sans-Serif" font-size="10.00">EquilibriumPathOptions</text>
 </a>
@@ -128,7 +131,7 @@ var sectionId = 'dynsection-0';
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="structReaktoro_1_1KineticOutputOptions.html" target="_top" xlink:title="KineticOutputOptions">
+<g id="a_node5"><a xlink:href="structReaktoro_1_1KineticOutputOptions.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="387,-495.5 387,-514.5 497,-514.5 497,-495.5 387,-495.5"/>
 <text text-anchor="middle" x="442" y="-502.5" font-family="Helvetica,sans-Serif" font-size="10.00">KineticOutputOptions</text>
 </a>
@@ -144,7 +147,7 @@ var sectionId = 'dynsection-0';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:title="STL class. ">
+<g id="a_node6"><a xlink:title="STL class.">
 <polygon fill="white" stroke="#bfbfbf" points="143,-324.5 143,-343.5 184,-343.5 184,-324.5 143,-324.5"/>
 <text text-anchor="middle" x="163.5" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">string</text>
 </a>
@@ -160,7 +163,7 @@ var sectionId = 'dynsection-0';
 <!-- Node21 -->
 <g id="node21" class="node">
 <title>Node21</title>
-<g id="a_node21"><a xlink:href="structReaktoro_1_1OptimumOutputOptions.html" target="_top" xlink:title="A type that describes the options for the output of a optimisation calculation. ">
+<g id="a_node21"><a xlink:href="structReaktoro_1_1OptimumOutputOptions.html" target="_top" xlink:title="A type that describes the options for the output of a optimisation calculation.">
 <polygon fill="white" stroke="black" points="531.5,-114.5 531.5,-133.5 650.5,-133.5 650.5,-114.5 531.5,-114.5"/>
 <text text-anchor="middle" x="591" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumOutputOptions</text>
 </a>
@@ -178,7 +181,7 @@ var sectionId = 'dynsection-0';
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="structReaktoro_1_1OutputterOptions.html" target="_top" xlink:title="OutputterOptions">
+<g id="a_node22"><a xlink:href="structReaktoro_1_1OutputterOptions.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="271,-216.5 271,-235.5 362,-235.5 362,-216.5 271,-216.5"/>
 <text text-anchor="middle" x="316.5" y="-223.5" font-family="Helvetica,sans-Serif" font-size="10.00">OutputterOptions</text>
 </a>
@@ -194,8 +197,11 @@ var sectionId = 'dynsection-0';
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
+<g id="a_node23"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="264,-296.5 264,-315.5 369,-315.5 369,-296.5 264,-296.5"/>
 <text text-anchor="middle" x="316.5" y="-303.5" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; std::string &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node6&#45;&gt;Node23 -->
 <g id="edge25" class="edge">
@@ -207,7 +213,7 @@ var sectionId = 'dynsection-0';
 <!-- Node25 -->
 <g id="node25" class="node">
 <title>Node25</title>
-<g id="a_node25"><a xlink:href="structReaktoro_1_1NonlinearOutput.html" target="_top" xlink:title="A type that describes the options for the output of a non&#45;linear problem calculation. ">
+<g id="a_node25"><a xlink:href="structReaktoro_1_1NonlinearOutput.html" target="_top" xlink:title="A type that describes the options for the output of a non&#45;linear problem calculation.">
 <polygon fill="white" stroke="black" points="547.5,-342.5 547.5,-361.5 634.5,-361.5 634.5,-342.5 547.5,-342.5"/>
 <text text-anchor="middle" x="591" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">NonlinearOutput</text>
 </a>
@@ -224,7 +230,7 @@ var sectionId = 'dynsection-0';
 <!-- Node31 -->
 <g id="node31" class="node">
 <title>Node31</title>
-<g id="a_node31"><a xlink:href="structReaktoro_1_1global_1_1InterpolationOptions.html" target="_top" xlink:title="A type used to describe all options related to interpolation. ">
+<g id="a_node31"><a xlink:href="structReaktoro_1_1global_1_1InterpolationOptions.html" target="_top" xlink:title="A type used to describe all options related to interpolation.">
 <polygon fill="white" stroke="black" points="539,-446.5 539,-465.5 643,-465.5 643,-446.5 539,-446.5"/>
 <text text-anchor="middle" x="591" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00">InterpolationOptions</text>
 </a>
@@ -241,7 +247,7 @@ var sectionId = 'dynsection-0';
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:title="STL class. ">
+<g id="a_node7"><a xlink:title="STL class.">
 <polygon fill="white" stroke="#bfbfbf" points="0,-324.5 0,-343.5 106,-343.5 106,-324.5 0,-324.5"/>
 <text text-anchor="middle" x="53" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">basic_string&lt; char &gt;</text>
 </a>
@@ -256,7 +262,7 @@ var sectionId = 'dynsection-0';
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="structReaktoro_1_1EquilibriumOptions.html" target="_top" xlink:title="The options for the equilibrium calculations. ">
+<g id="a_node8"><a xlink:href="structReaktoro_1_1EquilibriumOptions.html" target="_top" xlink:title="The options for the equilibrium calculations.">
 <polygon fill="white" stroke="black" points="968,-302.5 968,-321.5 1066,-321.5 1066,-302.5 968,-302.5"/>
 <text text-anchor="middle" x="1017" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">EquilibriumOptions</text>
 </a>
@@ -286,7 +292,7 @@ var sectionId = 'dynsection-0';
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="structReaktoro_1_1OptimumOptions.html" target="_top" xlink:title="A type that describes the options of a optimisation calculation. ">
+<g id="a_node9"><a xlink:href="structReaktoro_1_1OptimumOptions.html" target="_top" xlink:title="A type that describes the options of a optimisation calculation.">
 <polygon fill="white" stroke="black" points="781.5,-190.5 781.5,-209.5 871.5,-209.5 871.5,-190.5 781.5,-190.5"/>
 <text text-anchor="middle" x="826.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumOptions</text>
 </a>
@@ -302,7 +308,7 @@ var sectionId = 'dynsection-0';
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="structReaktoro_1_1OptimumParamsIpAction.html" target="_top" xlink:title="OptimumParamsIpAction">
+<g id="a_node10"><a xlink:href="structReaktoro_1_1OptimumParamsIpAction.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="528,-76.5 528,-95.5 654,-95.5 654,-76.5 528,-76.5"/>
 <text text-anchor="middle" x="591" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsIpAction</text>
 </a>
@@ -318,7 +324,7 @@ var sectionId = 'dynsection-0';
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="structReaktoro_1_1OptimumParamsIpOpt.html" target="_top" xlink:title="OptimumParamsIpOpt">
+<g id="a_node11"><a xlink:href="structReaktoro_1_1OptimumParamsIpOpt.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="534,-380.5 534,-399.5 648,-399.5 648,-380.5 534,-380.5"/>
 <text text-anchor="middle" x="591" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsIpOpt</text>
 </a>
@@ -334,8 +340,11 @@ var sectionId = 'dynsection-0';
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
+<g id="a_node12"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="271.5,-396.5 271.5,-415.5 361.5,-415.5 361.5,-396.5 271.5,-396.5"/>
 <text text-anchor="middle" x="316.5" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">vector&lt; double &gt;</text>
+</a>
+</g>
 </g>
 <!-- Node12&#45;&gt;Node11 -->
 <g id="edge11" class="edge">
@@ -349,13 +358,13 @@ var sectionId = 'dynsection-0';
 <title>Node12&#45;&gt;Node31</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M371.83,-406.14C407.75,-407.23 455.67,-410.6 497,-420 523.17,-425.95 551.74,-437.89 570.21,-446.39"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="371.65,-402.63 361.56,-405.88 371.47,-409.63 371.65,-402.63"/>
-<text text-anchor="middle" x="442" y="-434" font-family="Helvetica,sans-Serif" font-size="10.00"> temperatures</text>
-<text text-anchor="middle" x="442" y="-423" font-family="Helvetica,sans-Serif" font-size="10.00">pressures</text>
+<text text-anchor="middle" x="442" y="-434" font-family="Helvetica,sans-Serif" font-size="10.00"> pressures</text>
+<text text-anchor="middle" x="442" y="-423" font-family="Helvetica,sans-Serif" font-size="10.00">temperatures</text>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="structReaktoro_1_1OptimumParamsIpActive.html" target="_top" xlink:title="OptimumParamsIpActive">
+<g id="a_node13"><a xlink:href="structReaktoro_1_1OptimumParamsIpActive.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="528,-0.5 528,-19.5 654,-19.5 654,-0.5 528,-0.5"/>
 <text text-anchor="middle" x="591" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsIpActive</text>
 </a>
@@ -371,7 +380,7 @@ var sectionId = 'dynsection-0';
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="structReaktoro_1_1OptimumParamsIpNewton.html" target="_top" xlink:title="OptimumParamsIpNewton">
+<g id="a_node14"><a xlink:href="structReaktoro_1_1OptimumParamsIpNewton.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="525,-304.5 525,-323.5 657,-323.5 657,-304.5 525,-304.5"/>
 <text text-anchor="middle" x="591" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsIpNewton</text>
 </a>
@@ -387,7 +396,7 @@ var sectionId = 'dynsection-0';
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="structReaktoro_1_1KktOptions.html" target="_top" xlink:title="A type to describe the options for the KKT calculation. ">
+<g id="a_node15"><a xlink:href="structReaktoro_1_1KktOptions.html" target="_top" xlink:title="A type to describe the options for the KKT calculation.">
 <polygon fill="white" stroke="black" points="558.5,-266.5 558.5,-285.5 623.5,-285.5 623.5,-266.5 558.5,-266.5"/>
 <text text-anchor="middle" x="591" y="-273.5" font-family="Helvetica,sans-Serif" font-size="10.00">KktOptions</text>
 </a>
@@ -403,7 +412,7 @@ var sectionId = 'dynsection-0';
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="structReaktoro_1_1OptimumParamsRegularization.html" target="_top" xlink:title="A type that describes the regularization options for the optimisation calculation. ">
+<g id="a_node16"><a xlink:href="structReaktoro_1_1OptimumParamsRegularization.html" target="_top" xlink:title="A type that describes the regularization options for the optimisation calculation.">
 <polygon fill="white" stroke="black" points="515,-38.5 515,-57.5 667,-57.5 667,-38.5 515,-38.5"/>
 <text text-anchor="middle" x="591" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsRegularization</text>
 </a>
@@ -419,7 +428,7 @@ var sectionId = 'dynsection-0';
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="structReaktoro_1_1RegularizerOptions.html" target="_top" xlink:title="A type that describes the options for regularizing linear constraints. ">
+<g id="a_node17"><a xlink:href="structReaktoro_1_1RegularizerOptions.html" target="_top" xlink:title="A type that describes the options for regularizing linear constraints.">
 <polygon fill="white" stroke="black" points="266.5,-38.5 266.5,-57.5 366.5,-57.5 366.5,-38.5 266.5,-38.5"/>
 <text text-anchor="middle" x="316.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">RegularizerOptions</text>
 </a>
@@ -434,7 +443,7 @@ var sectionId = 'dynsection-0';
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="structReaktoro_1_1OptimumParamsRefiner.html" target="_top" xlink:title="OptimumParamsRefiner">
+<g id="a_node18"><a xlink:href="structReaktoro_1_1OptimumParamsRefiner.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="530,-228.5 530,-247.5 652,-247.5 652,-228.5 530,-228.5"/>
 <text text-anchor="middle" x="591" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsRefiner</text>
 </a>
@@ -450,7 +459,7 @@ var sectionId = 'dynsection-0';
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="structReaktoro_1_1OptimumParamsKarpov.html" target="_top" xlink:title="OptimumParamsKarpov">
+<g id="a_node19"><a xlink:href="structReaktoro_1_1OptimumParamsKarpov.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="530.5,-190.5 530.5,-209.5 651.5,-209.5 651.5,-190.5 530.5,-190.5"/>
 <text text-anchor="middle" x="591" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsKarpov</text>
 </a>
@@ -466,7 +475,7 @@ var sectionId = 'dynsection-0';
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="structReaktoro_1_1OptimumParamsActNewton.html" target="_top" xlink:title="OptimumParamsActNewton">
+<g id="a_node20"><a xlink:href="structReaktoro_1_1OptimumParamsActNewton.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="521.5,-152.5 521.5,-171.5 660.5,-171.5 660.5,-152.5 521.5,-152.5"/>
 <text text-anchor="middle" x="591" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumParamsActNewton</text>
 </a>
@@ -503,9 +512,9 @@ var sectionId = 'dynsection-0';
 <title>Node23&#45;&gt;Node21</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M340.65,-290.67C354.1,-281.86 371.41,-270.65 387,-261 435.29,-231.12 461.19,-240.08 497,-196 512.69,-176.69 496.73,-159.88 515,-143 519.74,-138.63 525.33,-135.22 531.3,-132.58"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="338.46,-287.92 332.03,-296.34 342.31,-293.77 338.46,-287.92"/>
-<text text-anchor="middle" x="442" y="-286" font-family="Helvetica,sans-Serif" font-size="10.00"> znames</text>
+<text text-anchor="middle" x="442" y="-286" font-family="Helvetica,sans-Serif" font-size="10.00"> xnames</text>
 <text text-anchor="middle" x="442" y="-275" font-family="Helvetica,sans-Serif" font-size="10.00">ynames</text>
-<text text-anchor="middle" x="442" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00">xnames</text>
+<text text-anchor="middle" x="442" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00">znames</text>
 </g>
 <!-- Node23&#45;&gt;Node25 -->
 <g id="edge30" class="edge">
@@ -518,7 +527,7 @@ var sectionId = 'dynsection-0';
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="structReaktoro_1_1NonlinearOptions.html" target="_top" xlink:title="A type that describes the options for the solution of a non&#45;linear problem. ">
+<g id="a_node24"><a xlink:href="structReaktoro_1_1NonlinearOptions.html" target="_top" xlink:title="A type that describes the options for the solution of a non&#45;linear problem.">
 <polygon fill="white" stroke="black" points="780.5,-356.5 780.5,-375.5 872.5,-375.5 872.5,-356.5 780.5,-356.5"/>
 <text text-anchor="middle" x="826.5" y="-363.5" font-family="Helvetica,sans-Serif" font-size="10.00">NonlinearOptions</text>
 </a>
@@ -541,7 +550,7 @@ var sectionId = 'dynsection-0';
 <!-- Node26 -->
 <g id="node26" class="node">
 <title>Node26</title>
-<g id="a_node26"><a xlink:href="structReaktoro_1_1SmartEquilibriumOptions.html" target="_top" xlink:title="The options for the smart equilibrium calculations. ">
+<g id="a_node26"><a xlink:href="structReaktoro_1_1SmartEquilibriumOptions.html" target="_top" xlink:title="The options for the smart equilibrium calculations.">
 <polygon fill="white" stroke="black" points="764,-302.5 764,-321.5 889,-321.5 889,-302.5 764,-302.5"/>
 <text text-anchor="middle" x="826.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">SmartEquilibriumOptions</text>
 </a>
@@ -564,7 +573,7 @@ var sectionId = 'dynsection-0';
 <!-- Node28 -->
 <g id="node28" class="node">
 <title>Node28</title>
-<g id="a_node28"><a xlink:href="structReaktoro_1_1global_1_1AqueousOptions.html" target="_top" xlink:title="A type used to describe all options related to aqueous models. ">
+<g id="a_node28"><a xlink:href="structReaktoro_1_1global_1_1AqueousOptions.html" target="_top" xlink:title="A type used to describe all options related to aqueous models.">
 <polygon fill="white" stroke="black" points="1181,-223.5 1181,-242.5 1270,-242.5 1270,-223.5 1181,-223.5"/>
 <text text-anchor="middle" x="1225.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">AqueousOptions</text>
 </a>
@@ -580,7 +589,7 @@ var sectionId = 'dynsection-0';
 <!-- Node29 -->
 <g id="node29" class="node">
 <title>Node29</title>
-<g id="a_node29"><a xlink:href="structReaktoro_1_1global_1_1AqueousOptions_1_1HKF.html" target="_top" xlink:title="A type used to describe all options related to HKF model. ">
+<g id="a_node29"><a xlink:href="structReaktoro_1_1global_1_1AqueousOptions_1_1HKF.html" target="_top" xlink:title="A type used to describe all options related to HKF model.">
 <polygon fill="white" stroke="black" points="998.5,-195.5 998.5,-214.5 1035.5,-214.5 1035.5,-195.5 998.5,-195.5"/>
 <text text-anchor="middle" x="1017" y="-202.5" font-family="Helvetica,sans-Serif" font-size="10.00">HKF</text>
 </a>
@@ -596,7 +605,7 @@ var sectionId = 'dynsection-0';
 <!-- Node30 -->
 <g id="node30" class="node">
 <title>Node30</title>
-<g id="a_node30"><a xlink:href="structReaktoro_1_1global_1_1AqueousOptions_1_1DebyeHuckel.html" target="_top" xlink:title="A type used to describe all options related to Debye&#45;Huckel model. ">
+<g id="a_node30"><a xlink:href="structReaktoro_1_1global_1_1AqueousOptions_1_1DebyeHuckel.html" target="_top" xlink:title="A type used to describe all options related to Debye&#45;Huckel model.">
 <polygon fill="white" stroke="black" points="979,-233.5 979,-252.5 1055,-252.5 1055,-233.5 979,-233.5"/>
 <text text-anchor="middle" x="1017" y="-240.5" font-family="Helvetica,sans-Serif" font-size="10.00">DebyeHuckel</text>
 </a>
@@ -619,7 +628,7 @@ var sectionId = 'dynsection-0';
 <!-- Node32 -->
 <g id="node32" class="node">
 <title>Node32</title>
-<g id="a_node32"><a xlink:href="structReaktoro_1_1global_1_1DatabaseOptions.html" target="_top" xlink:title="A type used to describe all options related to database management. ">
+<g id="a_node32"><a xlink:href="structReaktoro_1_1global_1_1DatabaseOptions.html" target="_top" xlink:title="A type used to describe all options related to database management.">
 <polygon fill="white" stroke="black" points="1179.5,-185.5 1179.5,-204.5 1271.5,-204.5 1271.5,-185.5 1179.5,-185.5"/>
 <text text-anchor="middle" x="1225.5" y="-192.5" font-family="Helvetica,sans-Serif" font-size="10.00">DatabaseOptions</text>
 </a>

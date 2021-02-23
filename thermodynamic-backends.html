@@ -1,42 +1,46 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Thermodynamic Backends &mdash; Reaktoro  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Acknowledgements" href="acknowledgements.html" />
@@ -77,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -110,6 +115,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -144,18 +150,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Thermodynamic Backends</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/thermodynamic-backends.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -184,16 +192,16 @@ this is already supported for two widely used geochemical modeling codes:
 <a class="reference external image-reference" href="http://wwwbrr.cr.usgs.gov/projects/GWC_coupled/phreeqc/"><img alt="_images/phreeqc-logo.svg" src="_images/phreeqc-logo.svg" width="50%" /></a>
 <p class="caption"><span class="caption-text">PHREEQC is a computer program for speciation, batch-reaction,
 one-dimensional transport, and inverse geochemical calculations developed
-by USGS, United States.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+by USGS, United States.</span></p>
 </div>
 <div class="figure align-center" id="id2" style="width: 80%">
 <a class="reference external image-reference" href="http://gems.web.psi.ch/"><img alt="_images/gems-logo.png" src="_images/gems-logo.png" style="width: 50%;" /></a>
 <p class="caption"><span class="caption-text">GEMS is a Gibbs energy minimization software for geochemical modeling
-developed at Paul Scherrer Institute, Switzerland.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+developed at Paul Scherrer Institute, Switzerland.</span></p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Neither PHREEQC nor GEMS are used in Reaktoro for solving the underlying
+<p class="first admonition-title">Note</p>
+<p class="last">Neither PHREEQC nor GEMS are used in Reaktoro for solving the underlying
 mathematical problems for chemical equilibrium and kinetics. These backends
 act as providers of thermodynamic properties of species, phases, and
 reactions (e.g., activity coefficients, activities, standard chemical
@@ -331,10 +339,11 @@ algorithm.</p>
 <span class="n">state</span><span class="p">.</span><span class="nf">output</span><span class="p">(</span><span class="s1">&#39;state-phreeqc-updated.txt&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl>
-<dt>Python and C++ files for this demo:</dt><dd><div class="line-block">
-<div class="line"><a class="reference download internal" download="" href="_downloads/543ca645c07bf3dc3eaa5dc37e779a2d/demo-backends-phreeqc.py"><code class="xref download docutils literal notranslate"><span class="pre">demo-backends-phreeqc.py</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/a237fb53adbd7ef953109e60c4b00c38/demo-backends-phreeqc.cpp"><code class="xref download docutils literal notranslate"><span class="pre">demo-backends-phreeqc.cpp</span></code></a></div>
+<dl class="docutils">
+<dt>Python and C++ files for this demo:</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference download internal" download="" href="_downloads/82ef0f8be9b4c5499b39fe45a5b672ba/demo-backends-phreeqc.py"><code class="xref download docutils literal notranslate"><span class="pre">demo-backends-phreeqc.py</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/ad25d29f66dac92b948a8a99ee25b7d0/demo-backends-phreeqc.cpp"><code class="xref download docutils literal notranslate"><span class="pre">demo-backends-phreeqc.cpp</span></code></a></div>
 </div>
 </dd>
 </dl>
@@ -381,10 +390,11 @@ as shown below.</p>
 <span class="n">state</span><span class="p">.</span><span class="nf">output</span><span class="p">(</span><span class="s2">&quot;state-gems-updated.txt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl>
-<dt>Python and C++ files for this demo:</dt><dd><div class="line-block">
-<div class="line"><a class="reference download internal" download="" href="_downloads/bbc98618823a7610ca32b2d20a7cc407/demo-backends-gems.py"><code class="xref download docutils literal notranslate"><span class="pre">demo-backends-gems.py</span></code></a></div>
-<div class="line"><a class="reference download internal" download="" href="_downloads/f015bb96c5e3c8e19a601b32512bba30/demo-backends-gems.cpp"><code class="xref download docutils literal notranslate"><span class="pre">demo-backends-gems.cpp</span></code></a></div>
+<dl class="docutils">
+<dt>Python and C++ files for this demo:</dt>
+<dd><div class="first last line-block">
+<div class="line"><a class="reference download internal" download="" href="_downloads/666f02eec6b1cd12ce75d6743c0a46bb/demo-backends-gems.py"><code class="xref download docutils literal notranslate"><span class="pre">demo-backends-gems.py</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/ce1a82caea9eb172a292b11c11ce94c4/demo-backends-gems.cpp"><code class="xref download docutils literal notranslate"><span class="pre">demo-backends-gems.cpp</span></code></a></div>
 </div>
 </dd>
 </dl>
@@ -395,8 +405,8 @@ as shown below.</p>
 integrated with Reaktoro as <em>thermodynamic backends</em>? Let us know by creating a
 new issue at <a class="reference external" href="https://github.com/reaktoro/reaktoro/issues/new">Reaktoro’s GitHub Issues</a>.</p>
 <div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>It would be great if you could contribute to expanding the list of
+<p class="first admonition-title">Attention</p>
+<p class="last">It would be great if you could contribute to expanding the list of
 supported Reaktoro’s thermodynamic backends. Contributions can be made in
 several forms, ranging from direct code contribution to financing a project
 in which one or more experts will implement this.</p>
@@ -409,29 +419,29 @@ in which one or more experts will implement this.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="acknowledgements.html" class="btn btn-neutral float-right" title="Acknowledgements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="thermodynamic-databases.html" class="btn btn-neutral float-left" title="Thermodynamic Databases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="acknowledgements.html" class="btn btn-neutral float-right" title="Acknowledgements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="thermodynamic-databases.html" class="btn btn-neutral float-left" title="Thermodynamic Databases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Allan Leal and Reaktoro contributors
+        &#169; Copyright 2018, Allan Leal and Reaktoro contributors.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -439,7 +449,6 @@ in which one or more experts will implement this.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

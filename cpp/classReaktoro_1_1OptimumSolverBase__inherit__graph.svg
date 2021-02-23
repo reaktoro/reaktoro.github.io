@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="The base class for all optimization algorithms.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-152.5 0,-171.5 107,-171.5 107,-152.5 0,-152.5"/>
 <text text-anchor="middle" x="53.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumSolverBase</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classReaktoro_1_1OptimumSolverActNewton.html" target="_top" xlink:title="The class that implements the ActNewton algorithm using an active&#45;set strategy. ">
+<g id="a_node2"><a xlink:href="classReaktoro_1_1OptimumSolverActNewton.html" target="_top" xlink:title="The class that implements the ActNewton algorithm using an active&#45;set strategy.">
 <polygon fill="white" stroke="black" points="143,-304.5 143,-323.5 276,-323.5 276,-304.5 143,-304.5"/>
 <text text-anchor="middle" x="209.5" y="-311.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumSolverActNewton</text>
 </a>
@@ -63,7 +66,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classReaktoro_1_1OptimumSolverIpBounds.html" target="_top" xlink:title="The class that implements the IpBounds algorithm using an interior&#45;point method. ">
+<g id="a_node5"><a xlink:href="classReaktoro_1_1OptimumSolverIpBounds.html" target="_top" xlink:title="The class that implements the IpBounds algorithm using an interior&#45;point method.">
 <polygon fill="white" stroke="black" points="147,-190.5 147,-209.5 272,-209.5 272,-190.5 147,-190.5"/>
 <text text-anchor="middle" x="209.5" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumSolverIpBounds</text>
 </a>
@@ -78,7 +81,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classReaktoro_1_1OptimumSolverIpNewton.html" target="_top" xlink:title="The class that implements the IpNewton algorithm using an interior&#45;point method. ">
+<g id="a_node6"><a xlink:href="classReaktoro_1_1OptimumSolverIpNewton.html" target="_top" xlink:title="The class that implements the IpNewton algorithm using an interior&#45;point method.">
 <polygon fill="white" stroke="black" points="146.5,-152.5 146.5,-171.5 272.5,-171.5 272.5,-152.5 146.5,-152.5"/>
 <text text-anchor="middle" x="209.5" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumSolverIpNewton</text>
 </a>
@@ -93,7 +96,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="classReaktoro_1_1OptimumSolverIpOpt.html" target="_top" xlink:title="The class that implements the IpOpt algorithm using an interior&#45;point method. ">
+<g id="a_node7"><a xlink:href="classReaktoro_1_1OptimumSolverIpOpt.html" target="_top" xlink:title="The class that implements the IpOpt algorithm using an interior&#45;point method.">
 <polygon fill="white" stroke="black" points="155.5,-114.5 155.5,-133.5 263.5,-133.5 263.5,-114.5 155.5,-114.5"/>
 <text text-anchor="middle" x="209.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumSolverIpOpt</text>
 </a>
@@ -108,7 +111,7 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="classReaktoro_1_1OptimumSolverKarpov.html" target="_top" xlink:title="The class that implements an optimization algorithm based on Karpov&#39;s method. ">
+<g id="a_node8"><a xlink:href="classReaktoro_1_1OptimumSolverKarpov.html" target="_top" xlink:title="The class that implements an optimization algorithm based on Karpov&#39;s method.">
 <polygon fill="white" stroke="black" points="152,-76.5 152,-95.5 267,-95.5 267,-76.5 152,-76.5"/>
 <text text-anchor="middle" x="209.5" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumSolverKarpov</text>
 </a>
@@ -123,7 +126,7 @@
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="classReaktoro_1_1OptimumSolverRefiner.html" target="_top" xlink:title="The class that implements a refinement operation of the optimal solution. ">
+<g id="a_node9"><a xlink:href="classReaktoro_1_1OptimumSolverRefiner.html" target="_top" xlink:title="The class that implements a refinement operation of the optimal solution.">
 <polygon fill="white" stroke="black" points="151.5,-38.5 151.5,-57.5 267.5,-57.5 267.5,-38.5 151.5,-38.5"/>
 <text text-anchor="middle" x="209.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumSolverRefiner</text>
 </a>
@@ -138,7 +141,7 @@
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="classReaktoro_1_1OptimumSolverSimplex.html" target="_top" xlink:title="The class that implements the simplex algorithm for linear programming problems. ">
+<g id="a_node10"><a xlink:href="classReaktoro_1_1OptimumSolverSimplex.html" target="_top" xlink:title="The class that implements the simplex algorithm for linear programming problems.">
 <polygon fill="white" stroke="black" points="150,-0.5 150,-19.5 269,-19.5 269,-0.5 150,-0.5"/>
 <text text-anchor="middle" x="209.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">OptimumSolverSimplex</text>
 </a>

@@ -12,13 +12,16 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
+<g id="a_node1"><a xlink:title="A type for storing the thermodynamic data of general species.">
 <polygon fill="#bfbfbf" stroke="black" points="173,-56.5 173,-75.5 279,-75.5 279,-56.5 173,-56.5"/>
 <text text-anchor="middle" x="226" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">SpeciesThermoData</text>
+</a>
+</g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structReaktoro_1_1AqueousSpeciesThermoData.html" target="_top" xlink:title="A type for storing the thermodynamic data of an aqueous species. ">
+<g id="a_node2"><a xlink:href="structReaktoro_1_1AqueousSpeciesThermoData.html" target="_top" xlink:title="A type for storing the thermodynamic data of an aqueous species.">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-19.5 144,-19.5 144,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="72" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">AqueousSpeciesThermoData</text>
 </a>
@@ -33,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structReaktoro_1_1FluidSpeciesThermoData.html" target="_top" xlink:title="A type for storing the thermodynamic data of fluid (gaseous or liquid) species. ">
+<g id="a_node3"><a xlink:href="structReaktoro_1_1FluidSpeciesThermoData.html" target="_top" xlink:title="A type for storing the thermodynamic data of fluid (gaseous or liquid) species.">
 <polygon fill="white" stroke="black" points="162.5,-0.5 162.5,-19.5 289.5,-19.5 289.5,-0.5 162.5,-0.5"/>
 <text text-anchor="middle" x="226" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">FluidSpeciesThermoData</text>
 </a>
@@ -48,7 +51,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="structReaktoro_1_1MineralSpeciesThermoData.html" target="_top" xlink:title="A type for storing the thermodynamic data of a mineral species. ">
+<g id="a_node4"><a xlink:href="structReaktoro_1_1MineralSpeciesThermoData.html" target="_top" xlink:title="A type for storing the thermodynamic data of a mineral species.">
 <polygon fill="white" stroke="black" points="307.5,-0.5 307.5,-19.5 444.5,-19.5 444.5,-0.5 307.5,-0.5"/>
 <text text-anchor="middle" x="376" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MineralSpeciesThermoData</text>
 </a>
