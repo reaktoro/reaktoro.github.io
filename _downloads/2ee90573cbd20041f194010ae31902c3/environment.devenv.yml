@@ -1,0 +1,34 @@
+{{ min_conda_devenv_version("1.1") }}
+
+name: reaktoro
+
+{% set python_version = os.environ.get("PY_VER", "3.7") %}
+
+includes:
+  - {{ root }}/.dependencies/compilers.devenv.yml
+  - {{ root }}/.dependencies/cpp.devenv.yml
+  - {{ root }}/.dependencies/python.devenv.yml
+  - {{ root }}/.dependencies/docs.devenv.yml
+  - {{ root }}/.dependencies/tests.devenv.yml
+  - {{ root }}/.dependencies/utilities.devenv.yml
+
+environment:
+
+  PYTHONPATH:
+    - {{ root }}/artifacts/python/lib/python{{ python_version }}/site-packages   # [unix]
+    - {{ root }}/build/lib/python{{ python_version }}/site-packages              # [unix]
+    - {{ root }}/build/lib64/python{{ python_version }}/site-packages            # [unix]
+    - {{ root }}\artifacts\python\Lib\site-packages                              # [win]
+    - {{ root }}\build\lib\python{{ python_version }}\site-packages              # [win]
+
+  LD_LIBRARY_PATH:                                                   # [unix]
+    - {{ root }}/artifacts/lib                                       # [unix]
+
+  PATH:                                                              # [win]
+    - {{ root }}\artifacts\bin                                       # [win]
+
+  CC: clcache                               # [win]
+  CXX: clcache                              # [win]
+  CLCACHE_BASEDIR: {{ root }}               # [win]
+  # Improves CLCACHE robustness, minimizing the chance of a race condition
+  CLCACHE_OBJECT_CACHE_TIMEOUT_MS: 3600000  # [win]
