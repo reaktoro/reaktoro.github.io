@@ -147,10 +147,31 @@ Public Attributes</h2></td></tr>
 <a class="el" href="namespaceReaktoro.html#a47a19fec22929fb826f0cfdebbddc386">PhaseIdentificationMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1CubicEOS_1_1Params.html#a1e389956d41dcdc4ac96c322a73a2ed1">phase_identification_method</a> = PhaseIdentificationMethod::None</td></tr>
 <tr class="memdesc:a1e389956d41dcdc4ac96c322a73a2ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">If both Gaseous and Liquid phases are in the system, it is recommended to configure a robust phase identification method such as GibbsEnergyAndEquationOfStateMethod for BOTH phases. <br /></td></tr>
 <tr class="separator:a1e389956d41dcdc4ac96c322a73a2ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0645ea5064d856fae4d50a6f4e09430"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classReaktoro_1_1CubicEOS.html#aaf9d894ead23bd3d9a86a5e67249b23b">InteractionParamsFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1CubicEOS_1_1Params.html#ad0645ea5064d856fae4d50a6f4e09430">binary_interaction_values</a></td></tr>
+<tr class="memdesc:ad0645ea5064d856fae4d50a6f4e09430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function to calculate binary interaction parameters for mixture rules using a Cubic EOS.  <a href="structReaktoro_1_1CubicEOS_1_1Params.html#ad0645ea5064d856fae4d50a6f4e09430">More...</a><br /></td></tr>
+<tr class="separator:ad0645ea5064d856fae4d50a6f4e09430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Parameters to be passed to the Cubic Equation of State. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad0645ea5064d856fae4d50a6f4e09430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0645ea5064d856fae4d50a6f4e09430">&#9670;&nbsp;</a></span>binary_interaction_values</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classReaktoro_1_1CubicEOS.html#aaf9d894ead23bd3d9a86a5e67249b23b">InteractionParamsFunction</a> binary_interaction_values</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function to calculate binary interaction parameters for mixture rules using a Cubic EOS. </p>
+<p>This function should have the temperature T as input and should return a <a class="el" href="structReaktoro_1_1CubicEOS_1_1InteractionParamsResult.html" title="Class to define or store Binary Interaction Parameters (BIPs) from a calculation or input.">InteractionParamsResult</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structReaktoro_1_1CubicEOS_1_1InteractionParamsResult.html" title="Class to define or store Binary Interaction Parameters (BIPs) from a calculation or input.">InteractionParamsResult</a> </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>Reaktoro/Thermodynamics/EOS/<a class="el" href="CubicEOS_8hpp_source.html">CubicEOS.hpp</a></li>
 </ul>
 </div><!-- contents -->
@@ -162,7 +183,7 @@ Public Attributes</h2></td></tr>
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 23 2021 18:43:42 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+Generated on Thu Feb 25 2021 12:51:30 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
 </small></address>
 </body>
 </html>

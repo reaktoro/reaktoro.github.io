@@ -142,9 +142,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1CubicEOS_1_1InteractionParamsArgs.html">InteractionParamsArgs</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1CubicEOS_1_1InteractionParamsResult.html">InteractionParamsResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to define or store Binary Interaction Parameters (BIPs) from a calculation or input.  <a href="structReaktoro_1_1CubicEOS_1_1InteractionParamsResult.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1CubicEOS_1_1Params.html">Params</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameters to be passed to the Cubic Equation of State.  <a href="structReaktoro_1_1CubicEOS_1_1Params.html#details">More...</a><br /></td></tr>
@@ -161,9 +160,10 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a051e4d035e053a4636efc58c1bde9b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the enumeration of available cubic EOS models. <br /></td></tr>
 <tr class="separator:a051e4d035e053a4636efc58c1bde9b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dacc574173ed9d59eb2d51483633208"><td class="memItemLeft" align="right" valign="top"><a id="a7dacc574173ed9d59eb2d51483633208"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>InteractionParamsFunction</b> = std::function&lt; <a class="el" href="structReaktoro_1_1CubicEOS_1_1InteractionParamsResult.html">InteractionParamsResult</a>(const <a class="el" href="structReaktoro_1_1CubicEOS_1_1InteractionParamsArgs.html">InteractionParamsArgs</a> &amp;)&gt;</td></tr>
-<tr class="separator:a7dacc574173ed9d59eb2d51483633208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf9d894ead23bd3d9a86a5e67249b23b"><td class="memItemLeft" align="right" valign="top"><a id="aaf9d894ead23bd3d9a86a5e67249b23b"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1CubicEOS.html#aaf9d894ead23bd3d9a86a5e67249b23b">InteractionParamsFunction</a> = std::function&lt; <a class="el" href="structReaktoro_1_1CubicEOS_1_1InteractionParamsResult.html">InteractionParamsResult</a>(const double &amp;)&gt;</td></tr>
+<tr class="memdesc:aaf9d894ead23bd3d9a86a5e67249b23b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function wrapper to calculate (temperature-dependent) binary interaction parameters. <br /></td></tr>
+<tr class="separator:aaf9d894ead23bd3d9a86a5e67249b23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -209,8 +209,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1CubicEOS.html#a494a496def35e6bba977b18789939381">setAcentricFactors</a> (const std::vector&lt; double &gt; &amp;values) -&gt; void</td></tr>
 <tr class="memdesc:a494a496def35e6bba977b18789939381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the acentric factors of the species. <br /></td></tr>
 <tr class="separator:a494a496def35e6bba977b18789939381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51750e747a1ac6bce5a0fd57fd6c0377"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1CubicEOS.html#a51750e747a1ac6bce5a0fd57fd6c0377">setInteractionParamsFunction</a> (const InteractionParamsFunction &amp;func) -&gt; void</td></tr>
-<tr class="memdesc:a51750e747a1ac6bce5a0fd57fd6c0377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the function that calculates the interaction parameters kij and its temperature derivatives.  <a href="classReaktoro_1_1CubicEOS.html#a51750e747a1ac6bce5a0fd57fd6c0377">More...</a><br /></td></tr>
+<tr class="memitem:a51750e747a1ac6bce5a0fd57fd6c0377"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1CubicEOS.html#a51750e747a1ac6bce5a0fd57fd6c0377">setInteractionParamsFunction</a> (const <a class="el" href="classReaktoro_1_1CubicEOS.html#aaf9d894ead23bd3d9a86a5e67249b23b">InteractionParamsFunction</a> &amp;func) -&gt; void</td></tr>
+<tr class="memdesc:a51750e747a1ac6bce5a0fd57fd6c0377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the function that calculates the interaction parameters kij (k) and its temperature derivatives (kT and kTT).  <a href="classReaktoro_1_1CubicEOS.html#a51750e747a1ac6bce5a0fd57fd6c0377">More...</a><br /></td></tr>
 <tr class="separator:a51750e747a1ac6bce5a0fd57fd6c0377"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0a7ef46a27d620e6db69f8371b60173"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1CubicEOS.html#ac0a7ef46a27d620e6db69f8371b60173">operator()</a> (const <a class="el" href="namespaceReaktoro.html#a46596eefac26cf831354511abec16b8d">ThermoScalar</a> &amp;T, const <a class="el" href="namespaceReaktoro.html#a46596eefac26cf831354511abec16b8d">ThermoScalar</a> &amp;P, const <a class="el" href="namespaceReaktoro.html#a8900020d4f55f9942a4474f799529e20">ChemicalVector</a> &amp;x) -&gt; <a class="el" href="structReaktoro_1_1CubicEOS_1_1Result.html">Result</a></td></tr>
 <tr class="memdesc:ac0a7ef46a27d620e6db69f8371b60173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the thermodynamic properties of the phase.  <a href="classReaktoro_1_1CubicEOS.html#ac0a7ef46a27d620e6db69f8371b60173">More...</a><br /></td></tr>
@@ -294,14 +294,20 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">auto setInteractionParamsFunction </td>
           <td>(</td>
-          <td class="paramtype">const InteractionParamsFunction &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classReaktoro_1_1CubicEOS.html#aaf9d894ead23bd3d9a86a5e67249b23b">InteractionParamsFunction</a> &amp;&#160;</td>
           <td class="paramname"><em>func</em></td><td>)</td>
           <td> -&gt; void</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the function that calculates the interaction parameters kij and its temperature derivatives. </p>
+<p>Set the function that calculates the interaction parameters kij (k) and its temperature derivatives (kT and kTT). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>A wrapper function to calculate the BIPs matrices </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd>InteractionParamFunction, InteractionParamArgs, InteractionParamResult </dd></dl>
 
 </div>
@@ -363,7 +369,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 23 2021 18:43:42 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+Generated on Thu Feb 25 2021 12:51:30 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
 </small></address>
 </body>
 </html>
