@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0</span>
+                    &#160;<span id="projectnumber">2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -149,18 +149,6 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a46a40429c473aa33654c0842c656aee7">ChemicalProps</a> (const <a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state)</td></tr>
 <tr class="memdesc:a46a40429c473aa33654c0842c656aee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> object with given chemical state of the system. <br /></td></tr>
 <tr class="separator:a46a40429c473aa33654c0842c656aee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb0e78b6bae921656d6f1f2aaa0ec3cc"><td class="memItemLeft" align="right" valign="top"><a id="abb0e78b6bae921656d6f1f2aaa0ec3cc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#abb0e78b6bae921656d6f1f2aaa0ec3cc">ChemicalProps</a> (const <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> &amp;other)</td></tr>
-<tr class="memdesc:abb0e78b6bae921656d6f1f2aaa0ec3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a copy of a <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> object. <br /></td></tr>
-<tr class="separator:abb0e78b6bae921656d6f1f2aaa0ec3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2186c5e55794b8248a559b8664b23e05"><td class="memItemLeft" align="right" valign="top"><a id="a2186c5e55794b8248a559b8664b23e05"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a2186c5e55794b8248a559b8664b23e05">~ChemicalProps</a> ()</td></tr>
-<tr class="memdesc:a2186c5e55794b8248a559b8664b23e05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy this <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> object. <br /></td></tr>
-<tr class="separator:a2186c5e55794b8248a559b8664b23e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88d69f4180f681a6100cca5b410a7e36"><td class="memItemLeft" align="right" valign="top"><a id="a88d69f4180f681a6100cca5b410a7e36"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a88d69f4180f681a6100cca5b410a7e36">operator=</a> (<a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> other) -&gt; <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> &amp;</td></tr>
-<tr class="memdesc:a88d69f4180f681a6100cca5b410a7e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> object to this. <br /></td></tr>
-<tr class="separator:a88d69f4180f681a6100cca5b410a7e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6410a9925d1ded50e77dab62eb9e4a26"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a6410a9925d1ded50e77dab62eb9e4a26">update</a> (const <a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state) -&gt; void</td></tr>
 <tr class="memdesc:a6410a9925d1ded50e77dab62eb9e4a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the chemical properties of the system.  <a href="classReaktoro_1_1ChemicalProps.html#a6410a9925d1ded50e77dab62eb9e4a26">More...</a><br /></td></tr>
 <tr class="separator:a6410a9925d1ded50e77dab62eb9e4a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,29 +170,116 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aa7752bc25378a4f1488a19684526de02"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aa7752bc25378a4f1488a19684526de02">serialize</a> (<a class="el" href="classReaktoro_1_1ArrayStream.html">ArrayStream</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &gt; &amp;stream) const -&gt; void</td></tr>
 <tr class="memdesc:aa7752bc25378a4f1488a19684526de02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the chemical properties into the array stream <code>stream</code>.  <a href="classReaktoro_1_1ChemicalProps.html#aa7752bc25378a4f1488a19684526de02">More...</a><br /></td></tr>
 <tr class="separator:aa7752bc25378a4f1488a19684526de02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3609f577d126d77df61a9774bde4ce78"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a3609f577d126d77df61a9774bde4ce78">serialize</a> (<a class="el" href="classReaktoro_1_1ArrayStream.html">ArrayStream</a>&lt; double &gt; &amp;stream) const -&gt; void</td></tr>
+<tr class="memdesc:a3609f577d126d77df61a9774bde4ce78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the chemical properties into the array stream <code>stream</code>.  <a href="classReaktoro_1_1ChemicalProps.html#a3609f577d126d77df61a9774bde4ce78">More...</a><br /></td></tr>
+<tr class="separator:a3609f577d126d77df61a9774bde4ce78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed4c98281692cd781a6a690b52df5e38"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aed4c98281692cd781a6a690b52df5e38">deserialize</a> (const <a class="el" href="classReaktoro_1_1ArrayStream.html">ArrayStream</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &gt; &amp;stream) -&gt; void</td></tr>
 <tr class="memdesc:aed4c98281692cd781a6a690b52df5e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the chemical properties of the system using the array stream <code>stream</code>.  <a href="classReaktoro_1_1ChemicalProps.html#aed4c98281692cd781a6a690b52df5e38">More...</a><br /></td></tr>
 <tr class="separator:aed4c98281692cd781a6a690b52df5e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01a5ebdf7d0e92efa711ee445e33ff7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ae01a5ebdf7d0e92efa711ee445e33ff7">deserialize</a> (const <a class="el" href="classReaktoro_1_1ArrayStream.html">ArrayStream</a>&lt; double &gt; &amp;stream) -&gt; void</td></tr>
+<tr class="memdesc:ae01a5ebdf7d0e92efa711ee445e33ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the chemical properties of the system using the array stream <code>stream</code>.  <a href="classReaktoro_1_1ChemicalProps.html#ae01a5ebdf7d0e92efa711ee445e33ff7">More...</a><br /></td></tr>
+<tr class="separator:ae01a5ebdf7d0e92efa711ee445e33ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6124be5789b61bce3829e45a0b9f3d1"><td class="memItemLeft" align="right" valign="top"><a id="af6124be5789b61bce3829e45a0b9f3d1"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#af6124be5789b61bce3829e45a0b9f3d1">system</a> () const -&gt; const <a class="el" href="classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> &amp;</td></tr>
 <tr class="memdesc:af6124be5789b61bce3829e45a0b9f3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical system associated with these chemical properties. <br /></td></tr>
 <tr class="separator:af6124be5789b61bce3829e45a0b9f3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31ef697821459353da34e8495863f104"><td class="memItemLeft" align="right" valign="top"><a id="a31ef697821459353da34e8495863f104"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a31ef697821459353da34e8495863f104">phaseProps</a> (<a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a> idx) const -&gt; <a class="el" href="namespaceReaktoro.html#a37d486f2309cb4e440352f34b709bf1b">ChemicalPropsPhaseConstRef</a></td></tr>
-<tr class="memdesc:a31ef697821459353da34e8495863f104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical properties of a phase with given index. <br /></td></tr>
-<tr class="separator:a31ef697821459353da34e8495863f104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abefa055057df80913eda90e0c5d73b81"><td class="memItemLeft" align="right" valign="top"><a id="abefa055057df80913eda90e0c5d73b81"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#abefa055057df80913eda90e0c5d73b81">temperature</a> () const -&gt; const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;</td></tr>
-<tr class="memdesc:abefa055057df80913eda90e0c5d73b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the temperature of the system (in K). <br /></td></tr>
-<tr class="separator:abefa055057df80913eda90e0c5d73b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa272ca9f3c7ee252fd839362e17ca581"><td class="memItemLeft" align="right" valign="top"><a id="aa272ca9f3c7ee252fd839362e17ca581"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aa272ca9f3c7ee252fd839362e17ca581">pressure</a> () const -&gt; const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;</td></tr>
-<tr class="memdesc:aa272ca9f3c7ee252fd839362e17ca581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the pressure of the system (in Pa). <br /></td></tr>
-<tr class="separator:aa272ca9f3c7ee252fd839362e17ca581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a006c9c66a4e813c1df425ad8578892f3"><td class="memItemLeft" align="right" valign="top"><a id="a006c9c66a4e813c1df425ad8578892f3"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a006c9c66a4e813c1df425ad8578892f3">phaseProps</a> (<a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a> iphase) -&gt; <a class="el" href="namespaceReaktoro.html#a644e70d829f0f421d845ca4445f256db">ChemicalPropsPhaseRef</a></td></tr>
+<tr class="memdesc:a006c9c66a4e813c1df425ad8578892f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical properties of a phase with given index. <br /></td></tr>
+<tr class="separator:a006c9c66a4e813c1df425ad8578892f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0add1ca062dd38726829d5da1f29297e"><td class="memItemLeft" align="right" valign="top"><a id="a0add1ca062dd38726829d5da1f29297e"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a0add1ca062dd38726829d5da1f29297e">phaseProps</a> (<a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a> iphase) const -&gt; <a class="el" href="namespaceReaktoro.html#a37d486f2309cb4e440352f34b709bf1b">ChemicalPropsPhaseConstRef</a></td></tr>
+<tr class="memdesc:a0add1ca062dd38726829d5da1f29297e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical properties of a phase with given index. <br /></td></tr>
+<tr class="separator:a0add1ca062dd38726829d5da1f29297e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0306c92482df2cd853cbf92d04bb797c"><td class="memItemLeft" align="right" valign="top"><a id="a0306c92482df2cd853cbf92d04bb797c"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a0306c92482df2cd853cbf92d04bb797c">temperature</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a0306c92482df2cd853cbf92d04bb797c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the temperature of the system (in K). <br /></td></tr>
+<tr class="separator:a0306c92482df2cd853cbf92d04bb797c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4eb7e7fe6ab1abc28ad7de7c4ca1db"><td class="memItemLeft" align="right" valign="top"><a id="a0e4eb7e7fe6ab1abc28ad7de7c4ca1db"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a0e4eb7e7fe6ab1abc28ad7de7c4ca1db">pressure</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a0e4eb7e7fe6ab1abc28ad7de7c4ca1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the pressure of the system (in Pa). <br /></td></tr>
+<tr class="separator:a0e4eb7e7fe6ab1abc28ad7de7c4ca1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68d30fee11e0d9ac64f8f50730b3bf2b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a68d30fee11e0d9ac64f8f50730b3bf2b">elementAmount</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;element) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a68d30fee11e0d9ac64f8f50730b3bf2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amount of an element in the system (in mol).  <a href="classReaktoro_1_1ChemicalProps.html#a68d30fee11e0d9ac64f8f50730b3bf2b">More...</a><br /></td></tr>
+<tr class="separator:a68d30fee11e0d9ac64f8f50730b3bf2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca2f3c46761a4bd7ee636897c873e27"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aeca2f3c46761a4bd7ee636897c873e27">elementAmountInPhase</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;element, const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;phase) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:aeca2f3c46761a4bd7ee636897c873e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amount of an element in the system (in mol).  <a href="classReaktoro_1_1ChemicalProps.html#aeca2f3c46761a4bd7ee636897c873e27">More...</a><br /></td></tr>
+<tr class="separator:aeca2f3c46761a4bd7ee636897c873e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fda16a70541082c627d47ea970db470"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a9fda16a70541082c627d47ea970db470">elementAmountAmongSpecies</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;element, <a class="el" href="namespaceReaktoro.html#a718003b16fd504878961882ffb2fa9ac">ArrayXlConstRef</a> indices) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a9fda16a70541082c627d47ea970db470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amount of an element among a group of species in the system (in mol).  <a href="classReaktoro_1_1ChemicalProps.html#a9fda16a70541082c627d47ea970db470">More...</a><br /></td></tr>
+<tr class="separator:a9fda16a70541082c627d47ea970db470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01599a54fea1b98b98e7b1eb251c8d45"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a01599a54fea1b98b98e7b1eb251c8d45">speciesAmount</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a01599a54fea1b98b98e7b1eb251c8d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amount of a species in the system (in mol).  <a href="classReaktoro_1_1ChemicalProps.html#a01599a54fea1b98b98e7b1eb251c8d45">More...</a><br /></td></tr>
+<tr class="separator:a01599a54fea1b98b98e7b1eb251c8d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e4380df6f38177ebc182c6bd04cf0c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a55e4380df6f38177ebc182c6bd04cf0c">speciesMass</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a55e4380df6f38177ebc182c6bd04cf0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the mass of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#a55e4380df6f38177ebc182c6bd04cf0c">More...</a><br /></td></tr>
+<tr class="separator:a55e4380df6f38177ebc182c6bd04cf0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d1a34fc6846f82489fb5fd19eec08d6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a3d1a34fc6846f82489fb5fd19eec08d6">moleFraction</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a3d1a34fc6846f82489fb5fd19eec08d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the mole fraction of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#a3d1a34fc6846f82489fb5fd19eec08d6">More...</a><br /></td></tr>
+<tr class="separator:a3d1a34fc6846f82489fb5fd19eec08d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4e206fa2b5ce4f114c2c9cb8d4ec18"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a9e4e206fa2b5ce4f114c2c9cb8d4ec18">activityCoefficient</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a9e4e206fa2b5ce4f114c2c9cb8d4ec18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity coefficient of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#a9e4e206fa2b5ce4f114c2c9cb8d4ec18">More...</a><br /></td></tr>
+<tr class="separator:a9e4e206fa2b5ce4f114c2c9cb8d4ec18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35090865f463d46ed5c0610d0812371d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a35090865f463d46ed5c0610d0812371d">lgActivityCoefficient</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a35090865f463d46ed5c0610d0812371d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the lg activity coefficient of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#a35090865f463d46ed5c0610d0812371d">More...</a><br /></td></tr>
+<tr class="separator:a35090865f463d46ed5c0610d0812371d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e361a2efdd70a952ada0f6523b35e48"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a8e361a2efdd70a952ada0f6523b35e48">lnActivityCoefficient</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a8e361a2efdd70a952ada0f6523b35e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ln activity coefficient of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#a8e361a2efdd70a952ada0f6523b35e48">More...</a><br /></td></tr>
+<tr class="separator:a8e361a2efdd70a952ada0f6523b35e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c222847eaecaaab2a71e90816d2a6a1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a1c222847eaecaaab2a71e90816d2a6a1">activity</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a1c222847eaecaaab2a71e90816d2a6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#a1c222847eaecaaab2a71e90816d2a6a1">More...</a><br /></td></tr>
+<tr class="separator:a1c222847eaecaaab2a71e90816d2a6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b629298b9db47a7a07db2f5a28fc0e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ac9b629298b9db47a7a07db2f5a28fc0e">lgActivity</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:ac9b629298b9db47a7a07db2f5a28fc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the lg activity of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#ac9b629298b9db47a7a07db2f5a28fc0e">More...</a><br /></td></tr>
+<tr class="separator:ac9b629298b9db47a7a07db2f5a28fc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ba57b07f3b304b5077390b7df93c790"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a0ba57b07f3b304b5077390b7df93c790">lnActivity</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a0ba57b07f3b304b5077390b7df93c790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the ln activity of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#a0ba57b07f3b304b5077390b7df93c790">More...</a><br /></td></tr>
+<tr class="separator:a0ba57b07f3b304b5077390b7df93c790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2bdff034f5faa99b4c39251018d1c7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a2f2bdff034f5faa99b4c39251018d1c7">chemicalPotential</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a2f2bdff034f5faa99b4c39251018d1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical potential of a species in the system.  <a href="classReaktoro_1_1ChemicalProps.html#a2f2bdff034f5faa99b4c39251018d1c7">More...</a><br /></td></tr>
+<tr class="separator:a2f2bdff034f5faa99b4c39251018d1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea4580ed89973868ba2c4281d4673497"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aea4580ed89973868ba2c4281d4673497">standardVolume</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:aea4580ed89973868ba2c4281d4673497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar volume of a species in the system (in m3/mol).  <a href="classReaktoro_1_1ChemicalProps.html#aea4580ed89973868ba2c4281d4673497">More...</a><br /></td></tr>
+<tr class="separator:aea4580ed89973868ba2c4281d4673497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d200097436a578d7c5265dfaac342f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ac6d200097436a578d7c5265dfaac342f">standardGibbsEnergy</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:ac6d200097436a578d7c5265dfaac342f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar Gibbs energy of formation of a species in the system (in J/mol).  <a href="classReaktoro_1_1ChemicalProps.html#ac6d200097436a578d7c5265dfaac342f">More...</a><br /></td></tr>
+<tr class="separator:ac6d200097436a578d7c5265dfaac342f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765af4dda6a5c28ca65a0912ad4bab53"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a765af4dda6a5c28ca65a0912ad4bab53">standardEnthalpy</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a765af4dda6a5c28ca65a0912ad4bab53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar enthalpy of formation of a species in the system (in J/mol).  <a href="classReaktoro_1_1ChemicalProps.html#a765af4dda6a5c28ca65a0912ad4bab53">More...</a><br /></td></tr>
+<tr class="separator:a765af4dda6a5c28ca65a0912ad4bab53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa57757e9394e027cdc97f4bb200ca7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a5aa57757e9394e027cdc97f4bb200ca7">standardEntropy</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a5aa57757e9394e027cdc97f4bb200ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar entropy of formation of the species a the system (in J/(mol*K)).  <a href="classReaktoro_1_1ChemicalProps.html#a5aa57757e9394e027cdc97f4bb200ca7">More...</a><br /></td></tr>
+<tr class="separator:a5aa57757e9394e027cdc97f4bb200ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a236ff16cba4685d1d2c519128344f0e4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a236ff16cba4685d1d2c519128344f0e4">standardInternalEnergy</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a236ff16cba4685d1d2c519128344f0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar internal energy of formation of a species in the system (in J/mol).  <a href="classReaktoro_1_1ChemicalProps.html#a236ff16cba4685d1d2c519128344f0e4">More...</a><br /></td></tr>
+<tr class="separator:a236ff16cba4685d1d2c519128344f0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace206af7c1768773a2d2926e86c053f4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ace206af7c1768773a2d2926e86c053f4">standardHelmholtzEnergy</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:ace206af7c1768773a2d2926e86c053f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar Helmholtz energy of formation of a species in the system (in J/mol).  <a href="classReaktoro_1_1ChemicalProps.html#ace206af7c1768773a2d2926e86c053f4">More...</a><br /></td></tr>
+<tr class="separator:ace206af7c1768773a2d2926e86c053f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36af5037cee1a3cd5f01bec35efd2081"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a36af5037cee1a3cd5f01bec35efd2081">standardHeatCapacityConstP</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a36af5037cee1a3cd5f01bec35efd2081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar isobaric heat capacity of the species a the system (in J/(mol*K)).  <a href="classReaktoro_1_1ChemicalProps.html#a36af5037cee1a3cd5f01bec35efd2081">More...</a><br /></td></tr>
+<tr class="separator:a36af5037cee1a3cd5f01bec35efd2081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861b8188973a6819d47655b146359c33"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a861b8188973a6819d47655b146359c33">standardHeatCapacityConstV</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a861b8188973a6819d47655b146359c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar isochoric heat capacity of the species a the system (in J/(mol*K)).  <a href="classReaktoro_1_1ChemicalProps.html#a861b8188973a6819d47655b146359c33">More...</a><br /></td></tr>
+<tr class="separator:a861b8188973a6819d47655b146359c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55277756244872129509f822e535e4f2"><td class="memItemLeft" align="right" valign="top"><a id="a55277756244872129509f822e535e4f2"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a55277756244872129509f822e535e4f2">elementAmounts</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:a55277756244872129509f822e535e4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amounts of the elements in the system (in mol). <br /></td></tr>
+<tr class="separator:a55277756244872129509f822e535e4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95f2be2131dc45182518743f09e3e6a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ac95f2be2131dc45182518743f09e3e6a">elementAmountsInPhase</a> (const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;phase) const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:ac95f2be2131dc45182518743f09e3e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amounts of the elements in a phase of the system (in mol).  <a href="classReaktoro_1_1ChemicalProps.html#ac95f2be2131dc45182518743f09e3e6a">More...</a><br /></td></tr>
+<tr class="separator:ac95f2be2131dc45182518743f09e3e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdaa7e4bd45eec471f5f0596a0d143d2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#afdaa7e4bd45eec471f5f0596a0d143d2">elementAmountsAmongSpecies</a> (<a class="el" href="namespaceReaktoro.html#a718003b16fd504878961882ffb2fa9ac">ArrayXlConstRef</a> indices) const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:afdaa7e4bd45eec471f5f0596a0d143d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amounts of the elements among a group of species in the system (in mol).  <a href="classReaktoro_1_1ChemicalProps.html#afdaa7e4bd45eec471f5f0596a0d143d2">More...</a><br /></td></tr>
+<tr class="separator:afdaa7e4bd45eec471f5f0596a0d143d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a679819b168d9c89a14be8a87b4100d6b"><td class="memItemLeft" align="right" valign="top"><a id="a679819b168d9c89a14be8a87b4100d6b"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a679819b168d9c89a14be8a87b4100d6b">speciesAmounts</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
-<tr class="memdesc:a679819b168d9c89a14be8a87b4100d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amounts of each species in the system (in mol). <br /></td></tr>
+<tr class="memdesc:a679819b168d9c89a14be8a87b4100d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the amounts of the species in the system (in mol). <br /></td></tr>
 <tr class="separator:a679819b168d9c89a14be8a87b4100d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31803727f7402bc3d8b1fd0817c31ccc"><td class="memItemLeft" align="right" valign="top"><a id="a31803727f7402bc3d8b1fd0817c31ccc"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a31803727f7402bc3d8b1fd0817c31ccc">speciesMasses</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:a31803727f7402bc3d8b1fd0817c31ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the masses of the species in the system (in kg). <br /></td></tr>
+<tr class="separator:a31803727f7402bc3d8b1fd0817c31ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb78ca567bfe2d84e57854bffa000f45"><td class="memItemLeft" align="right" valign="top"><a id="adb78ca567bfe2d84e57854bffa000f45"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#adb78ca567bfe2d84e57854bffa000f45">moleFractions</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
 <tr class="memdesc:adb78ca567bfe2d84e57854bffa000f45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the mole fractions of the species in the system. <br /></td></tr>
@@ -221,29 +296,29 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aa6813f39716ff8df87cf1f6b52b9a995">chemicalPotentials</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
 <tr class="memdesc:aa6813f39716ff8df87cf1f6b52b9a995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical potentials of the species in the system (in J/mol). <br /></td></tr>
 <tr class="separator:aa6813f39716ff8df87cf1f6b52b9a995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59cd34cdbdd85852276e372c472eea7d"><td class="memItemLeft" align="right" valign="top"><a id="a59cd34cdbdd85852276e372c472eea7d"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a59cd34cdbdd85852276e372c472eea7d">standardGibbsEnergies</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
-<tr class="memdesc:a59cd34cdbdd85852276e372c472eea7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar Gibbs energies of the species in the system (in J/mol). <br /></td></tr>
-<tr class="separator:a59cd34cdbdd85852276e372c472eea7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13bf8786d23ba9d5e97c3fa236440b8f"><td class="memItemLeft" align="right" valign="top"><a id="a13bf8786d23ba9d5e97c3fa236440b8f"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a13bf8786d23ba9d5e97c3fa236440b8f">standardEnthalpies</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
-<tr class="memdesc:a13bf8786d23ba9d5e97c3fa236440b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar enthalpies of the species in the system (in J/mol). <br /></td></tr>
-<tr class="separator:a13bf8786d23ba9d5e97c3fa236440b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0082f69c27e8de74d686814380b546d"><td class="memItemLeft" align="right" valign="top"><a id="ae0082f69c27e8de74d686814380b546d"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ae0082f69c27e8de74d686814380b546d">standardVolumes</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
 <tr class="memdesc:ae0082f69c27e8de74d686814380b546d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar volumes of the species in the system (in m3/mol). <br /></td></tr>
 <tr class="separator:ae0082f69c27e8de74d686814380b546d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59cd34cdbdd85852276e372c472eea7d"><td class="memItemLeft" align="right" valign="top"><a id="a59cd34cdbdd85852276e372c472eea7d"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a59cd34cdbdd85852276e372c472eea7d">standardGibbsEnergies</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
+<tr class="memdesc:a59cd34cdbdd85852276e372c472eea7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar Gibbs energies of formation of the species in the system (in J/mol). <br /></td></tr>
+<tr class="separator:a59cd34cdbdd85852276e372c472eea7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13bf8786d23ba9d5e97c3fa236440b8f"><td class="memItemLeft" align="right" valign="top"><a id="a13bf8786d23ba9d5e97c3fa236440b8f"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a13bf8786d23ba9d5e97c3fa236440b8f">standardEnthalpies</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
+<tr class="memdesc:a13bf8786d23ba9d5e97c3fa236440b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar enthalpies of formation of the species in the system (in J/mol). <br /></td></tr>
+<tr class="separator:a13bf8786d23ba9d5e97c3fa236440b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9b86c17b58d464d5efe003d28f77053"><td class="memItemLeft" align="right" valign="top"><a id="ae9b86c17b58d464d5efe003d28f77053"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ae9b86c17b58d464d5efe003d28f77053">standardEntropies</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
-<tr class="memdesc:ae9b86c17b58d464d5efe003d28f77053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar entropies of the species in the system (in J/(mol*K)). <br /></td></tr>
+<tr class="memdesc:ae9b86c17b58d464d5efe003d28f77053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar entropies of formation of the species in the system (in J/(mol*K)). <br /></td></tr>
 <tr class="separator:ae9b86c17b58d464d5efe003d28f77053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0163fa0c314c9a85b2f966eff673af6"><td class="memItemLeft" align="right" valign="top"><a id="ac0163fa0c314c9a85b2f966eff673af6"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ac0163fa0c314c9a85b2f966eff673af6">standardInternalEnergies</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
-<tr class="memdesc:ac0163fa0c314c9a85b2f966eff673af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar internal energies of the species in the system (in J/mol). <br /></td></tr>
+<tr class="memdesc:ac0163fa0c314c9a85b2f966eff673af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar internal energies of formation of the species in the system (in J/mol). <br /></td></tr>
 <tr class="separator:ac0163fa0c314c9a85b2f966eff673af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36ed10c11223da35373f4bbdce755a8"><td class="memItemLeft" align="right" valign="top"><a id="af36ed10c11223da35373f4bbdce755a8"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#af36ed10c11223da35373f4bbdce755a8">standardHelmholtzEnergies</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
-<tr class="memdesc:af36ed10c11223da35373f4bbdce755a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar Helmholtz energies of the species in the system (in J/mol). <br /></td></tr>
+<tr class="memdesc:af36ed10c11223da35373f4bbdce755a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar Helmholtz energies of formation of the species in the system (in J/mol). <br /></td></tr>
 <tr class="separator:af36ed10c11223da35373f4bbdce755a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a781f0f4ed1d8f5a7cd8a48a24a4429fd"><td class="memItemLeft" align="right" valign="top"><a id="a781f0f4ed1d8f5a7cd8a48a24a4429fd"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a781f0f4ed1d8f5a7cd8a48a24a4429fd">standardHeatCapacitiesConstP</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
@@ -253,30 +328,46 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#adf73f0f88c681741331a44f6b102bcab">standardHeatCapacitiesConstV</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a></td></tr>
 <tr class="memdesc:adf73f0f88c681741331a44f6b102bcab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard partial molar isochoric heat capacities of the species in the system (in J/(mol*K)). <br /></td></tr>
 <tr class="separator:adf73f0f88c681741331a44f6b102bcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad848fbafef03b2693baa01bcfa843481"><td class="memItemLeft" align="right" valign="top"><a id="ad848fbafef03b2693baa01bcfa843481"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ad848fbafef03b2693baa01bcfa843481">gibbsEnergy</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
-<tr class="memdesc:ad848fbafef03b2693baa01bcfa843481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Gibbs energy of the system (in J). <br /></td></tr>
-<tr class="separator:ad848fbafef03b2693baa01bcfa843481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af149a81a9ec569d67d299243be261b90"><td class="memItemLeft" align="right" valign="top"><a id="af149a81a9ec569d67d299243be261b90"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#af149a81a9ec569d67d299243be261b90">enthalpy</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
-<tr class="memdesc:af149a81a9ec569d67d299243be261b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the enthalpy of the system (in J). <br /></td></tr>
-<tr class="separator:af149a81a9ec569d67d299243be261b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae26be37d21159762aae6a2c8cbf47e7"><td class="memItemLeft" align="right" valign="top"><a id="aae26be37d21159762aae6a2c8cbf47e7"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aae26be37d21159762aae6a2c8cbf47e7">amount</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:aae26be37d21159762aae6a2c8cbf47e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sum of species amounts in the system (in mol). <br /></td></tr>
+<tr class="separator:aae26be37d21159762aae6a2c8cbf47e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c404d59c8885090e7b747d614089db"><td class="memItemLeft" align="right" valign="top"><a id="a25c404d59c8885090e7b747d614089db"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a25c404d59c8885090e7b747d614089db">mass</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a25c404d59c8885090e7b747d614089db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sum of species masses in the system (in kg). <br /></td></tr>
+<tr class="separator:a25c404d59c8885090e7b747d614089db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d69c0b77abf7c20580625d30dd12d1d"><td class="memItemLeft" align="right" valign="top"><a id="a4d69c0b77abf7c20580625d30dd12d1d"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a4d69c0b77abf7c20580625d30dd12d1d">volume</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
 <tr class="memdesc:a4d69c0b77abf7c20580625d30dd12d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the volume of the system (in m3). <br /></td></tr>
 <tr class="separator:a4d69c0b77abf7c20580625d30dd12d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad848fbafef03b2693baa01bcfa843481"><td class="memItemLeft" align="right" valign="top"><a id="ad848fbafef03b2693baa01bcfa843481"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ad848fbafef03b2693baa01bcfa843481">gibbsEnergy</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:ad848fbafef03b2693baa01bcfa843481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Gibbs energy of formation of the system (in J). <br /></td></tr>
+<tr class="separator:ad848fbafef03b2693baa01bcfa843481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af149a81a9ec569d67d299243be261b90"><td class="memItemLeft" align="right" valign="top"><a id="af149a81a9ec569d67d299243be261b90"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#af149a81a9ec569d67d299243be261b90">enthalpy</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:af149a81a9ec569d67d299243be261b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the enthalpy of formation of the system (in J). <br /></td></tr>
+<tr class="separator:af149a81a9ec569d67d299243be261b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404b003520afbaae4139ebc5b97c9621"><td class="memItemLeft" align="right" valign="top"><a id="a404b003520afbaae4139ebc5b97c9621"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a404b003520afbaae4139ebc5b97c9621">entropy</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
-<tr class="memdesc:a404b003520afbaae4139ebc5b97c9621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the entropy of the system (in J/K). <br /></td></tr>
+<tr class="memdesc:a404b003520afbaae4139ebc5b97c9621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the entropy of formation of the system (in J/K). <br /></td></tr>
 <tr class="separator:a404b003520afbaae4139ebc5b97c9621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cfccf69f4f26e12f9b948b8ef7c1f5a"><td class="memItemLeft" align="right" valign="top"><a id="a8cfccf69f4f26e12f9b948b8ef7c1f5a"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a8cfccf69f4f26e12f9b948b8ef7c1f5a">internalEnergy</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
-<tr class="memdesc:a8cfccf69f4f26e12f9b948b8ef7c1f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the internal energy of the system (in J). <br /></td></tr>
+<tr class="memdesc:a8cfccf69f4f26e12f9b948b8ef7c1f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the internal energy of formation of the system (in J). <br /></td></tr>
 <tr class="separator:a8cfccf69f4f26e12f9b948b8ef7c1f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad017b22f90cb92aba5c334f34d8f665"><td class="memItemLeft" align="right" valign="top"><a id="aad017b22f90cb92aba5c334f34d8f665"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aad017b22f90cb92aba5c334f34d8f665">helmholtzEnergy</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
-<tr class="memdesc:aad017b22f90cb92aba5c334f34d8f665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Helmholtz energy of the system (in J). <br /></td></tr>
+<tr class="memdesc:aad017b22f90cb92aba5c334f34d8f665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Helmholtz energy of formation of the system (in J). <br /></td></tr>
 <tr class="separator:aad017b22f90cb92aba5c334f34d8f665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60665f0f751c84e642bc90078596ba77"><td class="memItemLeft" align="right" valign="top"><a id="a60665f0f751c84e642bc90078596ba77"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a60665f0f751c84e642bc90078596ba77">output</a> (std::ostream &amp;out) const -&gt; void</td></tr>
+<tr class="memdesc:a60665f0f751c84e642bc90078596ba77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the chemical properties of the system to a stream. <br /></td></tr>
+<tr class="separator:a60665f0f751c84e642bc90078596ba77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a209ca131b2517fcf51a5987219c662a6"><td class="memItemLeft" align="right" valign="top"><a id="a209ca131b2517fcf51a5987219c662a6"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a209ca131b2517fcf51a5987219c662a6">output</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;filename) const -&gt; void</td></tr>
+<tr class="memdesc:a209ca131b2517fcf51a5987219c662a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the chemical properties of the system to a file. <br /></td></tr>
+<tr class="separator:a209ca131b2517fcf51a5987219c662a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac38a8787f59cd89c9dc0e35907614e36"><td class="memItemLeft" align="right" valign="top"><a id="ac38a8787f59cd89c9dc0e35907614e36"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ac38a8787f59cd89c9dc0e35907614e36">operator VectorXr</a> () const</td></tr>
 <tr class="memdesc:ac38a8787f59cd89c9dc0e35907614e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical properties in this object serialized in an array of real numbers. <br /></td></tr>
@@ -482,7 +573,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <a id="aa7752bc25378a4f1488a19684526de02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7752bc25378a4f1488a19684526de02">&#9670;&nbsp;</a></span>serialize()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7752bc25378a4f1488a19684526de02">&#9670;&nbsp;</a></span>serialize() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -507,8 +598,34 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a3609f577d126d77df61a9774bde4ce78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3609f577d126d77df61a9774bde4ce78">&#9670;&nbsp;</a></span>serialize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classReaktoro_1_1ArrayStream.html">ArrayStream</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td> const -&gt; void</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialize the chemical properties into the array stream <code>stream</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The array stream used to serialize the chemical properties. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aed4c98281692cd781a6a690b52df5e38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed4c98281692cd781a6a690b52df5e38">&#9670;&nbsp;</a></span>deserialize()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aed4c98281692cd781a6a690b52df5e38">&#9670;&nbsp;</a></span>deserialize() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -533,6 +650,652 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="ae01a5ebdf7d0e92efa711ee445e33ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01a5ebdf7d0e92efa711ee445e33ff7">&#9670;&nbsp;</a></span>deserialize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto deserialize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classReaktoro_1_1ArrayStream.html">ArrayStream</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the chemical properties of the system using the array stream <code>stream</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The array stream containing the serialized chemical properties. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a68d30fee11e0d9ac64f8f50730b3bf2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68d30fee11e0d9ac64f8f50730b3bf2b">&#9670;&nbsp;</a></span>elementAmount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto elementAmount </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the amount of an element in the system (in mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>The symbol or index of the element in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeca2f3c46761a4bd7ee636897c873e27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca2f3c46761a4bd7ee636897c873e27">&#9670;&nbsp;</a></span>elementAmountInPhase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto elementAmountInPhase </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>element</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>phase</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the amount of an element in the system (in mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>The symbol or index of the element in the system. </td></tr>
+    <tr><td class="paramname">phase</td><td>The name or index of the phase in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9fda16a70541082c627d47ea970db470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fda16a70541082c627d47ea970db470">&#9670;&nbsp;</a></span>elementAmountAmongSpecies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto elementAmountAmongSpecies </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>element</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a718003b16fd504878961882ffb2fa9ac">ArrayXlConstRef</a>&#160;</td>
+          <td class="paramname"><em>indices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the amount of an element among a group of species in the system (in mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>The symbol or index of the element in the system. </td></tr>
+    <tr><td class="paramname">indices</td><td>The indices of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a01599a54fea1b98b98e7b1eb251c8d45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01599a54fea1b98b98e7b1eb251c8d45">&#9670;&nbsp;</a></span>speciesAmount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto speciesAmount </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the amount of a species in the system (in mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a55e4380df6f38177ebc182c6bd04cf0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55e4380df6f38177ebc182c6bd04cf0c">&#9670;&nbsp;</a></span>speciesMass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto speciesMass </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the mass of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3d1a34fc6846f82489fb5fd19eec08d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1a34fc6846f82489fb5fd19eec08d6">&#9670;&nbsp;</a></span>moleFraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto moleFraction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the mole fraction of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9e4e206fa2b5ce4f114c2c9cb8d4ec18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e4e206fa2b5ce4f114c2c9cb8d4ec18">&#9670;&nbsp;</a></span>activityCoefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto activityCoefficient </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the activity coefficient of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a35090865f463d46ed5c0610d0812371d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35090865f463d46ed5c0610d0812371d">&#9670;&nbsp;</a></span>lgActivityCoefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto lgActivityCoefficient </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the lg activity coefficient of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8e361a2efdd70a952ada0f6523b35e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e361a2efdd70a952ada0f6523b35e48">&#9670;&nbsp;</a></span>lnActivityCoefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto lnActivityCoefficient </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the ln activity coefficient of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1c222847eaecaaab2a71e90816d2a6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c222847eaecaaab2a71e90816d2a6a1">&#9670;&nbsp;</a></span>activity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto activity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the activity of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac9b629298b9db47a7a07db2f5a28fc0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b629298b9db47a7a07db2f5a28fc0e">&#9670;&nbsp;</a></span>lgActivity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto lgActivity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the lg activity of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0ba57b07f3b304b5077390b7df93c790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba57b07f3b304b5077390b7df93c790">&#9670;&nbsp;</a></span>lnActivity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto lnActivity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the ln activity of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2f2bdff034f5faa99b4c39251018d1c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f2bdff034f5faa99b4c39251018d1c7">&#9670;&nbsp;</a></span>chemicalPotential()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto chemicalPotential </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the chemical potential of a species in the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aea4580ed89973868ba2c4281d4673497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea4580ed89973868ba2c4281d4673497">&#9670;&nbsp;</a></span>standardVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardVolume </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the standard partial molar volume of a species in the system (in m3/mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac6d200097436a578d7c5265dfaac342f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d200097436a578d7c5265dfaac342f">&#9670;&nbsp;</a></span>standardGibbsEnergy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardGibbsEnergy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the standard partial molar Gibbs energy of formation of a species in the system (in J/mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a765af4dda6a5c28ca65a0912ad4bab53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765af4dda6a5c28ca65a0912ad4bab53">&#9670;&nbsp;</a></span>standardEnthalpy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardEnthalpy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the standard partial molar enthalpy of formation of a species in the system (in J/mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5aa57757e9394e027cdc97f4bb200ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa57757e9394e027cdc97f4bb200ca7">&#9670;&nbsp;</a></span>standardEntropy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardEntropy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the standard partial molar entropy of formation of the species a the system (in J/(mol*K)). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a236ff16cba4685d1d2c519128344f0e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a236ff16cba4685d1d2c519128344f0e4">&#9670;&nbsp;</a></span>standardInternalEnergy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardInternalEnergy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the standard partial molar internal energy of formation of a species in the system (in J/mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ace206af7c1768773a2d2926e86c053f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace206af7c1768773a2d2926e86c053f4">&#9670;&nbsp;</a></span>standardHelmholtzEnergy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardHelmholtzEnergy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the standard partial molar Helmholtz energy of formation of a species in the system (in J/mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a36af5037cee1a3cd5f01bec35efd2081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36af5037cee1a3cd5f01bec35efd2081">&#9670;&nbsp;</a></span>standardHeatCapacityConstP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardHeatCapacityConstP </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the standard partial molar isobaric heat capacity of the species a the system (in J/(mol*K)). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a861b8188973a6819d47655b146359c33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a861b8188973a6819d47655b146359c33">&#9670;&nbsp;</a></span>standardHeatCapacityConstV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardHeatCapacityConstV </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the standard partial molar isochoric heat capacity of the species a the system (in J/(mol*K)). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac95f2be2131dc45182518743f09e3e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95f2be2131dc45182518743f09e3e6a">&#9670;&nbsp;</a></span>elementAmountsInPhase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto elementAmountsInPhase </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>phase</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the amounts of the elements in a phase of the system (in mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">phase</td><td>The name or index of the phase in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afdaa7e4bd45eec471f5f0596a0d143d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdaa7e4bd45eec471f5f0596a0d143d2">&#9670;&nbsp;</a></span>elementAmountsAmongSpecies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto elementAmountsAmongSpecies </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a718003b16fd504878961882ffb2fa9ac">ArrayXlConstRef</a>&#160;</td>
+          <td class="paramname"><em>indices</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the amounts of the elements among a group of species in the system (in mol). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indices</td><td>The indices of the species in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Reaktoro/Core/<a class="el" href="ChemicalProps_8hpp_source.html">ChemicalProps.hpp</a></li>
 <li>Reaktoro/Core/ChemicalProps.cpp</li>
@@ -546,7 +1309,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 15 2021 12:42:58 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jul 19 2021 15:37:33 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0</span>
+                    &#160;<span id="projectnumber">2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -242,6 +242,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1MineralPhases.html">MineralPhases</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class used to configure automatic selection of pure mineral phases.  <a href="classReaktoro_1_1MineralPhases.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Prop.html">Prop</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to retrieve a specified property from the chemical properties of a system.  <a href="classReaktoro_1_1Prop.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Reaction.html">Reaction</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to represent a reaction and its attributes.  <a href="classReaktoro_1_1Reaction.html#details">More...</a><br /></td></tr>
@@ -888,8 +891,12 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 <tr class="separator:a5573b97b9e5129f61d289e037d7e806c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a632090884b4aa0585e747446a2683963"><td class="memItemLeft" align="right" valign="top"><a id="a632090884b4aa0585e747446a2683963"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Strings</a> = std::vector&lt; std::string &gt;</td></tr>
-<tr class="memdesc:a632090884b4aa0585e747446a2683963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>std::vector&lt;std::string&gt;</code>. <br /></td></tr>
+<tr class="memdesc:a632090884b4aa0585e747446a2683963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>std::vector&lt;String&gt;</code>. <br /></td></tr>
 <tr class="separator:a632090884b4aa0585e747446a2683963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84bd447245ffc02dd2bb9d80c6a3e73"><td class="memItemLeft" align="right" valign="top"><a id="ab84bd447245ffc02dd2bb9d80c6a3e73"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> = std::variant&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a> &gt;</td></tr>
+<tr class="memdesc:ab84bd447245ffc02dd2bb9d80c6a3e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>std::variant&lt;String, Index&gt;</code>. <br /></td></tr>
+<tr class="separator:ab84bd447245ffc02dd2bb9d80c6a3e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b01c504448c96cd2191a5184dd31acf"><td class="memTemplParams" colspan="2"><a id="a1b01c504448c96cd2191a5184dd31acf"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1b01c504448c96cd2191a5184dd31acf"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a> = std::vector&lt; T &gt;</td></tr>
@@ -1004,6 +1011,9 @@ template&lt;typename Result , typename... Args&gt; </td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#af5e59ae4c876b7818c7928f2a78d111e">ModelSerializer</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="classReaktoro_1_1yaml.html">yaml</a>()&gt;</td></tr>
 <tr class="memdesc:af5e59ae4c876b7818c7928f2a78d111e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The functional signature of functions that serialize a <a class="el" href="classReaktoro_1_1Model.html">Model</a> object. <br /></td></tr>
 <tr class="separator:af5e59ae4c876b7818c7928f2a78d111e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c28934d4fb8b5bfe086187969f2e6a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a82c28934d4fb8b5bfe086187969f2e6a">PropFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(const <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> &amp;props)&gt;</td></tr>
+<tr class="memdesc:a82c28934d4fb8b5bfe086187969f2e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for evaluation of a property of a chemical system.  <a href="namespaceReaktoro.html#a82c28934d4fb8b5bfe086187969f2e6a">More...</a><br /></td></tr>
+<tr class="separator:a82c28934d4fb8b5bfe086187969f2e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a344e12e57f33613b35e7068d38a8d324"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a344e12e57f33613b35e7068d38a8d324">EquilibriumConstantFn</a> = std::function&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P)&gt;</td></tr>
 <tr class="memdesc:a344e12e57f33613b35e7068d38a8d324"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for calculation of equilibrium constant of reaction (in natural log).  <a href="namespaceReaktoro.html#a344e12e57f33613b35e7068d38a8d324">More...</a><br /></td></tr>
 <tr class="separator:a344e12e57f33613b35e7068d38a8d324"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2871,6 +2881,10 @@ template&lt;typename T &gt; </td></tr>
 template&lt;typename T , typename U &gt; </td></tr>
 <tr class="memitem:af30442b389df911119dfcc29300d4b5b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>isSame</b> = std::is_same_v&lt;Decay&lt;T&gt;, Decay&lt;U&gt;&gt;</td></tr>
 <tr class="separator:af30442b389df911119dfcc29300d4b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ad2e17fe20e47b328e0f5ebef1d865"><td class="memTemplParams" colspan="2"><a id="ac5ad2e17fe20e47b328e0f5ebef1d865"></a>
+template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:ac5ad2e17fe20e47b328e0f5ebef1d865"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>isBaseOf</b> = std::is_base_of_v&lt;Decay&lt;T&gt;, Decay&lt;U&gt;&gt;</td></tr>
+<tr class="separator:ac5ad2e17fe20e47b328e0f5ebef1d865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8196701c4edc038cc99215fd8dc35390"><td class="memTemplParams" colspan="2"><a id="a8196701c4edc038cc99215fd8dc35390"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a8196701c4edc038cc99215fd8dc35390"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>isFunction</b> = <a class="el" href="structReaktoro_1_1detail_1_1isFunction.html">detail::isFunction</a>&lt;Decay&lt;T&gt;&gt;::value</td></tr>
@@ -2972,6 +2986,29 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a82c28934d4fb8b5bfe086187969f2e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c28934d4fb8b5bfe086187969f2e6a">&#9670;&nbsp;</a></span>PropFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceReaktoro.html#a82c28934d4fb8b5bfe086187969f2e6a">PropFn</a> =  <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(const <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a>&amp; props)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function type for evaluation of a property of a chemical system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">props</td><td>The already evaluated chemical properties of the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The property of interest retrieved from the given chemical properties of the system. </dd></dl>
 
 </div>
 </div>
@@ -7588,7 +7625,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 15 2021 12:42:58 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jul 19 2021 15:37:33 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

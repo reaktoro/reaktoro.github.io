@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0</span>
+                    &#160;<span id="projectnumber">2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -144,6 +144,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:add797a8602d95b9d7846242d94fbb21e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Phases.html#add797a8602d95b9d7846242d94fbb21e">Phases</a> (const <a class="el" href="classReaktoro_1_1Database.html">Database</a> &amp;db)</td></tr>
 <tr class="memdesc:add797a8602d95b9d7846242d94fbb21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1Phases.html" title="The class used to define the phases that will constitute the chemical system of interest.">Phases</a> object.  <a href="classReaktoro_1_1Phases.html#add797a8602d95b9d7846242d94fbb21e">More...</a><br /></td></tr>
 <tr class="separator:add797a8602d95b9d7846242d94fbb21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2252863343177563368555b4728bac14"><td class="memTemplParams" colspan="2">template&lt;typename... GenericPhases&gt; </td></tr>
+<tr class="memitem:a2252863343177563368555b4728bac14"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Phases.html#a2252863343177563368555b4728bac14">Phases</a> (const <a class="el" href="classReaktoro_1_1Database.html">Database</a> &amp;db, const GenericPhases &amp;... gphases)</td></tr>
+<tr class="memdesc:a2252863343177563368555b4728bac14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1Phases.html" title="The class used to define the phases that will constitute the chemical system of interest.">Phases</a> object with given database and generic phases.  <a href="classReaktoro_1_1Phases.html#a2252863343177563368555b4728bac14">More...</a><br /></td></tr>
+<tr class="separator:a2252863343177563368555b4728bac14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac5628fc2c037d99717d5639948caeef"><td class="memItemLeft" align="right" valign="top"><a id="aac5628fc2c037d99717d5639948caeef"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Phases.html#aac5628fc2c037d99717d5639948caeef">add</a> (const <a class="el" href="classReaktoro_1_1GenericPhase.html">GenericPhase</a> &amp;phase) -&gt; void</td></tr>
 <tr class="memdesc:aac5628fc2c037d99717d5639948caeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="classReaktoro_1_1GenericPhase.html" title="The base type for all other classes defining more specific phases.">GenericPhase</a> object into the <a class="el" href="classReaktoro_1_1Phases.html" title="The class used to define the phases that will constitute the chemical system of interest.">Phases</a> container. <br /></td></tr>
@@ -169,7 +173,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="textblock"><p>The class used to define the phases that will constitute the chemical system of interest. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="add797a8602d95b9d7846242d94fbb21e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add797a8602d95b9d7846242d94fbb21e">&#9670;&nbsp;</a></span>Phases()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#add797a8602d95b9d7846242d94fbb21e">&#9670;&nbsp;</a></span>Phases() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,6 +198,51 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a2252863343177563368555b4728bac14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2252863343177563368555b4728bac14">&#9670;&nbsp;</a></span>Phases() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classReaktoro_1_1Phases.html">Phases</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classReaktoro_1_1Database.html">Database</a> &amp;&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const GenericPhases &amp;...&#160;</td>
+          <td class="paramname"><em>gphases</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classReaktoro_1_1Phases.html" title="The class used to define the phases that will constitute the chemical system of interest.">Phases</a> object with given database and generic phases. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>The database used to construct the species and elements in the phases. </td></tr>
+    <tr><td class="paramname">gphases</td><td>The generic phases that will be converted into <a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> objects. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Reaktoro/Core/<a class="el" href="Phases_8hpp_source.html">Phases.hpp</a></li>
 <li>Reaktoro/Core/Phases.cpp</li>
@@ -207,7 +256,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 15 2021 12:42:58 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jul 19 2021 15:37:33 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

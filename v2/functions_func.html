@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0</span>
+                    &#160;<span id="projectnumber">2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -165,8 +165,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 : <a class="el" href="classReaktoro_1_1SubstanceCriticalProps.html#a1e00eeaaa378dd294d587ae28434a36d">SubstanceCriticalProps</a>
 </li>
 <li>activity()
-: <a class="el" href="classReaktoro_1_1EquilibriumConditions.html#adb91a7be0afd262d2a38c23ef8e97b0f">EquilibriumConditions</a>
+: <a class="el" href="classReaktoro_1_1ChemicalProps.html#a1c222847eaecaaab2a71e90816d2a6a1">ChemicalProps</a>
+, <a class="el" href="classReaktoro_1_1EquilibriumConditions.html#adb91a7be0afd262d2a38c23ef8e97b0f">EquilibriumConditions</a>
 , <a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#a667968491addd0b4ae0cd39fbf1f68a3">EquilibriumSpecs</a>
+, <a class="el" href="classReaktoro_1_1Prop.html#abd3fbc74ce597e37506d3aaee701b02b">Prop</a>
+</li>
+<li>activityCoefficient()
+: <a class="el" href="classReaktoro_1_1ChemicalProps.html#a9e4e206fa2b5ce4f114c2c9cb8d4ec18">ChemicalProps</a>
+, <a class="el" href="classReaktoro_1_1Prop.html#a39e8ba8b74ffd994778188f12d29c49e">Prop</a>
 </li>
 <li>activityModel()
 : <a class="el" href="classReaktoro_1_1GenericPhase.html#a306472758b5b4e28dc9f133710ad10cd">GenericPhase</a>
@@ -176,7 +182,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 : <a class="el" href="classReaktoro_1_1Phase.html#ab293ae8a0bd5b96fd8da9bec9cc05592">Phase</a>
 </li>
 <li>add()
-: <a class="el" href="classReaktoro_1_1Phases.html#aac5628fc2c037d99717d5639948caeef">Phases</a>
+: <a class="el" href="classReaktoro_1_1ChemicalState.html#ad65c52c9ad76230934accf29abe453c9">ChemicalState</a>
+, <a class="el" href="classReaktoro_1_1Phases.html#aac5628fc2c037d99717d5639948caeef">Phases</a>
 </li>
 <li>addConstraint()
 : <a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#a8932dd67bd8459c0b9176c12eae5c0ce">EquilibriumSpecs</a>
@@ -186,6 +193,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </li>
 <li>addInput()
 : <a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#acf8f4acac0f08a659eb697400274682d">EquilibriumSpecs</a>
+</li>
+<li>additionalAggregateStates()
+: <a class="el" href="classReaktoro_1_1GenericPhase.html#aed425faf7f1b89a2b82944afc7e03133">GenericPhase</a>
+, <a class="el" href="classReaktoro_1_1GenericPhasesGenerator.html#aed425faf7f1b89a2b82944afc7e03133">GenericPhasesGenerator</a>
 </li>
 <li>addSpecies()
 : <a class="el" href="classReaktoro_1_1Database.html#afcfca693ff84bf03b26293f4543d5217">Database</a>
@@ -203,7 +214,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 : <a class="el" href="classReaktoro_1_1AqueousProps.html#abb8bf1564dc5b42f0fc8415eda2835c8">AqueousProps</a>
 </li>
 <li>amount()
-: <a class="el" href="classReaktoro_1_1ChemicalPropsPhaseBase.html#aae26be37d21159762aae6a2c8cbf47e7">ChemicalPropsPhaseBase&lt; Real, Array &gt;</a>
+: <a class="el" href="classReaktoro_1_1ChemicalProps.html#aae26be37d21159762aae6a2c8cbf47e7">ChemicalProps</a>
+, <a class="el" href="classReaktoro_1_1ChemicalPropsPhaseBase.html#aae26be37d21159762aae6a2c8cbf47e7">ChemicalPropsPhaseBase&lt; Real, Array &gt;</a>
+, <a class="el" href="classReaktoro_1_1Prop.html#a42447c346ae355cb0afc92a249db3f39">Prop</a>
 </li>
 <li>anions()
 : <a class="el" href="classReaktoro_1_1AqueousMixture.html#a502f63fe1d7c4dc8401eaf95bdccc9e6">AqueousMixture</a>
@@ -288,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 15 2021 12:42:59 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jul 19 2021 15:37:34 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

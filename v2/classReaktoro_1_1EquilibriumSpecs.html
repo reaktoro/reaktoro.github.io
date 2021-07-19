@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0</span>
+                    &#160;<span id="projectnumber">2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -202,9 +202,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab369fa5e276d0625e5711e62018c42db"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#ab369fa5e276d0625e5711e62018c42db">openTo</a> (const <a class="el" href="classReaktoro_1_1ChemicalFormula.html">ChemicalFormula</a> &amp;substance) -&gt; void</td></tr>
 <tr class="memdesc:ab369fa5e276d0625e5711e62018c42db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that the chemical system is open to a substance.  <a href="classReaktoro_1_1EquilibriumSpecs.html#ab369fa5e276d0625e5711e62018c42db">More...</a><br /></td></tr>
 <tr class="separator:ab369fa5e276d0625e5711e62018c42db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a2ee68f776414e0bb8a14b384d4420f"><td class="memItemLeft" align="right" valign="top"><a id="a8a2ee68f776414e0bb8a14b384d4420f"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#a8a2ee68f776414e0bb8a14b384d4420f">numInputs</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a></td></tr>
-<tr class="memdesc:a8a2ee68f776414e0bb8a14b384d4420f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of introduced input variables. <br /></td></tr>
+<tr class="memitem:a8a2ee68f776414e0bb8a14b384d4420f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#a8a2ee68f776414e0bb8a14b384d4420f">numInputs</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a></td></tr>
+<tr class="memdesc:a8a2ee68f776414e0bb8a14b384d4420f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify that the chemical system is open to a given chemical state. // TODO: Implement EquilibriumSpecs::auto openTo(const ChemicalState&amp; state).  <a href="classReaktoro_1_1EquilibriumSpecs.html#a8a2ee68f776414e0bb8a14b384d4420f">More...</a><br /></td></tr>
 <tr class="separator:a8a2ee68f776414e0bb8a14b384d4420f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ecf5232d0be6101fe4ee5ac522379da"><td class="memItemLeft" align="right" valign="top"><a id="a2ecf5232d0be6101fe4ee5ac522379da"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#a2ecf5232d0be6101fe4ee5ac522379da">numParams</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a></td></tr>
@@ -872,6 +871,26 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a8a2ee68f776414e0bb8a14b384d4420f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a2ee68f776414e0bb8a14b384d4420f">&#9670;&nbsp;</a></span>numInputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto numInputs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Specify that the chemical system is open to a given chemical state. // TODO: Implement EquilibriumSpecs::auto openTo(const ChemicalState&amp; state). </p>
+<p>Specify that the chemical system is open to a given material. // TODO: Implement EquilibriumSpecs::auto openTo(const Material&amp; material). Return the number of introduced input variables. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Reaktoro/Equilibrium/<a class="el" href="EquilibriumSpecs_8hpp_source.html">EquilibriumSpecs.hpp</a></li>
 <li>Reaktoro/Equilibrium/EquilibriumSpecs.cpp</li>
@@ -885,7 +904,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 15 2021 12:42:58 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jul 19 2021 15:37:34 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

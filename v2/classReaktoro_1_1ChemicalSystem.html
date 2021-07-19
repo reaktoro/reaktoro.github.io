@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0</span>
+                    &#160;<span id="projectnumber">2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -153,6 +153,11 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalSystem.html#af1aba87e948a97f156a908ef2a2b4c01">ChemicalSystem</a> (const <a class="el" href="classReaktoro_1_1Database.html">Database</a> &amp;<a class="el" href="classReaktoro_1_1ChemicalSystem.html#ac6fde1d4360b2de26a370fe3324050b5">database</a>, const <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Phase.html">Phase</a> &gt; &amp;<a class="el" href="classReaktoro_1_1ChemicalSystem.html#afdbf1324ce960d9187f439e2ca4ef091">phases</a>)</td></tr>
 <tr class="memdesc:af1aba87e948a97f156a908ef2a2b4c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ChemicalSystem.html" title="The class used to represent a chemical system and its attributes and properties.">ChemicalSystem</a> instance with given database and phases. <br /></td></tr>
 <tr class="separator:af1aba87e948a97f156a908ef2a2b4c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a184d130d583ee51eabac664437b1d77a"><td class="memTemplParams" colspan="2"><a id="a184d130d583ee51eabac664437b1d77a"></a>
+template&lt;typename... GenericPhases&gt; </td></tr>
+<tr class="memitem:a184d130d583ee51eabac664437b1d77a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalSystem.html#a184d130d583ee51eabac664437b1d77a">ChemicalSystem</a> (const <a class="el" href="classReaktoro_1_1Database.html">Database</a> &amp;<a class="el" href="classReaktoro_1_1ChemicalSystem.html#ac6fde1d4360b2de26a370fe3324050b5">database</a>, const GenericPhases &amp;... genericPhases)</td></tr>
+<tr class="memdesc:a184d130d583ee51eabac664437b1d77a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ChemicalSystem.html" title="The class used to represent a chemical system and its attributes and properties.">ChemicalSystem</a> instance with given database and one or more generic phases. <br /></td></tr>
+<tr class="separator:a184d130d583ee51eabac664437b1d77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6fde1d4360b2de26a370fe3324050b5"><td class="memItemLeft" align="right" valign="top"><a id="ac6fde1d4360b2de26a370fe3324050b5"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalSystem.html#ac6fde1d4360b2de26a370fe3324050b5">database</a> () const -&gt; const <a class="el" href="classReaktoro_1_1Database.html">Database</a> &amp;</td></tr>
 <tr class="memdesc:ac6fde1d4360b2de26a370fe3324050b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the database used to construct the chemical system. <br /></td></tr>
@@ -184,6 +189,14 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a0efdeca0061066d8c5676d36bf7b2bfb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalSystem.html#a0efdeca0061066d8c5676d36bf7b2bfb">formulaMatrix</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad4803222d554f0ac5fd99d0b7e71757a">MatrixXdConstRef</a></td></tr>
 <tr class="memdesc:a0efdeca0061066d8c5676d36bf7b2bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the formula matrix of the system.  <a href="classReaktoro_1_1ChemicalSystem.html#a0efdeca0061066d8c5676d36bf7b2bfb">More...</a><br /></td></tr>
 <tr class="separator:a0efdeca0061066d8c5676d36bf7b2bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55b17afaa385e7f773957e28d1bddcf"><td class="memItemLeft" align="right" valign="top"><a id="ab55b17afaa385e7f773957e28d1bddcf"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalSystem.html#ab55b17afaa385e7f773957e28d1bddcf">formulaMatrixElements</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad4803222d554f0ac5fd99d0b7e71757a">MatrixXdConstRef</a></td></tr>
+<tr class="memdesc:ab55b17afaa385e7f773957e28d1bddcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the top rows of the formula matrix corresponding to elements. <br /></td></tr>
+<tr class="separator:ab55b17afaa385e7f773957e28d1bddcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eed7479c8c57804a4516f79d8ea28e8"><td class="memItemLeft" align="right" valign="top"><a id="a5eed7479c8c57804a4516f79d8ea28e8"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalSystem.html#a5eed7479c8c57804a4516f79d8ea28e8">formulaMatrixCharge</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#ad4803222d554f0ac5fd99d0b7e71757a">MatrixXdConstRef</a></td></tr>
+<tr class="memdesc:a5eed7479c8c57804a4516f79d8ea28e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the bottom row of the formula matrix corresponding to electric charge. <br /></td></tr>
+<tr class="separator:a5eed7479c8c57804a4516f79d8ea28e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The class used to represent a chemical system and its attributes and properties. </p>
@@ -222,7 +235,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 15 2021 12:42:58 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jul 19 2021 15:37:33 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
