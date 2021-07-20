@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
@@ -30,13 +32,13 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -89,24 +91,24 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Programming Reference</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/equilibrium/index.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/kinetics/index.html">Chemical Kinetics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/transport/index.html">Chemical Transport</a></li>
 </ul>
-<p class="caption"><span class="caption-text">General</span></p>
+<p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="thermodynamic-databases.html">Thermodynamic Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thermodynamic-backends.html">Thermodynamic Backends</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -188,7 +190,7 @@ Reaktoro!</p>
 <p>Here is a simple C++ code using Reaktoro to perform a multiphase chemical
 equilibrium calculation:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;Reaktoro/Reaktoro.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">Reaktoro</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Reaktoro</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -240,7 +242,7 @@ equilibrium-controlled and kinetically-controlled reactions. The C++ example
 below demonstrate this for a simple mineral dissolution modeling, in which
 CaCO3(s, calcite) reacts with a carbonated aqueous solution:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;Reaktoro/Reaktoro.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">Reaktoro</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="nn">Reaktoro</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
@@ -299,7 +301,7 @@ CaCO3(s, calcite) reacts with a carbonated aqueous solution:</p>
 </div>
 <p>When the application is executed, the following figures are produced:</p>
 <a class=""
-               data-lightbox="group-2d4a69ed-72ff-404d-9d50-1385d9de4a7a"
+               data-lightbox="group-bd9e8388-f759-4cba-a535-ba4c08caf91b"
                href="_images/demo-kineticpath-mainpage-1.svg"
                title=""
                data-title=""
@@ -309,7 +311,7 @@ CaCO3(s, calcite) reacts with a carbonated aqueous solution:</p>
                      height="auto"
                      alt=""/>
                 </a><a class=""
-               data-lightbox="group-af88ee11-0b73-4aa8-8b09-6ae4c59d689c"
+               data-lightbox="group-7b30619c-b06f-45a0-8cae-cc833dc6fbf8"
                href="_images/demo-kineticpath-mainpage-2.svg"
                title=""
                data-title=""
@@ -319,7 +321,7 @@ CaCO3(s, calcite) reacts with a carbonated aqueous solution:</p>
                      height="auto"
                      alt=""/>
                 </a><a class=""
-               data-lightbox="group-46c01471-0c2e-4eb3-a520-62144edd65b6"
+               data-lightbox="group-de09b9d6-4d5d-4110-8f03-95f9a5ffb210"
                href="_images/demo-kineticpath-mainpage-3.svg"
                title=""
                data-title=""

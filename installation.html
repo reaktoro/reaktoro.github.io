@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
@@ -30,13 +32,13 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -89,24 +91,24 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Programming Reference</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/equilibrium/index.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/kinetics/index.html">Chemical Kinetics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/transport/index.html">Chemical Transport</a></li>
 </ul>
-<p class="caption"><span class="caption-text">General</span></p>
+<p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="thermodynamic-databases.html">Thermodynamic Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thermodynamic-backends.html">Thermodynamic Backends</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -190,10 +192,16 @@ used to simplify Reaktoro’s installation and the management of its
 external software dependencies. Once you install Conda, and append the
 necessary channels, you’ll be able to install Reaktoro by just executing the
 following command in your terminal:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">reaktoro</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">reaktoro</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
 <p>Follow the Conda installation steps shown next before you execute this command!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reason for specifying a v1.x version of <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> in <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">reaktoro=1</span></code>
+is because there are at the moment candidate releases for v2.0
+of Reaktoro. This version has not been documented yet, but it will soon.</p>
+</div>
 <div class="section" id="installing-conda">
 <h3>Installing Conda<a class="headerlink" href="#installing-conda" title="Permalink to this headline">¶</a></h3>
 <p>Conda can be installed by installing either <a class="reference external" href="https://www.anaconda.com/download">Anaconda</a> or <a class="reference external" href="https://conda.io/miniconda.html">Miniconda</a>. We
@@ -204,7 +212,7 @@ Miniconda is just a tiny subset of Anaconda containing only our needed
 <p>Download the <strong>Miniconda Installer</strong> by clicking on the image below:</p>
 <div class="figure align-center" id="id1" style="width: 80%">
 <a class="reference external image-reference" href="https://conda.io/miniconda.html"><img alt="_images/conda-logo.svg" src="_images/conda-logo.svg" width="80%" /></a>
-<p class="caption"><span class="caption-text">Reaktoro is a proud user of Conda, a powerfull and modern package manager!</span></p>
+<p class="caption"><span class="caption-text">Reaktoro is a proud user of Conda, a powerfull and modern package manager!</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>You’ll be given options to install <a class="reference external" href="https://conda.io/miniconda.html">Miniconda</a> for Windows, Mac OS X, and
 Linux (32-bit or 64-bit) using either Python 3.7 or Python 2.7. We recommend a
@@ -214,12 +222,12 @@ Linux (32-bit or 64-bit) using either Python 3.7 or Python 2.7. We recommend a
 <h3>Adding conda-forge channels<a class="headerlink" href="#adding-conda-forge-channels" title="Permalink to this headline">¶</a></h3>
 <p>The Reaktoro pre-built package is hosted on <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">conda-forge</a>. After installing Miniconda, go
 to a terminal and execute:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">append</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">append</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
 <p>to add the conda-forge channels required to find the Reaktoro package.</p>
 <p>All should now be set to install Reaktoro using:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">reaktoro</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">reaktoro</span>
 </pre></div>
 </div>
 <p>Go to <a class="reference internal" href="#reporting-a-failed-installation">Reporting a failed installation</a> if this does not work for you.</p>
@@ -233,7 +241,7 @@ greatly simplify the building process of Reaktoro for Windows, Mac OS X, and
 Linux, you’ll need <a class="reference external" href="https://conda.io/docs/">Conda</a>. Follow the Conda installation steps in the
 previous section, in which a Miniconda installer is used.</p>
 <p>After installing Miniconda, go to a terminal and execute:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">n</span> <span class="n">base</span> <span class="n">conda</span><span class="o">-</span><span class="n">devenv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">n</span> <span class="n">base</span> <span class="n">conda</span><span class="o">-</span><span class="n">devenv</span>
 </pre></div>
 </div>
 <p>This installs <a class="reference external" href="https://github.com/ESSS/conda-devenv">conda-devenv</a>, a conda tool with convenient functionalities to
@@ -243,14 +251,14 @@ define and initialize conda environments.</p>
 <p>We need now to download the source code of Reaktoro, which is hosted on
 <a class="reference external" href="https://github.com/reaktoro/reaktoro">GitHub</a>. This can be done by either executing the following <a class="reference external" href="https://git-scm.com/">git</a> command
 from the terminal (if you already have git installed!):</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">reaktoro</span><span class="o">/</span><span class="n">reaktoro</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/reaktoro/reaktoro.git
 </pre></div>
 </div>
 <p>or by directly downloading <a class="reference download external" download="" href="https://github.com/reaktoro/reaktoro/archive/master.zip"><code class="xref download docutils literal notranslate"><span class="pre">reaktoro-master.zip</span></code></a>, the latest version of Reaktoro’s
 source code in a zip file.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you use the direct download option above, please unzip the downloaded
+<p class="admonition-title">Note</p>
+<p>If you use the direct download option above, please unzip the downloaded
 file in a directory of your choice. We assume the unzipped folder is named
 <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> for the next installation steps, and not <code class="docutils literal notranslate"><span class="pre">reaktoro-master</span></code>.</p>
 </div>
@@ -260,21 +268,21 @@ file in a directory of your choice. We assume the unzipped folder is named
 <p>The next step is to create a <strong>conda environment</strong> that contains all
 the software and library dependencies needed to build Reaktoro. In the root of
 the reaktoro directory, execute:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">devenv</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda devenv
 </pre></div>
 </div>
 <p>This command will create the conda environment called <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code>, which can
 take a few minutes to complete for the first time.</p>
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">You only need to execute <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">devenv</span></code> again when the list of external
+<p class="admonition-title">Attention</p>
+<p>You only need to execute <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">devenv</span></code> again when the list of external
 dependencies changes or some configuration in the conda environment
 <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is altered.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you are curious about the list of dependencies needed to build Reaktoro,
-have a look at the file <a class="reference download internal" download="" href="_downloads/2ee90573cbd20041f194010ae31902c3/environment.devenv.yml"><code class="xref download docutils literal notranslate"><span class="pre">environment.devenv.yml</span></code></a> in the root directory of Reaktoro’s source
+<p class="admonition-title">Note</p>
+<p>If you are curious about the list of dependencies needed to build Reaktoro,
+have a look at the file <a class="reference download internal" download="" href="_downloads/1028ca64b20ff146372fa2a21a162f0d/environment.devenv.yml"><code class="xref download docutils literal notranslate"><span class="pre">environment.devenv.yml</span></code></a> in the root directory of Reaktoro’s source
 code. This file is a <em>recipe</em> for the creation of our conda environment
 <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> containing all required dependencies.</p>
 </div>
@@ -283,12 +291,12 @@ code. This file is a <em>recipe</em> for the creation of our conda environment
 <h3>Activating the conda environment for Reaktoro<a class="headerlink" href="#activating-the-conda-environment-for-reaktoro" title="Permalink to this headline">¶</a></h3>
 <p>The next step is to <strong>activate the conda environment</strong> <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> that
 <a class="reference external" href="https://github.com/ESSS/conda-devenv">conda-devenv</a> created for us:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">reaktoro</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">reaktoro</span>
 </pre></div>
 </div>
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">You need to activate the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> conda environment whenever you use
+<p class="admonition-title">Attention</p>
+<p>You need to activate the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> conda environment whenever you use
 Reaktoro from C++ or Python! This is because conda will adjust some
 environment variables in your system (e.g., <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>,
 <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">PATH</span></code>) so that Reaktoro’s libraries, executables,
@@ -301,38 +309,36 @@ correctly.</p>
 <h3>Building and installing Reaktoro with CMake<a class="headerlink" href="#building-and-installing-reaktoro-with-cmake" title="Permalink to this headline">¶</a></h3>
 <p>You can now build and install Reaktoro by executing the following from the root
 of the reaktoro source directory:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">P</span> <span class="n">install</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">P</span> <span class="n">install</span>
 </pre></div>
 </div>
 <p>Assuming the conda environment <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is active, this command will first
 build Reaktoro and then install its header files, libraries, executables,
 Python package in your local <em>miniconda</em> directory:</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Linux:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">/home/user/miniconda3/envs/reaktoro/</span></code></td>
-</tr>
-<tr class="field-even field"><th class="field-name">Windows:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">C:\miniconda3\envs\reaktoro\</span></code></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Linux</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">/home/user/miniconda3/envs/reaktoro/</span></code></p>
+</dd>
+<dt class="field-even">Windows</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">C:\miniconda3\envs\reaktoro\</span></code></p>
+</dd>
+</dl>
 <p>Alternatively, to build and install Reaktoro in a more traditional way, execute
 the following from the root directory of Reaktoro’s source code:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">build</span>
 <span class="n">cd</span> <span class="n">build</span>
 <span class="n">cmake</span> <span class="o">..</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">target</span> <span class="n">install</span>
 </pre></div>
 </div>
 <p>The following is also possible with CMake v3.13 or newer:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">S</span> <span class="o">.</span> <span class="o">-</span><span class="n">B</span> <span class="n">build</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">S</span> <span class="o">.</span> <span class="o">-</span><span class="n">B</span> <span class="n">build</span>
 <span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="n">build</span><span class="o">/</span> <span class="o">--</span><span class="n">target</span> <span class="n">install</span>
 </pre></div>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Compiling the Reaktoro C++ library and the Reaktoro Python module should
+<p class="admonition-title">Tip</p>
+<p>Compiling the Reaktoro C++ library and the Reaktoro Python module should
 take a few minutes for the first time. However, if you activate the
 reaktoro conda environment, <a class="reference external" href="https://ccache.samba.org/">ccache</a> will be
 used to significantly speed up future compilations automatically for you!</p>
@@ -341,12 +347,12 @@ used to significantly speed up future compilations automatically for you!</p>
 <div class="section" id="installing-reaktoro-in-a-custom-directory">
 <h3>Installing Reaktoro in a custom directory<a class="headerlink" href="#installing-reaktoro-in-a-custom-directory" title="Permalink to this headline">¶</a></h3>
 <p>To install Reaktoro in a different directory, say, <code class="docutils literal notranslate"><span class="pre">/home/user/other</span></code>, use:</p>
-<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DPREFIX</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">other</span> <span class="o">-</span><span class="n">P</span> <span class="n">install</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">DPREFIX</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">other</span> <span class="o">-</span><span class="n">P</span> <span class="n">install</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">..</span> <span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">other</span>
-<span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">target</span> <span class="n">install</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake .. -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/home/user/other
+cmake --build . --target install
 </pre></div>
 </div>
 <p>You’ll need, however, to set the environment variables <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>,
@@ -363,25 +369,25 @@ package (e.g., <code class="docutils literal notranslate"><span class="pre">pyth
 <div class="section" id="checking-for-a-successful-installation">
 <h3>Checking for a successful installation<a class="headerlink" href="#checking-for-a-successful-installation" title="Permalink to this headline">¶</a></h3>
 <p>Check if Reaktoro was installed correctly by executing:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;import reaktoro; print(reaktoro.__path__[0])&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -c <span class="s1">&#39;import reaktoro; print(reaktoro.__path__[0])&#39;</span>
 </pre></div>
 </div>
 <p>This should print the path to the installed python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code>. For
 example:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">reaktoro</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">pythonX</span><span class="o">.</span><span class="n">Y</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">reaktoro</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/user/miniconda3/envs/reaktoro/lib/pythonX.Y/site-packages/reaktoro
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">pythonX.Y</span></code> above depends on the python version used.</p>
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">Make sure you have the conda environment <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> active! Otherwise the
+<p class="admonition-title">Attention</p>
+<p>Make sure you have the conda environment <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> active! Otherwise the
 checking above might not work without further actions (e.g., changing the
 <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable).</p>
 </div>
 <p>If you get instead something like:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-    <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;reaktoro&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+    File <span class="s2">&quot;&lt;string&gt;&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
+ModuleNotFoundError: No module named <span class="s1">&#39;reaktoro&#39;</span>
 </pre></div>
 </div>
 <p>then the installation was not successful or it was installed in a custom path

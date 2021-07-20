@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
@@ -30,13 +32,13 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -89,13 +91,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">Programming Reference</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../equilibrium/index.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kinetics/index.html">Chemical Kinetics</a></li>
@@ -105,12 +107,12 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">General</span></p>
+<p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../thermodynamic-databases.html">Thermodynamic Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../thermodynamic-backends.html">Thermodynamic Backends</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
@@ -199,20 +201,20 @@ existing rock minerals calcite and quartz. These initial fluid and rock
 composition conditions are uniform throughout the rock core. We assume a rock
 column length of 100 m at temperature 60 °C and 100 bar throughout.</p>
 <div class="admonition-assumptions admonition">
-<p class="first admonition-title">Assumptions</p>
+<p class="admonition-title">Assumptions</p>
 <p>To simplify this tutorial, the following assumptions are made:</p>
-<ul class="last simple">
-<li>Chemical equilibrium is used for modeling the chemical reactions
+<ul class="simple">
+<li><p>Chemical equilibrium is used for modeling the chemical reactions
 in this problem, not only for reactions between aqueous-aqueous species
-but also for those between mineral and aqueous species.</li>
-<li>A uniform constant velocity field is imposed and it is not updated
-by solving, for example, Darcy equation.</li>
-<li>Both temperature and pressure are also kept constant along the rock.</li>
+but also for those between mineral and aqueous species.</p></li>
+<li><p>A uniform constant velocity field is imposed and it is not updated
+by solving, for example, Darcy equation.</p></li>
+<li><p>Both temperature and pressure are also kept constant along the rock.</p></li>
 </ul>
 </div>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Create other more complicated tutorials that do not consider the previous
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Create other more complicated tutorials that do not consider the previous
 assumptions so that chemical kinetics is considered for mineral dissolution
 and precipitation reactions and the partial chemical equilibrium assumption
 is assumed for aqueous and gaseous species. Also, create tutorials in which
@@ -396,8 +398,8 @@ calculations are able to model dolomite precipitation.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The aqueous phase is defined above by using a list of compounds, which is
+<p class="admonition-title">Note</p>
+<p>The aqueous phase is defined above by using a list of compounds, which is
 then broken automatically by Reaktoro into a list of element names. These
 element names are then used to find in the database all the aqueous species
 that could be formed out of them.</p>
@@ -477,8 +479,8 @@ below:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">After this scaling step, the sum of the phase volumes in <code class="docutils literal notranslate"><span class="pre">state_ic</span></code> is 1
+<p class="admonition-title">Note</p>
+<p>After this scaling step, the sum of the phase volumes in <code class="docutils literal notranslate"><span class="pre">state_ic</span></code> is 1
 m<sup>3</sup>. This also ensures that the amounts of the species in the chemical
 system are normalized by m<sup>3</sup>, and thus they can be regarded as
 concentrations in a unit of mol/m<sup>3</sup> (<em>bulk volume, not fluid volume!</em>).</p>
@@ -493,8 +495,8 @@ amounts of fluid species in <code class="docutils literal notranslate"><span cla
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The chemical state represented by <code class="docutils literal notranslate"><span class="pre">state_bc</span></code> has no other stable phase
+<p class="admonition-title">Note</p>
+<p>The chemical state represented by <code class="docutils literal notranslate"><span class="pre">state_bc</span></code> has no other stable phase
 than the aqueous phase (i.e., all mineral phases have zero or negligible
 amounts such as 10<sup>-21</sup> mol).</p>
 </div>
@@ -520,8 +522,8 @@ chemical states: one for each mesh cell.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Different initial conditions across the mesh cells are possible by assigning
+<p class="admonition-title">Note</p>
+<p>Different initial conditions across the mesh cells are possible by assigning
 different chemical states to each mesh cell. Here, the same chemical state
 in <code class="docutils literal notranslate"><span class="pre">state_ic</span></code> is used for all cells.</p>
 </div>
@@ -600,9 +602,9 @@ the requested output properties for every mesh cell. In each such file, rows
 correspond to cells, whereas the columns correspond to the requested output
 properties, i.e., pH, molality of H<sup>+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, HCO<sub>3</sub><sup>-</sup>, CO<sub>2</sub> (aq), as
 well as the phase volume of calcite and dolomite.</p>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">Todo</p>
-<p class="last">Use the result files to general plots and videos, and add them here in the
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Use the result files to general plots and videos, and add them here in the
 tutorial.</p>
 </div>
 </div>

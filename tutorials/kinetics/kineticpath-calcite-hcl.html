@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="en" >
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
   
@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
@@ -30,13 +32,13 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
-        <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -89,13 +91,13 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">Programming Reference</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../equilibrium/index.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Chemical Kinetics</a><ul class="current">
@@ -105,12 +107,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../transport/index.html">Chemical Transport</a></li>
 </ul>
-<p class="caption"><span class="caption-text">General</span></p>
+<p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../thermodynamic-databases.html">Thermodynamic Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../thermodynamic-backends.html">Thermodynamic Backends</a></li>
 </ul>
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
@@ -309,9 +311,9 @@ list of compounds). There is only one pure mineral phase: the calcite phase.</p>
 </div>
 <p>We set the reaction equation using the <code class="docutils literal notranslate"><span class="pre">setEquation</span></code> method of the
 class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1MineralReaction.html">MineralReaction</a>.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">The current need for setting a reaction equation for mineral reactions will
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>The current need for setting a reaction equation for mineral reactions will
 be removed in the future, which will simplify the setup of the problem.</p>
 </div>
 <p>Then we add two mineral kinetic mechanisms for the reaction: neutral and
@@ -324,8 +326,8 @@ water-mineral interaction kinetics for application to geochemical modeling.
 U.S. Geological Survey Open File Report (Vol. 2004–1068). Menlo Park,
 California</em>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The units of <code class="docutils literal notranslate"><span class="pre">logk</span></code> and <code class="docutils literal notranslate"><span class="pre">Ea</span></code> can be different, but
+<p class="admonition-title">Note</p>
+<p>The units of <code class="docutils literal notranslate"><span class="pre">logk</span></code> and <code class="docutils literal notranslate"><span class="pre">Ea</span></code> can be different, but
 convertible to <code class="docutils literal notranslate"><span class="pre">mol/(m2*s)</span></code> and <code class="docutils literal notranslate"><span class="pre">J/mol</span></code> respectively.</p>
 </div>
 <p>Finally, we provide the specific surface area of the mineral using method
@@ -364,8 +366,8 @@ dissolution of calcite using chemical kinetics, while all other species (the
 aqueous species) are modelled using chemical equilibrium (i.e., their amounts
 are updated over time using chemical equilibrium calculations).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In general, the chemical system can be partitioned into <em>equilibrium</em>,
+<p class="admonition-title">Note</p>
+<p>In general, the chemical system can be partitioned into <em>equilibrium</em>,
 <em>kinetic</em> and <em>inert species</em>. For the <em>equilibrium species</em>, their amounts
 are governed by chemical equilibrium (calculated by solving a Gibbs energy
 minimization problem). The <em>kinetic species</em> are the species whose amounts
@@ -374,8 +376,8 @@ ordinary differential equations that model the kinetics of a system of
 reactions). The <em>inert species</em> are the species whose amounts are constant.</p>
 </div>
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">Aqueous species react among themselves at much faster rates than mineral
+<p class="admonition-title">Attention</p>
+<p>Aqueous species react among themselves at much faster rates than mineral
 dissolution reactions in general, and thus this <em>partial equilibrium
 assumption</em> is plausible and reasonably accurate.</p>
 </div>
@@ -425,8 +427,8 @@ partition. The result is stored in the object <code class="docutils literal notr
 chemical system defined by its temperature (<em>T</em>), pressure (<em>P</em>), and vector of
 species amounts (<em>n</em>).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Consider using class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a> instead of method <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code>
+<p class="admonition-title">Note</p>
+<p>Consider using class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a> instead of method <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code>
 when a sequence of chemical equilibrium calculations are needed for
 increased performance. The method <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code> is a convenient function
 for solving chemical equilibrium problems, but has some overhead (e.g., an
@@ -455,8 +457,8 @@ of species <code class="docutils literal notranslate"><span class="pre">Calcite<
 <p>Note that here again, we need to specify the partitioning of the chemical system
 into equilibrium, kinetic, and inert species.</p>
 <div class="admonition attention">
-<p class="first admonition-title">Attention</p>
-<p class="last">For repeated chemical kinetics calculations (e.g., in a reactive transport
+<p class="admonition-title">Attention</p>
+<p>For repeated chemical kinetics calculations (e.g., in a reactive transport
 simulation, where kinetics is performed for each mesh cell/node), consider
 using the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1KineticSolver.html">KineticSolver</a> instead for avoiding some overhead of
 class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1KineticPath.html">KineticPath</a>.</p>
@@ -505,8 +507,8 @@ respectively. The arguments of the function <code class="docutils literal notran
 <span class="pre">units=mmolal)&quot;,</span> <span class="pre">&quot;Ca++&quot;)</span></code> stand for the name of the property from the chemical
 state we want to plot and the label to be used in the plot.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">A list of all possible quantities that can be plotted is shown in the class
+<p class="admonition-title">Note</p>
+<p>A list of all possible quantities that can be plotted is shown in the class
 <a class="reference external" href="https://www.reaktoro.org/cpp/classReaktoro_1_1ChemicalQuantity.html">ChemicalQuantity</a>, which provides an interface for convenient ways of their
 retrieval.</p>
 </div>

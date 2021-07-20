@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['about_2612',['About',['../about.html',1,'']]],
-  ['api_20reference_2613',['API Reference',['../index.html',1,'']]]
+  ['about_2618',['About',['../about.html',1,'']]],
+  ['api_20reference_2619',['API Reference',['../index.html',1,'']]]
 ];
