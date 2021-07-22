@@ -297,6 +297,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that still needs to be commented.  <a href="classReaktoro_1_1EquilibriumPredictor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumProblem.html">EquilibriumProblem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class used to define chemical equilibrium problems.  <a href="classReaktoro_1_1EquilibriumProblem.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumProps.html">EquilibriumProps</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class that computes chemical properties of a system during equilibrium calculations.  <a href="classReaktoro_1_1EquilibriumProps.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -316,7 +319,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class used to construct the optimization problem for a chemical equilibrium calculation.  <a href="classReaktoro_1_1EquilibriumSetup.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A solver class for solving chemical equilibrium calculations.  <a href="classReaktoro_1_1EquilibriumSolver.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for calculating chemical equilibrium states.  <a href="classReaktoro_1_1EquilibriumSolver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumConstraintEquation.html">EquilibriumConstraintEquation</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The details of an equation constraint in a chemical equilibrium calculation.  <a href="structReaktoro_1_1EquilibriumConstraintEquation.html#details">More...</a><br /></td></tr>
@@ -893,10 +896,10 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Strings</a> = std::vector&lt; std::string &gt;</td></tr>
 <tr class="memdesc:a632090884b4aa0585e747446a2683963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>std::vector&lt;String&gt;</code>. <br /></td></tr>
 <tr class="separator:a632090884b4aa0585e747446a2683963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab84bd447245ffc02dd2bb9d80c6a3e73"><td class="memItemLeft" align="right" valign="top"><a id="ab84bd447245ffc02dd2bb9d80c6a3e73"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ab84bd447245ffc02dd2bb9d80c6a3e73">StringOrIndex</a> = std::variant&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a> &gt;</td></tr>
-<tr class="memdesc:ab84bd447245ffc02dd2bb9d80c6a3e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>std::variant&lt;String, Index&gt;</code>. <br /></td></tr>
-<tr class="separator:ab84bd447245ffc02dd2bb9d80c6a3e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b556e3b19182b7f1fe27c5b079da3d"><td class="memItemLeft" align="right" valign="top"><a id="ac8b556e3b19182b7f1fe27c5b079da3d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ac8b556e3b19182b7f1fe27c5b079da3d">StringOrIndex</a> = std::variant&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, long &gt;</td></tr>
+<tr class="memdesc:ac8b556e3b19182b7f1fe27c5b079da3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>std::variant&lt;std::string, long&gt;</code>. <br /></td></tr>
+<tr class="separator:ac8b556e3b19182b7f1fe27c5b079da3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b01c504448c96cd2191a5184dd31acf"><td class="memTemplParams" colspan="2"><a id="a1b01c504448c96cd2191a5184dd31acf"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1b01c504448c96cd2191a5184dd31acf"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a> = std::vector&lt; T &gt;</td></tr>
@@ -2056,6 +2059,14 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:a1fe19d05fcb13fa8526bc7926e70179a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1fe19d05fcb13fa8526bc7926e70179a">createActivityConstraint</a> (const <a class="el" href="classReaktoro_1_1Species.html">Species</a> &amp;species, <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> name, <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a> idx, const <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>)&gt; &amp;convert_to_lna) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumConstraintChemicalPotential.html">EquilibriumConstraintChemicalPotential</a></td></tr>
 <tr class="memdesc:a1fe19d05fcb13fa8526bc7926e70179a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a chemical potential constraint from activity constraint.  <a href="namespaceReaktoro.html#a1fe19d05fcb13fa8526bc7926e70179a">More...</a><br /></td></tr>
 <tr class="separator:a1fe19d05fcb13fa8526bc7926e70179a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4aa6e91db12f12d8c280a778b69319d"><td class="memItemLeft" align="right" valign="top"><a id="af4aa6e91db12f12d8c280a778b69319d"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#af4aa6e91db12f12d8c280a778b69319d">equilibrate</a> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
+<tr class="memdesc:af4aa6e91db12f12d8c280a778b69319d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equilibrate a chemical state instance. <br /></td></tr>
+<tr class="separator:af4aa6e91db12f12d8c280a778b69319d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb4e6348d1943eefdf9a0c6de4f1477"><td class="memItemLeft" align="right" valign="top"><a id="afeb4e6348d1943eefdf9a0c6de4f1477"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#afeb4e6348d1943eefdf9a0c6de4f1477">equilibrate</a> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state, const <a class="el" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a> &amp;options) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
+<tr class="memdesc:afeb4e6348d1943eefdf9a0c6de4f1477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equilibrate a chemical state instance. <br /></td></tr>
+<tr class="separator:afeb4e6348d1943eefdf9a0c6de4f1477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ef1a294842e145b546ef8370826c474"><td class="memItemLeft" align="right" valign="top"><a id="a4ef1a294842e145b546ef8370826c474"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a4ef1a294842e145b546ef8370826c474">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classReaktoro_1_1PorousRockState.html">PorousRockState</a> &amp;state) -&gt; std::ostream &amp;</td></tr>
 <tr class="memdesc:a4ef1a294842e145b546ef8370826c474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a <a class="el" href="classReaktoro_1_1PorousRockState.html" title="The chemical state of a porous rock system filled with fluids.">PorousRockState</a> instance. <br /></td></tr>
@@ -7625,7 +7636,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 19 2021 15:37:33 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 22 2021 22:52:53 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
