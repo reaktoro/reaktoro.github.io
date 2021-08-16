@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['u_1117',['U',['../structReaktoro_1_1LU.html#aed574705da16aad3b736bb08cee2d233',1,'Reaktoro::LU::U()'],['../structReaktoro_1_1OptimumProblem.html#a2963a7fb7baa0122e3ab51d759a2047e',1,'Reaktoro::OptimumProblem::u()']]],
+  ['u_1117',['u',['../structReaktoro_1_1OptimumProblem.html#a2963a7fb7baa0122e3ab51d759a2047e',1,'Reaktoro::OptimumProblem::u()'],['../structReaktoro_1_1LU.html#aed574705da16aad3b736bb08cee2d233',1,'Reaktoro::LU::U()']]],
   ['unify_1118',['unify',['../namespaceReaktoro.html#af46a71642497b44b29b16317e0a973f7',1,'Reaktoro']]],
   ['unique_1119',['unique',['../namespaceReaktoro.html#ae1f80dd0fca80cc4b86b7d7317346935',1,'Reaktoro']]],
   ['unit_1120',['unit',['../namespaceReaktoro.html#a6c5e1c17c8f14c17f5fb6c1cfd12e50e',1,'Reaktoro']]],
