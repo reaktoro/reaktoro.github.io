@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
   <meta name="generator" content="Doxygen 1.9.1" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reaktoro: ActivityPropsBase&lt; Real, Array &gt; Struct Template Reference</title>
+  <title>Reaktoro: ActivityPropsBase&lt; Real, Array, Extra &gt; Struct Template Reference</title>
   <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/>  --> <!-- REMOVED BY DOXYSTRAP -->
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structReaktoro_1_1ActivityPropsBase-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ActivityPropsBase&lt; Real, Array &gt; Struct Template Reference</div>  </div>
+<div class="title">ActivityPropsBase&lt; Real, Array, Extra &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -140,6 +140,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
  <a href="structReaktoro_1_1ActivityPropsBase.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ActivityProps_8hpp_source.html">ActivityProps.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for ActivityPropsBase&lt; Real, Array, Extra &gt;:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structReaktoro_1_1ActivityPropsBase__coll__graph.svg" width="166" height="246"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -147,22 +152,27 @@ Public Member Functions</h2></td></tr>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a0c7cfcf4c9b89f0d3af1f34db939f8b9">operator=</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> value) -&gt; <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a> &amp;</td></tr>
 <tr class="memdesc:a0c7cfcf4c9b89f0d3af1f34db939f8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a common value to all properties in this <a class="el" href="structReaktoro_1_1ActivityPropsBase.html" title="The base type for the primary activity and excess thermodynamic properties of a phase.">ActivityPropsBase</a> object. <br /></td></tr>
 <tr class="separator:a0c7cfcf4c9b89f0d3af1f34db939f8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a028c15dc520c37f2b2a32cf968204835"><td class="memTemplParams" colspan="2"><a id="a028c15dc520c37f2b2a32cf968204835"></a>
-template&lt;typename RX , typename AX &gt; </td></tr>
-<tr class="memitem:a028c15dc520c37f2b2a32cf968204835"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a028c15dc520c37f2b2a32cf968204835">operator ActivityPropsBase&lt; RX, AX &gt;</a> ()</td></tr>
-<tr class="memdesc:a028c15dc520c37f2b2a32cf968204835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert this <a class="el" href="structReaktoro_1_1ActivityPropsBase.html" title="The base type for the primary activity and excess thermodynamic properties of a phase.">ActivityPropsBase</a> object into another. <br /></td></tr>
-<tr class="separator:a028c15dc520c37f2b2a32cf968204835"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31143da1afa368a421a0e7cfb51f6012"><td class="memTemplParams" colspan="2"><a id="a31143da1afa368a421a0e7cfb51f6012"></a>
-template&lt;typename RX , typename AX &gt; </td></tr>
-<tr class="memitem:a31143da1afa368a421a0e7cfb51f6012"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a31143da1afa368a421a0e7cfb51f6012">operator ActivityPropsBase&lt; RX, AX &gt;</a> () const</td></tr>
-<tr class="memdesc:a31143da1afa368a421a0e7cfb51f6012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert this <a class="el" href="structReaktoro_1_1ActivityPropsBase.html" title="The base type for the primary activity and excess thermodynamic properties of a phase.">ActivityPropsBase</a> object into another. <br /></td></tr>
-<tr class="separator:a31143da1afa368a421a0e7cfb51f6012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bdd4b1fb584deb00bb443e21a3be1c8"><td class="memTemplParams" colspan="2"><a id="a2bdd4b1fb584deb00bb443e21a3be1c8"></a>
+template&lt;typename RX , typename AX , typename EX &gt; </td></tr>
+<tr class="memitem:a2bdd4b1fb584deb00bb443e21a3be1c8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a2bdd4b1fb584deb00bb443e21a3be1c8">operator=</a> (const <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; RX, AX, EX &gt; &amp;other) -&gt; <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a> &amp;</td></tr>
+<tr class="memdesc:a2bdd4b1fb584deb00bb443e21a3be1c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert this <a class="el" href="structReaktoro_1_1ActivityPropsBase.html" title="The base type for the primary activity and excess thermodynamic properties of a phase.">ActivityPropsBase</a> object into another. <br /></td></tr>
+<tr class="separator:a2bdd4b1fb584deb00bb443e21a3be1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431833679cdebef14f4a936f7f36a0e5"><td class="memTemplParams" colspan="2"><a id="a431833679cdebef14f4a936f7f36a0e5"></a>
+template&lt;typename RX , typename AX , typename EX &gt; </td></tr>
+<tr class="memitem:a431833679cdebef14f4a936f7f36a0e5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a431833679cdebef14f4a936f7f36a0e5">operator ActivityPropsBase&lt; RX, AX, EX &gt;</a> ()</td></tr>
+<tr class="memdesc:a431833679cdebef14f4a936f7f36a0e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert this <a class="el" href="structReaktoro_1_1ActivityPropsBase.html" title="The base type for the primary activity and excess thermodynamic properties of a phase.">ActivityPropsBase</a> object into another. <br /></td></tr>
+<tr class="separator:a431833679cdebef14f4a936f7f36a0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a669c91524b04e844e24c801eeab4b6ff"><td class="memTemplParams" colspan="2"><a id="a669c91524b04e844e24c801eeab4b6ff"></a>
+template&lt;typename RX , typename AX , typename EX &gt; </td></tr>
+<tr class="memitem:a669c91524b04e844e24c801eeab4b6ff"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a669c91524b04e844e24c801eeab4b6ff">operator ActivityPropsBase&lt; RX, AX, EX &gt;</a> () const</td></tr>
+<tr class="memdesc:a669c91524b04e844e24c801eeab4b6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert this <a class="el" href="structReaktoro_1_1ActivityPropsBase.html" title="The base type for the primary activity and excess thermodynamic properties of a phase.">ActivityPropsBase</a> object into another. <br /></td></tr>
+<tr class="separator:a669c91524b04e844e24c801eeab4b6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a60bacce79c1307177c58e1b142b87462"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a60bacce79c1307177c58e1b142b87462">create</a> (<a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a> numspecies) -&gt; <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; Real, Array &gt;</td></tr>
-<tr class="memdesc:a60bacce79c1307177c58e1b142b87462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="structReaktoro_1_1ActivityPropsBase.html" title="The base type for the primary activity and excess thermodynamic properties of a phase.">ActivityPropsBase</a> object with given number of species.  <a href="structReaktoro_1_1ActivityPropsBase.html#a60bacce79c1307177c58e1b142b87462">More...</a><br /></td></tr>
-<tr class="separator:a60bacce79c1307177c58e1b142b87462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe96049c7cbc9e33834ef18f2eecc06c"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#abe96049c7cbc9e33834ef18f2eecc06c">create</a> (<a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a> numspecies) -&gt; <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; Real, <a class="el" href="namespaceReaktoro.html#a02a4d2ff451c16850ec9bccb6f4a651c">Array</a>, Extra &gt;</td></tr>
+<tr class="memdesc:abe96049c7cbc9e33834ef18f2eecc06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="structReaktoro_1_1ActivityPropsBase.html" title="The base type for the primary activity and excess thermodynamic properties of a phase.">ActivityPropsBase</a> object with given number of species.  <a href="structReaktoro_1_1ActivityPropsBase.html#abe96049c7cbc9e33834ef18f2eecc06c">More...</a><br /></td></tr>
+<tr class="separator:abe96049c7cbc9e33834ef18f2eecc06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -190,28 +200,28 @@ Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a43222e1b4adf64964129a136b37cd765">Cpex</a></td></tr>
 <tr class="memdesc:a43222e1b4adf64964129a136b37cd765"><td class="mdescLeft">&#160;</td><td class="mdescRight">The excess molar isobaric heat capacity of the phase (in units of J/(mol*K)). <br /></td></tr>
 <tr class="separator:a43222e1b4adf64964129a136b37cd765"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a512ba2fe242ae17136f370181fc36581"><td class="memItemLeft" align="right" valign="top"><a id="a512ba2fe242ae17136f370181fc36581"></a>
-Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a512ba2fe242ae17136f370181fc36581">Cvex</a></td></tr>
-<tr class="memdesc:a512ba2fe242ae17136f370181fc36581"><td class="mdescLeft">&#160;</td><td class="mdescRight">The excess molar isochoric heat capacity of the phase (in units of J/(mol*K)). <br /></td></tr>
-<tr class="separator:a512ba2fe242ae17136f370181fc36581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5e8cfc4acc96d3bd3f9af763039a3a6"><td class="memItemLeft" align="right" valign="top"><a id="af5e8cfc4acc96d3bd3f9af763039a3a6"></a>
-Array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#af5e8cfc4acc96d3bd3f9af763039a3a6">ln_g</a></td></tr>
+<a class="el" href="namespaceReaktoro.html#a02a4d2ff451c16850ec9bccb6f4a651c">Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#af5e8cfc4acc96d3bd3f9af763039a3a6">ln_g</a></td></tr>
 <tr class="memdesc:af5e8cfc4acc96d3bd3f9af763039a3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The activity coefficients (natural log) of the species in the phase. <br /></td></tr>
 <tr class="separator:af5e8cfc4acc96d3bd3f9af763039a3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2850c556001dc655c996e4943590df7"><td class="memItemLeft" align="right" valign="top"><a id="af2850c556001dc655c996e4943590df7"></a>
-Array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#af2850c556001dc655c996e4943590df7">ln_a</a></td></tr>
+<a class="el" href="namespaceReaktoro.html#a02a4d2ff451c16850ec9bccb6f4a651c">Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#af2850c556001dc655c996e4943590df7">ln_a</a></td></tr>
 <tr class="memdesc:af2850c556001dc655c996e4943590df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The activities (natural log) of the species in the phase. <br /></td></tr>
 <tr class="separator:af2850c556001dc655c996e4943590df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87939af1478ee77c8baff692513c4de9"><td class="memItemLeft" align="right" valign="top"><a id="a87939af1478ee77c8baff692513c4de9"></a>
+Extra&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ActivityPropsBase.html#a87939af1478ee77c8baff692513c4de9">extra</a></td></tr>
+<tr class="memdesc:a87939af1478ee77c8baff692513c4de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extra data produced by an activity model that may be reused by subsequent models within a chained activity model. <br /></td></tr>
+<tr class="separator:a87939af1478ee77c8baff692513c4de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename Real, typename Array&gt;<br />
-struct Reaktoro::ActivityPropsBase&lt; Real, Array &gt;</h3>
+<div class="textblock"><h3>template&lt;typename Real, typename Array, typename Extra&gt;<br />
+struct Reaktoro::ActivityPropsBase&lt; Real, Array, Extra &gt;</h3>
 
 <p>The base type for the primary activity and excess thermodynamic properties of a phase. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceReaktoro.html#a80b8e302058856de9e09c8ca4bba6b59" title="The function type for the calculation of activity and excess thermodynamic properties of a phase.">ActivityPropsFn</a>, <a class="el" href="structReaktoro_1_1ActivityArgs.html" title="The arguments in an function for calculation of activity properties of a phase.">ActivityArgs</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceReaktoro.html#ab77ce46ecc0381fec3438fc51b18352e" title="The function type for the calculation of activity and excess thermodynamic properties of a phase.">ActivityModel</a>, <a class="el" href="structReaktoro_1_1ActivityArgs.html" title="The arguments in an function for calculation of activity properties of a phase.">ActivityArgs</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a60bacce79c1307177c58e1b142b87462"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60bacce79c1307177c58e1b142b87462">&#9670;&nbsp;</a></span>create()</h2>
+<a id="abe96049c7cbc9e33834ef18f2eecc06c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe96049c7cbc9e33834ef18f2eecc06c">&#9670;&nbsp;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +234,7 @@ struct Reaktoro::ActivityPropsBase&lt; Real, Array &gt;</h3>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a>&#160;</td>
           <td class="paramname"><em>numspecies</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt;Real, Array&gt;
+          <td> -&gt; <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt;Real, <a class="el" href="namespaceReaktoro.html#a02a4d2ff451c16850ec9bccb6f4a651c">Array</a>, Extra&gt;
     </td>
         </tr>
       </table>
@@ -252,7 +262,7 @@ struct Reaktoro::ActivityPropsBase&lt; Real, Array &gt;</h3>
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 22 2021 22:52:53 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Oct 19 2021 09:12:29 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

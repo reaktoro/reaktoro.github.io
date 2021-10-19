@@ -1,4 +1,4 @@
 <map id="EquilibriumResult" name="EquilibriumResult">
-<area shape="rect" id="node1" title="A type used to describe the result of an equilibrium calculation." alt="" coords="23,95,147,121"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1SmartEquilibriumResult.html" title="A type used to describe the result of a smart equilibrium calculation." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node1" title="A type used to describe the result of an equilibrium calculation." alt="" coords="25,95,162,121"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1SmartEquilibriumResult.html" title="A type used to describe the result of a smart equilibrium calculation." alt="" coords="5,5,181,32"/>
 </map>

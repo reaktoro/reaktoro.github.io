@@ -249,10 +249,12 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Species.html#a286860ad8e570055127b2e8caa952e92">molarMass</a> () const -&gt; double</td></tr>
 <tr class="memdesc:a286860ad8e570055127b2e8caa952e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molar mass of the species (in kg/mol). <br /></td></tr>
 <tr class="separator:a286860ad8e570055127b2e8caa952e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fe5cb99919f701d024778a5b41148fd"><td class="memItemLeft" align="right" valign="top"><a id="a8fe5cb99919f701d024778a5b41148fd"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Species.html#a8fe5cb99919f701d024778a5b41148fd">props</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) const -&gt; <a class="el" href="structReaktoro_1_1StandardThermoProps.html">StandardThermoProps</a></td></tr>
-<tr class="memdesc:a8fe5cb99919f701d024778a5b41148fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the standard thermodynamic properties of the species at given temperature (in K) and pressure (in Pa). <br /></td></tr>
-<tr class="separator:a8fe5cb99919f701d024778a5b41148fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b1edd15bbbb6c7843c82eec23654875"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Species.html#a0b1edd15bbbb6c7843c82eec23654875">standardThermoProps</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) const -&gt; <a class="el" href="structReaktoro_1_1StandardThermoProps.html">StandardThermoProps</a></td></tr>
+<tr class="memdesc:a0b1edd15bbbb6c7843c82eec23654875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the primary standard thermodynamic properties of the species.  <a href="classReaktoro_1_1Species.html#a0b1edd15bbbb6c7843c82eec23654875">More...</a><br /></td></tr>
+<tr class="separator:a0b1edd15bbbb6c7843c82eec23654875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a679180ea96258796e7a8df5211f7d049"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Species.html#a679180ea96258796e7a8df5211f7d049">props</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) const -&gt; <a class="el" href="structReaktoro_1_1SpeciesThermoProps.html">SpeciesThermoProps</a></td></tr>
+<tr class="memdesc:a679180ea96258796e7a8df5211f7d049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the complete set of standard thermodynamic properties of the species.  <a href="classReaktoro_1_1Species.html#a679180ea96258796e7a8df5211f7d049">More...</a><br /></td></tr>
+<tr class="separator:a679180ea96258796e7a8df5211f7d049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A type used to represent a chemical species and its attributes. </p>
@@ -325,6 +327,82 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="a0b1edd15bbbb6c7843c82eec23654875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b1edd15bbbb6c7843c82eec23654875">&#9670;&nbsp;</a></span>standardThermoProps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto standardThermoProps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
+          <td class="paramname"><em>P</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="structReaktoro_1_1StandardThermoProps.html">StandardThermoProps</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the primary standard thermodynamic properties of the species. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>The temperature for the calculation (in K) </td></tr>
+    <tr><td class="paramname">P</td><td>The pressure for the calculation (in Pa) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The primary set of standard thermodynamic properties of the species. </dd></dl>
+
+</div>
+</div>
+<a id="a679180ea96258796e7a8df5211f7d049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a679180ea96258796e7a8df5211f7d049">&#9670;&nbsp;</a></span>props()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto props </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
+          <td class="paramname"><em>P</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="structReaktoro_1_1SpeciesThermoProps.html">SpeciesThermoProps</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the complete set of standard thermodynamic properties of the species. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>The temperature for the calculation (in K) </td></tr>
+    <tr><td class="paramname">P</td><td>The pressure for the calculation (in Pa) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The complete set of standard thermodynamic properties of the species. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Reaktoro/Core/<a class="el" href="Species_8hpp_source.html">Species.hpp</a></li>
 <li>Reaktoro/Core/Species.cpp</li>
@@ -338,7 +416,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 22 2021 22:52:54 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Oct 19 2021 09:12:29 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

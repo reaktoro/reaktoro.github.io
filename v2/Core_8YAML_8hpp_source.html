@@ -163,61 +163,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">class </span>ElementalComposition;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">class </span>FormationReaction;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">class </span>Param;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">class </span>Params;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">class </span>Phase;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">class </span>Species;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Signature&gt; <span class="keyword">class </span>Model;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd">AggregateState</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;REAKTORO_YAML_DECODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd">AggregateState</a>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(ChemicalFormula);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;REAKTORO_YAML_DECODE_DECLARE(ChemicalFormula);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(ChemicalSystem);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;REAKTORO_YAML_DECODE_DECLARE(ChemicalSystem);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Database);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Database);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Element);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Element);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(ElementList);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;REAKTORO_YAML_DECODE_DECLARE(ElementList);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(ElementalComposition);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;REAKTORO_YAML_DECODE_DECLARE(ElementalComposition);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(FormationReaction);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;REAKTORO_YAML_DECODE_DECLARE(FormationReaction);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Param);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Param);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Params);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Params);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Phase);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Phase);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">ReactionThermoModel</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;REAKTORO_YAML_DECODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">ReactionThermoModel</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Species);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Species);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(SpeciesList);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;REAKTORO_YAML_DECODE_DECLARE(SpeciesList);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">StandardThermoModel</a>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;REAKTORO_YAML_DECODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">StandardThermoModel</a>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">class </span>Phase;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">class </span>Species;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Signature&gt; <span class="keyword">class </span>Model;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd">AggregateState</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;REAKTORO_YAML_DECODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd">AggregateState</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(ChemicalFormula);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;REAKTORO_YAML_DECODE_DECLARE(ChemicalFormula);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(ChemicalSystem);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;REAKTORO_YAML_DECODE_DECLARE(ChemicalSystem);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Database);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Database);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Element);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Element);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(ElementList);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;REAKTORO_YAML_DECODE_DECLARE(ElementList);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(ElementalComposition);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;REAKTORO_YAML_DECODE_DECLARE(ElementalComposition);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(FormationReaction);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;REAKTORO_YAML_DECODE_DECLARE(FormationReaction);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Param);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Param);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// REAKTORO_YAML_ENCODE_DECLARE(Params);</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// REAKTORO_YAML_DECODE_DECLARE(Params);</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Phase);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Phase);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">ReactionThermoModel</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;REAKTORO_YAML_DECODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">ReactionThermoModel</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(Species);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;REAKTORO_YAML_DECODE_DECLARE(Species);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(SpeciesList);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;REAKTORO_YAML_DECODE_DECLARE(SpeciesList);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;REAKTORO_YAML_ENCODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">StandardThermoModel</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;REAKTORO_YAML_DECODE_DECLARE(<a class="code" href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">StandardThermoModel</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:25</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a02ae90aadc24dbff1702399a9c3ca1cd"><div class="ttname"><a href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd">Reaktoro::AggregateState</a></div><div class="ttdeci">AggregateState</div><div class="ttdoc">The aggregate states of substances according to IUPAC.</div><div class="ttdef"><b>Definition:</b> AggregateState.hpp:32</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a8282c3fdf9650aea30f7c22894c6d553"><div class="ttname"><a href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">Reaktoro::ReactionThermoModel</a></div><div class="ttdeci">Model&lt; ReactionThermoProps(ReactionThermoArgs)&gt; ReactionThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a reaction.</div><div class="ttdef"><b>Definition:</b> ReactionThermoProps.hpp:56</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a9933121318e42facfe6ccaebe69a5a2b"><div class="ttname"><a href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">Reaktoro::StandardThermoModel</a></div><div class="ttdeci">Model&lt; StandardThermoProps(real T, real P)&gt; StandardThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a species.</div><div class="ttdef"><b>Definition:</b> StandardThermoProps.hpp:49</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a9933121318e42facfe6ccaebe69a5a2b"><div class="ttname"><a href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">Reaktoro::StandardThermoModel</a></div><div class="ttdeci">Model&lt; StandardThermoProps(real T, real P)&gt; StandardThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a species.</div><div class="ttdef"><b>Definition:</b> StandardThermoProps.hpp:52</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -227,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 22 2021 22:52:53 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Oct 19 2021 09:12:28 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

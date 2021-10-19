@@ -1,9 +1,9 @@
 <map id="Species::Attribs" name="Species::Attribs">
-<area shape="rect" id="node1" title="The attributes of a Species object." alt="" coords="717,137,832,164"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1ElementalComposition.html" title="A type used to describe the elemental composition of chemical species." alt="" coords="381,5,535,32"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1FormationReaction.html" title="A class to represent a formation reaction of a chemical species." alt="" coords="392,56,524,83"/>
-<area shape="rect" id="node4" title=" " alt="" coords="199,168,253,195"/>
-<area shape="rect" id="node7" title=" " alt="" coords="388,199,528,225"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,168,149,195"/>
-<area shape="rect" id="node6" href="$classReaktoro_1_1Model.html" title=" " alt="" coords="359,250,557,291"/>
+<area shape="rect" id="node1" title="The attributes of a Species object." alt="" coords="785,137,908,164"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1ElementalComposition.html" title="A type used to describe the elemental composition of chemical species." alt="" coords="412,5,583,32"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1FormationReaction.html" title="A class to represent a formation reaction of a chemical species." alt="" coords="425,56,570,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="215,168,273,195"/>
+<area shape="rect" id="node7" title=" " alt="" coords="418,199,577,225"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,168,165,195"/>
+<area shape="rect" id="node6" href="$classReaktoro_1_1Model.html" title=" " alt="" coords="387,250,608,291"/>
 </map>

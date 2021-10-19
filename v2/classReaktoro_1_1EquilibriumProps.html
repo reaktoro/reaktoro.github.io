@@ -157,9 +157,9 @@ Public Member Functions</h2></td></tr>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumProps.html#a03bf1aeb150c7240a8e10a471cb554af">operator=</a> (<a class="el" href="classReaktoro_1_1EquilibriumProps.html">EquilibriumProps</a> other) -&gt; <a class="el" href="classReaktoro_1_1EquilibriumProps.html">EquilibriumProps</a> &amp;</td></tr>
 <tr class="memdesc:a03bf1aeb150c7240a8e10a471cb554af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a <a class="el" href="classReaktoro_1_1EquilibriumProps.html" title="The class that computes chemical properties of a system during equilibrium calculations.">EquilibriumProps</a> object to this. <br /></td></tr>
 <tr class="separator:a03bf1aeb150c7240a8e10a471cb554af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb6350d1b419c297169e56855fc4c4f7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumProps.html#acb6350d1b419c297169e56855fc4c4f7">update</a> (<a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> n, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> p, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> w) -&gt; void</td></tr>
-<tr class="memdesc:acb6350d1b419c297169e56855fc4c4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the chemical properties of the chemical system.  <a href="classReaktoro_1_1EquilibriumProps.html#acb6350d1b419c297169e56855fc4c4f7">More...</a><br /></td></tr>
-<tr class="separator:acb6350d1b419c297169e56855fc4c4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5af580302145257a7b310222164c562"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumProps.html#ae5af580302145257a7b310222164c562">update</a> (<a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> n, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> p, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> w, bool useIdealModel=false, long inpw=-1) -&gt; void</td></tr>
+<tr class="memdesc:ae5af580302145257a7b310222164c562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the chemical properties of the chemical system.  <a href="classReaktoro_1_1EquilibriumProps.html#ae5af580302145257a7b310222164c562">More...</a><br /></td></tr>
+<tr class="separator:ae5af580302145257a7b310222164c562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a349c6f29c877590766ec1d1d36e76f9f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1EquilibriumProps.html#a349c6f29c877590766ec1d1d36e76f9f">assembleFullJacobianBegin</a> () -&gt; void</td></tr>
 <tr class="memdesc:a349c6f29c877590766ec1d1d36e76f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable recording of derivatives of the chemical properties with respect to *(n, p, w)* to contruct its full Jacobian matrix.  <a href="classReaktoro_1_1EquilibriumProps.html#a349c6f29c877590766ec1d1d36e76f9f">More...</a><br /></td></tr>
 <tr class="separator:a349c6f29c877590766ec1d1d36e76f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,8 +188,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="textblock"><p>The class that computes chemical properties of a system during equilibrium calculations. </p>
 <p>This class exists to allow derivatives of these chemical properties to be collected during their computations. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="acb6350d1b419c297169e56855fc4c4f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb6350d1b419c297169e56855fc4c4f7">&#9670;&nbsp;</a></span>update()</h2>
+<a id="ae5af580302145257a7b310222164c562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5af580302145257a7b310222164c562">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +210,19 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a>&#160;</td>
-          <td class="paramname"><em>w</em>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useIdealModel</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>inpw</em> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -226,6 +238,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
     <tr><td class="paramname">n</td><td>The amounts of the species. </td></tr>
     <tr><td class="paramname">p</td><td>The values of the <em>p</em> control variables (e.g., T, P, n[H+] in case U, V and pH are given). </td></tr>
     <tr><td class="paramname">w</td><td>The input variables <em>w</em> in the chemical equilibrium problem (e.g., U, V, pH). </td></tr>
+    <tr><td class="paramname">useIdealModel</td><td>If true, ideal thermodynamic models are used for the phases. </td></tr>
+    <tr><td class="paramname">inpw</td><td>The index of the variable in (n, p, w) currently seeded for autodiff computation. </td></tr>
   </table>
   </dd>
 </dl>
@@ -267,7 +281,7 @@ Access these derivatives with methods <a class="el" href="classReaktoro_1_1Equil
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 22 2021 22:52:54 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Oct 19 2021 09:12:29 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

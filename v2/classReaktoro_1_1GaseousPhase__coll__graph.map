@@ -1,4 +1,4 @@
 <map id="GaseousPhase" name="GaseousPhase">
-<area shape="rect" id="node1" title="The class used to configure a gaseous solution phase." alt="" coords="5,80,116,107"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1GenericPhase.html" title="The base type for all other classes defining more specific phases." alt="" coords="9,5,113,32"/>
+<area shape="rect" id="node1" title="The class used to configure a gaseous solution phase." alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1GenericPhase.html" title="The base type for all other classes defining more specific phases." alt="" coords="9,5,119,32"/>
 </map>

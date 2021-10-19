@@ -152,22 +152,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> exportModel(py::module&amp; m, <span class="keyword">const</span> <span class="keywordtype">char</span>* modelname)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">auto</span> exportModel(py::module&amp; m, <span class="keyword">const</span> <span class="keywordtype">char</span>* modelname)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> ResultRef = Ref&lt;Result&gt;;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">using</span> ModelType = <a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    py::class_&lt;ModelType&gt;(m, modelname)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> py::class_&lt;ModelType&gt;(m, modelname)</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        .def(py::init&lt;&gt;())</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// .def(py::init&lt;const Fn&lt;void(ResultRef, Args...)&gt;&amp;&gt;())  // At the moment, only one possibility of function call is possible.</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        .def(py::init&lt;<span class="keyword">const</span> <a class="code" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;Result(Args...)&gt;&amp;&gt;())</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        .def(<span class="stringliteral">&quot;params&quot;</span>, &amp;ModelType::params, py::return_value_policy::reference_internal)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        .def(<span class="stringliteral">&quot;__call__&quot;</span>, &amp;ModelType::operator())</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="ttc" id="aclassReaktoro_1_1Model_html"><div class="ttname"><a href="classReaktoro_1_1Model.html">Reaktoro::Model</a></div><div class="ttdef"><b>Definition:</b> Model.hpp:30</div></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        .def(<span class="stringliteral">&quot;params&quot;</span>, &amp;ModelType::params, return_internal_ref)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        .def(<span class="stringliteral">&quot;apply&quot;</span>, &amp;ModelType::apply)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        .def(<span class="stringliteral">&quot;__call__&quot;</span>, py::overload_cast&lt;const Args&amp;...&gt;(&amp;ModelType::operator(), py::const_))</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        .def(<span class="stringliteral">&quot;__call__&quot;</span>, py::overload_cast&lt;ResultRef, const Args&amp;...&gt;(&amp;ModelType::operator(), py::const_))</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        ;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="ttc" id="aclassReaktoro_1_1Model_html"><div class="ttname"><a href="classReaktoro_1_1Model.html">Reaktoro::Model</a></div><div class="ttdef"><b>Definition:</b> Model.hpp:31</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:25</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_ab8ffaf0eb22e755b5e157a01d9b84521"><div class="ttname"><a href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Reaktoro::Fn</a></div><div class="ttdeci">std::function&lt; F &gt; Fn</div><div class="ttdoc">Convenient alias for std::function&lt;R(Args...)&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:85</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_ab8ffaf0eb22e755b5e157a01d9b84521"><div class="ttname"><a href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Reaktoro::Fn</a></div><div class="ttdeci">std::function&lt; F &gt; Fn</div><div class="ttdoc">Convenient alias for std::function&lt;R(Args...)&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:90</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -177,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 22 2021 22:52:53 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Oct 19 2021 09:12:28 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -146,15 +146,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterThermoState.hpp&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterElectroState.hpp&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterThermoProps.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterElectroProps.hpp&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterConstants.hpp&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterUtils.hpp&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterThermoStateUtils.hpp&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterHelmholtzStateWagnerPruss.hpp&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterElectroStateJohnsonNorton.hpp&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterHelmholtzStateHGK.hpp&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterHelmholtzState.hpp&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterThermoPropsUtils.hpp&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterHelmholtzPropsWagnerPruss.hpp&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterElectroPropsJohnsonNorton.hpp&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterHelmholtzPropsHGK.hpp&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Water/WaterHelmholtzProps.hpp&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Aqueous/ActivityModelRumpf.hpp&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Aqueous/ActivityModelDrummond.hpp&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Aqueous/AqueousMixture.hpp&gt;</span></div>
@@ -167,13 +167,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Ideal/ActivityModelIdealGas.hpp&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Ideal/ActivityModelIdealSolution.hpp&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Ideal/ActivityModelIdealAqueous.hpp&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Solids/ActivityModelVanLaar.hpp&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Solids/ActivityModelRedlichKister.hpp&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/CubicEOS.hpp&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/PhaseIdentification.hpp&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/ActivityModelCubicEOS.hpp&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/ActivityModelSpycherPruessEnnis.hpp&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/ActivityModelSpycherReed.hpp&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Ideal/ActivityModelIdealIonExchange.hpp&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Solids/ActivityModelVanLaar.hpp&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Solids/ActivityModelRedlichKister.hpp&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/CubicEOS.hpp&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/PhaseIdentification.hpp&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/ActivityModelCubicEOS.hpp&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/ActivityModelSpycherPruessEnnis.hpp&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Fluids/ActivityModelSpycherReed.hpp&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Surface/ActivityModelIonExchange.hpp&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Thermodynamics/Surface/IonExchangeSurface.hpp&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -183,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 22 2021 22:52:53 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Oct 19 2021 09:12:28 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

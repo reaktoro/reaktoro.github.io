@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['vectortraits_3c_20reaktoro_3a_3aparams_20_3e_1423',['VectorTraits&lt; Reaktoro::Params &gt;',['../structautodiff_1_1detail_1_1VectorTraits_3_01Reaktoro_1_1Params_01_4.html',1,'autodiff::detail']]]
+  ['waterelectroprops_1448',['WaterElectroProps',['../structReaktoro_1_1WaterElectroProps.html',1,'Reaktoro']]],
+  ['waterhelmholtzprops_1449',['WaterHelmholtzProps',['../structReaktoro_1_1WaterHelmholtzProps.html',1,'Reaktoro']]],
+  ['waterthermoprops_1450',['WaterThermoProps',['../structReaktoro_1_1WaterThermoProps.html',1,'Reaktoro']]]
 ];
