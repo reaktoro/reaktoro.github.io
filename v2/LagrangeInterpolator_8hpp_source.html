@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -154,11 +155,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classReaktoro_1_1LagrangeInterpolator.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classReaktoro_1_1LagrangeInterpolator.html">LagrangeInterpolator</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classReaktoro_1_1LagrangeInterpolator.html#affe1446066a95e209d54b136a8ca91d2">LagrangeInterpolator</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classReaktoro_1_1LagrangeInterpolator.html#affe1446066a95e209d54b136a8ca91d2">   30</a></span>&#160;    <a class="code" href="classReaktoro_1_1LagrangeInterpolator.html#affe1446066a95e209d54b136a8ca91d2">LagrangeInterpolator</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classReaktoro_1_1LagrangeInterpolator.html#affe1446066a95e209d54b136a8ca91d2">LagrangeInterpolator</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; xp, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; yp, <span class="keywordtype">unsigned</span> order = 1);</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classReaktoro_1_1LagrangeInterpolator.html#ab9b49650beb057dab01ed074d1260d6a">   36</a></span>&#160;    <a class="code" href="classReaktoro_1_1LagrangeInterpolator.html#ab9b49650beb057dab01ed074d1260d6a">LagrangeInterpolator</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; xp, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; yp, <span class="keywordtype">unsigned</span> order = 1);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1LagrangeInterpolator.html#ace192e38d07b821ed50cf8e91e962bae">operator()</a>(<span class="keywordtype">double</span> x) <span class="keyword">const</span> -&gt; double;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classReaktoro_1_1LagrangeInterpolator.html#ace192e38d07b821ed50cf8e91e962bae">   39</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1LagrangeInterpolator.html#ace192e38d07b821ed50cf8e91e962bae">operator()</a>(<span class="keywordtype">double</span> x) <span class="keyword">const</span> -&gt; double;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::vector&lt;double&gt; xi;</div>
@@ -170,8 +171,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="aclassReaktoro_1_1LagrangeInterpolator_html"><div class="ttname"><a href="classReaktoro_1_1LagrangeInterpolator.html">Reaktoro::LagrangeInterpolator</a></div><div class="ttdoc">A class used to calculate interpolation of data in one dimension in any order.</div><div class="ttdef"><b>Definition:</b> LagrangeInterpolator.hpp:27</div></div>
-<div class="ttc" id="aclassReaktoro_1_1LagrangeInterpolator_html_ace192e38d07b821ed50cf8e91e962bae"><div class="ttname"><a href="classReaktoro_1_1LagrangeInterpolator.html#ace192e38d07b821ed50cf8e91e962bae">Reaktoro::LagrangeInterpolator::operator()</a></div><div class="ttdeci">auto operator()(double x) const -&gt; double</div><div class="ttdoc">Return the interpolation of  at a given coordinate .</div><div class="ttdef"><b>Definition:</b> LagrangeInterpolator.cpp:49</div></div>
-<div class="ttc" id="aclassReaktoro_1_1LagrangeInterpolator_html_affe1446066a95e209d54b136a8ca91d2"><div class="ttname"><a href="classReaktoro_1_1LagrangeInterpolator.html#affe1446066a95e209d54b136a8ca91d2">Reaktoro::LagrangeInterpolator::LagrangeInterpolator</a></div><div class="ttdeci">LagrangeInterpolator()</div><div class="ttdoc">Construct a default LagrangeInterpolator instance.</div><div class="ttdef"><b>Definition:</b> LagrangeInterpolator.cpp:42</div></div>
+<div class="ttc" id="aclassReaktoro_1_1LagrangeInterpolator_html_ab9b49650beb057dab01ed074d1260d6a"><div class="ttname"><a href="classReaktoro_1_1LagrangeInterpolator.html#ab9b49650beb057dab01ed074d1260d6a">Reaktoro::LagrangeInterpolator::LagrangeInterpolator</a></div><div class="ttdeci">LagrangeInterpolator(const std::vector&lt; double &gt; &amp;xp, const std::vector&lt; double &gt; &amp;yp, unsigned order=1)</div><div class="ttdoc">Construct a LagrangeInterpolator instance.</div></div>
+<div class="ttc" id="aclassReaktoro_1_1LagrangeInterpolator_html_ace192e38d07b821ed50cf8e91e962bae"><div class="ttname"><a href="classReaktoro_1_1LagrangeInterpolator.html#ace192e38d07b821ed50cf8e91e962bae">Reaktoro::LagrangeInterpolator::operator()</a></div><div class="ttdeci">auto operator()(double x) const -&gt; double</div><div class="ttdoc">Return the interpolation of  at a given coordinate .</div></div>
+<div class="ttc" id="aclassReaktoro_1_1LagrangeInterpolator_html_affe1446066a95e209d54b136a8ca91d2"><div class="ttname"><a href="classReaktoro_1_1LagrangeInterpolator.html#affe1446066a95e209d54b136a8ca91d2">Reaktoro::LagrangeInterpolator::LagrangeInterpolator</a></div><div class="ttdeci">LagrangeInterpolator()</div><div class="ttdoc">Construct a default LagrangeInterpolator instance.</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
@@ -182,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:28 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:07 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

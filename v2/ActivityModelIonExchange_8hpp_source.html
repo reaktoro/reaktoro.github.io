@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -151,14 +152,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">auto</span> ActivityModelIonExchange() -&gt; <a class="code" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">auto</span> ActivityModelIonExchangeGainesThomas() -&gt; <a class="code" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//=====================================================================================================================</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#abfdbdec7e32c4f703e01afc719fa83bb">   28</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#abfdbdec7e32c4f703e01afc719fa83bb">ActivityModelIonExchange</a>() -&gt; <a class="code" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a6570535ff1aa6b6c89cb3b8d8b19765f">   33</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a6570535ff1aa6b6c89cb3b8d8b19765f">ActivityModelIonExchangeGainesThomas</a>() -&gt; <a class="code" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//=====================================================================================================================</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span><span class="comment">//=====================================================================================================================</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:25</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a6570535ff1aa6b6c89cb3b8d8b19765f"><div class="ttname"><a href="namespaceReaktoro.html#a6570535ff1aa6b6c89cb3b8d8b19765f">Reaktoro::ActivityModelIonExchangeGainesThomas</a></div><div class="ttdeci">auto ActivityModelIonExchangeGainesThomas() -&gt; ActivityModelGenerator</div><div class="ttdoc">Return the Gaines-Thomas activity model for ion exchange.</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_abfdbdec7e32c4f703e01afc719fa83bb"><div class="ttname"><a href="namespaceReaktoro.html#abfdbdec7e32c4f703e01afc719fa83bb">Reaktoro::ActivityModelIonExchange</a></div><div class="ttdeci">auto ActivityModelIonExchange() -&gt; ActivityModelGenerator</div><div class="ttdoc">Return the activity model for the ion exchange.</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_afaf4ce79487bc7842af13bc506fbd802"><div class="ttname"><a href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">Reaktoro::ActivityModelGenerator</a></div><div class="ttdeci">Fn&lt; ActivityModel(const SpeciesList &amp;species)&gt; ActivityModelGenerator</div><div class="ttdoc">The type for functions that construct an ActivityModel for a phase.</div><div class="ttdef"><b>Definition:</b> ActivityModel.hpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
@@ -169,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:28 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:07 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

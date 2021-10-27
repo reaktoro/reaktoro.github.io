@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -130,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structReaktoro_1_1Exception-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Exception Struct Reference</div>  </div>
+<div class="title">Exception Struct Reference<div class="ingroups"><a class="el" href="group__Common.html">Common</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -141,7 +142,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="dynheader">
 Collaboration diagram for Exception:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structReaktoro_1_1Exception__coll__graph.svg" width="387" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structReaktoro_1_1Exception__coll__graph.svg" width="387" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -157,11 +159,12 @@ std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides a convenient way to initialized an exception with helpful error messages. </p>
-<p><b>Usage</b> Below we demonstrate a convenient way to raise an exception using an <a class="el" href="structReaktoro_1_1Exception.html" title="Provides a convenient way to initialized an exception with helpful error messages.">Exception</a> instance and the raise macro. </p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a>;</div>
+<p><b>Usage</b> Below we demonstrate a convenient way to raise an exception using an <a class="el" href="structReaktoro_1_1Exception.html" title="Provides a convenient way to initialized an exception with helpful error messages.">Exception</a> instance. </p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a>;</div>
 <div class="line">Exception exception;</div>
 <div class="line">exception.error &lt;&lt; <span class="stringliteral">&quot;Cannot calculate the actitivy of species &quot;</span> &lt;&lt; species.name() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
 <div class="line">exception.reason &lt;&lt; <span class="stringliteral">&quot;The species &quot;</span> &lt;&lt; species.name() &lt;&lt; <span class="stringliteral">&quot; does not exist in the chemical system.&quot;</span>;</div>
-<div class="line">RaiseError(exception);</div>
+<div class="line"><a class="code" href="group__Common.html#gac03e108a52bc581f9036de3f20b11b6e">RaiseError</a>(exception);</div>
+<div class="ttc" id="agroup__Common_html_gac03e108a52bc581f9036de3f20b11b6e"><div class="ttname"><a href="group__Common.html#gac03e108a52bc581f9036de3f20b11b6e">RaiseError</a></div><div class="ttdeci">#define RaiseError(exception)</div><div class="ttdoc">Define a macro to raise a runtime exception from an Exception instance.</div><div class="ttdef"><b>Definition:</b> Exception.hpp:69</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:25</div></div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd>raise </dd></dl>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
@@ -176,7 +179,7 @@ std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:29 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:07 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

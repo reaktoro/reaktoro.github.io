@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -397,16 +398,18 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The class used to define conditions to be satisfied at chemical equilibrium. </p>
-<h3>Explicit Titrants</h3>
+<h3><a class="anchor" id="autotoc_md0"></a>
+Explicit Titrants</h3>
 <p>The <em>explicit titrants</em> are the titrants introduced with method <a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#ab369fa5e276d0625e5711e62018c42db" title="Specify that the chemical system is open to a substance.">EquilibriumSpecs::openTo</a>. In the code below, the names of the explicitly introduced titrants are shown: </p><div class="fragment"><div class="line"><span class="keyword">using namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a>;</div>
 <div class="line"><a class="code" href="classReaktoro_1_1EquilibriumSpecs.html#a5ca51202eceb4085429e99210abb7c0e">EquilibriumSpecs</a> specs(<a class="code" href="classReaktoro_1_1EquilibriumSpecs.html#af6124be5789b61bce3829e45a0b9f3d1">system</a>); <span class="comment">// for some ChemicalSystem object `system`</span></div>
 <div class="line">specs.openTo(<span class="stringliteral">&quot;H2S&quot;</span>); <span class="comment">// a titrant named [H2S] will be introduced.</span></div>
 <div class="line">specs.openTo(<span class="stringliteral">&quot;CO2&quot;</span>); <span class="comment">// a titrant named [CO2] will be introduced.</span></div>
-<div class="ttc" id="aclassReaktoro_1_1EquilibriumSpecs_html_a5ca51202eceb4085429e99210abb7c0e"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSpecs.html#a5ca51202eceb4085429e99210abb7c0e">Reaktoro::EquilibriumSpecs::EquilibriumSpecs</a></div><div class="ttdeci">EquilibriumSpecs(const ChemicalSystem &amp;system)</div><div class="ttdoc">Construct an EquilibriumSpecs object.</div><div class="ttdef"><b>Definition:</b> EquilibriumSpecs.cpp:56</div></div>
-<div class="ttc" id="aclassReaktoro_1_1EquilibriumSpecs_html_af6124be5789b61bce3829e45a0b9f3d1"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSpecs.html#af6124be5789b61bce3829e45a0b9f3d1">Reaktoro::EquilibriumSpecs::system</a></div><div class="ttdeci">auto system() const -&gt; const ChemicalSystem &amp;</div><div class="ttdoc">Return the chemical system associated with the equilibrium conditions.</div><div class="ttdef"><b>Definition:</b> EquilibriumSpecs.cpp:700</div></div>
+<div class="ttc" id="aclassReaktoro_1_1EquilibriumSpecs_html_a5ca51202eceb4085429e99210abb7c0e"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSpecs.html#a5ca51202eceb4085429e99210abb7c0e">Reaktoro::EquilibriumSpecs::EquilibriumSpecs</a></div><div class="ttdeci">EquilibriumSpecs(const ChemicalSystem &amp;system)</div><div class="ttdoc">Construct an EquilibriumSpecs object.</div></div>
+<div class="ttc" id="aclassReaktoro_1_1EquilibriumSpecs_html_af6124be5789b61bce3829e45a0b9f3d1"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSpecs.html#af6124be5789b61bce3829e45a0b9f3d1">Reaktoro::EquilibriumSpecs::system</a></div><div class="ttdeci">auto system() const -&gt; const ChemicalSystem &amp;</div><div class="ttdoc">Return the chemical system associated with the equilibrium conditions.</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:25</div></div>
 </div><!-- fragment --><p> The amounts of these explicit titrants are unknown in the chemical equilibrium problem and computed together with the amounts of species.</p>
-<h3>Implicit Titrants</h3>
+<h3><a class="anchor" id="autotoc_md1"></a>
+Implicit Titrants</h3>
 <p>The <em>implicit titrants</em> are the titrants introduced with methods:</p>
 <ul>
 <li><a class="el" href="classReaktoro_1_1EquilibriumSpecs.html#a47451b02dce372e95a4d8f950e00f1ff" title="Specify that the chemical potential of a substance at chemical equilibrium is given.">EquilibriumSpecs::chemicalPotential</a></li>
@@ -429,7 +432,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="line">specs.pE();               <span class="comment">// a titrant named [e-] will be introduced.</span></div>
 <div class="line">specs.Eh();               <span class="comment">// a titrant named [e-] will be introduced.</span></div>
 </div><!-- fragment --><p>The amounts of these implicit titrants are unknown in the chemical equilibrium problem and computed together with the amounts of species.</p>
-<h3>Control Variables</h3>
+<h3><a class="anchor" id="autotoc_md2"></a>
+Control Variables</h3>
 <p>The <em>control variables</em> in a chemical equilibrium problem are unknowns introduced along with equilibrium constraints. These control variables can be:</p>
 <ul>
 <li>temperature,</li>
@@ -466,7 +470,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto temperature </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -486,7 +490,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto pressure </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -506,7 +510,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto volume </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -526,7 +530,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto internalEnergy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -546,7 +550,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto enthalpy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -566,7 +570,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto gibbsEnergy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -586,7 +590,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto helmholtzEnergy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -606,7 +610,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto entropy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -627,7 +631,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -663,7 +667,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; void</td>
+          <td></td><td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -690,7 +694,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
           <td class="paramname"><em>element</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -726,7 +730,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; void</td>
+          <td></td><td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -753,7 +757,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
           <td class="paramname"><em>phase</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -779,7 +783,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
           <td class="paramname"><em>phase</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -805,7 +809,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
           <td class="paramname"><em>phase</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -831,7 +835,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>&#160;</td>
           <td class="paramname"><em>substance</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -858,7 +862,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classReaktoro_1_1Species.html">Species</a> &amp;&#160;</td>
           <td class="paramname"><em>species</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -885,7 +889,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>&#160;</td>
           <td class="paramname"><em>species</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -914,7 +918,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>&#160;</td>
           <td class="paramname"><em>species</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -943,7 +947,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>&#160;</td>
           <td class="paramname"><em>species</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -972,7 +976,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>&#160;</td>
           <td class="paramname"><em>gas</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1000,7 +1004,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto pH </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1031,7 +1035,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto pMg </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1052,7 +1056,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto pE </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1072,7 +1076,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">auto Eh </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1093,7 +1097,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classReaktoro_1_1ChemicalFormula.html">ChemicalFormula</a> &amp;&#160;</td>
           <td class="paramname"><em>substance</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1131,7 +1135,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classReaktoro_1_1ChemicalFormula.html">ChemicalFormula</a> &amp;&#160;</td>
           <td class="paramname"><em>substance</em></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1141,9 +1145,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>Reaktoro/Equilibrium/<a class="el" href="EquilibriumSpecs_8hpp_source.html">EquilibriumSpecs.hpp</a></li>
-<li>Reaktoro/Equilibrium/EquilibriumSpecs.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
@@ -1154,7 +1157,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:29 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:07 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

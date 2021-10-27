@@ -8,7 +8,6 @@
  viewBox="0.00 0.00 133.00 117.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 113)">
 <title>isArrayAux&lt; Eigen::Array&lt; Scalar, Rows, 1, Options, MaxRows, 1 &gt; &gt;</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-113 129,-113 129,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
@@ -25,7 +24,7 @@
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="31,-89.5 31,-108.5 94,-108.5 94,-89.5 31,-89.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="31,-89.5 31,-108.5 94,-108.5 94,-89.5 31,-89.5"/>
 <text text-anchor="middle" x="62.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">true_type</text>
 </a>
 </g>

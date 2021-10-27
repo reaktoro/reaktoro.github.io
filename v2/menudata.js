@@ -57,7 +57,6 @@ var menudata={children:[
 {text:"d",url:"namespacemembers_func_d.html#index_d"},
 {text:"e",url:"namespacemembers_func_e.html#index_e"},
 {text:"f",url:"namespacemembers_func_f.html#index_f"},
-{text:"g",url:"namespacemembers_func_g.html#index_g"},
 {text:"i",url:"namespacemembers_func_i.html#index_i"},
 {text:"j",url:"namespacemembers_func_j.html#index_j"},
 {text:"l",url:"namespacemembers_func_l.html#index_l"},
@@ -172,4 +171,5 @@ var menudata={children:[
 {text:"z",url:"functions_vars_z.html#index_z"}]},
 {text:"Typedefs",url:"functions_type.html"}]}]},
 {text:"Files",url:"files.html",children:[
-{text:"File List",url:"files.html"}]}]}
+{text:"File List",url:"files.html"}]},
+{text:"License",url:"license.html"}]}

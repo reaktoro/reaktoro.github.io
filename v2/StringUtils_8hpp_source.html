@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -162,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>internal {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#aa7dfd298ee34ee3c431ec0f6c7aa2c8e">operator&lt;&lt;</a>(std::ostream&amp; out, <span class="keyword">const</span> Vec&lt;T&gt;&amp; values) -&gt; std::ostream&amp;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#ae2d1ef36a26f5fcad1557dcde4256dca">operator&lt;&lt;</a>(std::ostream&amp; out, <span class="keyword">const</span> Vec&lt;T&gt;&amp; values) -&gt; std::ostream&amp;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; i &lt; values.size(); ++i)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        out &lt;&lt; ((i == 0) ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;, &quot;</span>) &lt;&lt; values[i];</div>
@@ -301,11 +302,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="ttc" id="anamespaceReaktoro_html_a5573b97b9e5129f61d289e037d7e806c"><div class="ttname"><a href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">Reaktoro::String</a></div><div class="ttdeci">std::string String</div><div class="ttdoc">Convenient alias for std::string.</div><div class="ttdef"><b>Definition:</b> Types.hpp:44</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a632090884b4aa0585e747446a2683963"><div class="ttname"><a href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Reaktoro::Strings</a></div><div class="ttdeci">std::vector&lt; std::string &gt; Strings</div><div class="ttdoc">Convenient alias for std::vector&lt;String&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:47</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a8408e8e0520263beb8b91891dd0f991e"><div class="ttname"><a href="namespaceReaktoro.html#a8408e8e0520263beb8b91891dd0f991e">Reaktoro::split</a></div><div class="ttdeci">auto split(const String &amp;str, const String &amp;delims, std::function&lt; String(String)&gt; transform) -&gt; Strings</div><div class="ttdoc">Split the string on every occurrence of the specified delimiters and apply a transform function.</div><div class="ttdef"><b>Definition:</b> StringUtils.hpp:124</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_aa7dfd298ee34ee3c431ec0f6c7aa2c8e"><div class="ttname"><a href="namespaceReaktoro.html#aa7dfd298ee34ee3c431ec0f6c7aa2c8e">Reaktoro::operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(std::ostream &amp;out, AggregateState option) -&gt; std::ostream &amp;</div><div class="ttdoc">Output an AggregateState value.</div><div class="ttdef"><b>Definition:</b> AggregateState.cpp:29</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_ab25a8b5132716f0366c009dfabaa3cb0"><div class="ttname"><a href="namespaceReaktoro.html#ab25a8b5132716f0366c009dfabaa3cb0">Reaktoro::transform</a></div><div class="ttdeci">auto transform(const Container &amp;c, Result &amp;res, const Function &amp;f)</div><div class="ttdoc">Apply a function f on every item in container c and store in res.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:73</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_acd3ae6aa1ea0a0c81fd3d6d5a6d496b6"><div class="ttname"><a href="namespaceReaktoro.html#acd3ae6aa1ea0a0c81fd3d6d5a6d496b6">Reaktoro::str</a></div><div class="ttdeci">auto str(Args... items) -&gt; String</div><div class="ttdoc">Concatenate the arguments into a string without any separator string.</div><div class="ttdef"><b>Definition:</b> StringUtils.hpp:69</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_ad4627c0b2b871ae3ac6530c47ca8acbe"><div class="ttname"><a href="namespaceReaktoro.html#ad4627c0b2b871ae3ac6530c47ca8acbe">Reaktoro::trim</a></div><div class="ttdeci">auto trim(String str) -&gt; String</div><div class="ttdoc">Trim the string from both ends (taken from http://stackoverflow.com/questions/216823/whats-the-best-w...</div><div class="ttdef"><b>Definition:</b> StringUtils.hpp:118</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_ade09e701fb12983331fb027a81d66746"><div class="ttname"><a href="namespaceReaktoro.html#ade09e701fb12983331fb027a81d66746">Reaktoro::trimright</a></div><div class="ttdeci">auto trimright(String str) -&gt; String</div><div class="ttdoc">Trim the string from end (taken from http://stackoverflow.com/questions/216823/whats-the-best-way-to-...</div><div class="ttdef"><b>Definition:</b> StringUtils.hpp:110</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_ae2d1ef36a26f5fcad1557dcde4256dca"><div class="ttname"><a href="namespaceReaktoro.html#ae2d1ef36a26f5fcad1557dcde4256dca">Reaktoro::operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(std::ostream &amp;out, AggregateState option) -&gt; std::ostream &amp;</div><div class="ttdoc">Output an AggregateState value.</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_afd6fbe8882e7a2375b4c40da6ba9bb0f"><div class="ttname"><a href="namespaceReaktoro.html#afd6fbe8882e7a2375b4c40da6ba9bb0f">Reaktoro::makeunique</a></div><div class="ttdeci">auto makeunique(Strings words, String suffix) -&gt; Strings</div><div class="ttdoc">Return a list of words with duplicate names converted to unique ones.</div><div class="ttdef"><b>Definition:</b> StringUtils.hpp:160</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
@@ -316,7 +317,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:28 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:07 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

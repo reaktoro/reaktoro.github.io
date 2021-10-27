@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -169,45 +170,44 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a147a7b4e6ff4f5a2b701bc7342cc914b"><td class="memItemLeft" align="right" valign="top"><a id="a147a7b4e6ff4f5a2b701bc7342cc914b"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a147a7b4e6ff4f5a2b701bc7342cc914b">instance</a> () -&gt; <a class="el" href="classReaktoro_1_1Elements.html">Elements</a> &amp;</td></tr>
-<tr class="memdesc:a147a7b4e6ff4f5a2b701bc7342cc914b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the single <a class="el" href="classReaktoro_1_1Elements.html" title="A type used store a collection of elements.">Elements</a> object. <br /></td></tr>
-<tr class="separator:a147a7b4e6ff4f5a2b701bc7342cc914b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9ef744794d6c670a9c0b1bf9973e83d"><td class="memItemLeft" align="right" valign="top"><a id="af9ef744794d6c670a9c0b1bf9973e83d"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#af9ef744794d6c670a9c0b1bf9973e83d">elements</a> () -&gt; const <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt; &amp;</td></tr>
-<tr class="memdesc:af9ef744794d6c670a9c0b1bf9973e83d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the elements in the periodic table. <br /></td></tr>
-<tr class="separator:af9ef744794d6c670a9c0b1bf9973e83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c5cabe75354d182cb649dd550ca5c2"><td class="memItemLeft" align="right" valign="top"><a id="a52c5cabe75354d182cb649dd550ca5c2"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a52c5cabe75354d182cb649dd550ca5c2">append</a> (<a class="el" href="classReaktoro_1_1Element.html">Element</a> element) -&gt; void</td></tr>
-<tr class="memdesc:a52c5cabe75354d182cb649dd550ca5c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a custom element to the periodic table. <br /></td></tr>
-<tr class="separator:a52c5cabe75354d182cb649dd550ca5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa76064253460a52ae816cc8fe4066232"><td class="memItemLeft" align="right" valign="top"><a id="aa76064253460a52ae816cc8fe4066232"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#aa76064253460a52ae816cc8fe4066232">size</a> () -&gt; std::size_t</td></tr>
-<tr class="memdesc:aa76064253460a52ae816cc8fe4066232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of elements in the periodic table. <br /></td></tr>
-<tr class="separator:aa76064253460a52ae816cc8fe4066232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91c80c32b0b46644bc6fed314e9639c1"><td class="memItemLeft" align="right" valign="top"><a id="a91c80c32b0b46644bc6fed314e9639c1"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a91c80c32b0b46644bc6fed314e9639c1">withSymbol</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> symbol) -&gt; <a class="el" href="namespaceReaktoro.html#aaf8f4d77efd311ec7818ab421294ef82">Optional</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt;</td></tr>
-<tr class="memdesc:a91c80c32b0b46644bc6fed314e9639c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element with given symbol. <br /></td></tr>
-<tr class="separator:a91c80c32b0b46644bc6fed314e9639c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9444f223bdc9813ac762d4dc1946aec0"><td class="memItemLeft" align="right" valign="top"><a id="a9444f223bdc9813ac762d4dc1946aec0"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a9444f223bdc9813ac762d4dc1946aec0">withName</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> name) -&gt; <a class="el" href="namespaceReaktoro.html#aaf8f4d77efd311ec7818ab421294ef82">Optional</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt;</td></tr>
-<tr class="memdesc:a9444f223bdc9813ac762d4dc1946aec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element with given name. <br /></td></tr>
-<tr class="separator:a9444f223bdc9813ac762d4dc1946aec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fb31b0f67ddda23d3faa8aeeee89fc5"><td class="memItemLeft" align="right" valign="top"><a id="a5fb31b0f67ddda23d3faa8aeeee89fc5"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a5fb31b0f67ddda23d3faa8aeeee89fc5">withTag</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> tag) -&gt; <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt;</td></tr>
-<tr class="memdesc:a5fb31b0f67ddda23d3faa8aeeee89fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the elements with a given tag. <br /></td></tr>
-<tr class="separator:a5fb31b0f67ddda23d3faa8aeeee89fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38437afb0474a0df2f014abad28f555c"><td class="memItemLeft" align="right" valign="top"><a id="a38437afb0474a0df2f014abad28f555c"></a>
-static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a38437afb0474a0df2f014abad28f555c">withTags</a> (const <a class="el" href="classReaktoro_1_1StringList.html">StringList</a> &amp;tags) -&gt; <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt;</td></tr>
-<tr class="memdesc:a38437afb0474a0df2f014abad28f555c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the elements with given tags. <br /></td></tr>
-<tr class="separator:a38437afb0474a0df2f014abad28f555c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d26480538c2a5c170e1ae166e1426de"><td class="memItemLeft" align="right" valign="top"><a id="a8d26480538c2a5c170e1ae166e1426de"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a8d26480538c2a5c170e1ae166e1426de">instance</a> () -&gt; <a class="el" href="classReaktoro_1_1Elements.html">Elements</a> &amp;</td></tr>
+<tr class="memdesc:a8d26480538c2a5c170e1ae166e1426de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the single <a class="el" href="classReaktoro_1_1Elements.html" title="A type used store a collection of elements.">Elements</a> object. <br /></td></tr>
+<tr class="separator:a8d26480538c2a5c170e1ae166e1426de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ab88cd9c4aebca94d237b545b6a87ba"><td class="memItemLeft" align="right" valign="top"><a id="a4ab88cd9c4aebca94d237b545b6a87ba"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a4ab88cd9c4aebca94d237b545b6a87ba">elements</a> () -&gt; const <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt; &amp;</td></tr>
+<tr class="memdesc:a4ab88cd9c4aebca94d237b545b6a87ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the elements in the periodic table. <br /></td></tr>
+<tr class="separator:a4ab88cd9c4aebca94d237b545b6a87ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0955e7f1d3235dd7b7b1d864f3205c"><td class="memItemLeft" align="right" valign="top"><a id="aaa0955e7f1d3235dd7b7b1d864f3205c"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#aaa0955e7f1d3235dd7b7b1d864f3205c">append</a> (<a class="el" href="classReaktoro_1_1Element.html">Element</a> element) -&gt; void</td></tr>
+<tr class="memdesc:aaa0955e7f1d3235dd7b7b1d864f3205c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a custom element to the periodic table. <br /></td></tr>
+<tr class="separator:aaa0955e7f1d3235dd7b7b1d864f3205c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e2a1159c18860a0b2e34dd495608d3c"><td class="memItemLeft" align="right" valign="top"><a id="a7e2a1159c18860a0b2e34dd495608d3c"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a7e2a1159c18860a0b2e34dd495608d3c">size</a> () -&gt; std::size_t</td></tr>
+<tr class="memdesc:a7e2a1159c18860a0b2e34dd495608d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of elements in the periodic table. <br /></td></tr>
+<tr class="separator:a7e2a1159c18860a0b2e34dd495608d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21769a3ce8656645b846fbedbdb3ebb7"><td class="memItemLeft" align="right" valign="top"><a id="a21769a3ce8656645b846fbedbdb3ebb7"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a21769a3ce8656645b846fbedbdb3ebb7">withSymbol</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> symbol) -&gt; <a class="el" href="namespaceReaktoro.html#aaf8f4d77efd311ec7818ab421294ef82">Optional</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt;</td></tr>
+<tr class="memdesc:a21769a3ce8656645b846fbedbdb3ebb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element with given symbol. <br /></td></tr>
+<tr class="separator:a21769a3ce8656645b846fbedbdb3ebb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aac98b7911125bf722b4f7e10533845"><td class="memItemLeft" align="right" valign="top"><a id="a6aac98b7911125bf722b4f7e10533845"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a6aac98b7911125bf722b4f7e10533845">withName</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> name) -&gt; <a class="el" href="namespaceReaktoro.html#aaf8f4d77efd311ec7818ab421294ef82">Optional</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt;</td></tr>
+<tr class="memdesc:a6aac98b7911125bf722b4f7e10533845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the element with given name. <br /></td></tr>
+<tr class="separator:a6aac98b7911125bf722b4f7e10533845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb5f4a44adea88ae197188976b022f5"><td class="memItemLeft" align="right" valign="top"><a id="a6cb5f4a44adea88ae197188976b022f5"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a6cb5f4a44adea88ae197188976b022f5">withTag</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> tag) -&gt; <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt;</td></tr>
+<tr class="memdesc:a6cb5f4a44adea88ae197188976b022f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the elements with a given tag. <br /></td></tr>
+<tr class="separator:a6cb5f4a44adea88ae197188976b022f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a5847fb4708ff316ed7933abc11513"><td class="memItemLeft" align="right" valign="top"><a id="a09a5847fb4708ff316ed7933abc11513"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Elements.html#a09a5847fb4708ff316ed7933abc11513">withTags</a> (const <a class="el" href="classReaktoro_1_1StringList.html">StringList</a> &amp;tags) -&gt; <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Element.html">Element</a> &gt;</td></tr>
+<tr class="memdesc:a09a5847fb4708ff316ed7933abc11513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the elements with given tags. <br /></td></tr>
+<tr class="separator:a09a5847fb4708ff316ed7933abc11513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A type used store a collection of elements. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classReaktoro_1_1Element.html" title="A type used to define a element and its attributes.">Element</a> </dd></dl>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>Reaktoro/Singletons/<a class="el" href="Elements_8hpp_source.html">Elements.hpp</a></li>
-<li>Reaktoro/Singletons/Elements.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
@@ -218,7 +218,7 @@ static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:29 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:07 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

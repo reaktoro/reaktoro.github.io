@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
   <meta name="generator" content="Doxygen 1.9.1" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reaktoro: Todo List</title>
+  <title>Reaktoro: Debye&ndash;Hückel activity model</title>
   <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/>  --> <!-- REMOVED BY DOXYSTRAP -->
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -115,20 +116,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Todo List </div>  </div>
+<div class="title">Debye&ndash;Hückel activity model </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><dl class="reflist">
-<dt>Page <a class="el" href="tutorial.html">Tutorial</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000002"></a>Finish this section about reactions modeled by a mixed chemical kinetis-equilibrium approach.</p>
-<p class="interdd"><a class="anchor" id="_todo000003"></a>Continue discussion on chemical and thermodynamic models.</p>
-<p class="interdd"><a class="anchor" id="_todo000004"></a>Provide more brief details below.</p>
-<p class="interdd"><a class="anchor" id="_todo000005"></a>Add here examples in which pH is fixed, and many other constraints.</p>
-<p class="interdd"><a class="anchor" id="_todo000006"></a>Add here examples in which chemical kinetics are used.</p>
-<p class="enddd"><a class="anchor" id="_todo000007"></a>Improve the organization of these contents.</p>
-</dd>
-</dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>The Debye&ndash;Hückel activity model for aqueous solutions.</p>
+<p>An instance of this class can be used to control how activity coefficients of ionic and neutral species, \(\gamma_i\) and \(\gamma_n\) respectively, as well as the activity of solvent water, \(a_\mathsf{H_2O(l)}\), are calculated using the Debye&ndash;Hückel activity model.</p>
+<p>The activity coefficients of <b>ionics species</b> are calculated using the following <em>modified Debye&ndash;Hückel equation</em><sup><a class="el" href="citelist.html#CITEREF_Langmuir1997">[5]</a></sup>:</p>
+<p class="formulaDsp">
+\[\log\gamma_{i}=-\dfrac{AZ_{i}^{2}\sqrt{I}}{1+B\mathring{a}_{i}\sqrt{I}}+b_{i}I,\]
+</p>
+<p>while the activity coefficients of <b>neutral species</b> are calculated using:</p>
+<p class="formulaDsp">
+\[\log\gamma_{n}=b_{n}I.\]
+</p>
+<p>In these equations, \(Z_i\) is the electrical charge of the ionic species; \(\mathring{a}_i\) is the size or an effective diameter of the ionic species (in \(\mathrm{Å}\), where \(1 \mathrm{Å}=10^{-10}\text{m}\)); \(I\) is the ionic strength of the aqueous solution (in molality), calculated using:</p>
+<p class="formulaDsp">
+\[I=\frac{1}{2}\sum_{j}m_{j}Z_{j}^{2},\]
+</p>
+<p>with \(m_{j}\) denoting the molality of the \(j\)th ion. The constants \(A\) and \(B\) in the Debye&ndash;Hückel model are calculated using (see Anderson and Crerar (1993)<sup><a class="el" href="citelist.html#CITEREF_Anderson1993">[1]</a></sup>, page 439, and Langmuir (1997)<sup><a class="el" href="citelist.html#CITEREF_Langmuir1997">[5]</a></sup>, page 128):</p>
+<p class="formulaDsp">
+\[A=1.824829238\cdot10^{6}\rho_{\mathrm{H_{2}O}}^{1/2}(\epsilon_{\mathrm{H_{2}O}}T)^{-3/2}\]
+</p>
+<p>and</p>
+<p class="formulaDsp">
+\[B=50.29158649\rho_{\mathrm{H_{2}O}}^{1/2}(\epsilon_{\mathrm{H_{2}O}}T)^{-1/2},\]
+</p>
+<p>with \(A\) in \(\mathrm{(mol/kg)^{-1/2}}\) and \(B\) in units of \(\mathrm{(mol/kg)^{-1/2}}/\mathrm{Å}\). In these equations, \(T\) is temperature (in K); \(\epsilon_{\mathrm{H_{2}O}}\) is the dielectric constant of pure water (dimensionless), calculated using the Johnson and Norton (1991) model (see <a class="el" href="namespaceReaktoro.html#a26123f4ac0915e3d22d1358a8c96e63c">waterElectroPropsJohnsonNorton</a>); and \(\rho_{\mathrm{H_{2}O}}\) is the density of pure water (in \(\mathrm{g/cm^{3}}\)), calculated using either the equation of state of Haar&ndash;Gallagher&ndash;Kell (1984)<sup><a class="el" href="citelist.html#CITEREF_Haar1984">[3]</a></sup> or the equation of state of Wagner and Pruss (2002)<sup><a class="el" href="citelist.html#CITEREF_Wagner2002">[7]</a></sup> (see <a class="el" href="namespaceReaktoro.html#a426169543f7984cf0dbed404c5754be1">waterThermoPropsHGK</a> and <a class="el" href="namespaceReaktoro.html#a989a0931b37a9a2be0ce7ae9617bb8af">waterThermoPropsWagnerPruss</a>).</p>
+<p>The activity of water is calculated using the following equation:</p>
+<p class="formulaDsp">
+\[\log a_{w}=-\frac{1}{n_{w}^{\circ}}\left[\frac{m_{\Sigma}}{2.303}+\sum_{i}^{{\scriptscriptstyle \mathrm{ions}}}m_{i}\log\gamma_{i}+\frac{2}{3}AI^{\frac{3}{2}}\sum_{i}^{{\scriptscriptstyle \mathrm{ions}}}\sigma(\Lambda_{i})-I^{2}\sum_{i}^{{\scriptscriptstyle \mathrm{ions}}}\frac{b_{i}}{Z_{i}^{2}}\right],\]
+</p>
+<p>which is thermodynamically consistent with the previous equations for the activity coefficients of both ionic and neutral species, since it was derived from the <em>Gibbs&ndash;Duhem equation</em>. In this equation, \(n_{w}^{\circ}=55.508472\) is the number of moles of water per kilogram; \(m_{\Sigma}\) is the sum of the molalities of all solutes (both ionic and neutral species); and \(\sigma(\Lambda_{i})\) is defined as:</p>
+<p class="formulaDsp">
+\[\sigma(\Lambda_{i})=\frac{3}{(\Lambda_{i}-1)^{3}}\left[(\Lambda_{i}-1)(\Lambda_{i}-3)+2\ln \Lambda_{i}\right],\]
+</p>
+<p>with \(\Lambda_{i}\) given by:</p>
+<p class="formulaDsp">
+\[\Lambda_{i}=1+B\mathring{a}_{i}\sqrt{I}.\]
+</p>
+ </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -138,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:28 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:07 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

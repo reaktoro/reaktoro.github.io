@@ -1,18 +1,29 @@
 /* Customizing Bootstrap */
 
+@import url('http://fonts.cdnfonts.com/css/cascadia-code');
+
 h1, .h1 {
   font-size: 175%;
-  font-weight: bold;
+  font-weight: bolder !important;
 }
 
 h2, .h2 {
   font-size: 150%;
-  font-weight: bold;
+  font-weight: bolder !important;
 }
 
 h3, .h3 {
   font-size: 125%;
-  /*font-weight: bold;*/
+  font-weight: bolder !important;
+}
+
+h4, .h4 {
+  font-size: 100%;
+  font-weight: bolder !important;
+}
+
+div.line {
+    font-family: 'Cascadia Code', monospace, fixed;
 }
 
 /* Customizing fancybox */
@@ -52,17 +63,6 @@ h3, .h3 {
 }
 
 /* Customizing Doxygen Table of Contents */
-div.toc {
-/*        padding: none !important;
-        background-color: none !important;
-        border: none;
-        border-radius: none;
-        position: relative;
-        float: left;
-        height: auto;
-        margin: none;
-        width: auto;*/
-}
 div.toc {
     padding: inherit;
     position: relative;
@@ -157,6 +157,7 @@ a.elRef {
     float: none !important;
   }
 }
+
 /* vertical alignment styles */
 
 .col-top {
@@ -167,3 +168,10 @@ a.elRef {
 }
 .col-bottom {
   vertical-align: bottom;
+}
+
+/* markdown tables alignment styles */
+
+table.markdownTable {
+    width: 100%
+}

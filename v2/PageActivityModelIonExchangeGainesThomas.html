@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
   <meta name="generator" content="Doxygen 1.9.1" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reaktoro: Drummond (1981) activity model</title>
+  <title>Reaktoro: Gaines&ndash;Thomas ion exchange activity model</title>
   <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/>  --> <!-- REMOVED BY DOXYSTRAP -->
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -115,17 +116,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Drummond (1981) activity model </div>  </div>
+<div class="title">Gaines&ndash;Thomas ion exchange activity model </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The activity model of Drummond (1981) for a dissolved gas.</p>
-<p>In the activity model of Drummond (1981), the activity coefficient of a dissolved gas (e.g., CO<sub>2</sub>(aq), O<sub>2</sub>(aq), H<sub>2</sub>S(aq)) is computed using: </p><p class="formulaDsp">
-\[\ln\gamma_{i}=\left(a_{1}+a_{2}T+\frac{a_{3}}{T}\right)-(a_{4}+a_{5}T)\frac{I}{I+1},\]
+<div class="textblock"><p>The Gaines&ndash;Thomas activity model for ion exchange compositions.</p>
+<p>An instance of this class can be used to control how activities of the ion exchange species are calculated using the Gaines&ndash;Thomas activity model.</p>
+<p>The activity of <b>ion exchange species</b> are calculated using the equivalence fractions:</p>
+<p class="formulaDsp">
+\[\beta_{i}=-\dfrac{x_{i}z_{\mathrm{e},i}}{\sum_{j}x_{j}z_{\mathrm{e},j}},\]
 </p>
-<p> where I is the ionic strength of the aqueous solution (in molal) and T is temperature (in K).</p>
-<p><b>References:</b></p><ul>
-<li>Drummond, S. E. (1981). Boiling and mixing of hydrothermal fluids: chemical effects on mineral precipitation. Pennsylvania State University.* </li>
-</ul>
+<p>where \(x_{i}\) and \(x_{j}\) are species mole fractions and \(z_{\mathrm{e},i}\)} and \(z_{\mathrm{e},j}\)} are exchanger equivalences (or cation charges) in ion exchange species. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.20-->
@@ -136,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:28 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:07 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

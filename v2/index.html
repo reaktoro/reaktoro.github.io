@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">2.0.0</span>
+                    &#160;<span id="projectnumber">v2.0.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="license.html"><span>License</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -118,9 +119,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="title">API Reference </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a> Welcome to Reaktoro's C++ API reference. You can also use this API guide for your Python applications.</p>
+<div class="textblock"><p><a class="anchor" id="index"></a> Welcome to Reaktoro's C++ API reference. You can also use this API guide for your Python applications.</p>
 <p>Find below a list of important methods and classes in Reaktoro that you might want to read about.</p>
-<h2>Thermochemical databases</h2>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Thermochemical databases</h1>
 <ul>
 <li><a class="el" href="classReaktoro_1_1Database.html">Reaktoro::Database</a></li>
 <li><a class="el" href="classReaktoro_1_1PhreeqcDatabase.html">Reaktoro::PhreeqcDatabase</a></li>
@@ -128,13 +130,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <li><a class="el" href="classReaktoro_1_1SupcrtDatabase.html">Reaktoro::SupcrtDatabase</a></li>
 <li>Reaktoro::NasaDatabase (<em>in development</em>)</li>
 </ul>
-<h2>Chemical system constituents</h2>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Chemical system constituents</h1>
 <ul>
 <li><a class="el" href="classReaktoro_1_1Element.html">Reaktoro::Element</a></li>
 <li><a class="el" href="classReaktoro_1_1Species.html">Reaktoro::Species</a></li>
 <li><a class="el" href="classReaktoro_1_1Phase.html">Reaktoro::Phase</a></li>
 </ul>
-<h2>Chemical system definition</h2>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Chemical system definition</h1>
 <ul>
 <li><a class="el" href="classReaktoro_1_1AqueousPhase.html">Reaktoro::AqueousPhase</a></li>
 <li><a class="el" href="classReaktoro_1_1GaseousPhase.html">Reaktoro::GaseousPhase</a></li>
@@ -145,7 +149,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <li><a class="el" href="classReaktoro_1_1Phases.html">Reaktoro::Phases</a></li>
 <li><a class="el" href="classReaktoro_1_1ChemicalSystem.html">Reaktoro::ChemicalSystem</a></li>
 </ul>
-<h2>Chemical state and thermochemical properties of a chemical system</h2>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Chemical state and thermochemical properties of a chemical system</h1>
 <ul>
 <li><a class="el" href="classReaktoro_1_1ChemicalState.html">Reaktoro::ChemicalState</a></li>
 <li><a class="el" href="namespaceReaktoro.html#a1877441fa43d568e3b158231f2301691">Reaktoro::ChemicalPropsPhase</a></li>
@@ -154,7 +159,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <li><a class="el" href="classReaktoro_1_1ThermoProps.html">Reaktoro::ThermoProps</a></li>
 <li><a class="el" href="classReaktoro_1_1AqueousProps.html">Reaktoro::AqueousProps</a></li>
 </ul>
-<h2>Chemical equilibrium problem definition and calculations</h2>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Chemical equilibrium problem definition and calculations</h1>
 <ul>
 <li><a class="el" href="classReaktoro_1_1EquilibriumSpecs.html">Reaktoro::EquilibriumSpecs</a></li>
 <li><a class="el" href="classReaktoro_1_1EquilibriumRestrictions.html">Reaktoro::EquilibriumRestrictions</a></li>
@@ -165,78 +171,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <li><a class="el" href="classReaktoro_1_1EquilibriumSensitivity.html">Reaktoro::EquilibriumSensitivity</a></li>
 <li><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">Reaktoro::EquilibriumPredictor</a></li>
 </ul>
-<h2>Activity models for aqueous phases</h2>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Activity models for aqueous phases</h1>
 <ul>
-<li><a class="el" href="namespaceReaktoro.html#acd3dd5202f230b02d730da8c5a4b02d5">Reaktoro::ActivityModelIdealAqueous</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ac5f8d750f243c6a135eb26adbff9116f">Reaktoro::ActivityModelDebyeHuckel</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ab17d108eaab49749648f174815e332e1">Reaktoro::ActivityModelPitzerHMW</a></li>
-<li><a class="el" href="namespaceReaktoro.html#acb47de9b06b31618aff47552c36b11e8">Reaktoro::ActivityModelHKF</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a26e009869daa6f14bcf55cccfa192c13">Reaktoro::ActivityModelDrummond</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ab64b8f5e96f1a73f6814691765407a55">Reaktoro::ActivityModelDuanSun</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ac3433bd42e51a62e86d449c9449d01b2">Reaktoro::ActivityModelRumpf</a></li>
-<li><a class="el" href="namespaceReaktoro.html#aaa4f9e4c1d0c6c80c641e18af8c33a44">Reaktoro::ActivityModelSetschenow</a></li>
+<li><a class="el" href="namespaceReaktoro.html#ae431d4c8a1f283910ae1cf35024091b8">Reaktoro::ActivityModelIdealAqueous</a></li>
+<li><a class="el" href="group__Thermodynamics.html#gac5f8d750f243c6a135eb26adbff9116f">Reaktoro::ActivityModelDebyeHuckel</a></li>
+<li><a class="el" href="group__Thermodynamics.html#gae96b52887dbf0d91616c1e5fc85aa8d9">Reaktoro::ActivityModelPitzerHMW</a></li>
+<li><a class="el" href="group__Thermodynamics.html#ga38581c72f50270b74e10d0df92819cb3">Reaktoro::ActivityModelHKF</a></li>
+<li><a class="el" href="group__Thermodynamics.html#gaa2de8a7311c6210a6d745d2de8d1a1a6">Reaktoro::ActivityModelDrummond</a></li>
+<li><a class="el" href="group__Thermodynamics.html#gaa112478856101011a7fbeb485daa02a3">Reaktoro::ActivityModelDuanSun</a></li>
+<li><a class="el" href="group__Thermodynamics.html#ga863f4bc99ed49e7313a2d9686893fb4b">Reaktoro::ActivityModelRumpf</a></li>
+<li><a class="el" href="group__Thermodynamics.html#ga405dcfd84065f1e7cf154b6e2694a0b9">Reaktoro::ActivityModelSetschenow</a></li>
 </ul>
-<h2>Activity models for fluid phases (gaseous or liquid)</h2>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Activity models for fluid phases (gaseous or liquid)</h1>
 <ul>
-<li><a class="el" href="namespaceReaktoro.html#a603743b5d4994bff6ddc0ae6e8a48127">Reaktoro::ActivityModelIdealGas</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a075bb7b87afeca51f32c65e09e45d973">Reaktoro::ActivityModelIdealSolution</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a41f303f8b91c71192604fa88f64f8080">Reaktoro::ActivityModelVanDerWaals</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a63e5dd546dfed8a8687c485a81a4eb10">Reaktoro::ActivityModelRedlichKwong</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a8f6a67147fd75387ad2027976721b00a">Reaktoro::ActivityModelSoaveRedlichKwong</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a97a065c13ae125dc439f2a77f172d40f">Reaktoro::ActivityModelPengRobinson</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a485c81feb38517deaf79c8af532de61e">Reaktoro::ActivityModelSpycherPruessEnnis</a></li>
-<li><a class="el" href="namespaceReaktoro.html#afaae3ad6a3e69833b33dd7b7fe2f4994">Reaktoro::ActivityModelSpycherReed</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a7a0788a5a863d987a88b81303d80b427">Reaktoro::ActivityModelIdealGas</a></li>
+<li><a class="el" href="namespaceReaktoro.html#aaf42373e66e48b10e02163696b794e20">Reaktoro::ActivityModelIdealSolution</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a82207206480e0d0319ae3e27abbffc39">Reaktoro::ActivityModelVanDerWaals</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a8751de1a12d61106cbe00ec17cb97e14">Reaktoro::ActivityModelRedlichKwong</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a14ae68dc0c461ca21adf3d54d306de51">Reaktoro::ActivityModelSoaveRedlichKwong</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a34929fb1e591683fb848fb727bd15046">Reaktoro::ActivityModelPengRobinson</a></li>
+<li><a class="el" href="namespaceReaktoro.html#ab9eda4c62bb6c01ce47f0e19664247e3">Reaktoro::ActivityModelSpycherPruessEnnis</a></li>
+<li><a class="el" href="namespaceReaktoro.html#ab9861a77917bae6e019267d3873932a3">Reaktoro::ActivityModelSpycherReed</a></li>
 </ul>
-<h2>Activity models for solid solutions</h2>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Activity models for solid solutions</h1>
 <ul>
-<li><a class="el" href="namespaceReaktoro.html#a075bb7b87afeca51f32c65e09e45d973">Reaktoro::ActivityModelIdealSolution</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a39e3e31f943d3ced50a09afd1dacd48c">Reaktoro::ActivityModelRedlichKister</a></li>
+<li><a class="el" href="namespaceReaktoro.html#aaf42373e66e48b10e02163696b794e20">Reaktoro::ActivityModelIdealSolution</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a6e56f2d17a5385c196cc06ff93ecc714">Reaktoro::ActivityModelRedlichKister</a></li>
 <li>Reaktoro::ActivityModelVanLaar (<em>needs adaptation to v2.0</em>)</li>
 </ul>
-<h2>Standard thermodynamic properties and models</h2>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Standard thermodynamic properties and models</h1>
 <ul>
 <li><a class="el" href="structReaktoro_1_1StandardThermoProps.html">Reaktoro::StandardThermoProps</a></li>
-<li><a class="el" href="namespaceReaktoro.html#aea536f2033c8809530428c0ea93017c7">Reaktoro::StandardThermoModelConstant</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a4af45e788f267816c0fa93fd0a664f63">Reaktoro::StandardThermoModelHKF</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ad9e99ef4360372f4425e89aac084f1e7">Reaktoro::StandardThermoModelHollandPowell</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a569c1ad46d14c04537fe38f50952e879">Reaktoro::StandardThermoModelMaierKelley</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a8a5f7518359ecd1a6711d11b2ee9607c">Reaktoro::StandardThermoModelMineralHKF</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a9727b7565dd697e2a68f9e1653ecd168">Reaktoro::StandardThermoModelWaterHKF</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a74be5ef176b87207c3f638b831dbac99">Reaktoro::StandardThermoModelConstant</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a357fe045f6d0a5e3fb9b1a192bfd1a1f">Reaktoro::StandardThermoModelHKF</a></li>
+<li><a class="el" href="namespaceReaktoro.html#ad2341f6cc2c8c63b70d57095fddb8b66">Reaktoro::StandardThermoModelHollandPowell</a></li>
+<li><a class="el" href="namespaceReaktoro.html#abaee4c89ef3ae29d42e8dc28fdcbfa5c">Reaktoro::StandardThermoModelMaierKelley</a></li>
+<li><a class="el" href="namespaceReaktoro.html#af3b4e86085228c988fcfcc51f93d80f3">Reaktoro::StandardThermoModelMineralHKF</a></li>
+<li><a class="el" href="namespaceReaktoro.html#ae85d21899a24914a7b122967241003dd">Reaktoro::StandardThermoModelWaterHKF</a></li>
 <li><a class="el" href="namespaceReaktoro.html#a6e5946d89012e491957d90304bb842f7">Reaktoro::StandardVolumeModel</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ad61bd45d9a9148a14536fd357beca27a">Reaktoro::StandardVolumeModelConstant</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a581b83f2e6e1e2377721961b2e9d4f16">Reaktoro::StandardVolumeModelConstant</a></li>
 </ul>
-<h2>Reaction thermodynamic properties and models</h2>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Reaction thermodynamic properties and models</h1>
 <ul>
 <li><a class="el" href="structReaktoro_1_1ReactionThermoProps.html">Reaktoro::ReactionThermoProps</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a9f907fe9d555fb67585b1d134f39cdad">Reaktoro::ReactionThermoModelConstLgK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a6e2b1808662fecc19ec48bdf0ea6dbb4">Reaktoro::ReactionThermoModelGemsLgK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ad624db108aed00f32f123c4f635ea56c">Reaktoro::ReactionThermoModelPhreeqcLgK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a9620e6c3a2f2be2492d2d69d942b01b7">Reaktoro::ReactionThermoModelPressureCorrection</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a8db2ee34dbda678d3e01b6e685641af6">Reaktoro::ReactionThermoModelVantHoff</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a3f269353a610cc96083d7b8824c3fc0f">Reaktoro::ReactionThermoModelConstLgK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a35f5988334742ea4601c5be4fa01e645">Reaktoro::ReactionThermoModelGemsLgK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a6eee82b1065de0ad4c6e86a384789121">Reaktoro::ReactionThermoModelPhreeqcLgK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#acec3fc1992971ec3199be448469190ad">Reaktoro::ReactionThermoModelPressureCorrection</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a011df5ce3462027c02a2b8a711e151f0">Reaktoro::ReactionThermoModelVantHoff</a></li>
 </ul>
-<h2>Water thermodynamic and electrostatic properties</h2>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Water thermodynamic and electrostatic properties</h1>
 <ul>
 <li><a class="el" href="structReaktoro_1_1WaterElectroProps.html">Reaktoro::WaterElectroProps</a></li>
 <li><a class="el" href="structReaktoro_1_1WaterThermoProps.html">Reaktoro::WaterThermoProps</a></li>
 <li><a class="el" href="structReaktoro_1_1WaterHelmholtzProps.html">Reaktoro::WaterHelmholtzProps</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a375b29b0aa87a479dba223d2fc1a251a">Reaktoro::waterDensityHGK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a30f8226f820fcafd05e31fcb7973484f">Reaktoro::waterDensityWagnerPruss</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a0b0ea27c21670676224f07c31e120366">Reaktoro::waterLiquidDensityHGK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a44439a875fce8a3a07f51428e25d71ad">Reaktoro::waterLiquidDensityWagnerPruss</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a7b0de8a34477a17aded1fcd1960e2efb">Reaktoro::waterVaporDensityHGK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ad8582362f79767c4bd072807b02f5002">Reaktoro::waterVaporDensityWagnerPruss</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a81de769a3829e23b9e468f721ac7993a">Reaktoro::waterPressureHGK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a7b1a8f13271a498c42b7fa4b1ebc5e3e">Reaktoro::waterPressureWagnerPruss</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a870c6b0dea54f04b0d95c94249aa3506">Reaktoro::waterSaturatedPressureWagnerPruss</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ae4220d76eb1c0fbd9977c6d86dd3fd6c">Reaktoro::waterSaturatedLiquidDensityWagnerPruss</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a84a265f54d58f861dd612ea9ff1f2af6">Reaktoro::waterSaturatedVapourDensityWagnerPruss</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a1bfc71d24e16c5f5eac3954ccd2ec83c">Reaktoro::waterElectroPropsJohnsonNorton</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a6563baa0f313a9672194a7a94ad107e1">Reaktoro::waterThermoPropsHGK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a9a411f90a10d68bb051f61f7a310be33">Reaktoro::waterThermoPropsWagnerPruss</a></li>
-<li><a class="el" href="namespaceReaktoro.html#ac621893638e77650a8ea678385d84d93">Reaktoro::waterHelmholtzPropsHGK</a></li>
-<li><a class="el" href="namespaceReaktoro.html#a8c31c7eb0f8a47029d97861e12cc9f0c">Reaktoro::waterHelmholtzPropsWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#ae60bb8bf7f9160b10de81fb262680c4a">Reaktoro::waterDensityHGK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#ae0ff61917f084e12625f4650edf6a0ef">Reaktoro::waterDensityWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a4aba41d7d93aece85d8d69158d77b5f3">Reaktoro::waterLiquidDensityHGK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a30bf77c602dc0aa2ac0bf4af0b7bdd07">Reaktoro::waterLiquidDensityWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#ae9e823218432d9120043f8761efc952a">Reaktoro::waterVaporDensityHGK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#abc93e8d0345dd5997247bd717fa12459">Reaktoro::waterVaporDensityWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a9b9233b005219e3b471ebb6e7c3b15cb">Reaktoro::waterPressureHGK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#accbd164d7899b1e62b1f68e5046961ce">Reaktoro::waterPressureWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a2a355ae854a837adc9394aa862a0848e">Reaktoro::waterSaturatedPressureWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a4794ef562d2f5bea9e9f2618162d8ec5">Reaktoro::waterSaturatedLiquidDensityWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a1bff0dcd11e14f12e91f07586edfb181">Reaktoro::waterSaturatedVapourDensityWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a26123f4ac0915e3d22d1358a8c96e63c">Reaktoro::waterElectroPropsJohnsonNorton</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a426169543f7984cf0dbed404c5754be1">Reaktoro::waterThermoPropsHGK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a989a0931b37a9a2be0ce7ae9617bb8af">Reaktoro::waterThermoPropsWagnerPruss</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a5b50370e53502144f3e067b806779247">Reaktoro::waterHelmholtzPropsHGK</a></li>
+<li><a class="el" href="namespaceReaktoro.html#a4b1375bf035c78cef77590f6837a18ab">Reaktoro::waterHelmholtzPropsWagnerPruss</a></li>
 </ul>
-<h2>Worth checking classes and methods</h2>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Worth checking classes and methods</h1>
 <ul>
 <li><a class="el" href="classReaktoro_1_1ElementList.html">Reaktoro::ElementList</a></li>
 <li><a class="el" href="classReaktoro_1_1PhaseList.html">Reaktoro::PhaseList</a></li>
@@ -252,7 +265,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <li><a class="el" href="classReaktoro_1_1Reaction.html">Reaktoro::Reaction</a></li>
 <li><a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4b">Reaktoro::StateOfMatter</a></li>
 </ul>
-<h2>For all other needs</h2>
+<h1><a class="anchor" id="autotoc_md15"></a>
+For all other needs</h1>
+<ul>
+<li><a class="el" href="license.html">License</a></li>
+</ul>
 <p>Check the namespace <a class="el" href="namespaceReaktoro.html" title="The namespace containing all components of the Reaktoro library.">Reaktoro</a> for all available classes and methods. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
@@ -264,7 +281,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 19 2021 09:12:29 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 27 2021 09:38:08 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
