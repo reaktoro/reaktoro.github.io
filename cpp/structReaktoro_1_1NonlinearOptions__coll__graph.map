@@ -1,8 +1,0 @@
-<map id="NonlinearOptions" name="NonlinearOptions">
-<area shape="rect" id="node1" title="A type that describes the options for the solution of a non&#45;linear problem." alt="" coords="64,367,187,393"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1NonlinearOutput.html" title="A type that describes the options for the output of a non&#45;linear problem calculation." alt="" coords="68,277,184,304"/>
-<area shape="rect" id="node3" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="65,172,186,199"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="98,81,153,108"/>
-<area shape="rect" id="node6" title=" " alt="" coords="210,172,350,199"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="55,5,196,32"/>
-</map>

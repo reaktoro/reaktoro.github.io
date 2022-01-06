@@ -1,6 +1,0 @@
-<map id="SpeciesThermoParamsPhreeqc" name="SpeciesThermoParamsPhreeqc">
-<area shape="rect" id="node1" title="A type for storing Phreeqc parameters of a species." alt="" coords="38,184,245,211"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1SpeciesThermoParamsPhreeqc_1_1ReactionParams.html" title=" " alt="" coords="82,95,201,121"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1ReactionEquation.html" title="Define a type that describes the equation of a reaction." alt="" coords="5,5,131,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="155,5,275,32"/>
-</map>

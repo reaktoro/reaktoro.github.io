@@ -1,4 +1,0 @@
-<map id="MineralSpeciesThermoData" name="MineralSpeciesThermoData">
-<area shape="rect" id="node1" title="A type for storing the thermodynamic data of a mineral species." alt="" coords="5,80,188,107"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1SpeciesThermoData.html" title="A type for storing the thermodynamic data of general species." alt="" coords="26,5,167,32"/>
-</map>

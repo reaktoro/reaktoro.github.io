@@ -1,6 +1,0 @@
-<map id="SpeciesThermoData" name="SpeciesThermoData">
-<area shape="rect" id="node1" title="A type for storing the thermodynamic data of general species." alt="" coords="236,5,377,32"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1AqueousSpeciesThermoData.html" title="A type for storing the thermodynamic data of an aqueous species." alt="" coords="5,80,197,107"/>
-<area shape="rect" id="node3" href="$structReaktoro_1_1FluidSpeciesThermoData.html" title="A type for storing the thermodynamic data of fluid (gaseous or liquid) species." alt="" coords="222,80,391,107"/>
-<area shape="rect" id="node4" href="$structReaktoro_1_1MineralSpeciesThermoData.html" title="A type for storing the thermodynamic data of a mineral species." alt="" coords="415,80,598,107"/>
-</map>
