@@ -490,7 +490,7 @@
 </div>
 </div>
 </div>
-<p>Let’s create a chemical state for this system (using <code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code> class), and set it so that we have a 1 molal NaCl saline solution. We then compute its chemical properties (using class <code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code>) and print the activity coefficients, <span class="math notranslate nohighlight">\(\gamma_i\)</span>, of the species.</p>
+<p>Let’s create a chemical state for this system (using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class), and set it so that we have a 1 molal NaCl saline solution. We then compute its chemical properties (using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>) and print the activity coefficients, <span class="math notranslate nohighlight">\(\gamma_i\)</span>, of the species.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -602,7 +602,7 @@ O2                  1.32741
 </div>
 <div class="section" id="specifying-activity-models-for-gaseous-and-liquid-phases">
 <h2>Specifying activity models for gaseous and liquid phases<a class="headerlink" href="#specifying-activity-models-for-gaseous-and-liquid-phases" title="Permalink to this headline">¶</a></h2>
-<p>Reaktoro implements a general form of the cubic equation of state as presented in <span id="id3">Smith <em>et al.</em> [<a class="reference internal" href="#id67">2005</a>]</span> from which classic models are derived. You can assign one of the following models to an <code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code> or <code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code> object:</p>
+<p>Reaktoro implements a general form of the cubic equation of state as presented in <span id="id3">Smith <em>et al.</em> [<a class="reference internal" href="#id67">2005</a>]</span> from which classic models are derived. You can assign one of the following models to an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a> or <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a> object:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelPengRobinson</span></code> (<span id="id4">Peng and Robinson [<a class="reference internal" href="#id771">1976</a>]</span>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelRedlichKwong</span></code> (<span id="id5">Redlich and Kwong [<a class="reference internal" href="#id898">1949</a>]</span>)</p></li>
@@ -679,6 +679,7 @@ H2(g)     1.02158
 | Entropy                                |     358.768 |       J/K |
 | Internal Energy                        |     13229.8 |         J |
 | Helmholtz Energy                       |     -120645 |         J |
+| Charge                                 |           0 |       mol |
 | Element Amount:                        |             |           |
 | :: H                                   |        0.54 |       mol |
 | :: C                                   |         0.9 |       mol |
@@ -832,6 +833,7 @@ H2(g)     1.02158
 | Entropy                                |    130.963 |       J/K |
 | Internal Energy                        |    58935.5 |         J |
 | Helmholtz Energy                       |    19888.8 |         J |
+| Charge                                 |          0 |       mol |
 | Element Amount:                        |            |           |
 | :: O                                   |          8 |       mol |
 | :: Na                                  |        0.5 |       mol |
@@ -940,6 +942,7 @@ H2(g)     1.02158
 | Entropy                                |  7.37294e-07 |       J/K |
 | Internal Energy                        |     -100.293 |         J |
 | Helmholtz Energy                       |     -100.294 |         J |
+| Charge                                 |        0.006 |       mol |
 | Element Amount:                        |              |           |
 | :: X                                   |      1.2e-07 |       mol |
 | :: H                                   |      111.012 |       mol |

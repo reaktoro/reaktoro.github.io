@@ -388,7 +388,7 @@ constrained at equilibrium:</p>
 <li><p>pressure; and</p></li>
 <li><p>fugacity of CO<sub>2</sub>;</p></li>
 </ul>
-<p>The next step is to create an object of class <code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code> containing the
+<p>The next step is to create an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> containing the
 above constraint specifications for the chemical equilibrium calculation we
 want to perform.</p>
 <div class="cell docutils container">
@@ -420,7 +420,7 @@ with such constraints, which is done next:</p>
 </div>
 <p>Let’s now create an initial chemical state for our chemical system, one that
 represents a 1 molal NaCl aqueous solution mixed with 10 g of calcite mineral.
-We do this next by creating an object of class <code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code>:</p>
+We do this next by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -440,7 +440,7 @@ We do this next by creating an object of class <code class="docutils literal not
 </div>
 <p>Let’s now specify the temperature, pressure, and fugacity conditions (their
 actual values) we want to impose at equilibrium. We do this by using an object
-of class <code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code>:</p>
+of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fCO2g</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># 0.1 bar</span>
@@ -455,10 +455,10 @@ of class <code class="docutils literal notranslate"><span class="pre">Equilibriu
 </div>
 <p>We have everything we need now to perform the chemical equilibrium calculation:</p>
 <ul class="simple">
-<li><p>an equilibrium solver (the <code class="docutils literal notranslate"><span class="pre">solver</span></code> object of class <code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code>);</p></li>
-<li><p>a chemical state to equilibrate (the <code class="docutils literal notranslate"><span class="pre">state</span></code> object of class <code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code>); and</p></li>
+<li><p>an equilibrium solver (the <code class="docutils literal notranslate"><span class="pre">solver</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a>);</p></li>
+<li><p>a chemical state to equilibrate (the <code class="docutils literal notranslate"><span class="pre">state</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>); and</p></li>
 <li><p>the conditions we are imposing for this equilibrium state (the <code class="docutils literal notranslate"><span class="pre">conditions</span></code>
-object of class <code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code>).</p></li>
+object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>).</p></li>
 </ul>
 <p>The code below will perform the equilibrium calculation and when it is
 finished, our <code class="docutils literal notranslate"><span class="pre">state</span></code> object will be in a chemical equilibrium state:</p>
@@ -490,40 +490,41 @@ finished, our <code class="docutils literal notranslate"><span class="pre">state
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+-------------+------+
-| Property        |       Value | Unit |
-+-----------------+-------------+------+
-| Temperature     |      323.15 |    K |
-| Pressure        |       1e+06 |   Pa |
-| Element Amount: |             |      |
-| :: H            |     111.012 |  mol |
-| :: C            |    0.106923 |  mol |
-| :: O            |       55.82 |  mol |
-| :: Na           |           1 |  mol |
-| :: Cl           |           1 |  mol |
-| :: Ca           |    0.099909 |  mol |
-| Species Amount: |             |      |
-| :: CO3-2        |   1.561e-05 |  mol |
-| :: H+           | 2.52434e-07 |  mol |
-| :: H2O          |     55.5007 |  mol |
-| :: CO2          |  0.00152145 |  mol |
-| :: (CO2)2       |       1e-16 |  mol |
-| :: HCO3-        |  0.00929598 |  mol |
-| :: CH4          |       1e-16 |  mol |
-| :: Ca+2         |  0.00552591 |  mol |
-| :: CaCO3        | 5.70421e-06 |  mol |
-| :: CaHCO3+      | 0.000132019 |  mol |
-| :: CaOH+        | 1.35322e-09 |  mol |
-| :: Cl-          |           1 |  mol |
-| :: H2           |       1e-16 |  mol |
-| :: Na+          |    0.998293 |  mol |
-| :: NaCO3-       | 0.000149376 |  mol |
-| :: NaHCO3       |  0.00155768 |  mol |
-| :: OH-          | 4.72771e-07 |  mol |
-| :: NaOH         |       1e-16 |  mol |
-| :: O2           |       1e-16 |  mol |
-| :: Calcite      |   0.0942453 |  mol |
-+-----------------+-------------+------+
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+--------------+------+
+| Property        |        Value | Unit |
++-----------------+--------------+------+
+| Temperature     |       323.15 |    K |
+| Pressure        |        1e+06 |   Pa |
+| Charge:         | -1.12104e-16 |  mol |
+| Element Amount: |              |      |
+| :: H            |      111.012 |  mol |
+| :: C            |     0.106923 |  mol |
+| :: O            |        55.82 |  mol |
+| :: Na           |            1 |  mol |
+| :: Cl           |            1 |  mol |
+| :: Ca           |     0.099909 |  mol |
+| Species Amount: |              |      |
+| :: CO3-2        |    1.561e-05 |  mol |
+| :: H+           |  2.52434e-07 |  mol |
+| :: H2O          |      55.5007 |  mol |
+| :: CO2          |   0.00152145 |  mol |
+| :: (CO2)2       |        1e-16 |  mol |
+| :: HCO3-        |   0.00929598 |  mol |
+| :: CH4          |        1e-16 |  mol |
+| :: Ca+2         |   0.00552591 |  mol |
+| :: CaCO3        |  5.70421e-06 |  mol |
+| :: CaHCO3+      |  0.000132019 |  mol |
+| :: CaOH+        |  1.35322e-09 |  mol |
+| :: Cl-          |            1 |  mol |
+| :: H2           |        1e-16 |  mol |
+| :: Na+          |     0.998293 |  mol |
+| :: NaCO3-       |  0.000149376 |  mol |
+| :: NaHCO3       |   0.00155768 |  mol |
+| :: OH-          |  4.72771e-07 |  mol |
+| :: NaOH         |        1e-16 |  mol |
+| :: O2           |        1e-16 |  mol |
+| :: Calcite      |    0.0942453 |  mol |
++-----------------+--------------+------+
 </pre></div>
 </div>
 </div>
@@ -536,7 +537,7 @@ case, we should then have increased the initial amount of calcite (e.g., 100 g
 instead of 10 g), since we are interested in computing the solubility of
 calcite.</p>
 <p>Let’s now have a more in-depth look at the chemical state of the system by
-creating an object of class <code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code> and printing it:</p>
+creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> and printing it:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -556,6 +557,7 @@ creating an object of class <code class="docutils literal notranslate"><span cla
 | Entropy                                |      23.1729 |       J/K |
 | Internal Energy                        |      563.759 |         J |
 | Helmholtz Energy                       |     -6924.57 |         J |
+| Charge                                 | -1.12104e-16 |       mol |
 | Element Amount:                        |              |           |
 | :: H                                   |      111.012 |       mol |
 | :: C                                   |     0.106923 |       mol |
@@ -888,7 +890,7 @@ important chemical and thermodynamic properties at the computed chemical
 equilibrium state. This table shows, for example, the activities of the
 species, their chemical potentials, and standard thermodynamic properties.</p>
 <p>For properties more pertinent to aqueous solutions, we can create an object of
-class <code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code>:</p>
+class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -945,10 +947,10 @@ class <code class="docutils literal notranslate"><span class="pre">AqueousProps<
 <p>For the quantities above, note that:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mu_{\mathrm{CO_{2}(aq)}}\)</span>, the chemical potential of aqueous species
-CO<sub>2</sub>, can be obtained from the <code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code> object;</p></li>
+CO<sub>2</sub>, can be obtained from the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object;</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mu_{\mathrm{CO_{2}(g)}}^{\circ}\)</span>, the standard chemical potential of the
 gaseous species CO<sub>2</sub>(g), cannot be obtained from the
-<code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code> object because CO<sub>2</sub>(g) is not considered in the
+<a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object because CO<sub>2</sub>(g) is not considered in the
 chemical system. For this property, we can compute it at specified
 temperature and pressure conditions as shown next;</p></li>
 <li><p><span class="math notranslate nohighlight">\(f_{\mathrm{CO_{2}(g)}}\)</span> this is the imposed fugacity value for CO<sub>2</sub>(g).</p></li>

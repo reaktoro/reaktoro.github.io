@@ -391,7 +391,7 @@ properties are constrained:</p>
 </ul>
 <p>Let’s create a dedicated and optimized chemical equilibrium solver to deal with
 these types of problems.</p>
-<p>First, we create an object of class <code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code>, which we use to provide
+<p>First, we create an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a>, which we use to provide
 the equilibrium specifications for our solver later on:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,7 +452,7 @@ temperature, pressure, and pH are prescribed.</p>
 </div>
 <p>Let’s now define the temperature, pressure, and pH conditions we want to impose
 at equilibrium for this aqueous solution currently in disequilibrium. We do
-this by using an object of class <code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code>:</p>
+this by using an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
@@ -465,10 +465,10 @@ this by using an object of class <code class="docutils literal notranslate"><spa
 </div>
 <p>We have everything we need now to perform the equilibrium calculation:</p>
 <ul class="simple">
-<li><p>an equilibrium solver (the <code class="docutils literal notranslate"><span class="pre">solver</span></code> object of class <code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code>);</p></li>
-<li><p>a chemical state to equilibrate (the <code class="docutils literal notranslate"><span class="pre">state</span></code> object of class <code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code>); and</p></li>
+<li><p>an equilibrium solver (the <code class="docutils literal notranslate"><span class="pre">solver</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a>);</p></li>
+<li><p>a chemical state to equilibrate (the <code class="docutils literal notranslate"><span class="pre">state</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>); and</p></li>
 <li><p>the conditions we are imposing for this equilibrium state (the <code class="docutils literal notranslate"><span class="pre">conditions</span></code>
-object of class <code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code>).</p></li>
+object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>).</p></li>
 </ul>
 <p>The code below will perform the equilibrium calculation and modify the <code class="docutils literal notranslate"><span class="pre">state</span></code>
 object to reflect the computed chemical equilibrium state:</p>
@@ -505,6 +505,7 @@ object to reflect the computed chemical equilibrium state:</p>
 +-----------------+-------------+------+
 | Temperature     |      323.15 |    K |
 | Pressure        |       1e+06 |   Pa |
+| Charge:         |   0.0110013 |  mol |
 | Element Amount: |             |      |
 | :: H            |     111.028 |  mol |
 | :: C            |         0.1 |  mol |
@@ -525,11 +526,11 @@ object to reflect the computed chemical equilibrium state:</p>
 </div>
 </div>
 </div>
-<p>Well, there is no pH in this table because <code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code> objects only store
+<p>Well, there is no pH in this table because <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects only store
 temperature, pressure, and species amounts.</p>
-<p>What we need now is an object of class <code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code>. This class was
+<p>What we need now is an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a>. This class was
 specifically designed to inspect thermodynamic and chemical properties related
-to aqueous solutions. Let’s create an <code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code> object and print it:</p>
+to aqueous solutions. Let’s create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> object and print it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -612,7 +613,7 @@ the system to obtain an aqueous state with the stipulated pH value.</p>
 <p>Let’s now create an equilibrium solver that considers not only temperature,
 pressure, and pH constraints, but also an additional charge constraint. We want
 electrical charge balance to be attained by adding/removing Cl<sup>-</sup> as much as
-needed. Because of this, we specify below in the <code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code> object that
+needed. Because of this, we specify below in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object that
 the system is open to Cl<sup>-</sup>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -641,7 +642,7 @@ state in which a desired pH is obtained by titrating HCl.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;reaktoro.reaktoro4py.EquilibriumResult at 0x7f1f001382b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;reaktoro.reaktoro4py.EquilibriumResult at 0x7fb715b4df70&gt;
 </pre></div>
 </div>
 </div>
@@ -659,6 +660,7 @@ state in which a desired pH is obtained by titrating HCl.</p>
 +-----------------+-------------+------+
 | Temperature     |      323.15 |    K |
 | Pressure        |       1e+06 |   Pa |
+| Charge:         | 2.24564e-18 |  mol |
 | Element Amount: |             |      |
 | :: H            |     111.028 |  mol |
 | :: C            |         0.1 |  mol |

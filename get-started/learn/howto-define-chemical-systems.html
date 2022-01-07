@@ -411,17 +411,17 @@ define a chemical system comprising of:</p>
 the combustion process.</p></li>
 </ul>
 <p>The concept of a chemical system is represented in Reaktoro using the
-<code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code> class. You should expect to construct one object of this class
+<a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class. You should expect to construct one object of this class
 in almost every chemical process you want to model.</p>
-<p>In a <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code> object, you can find a list of <code class="docutils literal notranslate"><span class="pre">Phase</span></code> objects
-representing the phases. The <code class="docutils literal notranslate"><span class="pre">Phase</span></code> class is also an essential component of
+<p>In a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, you can find a list of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> objects
+representing the phases. The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> class is also an essential component of
 Reaktoro. It contains the list of chemical species composing the phase, as a
-list of <code class="docutils literal notranslate"><span class="pre">Species</span></code> objects. Additionally, each <code class="docutils literal notranslate"><span class="pre">Phase</span></code> object includes its
+list of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a> objects. Additionally, each <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> object includes its
 activity model to account for its non-ideal thermodynamic behavior.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We’ll learn more about activity models in a subsequent section and how to
-specify one for a <code class="docutils literal notranslate"><span class="pre">Phase</span></code> object. For now, consider activity models as functions
+specify one for a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> object. For now, consider activity models as functions
 that compute properties such as:</p>
 <ul class="simple">
 <li><p>species activities and species activity coefficients;</p></li>
@@ -436,7 +436,7 @@ different applications.</p>
 <h2>Chemical system definition for a mineral solubility problem<a class="headerlink" href="#chemical-system-definition-for-a-mineral-solubility-problem" title="Permalink to this headline">¶</a></h2>
 <p>Let’s consider the chemical equilibrium problem associated with the calculation
 of the solubility of halite (NaCl) in water. The code block below demonstrates
-building a <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code> object with an aqueous and mineral phase.</p>
+building a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object with an aqueous and mineral phase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -456,7 +456,7 @@ building a <code class="docutils literal notranslate"><span class="pre">Chemical
 </div>
 </div>
 </div>
-<p>That’s it! With the <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code> object created above, we can do some exciting things. For example, we can inspect the phases in the system and their composing chemical species:</p>
+<p>That’s it! With the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object created above, we can do some exciting things. For example, we can inspect the phases in the system and their composing chemical species:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">():</span>
@@ -481,8 +481,8 @@ Halite
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Reaktoro has default names for phases, such as <code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code> and
-<code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code> for aqueous and gaseous phases. For pure mineral phases, the
+<p>Reaktoro has default names for phases, such as <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousPhase.html"><code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code></a> and
+<a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a> for aqueous and gaseous phases. For pure mineral phases, the
 phase name is the same as the name of the mineral species composing it. That’s
 is why the mineral phase above is named <code class="docutils literal notranslate"><span class="pre">Halite</span></code>, whose only composing species
 is called <code class="docutils literal notranslate"><span class="pre">Halite</span></code>. Note also that Reaktoro supports as many phases as you
@@ -525,7 +525,7 @@ Cl
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code> class also contains the formula matrix <span class="math notranslate nohighlight">\(A\)</span> of the system, which is a matrix whose entry <span class="math notranslate nohighlight">\(A_{j,i}\)</span> contains the number of atoms of element with index <span class="math notranslate nohighlight">\(j\)</span> in species with index <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<p>The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class also contains the formula matrix <span class="math notranslate nohighlight">\(A\)</span> of the system, which is a matrix whose entry <span class="math notranslate nohighlight">\(A_{j,i}\)</span> contains the number of atoms of element with index <span class="math notranslate nohighlight">\(j\)</span> in species with index <span class="math notranslate nohighlight">\(i\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="p">.</span><span class="nf">formulaMatrix</span><span class="p">())</span>
@@ -795,7 +795,7 @@ Ethylene(g)              C2H4                     0.028054
 organic species that should play an insignificant role in accurately computing
 CO2 solubility. All organic species in SUPCRT and SUPCRTBL databases in
 Reaktoro’s YAML format have an organic tag which we can use to filter out them.</p>
-<p>Let’s then redefine our <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code> object <code class="docutils literal notranslate"><span class="pre">system</span></code> by excluding those
+<p>Let’s then redefine our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object <code class="docutils literal notranslate"><span class="pre">system</span></code> by excluding those
 organic aqueous species and specifying exactly the gases we want:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -810,7 +810,7 @@ organic aqueous species and specifying exactly the gases we want:</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Make sure you specify species names exactly how they exist in the <code class="docutils literal notranslate"><span class="pre">Database</span></code>
+<p>Make sure you specify species names exactly how they exist in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a>
 object you have created, such as in <code class="docutils literal notranslate"><span class="pre">GaseousPhase(&quot;CO2(g))</span></code> above. Otherwise
 you will get a runtime exception!</p>
 </div>
