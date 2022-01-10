@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bibliography</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/customized_mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script src="../_static/customize.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/reaktoro-logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chemical Equilibrium" href="../tutorials/equilibrium/index.html" />
+    <link rel="prev" title="How to specify equilibrium constraints" href="learn/howto-specify-equilibrium-constraints.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/reaktoro-for-python-and-cpp.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Get Started
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="installation/index.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="installation/installation-using-conda.html">
+     Installation using Conda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="installation/installation-using-cmake.html">
+     Installation using CMake
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="learn/index.html">
+   Learn
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-import-reaktoro.html">
+     How to use Reaktoro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-use-databases.html">
+     How to load and use thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-use-other-supported-databases.html">
+     How to load other supported thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-define-chemical-systems.html">
+     How to define chemical systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-define-chemical-states.html">
+     How to create and define chemical states
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-compute-chemical-properties.html">
+     How to compute chemical properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-compute-aqueous-properties.html">
+     How to compute aqueous properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-specify-activity-models.html">
+     How to specify activity models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-perform-equilibrium-calculations.html">
+     How to perform chemical equilibrium calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="learn/howto-specify-equilibrium-constraints.html">
+     How to specify equilibrium constraints
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/api">
+   API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/v1">
+   Reaktoro v1
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/equilibrium/index.html">
+   Chemical Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/equilibrium/solubility-calcite-water.html">
+     Solubility of calcite in pure water
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/equilibrium/fixed-ph.html">
+     Chemical equilibrium with fixed pH
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/equilibrium/fixed-fugacity.html">
+     Chemical equilibrium with fixed fugacity
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About Reaktoro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/citing.html">
+   Citing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../about/license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/get-started/bibliography.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Fget-started/bibliography.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="bibliography">
+<h1>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h1>
+<p id="id1"><dl class="citation">
+<dt class="label" id="id648"><span class="brackets">Dru81</span></dt>
+<dd><p>S.E. Drummond. <em>Boiling and mixing of hydrothermal fluids: chemical effects on mineral precipitation</em>. Ph.D., Pennsylvania State University, 1981.</p>
+</dd>
+<dt class="label" id="id993"><span class="brackets">HMollerW84</span></dt>
+<dd><p>Charles E Harvie, Nancy Møller, and John H Weare. The prediction of mineral solubilities in natural waters: The Na-K-Mg-Ca-H-Cl-SO4-OH-HCO3-CO3-CO2-H2O system to high ionic strengths at 25°C. <em>Geochimica et Cosmochimica Acta</em>, 48(4):723–751, apr 1984. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/001670378490098X">http://linkinghub.elsevier.com/retrieve/pii/001670378490098X</a>, <a class="reference external" href="https://doi.org/10.1016/0016-7037(84)90098-X">doi:10.1016/0016-7037(84)90098-X</a>.</p>
+</dd>
+<dt class="label" id="id475"><span class="brackets">HW80</span></dt>
+<dd><p>Charles E. Harvie and John H. Weare. The prediction of mineral soluhilities in natural waters: the system from zero to high concentration at 25 °C. <em>Geochimica et Cosmochimica Acta</em>, 44(7):981–997, 1980.</p>
+</dd>
+<dt class="label" id="id1036"><span class="brackets">HKF81</span></dt>
+<dd><p>Harold C. Helgeson, David H. Kirkham, and George C. Flowers. Theoretical prediction of the thermodynamic behavior of aqueous electrolytes at high pressures and temperatures: IV. Calculation of activity coefficients, osmotic coefficients, and apparent molal and standard and relative partial molal properties to 600 C. <em>American Journal of Science</em>, 281(10):1249–1516, dec 1981. URL: <a class="reference external" href="http://www.ajsonline.org/cgi/doi/10.2475/ajs.281.10.1249">http://www.ajsonline.org/cgi/doi/10.2475/ajs.281.10.1249</a>, <a class="reference external" href="https://doi.org/10.2475/ajs.281.10.1249">doi:10.2475/ajs.281.10.1249</a>.</p>
+</dd>
+<dt class="label" id="id846"><span class="brackets">PA13</span></dt>
+<dd><p>D.L. Parkhurst and C.A.J. Appelo. Description of input and examples for PHREEQC version 3—A computer program for speciation, batch-reaction, one-dimensional transport, and inverse geochemical calculations. In <em>Groundwater Book 6, Modeling Techniques</em>, chapter A43, pages 497. U.S. Geological Survey Techniques and Methods, 2013. URL: <a class="reference external" href="http://pubs.usgs.gov/tm/06/a43">http://pubs.usgs.gov/tm/06/a43</a>.</p>
+</dd>
+<dt class="label" id="id760"><span class="brackets">PR76</span></dt>
+<dd><p>Ding-Yu Peng and Donald B. Robinson. A New Two-Constant Equation of State. <em>Industrial &amp; Engineering Chemistry Fundamentals</em>, 15(1):59–64, feb 1976. URL: <a class="reference external" href="http://pubs.acs.org/doi/abs/10.1021/i160057a011">http://pubs.acs.org/doi/abs/10.1021/i160057a011</a>, <a class="reference external" href="https://doi.org/10.1021/i160057a011">doi:10.1021/i160057a011</a>.</p>
+</dd>
+<dt class="label" id="id887"><span class="brackets">RK49</span></dt>
+<dd><p>Otto Redlich and J. N. S. Kwong. On the Thermodynamics of Solutions. V. An Equation of State. Fugacities of Gaseous Solutions. <em>Chemical Reviews</em>, 44(1):233–244, feb 1949. URL: <a class="reference external" href="http://dx.doi.org/10.1021/cr60137a013">http://dx.doi.org/10.1021/cr60137a013</a>, <a class="reference external" href="https://doi.org/10.1021/cr60137a013">doi:10.1021/cr60137a013</a>.</p>
+</dd>
+<dt class="label" id="id56"><span class="brackets">SNA05</span></dt>
+<dd><p>Joseph Mauk Smith, Hendrick C Van Ness, and Michael M Abbott. <em>Introduction to chemical engineering thermodynamics</em>. McGraw-Hill, 2005. ISBN 0073104450.</p>
+</dd>
+<dt class="label" id="id164"><span class="brackets">Soa72</span></dt>
+<dd><p>Giorgio Soave. Equilibrium constants from a modified Redlich-Kwong equation of state. <em>Chemical Engineering Science</em>, 27(6):1197–1203, jun 1972. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/0009250972800964">http://linkinghub.elsevier.com/retrieve/pii/0009250972800964</a>, <a class="reference external" href="https://doi.org/10.1016/0009-2509(72)80096-4">doi:10.1016/0009-2509(72)80096-4</a>.</p>
+</dd>
+<dt class="label" id="id719"><span class="brackets">SPEK03</span></dt>
+<dd><p>Nicolas Spycher, Karsten Pruess, and Jonathan Ennis-King. CO2–H2O mixtures in the geological sequestration of CO2. I. Assessment and calculation of mutual solubilities from 12 to 100°C and up to 600 bar. <em>Geochimica et Cosmochimica Acta</em>, 67(16):3015–3031, 2003. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/S0016703703002734">http://linkinghub.elsevier.com/retrieve/pii/S0016703703002734</a>, <a class="reference external" href="https://doi.org/10.1016/S0016-7037(03)00273-4">doi:10.1016/S0016-7037(03)00273-4</a>.</p>
+</dd>
+<dt class="label" id="id777"><span class="brackets">SR88</span></dt>
+<dd><p>Nicolas F Spycher and Mark H Reed. Fugacity coefficients of H2, CO2, CH4, H2O and of H2O-CO2-CH4 mixtures: A virial equation treatment for moderate pressures and temperatures applicable to calculations of hydrothermal boiling. <em>Geochimica et Cosmochimica Acta</em>, 52(3):739–749, mar 1988. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/0016703788903341">http://linkinghub.elsevier.com/retrieve/pii/0016703788903341</a>, <a class="reference external" href="https://doi.org/10.1016/0016-7037(88)90334-1">doi:10.1016/0016-7037(88)90334-1</a>.</p>
+</dd>
+<dt class="label" id="id680"><span class="brackets">vdW73</span></dt>
+<dd><p>J. D. van der Waals. <em>On the Continuity of the Gaseous and Liquid States</em>. PhD thesis, Universiteit Leiden, 1873.</p>
+</dd>
+</dl>
+</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./get-started"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="learn/howto-specify-equilibrium-constraints.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">How to specify equilibrium constraints</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../tutorials/equilibrium/index.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Chemical Equilibrium</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
