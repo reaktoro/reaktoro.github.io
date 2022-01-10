@@ -1,0 +1,4 @@
+<map id="ReactionThermoInterpolatedProperties" name="ReactionThermoInterpolatedProperties">
+<area shape="rect" id="node1" title="A type for storing thermodynamic properties of a reaction over a range of temperatures and pressures." alt="" coords="5,95,213,136"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1SpeciesThermoInterpolatedProperties.html" title="A type for storing thermodynamic properties of a species over a range of temperatures and pressures." alt="" coords="9,5,210,47"/>
+</map>

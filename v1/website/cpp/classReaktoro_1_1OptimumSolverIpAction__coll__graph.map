@@ -1,0 +1,4 @@
+<map id="OptimumSolverIpAction" name="OptimumSolverIpAction">
+<area shape="rect" id="node1" title="The class that implements the IpAction algorithm using an interior&#45;point method with a null&#45;space KKT..." alt="" coords="5,80,183,107"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1OptimumSolverBase.html" title="The base class for all optimization algorithms." alt="" coords="16,5,172,32"/>
+</map>
