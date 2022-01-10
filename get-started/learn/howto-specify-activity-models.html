@@ -43,6 +43,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -179,6 +180,11 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference external" href="https://reaktoro.org/api">
@@ -385,11 +391,6 @@
    Recap
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -479,7 +480,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelHKF</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelPitzerHMW</span></code></p></li>
 </ul>
-<p>For example, the code block below will construct a chemical system with an aqueous phase that uses the HKF activity model <span id="id1">[<a class="reference internal" href="#id1047">Helgeson <em>et al.</em>, 1981</a>]</span>, which is fairly accurate for solutions up to 6 molal NaCl.</p>
+<p>For example, the code block below will construct a chemical system with an aqueous phase that uses the HKF activity model <span id="id1">[<a class="reference internal" href="../bibliography.html#id1036">Helgeson <em>et al.</em>, 1981</a>]</span>, which is fairly accurate for solutions up to 6 molal NaCl.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl&quot;</span><span class="p">))</span>
@@ -594,7 +595,7 @@ O2                  1.32741
 </div>
 </div>
 </div>
-<p>With the change above, the Drummond model <span id="id2">[<a class="reference internal" href="#id659">Drummond, 1981</a>]</span> will be used for the computation of the activity of CO<sub>2</sub> aqueous species (which can be named differently across the databases supported by Reaktoro, such as <code class="docutils literal notranslate"><span class="pre">CO2</span></code> in PHREEQC databases, <code class="docutils literal notranslate"><span class="pre">CO2(aq)</span></code> in SUPCRT/SUPCRTB databases, or <code class="docutils literal notranslate"><span class="pre">CO2&#64;</span></code> in ThermoFun databases).</p>
+<p>With the change above, the Drummond model <span id="id2">[<a class="reference internal" href="../bibliography.html#id648">Drummond, 1981</a>]</span> will be used for the computation of the activity of CO<sub>2</sub> aqueous species (which can be named differently across the databases supported by Reaktoro, such as <code class="docutils literal notranslate"><span class="pre">CO2</span></code> in PHREEQC databases, <code class="docutils literal notranslate"><span class="pre">CO2(aq)</span></code> in SUPCRT/SUPCRTB databases, or <code class="docutils literal notranslate"><span class="pre">CO2&#64;</span></code> in ThermoFun databases).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>When computing gas solubilities in aqueous saline solutions, it is important that the activity of the dissolved gas species (e.g., <code class="docutils literal notranslate"><span class="pre">CO2(aq)</span></code>) is adequately computed.</p>
@@ -602,19 +603,19 @@ O2                  1.32741
 </div>
 <div class="section" id="specifying-activity-models-for-gaseous-and-liquid-phases">
 <h2>Specifying activity models for gaseous and liquid phases<a class="headerlink" href="#specifying-activity-models-for-gaseous-and-liquid-phases" title="Permalink to this headline">¶</a></h2>
-<p>Reaktoro implements a general form of the cubic equation of state as presented in <span id="id3">Smith <em>et al.</em> [<a class="reference internal" href="#id67">2005</a>]</span> from which classic models are derived. You can assign one of the following models to an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a> or <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a> object:</p>
+<p>Reaktoro implements a general form of the cubic equation of state as presented in <span id="id3">Smith <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id56">2005</a>]</span> from which classic models are derived. You can assign one of the following models to an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a> or <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a> object:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelPengRobinson</span></code> (<span id="id4">Peng and Robinson [<a class="reference internal" href="#id771">1976</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelRedlichKwong</span></code> (<span id="id5">Redlich and Kwong [<a class="reference internal" href="#id898">1949</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSoaveRedlichKwong</span></code>  (<span id="id6">Soave [<a class="reference internal" href="#id175">1972</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelVanDerWaals</span></code>  (<span id="id7">van der Waals [<a class="reference internal" href="#id691">1873</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelPengRobinson</span></code> (<span id="id4">Peng and Robinson [<a class="reference internal" href="../bibliography.html#id760">1976</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelRedlichKwong</span></code> (<span id="id5">Redlich and Kwong [<a class="reference internal" href="../bibliography.html#id887">1949</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSoaveRedlichKwong</span></code>  (<span id="id6">Soave [<a class="reference internal" href="../bibliography.html#id164">1972</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelVanDerWaals</span></code>  (<span id="id7">van der Waals [<a class="reference internal" href="../bibliography.html#id680">1873</a>]</span>)</p></li>
 </ul>
 <p>Reaktoro also implements some equations of state designed for specific gaseous phases:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherPruessEnnis</span></code> (for H<sub>2</sub>O-CO<sub>2</sub> gas mixtures, <span id="id8">Spycher <em>et al.</em> [<a class="reference internal" href="#id730">2003</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherReed</span></code> (for H<sub>2</sub>O-CO<sub>2</sub>-CH<sub>4</sub> gas mixtures, <span id="id9">Spycher and Reed [<a class="reference internal" href="#id788">1988</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherPruessEnnis</span></code> (for H<sub>2</sub>O-CO<sub>2</sub> gas mixtures, <span id="id8">Spycher <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id719">2003</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherReed</span></code> (for H<sub>2</sub>O-CO<sub>2</sub>-CH<sub>4</sub> gas mixtures, <span id="id9">Spycher and Reed [<a class="reference internal" href="../bibliography.html#id777">1988</a>]</span>)</p></li>
 </ul>
-<p>The example below demonstrates the use of <span id="id10">Peng and Robinson [<a class="reference internal" href="#id771">1976</a>]</span> equation of state as the activity model for a gaseous phase:</p>
+<p>The example below demonstrates the use of <span id="id10">Peng and Robinson [<a class="reference internal" href="../bibliography.html#id760">1976</a>]</span> equation of state as the activity model for a gaseous phase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g) CH4(g) H2O(g) O2(g) H2(g)&quot;</span><span class="p">)</span>
@@ -901,7 +902,7 @@ H2(g)     1.02158
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelIonExchangeGainesThomas</span></code></p></li>
 </ul>
-<p>The Gaines-Thomas model is implemented according to what is used PHREEQC <span id="id11">[<a class="reference internal" href="#id857">Parkhurst and Appelo, 2013</a>]</span>. We show below a demonstration in which a chemical system with aqueous and ion exchange phases are created followed by the computation of the system’s chemical properties at a given chemical state:</p>
+<p>The Gaines-Thomas model is implemented according to what is used PHREEQC <span id="id11">[<a class="reference internal" href="../bibliography.html#id846">Parkhurst and Appelo, 2013</a>]</span>. We show below a demonstration in which a chemical system with aqueous and ion exchange phases are created followed by the computation of the system’s chemical properties at a given chemical state:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
@@ -1160,42 +1161,6 @@ H2(g)     1.02158
 <p class="admonition-title">Attention</p>
 <p>Ensure you have correctly selected and attached an activity model to a phase when comparing Reaktoro’s computations with other codes. When benchmarking, it is important to choose similar models. Ideally, you want to select the same one and use identical parameters for the model.</p>
 </div>
-</div>
-<div class="section" id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
-<p id="id12"><dl class="citation">
-<dt class="label" id="id1047"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Harold C. Helgeson, David H. Kirkham, and George C. Flowers. Theoretical prediction of the thermodynamic behavior of aqueous electrolytes at high pressures and temperatures: IV. Calculation of activity coefficients, osmotic coefficients, and apparent molal and standard and relative partial molal properties to 600 C. <em>American Journal of Science</em>, 281(10):1249–1516, dec 1981. URL: <a class="reference external" href="http://www.ajsonline.org/cgi/doi/10.2475/ajs.281.10.1249">http://www.ajsonline.org/cgi/doi/10.2475/ajs.281.10.1249</a>, <a class="reference external" href="https://doi.org/10.2475/ajs.281.10.1249">doi:10.2475/ajs.281.10.1249</a>.</p>
-</dd>
-<dt class="label" id="id659"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>S.E. Drummond. <em>Boiling and mixing of hydrothermal fluids: chemical effects on mineral precipitation</em>. Ph.D., Pennsylvania State University, 1981.</p>
-</dd>
-<dt class="label" id="id67"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Joseph Mauk Smith, Hendrick C Van Ness, and Michael M Abbott. <em>Introduction to chemical engineering thermodynamics</em>. McGraw-Hill, 2005. ISBN 0073104450.</p>
-</dd>
-<dt class="label" id="id771"><span class="brackets">4</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id10">2</a>)</span></dt>
-<dd><p>Ding-Yu Peng and Donald B. Robinson. A New Two-Constant Equation of State. <em>Industrial &amp; Engineering Chemistry Fundamentals</em>, 15(1):59–64, feb 1976. URL: <a class="reference external" href="http://pubs.acs.org/doi/abs/10.1021/i160057a011">http://pubs.acs.org/doi/abs/10.1021/i160057a011</a>, <a class="reference external" href="https://doi.org/10.1021/i160057a011">doi:10.1021/i160057a011</a>.</p>
-</dd>
-<dt class="label" id="id898"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
-<dd><p>Otto Redlich and J. N. S. Kwong. On the Thermodynamics of Solutions. V. An Equation of State. Fugacities of Gaseous Solutions. <em>Chemical Reviews</em>, 44(1):233–244, feb 1949. URL: <a class="reference external" href="http://dx.doi.org/10.1021/cr60137a013">http://dx.doi.org/10.1021/cr60137a013</a>, <a class="reference external" href="https://doi.org/10.1021/cr60137a013">doi:10.1021/cr60137a013</a>.</p>
-</dd>
-<dt class="label" id="id175"><span class="brackets"><a class="fn-backref" href="#id6">6</a></span></dt>
-<dd><p>Giorgio Soave. Equilibrium constants from a modified Redlich-Kwong equation of state. <em>Chemical Engineering Science</em>, 27(6):1197–1203, jun 1972. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/0009250972800964">http://linkinghub.elsevier.com/retrieve/pii/0009250972800964</a>, <a class="reference external" href="https://doi.org/10.1016/0009-2509(72)80096-4">doi:10.1016/0009-2509(72)80096-4</a>.</p>
-</dd>
-<dt class="label" id="id691"><span class="brackets"><a class="fn-backref" href="#id7">7</a></span></dt>
-<dd><p>J. D. van der Waals. <em>On the Continuity of the Gaseous and Liquid States</em>. PhD thesis, Universiteit Leiden, 1873.</p>
-</dd>
-<dt class="label" id="id730"><span class="brackets"><a class="fn-backref" href="#id8">8</a></span></dt>
-<dd><p>Nicolas Spycher, Karsten Pruess, and Jonathan Ennis-King. CO2–H2O mixtures in the geological sequestration of CO2. I. Assessment and calculation of mutual solubilities from 12 to 100°C and up to 600 bar. <em>Geochimica et Cosmochimica Acta</em>, 67(16):3015–3031, 2003. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/S0016703703002734">http://linkinghub.elsevier.com/retrieve/pii/S0016703703002734</a>, <a class="reference external" href="https://doi.org/10.1016/S0016-7037(03)00273-4">doi:10.1016/S0016-7037(03)00273-4</a>.</p>
-</dd>
-<dt class="label" id="id788"><span class="brackets"><a class="fn-backref" href="#id9">9</a></span></dt>
-<dd><p>Nicolas F Spycher and Mark H Reed. Fugacity coefficients of H2, CO2, CH4, H2O and of H2O-CO2-CH4 mixtures: A virial equation treatment for moderate pressures and temperatures applicable to calculations of hydrothermal boiling. <em>Geochimica et Cosmochimica Acta</em>, 52(3):739–749, mar 1988. URL: <a class="reference external" href="http://linkinghub.elsevier.com/retrieve/pii/0016703788903341">http://linkinghub.elsevier.com/retrieve/pii/0016703788903341</a>, <a class="reference external" href="https://doi.org/10.1016/0016-7037(88)90334-1">doi:10.1016/0016-7037(88)90334-1</a>.</p>
-</dd>
-<dt class="label" id="id857"><span class="brackets"><a class="fn-backref" href="#id11">10</a></span></dt>
-<dd><p>D.L. Parkhurst and C.A.J. Appelo. Description of input and examples for PHREEQC version 3—A computer program for speciation, batch-reaction, one-dimensional transport, and inverse geochemical calculations. In <em>Groundwater Book 6, Modeling Techniques</em>, chapter A43, pages 497. U.S. Geological Survey Techniques and Methods, 2013. URL: <a class="reference external" href="http://pubs.usgs.gov/tm/06/a43">http://pubs.usgs.gov/tm/06/a43</a>.</p>
-</dd>
-</dl>
-</p>
 </div>
 </div>
 
