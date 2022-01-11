@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How to use Reaktoro</title>
+    <title>How to perform chemical equilibrium calculations</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,8 +56,8 @@
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="How to load and use thermodynamic databases" href="howto-use-databases.html" />
-    <link rel="prev" title="Learn" href="index.html" />
+    <link rel="next" title="How to perform chemical equilibrium calculations with constraints" href="howto-perform-equilibrium-calculations-with-constraints.html" />
+    <link rel="prev" title="How to specify activity models" href="howto-specify-activity-models.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -127,8 +127,8 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto-import-reaktoro.html">
      How to use Reaktoro
     </a>
    </li>
@@ -167,8 +167,8 @@
      How to specify activity models
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="howto-perform-equilibrium-calculations-basics.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      How to perform chemical equilibrium calculations
     </a>
    </li>
@@ -311,7 +311,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/get-started/learn/howto-import-reaktoro.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/get-started/learn/howto-perform-equilibrium-calculations-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -331,7 +331,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Fget-started/learn/howto-import-reaktoro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Fget-started/learn/howto-perform-equilibrium-calculations-basics.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -352,7 +352,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/get-started/learn/howto-import-reaktoro.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/get-started/learn/howto-perform-equilibrium-calculations-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -369,6 +369,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checking-if-the-calculation-was-successful">
+   Checking if the calculation was successful
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -377,77 +390,149 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-use-reaktoro">
-<h1>How to use Reaktoro<a class="headerlink" href="#how-to-use-reaktoro" title="Permalink to this headline">¶</a></h1>
-<p>Reaktoro can be used via C++ or Python. We will detail below how this can be
-accomplished using Python only.</p>
-<p>Assuming you have installed Reaktoro correctly, you can import the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code>
-package in either a Python script or Jupyter Notebook:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">reaktoro</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-perform-chemical-equilibrium-calculations">
+<h1>How to perform chemical equilibrium calculations<a class="headerlink" href="#how-to-perform-chemical-equilibrium-calculations" title="Permalink to this headline">¶</a></h1>
+<p>Reaktoro performs chemical equilibrium calculations by <em>minimizing the Gibbs energy of the system</em> <span id="id1">[<a class="reference internal" href="../bibliography.html#id667">Leal <em>et al.</em>, 2017</a>]</span>. In a Gibbs energy minimization problem, <strong>temperature and pressure are prescribed</strong> and <strong>the chemical system is closed</strong>. Thus, without mass transfer in or out of the system, the initial amounts of chemical elements and electric charge are conserved in the reactive process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are many different classes of equilibrium problems where:</p>
+<ul class="simple">
+<li><p><strong>temperature and/or pressure may be unknown</strong> (e.g., combustion in a rigid and adiabatic chamber where volume and internal energy are specified and temperature and pressure are calculated);</p></li>
+<li><p><strong>the chemical system is open to certain substances</strong> (e.g., aqueous solution in equilibrium with a mixture of gases with known partial pressures or fugacities, such as the atmosphere).</p></li>
+</ul>
+<p>Reaktoro’s chemical equilibrium algorithm supports all these cases because it implements an algorithm to solve <em>parametric Gibbs energy minimization problems with general equilibrium constraints</em>. Thus, Reaktoro is not restricted to closed systems and prescribed temperature and pressure conditions, as we will see in the following sections and tutorials.</p>
 </div>
-</div>
-</div>
-<p>Throughout this guide, we will instead use the following:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">reaktoro</span> <span class="k">as</span> <span class="nn">rkt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can now use all library components in the Reaktoro library. For example, we
-can create an object of the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Element.html"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a> class:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">Element</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>and print its attributes:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Symbol: </span><span class="si">{</span><span class="n">element</span><span class="p">.</span><span class="nf">symbol</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="n">element</span><span class="p">.</span><span class="nf">name</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Molar Mass: </span><span class="si">{</span><span class="n">element</span><span class="p">.</span><span class="nf">molarMass</span><span class="p">()</span><span class="si">}</span><span class="s2"> kg/mol&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Symbol: C
-Name: Carbon
-Molar Mass: 0.012011 kg/mol
-</pre></div>
-</div>
-</div>
-</div>
-<p>You may also see the following import usage later in some user guides:</p>
+<p>We give a simple example below in which we demonstrate the most basic form of performing chemical equilibrium calculations in Reaktoro. In this example, we want to model the combustion of 1 mol of CH<sub>4</sub> and 0.5 mol of O<sub>2</sub> at 1000 ºC and 100 bar. First, we define a chemical system consisting of only a gaseous phase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+
+<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">)</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We will use this form to minimize verbosity in the code blocks and make them
-easier to read. With this import statement, we can write instead:</p>
+<p>We then create a chemical state for this system representing the intial temperature, pressure, and composition conditions stated aboved:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Element</span><span class="p">(</span><span class="s2">&quot;Na&quot;</span><span class="p">)</span>  <span class="c1"># shorter than rkt.Element or reaktoro.Element!</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== INITIAL STATE ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sodium
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== INITIAL STATE ===
++-----------------+---------+------+
+| Property        |   Value | Unit |
++-----------------+---------+------+
+| Temperature     | 1273.15 |    K |
+| Pressure        |   1e+07 |   Pa |
+| Charge:         |       0 |  mol |
+| Element Amount: |         |      |
+| :: H            |       4 |  mol |
+| :: C            |       1 |  mol |
+| :: O            |       1 |  mol |
+| Species Amount: |         |      |
+| :: CH4          |       1 |  mol |
+| :: O2           |     0.5 |  mol |
+| :: CO2          |   1e-16 |  mol |
+| :: CO           |   1e-16 |  mol |
+| :: H2O          |   1e-16 |  mol |
+| :: H2           |   1e-16 |  mol |
++-----------------+---------+------+
 </pre></div>
 </div>
 </div>
 </div>
-<p>Continue reading for more interesting Reaktoro use cases!</p>
+<p>And we finally create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object to perform the desired chemical equilibrium calculation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>  <span class="c1"># equilibrate the `state` object!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== FINAL STATE ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== FINAL STATE ===
++-----------------+-----------+------+
+| Property        |     Value | Unit |
++-----------------+-----------+------+
+| Temperature     |   1273.15 |    K |
+| Pressure        |     1e+07 |   Pa |
+| Charge:         |         0 |  mol |
+| Element Amount: |           |      |
+| :: H            |         4 |  mol |
+| :: C            |         1 |  mol |
+| :: O            |         1 |  mol |
+| Species Amount: |           |      |
+| :: CH4          |  0.376062 |  mol |
+| :: O2           |     1e-16 |  mol |
+| :: CO2          | 0.0936296 |  mol |
+| :: CO           |  0.530308 |  mol |
+| :: H2O          |  0.282433 |  mol |
+| :: H2           |  0.965442 |  mol |
++-----------------+-----------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the initial and final amounts of the elements H, C, and O are identical (the same applies to the electric charge of the system, even though there are no charged species in this specific problem).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’ve read the previous guides, you’ve probably already encountered the use of <code class="docutils literal notranslate"><span class="pre">equilibrate(state)</span></code> to bring <code class="docutils literal notranslate"><span class="pre">state</span></code>, an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>, to a state of chemical equilibrium. This method exists for convenience and performs a Gibbs energy minimization on the entire chemical system. It is equivalent to using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> as follows:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you need many equilibrium calculations (e.g. in the context of reactive transport simulations), consider using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> class instead of the <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code> method, as the latter creates an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object during each call without reuse afterwards, which can cause computation overhead.</p>
+</div>
+<div class="section" id="checking-if-the-calculation-was-successful">
+<h2>Checking if the calculation was successful<a class="headerlink" href="#checking-if-the-calculation-was-successful" title="Permalink to this headline">¶</a></h2>
+<p>Performing chemical equilibrium calculations is not a trivial task. It involves highly complicated algorithms to solve different mathematical problems (e.g., non-linear equations, matrix equations). Therefore, it is possible that a calculation could fail. This can happen due to many factors. However, the most common are:</p>
+<ul class="simple">
+<li><p>the formulation of the equilibrium problem is ill-formed (e.g. specifying a set of conflicting equilibrium constraints that cannot be achieved chemically/thermodynamically)</p></li>
+<li><p>the use of poor initial guesses.</p></li>
+</ul>
+<p>So you might want to check at the end of each equilibrium calculation if it was successful:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+
+<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Succeesful?&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">optima</span><span class="o">.</span><span class="n">succeeded</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succeesful? True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Continue reading to learn more advanced ways to perform chemical equilibrium calculations with Reaktoro!</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -480,19 +565,19 @@ easier to read. With this import statement, we can write instead:</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
+        <a class="left-prev" href="howto-specify-activity-models.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Learn</p>
+                <p class="prevnext-title">How to specify activity models</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="howto-use-databases.html" title="next page">
+        <a class="right-next" href="howto-perform-equilibrium-calculations-with-constraints.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">How to load and use thermodynamic databases</p>
+                <p class="prevnext-title">How to perform chemical equilibrium calculations with constraints</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

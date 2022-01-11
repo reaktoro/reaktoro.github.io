@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How to specify equilibrium constraints</title>
+    <title>How to perform chemical equilibrium calculations with constraints</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,8 +56,8 @@
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="How to perform chemical kinetics calculations" href="howto-perform-kinetics-calculations.html" />
-    <link rel="prev" title="How to perform chemical equilibrium calculations with fixed volume and internal energy" href="howto-perform-equilibrium-calculations-with-fixed-volume-internal-energy.html" />
+    <link rel="next" title="How to perform chemical kinetics calculations" href="howto-perform-kinetics-calculations-basics.html" />
+    <link rel="prev" title="How to perform chemical equilibrium calculations" href="howto-perform-equilibrium-calculations-basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -167,37 +167,20 @@
      How to specify activity models
     </a>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="howto-perform-equilibrium-calculations-intro.html">
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto-perform-equilibrium-calculations-basics.html">
      How to perform chemical equilibrium calculations
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="howto-perform-equilibrium-calculations-with-fixed-ph.html">
-       How to perform chemical equilibrium calculations with fixed pH
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="howto-perform-equilibrium-calculations-with-fixed-volume-internal-energy.html">
-       How to perform chemical equilibrium calculations with fixed volume and internal energy
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       How to specify equilibrium constraints
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="howto-perform-kinetics-calculations.html">
-       How to perform chemical kinetics calculations
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     How to perform chemical equilibrium calculations with constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="howto-perform-kinetics-calculations-basics.html">
+     How to perform chemical kinetics calculations
+    </a>
    </li>
   </ul>
  </li>
@@ -227,17 +210,12 @@
   <a class="reference internal" href="../../tutorials/equilibrium/index.html">
    Chemical Equilibrium
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../tutorials/equilibrium/solubility-calcite-water.html">
-     Solubility of calcite in pure water
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../tutorials/equilibrium/with-fixed-ph.html">
      Chemical equilibrium with fixed pH
@@ -333,7 +311,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/get-started/learn/howto-specify-equilibrium-constraints.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/get-started/learn/howto-perform-equilibrium-calculations-with-constraints.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -353,7 +331,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Fget-started/learn/howto-specify-equilibrium-constraints.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Fget-started/learn/howto-perform-equilibrium-calculations-with-constraints.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -374,7 +352,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/get-started/learn/howto-specify-equilibrium-constraints.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/get-started/learn/howto-perform-equilibrium-calculations-with-constraints.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -422,9 +400,13 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-specify-equilibrium-constraints">
-<h1>How to specify equilibrium constraints<a class="headerlink" href="#how-to-specify-equilibrium-constraints" title="Permalink to this headline">¶</a></h1>
-<p>As we mentioned in the previous section, Reaktoro can be used for a wide range of chemical equilibrium problems. In this section, we show the fundamentals of specifying different equilibrium constraints when calculating chemical equilibrium. We also show you how your system can be configured to be open to one or more substances.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-perform-chemical-equilibrium-calculations-with-constraints">
+<h1>How to perform chemical equilibrium calculations with constraints<a class="headerlink" href="#how-to-perform-chemical-equilibrium-calculations-with-constraints" title="Permalink to this headline">¶</a></h1>
+<p>As we mentioned in the previous section, Reaktoro can be used for a wide range of chemical equilibrium problems. In this section, we show:</p>
+<ul class="simple">
+<li><p>the fundamentals of specifying different equilibrium constraints when calculating chemical equilibrium; and</p></li>
+<li><p>how the equilibrium solver can be configured to allow the system to be open to one or more substances.</p></li>
+</ul>
 <p>We learned that a chemical equilibrium solver can be created with the class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a>, as shown in the example below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -441,7 +423,7 @@
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> objects created this way, using a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object (such as <code class="docutils literal notranslate"><span class="pre">system</span></code>) for its construction as in <code class="docutils literal notranslate"><span class="pre">solver</span> <span class="pre">=</span> <span class="pre">EquilibriumSolver(system)</span></code>, are limited to chemical equilibrium calculations where:</p>
+<p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> objects created this way (i.e., as in <code class="docutils literal notranslate"><span class="pre">solver</span> <span class="pre">=</span> <span class="pre">EquilibriumSolver(system)</span></code>), are limited to chemical equilibrium calculations where:</p>
 <ul class="simple">
 <li><p>temperature and pressure are given;</p></li>
 <li><p>the system is closed (no mass transfer in or out of the system).</p></li>
@@ -454,7 +436,7 @@
 </div>
 <div class="section" id="specifying-constrained-properties">
 <h2>Specifying constrained properties<a class="headerlink" href="#specifying-constrained-properties" title="Permalink to this headline">¶</a></h2>
-<p>Let’s then create such an equilibrium solver, which can solve problems with prescribed <strong>temperature</strong> and <strong>volume</strong>:</p>
+<p>Let’s create an equilibrium solver that can solve problems with prescribed <strong>temperature</strong> and <strong>volume</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -469,7 +451,7 @@
 <p>That’s it! We use <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> to provide the constraint specifications for our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> to find out all currently existing constraints you can impose! It is even possible to define your own constraints, which we’ll cover in a dedicated tutorial given this is a more advanced use case.</p>
+<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> to find out all currently existing constraints you can impose! It is even <strong>possible to define your own constraints</strong>, instead of predefined ones, which we’ll cover in a dedicated tutorial given this is a more advanced use case.</p>
 </div>
 <p>It’s now time to demonstrate how we use this specialized equilibrium solver. We want to model the combustion of 1 mol of CH<sub>4</sub> and 0.5 mol of O<sub>2</sub> in a chamber of 10 cm³ at 1000 °C. We create below an initial chemical state with this gas composition:</p>
 <div class="cell docutils container">
@@ -545,7 +527,7 @@
 </div>
 </div>
 </div>
-<p>This printed state does not show volume. Let’s check the volume in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object attached to the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object <code class="docutils literal notranslate"><span class="pre">state</span></code> by <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a>. Let’s also print the computed pressure:</p>
+<p>This printed state does not show volume. Let’s check the volume in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object attached by <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> to the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object <code class="docutils literal notranslate"><span class="pre">state</span></code> at the end of the computation. Let’s also print the computed pressure:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">props</span><span class="p">()</span><span class="o">.</span><span class="nf">volume</span><span class="p">()</span>  <span class="c1"># volume in m³</span>
@@ -569,7 +551,7 @@ Pressure at equilibrium state is 1.66032 GPa!
 <p>Note that the volume at the computed equilibrium state is exactly what we enforced in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object: 10 cm³.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Don’t forget to set the expected conditions in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object. For all those conditions specified to be known in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object (e.g., <code class="docutils literal notranslate"><span class="pre">specs.temperature()</span></code> and <code class="docutils literal notranslate"><span class="pre">specs.volume()</span></code>), make sure you give a value for each of them in the associated <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object (e.g., <code class="docutils literal notranslate"><span class="pre">conditions.temperature(1000.0,</span> <span class="pre">&quot;celsius&quot;)</span></code> and <code class="docutils literal notranslate"><span class="pre">conditions.volume(10.0,</span> <span class="pre">&quot;cm3&quot;)</span></code>)! Not doing this can cause unexpected behavior or a runtime error.</p>
+<p>Don’t forget to set the expected conditions in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object. For every condition marked to be known in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object (e.g., <code class="docutils literal notranslate"><span class="pre">specs.temperature()</span></code> and <code class="docutils literal notranslate"><span class="pre">specs.volume()</span></code>), make sure you give a value for each of them in the associated <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object (e.g., <code class="docutils literal notranslate"><span class="pre">conditions.temperature(1000.0,</span> <span class="pre">&quot;celsius&quot;)</span></code> and <code class="docutils literal notranslate"><span class="pre">conditions.volume(10.0,</span> <span class="pre">&quot;cm3&quot;)</span></code>)! Not doing this can cause unexpected behavior or a runtime error.</p>
 </div>
 <div class="admonition-did-you-know admonition">
 <p class="admonition-title">Did you know?</p>
@@ -578,7 +560,7 @@ Pressure at equilibrium state is 1.66032 GPa!
 <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>is behind the scenes executed with the following code:</p>
+<p>is executed in the background with the following code:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 <span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
 <span class="n">specs</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
@@ -596,8 +578,8 @@ Pressure at equilibrium state is 1.66032 GPa!
 </div>
 <div class="section" id="specifying-open-conditions">
 <h2>Specifying open conditions<a class="headerlink" href="#specifying-open-conditions" title="Permalink to this headline">¶</a></h2>
-<p>Let’s say we would like to find out how many mols of CH4 must react with 0.5 mol of O<sub>2</sub> in the same chamber (with volume 10 cm³ and temperature 1000 °C) to obtain pressure 1 GPa (which, let’s assume, is the maximum pressure supported by the chamber material).</p>
-<p>In this new equilibrium calculation, the system is open to the mass transfer of CH4, and this creates a new <em>degree of freedom</em> in the problem: the amount added/removed of this substance. That’s why we can simultaneously impose a value for temperature (1000 °C), volume (10 cm³), and pressure (1 GPa), which would be thermodynamically difficult otherwise.</p>
+<p>Let’s say we would like to find out how many mols of CH<sub>4</sub> must react with 0.5 mol of O<sub>2</sub> in the same chamber (with volume 10 cm³ and temperature 1000 °C) to obtain pressure 1 GPa (which, let’s assume, is the maximum pressure supported by the chamber material).</p>
+<p>In this new equilibrium calculation, the system is open to the mass transfer of CH<sub>4</sub>, and this creates a new <em>degree of freedom</em> in the problem: the amount added/removed of this substance. That’s why we can simultaneously impose a value for temperature (1000 °C), volume (10 cm³), and pressure (1 GPa), which would be thermodynamically difficult otherwise.</p>
 <p>The code below starts by creating a chemical state in which there is only 0.5 mols of O<sub>2</sub>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -607,7 +589,7 @@ Pressure at equilibrium state is 1.66032 GPa!
 </div>
 </div>
 </div>
-<p>Next, we create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object in which we specify that <strong>temperature</strong>, <strong>volume</strong> and <strong>pressure</strong> are constrained properties. We also specify that the system is open to CH<sub>4</sub>. This is all followed by the creation of a specialized and optimized <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object to handle this kind of equilibrium calculations:</p>
+<p>Next, we create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object in which we specify that <strong>temperature</strong>, <strong>volume</strong>, and <strong>pressure</strong> are constrained properties. We also specify that the system is open to CH<sub>4</sub>. This is all followed by the creation of a specialized and optimized <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object to handle this kind of equilibrium calculations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -818,16 +800,16 @@ Pressure at equilibrium state is 1.66032 GPa!
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="howto-perform-equilibrium-calculations-with-fixed-volume-internal-energy.html" title="previous page">
+        <a class="left-prev" href="howto-perform-equilibrium-calculations-basics.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">How to perform chemical equilibrium calculations with fixed volume and internal energy</p>
+                <p class="prevnext-title">How to perform chemical equilibrium calculations</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="howto-perform-kinetics-calculations.html" title="next page">
+        <a class="right-next" href="howto-perform-kinetics-calculations-basics.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
                 <p class="prevnext-title">How to perform chemical kinetics calculations</p>
