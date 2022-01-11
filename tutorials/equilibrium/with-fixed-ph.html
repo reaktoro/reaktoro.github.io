@@ -405,7 +405,7 @@
 <li><p>pressure; and</p></li>
 <li><p>pH.</p></li>
 </ul>
-<p>The code below will first create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object in which the above properties are marked as inputs and then use that to create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object:</p>
+<p>The code below will first create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object in which the above properties are marked as inputs and then use that to create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -549,8 +549,8 @@
 </div>
 </div>
 </div>
-<p>From the table above, we see that temperature, pressure, and pH have values exactly like those provided before in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object.</p>
-<p>As a result of enforcing pH via <code class="docutils literal notranslate"><span class="pre">specs.pH()</span></code>, this executed equilibrium calculation considered the system to be open to H<sup>+</sup>. Let’s find out below how much H<sup>+</sup> entered/leaved the system so that the desired pH could be attained:</p>
+<p>In the table above, we see that temperature, pressure, and pH have values exactly like those given earlier in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object (although with different temperature and pressure units).</p>
+<p>As a result of enforcing pH via <code class="docutils literal notranslate"><span class="pre">specs.pH()</span></code>, this executed equilibrium calculation considered the system to be open to H<sup>+</sup>. Let’s find out below how much H<sup>+</sup> entered/leaved the system so that the desired pH could be reached:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">equilibrium</span><span class="p">()</span><span class="o">.</span><span class="nf">implicitTitrantAmounts</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
@@ -563,6 +563,20 @@
 </div>
 </div>
 </div>
+<p>Since H<sup>+</sup> is a charged species, our final chemical state does not have zero charge as the initial state:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Charge at equilibrium state:&quot;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">charge</span><span class="p">(),</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Charge at equilibrium state: 0.122916 mol
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll learn in the next tutorial how a pH constraint can be combined with a charge constraint so that the system has zero charge at equilibrium (or whatever other value you may want to impose).</p>
 </div>
 
     <script type="text/x-thebe-config">
