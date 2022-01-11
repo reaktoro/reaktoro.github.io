@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chemical equilibrium with given element and charge amounts</title>
+    <title>Chemical equilibrium with fixed volume and internal energy</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -56,8 +56,6 @@
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Citing" href="../../about/citing.html" />
-    <link rel="prev" title="Chemical equilibrium with fixed volume and internal energy" href="with-fixed-volume-internal-energy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -205,17 +203,17 @@
   Tutorials
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="index.html">
    Chemical Equilibrium
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="with-fixed-ph.html">
      Chemical equilibrium with fixed pH
@@ -237,12 +235,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="with-fixed-volume-internal-energy.html">
-     Chemical equilibrium with fixed volume and internal energy
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+    <a class="reference internal" href="with-given-component-amounts.html">
      Chemical equilibrium with given element and charge amounts
     </a>
    </li>
@@ -316,7 +309,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/tutorials/equilibrium/with-given-component-amounts.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/tutorials/equilibrium/with-fixed-volume-internal-energy copy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -336,7 +329,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/equilibrium/with-given-component-amounts.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/equilibrium/with-fixed-volume-internal-energy copy.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -357,7 +350,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/tutorials/equilibrium/with-given-component-amounts.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/tutorials/equilibrium/with-fixed-volume-internal-energy copy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -382,119 +375,176 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-given-element-and-charge-amounts">
-<h1>Chemical equilibrium with given element and charge amounts<a class="headerlink" href="#chemical-equilibrium-with-given-element-and-charge-amounts" title="Permalink to this headline">¶</a></h1>
-<p>So far, you most likely have only seen Reaktoro performing chemical equilibrium calculations with a given initial chemical state in disequilibrium such as the one below:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-fixed-volume-and-internal-energy">
+<h1>Chemical equilibrium with fixed volume and internal energy<a class="headerlink" href="#chemical-equilibrium-with-fixed-volume-and-internal-energy" title="Permalink to this headline">¶</a></h1>
+<p>Let’s consider again the combustion of 1 mol of CH<sub>4</sub> and 0.5 mol of O<sub>2</sub>. This time, however, we will specify <strong>volume and internal energy</strong> as known properties at the equilibrium state.</p>
+<p>We want to model the combustion of this gaseous mixture in a rigid and adiabatic chamber (volume and internal energy must be preserved). In this problem, both temperature and pressure are unknown and will be calculated together with the amounts of species that bring the system to a state of chemical equilibrium.</p>
+<p>Let’s create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object (one with a single gaseous phase):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 
-<span class="c1"># Create a chemical system with only a gas phase</span>
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">))</span>
+<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">)</span>
 
-<span class="c1"># Create an initial state for this chemical system</span>
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-
-<span class="c1"># Create an equilibrium solver and equilibrates `state`</span>
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+-----------+------+
-| Property        |     Value | Unit |
-+-----------------+-----------+------+
-| Temperature     |   1273.15 |    K |
-| Pressure        |     1e+07 |   Pa |
-| Charge:         |         0 |  mol |
-| Element Amount: |           |      |
-| :: H            |         4 |  mol |
-| :: C            |         1 |  mol |
-| :: O            |         1 |  mol |
-| Species Amount: |           |      |
-| :: CH4          |  0.376062 |  mol |
-| :: O2           |     1e-16 |  mol |
-| :: CO2          | 0.0936296 |  mol |
-| :: CO           |  0.530308 |  mol |
-| :: H2O          |  0.282433 |  mol |
-| :: H2           |  0.965442 |  mol |
-+-----------------+-----------+------+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>In the background, when you called <code class="docutils literal notranslate"><span class="pre">solver.solve(state)</span></code> above, Reaktoro used the amounts of species in the initial state to compute the amounts of elements and charge. These are needed in an underlying mass conservation equation solved along with the Gibbs energy minimization problem.</p>
-<p>There are applications in which you may have the amounts of elements and charge of the system already and you want to use this as input to the chemical equilibrium calculation.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We use the term <em>components</em> to denote both chemical elements and charge (or any other entities used as building blocks for chemical species).</p>
-</div>
-<p>We demonstrate below how this can be achieved so that we produce exact same results as shown in the table above.</p>
+<p>Next, we create an initial chemical state for this system:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">props0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalProps</span><span class="p">(</span><span class="n">state0</span><span class="p">)</span>
 
-<span class="n">Ne</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">size</span><span class="p">()</span>      <span class="c1"># the number of elements in the system</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="n">props0</span><span class="p">.</span><span class="nf">volume</span><span class="p">()</span>  <span class="c1"># the initial volume of the gases</span>
+<span class="n">U0</span> <span class="o">=</span> <span class="n">props0</span><span class="p">.</span><span class="nf">internalEnergy</span><span class="p">()</span>  <span class="c1"># the initial internal energy of the gases</span>
 
-<span class="n">iC</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>  <span class="c1"># the index of component C</span>
-<span class="n">iH</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>  <span class="c1"># the index of component H</span>
-<span class="n">iO</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>  <span class="c1"># the index of component O</span>
-<span class="n">iZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Ne</span>                            <span class="c1"># the index of component charge</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INITIAL STATE
++-----------------+--------+------+
+| Property        |  Value | Unit |
++-----------------+--------+------+
+| Temperature     | 298.15 |    K |
+| Pressure        | 100000 |   Pa |
+| Charge:         |      0 |  mol |
+| Element Amount: |        |      |
+| :: H            |      4 |  mol |
+| :: C            |      1 |  mol |
+| :: O            |      1 |  mol |
+| Species Amount: |        |      |
+| :: CH4          |      1 |  mol |
+| :: O2           |    0.5 |  mol |
+| :: CO2          |  1e-16 |  mol |
+| :: CO           |  1e-16 |  mol |
+| :: H2O          |  1e-16 |  mol |
+| :: H2           |  1e-16 |  mol |
++-----------------+--------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note above that we compute the chemical properties of the system in the initial state (using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>) and store its initial volume and initial internal energy in the variables <code class="docutils literal notranslate"><span class="pre">V0</span></code> and <code class="docutils literal notranslate"><span class="pre">U0</span></code> respectively.</p>
+<p>Our chemical equilibrium problem imposes the following properties at equilibrium:</p>
+<ul class="simple">
+<li><p>volume; and</p></li>
+<li><p>internal energy.</p></li>
+</ul>
+<p>The code below creates an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object to reflect these specifications for the equilibrium constraints, which is then used to create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="p">.</span><span class="nf">volume</span><span class="p">()</span>
+<span class="n">specs</span><span class="p">.</span><span class="nf">internalEnergy</span><span class="p">()</span>
 
-<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">Ne</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># the array with explicit amounts of elements and charge</span>
+<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next step is to create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object in which we specify the values of volume and internal energy at equilibrium (which should be those values at the initial state). We do this in the next code block, which also sets lower bounds for temperature and pressure (to avoid negative values for these positive quantities during the equilibrium calculation!):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">volume</span><span class="p">(</span><span class="n">V0</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">internalEnergy</span><span class="p">(</span><span class="n">U0</span><span class="p">)</span>
 
-<span class="n">b</span><span class="p">[</span><span class="n">iC</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 1 mol of C</span>
-<span class="n">b</span><span class="p">[</span><span class="n">iH</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span>  <span class="c1"># 4 moles of H</span>
-<span class="n">b</span><span class="p">[</span><span class="n">iO</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 1 mol of O</span>
-<span class="n">b</span><span class="p">[</span><span class="n">iZ</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># 0 mol of charge</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">setLowerBoundTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">setLowerBoundPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have everything we need now to perform the equilibrium calculation, which is done next:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">state0</span><span class="p">)</span>  <span class="c1"># let&#39;s create a copy of the initial state</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+-----------+------+
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FINAL STATE
++-----------------+-----------+------+
 | Property        |     Value | Unit |
 +-----------------+-----------+------+
-| Temperature     |   1273.15 |    K |
-| Pressure        |     1e+07 |   Pa |
+| Temperature     |   1230.15 |    K |
+| Pressure        |    768530 |   Pa |
 | Charge:         |         0 |  mol |
 | Element Amount: |           |      |
 | :: H            |         4 |  mol |
 | :: C            |         1 |  mol |
 | :: O            |         1 |  mol |
 | Species Amount: |           |      |
-| :: CH4          |  0.376062 |  mol |
+| :: CH4          |  0.102994 |  mol |
 | :: O2           |     1e-16 |  mol |
-| :: CO2          | 0.0936296 |  mol |
-| :: CO           |  0.530308 |  mol |
-| :: H2O          |  0.282433 |  mol |
-| :: H2           |  0.965442 |  mol |
+| :: CO2          | 0.0261655 |  mol |
+| :: CO           |   0.87084 |  mol |
+| :: H2O          | 0.0768286 |  mol |
+| :: H2           |   1.71718 |  mol |
 +-----------------+-----------+------+
 </pre></div>
 </div>
 </div>
 </div>
-<p>That’s it. The table above should show an identical equilibrium state as computed before.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you are handling reactive transport simulations in which the mass conservation equations are formulated in terms of chemical elements and electrical charge, the above procedure should be what you are looking for. At each mesh cell/node (or degree of freedom), you would have a vector <code class="docutils literal notranslate"><span class="pre">b</span></code> representing the concentrations of elements and charges at that specific point in space. The equilibrium calculation would provide the amounts of species distributed among all phases (e.g., aqueous, liquid, gaseous, mineral, etc.). The associated chemical properties at equilibrium could be used to compute densities, enthalpies, and other properties of the phases.</p>
+<p>The printed state above does not show volume and internal energy. To verify our equilibrium state stored in <code class="docutils literal notranslate"><span class="pre">state</span></code> has volume and internal energy equal to <code class="docutils literal notranslate"><span class="pre">V0</span></code> and <code class="docutils literal notranslate"><span class="pre">U0</span></code> respectively, we do the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">props</span><span class="p">()</span><span class="o">.</span><span class="nf">volume</span><span class="p">()</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">props</span><span class="p">()</span><span class="o">.</span><span class="nf">internalEnergy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volume at initial state:&quot;</span><span class="p">,</span> <span class="n">V0</span><span class="p">,</span> <span class="s2">&quot;m3&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volume at final state:&quot;</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="s2">&quot;m3&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Internal energy at initial state:&quot;</span><span class="p">,</span> <span class="n">U0</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Internal energy at final state:&quot;</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volume at initial state: 0.0371844 m3
+Volume at final state: 0.0371844 m3
+Internal energy at initial state: -78318 J
+Internal energy at final state: -78318 J
+</pre></div>
+</div>
+</div>
+</div>
+<p>The verification above demonstrates we found an equilibrium state in which volume and internal energy were preserved.</p>
+<p>Let’s now check what is the final temperature and pressure when we burn 1 mol of CH<sub>4</sub> and 0.5 mol of O<sub>2</sub> in a rigid and adiabatic chamber:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">units</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(),</span> <span class="s2">&quot;K&quot;</span><span class="p">,</span> <span class="s2">&quot;degC&quot;</span><span class="p">)</span>  <span class="c1"># convert from K to °C</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">units</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(),</span> <span class="s2">&quot;Pa&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>  <span class="c1"># convert from Pa to bar</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature at final state:&quot;</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pressure at final state:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Temperature at final state: 957.002 °C
+Pressure at final state: 7.6853 bar
+</pre></div>
+</div>
+</div>
+</div>
+<p>This concludes this tutorial, which demonstrated how Reaktoro can be used to perform chemical equilibrium calculations with given volume and internal energy.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -526,24 +576,6 @@
 
 <div class='prev-next-bottom'>
     
-    <div id="prev">
-        <a class="left-prev" href="with-fixed-volume-internal-energy.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Chemical equilibrium with fixed volume and internal energy</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="../../about/citing.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Citing</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
