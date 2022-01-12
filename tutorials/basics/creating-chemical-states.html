@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating chemical states</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customized_mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/customize.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Computing chemical properties" href="computing-chemical-properties.html" />
+    <link rel="prev" title="Defining chemical systems" href="defining-chemical-systems.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/reaktoro-for-python-and-cpp.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Get Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../installation/index.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-conda.html">
+     Installation using Conda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-cmake.html">
+     Installation using CMake
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/api">
+   API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/v1">
+   Reaktoro v1
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Basics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="importing-reaktoro.html">
+     Importing Reaktoro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loading-databases.html">
+     Loading thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="inspecting-databases.html">
+     Inspecting thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="defining-chemical-systems.html">
+     Defining chemical systems
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Creating chemical states
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing-chemical-properties.html">
+     Computing chemical properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing-aqueous-properties.html">
+     Computing aqueous properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="specifing-activity-models.html">
+     How to specify activity models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../equilibrium/index.html">
+   Chemical Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-basics.html">
+     Chemical equilibrium: the basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-specifying-constraints.html">
+     Chemical equilibrium with constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph.html">
+     Chemical equilibrium with fixed pH
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph-charge-balance.html">
+     Chemical equilibrium with fixed pH and charge balance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-phase-amount.html">
+     Chemical equilibrium with fixed phase amount
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-fugacity.html">
+     Chemical equilibrium with fixed fugacity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-volume-internal-energy.html">
+     Chemical equilibrium with fixed volume and internal energy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-given-component-amounts.html">
+     Chemical equilibrium with given element and charge amounts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../kinetics/index.html">
+   Chemical Kinetics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kinetics/kinetics-basics.html">
+     How to perform chemical kinetics calculations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About Reaktoro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/citing.html">
+   Citing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/basics/creating-chemical-states.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/basics/creating-chemical-states.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/tutorials/basics/creating-chemical-states.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="creating-chemical-states">
+<h1>Creating chemical states<a class="headerlink" href="#creating-chemical-states" title="Permalink to this headline">¶</a></h1>
+<p>After learning how to define chemical systems and create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, it is time to create some chemical states. In your applications, you will most often deal with a single <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object and multiple <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects in which the system’s temperature, pressure, and species amounts are specified.</p>
+<p>Let’s check the following simple example, in which a chemical system is constructed with a gaseous phase only.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+
+<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2 O2 H2 H2O CH4 CO&quot;</span><span class="p">)</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object to represent the state of the system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;MPa&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span> <span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2&quot;</span> <span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO&quot;</span> <span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can print this chemical state to have an idea of what information it contains:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+---------+------+
+| Property        |   Value | Unit |
++-----------------+---------+------+
+| Temperature     | 1273.15 |    K |
+| Pressure        |   1e+07 |   Pa |
+| Charge:         |       0 |  mol |
+| Element Amount: |         |      |
+| :: H            |     3.4 |  mol |
+| :: C            |     1.2 |  mol |
+| :: O            |     1.6 |  mol |
+| Species Amount: |         |      |
+| :: CO2          |     0.1 |  mol |
+| :: O2           |     0.2 |  mol |
+| :: H2           |     0.3 |  mol |
+| :: H2O          |     0.4 |  mol |
+| :: CH4          |     0.5 |  mol |
+| :: CO           |     0.6 |  mol |
++-----------------+---------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code>!</p>
+</div>
+<p>From the table above we see that <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects do not have thermodynamic properties of the system; only temperature, pressure, species amounts, element amounts, and the electric charge. We will learn in the next guide how to evaluate thermodynamic and chemical properties of the system such as Gibbs energy, enthalpy, volume, heat capacities, species activities, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will often use class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> for:</p>
+<ul class="simple">
+<li><p>specifying initial conditions for chemical equilibrium and kinetics calculations</p></li>
+<li><p>storing computed states from the above computations (e.g., chemical equilibrium states)</p></li>
+</ul>
+<p>We will learn all these use cases in subsequent guides.</p>
+</div>
+<p>Let’s consider now a more complicated chemical system and create a chemical state for it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;pitzer.dat&quot;</span><span class="p">)</span>
+
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">()</span>
+<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Halite Calcite Dolomite Quartz&quot;</span><span class="p">)</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
+
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>     <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>     <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>     <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span>    <span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span>    <span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Dolomite&quot;</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;ug&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span>  <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kmol&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+-------------+------+
+| Property        |       Value | Unit |
++-----------------+-------------+------+
+| Temperature     |      323.15 |    K |
+| Pressure        |      506625 |   Pa |
+| Charge:         |       0.002 |  mol |
+| Element Amount: |             |      |
+| :: H            |     111.012 |  mol |
+| :: C            | 1.00017e-05 |  mol |
+| :: O            |     2055.51 |  mol |
+| :: Na           |         0.1 |  mol |
+| :: Mg           | 0.000500005 |  mol |
+| :: Si           |        1000 |  mol |
+| :: Cl           |         0.1 |  mol |
+| :: Ca           | 0.000509996 |  mol |
+| Species Amount: |             |      |
+| :: H+           |       1e-16 |  mol |
+| :: H2O          |     55.5062 |  mol |
+| :: CO3-2        |       1e-16 |  mol |
+| :: CO2          |       1e-16 |  mol |
+| :: Ca+2         |      0.0005 |  mol |
+| :: Cl-          |         0.1 |  mol |
+| :: H4SiO4       |       1e-16 |  mol |
+| :: H2SiO4-2     |       1e-16 |  mol |
+| :: H3SiO4-      |       1e-16 |  mol |
+| :: HCO3-        |       1e-16 |  mol |
+| :: Mg+2         |      0.0005 |  mol |
+| :: MgCO3        |       1e-16 |  mol |
+| :: MgOH+        |       1e-16 |  mol |
+| :: Na+          |         0.1 |  mol |
+| :: OH-          |       1e-16 |  mol |
+| :: Halite       |       1e-16 |  mol |
+| :: Calcite      |  9.9909e-06 |  mol |
+| :: Dolomite     | 5.42278e-09 |  mol |
+| :: Quartz       |        1000 |  mol |
++-----------------+-------------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>By default, a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object is initialized with the following conditions:</p>
+<ul class="simple">
+<li><p>273.15 K (or 25 °C)</p></li>
+<li><p>10<sup>5</sup> Pa (or 1 bar)</p></li>
+<li><p>10<sup>-16</sup> mol as the amounts of every species</p></li>
+</ul>
+<p>Zero is a numerically problematic value for species amounts; that’s why we set it to a very small positive value instead. This should not be an issue for you in most cases, but if for some reason 10<sup>-16</sup> is not small enough, you can use the method <code class="docutils literal notranslate"><span class="pre">ChemicalState.setSpeciesAmount(1e-40)</span></code> to set a common amount value for all species in the system.</p>
+<p><strong>Try:</strong> Create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object and print it before setting any property.</p>
+</div>
+<p>Continue reading to learn more interesting use cases for <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>, such as computing thermodynamic and chemical properties for the system using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>!</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="defining-chemical-systems.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Defining chemical systems</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="computing-chemical-properties.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Computing chemical properties</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

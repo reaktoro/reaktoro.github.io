@@ -1,0 +1,1987 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computing chemical properties</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customized_mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/customize.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Computing aqueous properties" href="computing-aqueous-properties.html" />
+    <link rel="prev" title="Creating chemical states" href="creating-chemical-states.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/reaktoro-for-python-and-cpp.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Get Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../installation/index.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-conda.html">
+     Installation using Conda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-cmake.html">
+     Installation using CMake
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/api">
+   API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/v1">
+   Reaktoro v1
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Basics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="importing-reaktoro.html">
+     Importing Reaktoro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loading-databases.html">
+     Loading thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="inspecting-databases.html">
+     Inspecting thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="defining-chemical-systems.html">
+     Defining chemical systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-chemical-states.html">
+     Creating chemical states
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Computing chemical properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing-aqueous-properties.html">
+     Computing aqueous properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="specifing-activity-models.html">
+     How to specify activity models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../equilibrium/index.html">
+   Chemical Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-basics.html">
+     Chemical equilibrium: the basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-specifying-constraints.html">
+     Chemical equilibrium with constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph.html">
+     Chemical equilibrium with fixed pH
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph-charge-balance.html">
+     Chemical equilibrium with fixed pH and charge balance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-phase-amount.html">
+     Chemical equilibrium with fixed phase amount
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-fugacity.html">
+     Chemical equilibrium with fixed fugacity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-volume-internal-energy.html">
+     Chemical equilibrium with fixed volume and internal energy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-given-component-amounts.html">
+     Chemical equilibrium with given element and charge amounts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../kinetics/index.html">
+   Chemical Kinetics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kinetics/kinetics-basics.html">
+     How to perform chemical kinetics calculations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About Reaktoro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/citing.html">
+   Citing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/basics/computing-chemical-properties.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/basics/computing-chemical-properties.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/tutorials/basics/computing-chemical-properties.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="computing-chemical-properties">
+<h1>Computing chemical properties<a class="headerlink" href="#computing-chemical-properties" title="Permalink to this headline">¶</a></h1>
+<p>You have now learned how to create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object and <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects representing the chemical state of that system. We will now demonstrate how thermodynamic and chemical properties of the system, its phases, and constituting species can be calculated using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>.</p>
+<p>Let’s start with a simple chemical system containing a single aqueous phase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C&quot;</span><span class="p">))</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create a chemical state for this system representing a 1 molal NaCl solution with 0.7 molal dissolved CO<sub>2</sub>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+
+<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+--------------+------+
+| Property        |        Value | Unit |
++-----------------+--------------+------+
+| Temperature     |       333.15 |    K |
+| Pressure        |  1.51988e+06 |   Pa |
+| Charge:         | -1.03709e-16 |  mol |
+| Element Amount: |              |      |
+| :: H            |      111.012 |  mol |
+| :: C            |          0.7 |  mol |
+| :: O            |      56.9062 |  mol |
+| :: Na           |            1 |  mol |
+| :: Cl           |            1 |  mol |
+| Species Amount: |              |      |
+| :: CO3-2        |  4.94309e-11 |  mol |
+| :: H+           |  0.000715616 |  mol |
+| :: H2O          |      55.5055 |  mol |
+| :: CO2          |     0.699284 |  mol |
+| :: (CO2)2       |        1e-16 |  mol |
+| :: HCO3-        |  0.000484623 |  mol |
+| :: CH4          |        1e-16 |  mol |
+| :: Cl-          |            1 |  mol |
+| :: H2           |        1e-16 |  mol |
+| :: Na+          |     0.999769 |  mol |
+| :: NaCO3-       |  4.45274e-09 |  mol |
+| :: NaHCO3       |  0.000230984 |  mol |
+| :: OH-          |  1.30116e-10 |  mol |
+| :: NaOH         |        1e-16 |  mol |
+| :: O2           |        1e-16 |  mol |
++-----------------+--------------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We used the convenience method <a class="reference external" href="https://reaktoro.org/api/namespaceReaktoro.html#a286e2972325304934d631234abef9e87"><code class="docutils literal notranslate"><span class="pre">equilibrate</span></code></a> above to quickly bring the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object <code class="docutils literal notranslate"><span class="pre">state</span></code> into a state of chemical equilibrium. We will later learn how to use Reaktoro’s Gibbs energy minimization algorithm to perform a wide variety of chemical equilibrium calculations using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> together with class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a>, which allows us to enforce different equilibrium constraints at equilibrium (e.g., fixed pH, pE, Eh, gas fugacity, enthalpy, internal energy, volume, etc.).</p>
+</div>
+<p>We have seen that class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> is not responsible for computing thermodynamic and chemical properties of the system. It’s primary use is for preparing initial states for chemical equilibrium/kinetics calculations and also to store the result of these computations.</p>
+<p>Computing chemical properties of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> objects is a task for class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----------------------------------------+--------------+-----------+
+| Property                               |        Value |      Unit |
++----------------------------------------+--------------+-----------+
+| Temperature                            |       333.15 |         K |
+| Pressure                               |  1.51988e+06 |        Pa |
+| Volume                                 |   0.00105949 |        m3 |
+| Gibbs Energy                           |     -73283.2 |         J |
+| Enthalpy                               |     -1608.04 |         J |
+| Entropy                                |      215.144 |       J/K |
+| Internal Energy                        |     -3218.33 |         J |
+| Helmholtz Energy                       |     -74893.5 |         J |
+| Charge                                 | -1.03709e-16 |       mol |
+| Element Amount:                        |              |           |
+| :: H                                   |      111.012 |       mol |
+| :: C                                   |          0.7 |       mol |
+| :: O                                   |      56.9062 |       mol |
+| :: Na                                  |            1 |       mol |
+| :: Cl                                  |            1 |       mol |
+| Species Amount:                        |              |           |
+| :: CO3-2                               |  4.94309e-11 |       mol |
+| :: H+                                  |  0.000715616 |       mol |
+| :: H2O                                 |      55.5055 |       mol |
+| :: CO2                                 |     0.699284 |       mol |
+| :: (CO2)2                              |        1e-16 |       mol |
+| :: HCO3-                               |  0.000484623 |       mol |
+| :: CH4                                 |        1e-16 |       mol |
+| :: Cl-                                 |            1 |       mol |
+| :: H2                                  |        1e-16 |       mol |
+| :: Na+                                 |     0.999769 |       mol |
+| :: NaCO3-                              |  4.45274e-09 |       mol |
+| :: NaHCO3                              |  0.000230984 |       mol |
+| :: OH-                                 |  1.30116e-10 |       mol |
+| :: NaOH                                |        1e-16 |       mol |
+| :: O2                                  |        1e-16 |       mol |
+| Mole Fraction:                         |              |           |
+| :: CO3-2                               |  8.49241e-13 |   mol/mol |
+| :: H+                                  |  1.22945e-05 |   mol/mol |
+| :: H2O                                 |     0.953605 |   mol/mol |
+| :: CO2                                 |     0.012014 |   mol/mol |
+| :: (CO2)2                              |  1.71804e-18 |   mol/mol |
+| :: HCO3-                               |    8.326e-06 |   mol/mol |
+| :: CH4                                 |  1.71804e-18 |   mol/mol |
+| :: Cl-                                 |    0.0171804 |   mol/mol |
+| :: H2                                  |  1.71804e-18 |   mol/mol |
+| :: Na+                                 |    0.0171764 |   mol/mol |
+| :: NaCO3-                              |  7.64998e-11 |   mol/mol |
+| :: NaHCO3                              |  3.96839e-06 |   mol/mol |
+| :: OH-                                 |  2.23544e-12 |   mol/mol |
+| :: NaOH                                |  1.71804e-18 |   mol/mol |
+| :: O2                                  |  1.71804e-18 |   mol/mol |
+| Activity Coefficient:                  |              |           |
+| :: CO3-2                               |            1 |         - |
+| :: H+                                  |            1 |         - |
+| :: H2O                                 |            1 |         - |
+| :: CO2                                 |            1 |         - |
+| :: (CO2)2                              |            1 |         - |
+| :: HCO3-                               |            1 |         - |
+| :: CH4                                 |            1 |         - |
+| :: Cl-                                 |            1 |         - |
+| :: H2                                  |            1 |         - |
+| :: Na+                                 |            1 |         - |
+| :: NaCO3-                              |            1 |         - |
+| :: NaHCO3                              |            1 |         - |
+| :: OH-                                 |            1 |         - |
+| :: NaOH                                |            1 |         - |
+| :: O2                                  |            1 |         - |
+| Activity:                              |              |           |
+| :: CO3-2                               |  4.94335e-11 |         - |
+| :: H+                                  |  0.000715655 |         - |
+| :: H2O                                 |     0.953605 |         - |
+| :: CO2                                 |     0.699322 |         - |
+| :: (CO2)2                              |  1.00005e-16 |         - |
+| :: HCO3-                               |  0.000484649 |         - |
+| :: CH4                                 |  1.00005e-16 |         - |
+| :: Cl-                                 |      1.00005 |         - |
+| :: H2                                  |  1.00005e-16 |         - |
+| :: Na+                                 |     0.999823 |         - |
+| :: NaCO3-                              |  4.45298e-09 |         - |
+| :: NaHCO3                              |  0.000230997 |         - |
+| :: OH-                                 |  1.30123e-10 |         - |
+| :: NaOH                                |  1.00005e-16 |         - |
+| :: O2                                  |  1.00005e-16 |         - |
+| lg(Activity):                          |              |           |
+| :: CO3-2                               |      -10.306 |         - |
+| :: H+                                  |      -3.1453 |         - |
+| :: H2O                                 |   -0.0206316 |         - |
+| :: CO2                                 |    -0.155323 |         - |
+| :: (CO2)2                              |          -16 |         - |
+| :: HCO3-                               |     -3.31457 |         - |
+| :: CH4                                 |          -16 |         - |
+| :: Cl-                                 |  2.32451e-05 |         - |
+| :: H2                                  |          -16 |         - |
+| :: Na+                                 | -7.70836e-05 |         - |
+| :: NaCO3-                              |     -8.35135 |         - |
+| :: NaHCO3                              |     -3.63639 |         - |
+| :: OH-                                 |     -9.88565 |         - |
+| :: NaOH                                |          -16 |         - |
+| :: O2                                  |          -16 |         - |
+| ln(Activity):                          |              |           |
+| :: CO3-2                               |     -23.7304 |         - |
+| :: H+                                  |     -7.24231 |         - |
+| :: H2O                                 |   -0.0475061 |         - |
+| :: CO2                                 |    -0.357644 |         - |
+| :: (CO2)2                              |     -36.8413 |         - |
+| :: HCO3-                               |     -7.63209 |         - |
+| :: CH4                                 |     -36.8413 |         - |
+| :: Cl-                                 |  5.35239e-05 |         - |
+| :: H2                                  |     -36.8413 |         - |
+| :: Na+                                 | -0.000177492 |         - |
+| :: NaCO3-                              |     -19.2297 |         - |
+| :: NaHCO3                              |     -8.37311 |         - |
+| :: OH-                                 |     -22.7625 |         - |
+| :: NaOH                                |     -36.8413 |         - |
+| :: O2                                  |     -36.8413 |         - |
+| Chemical Potential:                    |              |           |
+| :: CO3-2                               |     -65732.3 |     J/mol |
+| :: H+                                  |     -20060.9 |     J/mol |
+| :: H2O                                 |      -131.59 |     J/mol |
+| :: CO2                                 |      -105723 |     J/mol |
+| :: (CO2)2                              |     -93477.5 |     J/mol |
+| :: HCO3-                               |     -85793.2 |     J/mol |
+| :: CH4                                 |      -333882 |     J/mol |
+| :: Cl-                                 |     0.148259 |     J/mol |
+| :: H2                                  |     -81053.6 |     J/mol |
+| :: Na+                                 |    -0.491645 |     J/mol |
+| :: NaCO3-                              |     -65732.8 |     J/mol |
+| :: NaHCO3                              |     -85793.7 |     J/mol |
+| :: OH-                                 |      19929.3 |     J/mol |
+| :: NaOH                                |      44718.6 |     J/mol |
+| :: O2                                  |       380766 |     J/mol |
+| Standard Volume:                       |              |           |
+| :: CO3-2                               | -6.19521e-06 |    m3/mol |
+| :: H+                                  |            0 |    m3/mol |
+| :: H2O                                 |  1.83126e-05 |    m3/mol |
+| :: CO2                                 |  3.61723e-05 |    m3/mol |
+| :: (CO2)2                              |  7.23446e-05 |    m3/mol |
+| :: HCO3-                               |  2.57553e-05 |    m3/mol |
+| :: CH4                                 |  3.80261e-05 |    m3/mol |
+| :: Cl-                                 |  1.80196e-05 |    m3/mol |
+| :: H2                                  |  2.85754e-05 |    m3/mol |
+| :: Na+                                 | -2.86114e-07 |    m3/mol |
+| :: NaCO3-                              | -3.39404e-08 |    m3/mol |
+| :: NaHCO3                              |  1.80331e-06 |    m3/mol |
+| :: OH-                                 | -4.02892e-06 |    m3/mol |
+| :: NaOH                                |            0 |    m3/mol |
+| :: O2                                  |  3.23451e-05 |    m3/mol |
+| Standard Gibbs Energy (formation):     |              |           |
+| :: CO3-2                               |            0 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |            0 |     J/mol |
+| :: CO2                                 |      -104732 |     J/mol |
+| :: (CO2)2                              |      8571.54 |     J/mol |
+| :: HCO3-                               |     -64652.7 |     J/mol |
+| :: CH4                                 |      -231833 |     J/mol |
+| :: Cl-                                 |            0 |     J/mol |
+| :: H2                                  |      20995.4 |     J/mol |
+| :: Na+                                 |            0 |     J/mol |
+| :: NaCO3-                              |     -12467.3 |     J/mol |
+| :: NaHCO3                              |     -62600.5 |     J/mol |
+| :: OH-                                 |      82980.7 |     J/mol |
+| :: NaOH                                |       146768 |     J/mol |
+| :: O2                                  |       482815 |     J/mol |
+| Standard Enthalpy (formation):         |              |           |
+| :: CO3-2                               |            0 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |            0 |     J/mol |
+| :: CO2                                 |     -2293.23 |     J/mol |
+| :: (CO2)2                              |      20161.2 |     J/mol |
+| :: HCO3-                               |     -4817.69 |     J/mol |
+| :: CH4                                 |      -255247 |     J/mol |
+| :: Cl-                                 |            0 |     J/mol |
+| :: H2                                  |     -7319.12 |     J/mol |
+| :: Na+                                 |            0 |     J/mol |
+| :: NaCO3-                              |      37288.6 |     J/mol |
+| :: NaHCO3                              |     -9035.26 |     J/mol |
+| :: OH-                                 |        49831 |     J/mol |
+| :: NaOH                                |      49837.1 |     J/mol |
+| :: O2                                  |       563955 |     J/mol |
+| Standard Entropy (formation):          |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |      307.485 | J/(mol*K) |
+| :: (CO2)2                              |      34.7881 | J/(mol*K) |
+| :: HCO3-                               |      179.604 | J/(mol*K) |
+| :: CH4                                 |     -70.2785 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |     -84.9904 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |       149.35 | J/(mol*K) |
+| :: NaHCO3                              |      160.784 | J/(mol*K) |
+| :: OH-                                 |     -99.5039 | J/(mol*K) |
+| :: NaOH                                |     -290.951 | J/(mol*K) |
+| :: O2                                  |      243.555 | J/(mol*K) |
+| Standard Internal Energy (formation):  |              |           |
+| :: CO3-2                               |      9.41594 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |     -27.8329 |     J/mol |
+| :: CO2                                 |      -2348.2 |     J/mol |
+| :: (CO2)2                              |      20051.2 |     J/mol |
+| :: HCO3-                               |     -4856.83 |     J/mol |
+| :: CH4                                 |      -255304 |     J/mol |
+| :: Cl-                                 |     -27.3876 |     J/mol |
+| :: H2                                  |     -7362.55 |     J/mol |
+| :: Na+                                 |     0.434858 |     J/mol |
+| :: NaCO3-                              |      37288.6 |     J/mol |
+| :: NaHCO3                              |        -9038 |     J/mol |
+| :: OH-                                 |      49837.1 |     J/mol |
+| :: NaOH                                |      49837.1 |     J/mol |
+| :: O2                                  |       563906 |     J/mol |
+| Standard Helmholtz Energy (formation): |              |           |
+| :: CO3-2                               |      9.41594 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |     -27.8329 |     J/mol |
+| :: CO2                                 |      -104787 |     J/mol |
+| :: (CO2)2                              |      8461.58 |     J/mol |
+| :: HCO3-                               |     -64691.8 |     J/mol |
+| :: CH4                                 |      -231891 |     J/mol |
+| :: Cl-                                 |     -27.3876 |     J/mol |
+| :: H2                                  |        20952 |     J/mol |
+| :: Na+                                 |     0.434858 |     J/mol |
+| :: NaCO3-                              |     -12467.2 |     J/mol |
+| :: NaHCO3                              |     -62603.3 |     J/mol |
+| :: OH-                                 |      82986.9 |     J/mol |
+| :: NaOH                                |       146768 |     J/mol |
+| :: O2                                  |       482766 |     J/mol |
+| Standard Heat Capacity (constant P):   |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |            0 | J/(mol*K) |
+| :: (CO2)2                              |            0 | J/(mol*K) |
+| :: HCO3-                               |            0 | J/(mol*K) |
+| :: CH4                                 |            0 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |            0 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |            0 | J/(mol*K) |
+| :: NaHCO3                              |            0 | J/(mol*K) |
+| :: OH-                                 |            0 | J/(mol*K) |
+| :: NaOH                                |            0 | J/(mol*K) |
+| :: O2                                  |            0 | J/(mol*K) |
+| Standard Heat Capacity (constant V):   |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |            0 | J/(mol*K) |
+| :: (CO2)2                              |            0 | J/(mol*K) |
+| :: HCO3-                               |            0 | J/(mol*K) |
+| :: CH4                                 |            0 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |            0 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |            0 | J/(mol*K) |
+| :: NaHCO3                              |            0 | J/(mol*K) |
+| :: OH-                                 |            0 | J/(mol*K) |
+| :: NaOH                                |            0 | J/(mol*K) |
+| :: O2                                  |            0 | J/(mol*K) |
++----------------------------------------+--------------+-----------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, when defining a chemical system using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousPhase.html"><code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SolidPhase.html"><code class="docutils literal notranslate"><span class="pre">SolidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1MineralPhase.html"><code class="docutils literal notranslate"><span class="pre">MineralPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1CondensedPhase.html"><code class="docutils literal notranslate"><span class="pre">CondensedPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1MineralPhases.html"><code class="docutils literal notranslate"><span class="pre">MineralPhases</span></code></a>, etc., these objects are created with <strong>ideal activity models</strong>. That’s why you should see unit activity coefficients above for all species.</p>
+<p>We will learn later how to specify more sophisticated and accurate activity models for each phase, but out of curiosity, we will define Pitzer’s activity model from <span id="id1">Harvie <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id993">1984</a>], Harvie and Weare [<a class="reference internal" href="../bibliography.html#id475">1980</a>]</span>. Let’s also consider a gaseous phase and some mineral phases. For the gaseous phase, we shall use Peng-Robinson’s equation of state <span id="id2">[<a class="reference internal" href="../bibliography.html#id760">Peng and Robinson, 1976</a>]</span> as its activity model.</p>
+<p>We will need to reconstruct the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, as well as the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> and <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> objects:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca Si&quot;</span><span class="p">))</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
+
+<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>
+<span class="n">gases</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
+
+<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gases</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
+
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>    <span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+
+<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----------------------------------------+--------------+-----------+
+| Property                               |        Value |      Unit |
++----------------------------------------+--------------+-----------+
+| Temperature                            |       333.15 |         K |
+| Pressure                               |  1.51988e+06 |        Pa |
+| Volume                                 |   0.00190225 |        m3 |
+| Gibbs Energy                           |     -79641.2 |         J |
+| Enthalpy                               |      5010.76 |         J |
+| Entropy                                |      254.096 |       J/K |
+| Internal Energy                        |      2119.58 |         J |
+| Helmholtz Energy                       |     -82532.3 |         J |
+| Charge                                 | -1.11419e-16 |       mol |
+| Element Amount:                        |              |           |
+| :: H                                   |      111.012 |       mol |
+| :: C                                   |     0.709991 |       mol |
+| :: O                                   |      56.9695 |       mol |
+| :: Na                                  |            1 |       mol |
+| :: Si                                  |    0.0166433 |       mol |
+| :: Cl                                  |            1 |       mol |
+| :: Ca                                  |    0.0099909 |       mol |
+| Species Amount:                        |              |           |
+| :: CO3-2                               |  6.44574e-07 |       mol |
+| :: H+                                  |  1.50459e-05 |       mol |
+| :: H2O                                 |      55.4883 |       mol |
+| :: CO2                                 |     0.194174 |       mol |
+| :: (CO2)2                              |        1e-16 |       mol |
+| :: HCO3-                               |    0.0164359 |       mol |
+| :: CH4                                 |        1e-16 |       mol |
+| :: Ca+2                                |   0.00943427 |       mol |
+| :: CaCO3                               |  3.97024e-07 |       mol |
+| :: CaHCO3+                             |   0.00055623 |       mol |
+| :: CaOH+                               |  4.60427e-11 |       mol |
+| :: Cl-                                 |            1 |       mol |
+| :: H2                                  |        1e-16 |       mol |
+| :: H4SiO4                              |  0.000281428 |       mol |
+| :: H2SiO4-2                            |  1.10506e-14 |       mol |
+| :: H3SiO4-                             |  2.05598e-08 |       mol |
+| :: Na+                                 |     0.997005 |       mol |
+| :: NaCO3-                              |  7.55894e-06 |       mol |
+| :: NaHCO3                              |   0.00298745 |       mol |
+| :: OH-                                 |  1.32994e-08 |       mol |
+| :: NaOH                                |        1e-16 |       mol |
+| :: O2                                  |        1e-16 |       mol |
+| :: CH4(g)                              |        1e-16 |       mol |
+| :: CO2(g)                              |     0.495829 |       mol |
+| :: H2(g)                               |        1e-16 |       mol |
+| :: H2O(g)                              |   0.00734896 |       mol |
+| :: O2(g)                               |        1e-16 |       mol |
+| :: Aragonite                           |        1e-16 |       mol |
+| :: Calcite                             |        1e-16 |       mol |
+| :: Chalcedony                          |  1.30988e-16 |       mol |
+| :: Halite                              |        1e-16 |       mol |
+| :: Quartz                              |    0.0163618 |       mol |
+| :: SiO2(a)                             |        1e-16 |       mol |
+| Mole Fraction:                         |              |           |
+| :: CO3-2                               |  1.11694e-08 |   mol/mol |
+| :: H+                                  |  2.60718e-07 |   mol/mol |
+| :: H2O                                 |     0.961516 |   mol/mol |
+| :: CO2                                 |   0.00336469 |   mol/mol |
+| :: (CO2)2                              |  1.73283e-18 |   mol/mol |
+| :: HCO3-                               |  0.000284806 |   mol/mol |
+| :: CH4                                 |  1.73283e-18 |   mol/mol |
+| :: Ca+2                                |  0.000163479 |   mol/mol |
+| :: CaCO3                               |  6.87974e-09 |   mol/mol |
+| :: CaHCO3+                             |   9.6385e-06 |   mol/mol |
+| :: CaOH+                               |   7.9784e-13 |   mol/mol |
+| :: Cl-                                 |    0.0173283 |   mol/mol |
+| :: H2                                  |  1.73283e-18 |   mol/mol |
+| :: H4SiO4                              |  4.87665e-06 |   mol/mol |
+| :: H2SiO4-2                            |  1.91488e-16 |   mol/mol |
+| :: H3SiO4-                             |  3.56265e-10 |   mol/mol |
+| :: Na+                                 |    0.0172764 |   mol/mol |
+| :: NaCO3-                              |  1.30983e-07 |   mol/mol |
+| :: NaHCO3                              |  5.17674e-05 |   mol/mol |
+| :: OH-                                 |  2.30455e-10 |   mol/mol |
+| :: NaOH                                |  1.73283e-18 |   mol/mol |
+| :: O2                                  |  1.73283e-18 |   mol/mol |
+| :: CH4(g)                              |  1.98737e-16 |   mol/mol |
+| :: CO2(g)                              |     0.985395 |   mol/mol |
+| :: H2(g)                               |  1.98737e-16 |   mol/mol |
+| :: H2O(g)                              |    0.0146051 |   mol/mol |
+| :: O2(g)                               |  1.98737e-16 |   mol/mol |
+| :: Aragonite                           |            1 |   mol/mol |
+| :: Calcite                             |            1 |   mol/mol |
+| :: Chalcedony                          |            1 |   mol/mol |
+| :: Halite                              |            1 |   mol/mol |
+| :: Quartz                              |            1 |   mol/mol |
+| :: SiO2(a)                             |            1 |   mol/mol |
+| Activity Coefficient:                  |              |           |
+| :: CO3-2                               |    0.0883387 |         - |
+| :: H+                                  |     0.803165 |         - |
+| :: H2O                                 |      1.00083 |         - |
+| :: CO2                                 |      1.17298 |         - |
+| :: (CO2)2                              |            1 |         - |
+| :: HCO3-                               |     0.573735 |         - |
+| :: CH4                                 |            1 |         - |
+| :: Ca+2                                |     0.166159 |         - |
+| :: CaCO3                               |            1 |         - |
+| :: CaHCO3+                             |     0.449762 |         - |
+| :: CaOH+                               |     0.449762 |         - |
+| :: Cl-                                 |      0.65344 |         - |
+| :: H2                                  |            1 |         - |
+| :: H4SiO4                              |            1 |         - |
+| :: H2SiO4-2                            |    0.0305771 |         - |
+| :: H3SiO4-                             |     0.451034 |         - |
+| :: Na+                                 |     0.666323 |         - |
+| :: NaCO3-                              |     0.451034 |         - |
+| :: NaHCO3                              |            1 |         - |
+| :: OH-                                 |     0.584304 |         - |
+| :: NaOH                                |            1 |         - |
+| :: O2                                  |            1 |         - |
+| :: CH4(g)                              |     0.984854 |         - |
+| :: CO2(g)                              |      0.94238 |         - |
+| :: H2(g)                               |       1.0518 |         - |
+| :: H2O(g)                              |     0.856035 |         - |
+| :: O2(g)                               |      1.01184 |         - |
+| :: Aragonite                           |            1 |         - |
+| :: Calcite                             |            1 |         - |
+| :: Chalcedony                          |            1 |         - |
+| :: Halite                              |            1 |         - |
+| :: Quartz                              |            1 |         - |
+| :: SiO2(a)                             |            1 |         - |
+| Activity:                              |              |           |
+| :: CO3-2                               |  5.69615e-08 |         - |
+| :: H+                                  |  1.20887e-05 |         - |
+| :: H2O                                 |     0.962316 |         - |
+| :: CO2                                 |     0.227845 |         - |
+| :: (CO2)2                              |  1.00036e-16 |         - |
+| :: HCO3-                               |   0.00943329 |         - |
+| :: CH4                                 |  1.00036e-16 |         - |
+| :: Ca+2                                |   0.00156816 |         - |
+| :: CaCO3                               |  3.97169e-07 |         - |
+| :: CaHCO3+                             |  0.000250262 |         - |
+| :: CaOH+                               |  2.07158e-11 |         - |
+| :: Cl-                                 |     0.653678 |         - |
+| :: H2                                  |  1.00036e-16 |         - |
+| :: H4SiO4                              |   0.00028153 |         - |
+| :: H2SiO4-2                            |  3.38018e-16 |         - |
+| :: H3SiO4-                             |  9.27653e-09 |         - |
+| :: Na+                                 |     0.664569 |         - |
+| :: NaCO3-                              |  3.41058e-06 |         - |
+| :: NaHCO3                              |   0.00298854 |         - |
+| :: OH-                                 |   7.7737e-09 |         - |
+| :: NaOH                                |  1.00036e-16 |         - |
+| :: O2                                  |  1.00036e-16 |         - |
+| :: CH4(g)                              |   2.9748e-15 |         - |
+| :: CO2(g)                              |      14.1138 |         - |
+| :: H2(g)                               |    3.177e-15 |         - |
+| :: H2O(g)                              |     0.190022 |         - |
+| :: O2(g)                               |  3.05631e-15 |         - |
+| :: Aragonite                           |            1 |         - |
+| :: Calcite                             |            1 |         - |
+| :: Chalcedony                          |            1 |         - |
+| :: Halite                              |            1 |         - |
+| :: Quartz                              |            1 |         - |
+| :: SiO2(a)                             |            1 |         - |
+| lg(Activity):                          |              |           |
+| :: CO3-2                               |     -7.24442 |         - |
+| :: H+                                  |     -4.91762 |         - |
+| :: H2O                                 |   -0.0166821 |         - |
+| :: CO2                                 |     -0.64236 |         - |
+| :: (CO2)2                              |     -15.9998 |         - |
+| :: HCO3-                               |     -2.02534 |         - |
+| :: CH4                                 |     -15.9998 |         - |
+| :: Ca+2                                |     -2.80461 |         - |
+| :: CaCO3                               |     -6.40103 |         - |
+| :: CaHCO3+                             |      -3.6016 |         - |
+| :: CaOH+                               |     -10.6837 |         - |
+| :: Cl-                                 |    -0.184636 |         - |
+| :: H2                                  |     -15.9998 |         - |
+| :: H4SiO4                              |     -3.55048 |         - |
+| :: H2SiO4-2                            |     -15.4711 |         - |
+| :: H3SiO4-                             |     -8.03261 |         - |
+| :: Na+                                 |     -0.17746 |         - |
+| :: NaCO3-                              |     -5.46717 |         - |
+| :: NaHCO3                              |     -2.52454 |         - |
+| :: OH-                                 |     -8.10937 |         - |
+| :: NaOH                                |     -15.9998 |         - |
+| :: O2                                  |     -15.9998 |         - |
+| :: CH4(g)                              |     -14.5265 |         - |
+| :: CO2(g)                              |      1.14964 |         - |
+| :: H2(g)                               |      -14.498 |         - |
+| :: H2O(g)                              |    -0.721196 |         - |
+| :: O2(g)                               |     -14.5148 |         - |
+| :: Aragonite                           |            0 |         - |
+| :: Calcite                             |            0 |         - |
+| :: Chalcedony                          |            0 |         - |
+| :: Halite                              |            0 |         - |
+| :: Quartz                              |            0 |         - |
+| :: SiO2(a)                             |            0 |         - |
+| ln(Activity):                          |              |           |
+| :: CO3-2                               |     -16.6809 |         - |
+| :: H+                                  |     -11.3232 |         - |
+| :: H2O                                 |    -0.038412 |         - |
+| :: CO2                                 |     -1.47909 |         - |
+| :: (CO2)2                              |      -36.841 |         - |
+| :: HCO3-                               |     -4.66351 |         - |
+| :: CH4                                 |      -36.841 |         - |
+| :: Ca+2                                |     -6.45785 |         - |
+| :: CaCO3                               |     -14.7389 |         - |
+| :: CaHCO3+                             |       -8.293 |         - |
+| :: CaOH+                               |     -24.6001 |         - |
+| :: Cl-                                 |    -0.425141 |         - |
+| :: H2                                  |      -36.841 |         - |
+| :: H4SiO4                              |     -8.17527 |         - |
+| :: H2SiO4-2                            |     -35.6234 |         - |
+| :: H3SiO4-                             |     -18.4958 |         - |
+| :: Na+                                 |    -0.408616 |         - |
+| :: NaCO3-                              |     -12.5886 |         - |
+| :: NaHCO3                              |     -5.81297 |         - |
+| :: OH-                                 |     -18.6725 |         - |
+| :: NaOH                                |      -36.841 |         - |
+| :: O2                                  |      -36.841 |         - |
+| :: CH4(g)                              |     -33.4486 |         - |
+| :: CO2(g)                              |      2.64715 |         - |
+| :: H2(g)                               |     -33.3828 |         - |
+| :: H2O(g)                              |     -1.66062 |         - |
+| :: O2(g)                               |     -33.4216 |         - |
+| :: Aragonite                           |            0 |         - |
+| :: Calcite                             |            0 |         - |
+| :: Chalcedony                          |            0 |         - |
+| :: Halite                              |            0 |         - |
+| :: Quartz                              |            0 |         - |
+| :: SiO2(a)                             |            0 |         - |
+| Chemical Potential:                    |              |           |
+| :: CO3-2                               |     -46205.4 |     J/mol |
+| :: H+                                  |       -31365 |     J/mol |
+| :: H2O                                 |       -106.4 |     J/mol |
+| :: CO2                                 |      -108829 |     J/mol |
+| :: (CO2)2                              |     -93476.7 |     J/mol |
+| :: HCO3-                               |     -77570.4 |     J/mol |
+| :: CH4                                 |      -333881 |     J/mol |
+| :: Ca+2                                |       -17888 |     J/mol |
+| :: CaCO3                               |     -64093.5 |     J/mol |
+| :: CaHCO3+                             |     -95458.4 |     J/mol |
+| :: CaOH+                               |      13370.5 |     J/mol |
+| :: Cl-                                 |     -1177.62 |     J/mol |
+| :: H2                                  |     -81052.8 |     J/mol |
+| :: H4SiO4                              |     -22645.2 |     J/mol |
+| :: H2SiO4-2                            |      40084.7 |     J/mol |
+| :: H3SiO4-                             |      8719.76 |     J/mol |
+| :: Na+                                 |     -1131.85 |     J/mol |
+| :: NaCO3-                              |     -47337.3 |     J/mol |
+| :: NaHCO3                              |     -78702.3 |     J/mol |
+| :: OH-                                 |      31258.6 |     J/mol |
+| :: NaOH                                |      44719.4 |     J/mol |
+| :: O2                                  |       380767 |     J/mol |
+| :: CH4(g)                              |      -343613 |     J/mol |
+| :: CO2(g)                              |      -108829 |     J/mol |
+| :: H2(g)                               |     -91534.5 |     J/mol |
+| :: H2O(g)                              |       -106.4 |     J/mol |
+| :: O2(g)                               |       370647 |     J/mol |
+| :: Aragonite                           |       -55008 |     J/mol |
+| :: Calcite                             |     -55777.2 |     J/mol |
+| :: Chalcedony                          |     -20317.7 |     J/mol |
+| :: Halite                              |      10187.7 |     J/mol |
+| :: Quartz                              |     -22432.4 |     J/mol |
+| :: SiO2(a)                             |     -15672.2 |     J/mol |
+| Standard Volume:                       |              |           |
+| :: CO3-2                               | -6.19521e-06 |    m3/mol |
+| :: H+                                  |            0 |    m3/mol |
+| :: H2O                                 |  1.83126e-05 |    m3/mol |
+| :: CO2                                 |  3.61723e-05 |    m3/mol |
+| :: (CO2)2                              |  7.23446e-05 |    m3/mol |
+| :: HCO3-                               |  2.57553e-05 |    m3/mol |
+| :: CH4                                 |  3.80261e-05 |    m3/mol |
+| :: Ca+2                                | -1.84365e-05 |    m3/mol |
+| :: CaCO3                               | -1.44208e-05 |    m3/mol |
+| :: CaHCO3+                             |  1.04143e-05 |    m3/mol |
+| :: CaOH+                               |            0 |    m3/mol |
+| :: Cl-                                 |  1.80196e-05 |    m3/mol |
+| :: H2                                  |  2.85754e-05 |    m3/mol |
+| :: H4SiO4                              |  5.00785e-05 |    m3/mol |
+| :: H2SiO4-2                            |            0 |    m3/mol |
+| :: H3SiO4-                             |  2.79404e-05 |    m3/mol |
+| :: Na+                                 | -2.86114e-07 |    m3/mol |
+| :: NaCO3-                              | -3.39404e-08 |    m3/mol |
+| :: NaHCO3                              |  1.80331e-06 |    m3/mol |
+| :: OH-                                 | -4.02892e-06 |    m3/mol |
+| :: NaOH                                |            0 |    m3/mol |
+| :: O2                                  |  3.23451e-05 |    m3/mol |
+| :: CH4(g)                              |            0 |    m3/mol |
+| :: CO2(g)                              |            0 |    m3/mol |
+| :: H2(g)                               |            0 |    m3/mol |
+| :: H2O(g)                              |            0 |    m3/mol |
+| :: O2(g)                               |            0 |    m3/mol |
+| :: Aragonite                           |    3.404e-05 |    m3/mol |
+| :: Calcite                             |     3.69e-05 |    m3/mol |
+| :: Chalcedony                          |     2.31e-05 |    m3/mol |
+| :: Halite                              |     2.71e-05 |    m3/mol |
+| :: Quartz                              |    2.267e-05 |    m3/mol |
+| :: SiO2(a)                             |            0 |    m3/mol |
+| Standard Gibbs Energy (formation):     |              |           |
+| :: CO3-2                               |            0 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |            0 |     J/mol |
+| :: CO2                                 |      -104732 |     J/mol |
+| :: (CO2)2                              |      8571.54 |     J/mol |
+| :: HCO3-                               |     -64652.7 |     J/mol |
+| :: CH4                                 |      -231833 |     J/mol |
+| :: Ca+2                                |            0 |     J/mol |
+| :: CaCO3                               |     -23267.2 |     J/mol |
+| :: CaHCO3+                             |     -72487.1 |     J/mol |
+| :: CaOH+                               |        81512 |     J/mol |
+| :: Cl-                                 |            0 |     J/mol |
+| :: H2                                  |      20995.4 |     J/mol |
+| :: H4SiO4                              |            0 |     J/mol |
+| :: H2SiO4-2                            |       138760 |     J/mol |
+| :: H3SiO4-                             |      59952.4 |     J/mol |
+| :: Na+                                 |            0 |     J/mol |
+| :: NaCO3-                              |     -12467.3 |     J/mol |
+| :: NaHCO3                              |     -62600.5 |     J/mol |
+| :: OH-                                 |      82980.7 |     J/mol |
+| :: NaOH                                |       146768 |     J/mol |
+| :: O2                                  |       482815 |     J/mol |
+| :: CH4(g)                              |      -250961 |     J/mol |
+| :: CO2(g)                              |      -116161 |     J/mol |
+| :: H2(g)                               |      934.745 |     J/mol |
+| :: H2O(g)                              |      4493.44 |     J/mol |
+| :: O2(g)                               |       463224 |     J/mol |
+| :: Aragonite                           |       -55008 |     J/mol |
+| :: Calcite                             |     -55777.2 |     J/mol |
+| :: Chalcedony                          |     -20317.7 |     J/mol |
+| :: Halite                              |      10187.7 |     J/mol |
+| :: Quartz                              |     -22432.4 |     J/mol |
+| :: SiO2(a)                             |     -15672.2 |     J/mol |
+| Standard Enthalpy (formation):         |              |           |
+| :: CO3-2                               |            0 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |            0 |     J/mol |
+| :: CO2                                 |     -2293.23 |     J/mol |
+| :: (CO2)2                              |      20161.2 |     J/mol |
+| :: HCO3-                               |     -4817.69 |     J/mol |
+| :: CH4                                 |      -255247 |     J/mol |
+| :: Ca+2                                |            0 |     J/mol |
+| :: CaCO3                               |      29562.6 |     J/mol |
+| :: CaHCO3+                             |     -499.966 |     J/mol |
+| :: CaOH+                               |     0.175702 |     J/mol |
+| :: Cl-                                 |            0 |     J/mol |
+| :: H2                                  |     -7319.12 |     J/mol |
+| :: H4SiO4                              |            0 |     J/mol |
+| :: H2SiO4-2                            |        59404 |     J/mol |
+| :: H3SiO4-                             |      20603.3 |     J/mol |
+| :: Na+                                 |            0 |     J/mol |
+| :: NaCO3-                              |      37288.6 |     J/mol |
+| :: NaHCO3                              |     -9035.26 |     J/mol |
+| :: OH-                                 |        49831 |     J/mol |
+| :: NaOH                                |      49837.1 |     J/mol |
+| :: O2                                  |       563955 |     J/mol |
+| :: CH4(g)                              |      -250181 |     J/mol |
+| :: CO2(g)                              |      11974.3 |     J/mol |
+| :: H2(g)                               |     -7422.91 |     J/mol |
+| :: H2O(g)                              |        42523 |     J/mol |
+| :: O2(g)                               |       570144 |     J/mol |
+| :: Aragonite                           |      23074.4 |     J/mol |
+| :: Calcite                             |      21853.7 |     J/mol |
+| :: Chalcedony                          |     -19743.7 |     J/mol |
+| :: Halite                              |     -1356.71 |     J/mol |
+| :: Quartz                              |     -25047.4 |     J/mol |
+| :: SiO2(a)                             |     -14013.9 |     J/mol |
+| Standard Entropy (formation):          |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |      307.485 | J/(mol*K) |
+| :: (CO2)2                              |      34.7881 | J/(mol*K) |
+| :: HCO3-                               |      179.604 | J/(mol*K) |
+| :: CH4                                 |     -70.2785 | J/(mol*K) |
+| :: Ca+2                                |            0 | J/(mol*K) |
+| :: CaCO3                               |      158.577 | J/(mol*K) |
+| :: CaHCO3+                             |       216.08 | J/(mol*K) |
+| :: CaOH+                               |      -244.67 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |     -84.9904 | J/(mol*K) |
+| :: H4SiO4                              |            0 | J/(mol*K) |
+| :: H2SiO4-2                            |       -238.2 | J/(mol*K) |
+| :: H3SiO4-                             |     -118.112 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |       149.35 | J/(mol*K) |
+| :: NaHCO3                              |      160.784 | J/(mol*K) |
+| :: OH-                                 |     -99.5039 | J/(mol*K) |
+| :: NaOH                                |     -290.951 | J/(mol*K) |
+| :: O2                                  |      243.555 | J/(mol*K) |
+| :: CH4(g)                              |       2.3422 | J/(mol*K) |
+| :: CO2(g)                              |      384.619 | J/(mol*K) |
+| :: H2(g)                               |     -25.0867 | J/(mol*K) |
+| :: H2O(g)                              |      114.151 | J/(mol*K) |
+| :: O2(g)                               |      320.938 | J/(mol*K) |
+| :: Aragonite                           |      234.376 | J/(mol*K) |
+| :: Calcite                             |      233.021 | J/(mol*K) |
+| :: Chalcedony                          |      1.72303 | J/(mol*K) |
+| :: Halite                              |     -34.6523 | J/(mol*K) |
+| :: Quartz                              |     -7.84935 | J/(mol*K) |
+| :: SiO2(a)                             |      4.97764 | J/(mol*K) |
+| Standard Internal Energy (formation):  |              |           |
+| :: CO3-2                               |      9.41594 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |     -27.8329 |     J/mol |
+| :: CO2                                 |      -2348.2 |     J/mol |
+| :: (CO2)2                              |      20051.2 |     J/mol |
+| :: HCO3-                               |     -4856.83 |     J/mol |
+| :: CH4                                 |      -255304 |     J/mol |
+| :: Ca+2                                |      28.0211 |     J/mol |
+| :: CaCO3                               |      29584.5 |     J/mol |
+| :: CaHCO3+                             |     -515.795 |     J/mol |
+| :: CaOH+                               |     0.175702 |     J/mol |
+| :: Cl-                                 |     -27.3876 |     J/mol |
+| :: H2                                  |     -7362.55 |     J/mol |
+| :: H4SiO4                              |     -76.1131 |     J/mol |
+| :: H2SiO4-2                            |        59404 |     J/mol |
+| :: H3SiO4-                             |      20560.8 |     J/mol |
+| :: Na+                                 |     0.434858 |     J/mol |
+| :: NaCO3-                              |      37288.6 |     J/mol |
+| :: NaHCO3                              |        -9038 |     J/mol |
+| :: OH-                                 |      49837.1 |     J/mol |
+| :: NaOH                                |      49837.1 |     J/mol |
+| :: O2                                  |       563906 |     J/mol |
+| :: CH4(g)                              |      -250181 |     J/mol |
+| :: CO2(g)                              |      11974.3 |     J/mol |
+| :: H2(g)                               |     -7422.91 |     J/mol |
+| :: H2O(g)                              |        42523 |     J/mol |
+| :: O2(g)                               |       570144 |     J/mol |
+| :: Aragonite                           |      23022.7 |     J/mol |
+| :: Calcite                             |      21797.7 |     J/mol |
+| :: Chalcedony                          |     -19778.8 |     J/mol |
+| :: Halite                              |      -1397.9 |     J/mol |
+| :: Quartz                              |     -25081.9 |     J/mol |
+| :: SiO2(a)                             |     -14013.9 |     J/mol |
+| Standard Helmholtz Energy (formation): |              |           |
+| :: CO3-2                               |      9.41594 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |     -27.8329 |     J/mol |
+| :: CO2                                 |      -104787 |     J/mol |
+| :: (CO2)2                              |      8461.58 |     J/mol |
+| :: HCO3-                               |     -64691.8 |     J/mol |
+| :: CH4                                 |      -231891 |     J/mol |
+| :: Ca+2                                |      28.0211 |     J/mol |
+| :: CaCO3                               |     -23245.3 |     J/mol |
+| :: CaHCO3+                             |     -72502.9 |     J/mol |
+| :: CaOH+                               |        81512 |     J/mol |
+| :: Cl-                                 |     -27.3876 |     J/mol |
+| :: H2                                  |        20952 |     J/mol |
+| :: H4SiO4                              |     -76.1131 |     J/mol |
+| :: H2SiO4-2                            |       138760 |     J/mol |
+| :: H3SiO4-                             |      59909.9 |     J/mol |
+| :: Na+                                 |     0.434858 |     J/mol |
+| :: NaCO3-                              |     -12467.2 |     J/mol |
+| :: NaHCO3                              |     -62603.3 |     J/mol |
+| :: OH-                                 |      82986.9 |     J/mol |
+| :: NaOH                                |       146768 |     J/mol |
+| :: O2                                  |       482766 |     J/mol |
+| :: CH4(g)                              |      -250961 |     J/mol |
+| :: CO2(g)                              |      -116161 |     J/mol |
+| :: H2(g)                               |      934.745 |     J/mol |
+| :: H2O(g)                              |      4493.44 |     J/mol |
+| :: O2(g)                               |       463224 |     J/mol |
+| :: Aragonite                           |     -55059.8 |     J/mol |
+| :: Calcite                             |     -55833.3 |     J/mol |
+| :: Chalcedony                          |     -20352.8 |     J/mol |
+| :: Halite                              |      10146.5 |     J/mol |
+| :: Quartz                              |     -22466.9 |     J/mol |
+| :: SiO2(a)                             |     -15672.2 |     J/mol |
+| Standard Heat Capacity (constant P):   |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |            0 | J/(mol*K) |
+| :: (CO2)2                              |            0 | J/(mol*K) |
+| :: HCO3-                               |            0 | J/(mol*K) |
+| :: CH4                                 |            0 | J/(mol*K) |
+| :: Ca+2                                |            0 | J/(mol*K) |
+| :: CaCO3                               |            0 | J/(mol*K) |
+| :: CaHCO3+                             |            0 | J/(mol*K) |
+| :: CaOH+                               |            0 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |            0 | J/(mol*K) |
+| :: H4SiO4                              |            0 | J/(mol*K) |
+| :: H2SiO4-2                            |            0 | J/(mol*K) |
+| :: H3SiO4-                             |            0 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |            0 | J/(mol*K) |
+| :: NaHCO3                              |            0 | J/(mol*K) |
+| :: OH-                                 |            0 | J/(mol*K) |
+| :: NaOH                                |            0 | J/(mol*K) |
+| :: O2                                  |            0 | J/(mol*K) |
+| :: CH4(g)                              |            0 | J/(mol*K) |
+| :: CO2(g)                              |            0 | J/(mol*K) |
+| :: H2(g)                               |            0 | J/(mol*K) |
+| :: H2O(g)                              |            0 | J/(mol*K) |
+| :: O2(g)                               |            0 | J/(mol*K) |
+| :: Aragonite                           |            0 | J/(mol*K) |
+| :: Calcite                             |            0 | J/(mol*K) |
+| :: Chalcedony                          |            0 | J/(mol*K) |
+| :: Halite                              |            0 | J/(mol*K) |
+| :: Quartz                              |            0 | J/(mol*K) |
+| :: SiO2(a)                             |            0 | J/(mol*K) |
+| Standard Heat Capacity (constant V):   |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |            0 | J/(mol*K) |
+| :: (CO2)2                              |            0 | J/(mol*K) |
+| :: HCO3-                               |            0 | J/(mol*K) |
+| :: CH4                                 |            0 | J/(mol*K) |
+| :: Ca+2                                |            0 | J/(mol*K) |
+| :: CaCO3                               |            0 | J/(mol*K) |
+| :: CaHCO3+                             |            0 | J/(mol*K) |
+| :: CaOH+                               |            0 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |            0 | J/(mol*K) |
+| :: H4SiO4                              |            0 | J/(mol*K) |
+| :: H2SiO4-2                            |            0 | J/(mol*K) |
+| :: H3SiO4-                             |            0 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |            0 | J/(mol*K) |
+| :: NaHCO3                              |            0 | J/(mol*K) |
+| :: OH-                                 |            0 | J/(mol*K) |
+| :: NaOH                                |            0 | J/(mol*K) |
+| :: O2                                  |            0 | J/(mol*K) |
+| :: CH4(g)                              |            0 | J/(mol*K) |
+| :: CO2(g)                              |            0 | J/(mol*K) |
+| :: H2(g)                               |            0 | J/(mol*K) |
+| :: H2O(g)                              |            0 | J/(mol*K) |
+| :: O2(g)                               |            0 | J/(mol*K) |
+| :: Aragonite                           |            0 | J/(mol*K) |
+| :: Calcite                             |            0 | J/(mol*K) |
+| :: Chalcedony                          |            0 | J/(mol*K) |
+| :: Halite                              |            0 | J/(mol*K) |
+| :: Quartz                              |            0 | J/(mol*K) |
+| :: SiO2(a)                             |            0 | J/(mol*K) |
++----------------------------------------+--------------+-----------+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The results displayed above should now be a little more interesting.</p>
+<p>Now consider a scenario where your <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object <code class="docutils literal notranslate"><span class="pre">state</span></code> has changed, for example 1 mol of NaCl has been added to it and the temperature has increased by 10 °C. The chemical properties of the system must then be updated as shown below:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">70.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+
+<span class="n">props</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----------------------------------------+--------------+-----------+
+| Property                               |        Value |      Unit |
++----------------------------------------+--------------+-----------+
+| Temperature                            |       343.15 |         K |
+| Pressure                               |  1.51988e+06 |        Pa |
+| Volume                                 |   0.00195689 |        m3 |
+| Gibbs Energy                           |       -82231 |         J |
+| Enthalpy                               |      8403.56 |         J |
+| Entropy                                |      264.125 |       J/K |
+| Internal Energy                        |      5429.33 |         J |
+| Helmholtz Energy                       |     -85205.2 |         J |
+| Charge                                 | -3.33463e-16 |       mol |
+| Element Amount:                        |              |           |
+| :: H                                   |      111.012 |       mol |
+| :: C                                   |     0.709991 |       mol |
+| :: O                                   |      56.9695 |       mol |
+| :: Na                                  |            2 |       mol |
+| :: Si                                  |    0.0166433 |       mol |
+| :: Cl                                  |            2 |       mol |
+| :: Ca                                  |    0.0099909 |       mol |
+| Species Amount:                        |              |           |
+| :: CO3-2                               |  6.44574e-07 |       mol |
+| :: H+                                  |  1.50459e-05 |       mol |
+| :: H2O                                 |      55.4883 |       mol |
+| :: CO2                                 |     0.194174 |       mol |
+| :: (CO2)2                              |        1e-16 |       mol |
+| :: HCO3-                               |    0.0164359 |       mol |
+| :: CH4                                 |        1e-16 |       mol |
+| :: Ca+2                                |   0.00943427 |       mol |
+| :: CaCO3                               |  3.97024e-07 |       mol |
+| :: CaHCO3+                             |   0.00055623 |       mol |
+| :: CaOH+                               |  4.60427e-11 |       mol |
+| :: Cl-                                 |            2 |       mol |
+| :: H2                                  |        1e-16 |       mol |
+| :: H4SiO4                              |  0.000281428 |       mol |
+| :: H2SiO4-2                            |  1.10506e-14 |       mol |
+| :: H3SiO4-                             |  2.05598e-08 |       mol |
+| :: Na+                                 |        1.997 |       mol |
+| :: NaCO3-                              |  7.55894e-06 |       mol |
+| :: NaHCO3                              |   0.00298745 |       mol |
+| :: OH-                                 |  1.32994e-08 |       mol |
+| :: NaOH                                |        1e-16 |       mol |
+| :: O2                                  |        1e-16 |       mol |
+| :: CH4(g)                              |        1e-16 |       mol |
+| :: CO2(g)                              |     0.495829 |       mol |
+| :: H2(g)                               |        1e-16 |       mol |
+| :: H2O(g)                              |   0.00734896 |       mol |
+| :: O2(g)                               |        1e-16 |       mol |
+| :: Aragonite                           |        1e-16 |       mol |
+| :: Calcite                             |        1e-16 |       mol |
+| :: Chalcedony                          |  1.30988e-16 |       mol |
+| :: Halite                              |        1e-16 |       mol |
+| :: Quartz                              |    0.0163618 |       mol |
+| :: SiO2(a)                             |        1e-16 |       mol |
+| Mole Fraction:                         |              |           |
+| :: CO3-2                               |  1.07952e-08 |   mol/mol |
+| :: H+                                  |  2.51986e-07 |   mol/mol |
+| :: H2O                                 |     0.929309 |   mol/mol |
+| :: CO2                                 |   0.00325199 |   mol/mol |
+| :: (CO2)2                              |  1.67478e-18 |   mol/mol |
+| :: HCO3-                               |  0.000275266 |   mol/mol |
+| :: CH4                                 |  1.67478e-18 |   mol/mol |
+| :: Ca+2                                |  0.000158004 |   mol/mol |
+| :: CaCO3                               |   6.6493e-09 |   mol/mol |
+| :: CaHCO3+                             |  9.31565e-06 |   mol/mol |
+| :: CaOH+                               |  7.71116e-13 |   mol/mol |
+| :: Cl-                                 |    0.0334957 |   mol/mol |
+| :: H2                                  |  1.67478e-18 |   mol/mol |
+| :: H4SiO4                              |  4.71331e-06 |   mol/mol |
+| :: H2SiO4-2                            |  1.85074e-16 |   mol/mol |
+| :: H3SiO4-                             |  3.44331e-10 |   mol/mol |
+| :: Na+                                 |    0.0334455 |   mol/mol |
+| :: NaCO3-                              |  1.26596e-07 |   mol/mol |
+| :: NaHCO3                              |  5.00334e-05 |   mol/mol |
+| :: OH-                                 |  2.22736e-10 |   mol/mol |
+| :: NaOH                                |  1.67478e-18 |   mol/mol |
+| :: O2                                  |  1.67478e-18 |   mol/mol |
+| :: CH4(g)                              |  1.98737e-16 |   mol/mol |
+| :: CO2(g)                              |     0.985395 |   mol/mol |
+| :: H2(g)                               |  1.98737e-16 |   mol/mol |
+| :: H2O(g)                              |    0.0146051 |   mol/mol |
+| :: O2(g)                               |  1.98737e-16 |   mol/mol |
+| :: Aragonite                           |            1 |   mol/mol |
+| :: Calcite                             |            1 |   mol/mol |
+| :: Chalcedony                          |            1 |   mol/mol |
+| :: Halite                              |            1 |   mol/mol |
+| :: Quartz                              |            1 |   mol/mol |
+| :: SiO2(a)                             |            1 |   mol/mol |
+| Activity Coefficient:                  |              |           |
+| :: CO3-2                               |    0.0592655 |         - |
+| :: H+                                  |       1.0041 |         - |
+| :: H2O                                 |     0.996446 |         - |
+| :: CO2                                 |      1.37659 |         - |
+| :: (CO2)2                              |            1 |         - |
+| :: HCO3-                               |     0.557782 |         - |
+| :: CH4                                 |            1 |         - |
+| :: Ca+2                                |     0.163006 |         - |
+| :: CaCO3                               |            1 |         - |
+| :: CaHCO3+                             |     0.359228 |         - |
+| :: CaOH+                               |     0.359228 |         - |
+| :: Cl-                                 |     0.667645 |         - |
+| :: H2                                  |            1 |         - |
+| :: H4SiO4                              |            1 |         - |
+| :: H2SiO4-2                            |    0.0116342 |         - |
+| :: H3SiO4-                             |     0.359858 |         - |
+| :: Na+                                 |      0.68373 |         - |
+| :: NaCO3-                              |     0.359858 |         - |
+| :: NaHCO3                              |            1 |         - |
+| :: OH-                                 |     0.550227 |         - |
+| :: NaOH                                |            1 |         - |
+| :: O2                                  |            1 |         - |
+| :: CH4(g)                              |     0.986424 |         - |
+| :: CO2(g)                              |     0.947625 |         - |
+| :: H2(g)                               |      1.04727 |         - |
+| :: H2O(g)                              |     0.866819 |         - |
+| :: O2(g)                               |       1.0112 |         - |
+| :: Aragonite                           |            1 |         - |
+| :: Calcite                             |            1 |         - |
+| :: Chalcedony                          |            1 |         - |
+| :: Halite                              |            1 |         - |
+| :: Quartz                              |            1 |         - |
+| :: SiO2(a)                             |            1 |         - |
+| Activity:                              |              |           |
+| :: CO3-2                               |  3.82149e-08 |         - |
+| :: H+                                  |  1.51131e-05 |         - |
+| :: H2O                                 |     0.926006 |         - |
+| :: CO2                                 |     0.267394 |         - |
+| :: (CO2)2                              |  1.00036e-16 |         - |
+| :: HCO3-                               |   0.00917099 |         - |
+| :: CH4                                 |  1.00036e-16 |         - |
+| :: Ca+2                                |    0.0015384 |         - |
+| :: CaCO3                               |  3.97169e-07 |         - |
+| :: CaHCO3+                             |  0.000199886 |         - |
+| :: CaOH+                               |  1.65459e-11 |         - |
+| :: Cl-                                 |      1.33577 |         - |
+| :: H2                                  |  1.00036e-16 |         - |
+| :: H4SiO4                              |   0.00028153 |         - |
+| :: H2SiO4-2                            |  1.28612e-16 |         - |
+| :: H3SiO4-                             |  7.40129e-09 |         - |
+| :: Na+                                 |      1.36591 |         - |
+| :: NaCO3-                              |  2.72113e-06 |         - |
+| :: NaHCO3                              |   0.00298854 |         - |
+| :: OH-                                 |  7.32034e-09 |         - |
+| :: NaOH                                |  1.00036e-16 |         - |
+| :: O2                                  |  1.00036e-16 |         - |
+| :: CH4(g)                              |  2.97955e-15 |         - |
+| :: CO2(g)                              |      14.1924 |         - |
+| :: H2(g)                               |  3.16334e-15 |         - |
+| :: H2O(g)                              |     0.192416 |         - |
+| :: O2(g)                               |  3.05438e-15 |         - |
+| :: Aragonite                           |            1 |         - |
+| :: Calcite                             |            1 |         - |
+| :: Chalcedony                          |            1 |         - |
+| :: Halite                              |            1 |         - |
+| :: Quartz                              |            1 |         - |
+| :: SiO2(a)                             |            1 |         - |
+| lg(Activity):                          |              |           |
+| :: CO3-2                               |     -7.41777 |         - |
+| :: H+                                  |     -4.82065 |         - |
+| :: H2O                                 |   -0.0333862 |         - |
+| :: CO2                                 |    -0.572848 |         - |
+| :: (CO2)2                              |     -15.9998 |         - |
+| :: HCO3-                               |     -2.03758 |         - |
+| :: CH4                                 |     -15.9998 |         - |
+| :: Ca+2                                |     -2.81293 |         - |
+| :: CaCO3                               |     -6.40103 |         - |
+| :: CaHCO3+                             |     -3.69922 |         - |
+| :: CaOH+                               |     -10.7813 |         - |
+| :: Cl-                                 |     0.125733 |         - |
+| :: H2                                  |     -15.9998 |         - |
+| :: H4SiO4                              |     -3.55048 |         - |
+| :: H2SiO4-2                            |     -15.8907 |         - |
+| :: H3SiO4-                             |     -8.13069 |         - |
+| :: Na+                                 |     0.135421 |         - |
+| :: NaCO3-                              |     -5.56525 |         - |
+| :: NaHCO3                              |     -2.52454 |         - |
+| :: OH-                                 |     -8.13547 |         - |
+| :: NaOH                                |     -15.9998 |         - |
+| :: O2                                  |     -15.9998 |         - |
+| :: CH4(g)                              |     -14.5258 |         - |
+| :: CO2(g)                              |      1.15205 |         - |
+| :: H2(g)                               |     -14.4999 |         - |
+| :: H2O(g)                              |     -0.71576 |         - |
+| :: O2(g)                               |     -14.5151 |         - |
+| :: Aragonite                           |            0 |         - |
+| :: Calcite                             |            0 |         - |
+| :: Chalcedony                          |            0 |         - |
+| :: Halite                              |            0 |         - |
+| :: Quartz                              |            0 |         - |
+| :: SiO2(a)                             |            0 |         - |
+| ln(Activity):                          |              |           |
+| :: CO3-2                               |       -17.08 |         - |
+| :: H+                                  |     -11.0999 |         - |
+| :: H2O                                 |   -0.0768746 |         - |
+| :: CO2                                 |     -1.31903 |         - |
+| :: (CO2)2                              |      -36.841 |         - |
+| :: HCO3-                               |     -4.69171 |         - |
+| :: CH4                                 |      -36.841 |         - |
+| :: Ca+2                                |     -6.47701 |         - |
+| :: CaCO3                               |     -14.7389 |         - |
+| :: CaHCO3+                             |     -8.51776 |         - |
+| :: CaOH+                               |     -24.8249 |         - |
+| :: Cl-                                 |     0.289512 |         - |
+| :: H2                                  |      -36.841 |         - |
+| :: H4SiO4                              |     -8.17527 |         - |
+| :: H2SiO4-2                            |     -36.5897 |         - |
+| :: H3SiO4-                             |     -18.7216 |         - |
+| :: Na+                                 |     0.311819 |         - |
+| :: NaCO3-                              |     -12.8145 |         - |
+| :: NaHCO3                              |     -5.81297 |         - |
+| :: OH-                                 |     -18.7326 |         - |
+| :: NaOH                                |      -36.841 |         - |
+| :: O2                                  |      -36.841 |         - |
+| :: CH4(g)                              |      -33.447 |         - |
+| :: CO2(g)                              |       2.6527 |         - |
+| :: H2(g)                               |     -33.3871 |         - |
+| :: H2O(g)                              |      -1.6481 |         - |
+| :: O2(g)                               |     -33.4222 |         - |
+| :: Aragonite                           |            0 |         - |
+| :: Calcite                             |            0 |         - |
+| :: Chalcedony                          |            0 |         - |
+| :: Halite                              |            0 |         - |
+| :: Quartz                              |            0 |         - |
+| :: SiO2(a)                             |            0 |         - |
+| Chemical Potential:                    |              |           |
+| :: CO3-2                               |     -48731.2 |     J/mol |
+| :: H+                                  |     -31669.3 |     J/mol |
+| :: H2O                                 |     -219.331 |     J/mol |
+| :: CO2                                 |      -111654 |     J/mol |
+| :: (CO2)2                              |     -96862.6 |     J/mol |
+| :: HCO3-                               |     -79875.4 |     J/mol |
+| :: CH4                                 |      -336239 |     J/mol |
+| :: Ca+2                                |     -18479.6 |     J/mol |
+| :: CaCO3                               |     -66929.4 |     J/mol |
+| :: CaHCO3+                             |     -98997.7 |     J/mol |
+| :: CaOH+                               |      13130.8 |     J/mol |
+| :: Cl-                                 |      826.008 |     J/mol |
+| :: H2                                  |       -83266 |     J/mol |
+| :: H4SiO4                              |     -23324.9 |     J/mol |
+| :: H2SiO4-2                            |      36810.1 |     J/mol |
+| :: H3SiO4-                             |      7738.57 |     J/mol |
+| :: Na+                                 |      889.654 |     J/mol |
+| :: NaCO3-                              |     -50520.7 |     J/mol |
+| :: NaHCO3                              |     -80834.3 |     J/mol |
+| :: OH-                                 |      30556.6 |     J/mol |
+| :: NaOH                                |      44592.9 |     J/mol |
+| :: O2                                  |       375268 |     J/mol |
+| :: CH4(g)                              |      -346374 |     J/mol |
+| :: CO2(g)                              |      -112503 |     J/mol |
+| :: H2(g)                               |     -94054.4 |     J/mol |
+| :: H2O(g)                              |     -1345.26 |     J/mol |
+| :: O2(g)                               |       364682 |     J/mol |
+| :: Aragonite                           |     -57410.4 |     J/mol |
+| :: Calcite                             |       -58166 |     J/mol |
+| :: Chalcedony                          |     -20334.1 |     J/mol |
+| :: Halite                              |      10534.4 |     J/mol |
+| :: Quartz                              |     -22353.1 |     J/mol |
+| :: SiO2(a)                             |     -15721.2 |     J/mol |
+| Standard Volume:                       |              |           |
+| :: CO3-2                               |   -7.503e-06 |    m3/mol |
+| :: H+                                  |            0 |    m3/mol |
+| :: H2O                                 |  1.84141e-05 |    m3/mol |
+| :: CO2                                 |  3.67438e-05 |    m3/mol |
+| :: (CO2)2                              |  7.34875e-05 |    m3/mol |
+| :: HCO3-                               |  2.56842e-05 |    m3/mol |
+| :: CH4                                 |   3.8721e-05 |    m3/mol |
+| :: Ca+2                                | -1.86934e-05 |    m3/mol |
+| :: CaCO3                               | -1.44028e-05 |    m3/mol |
+| :: CaHCO3+                             |  1.04904e-05 |    m3/mol |
+| :: CaOH+                               |            0 |    m3/mol |
+| :: Cl-                                 |  1.77214e-05 |    m3/mol |
+| :: H2                                  |  2.85712e-05 |    m3/mol |
+| :: H4SiO4                              |  4.97054e-05 |    m3/mol |
+| :: H2SiO4-2                            |            0 |    m3/mol |
+| :: H3SiO4-                             |  2.76862e-05 |    m3/mol |
+| :: Na+                                 | -9.40319e-08 |    m3/mol |
+| :: NaCO3-                              | -3.84586e-07 |    m3/mol |
+| :: NaHCO3                              |  1.80331e-06 |    m3/mol |
+| :: OH-                                 | -4.33505e-06 |    m3/mol |
+| :: NaOH                                |            0 |    m3/mol |
+| :: O2                                  |   3.2753e-05 |    m3/mol |
+| :: CH4(g)                              |            0 |    m3/mol |
+| :: CO2(g)                              |            0 |    m3/mol |
+| :: H2(g)                               |            0 |    m3/mol |
+| :: H2O(g)                              |            0 |    m3/mol |
+| :: O2(g)                               |            0 |    m3/mol |
+| :: Aragonite                           |    3.404e-05 |    m3/mol |
+| :: Calcite                             |     3.69e-05 |    m3/mol |
+| :: Chalcedony                          |     2.31e-05 |    m3/mol |
+| :: Halite                              |     2.71e-05 |    m3/mol |
+| :: Quartz                              |    2.267e-05 |    m3/mol |
+| :: SiO2(a)                             |            0 |    m3/mol |
+| Standard Gibbs Energy (formation):     |              |           |
+| :: CO3-2                               |            0 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |            0 |     J/mol |
+| :: CO2                                 |      -107891 |     J/mol |
+| :: (CO2)2                              |      8248.71 |     J/mol |
+| :: HCO3-                               |     -66489.5 |     J/mol |
+| :: CH4                                 |      -231127 |     J/mol |
+| :: Ca+2                                |            0 |     J/mol |
+| :: CaCO3                               |     -24877.7 |     J/mol |
+| :: CaHCO3+                             |     -74695.7 |     J/mol |
+| :: CaOH+                               |      83958.9 |     J/mol |
+| :: Cl-                                 |            0 |     J/mol |
+| :: H2                                  |      21845.3 |     J/mol |
+| :: H4SiO4                              |            0 |     J/mol |
+| :: H2SiO4-2                            |       141205 |     J/mol |
+| :: H3SiO4-                             |      61153.3 |     J/mol |
+| :: Na+                                 |            0 |     J/mol |
+| :: NaCO3-                              |     -13959.7 |     J/mol |
+| :: NaHCO3                              |     -64249.3 |     J/mol |
+| :: OH-                                 |      84002.8 |     J/mol |
+| :: NaOH                                |       149704 |     J/mol |
+| :: O2                                  |       480380 |     J/mol |
+| :: CH4(g)                              |      -250946 |     J/mol |
+| :: CO2(g)                              |      -120071 |     J/mol |
+| :: H2(g)                               |      1202.72 |     J/mol |
+| :: H2O(g)                              |      3356.93 |     J/mol |
+| :: O2(g)                               |       460039 |     J/mol |
+| :: Aragonite                           |     -57410.4 |     J/mol |
+| :: Calcite                             |       -58166 |     J/mol |
+| :: Chalcedony                          |     -20334.1 |     J/mol |
+| :: Halite                              |      10534.4 |     J/mol |
+| :: Quartz                              |     -22353.1 |     J/mol |
+| :: SiO2(a)                             |     -15721.2 |     J/mol |
+| Standard Enthalpy (formation):         |              |           |
+| :: CO3-2                               |            0 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |            0 |     J/mol |
+| :: CO2                                 |      3558.23 |     J/mol |
+| :: (CO2)2                              |      18832.9 |     J/mol |
+| :: HCO3-                               |     -1952.67 |     J/mol |
+| :: CH4                                 |      -255243 |     J/mol |
+| :: Ca+2                                |            0 |     J/mol |
+| :: CaCO3                               |      31187.7 |     J/mol |
+| :: CaHCO3+                             |      3075.75 |     J/mol |
+| :: CaOH+                               |     0.396319 |     J/mol |
+| :: Cl-                                 |            0 |     J/mol |
+| :: H2                                  |     -7319.13 |     J/mol |
+| :: H4SiO4                              |            0 |     J/mol |
+| :: H2SiO4-2                            |      55242.9 |     J/mol |
+| :: H3SiO4-                             |      19284.1 |     J/mol |
+| :: Na+                                 |            0 |     J/mol |
+| :: NaCO3-                              |      37289.7 |     J/mol |
+| :: NaHCO3                              |     -6170.41 |     J/mol |
+| :: OH-                                 |        47972 |     J/mol |
+| :: NaOH                                |      47978.3 |     J/mol |
+| :: O2                                  |       563956 |     J/mol |
+| :: CH4(g)                              |      -252584 |     J/mol |
+| :: CO2(g)                              |      16384.8 |     J/mol |
+| :: H2(g)                               |     -8573.07 |     J/mol |
+| :: H2O(g)                              |      42174.7 |     J/mol |
+| :: O2(g)                               |       568451 |     J/mol |
+| :: Aragonite                           |      27222.1 |     J/mol |
+| :: Calcite                             |      26001.4 |     J/mol |
+| :: Chalcedony                          |     -19742.9 |     J/mol |
+| :: Halite                              |     -1356.56 |     J/mol |
+| :: Quartz                              |     -25046.6 |     J/mol |
+| :: SiO2(a)                             |     -14013.1 |     J/mol |
+| Standard Entropy (formation):          |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |      324.783 | J/(mol*K) |
+| :: (CO2)2                              |      30.8443 | J/(mol*K) |
+| :: HCO3-                               |      188.072 | J/(mol*K) |
+| :: CH4                                 |     -70.2785 | J/(mol*K) |
+| :: Ca+2                                |            0 | J/(mol*K) |
+| :: CaCO3                               |      163.385 | J/(mol*K) |
+| :: CaHCO3+                             |       226.64 | J/(mol*K) |
+| :: CaOH+                               |      -244.67 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |     -84.9904 | J/(mol*K) |
+| :: H4SiO4                              |            0 | J/(mol*K) |
+| :: H2SiO4-2                            |     -250.507 | J/(mol*K) |
+| :: H3SiO4-                             |     -122.014 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |       149.35 | J/(mol*K) |
+| :: NaHCO3                              |      169.252 | J/(mol*K) |
+| :: OH-                                 |         -105 | J/(mol*K) |
+| :: NaOH                                |     -296.447 | J/(mol*K) |
+| :: O2                                  |      243.555 | J/(mol*K) |
+| :: CH4(g)                              |     -4.77434 | J/(mol*K) |
+| :: CO2(g)                              |      397.657 | J/(mol*K) |
+| :: H2(g)                               |     -28.4884 | J/(mol*K) |
+| :: H2O(g)                              |      113.122 | J/(mol*K) |
+| :: O2(g)                               |       315.93 | J/(mol*K) |
+| :: Aragonite                           |      246.634 | J/(mol*K) |
+| :: Calcite                             |      245.279 | J/(mol*K) |
+| :: Chalcedony                          |      1.72303 | J/(mol*K) |
+| :: Halite                              |     -34.6523 | J/(mol*K) |
+| :: Quartz                              |     -7.84935 | J/(mol*K) |
+| :: SiO2(a)                             |      4.97764 | J/(mol*K) |
+| Standard Internal Energy (formation):  |              |           |
+| :: CO3-2                               |      11.4036 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |     -27.9871 |     J/mol |
+| :: CO2                                 |      3502.38 |     J/mol |
+| :: (CO2)2                              |      18721.2 |     J/mol |
+| :: HCO3-                               |     -1991.71 |     J/mol |
+| :: CH4                                 |      -255302 |     J/mol |
+| :: Ca+2                                |      28.4117 |     J/mol |
+| :: CaCO3                               |      31209.6 |     J/mol |
+| :: CaHCO3+                             |       3059.8 |     J/mol |
+| :: CaOH+                               |     0.396319 |     J/mol |
+| :: Cl-                                 |     -26.9344 |     J/mol |
+| :: H2                                  |     -7362.55 |     J/mol |
+| :: H4SiO4                              |      -75.546 |     J/mol |
+| :: H2SiO4-2                            |      55242.9 |     J/mol |
+| :: H3SiO4-                             |        19242 |     J/mol |
+| :: Na+                                 |     0.142917 |     J/mol |
+| :: NaCO3-                              |      37290.3 |     J/mol |
+| :: NaHCO3                              |     -6173.16 |     J/mol |
+| :: OH-                                 |      47978.6 |     J/mol |
+| :: NaOH                                |      47978.3 |     J/mol |
+| :: O2                                  |       563906 |     J/mol |
+| :: CH4(g)                              |      -252584 |     J/mol |
+| :: CO2(g)                              |      16384.8 |     J/mol |
+| :: H2(g)                               |     -8573.07 |     J/mol |
+| :: H2O(g)                              |      42174.7 |     J/mol |
+| :: O2(g)                               |       568451 |     J/mol |
+| :: Aragonite                           |      27170.4 |     J/mol |
+| :: Calcite                             |      25945.4 |     J/mol |
+| :: Chalcedony                          |       -19778 |     J/mol |
+| :: Halite                              |     -1397.75 |     J/mol |
+| :: Quartz                              |     -25081.1 |     J/mol |
+| :: SiO2(a)                             |     -14013.1 |     J/mol |
+| Standard Helmholtz Energy (formation): |              |           |
+| :: CO3-2                               |      11.4036 |     J/mol |
+| :: H+                                  |            0 |     J/mol |
+| :: H2O                                 |     -27.9871 |     J/mol |
+| :: CO2                                 |      -107947 |     J/mol |
+| :: (CO2)2                              |      8137.01 |     J/mol |
+| :: HCO3-                               |     -66528.5 |     J/mol |
+| :: CH4                                 |      -231186 |     J/mol |
+| :: Ca+2                                |      28.4117 |     J/mol |
+| :: CaCO3                               |     -24855.8 |     J/mol |
+| :: CaHCO3+                             |     -74711.6 |     J/mol |
+| :: CaOH+                               |      83958.9 |     J/mol |
+| :: Cl-                                 |     -26.9344 |     J/mol |
+| :: H2                                  |      21801.9 |     J/mol |
+| :: H4SiO4                              |      -75.546 |     J/mol |
+| :: H2SiO4-2                            |       141205 |     J/mol |
+| :: H3SiO4-                             |      61111.3 |     J/mol |
+| :: Na+                                 |     0.142917 |     J/mol |
+| :: NaCO3-                              |     -13959.1 |     J/mol |
+| :: NaHCO3                              |     -64252.1 |     J/mol |
+| :: OH-                                 |      84009.4 |     J/mol |
+| :: NaOH                                |       149704 |     J/mol |
+| :: O2                                  |       480330 |     J/mol |
+| :: CH4(g)                              |      -250946 |     J/mol |
+| :: CO2(g)                              |      -120071 |     J/mol |
+| :: H2(g)                               |      1202.72 |     J/mol |
+| :: H2O(g)                              |      3356.93 |     J/mol |
+| :: O2(g)                               |       460039 |     J/mol |
+| :: Aragonite                           |     -57462.2 |     J/mol |
+| :: Calcite                             |     -58222.1 |     J/mol |
+| :: Chalcedony                          |     -20369.3 |     J/mol |
+| :: Halite                              |      10493.2 |     J/mol |
+| :: Quartz                              |     -22387.5 |     J/mol |
+| :: SiO2(a)                             |     -15721.2 |     J/mol |
+| Standard Heat Capacity (constant P):   |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |            0 | J/(mol*K) |
+| :: (CO2)2                              |            0 | J/(mol*K) |
+| :: HCO3-                               |            0 | J/(mol*K) |
+| :: CH4                                 |            0 | J/(mol*K) |
+| :: Ca+2                                |            0 | J/(mol*K) |
+| :: CaCO3                               |            0 | J/(mol*K) |
+| :: CaHCO3+                             |            0 | J/(mol*K) |
+| :: CaOH+                               |            0 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |            0 | J/(mol*K) |
+| :: H4SiO4                              |            0 | J/(mol*K) |
+| :: H2SiO4-2                            |            0 | J/(mol*K) |
+| :: H3SiO4-                             |            0 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |            0 | J/(mol*K) |
+| :: NaHCO3                              |            0 | J/(mol*K) |
+| :: OH-                                 |            0 | J/(mol*K) |
+| :: NaOH                                |            0 | J/(mol*K) |
+| :: O2                                  |            0 | J/(mol*K) |
+| :: CH4(g)                              |            0 | J/(mol*K) |
+| :: CO2(g)                              |            0 | J/(mol*K) |
+| :: H2(g)                               |            0 | J/(mol*K) |
+| :: H2O(g)                              |            0 | J/(mol*K) |
+| :: O2(g)                               |            0 | J/(mol*K) |
+| :: Aragonite                           |            0 | J/(mol*K) |
+| :: Calcite                             |            0 | J/(mol*K) |
+| :: Chalcedony                          |            0 | J/(mol*K) |
+| :: Halite                              |            0 | J/(mol*K) |
+| :: Quartz                              |            0 | J/(mol*K) |
+| :: SiO2(a)                             |            0 | J/(mol*K) |
+| Standard Heat Capacity (constant V):   |              |           |
+| :: CO3-2                               |            0 | J/(mol*K) |
+| :: H+                                  |            0 | J/(mol*K) |
+| :: H2O                                 |            0 | J/(mol*K) |
+| :: CO2                                 |            0 | J/(mol*K) |
+| :: (CO2)2                              |            0 | J/(mol*K) |
+| :: HCO3-                               |            0 | J/(mol*K) |
+| :: CH4                                 |            0 | J/(mol*K) |
+| :: Ca+2                                |            0 | J/(mol*K) |
+| :: CaCO3                               |            0 | J/(mol*K) |
+| :: CaHCO3+                             |            0 | J/(mol*K) |
+| :: CaOH+                               |            0 | J/(mol*K) |
+| :: Cl-                                 |            0 | J/(mol*K) |
+| :: H2                                  |            0 | J/(mol*K) |
+| :: H4SiO4                              |            0 | J/(mol*K) |
+| :: H2SiO4-2                            |            0 | J/(mol*K) |
+| :: H3SiO4-                             |            0 | J/(mol*K) |
+| :: Na+                                 |            0 | J/(mol*K) |
+| :: NaCO3-                              |            0 | J/(mol*K) |
+| :: NaHCO3                              |            0 | J/(mol*K) |
+| :: OH-                                 |            0 | J/(mol*K) |
+| :: NaOH                                |            0 | J/(mol*K) |
+| :: O2                                  |            0 | J/(mol*K) |
+| :: CH4(g)                              |            0 | J/(mol*K) |
+| :: CO2(g)                              |            0 | J/(mol*K) |
+| :: H2(g)                               |            0 | J/(mol*K) |
+| :: H2O(g)                              |            0 | J/(mol*K) |
+| :: O2(g)                               |            0 | J/(mol*K) |
+| :: Aragonite                           |            0 | J/(mol*K) |
+| :: Calcite                             |            0 | J/(mol*K) |
+| :: Chalcedony                          |            0 | J/(mol*K) |
+| :: Halite                              |            0 | J/(mol*K) |
+| :: Quartz                              |            0 | J/(mol*K) |
+| :: SiO2(a)                             |            0 | J/(mol*K) |
++----------------------------------------+--------------+-----------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>The printed table above shows many different properties. Let’s now use some methods from class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> to retrieve some specific properties for the system, its phases, and its species:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S TEMPERATURE     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>                         <span class="p">,</span> <span class="s2">&quot;K&quot;</span>     <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S PRESSURE        :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>                            <span class="p">,</span> <span class="s2">&quot;Pa&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S VOLUME          :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">volume</span><span class="p">()</span>                              <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S DENSITY  :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">density</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;kg/m3&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S MASS     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">mass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;kg&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S VOLUME   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">volume</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S ENTHALPY :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">enthalpy</span><span class="p">()</span> <span class="p">,</span> <span class="s2">&quot;J/mol&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S DENSITY  :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">density</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;kg/m3&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S MASS     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">mass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;kg&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S VOLUME   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">volume</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S ENTHALPY :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">enthalpy</span><span class="p">()</span> <span class="p">,</span> <span class="s2">&quot;J/mol&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY H+              :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivity</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>                           <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY H+ (LOG10)      :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityLg</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>                         <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY COEFF. CO2      :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>               <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY COEFF. HCO3-    :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span><span class="p">)</span>             <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. CO2(g)   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>            <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. H2O(g)   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;H2O(g)&quot;</span><span class="p">)</span>            <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. O2(g)    :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;O2(g)&quot;</span><span class="p">)</span>             <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SYSTEM&#39;S TEMPERATURE     : 343.15 K
+SYSTEM&#39;S PRESSURE        : 1.51988e+06 Pa
+SYSTEM&#39;S VOLUME          : 0.00195689 m3
+AQUEOUS PHASE&#39;S DENSITY  : 1058.56 kg/m3
+AQUEOUS PHASE&#39;S MASS     : 1.12676 kg
+AQUEOUS PHASE&#39;S VOLUME   : 0.00106443 m3
+AQUEOUS PHASE&#39;S ENTHALPY : 642.393 J/mol
+GASEOUS PHASE&#39;S DENSITY  : 24.6099 kg/m3
+GASEOUS PHASE&#39;S MASS     : 0.0219544 kg
+GASEOUS PHASE&#39;S VOLUME   : 0.000892096 m3
+GASEOUS PHASE&#39;S ENTHALPY : 8170.97 J/mol
+ACTIVITY H+              : 1.51131e-05
+ACTIVITY H+ (LOG10)      : -4.82065
+ACTIVITY COEFF. CO2      : 1.37659
+ACTIVITY COEFF. HCO3-    : 0.557782
+FUGACITY COEFF. CO2(g)   : 0.947625
+FUGACITY COEFF. H2O(g)   : 0.866819
+FUGACITY COEFF. O2(g)    : 1.0112
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code> to get the exact data you need!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="creating-chemical-states.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Creating chemical states</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="computing-aqueous-properties.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Computing aqueous properties</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

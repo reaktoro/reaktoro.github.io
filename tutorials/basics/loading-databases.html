@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading thermodynamic databases</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customized_mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/customize.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Inspecting thermodynamic databases" href="inspecting-databases.html" />
+    <link rel="prev" title="Importing Reaktoro" href="importing-reaktoro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/reaktoro-for-python-and-cpp.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Get Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../installation/index.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-conda.html">
+     Installation using Conda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-cmake.html">
+     Installation using CMake
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/api">
+   API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/v1">
+   Reaktoro v1
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Basics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="importing-reaktoro.html">
+     Importing Reaktoro
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Loading thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="inspecting-databases.html">
+     Inspecting thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="defining-chemical-systems.html">
+     Defining chemical systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-chemical-states.html">
+     Creating chemical states
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing-chemical-properties.html">
+     Computing chemical properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing-aqueous-properties.html">
+     Computing aqueous properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="specifing-activity-models.html">
+     How to specify activity models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../equilibrium/index.html">
+   Chemical Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-basics.html">
+     Chemical equilibrium: the basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-specifying-constraints.html">
+     Chemical equilibrium with constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph.html">
+     Chemical equilibrium with fixed pH
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph-charge-balance.html">
+     Chemical equilibrium with fixed pH and charge balance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-phase-amount.html">
+     Chemical equilibrium with fixed phase amount
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-fugacity.html">
+     Chemical equilibrium with fixed fugacity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-volume-internal-energy.html">
+     Chemical equilibrium with fixed volume and internal energy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-given-component-amounts.html">
+     Chemical equilibrium with given element and charge amounts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../kinetics/index.html">
+   Chemical Kinetics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kinetics/kinetics-basics.html">
+     How to perform chemical kinetics calculations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About Reaktoro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/citing.html">
+   Citing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/basics/loading-databases.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/basics/loading-databases.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phreeqc-databases">
+   PHREEQC Databases
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-embedded-phreeqc-database-files">
+     Loading embedded PHREEQC database files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-locally-available-phreeqc-database-files">
+     Loading locally available PHREEQC database files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermofun-databases">
+   ThermoFun Databases
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-embedded-thermofun-database-files">
+     Loading embedded ThermoFun database files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-locally-available-thermofun-database-files">
+     Loading locally available ThermoFun database files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supcrt-and-supcrtbl-databases">
+   SUPCRT and SUPCRTBL Databases
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-embedded-supcrt-and-supcrtbl-database-files">
+     Loading embedded SUPCRT and SUPCRTBL database files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-locally-available-supcrt-and-supcrtbl-database-files">
+     Loading locally available SUPCRT and SUPCRTBL database files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nasa-databases">
+   NASA Databases
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-embedded-nasa-database-files">
+     Loading embedded NASA database files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-locally-available-nasa-database-files">
+     Loading locally available NASA database files
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="loading-thermodynamic-databases">
+<h1>Loading thermodynamic databases<a class="headerlink" href="#loading-thermodynamic-databases" title="Permalink to this headline">¶</a></h1>
+<p>Reaktoro requires thermodynamic databases to calculate the thermodynamic properties of chemical species and reactions. These properties are necessary when performing chemical equilibrium and kinetics calculations.</p>
+<p>Examples of such thermodynamic properties for a species <span class="math notranslate nohighlight">\(i\)</span> include:</p>
+<ul class="simple">
+<li><p>standard molar Gibbs energy, <span class="math notranslate nohighlight">\(G_i^\circ\)</span></p></li>
+<li><p>standard molar Helmholtz energy, <span class="math notranslate nohighlight">\(A_i^\circ\)</span></p></li>
+<li><p>standard molar enthalpy, <span class="math notranslate nohighlight">\(H_i^\circ\)</span></p></li>
+<li><p>standard molar internal energy, <span class="math notranslate nohighlight">\(U_i^\circ\)</span></p></li>
+<li><p>standard molar entropy, <span class="math notranslate nohighlight">\(S_i^\circ\)</span></p></li>
+<li><p>standard molar volume, <span class="math notranslate nohighlight">\(V_i^\circ\)</span></p></li>
+<li><p>standard molar heat capacity (constant pressure), <span class="math notranslate nohighlight">\(C_{P,i}^\circ\)</span></p></li>
+<li><p>standard molar heat capacity (constant volume), <span class="math notranslate nohighlight">\(C_{V,i}^\circ\)</span></p></li>
+</ul>
+<p>The standard thermodynamic properties of the above species can be used to calculate reaction properties, such as the following for a reaction <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<ul class="simple">
+<li><p>equilibrium constant of reaction, <span class="math notranslate nohighlight">\(K_m\)</span></p></li>
+<li><p>standard Gibbs energy of reaction, <span class="math notranslate nohighlight">\(\Delta G_m^\circ\)</span></p></li>
+<li><p>standard enthalpy of reaction, <span class="math notranslate nohighlight">\(\Delta H_m^\circ\)</span></p></li>
+</ul>
+<p>Reaktoro currently supports thermodynamic databases from the following providers:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.usgs.gov/software/phreeqc-version-3">PHREEQC</a></p></li>
+<li><p><a class="reference external" href="https://thermohub.org/thermofun/thermofun/">ThermoFun</a></p></li>
+<li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/009830049290029Q">SUPCRT</a></p></li>
+<li><p><a class="reference external" href="https://models.earth.indiana.edu/supcrtbl.php">SUPCRTBL</a></p></li>
+<li><p><a class="reference external" href="https://www1.grc.nasa.gov/research-and-engineering/ceaweb/">NASA</a></p></li>
+</ul>
+<p>The following classes exist for loading thermodynamic databases:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1PhreeqcDatabase.html"><code class="docutils literal notranslate"><span class="pre">PhreeqcDatabase</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SupcrtDatabase.html"><code class="docutils literal notranslate"><span class="pre">SupcrtDatabase</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ThermoFunDatabase.html"><code class="docutils literal notranslate"><span class="pre">ThermoFunDatabase</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1NasaDatabase.html"><code class="docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All these classes derive from the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> class. They exist to provide you additional convenience and functionality.</p>
+</div>
+<p>Read the next sections to learn how different thermodynamic databases from distinct providers can be loaded in Reaktoro.</p>
+<div class="section" id="phreeqc-databases">
+<h2>PHREEQC Databases<a class="headerlink" href="#phreeqc-databases" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.usgs.gov/software/phreeqc-version-3">PHREEQC</a> <span id="id1">[<a class="reference internal" href="../bibliography.html#id846">Parkhurst and Appelo, 2013</a>]</span> is a well-known scientific software used for geochemical and biogeochemical modelling, and many thermodynamic databases have been compiled for it in the last decades. If you’d like to use Reaktoro with PHREEQC databases, we’ve got you covered. You can do this using a database file available on your computer or one of the following database files embedded into Reaktoro (those provided with PHREEQC v3):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/Amm.dat">Amm.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/ColdChem.dat">ColdChem.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/core10.dat">core10.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/frezchem.dat">frezchem.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/iso.dat">iso.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/llnl.dat">llnl.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/minteq.dat">minteq.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/minteq.v4">minteq.v4</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/phreeqc.dat">phreeqc.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/pitzer.dat">pitzer.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/sit.dat">sit.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/Tipping_Hurley.dat">Tipping_Hurley.dat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/wateq4f.dat">wateq4f.dat</a></p></li>
+</ul>
+<div class="section" id="loading-embedded-phreeqc-database-files">
+<h3>Loading embedded PHREEQC database files<a class="headerlink" href="#loading-embedded-phreeqc-database-files" title="Permalink to this headline">¶</a></h3>
+<p>The following are equivalent ways to load embedded PHREEEQC database files:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-locally-available-phreeqc-database-files">
+<h3>Loading locally available PHREEQC database files<a class="headerlink" href="#loading-locally-available-phreeqc-database-files" title="Permalink to this headline">¶</a></h3>
+<p>The following are equivalent ways to load the same PHREEQC database file from
+your computer:</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Linux and macOS</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Windows</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="thermofun-databases">
+<h2>ThermoFun Databases<a class="headerlink" href="#thermofun-databases" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://thermohub.org/thermofun/thermofun/">ThermoFun</a> is an open-source C++/Python library for the computation of thermodynamic properties of species and reactions. It supports many databases for a wide variety of applications. The following are the currently supported database files:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/thermofun/aq17-thermofun.json">aq17-thermofun.json</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/thermofun/cemdata18-thermofun.json">cemdata18-thermofun.json</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/thermofun/heracles-thermofun.json">heracles-thermofun.json</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/thermofun/mines16-thermofun.json">mines16-thermofun.json</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/thermofun/psinagra-12-07-thermofun.json">psinagra-12-07-thermofun.json</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/thermofun/slop98-organic-thermofun.json">slop98-organic-thermofun.json</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/thermofun/slop98-thermofun.json">slop98-thermofun.json</a></p></li>
+</ul>
+<div class="section" id="loading-embedded-thermofun-database-files">
+<h3>Loading embedded ThermoFun database files<a class="headerlink" href="#loading-embedded-thermofun-database-files" title="Permalink to this headline">¶</a></h3>
+<p>ThermoFun databases are also available in embedded form in Reaktoro for convenience. You need to use one of the following database names:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aq17</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cemdata18</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">heracles</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mines16</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">psinagra-12-07</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slop98-organic</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slop98</span></code></p></li>
+</ul>
+<p>The following are equivalent ways to load the same embedded ThermoFun database file:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-locally-available-thermofun-database-files">
+<h3>Loading locally available ThermoFun database files<a class="headerlink" href="#loading-locally-available-thermofun-database-files" title="Permalink to this headline">¶</a></h3>
+<p>The following are equivalent ways to load the same ThermoFun database file from
+your computer:</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Linux and macOS</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Windows</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="supcrt-and-supcrtbl-databases">
+<h2>SUPCRT and SUPCRTBL Databases<a class="headerlink" href="#supcrt-and-supcrtbl-databases" title="Permalink to this headline">¶</a></h2>
+<p>SUPCRT <span id="id2">[<a class="reference internal" href="../bibliography.html#id516">Johnson <em>et al.</em>, 1992</a>]</span> and SUPCRTBL <span id="id3">[<a class="reference internal" href="../bibliography.html#id20">Zimmer <em>et al.</em>, 2016</a>]</span> databases contain thousands of chemical species (aqueous species, gases, minerals) and are commonly used for biogeochemical modeling applications. These thermodynamic databases contain parameters for equations of state to permit the computation of standard molal thermodynamic properties of minerals, gases, aqueous species, and reactions from 1 to 5000 bar and 0 to 1000°C.</p>
+<div class="section" id="loading-embedded-supcrt-and-supcrtbl-database-files">
+<h3>Loading embedded SUPCRT and SUPCRTBL database files<a class="headerlink" href="#loading-embedded-supcrt-and-supcrtbl-database-files" title="Permalink to this headline">¶</a></h3>
+<p>SUPCRT and SUPCRTBL databases are supported in Reaktoro’s database format using
+<a class="reference external" href="https://yaml.org/">YAML</a>. The currently available embedded database files are
+listed below:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/reaktoro/supcrt98.yaml">supcrt98.yaml</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/reaktoro/supcrt07.yaml">supcrt07.yaml</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/reaktoro/supcrt16.yaml">supcrt16.yaml</a></p></li>
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/reaktoro/supcrtbl.yaml">supcrtbl.yaml</a></p></li>
+</ul>
+<p>The following are equivalent ways to load the same embedded SUPCRT/SUPCRTBL database file:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-locally-available-supcrt-and-supcrtbl-database-files">
+<h3>Loading locally available SUPCRT and SUPCRTBL database files<a class="headerlink" href="#loading-locally-available-supcrt-and-supcrtbl-database-files" title="Permalink to this headline">¶</a></h3>
+<p>The following are equivalent ways to load the same SUPCRT or SUPCRTBL database file from
+your computer:</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Linux and macOS</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Windows</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nasa-databases">
+<h2>NASA Databases<a class="headerlink" href="#nasa-databases" title="Permalink to this headline">¶</a></h2>
+<p>Reaktoro also supports the NASA-CEA thermochemical database <span id="id4">[<a class="reference internal" href="../bibliography.html#id441">Gordon and McBride, 1996</a>, <a class="reference internal" href="../bibliography.html#id799">Gordon and McBride, 1994</a>]</span>. These contain coefficients for NASA-CEA polynomials used to calculate the standard thermodynamic properties of gases and condensed phases. The NASA-CEA database is commonly used for modeling combustion processes in various applications, from rocket propellant combustion to explosives detonation.</p>
+<p>The NASA-CEA database supported in Reaktoro has been converted to Reaktoro’s YAML database format:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/reaktoro/nasa-cea.yaml">nasa-cea.yaml</a>.</p></li>
+</ul>
+<p>This file was constructed by parsing the <a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/utilities/nasa-parser/nasa-cea.dat">original NASA-CEA thermochemical database file</a> and converting it to Reaktoro’s YAML format.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>NASA-CEA database is organized differently in Reaktoro’s YAML database format. In the original NASA-CEA database, identical substances in different physical states and crystal structures (e.g., <code class="docutils literal notranslate"><span class="pre">Mg(L)</span></code> and <code class="docutils literal notranslate"><span class="pre">Mg(cr)</span></code>; <code class="docutils literal notranslate"><span class="pre">MgSO4(II)</span></code>, <code class="docutils literal notranslate"><span class="pre">MgSO4(I)</span></code> and <code class="docutils literal notranslate"><span class="pre">MgSO4(L)</span></code>) are considered distinct chemical species. In Reaktoro’s YAML format, these chemical species are combined into one (e.g., <code class="docutils literal notranslate"><span class="pre">Mg(cd)</span></code>, <code class="docutils literal notranslate"><span class="pre">MgSO4(cd)</span></code>). This was done after observing improved performance and behavior in Reaktoro’s chemical equilibrium algorithm, while still producing identical results. More specifically, this improved the determination of stable phases at equilibrium, which Reaktoro determines during the calculation (not at the end with individual stability tests for currently unstable phases).</p>
+</div>
+<div class="section" id="loading-embedded-nasa-database-files">
+<h3>Loading embedded NASA database files<a class="headerlink" href="#loading-embedded-nasa-database-files" title="Permalink to this headline">¶</a></h3>
+<p>The following are equivalent ways to load the same embedded NASA database file:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-locally-available-nasa-database-files">
+<h3>Loading locally available NASA database files<a class="headerlink" href="#loading-locally-available-nasa-database-files" title="Permalink to this headline">¶</a></h3>
+<p>The following are equivalent ways to load the same NASA database file from your
+computer:</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Linux and macOS</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Windows</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="importing-reaktoro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Importing Reaktoro</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="inspecting-databases.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Inspecting thermodynamic databases</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

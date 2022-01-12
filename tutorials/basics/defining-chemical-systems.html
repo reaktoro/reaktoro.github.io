@@ -1,0 +1,1765 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defining chemical systems</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customized_mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/customize.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating chemical states" href="creating-chemical-states.html" />
+    <link rel="prev" title="Inspecting thermodynamic databases" href="inspecting-databases.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/reaktoro-for-python-and-cpp.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Get Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../installation/index.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-conda.html">
+     Installation using Conda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-cmake.html">
+     Installation using CMake
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/api">
+   API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/v1">
+   Reaktoro v1
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Basics
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="importing-reaktoro.html">
+     Importing Reaktoro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loading-databases.html">
+     Loading thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="inspecting-databases.html">
+     Inspecting thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Defining chemical systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="creating-chemical-states.html">
+     Creating chemical states
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing-chemical-properties.html">
+     Computing chemical properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing-aqueous-properties.html">
+     Computing aqueous properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="specifing-activity-models.html">
+     How to specify activity models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../equilibrium/index.html">
+   Chemical Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-basics.html">
+     Chemical equilibrium: the basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-specifying-constraints.html">
+     Chemical equilibrium with constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph.html">
+     Chemical equilibrium with fixed pH
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph-charge-balance.html">
+     Chemical equilibrium with fixed pH and charge balance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-phase-amount.html">
+     Chemical equilibrium with fixed phase amount
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-fugacity.html">
+     Chemical equilibrium with fixed fugacity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-volume-internal-energy.html">
+     Chemical equilibrium with fixed volume and internal energy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-given-component-amounts.html">
+     Chemical equilibrium with given element and charge amounts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../kinetics/index.html">
+   Chemical Kinetics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kinetics/kinetics-basics.html">
+     How to perform chemical kinetics calculations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About Reaktoro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/citing.html">
+   Citing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/basics/defining-chemical-systems.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/basics/defining-chemical-systems.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/tutorials/basics/defining-chemical-systems.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chemical-system-definition-for-a-mineral-solubility-problem">
+   Chemical system definition for a mineral solubility problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chemical-system-definition-for-a-gas-solubility-problem">
+   Chemical system definition for a gas solubility problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chemical-system-definition-with-many-phases">
+   Chemical system definition with many phases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chemical-system-definition-for-a-combustion-problem">
+   Chemical system definition for a combustion problem
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="defining-chemical-systems">
+<h1>Defining chemical systems<a class="headerlink" href="#defining-chemical-systems" title="Permalink to this headline">¶</a></h1>
+<p>Before performing chemical reaction calculations, such as chemical equilibrium and kinetics, we need to determine the phases that must be considered in the calculation and the chemical species that constitute these phases.</p>
+<p>For example, to calculate the solubility of a mineral in water, two phases must be considered:</p>
+<ul class="simple">
+<li><p>an aqueous phase representing water and dissolved species; and</p></li>
+<li><p>a solid phase representing the mineral we want to dissolve in the aqueous solution.</p></li>
+</ul>
+<p>Another example is the combustion of a solid substance. We must define a chemical system composed of:</p>
+<ul class="simple">
+<li><p>a gaseous phase containing most of the gases relevant to the process; and</p></li>
+<li><p>one or more solid/liquid substances (condensed phases) that may appear during the combustion process.</p></li>
+</ul>
+<p>The concept of a chemical system is represented in Reaktoro using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class. You should expect to construct one object of this class for almost every chemical process you want to model.</p>
+<p>In a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, you can find a list of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> objects representing the phases. The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> class is also an essential component of Reaktoro. It contains the list of chemical species composing the phase, as a list of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a> objects. Additionally, each <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> object includes its activity model to account for its non-ideal thermodynamic behavior.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’ll learn more about activity models in a subsequent section and how to specify them for our phases.</p>
+</div>
+<p>Next, we will present how to construct a chemical system in Reaktoro for different applications.</p>
+<div class="section" id="chemical-system-definition-for-a-mineral-solubility-problem">
+<h2>Chemical system definition for a mineral solubility problem<a class="headerlink" href="#chemical-system-definition-for-a-mineral-solubility-problem" title="Permalink to this headline">¶</a></h2>
+<p>Let’s consider the chemical equilibrium problem associated with calculating the solubility of halite (NaCl) in water. The code block below demonstrates how a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object is created with an aqueous and mineral phase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Let&#39;s use one of PHREEQC&#39;s database</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define an aqueous solution with species that are pertinent to the problem</span>
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- Na+ Cl-&quot;</span><span class="p">)</span>
+
+<span class="c1"># Because we want to compute the solubility of halite, a mineral phase is needed</span>
+<span class="n">halite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Halite&quot;</span><span class="p">)</span>
+
+<span class="c1"># We can now create our ChemicalSystem object with the above phase specifications</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">halite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s it! With the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object created above, we can do some exciting things. For example, we can inspect the phases in the system and their composing chemical species:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">phase</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">phase</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AqueousPhase
+:: H2O
+:: H+
+:: OH-
+:: Na+
+:: Cl-
+Halite
+:: Halite
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reaktoro has default names for phases, such as <code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code> and <code class="docutils literal notranslate"><span class="pre">GaseousPhase``</span> <span class="pre">for</span> <span class="pre">aqueous</span> <span class="pre">and</span> <span class="pre">gaseous</span> <span class="pre">phases.</span> <span class="pre">For</span> <span class="pre">pure</span> <span class="pre">mineral</span> <span class="pre">phases,</span> <span class="pre">the</span> <span class="pre">phase</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">name</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">mineral</span> <span class="pre">species</span> <span class="pre">composing</span> <span class="pre">it.</span> <span class="pre">That's</span> <span class="pre">is</span> <span class="pre">why</span> <span class="pre">the</span> <span class="pre">mineral</span> <span class="pre">phase</span> <span class="pre">above</span> <span class="pre">is</span> <span class="pre">named</span> </code>Halite<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">whose</span> <span class="pre">only</span> <span class="pre">composing</span> <span class="pre">species</span> <span class="pre">is</span> <span class="pre">called</span> </code>Halite`. Note also that Reaktoro supports as many phases as you wish, each phase containing any number of species. We will demonstrate this in subsequent tutorials.</p>
+</div>
+<p>We can also inspect how the chemical species are ordered in the system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H2O
+H+
+OH-
+Na+
+Cl-
+Halite
+</pre></div>
+</div>
+</div>
+</div>
+<p>And inspect the chemical elements in the system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">.</span><span class="nf">symbol</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
+O
+Na
+Cl
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class also contains the formula matrix <span class="math notranslate nohighlight">\(A\)</span> of the system, which is a matrix whose entry <span class="math notranslate nohighlight">\(A_{j,i}\)</span> contains the number of atoms of element with index <span class="math notranslate nohighlight">\(j\)</span> in species with index <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="p">.</span><span class="nf">formulaMatrix</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2.  1.  1.  0.  0.  0.]
+ [ 1.  0.  1.  0.  0.  0.]
+ [ 0.  0.  0.  1.  0.  1.]
+ [ 0.  0.  0.  0.  1.  1.]
+ [ 0.  1. -1.  1. -1.  0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The last row in the formula matrix contains the electric charge of each species.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code>!</p>
+</div>
+</div>
+<div class="section" id="chemical-system-definition-for-a-gas-solubility-problem">
+<h2>Chemical system definition for a gas solubility problem<a class="headerlink" href="#chemical-system-definition-for-a-gas-solubility-problem" title="Permalink to this headline">¶</a></h2>
+<p>We now consider a chemical system of interest for the computation of CO<sub>2</sub> solubility in saline solutions. For this case, we will need an aqueous and gaseous phase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Let&#39;s use the SUPCRTBL database this time</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define an aqueous solution with automatic species collection for given selected elements</span>
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca C&quot;</span><span class="p">))</span>
+
+<span class="c1"># Let Reaktoro automatically identify the gases by specifying an empty list of species below</span>
+<span class="n">gas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>
+
+<span class="c1"># We can now create our ChemicalSystem object with the above phase specifications</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s print the species in the system, their names, formula, and molar mass:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;25}{:&lt;25}{:&lt;20}</span><span class="s2">&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Formula&quot;</span><span class="p">,</span> <span class="s2">&quot;Molar Mass (kg/mol)&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;25}{:&lt;25}{:&lt;20.6f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">(),</span> <span class="n">species</span><span class="p">.</span><span class="nf">formula</span><span class="p">()</span><span class="o">.</span><span class="nf">str</span><span class="p">(),</span> <span class="n">species</span><span class="p">.</span><span class="nf">molarMass</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name                     Formula                  Molar Mass (kg/mol) 
+H2O(aq)                  H2O                      0.018015            
+CaOH+                    CaOH+                    0.057085            
+CO(aq)                   CO                       0.028010            
+CO2(aq)                  CO2                      0.044010            
+CO3-2                    CO3-2                    0.060010            
+Ca(HCO3)+                Ca(HCO3)+                0.101095            
+Ca+2                     Ca+2                     0.040077            
+CaCl+                    CaCl+                    0.075530            
+CaCl2(aq)                CaCl2                    0.110983            
+Cl-                      Cl-                      0.035453            
+HClO(aq)                 HClO                     0.052460            
+ClO-                     ClO-                     0.051453            
+ClO2-                    ClO2-                    0.067452            
+ClO3-                    ClO3-                    0.083451            
+ClO4-                    ClO4-                    0.099451            
+H+                       H+                       0.001007            
+H2(aq)                   H2                       0.002016            
+HCO3-                    HCO3-                    0.061018            
+HO2-                     HO2-                     0.033007            
+Na+                      Na+                      0.022989            
+NaCl(aq)                 NaCl                     0.058442            
+NaOH(aq)                 NaOH                     0.039997            
+O2(aq)                   O2                       0.031999            
+OH-                      OH-                      0.017008            
+H2O2(aq)                 H2O2                     0.034015            
+HClO2(aq)                HClO2                    0.068459            
+HCl(aq)                  HCl                      0.036461            
+CaCO3(aq)                CaCO3                    0.100087            
+CH4(aq)                  CH4                      0.016043            
+H-Acetate(aq)            C2H4O2                   0.060053            
+Acetate-                 C2H3O2-                  0.059045            
+1-Butanol(aq)            C4H9OH                   0.074123            
+1-Butene(aq)             C4H8                     0.056108            
+1-Butyne(aq)             C4H6                     0.054092            
+1-Heptanol(aq)           C7H15OH                  0.116203            
+1-Heptene(aq)            C7H14                    0.098188            
+1-Heptyne(aq)            C7H12                    0.096172            
+1-Hexanol(aq)            C6H13OH                  0.102177            
+1-Hexene(aq)             C6H12                    0.084161            
+1-Hexyne(aq)             C6H10                    0.082145            
+1-Octanol(aq)            C8H17OH                  0.130230            
+1-Octene(aq)             C8H16                    0.112215            
+1-Octyne(aq)             C8H14                    0.110199            
+1-Pentanol(aq)           C5H11OH                  0.088150            
+1-Pentene(aq)            C5H10                    0.070134            
+1-Pentyne(aq)            C5H8                     0.068119            
+1-Propanol(aq)           C3H7OH                   0.060096            
+1-Propene(aq)            C3H6                     0.042081            
+1-Propyne(aq)            C3H4                     0.040065            
+2-Butanone(aq)           C4H8O                    0.072107            
+2-Heptanone(aq)          C7H14O                   0.114188            
+2-Hexanone(aq)           C6H12O                   0.100161            
+2-Hydroxybutanoate       C4H7O3-                  0.103098            
+2-Hydroxybutanoic(aq)    C4H8O3                   0.104106            
+2-Hydroxydecanoate       C10H19O3-                0.187260            
+2-Hydroxydecanoic(aq)    C10H20O3                 0.188267            
+2-Hydroxyheptanoic       C7H14O3                  0.146186            
+2-Hydroxyhexanoate       C6H11O3-                 0.131152            
+2-Hydroxyhexanoic(aq)    C6H12O3                  0.132159            
+2-Hydroxynonanoate       C9H17O3-                 0.173233            
+2-Hydroxynonanoic(aq)    C9H18O3                  0.174240            
+2-Hydroxyoctanoate       C8H15O3-                 0.159206            
+2-Hydroxyoctanoic(aq)    C8H16O3                  0.160213            
+2-Hydroxypentanoic       C5H10O3                  0.118133            
+2-Octanone(aq)           C8H16O                   0.128214            
+2-Pentanone(aq)          C5H10O                   0.086134            
+Acetone(aq)              C3H6O                    0.058080            
+Adipate                  C6H8O4-2                 0.144128            
+Adipic-Acid(aq)          C6H10O4                  0.146143            
+Azelaic-Acid(aq)         C9H16O4                  0.188224            
+Azelate                  C9H14O4-2                0.186209            
+Benzene(aq)              C6H6                     0.078114            
+Benzoate                 C7H5O2-                  0.121116            
+Benzoic-Acid(aq)         C7H6O2                   0.122123            
+o-Cresol(aq)             C6H4OHCH3                0.108140            
+m-Cresol(aq)             C6H4OHCH3                0.108140            
+p-Cresol(aq)             C6H4OHCH3                0.108140            
+Decanoate                C10H19O2-                0.171260            
+Decanoic-Acid(aq)        C10H20O2                 0.172268            
+2,3-DMP(aq)              C6H3OHCH3CH3             0.122167            
+2,4-DMP(aq)              C6H3OHCH3CH3             0.122167            
+2,5-DMP(aq)              C6H3OHCH3CH3             0.122167            
+2,6-DMP(aq)              C6H3OHCH3CH3             0.122167            
+3,4-DMP(aq)              C6H3OHCH3CH3             0.122167            
+3,5-DMP(aq)              C6H3OHCH3CH3             0.122167            
+Dodecanoate              C12H23O2-                0.199314            
+Dodecanoic-Acid(aq)      C12H24O2                 0.200321            
+Ethane(aq)               C2H6                     0.030070            
+Ethanol(aq)              C2H5OH                   0.046069            
+Ethylacetate(aq)         CH3COOCH2CH3             0.088106            
+Ethylbenzene(aq)         C6H5C2H5                 0.106167            
+Ethylene(aq)             C2H4                     0.028054            
+Ethyne(aq)               C2H2                     0.026038            
+Glutarate                C5H6O4-2                 0.130101            
+Glutaric-Acid(aq)        C5H8O4                   0.132116            
+H-Adipate                C6H9O4-                  0.145136            
+H-Azelate                C9H15O4-                 0.187216            
+H-Glutarate              C5H7O4-                  0.131109            
+H-Malonate               C3H3O4-                  0.103055            
+H-Oxalate                C2HO4-                   0.089028            
+H-Pimelate               C7H11O4-                 0.159162            
+H-Sebacate               C10H17O4-                0.201243            
+H-Suberate               C8H13O4-                 0.173189            
+H-Succinate              C4H5O4-                  0.117082            
+Heptanoate               C7H13O2-                 0.129180            
+Heptanoic-Acid(aq)       C7H14O2                  0.130187            
+Hexanoate                C6H11O2-                 0.115153            
+Hexanoic-Acid(aq)        C6H12O2                  0.116160            
+m-Toluate                C8H7O2-                  0.135143            
+m-Toluic-Acid(aq)        C8H8O2                   0.136150            
+Malonate                 C3H2O4-2                 0.102048            
+Malonic-Acid(aq)         C3H4O4                   0.104062            
+Methanol(aq)             CH3OH                    0.032042            
+n-Butane(aq)             C4H10                    0.058123            
+n-Butylbenzene(aq)       C6H5C4H9                 0.134221            
+n-Heptane(aq)            C7H16                    0.100204            
+n-Heptylbenzene(aq)      C6H5C7H15                0.176302            
+n-Hexane(aq)             C6H14                    0.086177            
+n-Hexylbenzene(aq)       C6H5C6H13                0.162275            
+n-Octane(aq)             C8H18                    0.114231            
+n-Octylbenzene(aq)       C6H5C8H17                0.190329            
+n-Pentane(aq)            C5H12                    0.072150            
+n-Pentylbenzene(aq)      C6H5C5H1                 0.148248            
+n-Propylbenzene(aq)      C6H5C3H7                 0.120194            
+Nonanoate                C9H17O2-                 0.157233            
+Nonanoic-Acid(aq)        C9H18O2                  0.158241            
+o-Toluate                C8H7O2-                  0.135143            
+o-Toluic-Acid(aq)        C8H8O2                   0.136150            
+Octanoate                C8H15O2-                 0.143206            
+Octanoic-Acid(aq)        C8H16O2                  0.144214            
+Oxalate                  C2O4-2                   0.088021            
+Oxalic-Acid(aq)          C2H2O4                   0.090035            
+p-Toluate                C8H7O2-                  0.135143            
+p-Toluic-Acid(aq)        C8H8O2                   0.136150            
+Phenol(aq)               C6H5OH                   0.094113            
+Pimelate                 C7H10O4-2                0.158155            
+Pimelic-Acid(aq)         C7H12O4                  0.160170            
+Propane(aq)              C3H8                     0.044097            
+Sebacate                 C10H16O4-2               0.200236            
+Sebacic-Acid(aq)         C10H18O4                 0.202251            
+Suberate                 C8H12O4-2                0.172182            
+Suberic-Acid(aq)         C8H14O4                  0.174197            
+Succinate                C4H4O4-2                 0.116074            
+Succinic-Acid(aq)        C4H6O4                   0.118089            
+Toluene(aq)              C6H5CH3                  0.092141            
+Undecanoate              C11H21O2-                0.185287            
+Undecanoic-Acid(aq)      C11H22O2                 0.186294            
+Acetaldehyde(aq)         CH3CHO                   0.044053            
+Butanal(aq)              CH3(CH2)2CHO             0.072107            
+Decanal(aq)              CH3(CH2)8CHO             0.156268            
+Formaldehyde(aq)         HCHO                     0.030026            
+Heptanal(aq)             CH3(CH2)5CHO             0.114188            
+Hexanal(aq)              CH3(CH2)4CHO             0.100161            
+Nonanal(aq)              CH3(CH2)7CHO             0.142241            
+Octanal(aq)              CH3(CH2)6CHO             0.128214            
+Pentanal(aq)             CH3(CH2)3CHO             0.086134            
+Propanal(aq)             CH3CH2CHO                0.058080            
+Na(Ac)(aq)               NaCH3COO                 0.082034            
+Na(Ac)2-                 Na(CH3COO)2-             0.141080            
+Ca(Ac)+                  CaCH3COO+                0.099122            
+Ca(Ac)2(aq)              Ca(CH3COO)2              0.158167            
+Lactate                  C3H5O3-                  0.089071            
+Lactic-Acid(aq)          C3H6O3                   0.090079            
+Ca(Lac)+                 CaCH3CH2OCO2+            0.129148            
+Ca(Lac)2(aq)             Ca(CH3CH2OCO2)2          0.218220            
+Na(Lac)(aq)              NaCH3CH2OCO2             0.112061            
+Na(Lac)2-                Na(CH3CH2OCO2)2-         0.201132            
+Glycolic-Acid(aq)        C2H4O3                   0.076052            
+Glycolate                C2H3O3-                  0.075045            
+Ca(Glyc)+                CaCH3OCO2+               0.115121            
+Ca(Glyc)2(aq)            Ca(CH3OCO2)2             0.190166            
+Na(Glyc)(aq)             Na(CH3OCO2)              0.098034            
+Na(Glyc)2-               Na(CH3OCO2)2-            0.173078            
+Formic-Acid(aq)          H2CO2                    0.046026            
+Formate                  HCO2-                    0.045018            
+Ca(For)+                 CaCHO2+                  0.085095            
+Ca(For)2(aq)             Ca(CHO2)2                0.130113            
+Na(For)(aq)              NaCHO2                   0.068008            
+Na(For)2-                Na(CHO2)2-               0.113026            
+Propanoic-Acid(aq)       C3H6O2                   0.074079            
+Propanoate               C3H5O2-                  0.073072            
+Ca(Prop)+                CaCH3CH2CO2+             0.113149            
+Ca(Prop)2(aq)            Ca(CH3CH2CO2)2           0.186221            
+Na(Prop)(aq)             NaCH3CH2CO2              0.096061            
+Na(Prop)2-               Na(CH3CH2CO2)2-          0.169133            
+Butanoic-Acid(aq)        C4H8O2                   0.088106            
+Butanoate                C4H7O2-                  0.087099            
+Ca(But)+                 CaCH3(CH2)2CO2+          0.127176            
+Ca(But)2(aq)             Ca(CH3CH2CH2CO2)2        0.214275            
+Na(But)(aq)              NaCH3(CH2)2CO2           0.110088            
+Na(But)2-                Na(CH3CH2CH2CO2)2-       0.197187            
+Pentanoic-Acid(aq)       C5H10O2                  0.102133            
+Pentanoate               C5H9O2-                  0.101126            
+Ca(Pent)+                CaCH3(CH2)3CO2+          0.141203            
+Ca(Pent)2(aq)            Ca(CH3CH2CH2CH2CO2)2     0.242329            
+Na(Pent)(aq)             NaCH3(CH2)3CO2           0.124115            
+Na(Pent)2-               Na(CH3CH2CH2CH2CO2)2-    0.225241            
+CH4(g)                   CH4                      0.016043            
+CO(g)                    CO                       0.028010            
+CO2(g)                   CO2                      0.044010            
+H2(g)                    H2                       0.002016            
+O2(g)                    O2                       0.031999            
+H2O(g)                   H2O                      0.018015            
+Phenol(g)                C6H5OH                   0.094113            
+o-Cresol(g)              CH3C6H4(OH)              0.108140            
+m-Cresol(g)              CH3C6H4(OH)              0.108140            
+p-Cresol(g)              CH3C6H4(OH)              0.108140            
+Ethylene(g)              C2H4                     0.028054            
+</pre></div>
+</div>
+</div>
+</div>
+<p>This chemical system contains many species. The SUPCRTBL database contains many
+organic species that should play an insignificant role in accurately computing
+CO<sub>2</sub> solubility. All organic species in SUPCRT and SUPCRTBL databases in
+Reaktoro’s YAML format have an organic tag which we can use to filter out them.</p>
+<p>Let’s then redefine our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object <code class="docutils literal notranslate"><span class="pre">system</span></code> by excluding those
+organic aqueous species and specifying exactly the gases we want:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca C&quot;</span><span class="p">),</span> <span class="nf">exclude</span><span class="p">(</span><span class="s2">&quot;organic&quot;</span><span class="p">))</span>
+
+<span class="n">gas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure you specify species names exactly how they exist in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a>
+object you have created, such as in <code class="docutils literal notranslate"><span class="pre">GaseousPhase(&quot;CO2(g)&quot;)</span></code> above. Otherwise
+you will get a runtime exception!</p>
+</div>
+<p>And here is the updated list of species (only their names this time):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H2O(aq)
+CaOH+
+CO(aq)
+CO2(aq)
+CO3-2
+Ca(HCO3)+
+Ca+2
+CaCl+
+CaCl2(aq)
+Cl-
+HClO(aq)
+ClO-
+ClO2-
+ClO3-
+ClO4-
+H+
+H2(aq)
+HCO3-
+HO2-
+Na+
+NaCl(aq)
+NaOH(aq)
+O2(aq)
+OH-
+H2O2(aq)
+HClO2(aq)
+HCl(aq)
+CaCO3(aq)
+CO2(g)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may still be discontent with so many aqueous species for the sake of CO<sub>2</sub> solubility calculation. We demonstrate with the code block below how to specify the exact aqueous species to be considered in the phase using a list of species names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aqueous_species</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;H2O(aq)&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;CaOH+&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;CO2(aq)&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;CO3-2&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Ca(HCO3)+&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;CaCl+&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;H+&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;HCO3-&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;HO2-&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Na+&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;OH-&quot;</span>
+<span class="p">]</span>
+
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="n">aqueous_species</span><span class="p">)</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H2O(aq)
+CaOH+
+CO2(aq)
+CO3-2
+Ca(HCO3)+
+Ca+2
+CaCl+
+Cl-
+H+
+HCO3-
+HO2-
+Na+
+OH-
+CO2(g)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="chemical-system-definition-with-many-phases">
+<h2>Chemical system definition with many phases<a class="headerlink" href="#chemical-system-definition-with-many-phases" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s overcomplicate and define a chemical system with many phases and
+species. We have an aqueous solution for which we know the chemical elements of
+interest. We want Reaktoro to automatically include in our chemical system all
+minerals that could potentially be important (e.g., minerals that could
+precipitate as the solution temperature is changed). These are minerals in the
+database whose constituting elements are found in the aqueous solution. We also
+want to show how a mineral phase can be defined as a solid solution (containing
+more than one mineral end-member).</p>
+<p>We demonstrate the above requirements for creating a chemical system in the
+code block below. Note the use of the <code class="docutils literal notranslate"><span class="pre">cemdata18</span></code> database provided by
+ThermoFun, which is suitable for modeling cement chemistry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca Mg C Si Fe Al K S&quot;</span><span class="p">))</span>
+<span class="n">gas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>
+<span class="n">pureminerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
+<span class="n">solidsolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;ettringite Fe-ettringite&quot;</span><span class="p">)</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">,</span> <span class="n">pureminerals</span><span class="p">,</span> <span class="n">solidsolution</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s now print the phase names and their composing species:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">phase</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">phase</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AqueousPhase
+:: Al(SO4)+
+:: Al(SO4)2-
+:: Al+3
+:: AlO+
+:: AlO2-
+:: AlO2H@
+:: AlOH+2
+:: AlSiO5-3
+:: CH4@
+:: CO2@
+:: CO3-2
+:: Ca(CO3)@
+:: Ca(HCO3)+
+:: Ca(HSiO3)+
+:: Ca(SO4)@
+:: Ca+2
+:: CaOH+
+:: CaSiO3@
+:: Cl-
+:: ClO4-
+:: Fe(CO3)@
+:: Fe(HCO3)+
+:: Fe(HSO4)+
+:: Fe(HSO4)+2
+:: Fe(SO4)+
+:: Fe(SO4)2-
+:: Fe(SO4)@
+:: Fe+2
+:: Fe+3
+:: FeCl+
+:: FeCl+2
+:: FeCl2+
+:: FeCl3@
+:: FeO+
+:: FeO2-
+:: FeO2H@
+:: FeOH+
+:: FeOH+2
+:: H+
+:: H2@
+:: H2O@
+:: H2S@
+:: HCO3-
+:: HS-
+:: HSO3-
+:: HSO4-
+:: HSiO3-
+:: K(SO4)-
+:: K+
+:: KOH@
+:: Mg(CO3)@
+:: Mg(HCO3)+
+:: Mg(HSiO3)+
+:: Mg+2
+:: MgOH+
+:: MgSO4@
+:: Na(CO3)-
+:: Na(HCO3)@
+:: Na(SO4)-
+:: Na+
+:: NaOH@
+:: O2@
+:: OH-
+:: S2O3-2
+:: SO3-2
+:: SO4-2
+:: Si4O10-4
+:: SiO2@
+:: SiO3-2
+GaseousPhase
+:: CH4
+:: CO2
+:: H2
+:: H2O
+:: H2S
+:: O2
+ettringite
+:: ettringite
+:: Fe-ettringite
+5CA
+:: 5CA
+5CNA
+:: 5CNA
+AlOHam
+:: AlOHam
+AlOHmic
+:: AlOHmic
+Amor-Sl
+:: Amor-Sl
+Anh
+:: Anh
+Arg
+:: Arg
+Brc
+:: Brc
+C12A7
+:: C12A7
+C2AClH5
+:: C2AClH5
+C2AH65
+:: C2AH65
+C2AH7.5
+:: C2AH7.5
+C2S
+:: C2S
+C3A
+:: C3A
+C3AFS0.84H4.32
+:: C3AFS0.84H4.32
+C3AH6
+:: C3AH6
+C3AS0.41H5.18
+:: C3AS0.41H5.18
+C3AS0.84H4.32
+:: C3AS0.84H4.32
+C3FH6
+:: C3FH6
+C3FS0.84H4.32
+:: C3FS0.84H4.32
+C3FS1.34H3.32
+:: C3FS1.34H3.32
+C3S
+:: C3S
+C4AClH10
+:: C4AClH10
+C4AF
+:: C4AF
+C4AH11
+:: C4AH11
+C4AH13
+:: C4AH13
+C4AH19
+:: C4AH19
+C4AsClH12
+:: C4AsClH12
+C4FH13
+:: C4FH13
+CA
+:: CA
+CA2
+:: CA2
+CAH10
+:: CAH10
+CSH3T-T2C
+:: CSH3T-T2C
+CSH3T-T5C
+:: CSH3T-T5C
+CSH3T-TobH
+:: CSH3T-TobH
+CSHQ-JenD
+:: CSHQ-JenD
+CSHQ-JenH
+:: CSHQ-JenH
+CSHQ-TobD
+:: CSHQ-TobD
+CSHQ-TobH
+:: CSHQ-TobH
+Cal
+:: Cal
+Dis-Dol
+:: Dis-Dol
+ECSH1-KSH
+:: ECSH1-KSH
+ECSH1-NaSH
+:: ECSH1-NaSH
+ECSH1-SH
+:: ECSH1-SH
+ECSH1-TobCa
+:: ECSH1-TobCa
+ECSH2-JenCa
+:: ECSH2-JenCa
+ECSH2-KSH
+:: ECSH2-KSH
+ECSH2-NaSH
+:: ECSH2-NaSH
+ECSH2-TobCa
+:: ECSH2-TobCa
+Ettringite13_des
+:: Ettringite13_des
+Ettringite9_des
+:: Ettringite9_des
+Fe
+:: Fe
+Fe-ettringite
+:: Fe-ettringite
+Fe-ettringite05
+:: Fe-ettringite05
+Fe-hemicarbonate
+:: Fe-hemicarbonate
+Fe-monosulph05
+:: Fe-monosulph05
+Fe-monosulphate
+:: Fe-monosulphate
+FeOOHmic
+:: FeOOHmic
+Femonocarbonate
+:: Femonocarbonate
+Gbs
+:: Gbs
+Gp
+:: Gp
+Gr
+:: Gr
+Gt
+:: Gt
+Hem
+:: Hem
+INFCA
+:: INFCA
+INFCN
+:: INFCN
+INFCNA
+:: INFCNA
+Jennite
+:: Jennite
+K2O
+:: K2O
+K2SO4
+:: K2SO4
+KSiOH
+:: KSiOH
+Kln
+:: Kln
+Lim
+:: Lim
+M075SH
+:: M075SH
+M15SH
+:: M15SH
+M4A-OH-LDH
+:: M4A-OH-LDH
+M6A-OH-LDH
+:: M6A-OH-LDH
+M8A-OH-LDH
+:: M8A-OH-LDH
+Mag
+:: Mag
+Melanterite
+:: Melanterite
+Mg2AlC0.5OH
+:: Mg2AlC0.5OH
+Mg2FeC0.5OH
+:: Mg2FeC0.5OH
+Mg3AlC0.5OH
+:: Mg3AlC0.5OH
+Mg3FeC0.5OH
+:: Mg3FeC0.5OH
+Mgs
+:: Mgs
+Na2O
+:: Na2O
+Na2SO4
+:: Na2SO4
+NaSiOH
+:: NaSiOH
+Ord-Dol
+:: Ord-Dol
+Portlandite
+:: Portlandite
+Py
+:: Py
+Qtz
+:: Qtz
+Sd
+:: Sd
+Sulfur
+:: Sulfur
+T2C-CNASHss
+:: T2C-CNASHss
+T5C-CNASHss
+:: T5C-CNASHss
+Tob-I
+:: Tob-I
+Tob-II
+:: Tob-II
+TobH-CNASHss
+:: TobH-CNASHss
+Tro
+:: Tro
+chabazite
+:: chabazite
+ettringite!
+:: ettringite
+ettringite03_ss
+:: ettringite03_ss
+ettringite05
+:: ettringite05
+ettringite13
+:: ettringite13
+ettringite30
+:: ettringite30
+ettringite9
+:: ettringite9
+ettringite_ss
+:: ettringite_ss
+hemicarbonat10.5
+:: hemicarbonat10.5
+hemicarbonate
+:: hemicarbonate
+hemicarbonate9
+:: hemicarbonate9
+hemihydrate
+:: hemihydrate
+hydrotalcite
+:: hydrotalcite
+monocarbonate
+:: monocarbonate
+monocarbonate05
+:: monocarbonate05
+monocarbonate9
+:: monocarbonate9
+monosulphate10.5
+:: monosulphate10.5
+monosulphate12
+:: monosulphate12
+monosulphate1205
+:: monosulphate1205
+monosulphate14
+:: monosulphate14
+monosulphate16
+:: monosulphate16
+monosulphate9
+:: monosulphate9
+natrolite
+:: natrolite
+straetlingite
+:: straetlingite
+straetlingite5.5
+:: straetlingite5.5
+straetlingite7
+:: straetlingite7
+syngenite
+:: syngenite
+thaumasite
+:: thaumasite
+tricarboalu
+:: tricarboalu
+tricarboalu03
+:: tricarboalu03
+zeoliteP_Ca
+:: zeoliteP_Ca
+zeoliteX
+:: zeoliteX
+zeoliteY
+:: zeoliteY
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If efficient calculations are required in your application, you may want to be more selective in the phases and species that populate your chemical system! Unfortunately, it is not always possible to know in advance the species that do not make sense for our model. So do it carefully. Ensure that for all thermodynamic/chemical conditions of interest (e.g. for temperature, pressure ranges of interest) the species you want to exclude from the system are negligible (i.e. exist with numerically zero or tiny amounts).</p>
+</div>
+<p>Imagine, however, you are dealing with two minerals and water and you don’t
+want to specify the chemical elements in the definition of the aqueous phase.
+This is what you can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">()</span>
+<span class="n">albite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Albite&quot;</span><span class="p">)</span>
+<span class="n">kaolinite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Kaolinite&quot;</span><span class="p">)</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">albite</span><span class="p">,</span> <span class="n">kaolinite</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s now find out which aqueous species were selected automatically for our
+aqueous phase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aqueousphase</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">()</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">aqueousphase</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H+
+H2O
+Al+3
+Al(OH)2+
+Al(OH)3
+Al(OH)4-
+AlOH+2
+H2
+H4SiO4
+H2SiO4-2
+H3SiO4-
+Na+
+OH-
+NaOH
+O2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="chemical-system-definition-for-a-combustion-problem">
+<h2>Chemical system definition for a combustion problem<a class="headerlink" href="#chemical-system-definition-for-a-combustion-problem" title="Permalink to this headline">¶</a></h2>
+<p>Forget about water now and let’s construct a chemical system suitable for modeling the combustion of black powder. Black powder is composed of potassium nitrate (KNO<sub>3</sub>), charcoal (C<sub>10</sub>Ca<sub>0.026</sub>H<sub>4.774</sub>N<sub>0.039</sub>O<sub>1.234</sub>), and sulfur (S<sub>8</sub>).</p>
+<p>In the code block below we construct a chemical system using the chemical elements above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s use the NASA-CEA database for this example</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+
+<span class="c1"># Consider all possible condensed phases (solid or liquid substances) with given elements</span>
+<span class="n">condensed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">CondensedPhases</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;K N O C Ca H S&quot;</span><span class="p">))</span>
+
+<span class="c1"># Automatically select the gases based on the elements above</span>
+<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>  
+
+<span class="c1"># Create a chemical system suitable for modeling combustion of black powder!</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">,</span> <span class="n">condensed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We print below the gases and condensed phases constituting our chemical system:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gases&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">species</span><span class="p">.</span><span class="nf">aggregateState</span><span class="p">()</span> <span class="o">==</span> <span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condensed Phases&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">species</span><span class="p">.</span><span class="nf">aggregateState</span><span class="p">()</span> <span class="o">==</span> <span class="n">AggregateState</span><span class="o">.</span><span class="n">CondensedPhase</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gases
+:: e-
+:: C
+:: C+
+:: C-
+:: CH
+:: CH+
+:: CH2
+:: CH3
+:: CH2OH
+:: CH2OH+
+:: CH3O
+:: CH4
+:: CH3OH
+:: CH3OOH
+:: CN
+:: CN+
+:: CN-
+:: CNN
+:: CO
+:: CO+
+:: COS
+:: CO2
+:: CO2+
+:: COOH
+:: CS
+:: CS2
+:: C2
+:: C2+
+:: C2-
+:: C2H
+:: C2H2,acetylene
+:: C2H2,vinylidene
+:: CH2CO,ketene
+:: O(CH)2O
+:: HO(CO)2OH
+:: C2H3,vinyl
+:: CH3CN
+:: CH3CO,acetyl
+:: C2H4
+:: C2H4O,ethylen-o
+:: CH3CHO,ethanal
+:: CH3COOH
+:: OHCH2COOH
+:: C2H5
+:: C2H6
+:: CH3N2CH3
+:: C2H5OH
+:: CH3OCH3
+:: CH3O2CH3
+:: CCN
+:: CNC
+:: OCCN
+:: C2N2
+:: C2O
+:: C2S2
+:: C3
+:: C3H3,1-propynl
+:: C3H3,2-propynl
+:: C3H4,allene
+:: C3H4,propyne
+:: C3H4,cyclo-
+:: C3H5,allyl
+:: C3H6,propylene
+:: C3H6,cyclo-
+:: C3H6O,propylox
+:: C3H6O,acetone
+:: C3H6O,propanal
+:: C3H7,n-propyl
+:: C3H7,i-propyl
+:: C3H8
+:: C3H8O,1propanol
+:: C3H8O,2propanol
+:: CNCOCN
+:: C3OS
+:: C3O2
+:: C3S2
+:: C4
+:: C4H2,butadiyne
+:: C4H4,1,3-cyclo-
+:: C4H6,butadiene
+:: C4H6,1butyne
+:: C4H6,2butyne
+:: C4H6,cyclo-
+:: C4H8,1-butene
+:: C4H8,cis2-buten
+:: C4H8,tr2-butene
+:: C4H8,isobutene
+:: C4H8,cyclo-
+:: (CH3COOH)2
+:: C4H9,n-butyl
+:: C4H9,i-butyl
+:: C4H9,s-butyl
+:: C4H9,t-butyl
+:: C4H10,n-butane
+:: C4H10,isobutane
+:: C4N2
+:: C5
+:: C5H6,1,3cyclo-
+:: C5H8,cyclo-
+:: C5H10,1-pentene
+:: C5H10,cyclo-
+:: C5H11,pentyl
+:: C5H11,t-pentyl
+:: C5H12,n-pentane
+:: C5H12,i-pentane
+:: CH3C(CH3)2CH3
+:: C6H2
+:: C6H5,phenyl
+:: C6H5O,phenoxy
+:: C6H6
+:: C6H5OH,phenol
+:: C6H10,cyclo-
+:: C6H12,1-hexene
+:: C6H12,cyclo-
+:: C6H13,n-hexyl
+:: C6H14,n-hexane
+:: C7H7,benzyl
+:: C7H8
+:: C7H8O,cresol-mx
+:: C7H14,1-heptene
+:: C7H15,n-heptyl
+:: C7H16,n-heptane
+:: C7H16,2-methylh
+:: C8H8,styrene
+:: C8H10,ethylbenz
+:: C8H16,1-octene
+:: C8H17,n-octyl
+:: C8H18,n-octane
+:: C8H18,isooctane
+:: C9H19,n-nonyl
+:: C10H8,naphthale
+:: C10H21,n-decyl
+:: C12H9,o-bipheny
+:: C12H10,biphenyl
+:: Ca
+:: Ca+
+:: CaH
+:: CaO
+:: CaO+
+:: CaOH
+:: CaOH+
+:: Ca(OH)2
+:: CaS
+:: Ca2
+:: H
+:: H+
+:: H-
+:: HCN
+:: HCO
+:: HCO+
+:: HCCN
+:: HCCO
+:: HNC
+:: HNCO
+:: HNO
+:: HNO2
+:: HNO3
+:: HO2
+:: HO2-
+:: H2
+:: H2+
+:: H2-
+:: HCHO,formaldehy
+:: HCOOH
+:: H2O
+:: H2O+
+:: H2O2
+:: H2S
+:: H2SO4
+:: H3O+
+:: (HCOOH)2
+:: K
+:: K+
+:: K-
+:: KCN
+:: KH
+:: KNO2
+:: KNO3
+:: KO
+:: KOH
+:: K2
+:: K2+
+:: K2CO3
+:: K2C2N2
+:: K2O
+:: K2O+
+:: K2O2
+:: K2O2H2
+:: K2SO4
+:: N
+:: N+
+:: N-
+:: NCO
+:: NH
+:: NH+
+:: NH2
+:: NH3
+:: NH2OH
+:: NH4+
+:: NO
+:: NO+
+:: NO2
+:: NO2-
+:: NO3
+:: NO3-
+:: N2
+:: N2+
+:: N2-
+:: NCN
+:: N2H2
+:: NH2NO2
+:: N2H4
+:: N2O
+:: N2O+
+:: N2O3
+:: N2O4
+:: N2O5
+:: N3
+:: N3H
+:: O
+:: O+
+:: O-
+:: OH
+:: OH+
+:: OH-
+:: O2
+:: O2+
+:: O2-
+:: O3
+:: S
+:: S+
+:: S-
+:: SH
+:: SH-
+:: SN
+:: SO
+:: SO-
+:: SO2
+:: SO2-
+:: SO3
+:: S2
+:: S2-
+:: S2O
+:: S3
+:: S4
+:: S5
+:: S6
+:: S7
+:: S8
+:: JP-10(g)
+:: Jet-A(g)
+Condensed Phases
+:: Ca(cd)
+:: CaCO3(cd)
+:: CaH2(cd)
+:: CaO(cd)
+:: Ca(OH)2(cd)
+:: CaS(cd)
+:: CaSO4(cd)
+:: K(cd)
+:: KCN(cd)
+:: KH(cd)
+:: KNO2(cd)
+:: KNO3(cd)
+:: KOH(cd)
+:: KO2(cd)
+:: K2CO3(cd)
+:: K2O(cd)
+:: K2O2(cd)
+:: K2S(cd)
+:: K2SO4(cd)
+:: S(cd)
+:: NH4NO3(cd)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check how many phases and species were collected in our system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of species in the system:&quot;</span><span class="p">,</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">()</span><span class="o">.</span><span class="nf">size</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of phases in the system:&quot;</span><span class="p">,</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">()</span><span class="o">.</span><span class="nf">size</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of species in the system: 317
+Number of phases in the system: 67
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is an impressive number of species and phases to be able to model the combustion of black powder!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By including as many gases and condensed phases as possible, Reaktoro will be able to determine those that may appear after burning black powder. For example, K<sub>2</sub>S(cd), K<sub>2</sub>SO<sub>4</sub>(cd) and CaS(cd) are typically formed in the combustion process. By including them in the definition of the chemical system, the chemical equilibrium solver will be able to find positive amounts for them (i.e., the solver will identify these condensed phases as stable in equilibrium).</p>
+</div>
+<p>Keep reading to learn more about how the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class plays an important role in Reaktoro!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="inspecting-databases.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Inspecting thermodynamic databases</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="creating-chemical-states.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Creating chemical states</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
