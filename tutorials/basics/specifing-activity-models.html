@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How to specify activity models</title>
+    <title>Specifying activity models</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -183,7 +183,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     How to specify activity models
+     Specifying activity models
     </a>
    </li>
   </ul>
@@ -253,6 +253,23 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../kinetics/kinetics-basics.html">
      How to perform chemical kinetics calculations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../advanced/index.html">
+   Advanced
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/creating-custom-databases.html">
+     Creating thermodynamic databases
     </a>
    </li>
   </ul>
@@ -434,8 +451,8 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-specify-activity-models">
-<h1>How to specify activity models<a class="headerlink" href="#how-to-specify-activity-models" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="specifying-activity-models">
+<h1>Specifying activity models<a class="headerlink" href="#specifying-activity-models" title="Permalink to this headline">¶</a></h1>
 <p>Activity models are needed to accurately represent the non-ideal thermodynamic behavior of aqueous, liquid, gaseous, solid, and plasma phases. They are required when computing thermodynamic properties of phases and their species, such as molar enthalpies, molar heat capacities, molar volume, molar entropies, molar internal energies, species activities, species chemical potentials, etc.. These properties can only be accurate if proper activity models are assigned to the phases. For example, for an aqueous solution at extreme saline conditions, an activity model designed for low salinity conditions will not perform well.</p>
 <p>In Reaktoro, an activity model assigned to a phase <span class="math notranslate nohighlight">\(\pi\)</span> is a function for which the following inputs are given:</p>
 <ul class="simple">
