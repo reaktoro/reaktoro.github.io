@@ -17,34 +17,40 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-db = createCustomDatabase()
+from reaktoro import *
 
-solution = AqueousPhase()
+db = PhreeqcDatabase("phreeqc.dat")
 
-system = ChemicalSystem(db, solution)
+solution = AqueousPhase(speciate("H O Na Cl C Ca Mg"))
+solution.setActivityModel(ActivityModelIdealAqueous())
 
-state = ChemicalState(system)
-state.set("H2O", 1.0, "kg")
+gases = GaseousPhase("CO2(g) H2O(g)")
+gases.setActivityModel(ActivityModelIdealGas())
 
-equilibrate(state)
+solidsolution = MineralPhase("Siderite Rhodochrosite")
+solidsolution.setActivityModel(ActivityModelIdealSolution())
 
-print(state)
+ionexchange = IonExchangePhase("NaX CaX2")
+ionexchange.setActivityModel(ActivityModelIdealIonExchange())
+
+system = ChemicalSystem(db, solution, gases, solidsolution, ionexchange)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2139/3947657458.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mdb[0m [0;34m=[0m [0mcreateCustomDatabase[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0;34m[0m[0m
-[1;32m      3[0m [0msolution[0m [0;34m=[0m [0mAqueousPhase[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0;34m[0m[0m
-[1;32m      5[0m [0msystem[0m [0;34m=[0m [0mChemicalSystem[0m[0;34m([0m[0mdb[0m[0;34m,[0m [0msolution[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_12598/1777631571.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     10[0m [0;34m[0m[0m
+[1;32m     11[0m [0msolidsolution[0m [0;34m=[0m [0mMineralPhase[0m[0;34m([0m[0;34m"Siderite Rhodochrosite"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 12[0;31m [0msolidsolution[0m[0;34m.[0m[0msetActivityModel[0m[0;34m([0m[0mActivityModelIdealSolution[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     13[0m [0;34m[0m[0m
+[1;32m     14[0m [0mionexchange[0m [0;34m=[0m [0mIonExchangePhase[0m[0;34m([0m[0;34m"NaX CaX2"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/tmp/ipykernel_2139/1870690507.py[0m in [0;36mcreateCustomDatabase[0;34m()[0m
-[1;32m      2[0m     [0melements[0m [0;34m=[0m [0mcreateElementList[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m     [0mspecies[0m [0;34m=[0m [0mcreateSpeciesList[0m[0;34m([0m[0melements[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 4[0;31m     [0;32mreturn[0m [0mDatabase[0m[0;34m([0m[0mspecies[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mTypeError[0m: object of type 'reaktoro.reaktoro4py.SpeciesList' has no len()
-TypeError: object of type 'reaktoro.reaktoro4py.SpeciesList' has no len()
+[0;31mTypeError[0m: ActivityModelIdealSolution(): incompatible function arguments. The following argument types are supported:
+    1. (arg0: reaktoro.reaktoro4py.StateOfMatter) -> Callable[[reaktoro.reaktoro4py.SpeciesList], reaktoro.reaktoro4py.ActivityModel]
+
+Invoked with: 
+TypeError: ActivityModelIdealSolution(): incompatible function arguments. The following argument types are supported:
+    1. (arg0: reaktoro.reaktoro4py.StateOfMatter) -> Callable[[reaktoro.reaktoro4py.SpeciesList], reaktoro.reaktoro4py.ActivityModel]
+
+Invoked with: 
 

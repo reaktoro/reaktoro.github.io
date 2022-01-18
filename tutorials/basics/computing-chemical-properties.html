@@ -115,6 +115,11 @@
      Installation using CMake
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-in-google-colab.html">
+     Installation in Google Colab
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -413,6 +418,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="computing-chemical-properties">
 <h1>Computing chemical properties<a class="headerlink" href="#computing-chemical-properties" title="Permalink to this headline">¶</a></h1>
+<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
 <p>You have now learned how to create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object and <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects representing the chemical state of that system. We will now demonstrate how thermodynamic and chemical properties of the system, its phases, and constituting species can be calculated using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>.</p>
 <p>Let’s start with a simple chemical system containing a single aqueous phase:</p>
 <div class="cell docutils container">
@@ -1915,7 +1921,10 @@ ACTIVITY H+              : 1.51131e-05
 ACTIVITY H+ (LOG10)      : -4.82065
 ACTIVITY COEFF. CO2      : 1.37659
 ACTIVITY COEFF. HCO3-    : 0.557782
-FUGACITY COEFF. CO2(g)   : 0.947625
+FUGACITY COEFF. CO2(g)   : 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.947625
 FUGACITY COEFF. H2O(g)   : 0.866819
 FUGACITY COEFF. O2(g)    : 1.0112
 </pre></div>

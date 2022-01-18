@@ -117,6 +117,11 @@
      Installation using CMake
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-in-google-colab.html">
+     Installation in Google Colab
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -504,7 +509,7 @@
 <span class="n">gases</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIdealGas</span><span class="p">())</span>
 
 <span class="n">solidsolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Siderite Rhodochrosite&quot;</span><span class="p">)</span>
-<span class="n">solidsolution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIdealSolution</span><span class="p">())</span>
+<span class="n">solidsolution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIdealSolution</span><span class="p">(</span><span class="n">StateOfMatter</span><span class="o">.</span><span class="n">Solid</span><span class="p">))</span>
 
 <span class="n">ionexchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangePhase</span><span class="p">(</span><span class="s2">&quot;NaX CaX2&quot;</span><span class="p">)</span>
 <span class="n">ionexchange</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIdealIonExchange</span><span class="p">())</span>

@@ -115,6 +115,11 @@
      Installation using CMake
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-in-google-colab.html">
+     Installation in Google Colab
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -413,6 +418,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-fixed-phase-amount">
 <h1>Chemical equilibrium with fixed phase amount<a class="headerlink" href="#chemical-equilibrium-with-fixed-phase-amount" title="Permalink to this headline">¶</a></h1>
+<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
 <p>Consider an aqueous solution at 60 °C obtained by mixing 1 kg of H<sub>2</sub>O, 1 mol of NaCl and 1 mol of CO<sub>2</sub>. What must the pressure of this aqueous solution be so that it is saturated with CO<sub>2</sub>? In other words, what is the pressure that causes a bubble of CO<sub>2</sub> to form (the bubble pressure)?</p>
 <p>In this tutorial, we formulate a chemical equilibrium problem to calculate the CO<sub>2</sub> bubble/saturation pressure of this aqueous saline solution. In this problem, we consider a chemical system with an aqueous and gaseous phases. Our equilibrium problem will consider <strong>a constraint that imposes the amount of the gas phase to be a minuscule value</strong> (to model the limit condition in which a bubble is formed).</p>
 <p>Let’s create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object with these phases:</p>

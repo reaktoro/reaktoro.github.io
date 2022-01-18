@@ -115,6 +115,11 @@
      Installation using CMake
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-in-google-colab.html">
+     Installation in Google Colab
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -413,6 +418,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-fixed-ph-and-charge-balance">
 <h1>Chemical equilibrium with fixed pH and charge balance<a class="headerlink" href="#chemical-equilibrium-with-fixed-ph-and-charge-balance" title="Permalink to this headline">¶</a></h1>
+<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
 <p>As we saw in the previous tutorial, imposing the pH of a solution in a chemical equilibrium calculation leaves the system open to H<sup>+</sup>. As a result, the final solution may not have zero electrical charge.</p>
 <p>So, in this tutorial we demonstrate how to perform chemical equilibrium calculations with fixed pH values while simultaneously satisfying charge balance.</p>
 <p>Let’s create a chemical system (using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a>) with just a single aqueous phase containing a few selected species. For this phase, we use a Debye–Hückel activity model. The required thermodynamic data for the species is extracted from the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SupcrtDatabase.html"><code class="docutils literal notranslate"><span class="pre">SupcrtDatabase</span></code></a> object:</p>
@@ -618,10 +624,7 @@ pressure are 50 °C and 10 bar (but displayed in the table as 323.15 K and
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount of H+ that entered the system:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.011127035386385114 mol
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount of H+ that entered the system: 0.011127035386385114 mol
 Amount of Cl- that entered the system: 0.011127035386384815 mol
 </pre></div>
 </div>

@@ -227,7 +227,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classReaktoro_1_1ElementList.html#a98a4590b570cc0623847887b218fa22b">  131</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classReaktoro_1_1Element.html">value_type</a> = <a class="code" href="classReaktoro_1_1Element.html">Element</a>;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a7242e856585228a748e306ec4341624b">  135</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a644213f2b526ba7e701dff69b915a9d0">operator+</a>(<span class="keyword">const</span> <a class="code" href="classReaktoro_1_1ElementList.html">ElementList</a> &amp;a, <span class="keyword">const</span> <a class="code" href="classReaktoro_1_1ElementList.html">ElementList</a> &amp;b) -&gt; <a class="code" href="classReaktoro_1_1ElementList.html">ElementList</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="aclassReaktoro_1_1ElementList_html"><div class="ttname"><a href="classReaktoro_1_1ElementList.html">Reaktoro::ElementList</a></div><div class="ttdoc">A type used as a collection of elements.</div><div class="ttdef"><b>Definition:</b> ElementList.hpp:28</div></div>
 <div class="ttc" id="aclassReaktoro_1_1ElementList_html_a01a149ac1776646644a76e6ec26def77"><div class="ttname"><a href="classReaktoro_1_1ElementList.html#a01a149ac1776646644a76e6ec26def77">Reaktoro::ElementList::push_back</a></div><div class="ttdeci">auto push_back(const Element &amp;elements) -&gt; void</div><div class="ttdoc">Append a new Element at the back of the container (for STL compatibility reasons).</div><div class="ttdef"><b>Definition:</b> ElementList.hpp:124</div></div>
 <div class="ttc" id="aclassReaktoro_1_1ElementList_html_a37c253d9ca9383e6db72bb9ce4e2e185"><div class="ttname"><a href="classReaktoro_1_1ElementList.html#a37c253d9ca9383e6db72bb9ce4e2e185">Reaktoro::ElementList::withoutTag</a></div><div class="ttdeci">auto withoutTag(const String &amp;tag) const -&gt; ElementList</div><div class="ttdoc">Return all elements without a given tag.</div></div>
@@ -262,6 +264,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="ttc" id="anamespaceReaktoro_html_a1b01c504448c96cd2191a5184dd31acf"><div class="ttname"><a href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Reaktoro::Vec</a></div><div class="ttdeci">std::vector&lt; T &gt; Vec</div><div class="ttdoc">Convenient alias for std::vector&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:58</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a5573b97b9e5129f61d289e037d7e806c"><div class="ttname"><a href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">Reaktoro::String</a></div><div class="ttdeci">std::string String</div><div class="ttdoc">Convenient alias for std::string.</div><div class="ttdef"><b>Definition:</b> Types.hpp:44</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a5b922a65bf0c65e2baa04f3b78cbc564"><div class="ttname"><a href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Reaktoro::Index</a></div><div class="ttdeci">std::size_t Index</div><div class="ttdoc">Define a type that represents an index.</div><div class="ttdef"><b>Definition:</b> Index.hpp:26</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a644213f2b526ba7e701dff69b915a9d0"><div class="ttname"><a href="namespaceReaktoro.html#a644213f2b526ba7e701dff69b915a9d0">Reaktoro::operator+</a></div><div class="ttdeci">auto operator+(const typename Derived::Scalar &amp;scalar, const Eigen::MatrixBase&lt; Derived &gt; &amp;mat) -&gt; decltype((scalar+mat.array()).matrix())</div><div class="ttdoc">Return the component-wise division of two matrices.</div><div class="ttdef"><b>Definition:</b> Matrix.hpp:740</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -271,7 +274,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 12 2022 21:41:00 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Jan 18 2022 13:22:52 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
