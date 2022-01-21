@@ -187,7 +187,17 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="specifing-activity-models.html">
+    <a class="reference internal" href="computing-thermo-props-of-species.html">
+     Computing standard thermodynamic properties of species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computing-thermo-props-of-reactions.html">
+     Computing standard thermodynamic properties of reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="specifying-activity-models.html">
      Specifying activity models
     </a>
    </li>
@@ -236,6 +246,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-volume-internal-energy.html">
      Chemical equilibrium with fixed volume and internal energy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-custom-constraints.html">
+     Chemical equilibrium with custom constraints
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,6 +319,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../about/troubleshooting.html">
    Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/contributing.html">
+   Contributing
   </a>
  </li>
  <li class="toctree-l1">
@@ -479,7 +499,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="loading-thermodynamic-databases">
 <h1>Loading thermodynamic databases<a class="headerlink" href="#loading-thermodynamic-databases" title="Permalink to this headline">¶</a></h1>
-<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 5th, 2022*
+<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 5th, 2022
 <p>Reaktoro requires thermodynamic databases to calculate the thermodynamic properties of chemical species and reactions. These properties are necessary when performing chemical equilibrium and kinetics calculations.</p>
 <p>Examples of such thermodynamic properties for a species <span class="math notranslate nohighlight">\(i\)</span> include:</p>
 <ul class="simple">
@@ -624,7 +644,7 @@ your computer:</p>
 </div>
 <div class="section" id="supcrt-and-supcrtbl-databases">
 <h2>SUPCRT and SUPCRTBL Databases<a class="headerlink" href="#supcrt-and-supcrtbl-databases" title="Permalink to this headline">¶</a></h2>
-<p>SUPCRT <span id="id2">[<a class="reference internal" href="../bibliography.html#id516">Johnson <em>et al.</em>, 1992</a>]</span> and SUPCRTBL <span id="id3">[<a class="reference internal" href="../bibliography.html#id20">Zimmer <em>et al.</em>, 2016</a>]</span> databases contain thousands of chemical species (aqueous species, gases, minerals) and are commonly used for biogeochemical modeling applications. These thermodynamic databases contain parameters for equations of state to permit the computation of standard molal thermodynamic properties of minerals, gases, aqueous species, and reactions from 1 to 5000 bar and 0 to 1000°C.</p>
+<p>SUPCRT <span id="id2">[<a class="reference internal" href="../bibliography.html#id516">Johnson <em>et al.</em>, 1992</a>]</span> and SUPCRTBL <span id="id3">[<a class="reference internal" href="../bibliography.html#id20">Zimmer <em>et al.</em>, 2016</a>]</span> databases contain thousands of chemical species (aqueous species, gases, minerals) and are commonly used for biogeochemical modeling applications. These thermodynamic databases contain parameters for equations of state to permit the computation of standard molal thermodynamic properties of minerals, gases, aqueous species, and reactions from 1 to 5000 bar and 0 to 1000°C. The theory behind these equations and their derivation can be found across the following publications: <span id="id4">Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id528">1974</a>], Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id771">1976</a>], Helgeson <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id1036">1981</a>], Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id668">1974</a>], Shock <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id592">1992</a>], Tanger and Helgeson [<a class="reference internal" href="../bibliography.html#id783">1988</a>]</span>.</p>
 <div class="section" id="loading-embedded-supcrt-and-supcrtbl-database-files">
 <h3>Loading embedded SUPCRT and SUPCRTBL database files<a class="headerlink" href="#loading-embedded-supcrt-and-supcrtbl-database-files" title="Permalink to this headline">¶</a></h3>
 <p>SUPCRT and SUPCRTBL databases are supported in Reaktoro’s database format using
@@ -668,7 +688,7 @@ your computer:</p>
 </div>
 <div class="section" id="nasa-databases">
 <h2>NASA Databases<a class="headerlink" href="#nasa-databases" title="Permalink to this headline">¶</a></h2>
-<p>Reaktoro also supports the NASA-CEA thermochemical database <span id="id4">[<a class="reference internal" href="../bibliography.html#id441">Gordon and McBride, 1996</a>, <a class="reference internal" href="../bibliography.html#id799">Gordon and McBride, 1994</a>]</span>. These contain coefficients for NASA-CEA polynomials used to calculate the standard thermodynamic properties of gases and condensed phases. The NASA-CEA database is commonly used for modeling combustion processes in various applications, from rocket propellant combustion to explosives detonation.</p>
+<p>Reaktoro also supports the NASA-CEA thermochemical database <span id="id5">[<a class="reference internal" href="../bibliography.html#id441">Gordon and McBride, 1996</a>, <a class="reference internal" href="../bibliography.html#id799">Gordon and McBride, 1994</a>]</span>. These contain coefficients for NASA-CEA polynomials used to calculate the standard thermodynamic properties of gases and condensed phases. The NASA-CEA database is commonly used for modeling combustion processes in various applications, from rocket propellant combustion to explosives detonation.</p>
 <p>The NASA-CEA database supported in Reaktoro has been converted to Reaktoro’s YAML database format:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/reaktoro/nasa-cea.yaml">nasa-cea.yaml</a>.</p></li>

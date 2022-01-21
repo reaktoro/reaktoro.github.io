@@ -56,7 +56,7 @@
     <link rel="shortcut icon" href="../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="License" href="license.html" />
+    <link rel="next" title="Contributing" href="contributing.html" />
     <link rel="prev" title="FAQ" href="faq.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -185,7 +185,17 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/basics/specifing-activity-models.html">
+    <a class="reference internal" href="../tutorials/basics/computing-thermo-props-of-species.html">
+     Computing standard thermodynamic properties of species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/basics/computing-thermo-props-of-reactions.html">
+     Computing standard thermodynamic properties of reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/basics/specifying-activity-models.html">
      Specifying activity models
     </a>
    </li>
@@ -234,6 +244,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../tutorials/equilibrium/equilibrium-with-fixed-volume-internal-energy.html">
      Chemical equilibrium with fixed volume and internal energy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/equilibrium/equilibrium-with-custom-constraints.html">
+     Chemical equilibrium with custom constraints
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,6 +317,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="contributing.html">
+   Contributing
   </a>
  </li>
  <li class="toctree-l1">
@@ -391,6 +411,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-reaktoro">
+   ModuleNotFoundError: No module named ‘reaktoro’
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expecting-a-float-value-but-got-autodiff-real-instead">
+   Expecting a float value but got autodiff.real instead
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
+   Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -401,22 +444,40 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
-<p>We list below the most common issues our users find and indicate which action
-should be taken to potentially resolving them.</p>
-<ol>
-<li><p><strong>Why am I getting this error: ModuleNotFoundError: No module named ‘reaktoro’</strong>?</p>
+<p>Below are the most common issues our users encounter, for which we indicate the necessary action to resolve them potentially. If you cannot find your problem below or the solution provided is not working for you, don’t hesitate to get in touch with us at <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</p>
+<div class="section" id="modulenotfounderror-no-module-named-reaktoro">
+<h2>ModuleNotFoundError: No module named ‘reaktoro’<a class="headerlink" href="#modulenotfounderror-no-module-named-reaktoro" title="Permalink to this headline">¶</a></h2>
 <p>The entire error message may be something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
     <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;reaktoro&#39;</span>
 </pre></div>
 </div>
-<p>This error is happening because the Python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> cannot be found,
-most likely because the environment variable <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> has not been set
-correctly. Ensure the path where <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is located is specified in
-<code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.</p>
-</li>
-</ol>
+<p>This error is happening because the Python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> cannot be found, most likely because the environment variable <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> has not been set correctly. Ensure the path where <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is located is specified in <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.</p>
+</div>
+<div class="section" id="expecting-a-float-value-but-got-autodiff-real-instead">
+<h2>Expecting a float value but got autodiff.real instead<a class="headerlink" href="#expecting-a-float-value-but-got-autodiff-real-instead" title="Permalink to this headline">¶</a></h2>
+<p>Reaktoro relies on number types defined in the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library to enable automatic differentiation. It is because of <a class="reference external" href="https://autodiff.github.io">autodiff</a> that Reaktoro can have improved numerical algorithms and also compute derivatives of chemical/thermodynamic properties with respect to temperature, pressure, species amounts, and even the parameters used in the models.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">float</span></code> function to convert an <code class="docutils literal notranslate"><span class="pre">autodiff.real</span></code> number into a Python <code class="docutils literal notranslate"><span class="pre">float</span></code> number type. Below is an example using the method <code class="docutils literal notranslate"><span class="pre">ChemicalProps.activity</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">))</span>  <span class="c1"># convert autodiff.real to float!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
+<h2>Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead<a class="headerlink" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead" title="Permalink to this headline">¶</a></h2>
+<p>This is a similar issue to the previous one. You may encounter the following array/vector types while using Reaktoro:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">autodiff.ArrayXreal1st</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">autodiff.ArrayXreal1stConstRef</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">autodiff.VectorXreal1st</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">autodiff.VectorXreal1stConstRef</span></code></p></li>
+</ul>
+<p>These types are a combination of array/vector types from the C++ library <a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a> with the number types from the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library, both C++ libraries.</p>
+<p>You can use the method <code class="docutils literal notranslate"><span class="pre">asarray</span></code> in these array/vector types to convert them to a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmounts</span><span class="p">()</span><span class="o">.</span><span class="nf">asarray</span><span class="p">()</span>  <span class="c1"># convert from autodiff.ArrayXreal1stConstRef to numpy.array with float values</span>
+</pre></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -458,10 +519,10 @@ correctly. Ensure the path where <code class="docutils literal notranslate"><spa
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="license.html" title="next page">
+        <a class="right-next" href="contributing.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">License</p>
+                <p class="prevnext-title">Contributing</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -277,6 +277,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionEquation.html">ReactionEquation</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type used to represent the equation of a reaction.  <a href="classReaktoro_1_1ReactionEquation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ReactionProps.html">ReactionProps</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The complete set of thermodynamic properties of a chemical reaction.  <a href="structReaktoro_1_1ReactionProps.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ReactionThermoProps.html">ReactionThermoProps</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary standard thermodynamic properties of a chemical reaction.  <a href="structReaktoro_1_1ReactionThermoProps.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -902,6 +905,22 @@ template&lt;typename T &gt; </td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a7aceec99e4c3cadbcb8c893f930885d8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Ref</b> = typename <a class="el" href="structReaktoro_1_1detail_1_1Ref.html">detail::Ref</a>&lt; T &gt;::type</td></tr>
 <tr class="separator:a7aceec99e4c3cadbcb8c893f930885d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051c14ca16d996febce704e4007bd6e7"><td class="memTemplParams" colspan="2"><a id="a051c14ca16d996febce704e4007bd6e7"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a051c14ca16d996febce704e4007bd6e7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>TypeOpRef</b> = typename <a class="el" href="structReaktoro_1_1detail_1_1TypeOpRef.html">detail::TypeOpRef</a>&lt; std::decay_t&lt; T &gt; &gt;::type</td></tr>
+<tr class="separator:a051c14ca16d996febce704e4007bd6e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297fa757be9df49747f2a02fd34107ea"><td class="memTemplParams" colspan="2"><a id="a297fa757be9df49747f2a02fd34107ea"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a297fa757be9df49747f2a02fd34107ea"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>TypeOpConstRef</b> = typename <a class="el" href="structReaktoro_1_1detail_1_1TypeOpConstRef.html">detail::TypeOpConstRef</a>&lt; std::decay_t&lt; T &gt; &gt;::type</td></tr>
+<tr class="separator:a297fa757be9df49747f2a02fd34107ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e8bf373be5fe3495bc8f422c9599b2"><td class="memTemplParams" colspan="2"><a id="aa6e8bf373be5fe3495bc8f422c9599b2"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa6e8bf373be5fe3495bc8f422c9599b2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>TypeOpIdentity</b> = typename <a class="el" href="structReaktoro_1_1detail_1_1TypeOpIdentity.html">detail::TypeOpIdentity</a>&lt; std::decay_t&lt; T &gt; &gt;::type</td></tr>
+<tr class="separator:aa6e8bf373be5fe3495bc8f422c9599b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af1f47dbafff136588f3b92f543c892"><td class="memItemLeft" align="right" valign="top"><a id="a9af1f47dbafff136588f3b92f543c892"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a9af1f47dbafff136588f3b92f543c892">Chars</a> = const char *</td></tr>
+<tr class="memdesc:a9af1f47dbafff136588f3b92f543c892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>const char*</code>. <br /></td></tr>
+<tr class="separator:a9af1f47dbafff136588f3b92f543c892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5573b97b9e5129f61d289e037d7e806c"><td class="memItemLeft" align="right" valign="top"><a id="a5573b97b9e5129f61d289e037d7e806c"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> = std::string</td></tr>
 <tr class="memdesc:a5573b97b9e5129f61d289e037d7e806c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>std::string</code>. <br /></td></tr>
@@ -973,52 +992,52 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 <tr class="memdesc:aa86310011a3ba02cbce5fa4256ef7417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient alias for <code>std::any</code>. <br /></td></tr>
 <tr class="separator:aa86310011a3ba02cbce5fa4256ef7417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab77ce46ecc0381fec3438fc51b18352e"><td class="memItemLeft" align="right" valign="top"><a id="ab77ce46ecc0381fec3438fc51b18352e"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ab77ce46ecc0381fec3438fc51b18352e">ActivityModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="namespaceReaktoro.html#a7201d49858a85a9efe9812fa738c7b99">ActivityProps</a>(<a class="el" href="structReaktoro_1_1ActivityArgs.html">ActivityArgs</a>)&gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ab77ce46ecc0381fec3438fc51b18352e">ActivityModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="namespaceReaktoro.html#afd03bb649d32c146d7ef44e27f73e23f">ActivityProps</a>(<a class="el" href="structReaktoro_1_1ActivityArgs.html">ActivityArgs</a>)&gt;</td></tr>
 <tr class="memdesc:ab77ce46ecc0381fec3438fc51b18352e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for the calculation of activity and corrective thermodynamic properties of a phase. <br /></td></tr>
 <tr class="separator:ab77ce46ecc0381fec3438fc51b18352e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaf4ce79487bc7842af13bc506fbd802"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#ab77ce46ecc0381fec3438fc51b18352e">ActivityModel</a>(const <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> &amp;species)&gt;</td></tr>
 <tr class="memdesc:afaf4ce79487bc7842af13bc506fbd802"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for functions that construct an ActivityModel for a phase.  <a href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">More...</a><br /></td></tr>
 <tr class="separator:afaf4ce79487bc7842af13bc506fbd802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7201d49858a85a9efe9812fa738c7b99"><td class="memItemLeft" align="right" valign="top"><a id="a7201d49858a85a9efe9812fa738c7b99"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a7201d49858a85a9efe9812fa738c7b99">ActivityProps</a> = <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>, <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a>, <a class="el" href="namespaceReaktoro.html#afb059703fa31a65827af755d4af1d5d8">Map</a>&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, <a class="el" href="namespaceReaktoro.html#aa86310011a3ba02cbce5fa4256ef7417">Any</a> &gt; &gt;</td></tr>
-<tr class="memdesc:a7201d49858a85a9efe9812fa738c7b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">The activity and corrective thermodynamic properties of a phase. <br /></td></tr>
-<tr class="separator:a7201d49858a85a9efe9812fa738c7b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83d4f34be6b6bdd54c2042d399558461"><td class="memItemLeft" align="right" valign="top"><a id="a83d4f34be6b6bdd54c2042d399558461"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a83d4f34be6b6bdd54c2042d399558461">ActivityPropsRef</a> = <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#a9e820cb6e83ac3e0ad13e593438ea784">ArrayXrRef</a>, <a class="el" href="namespaceReaktoro.html#afb059703fa31a65827af755d4af1d5d8">Map</a>&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, <a class="el" href="namespaceReaktoro.html#aa86310011a3ba02cbce5fa4256ef7417">Any</a> &gt; &amp; &gt;</td></tr>
-<tr class="memdesc:a83d4f34be6b6bdd54c2042d399558461"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-const view to the activity and corrective thermodynamic properties of a phase. <br /></td></tr>
-<tr class="separator:a83d4f34be6b6bdd54c2042d399558461"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a873ae1ea6c3ff77d194c0d36ec737191"><td class="memItemLeft" align="right" valign="top"><a id="a873ae1ea6c3ff77d194c0d36ec737191"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a873ae1ea6c3ff77d194c0d36ec737191">ActivityPropsConstRef</a> = <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a>, const <a class="el" href="namespaceReaktoro.html#afb059703fa31a65827af755d4af1d5d8">Map</a>&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, <a class="el" href="namespaceReaktoro.html#aa86310011a3ba02cbce5fa4256ef7417">Any</a> &gt; &amp; &gt;</td></tr>
-<tr class="memdesc:a873ae1ea6c3ff77d194c0d36ec737191"><td class="mdescLeft">&#160;</td><td class="mdescRight">The const view to the activity and corrective thermodynamic properties of a phase. <br /></td></tr>
-<tr class="separator:a873ae1ea6c3ff77d194c0d36ec737191"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41ce6c6adf8c854457f9ed6a925a0009"><td class="memItemLeft" align="right" valign="top"><a id="a41ce6c6adf8c854457f9ed6a925a0009"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a41ce6c6adf8c854457f9ed6a925a0009">ChemicalPropsPhaseData</a> = <a class="el" href="structReaktoro_1_1ChemicalPropsPhaseBaseData.html">ChemicalPropsPhaseBaseData</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>, <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a> &gt;</td></tr>
-<tr class="memdesc:a41ce6c6adf8c854457f9ed6a925a0009"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary chemical property data of a phase from which others are computed. <br /></td></tr>
-<tr class="separator:a41ce6c6adf8c854457f9ed6a925a0009"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37f1f1c6f327aec991e0910ee32ab414"><td class="memItemLeft" align="right" valign="top"><a id="a37f1f1c6f327aec991e0910ee32ab414"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a37f1f1c6f327aec991e0910ee32ab414">ChemicalPropsPhaseDataRef</a> = <a class="el" href="structReaktoro_1_1ChemicalPropsPhaseBaseData.html">ChemicalPropsPhaseBaseData</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#a9e820cb6e83ac3e0ad13e593438ea784">ArrayXrRef</a> &gt;</td></tr>
-<tr class="memdesc:a37f1f1c6f327aec991e0910ee32ab414"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary chemical property data of a phase from which others are computed. <br /></td></tr>
-<tr class="separator:a37f1f1c6f327aec991e0910ee32ab414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe3a6b7773a72e8e4ab5011fcbcdf2fb"><td class="memItemLeft" align="right" valign="top"><a id="abe3a6b7773a72e8e4ab5011fcbcdf2fb"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#abe3a6b7773a72e8e4ab5011fcbcdf2fb">ChemicalPropsPhaseDataConstRef</a> = <a class="el" href="structReaktoro_1_1ChemicalPropsPhaseBaseData.html">ChemicalPropsPhaseBaseData</a>&lt; const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a> &gt;</td></tr>
-<tr class="memdesc:abe3a6b7773a72e8e4ab5011fcbcdf2fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary chemical property data of a phase from which others are computed. <br /></td></tr>
-<tr class="separator:abe3a6b7773a72e8e4ab5011fcbcdf2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd03bb649d32c146d7ef44e27f73e23f"><td class="memItemLeft" align="right" valign="top"><a id="afd03bb649d32c146d7ef44e27f73e23f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#afd03bb649d32c146d7ef44e27f73e23f">ActivityProps</a> = <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; TypeOpIdentity &gt;</td></tr>
+<tr class="memdesc:afd03bb649d32c146d7ef44e27f73e23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The activity and corrective thermodynamic properties of a phase. <br /></td></tr>
+<tr class="separator:afd03bb649d32c146d7ef44e27f73e23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92671ce8d11e057767112f77ddca30e9"><td class="memItemLeft" align="right" valign="top"><a id="a92671ce8d11e057767112f77ddca30e9"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a92671ce8d11e057767112f77ddca30e9">ActivityPropsRef</a> = <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; TypeOpRef &gt;</td></tr>
+<tr class="memdesc:a92671ce8d11e057767112f77ddca30e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-const view to the activity and corrective thermodynamic properties of a phase. <br /></td></tr>
+<tr class="separator:a92671ce8d11e057767112f77ddca30e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aeb0e5c6e2f426a05e5b4adf1c9d879"><td class="memItemLeft" align="right" valign="top"><a id="a7aeb0e5c6e2f426a05e5b4adf1c9d879"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a7aeb0e5c6e2f426a05e5b4adf1c9d879">ActivityPropsConstRef</a> = <a class="el" href="structReaktoro_1_1ActivityPropsBase.html">ActivityPropsBase</a>&lt; TypeOpConstRef &gt;</td></tr>
+<tr class="memdesc:a7aeb0e5c6e2f426a05e5b4adf1c9d879"><td class="mdescLeft">&#160;</td><td class="mdescRight">The const view to the activity and corrective thermodynamic properties of a phase. <br /></td></tr>
+<tr class="separator:a7aeb0e5c6e2f426a05e5b4adf1c9d879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2106b80805165c4c1a46b3fede29d84e"><td class="memItemLeft" align="right" valign="top"><a id="a2106b80805165c4c1a46b3fede29d84e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a2106b80805165c4c1a46b3fede29d84e">ChemicalPropsPhaseData</a> = <a class="el" href="structReaktoro_1_1ChemicalPropsPhaseBaseData.html">ChemicalPropsPhaseBaseData</a>&lt; TypeOpIdentity &gt;</td></tr>
+<tr class="memdesc:a2106b80805165c4c1a46b3fede29d84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary chemical property data of a phase from which others are computed. <br /></td></tr>
+<tr class="separator:a2106b80805165c4c1a46b3fede29d84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8ff2f1b6c06140af233cbc19d3aa2f"><td class="memItemLeft" align="right" valign="top"><a id="afa8ff2f1b6c06140af233cbc19d3aa2f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#afa8ff2f1b6c06140af233cbc19d3aa2f">ChemicalPropsPhaseDataRef</a> = <a class="el" href="structReaktoro_1_1ChemicalPropsPhaseBaseData.html">ChemicalPropsPhaseBaseData</a>&lt; TypeOpRef &gt;</td></tr>
+<tr class="memdesc:afa8ff2f1b6c06140af233cbc19d3aa2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary chemical property data of a phase from which others are computed. <br /></td></tr>
+<tr class="separator:afa8ff2f1b6c06140af233cbc19d3aa2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6edaec2f61225f693c6f4d79c6647332"><td class="memItemLeft" align="right" valign="top"><a id="a6edaec2f61225f693c6f4d79c6647332"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a6edaec2f61225f693c6f4d79c6647332">ChemicalPropsPhaseDataConstRef</a> = <a class="el" href="structReaktoro_1_1ChemicalPropsPhaseBaseData.html">ChemicalPropsPhaseBaseData</a>&lt; TypeOpConstRef &gt;</td></tr>
+<tr class="memdesc:a6edaec2f61225f693c6f4d79c6647332"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary chemical property data of a phase from which others are computed. <br /></td></tr>
+<tr class="separator:a6edaec2f61225f693c6f4d79c6647332"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c1e4b3d067f76ac6bddb8a268673153"><td class="memItemLeft" align="right" valign="top"><a id="a1c1e4b3d067f76ac6bddb8a268673153"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1c1e4b3d067f76ac6bddb8a268673153">ChemicalPropsPhaseFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; void(<a class="el" href="namespaceReaktoro.html#a37f1f1c6f327aec991e0910ee32ab414">ChemicalPropsPhaseDataRef</a>, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a>)&gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1c1e4b3d067f76ac6bddb8a268673153">ChemicalPropsPhaseFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; void(<a class="el" href="namespaceReaktoro.html#afa8ff2f1b6c06140af233cbc19d3aa2f">ChemicalPropsPhaseDataRef</a>, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a>)&gt;</td></tr>
 <tr class="memdesc:a1c1e4b3d067f76ac6bddb8a268673153"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of functions that computes the primary chemical property data of a phase. <br /></td></tr>
 <tr class="separator:a1c1e4b3d067f76ac6bddb8a268673153"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1877441fa43d568e3b158231f2301691"><td class="memItemLeft" align="right" valign="top"><a id="a1877441fa43d568e3b158231f2301691"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1877441fa43d568e3b158231f2301691">ChemicalPropsPhase</a> = <a class="el" href="classReaktoro_1_1ChemicalPropsPhaseBase.html">ChemicalPropsPhaseBase</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>, <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a> &gt;</td></tr>
-<tr class="memdesc:a1877441fa43d568e3b158231f2301691"><td class="mdescLeft">&#160;</td><td class="mdescRight">The chemical properties of a phase and its species. <br /></td></tr>
-<tr class="separator:a1877441fa43d568e3b158231f2301691"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a644e70d829f0f421d845ca4445f256db"><td class="memItemLeft" align="right" valign="top"><a id="a644e70d829f0f421d845ca4445f256db"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a644e70d829f0f421d845ca4445f256db">ChemicalPropsPhaseRef</a> = <a class="el" href="classReaktoro_1_1ChemicalPropsPhaseBase.html">ChemicalPropsPhaseBase</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#a9e820cb6e83ac3e0ad13e593438ea784">ArrayXrRef</a> &gt;</td></tr>
-<tr class="memdesc:a644e70d829f0f421d845ca4445f256db"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-const view to the chemical properties of a phase and its species. <br /></td></tr>
-<tr class="separator:a644e70d829f0f421d845ca4445f256db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d486f2309cb4e440352f34b709bf1b"><td class="memItemLeft" align="right" valign="top"><a id="a37d486f2309cb4e440352f34b709bf1b"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a37d486f2309cb4e440352f34b709bf1b">ChemicalPropsPhaseConstRef</a> = <a class="el" href="classReaktoro_1_1ChemicalPropsPhaseBase.html">ChemicalPropsPhaseBase</a>&lt; const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a> &gt;</td></tr>
-<tr class="memdesc:a37d486f2309cb4e440352f34b709bf1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The const view to the chemical properties of a phase and its species. <br /></td></tr>
-<tr class="separator:a37d486f2309cb4e440352f34b709bf1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72d56584a75d8dfa65acb98673caa84"><td class="memItemLeft" align="right" valign="top"><a id="aa72d56584a75d8dfa65acb98673caa84"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aa72d56584a75d8dfa65acb98673caa84">ChemicalPropsPhase</a> = <a class="el" href="classReaktoro_1_1ChemicalPropsPhaseBase.html">ChemicalPropsPhaseBase</a>&lt; TypeOpIdentity &gt;</td></tr>
+<tr class="memdesc:aa72d56584a75d8dfa65acb98673caa84"><td class="mdescLeft">&#160;</td><td class="mdescRight">The chemical properties of a phase and its species. <br /></td></tr>
+<tr class="separator:aa72d56584a75d8dfa65acb98673caa84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c118fca284b69fc8d77385113edfaf"><td class="memItemLeft" align="right" valign="top"><a id="af8c118fca284b69fc8d77385113edfaf"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#af8c118fca284b69fc8d77385113edfaf">ChemicalPropsPhaseRef</a> = <a class="el" href="classReaktoro_1_1ChemicalPropsPhaseBase.html">ChemicalPropsPhaseBase</a>&lt; TypeOpRef &gt;</td></tr>
+<tr class="memdesc:af8c118fca284b69fc8d77385113edfaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-const view to the chemical properties of a phase and its species. <br /></td></tr>
+<tr class="separator:af8c118fca284b69fc8d77385113edfaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e5781af64ed20689d57bdf8fd4cd94"><td class="memItemLeft" align="right" valign="top"><a id="a72e5781af64ed20689d57bdf8fd4cd94"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a72e5781af64ed20689d57bdf8fd4cd94">ChemicalPropsPhaseConstRef</a> = <a class="el" href="classReaktoro_1_1ChemicalPropsPhaseBase.html">ChemicalPropsPhaseBase</a>&lt; TypeOpConstRef &gt;</td></tr>
+<tr class="memdesc:a72e5781af64ed20689d57bdf8fd4cd94"><td class="mdescLeft">&#160;</td><td class="mdescRight">The const view to the chemical properties of a phase and its species. <br /></td></tr>
+<tr class="separator:a72e5781af64ed20689d57bdf8fd4cd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afed2c0c895f69fe88cd99aa1a7de11b0"><td class="memTemplParams" colspan="2"><a id="afed2c0c895f69fe88cd99aa1a7de11b0"></a>
 template&lt;typename ResultRef , typename... Args&gt; </td></tr>
 <tr class="memitem:afed2c0c895f69fe88cd99aa1a7de11b0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#afed2c0c895f69fe88cd99aa1a7de11b0">ModelEvaluator</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; void(ResultRef res, Args... args)&gt;</td></tr>
@@ -1036,12 +1055,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 <tr class="memitem:a82c28934d4fb8b5bfe086187969f2e6a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a82c28934d4fb8b5bfe086187969f2e6a">PropFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(const <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> &amp;props)&gt;</td></tr>
 <tr class="memdesc:a82c28934d4fb8b5bfe086187969f2e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for evaluation of a property of a chemical system.  <a href="namespaceReaktoro.html#a82c28934d4fb8b5bfe086187969f2e6a">More...</a><br /></td></tr>
 <tr class="separator:a82c28934d4fb8b5bfe086187969f2e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a344e12e57f33613b35e7068d38a8d324"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a344e12e57f33613b35e7068d38a8d324">EquilibriumConstantFn</a> = std::function&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P)&gt;</td></tr>
-<tr class="memdesc:a344e12e57f33613b35e7068d38a8d324"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for calculation of equilibrium constant of reaction (in natural log).  <a href="namespaceReaktoro.html#a344e12e57f33613b35e7068d38a8d324">More...</a><br /></td></tr>
-<tr class="separator:a344e12e57f33613b35e7068d38a8d324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1a0778caae2f787a3a0c1695f0e7bfa8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Core.html#ga1a0778caae2f787a3a0c1695f0e7bfa8">ReactionRateFn</a> = std::function&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(const <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> &amp;props)&gt;</td></tr>
-<tr class="memdesc:ga1a0778caae2f787a3a0c1695f0e7bfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for calculation of reaction rates (in mol/s).  <a href="group__Core.html#ga1a0778caae2f787a3a0c1695f0e7bfa8">More...</a><br /></td></tr>
-<tr class="separator:ga1a0778caae2f787a3a0c1695f0e7bfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6717d43e55da830c56655d1b0d53e040"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Core.html#ga6717d43e55da830c56655d1b0d53e040">ReactionRateFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(const <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> &amp;props)&gt;</td></tr>
+<tr class="memdesc:ga6717d43e55da830c56655d1b0d53e040"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for calculation of reaction rates (in mol/s).  <a href="group__Core.html#ga6717d43e55da830c56655d1b0d53e040">More...</a><br /></td></tr>
+<tr class="separator:ga6717d43e55da830c56655d1b0d53e040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8282c3fdf9650aea30f7c22894c6d553"><td class="memItemLeft" align="right" valign="top"><a id="a8282c3fdf9650aea30f7c22894c6d553"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">ReactionThermoModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="structReaktoro_1_1ReactionThermoProps.html">ReactionThermoProps</a>(<a class="el" href="structReaktoro_1_1ReactionThermoArgs.html">ReactionThermoArgs</a>)&gt;</td></tr>
 <tr class="memdesc:a8282c3fdf9650aea30f7c22894c6d553"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for calculation of standard thermodynamic properties of a reaction. <br /></td></tr>
@@ -1049,34 +1065,34 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 <tr class="memitem:a9933121318e42facfe6ccaebe69a5a2b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">StandardThermoModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="structReaktoro_1_1StandardThermoProps.html">StandardThermoProps</a>(<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P)&gt;</td></tr>
 <tr class="memdesc:a9933121318e42facfe6ccaebe69a5a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for calculation of standard thermodynamic properties of a species.  <a href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">More...</a><br /></td></tr>
 <tr class="separator:a9933121318e42facfe6ccaebe69a5a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1caf573f065877cacbe198d464cd40df"><td class="memItemLeft" align="right" valign="top"><a id="a1caf573f065877cacbe198d464cd40df"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1caf573f065877cacbe198d464cd40df">ThermoPropsPhaseData</a> = <a class="el" href="structReaktoro_1_1ThermoPropsPhaseBaseData.html">ThermoPropsPhaseBaseData</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>, <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a> &gt;</td></tr>
-<tr class="memdesc:a1caf573f065877cacbe198d464cd40df"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary standard thermodynamic property data of a phase from which others are computed. <br /></td></tr>
-<tr class="separator:a1caf573f065877cacbe198d464cd40df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46e3b2e5e0ebea84ba728834d5a7e79e"><td class="memItemLeft" align="right" valign="top"><a id="a46e3b2e5e0ebea84ba728834d5a7e79e"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a46e3b2e5e0ebea84ba728834d5a7e79e">ThermoPropsPhaseDataRef</a> = <a class="el" href="structReaktoro_1_1ThermoPropsPhaseBaseData.html">ThermoPropsPhaseBaseData</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#a9e820cb6e83ac3e0ad13e593438ea784">ArrayXrRef</a> &gt;</td></tr>
-<tr class="memdesc:a46e3b2e5e0ebea84ba728834d5a7e79e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary standard thermodynamic property data of a phase from which others are computed. <br /></td></tr>
-<tr class="separator:a46e3b2e5e0ebea84ba728834d5a7e79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a774bc6c120b3fbd4d0642cff7f28e85a"><td class="memItemLeft" align="right" valign="top"><a id="a774bc6c120b3fbd4d0642cff7f28e85a"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a774bc6c120b3fbd4d0642cff7f28e85a">ThermoPropsPhaseDataConstRef</a> = <a class="el" href="structReaktoro_1_1ThermoPropsPhaseBaseData.html">ThermoPropsPhaseBaseData</a>&lt; const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a> &gt;</td></tr>
-<tr class="memdesc:a774bc6c120b3fbd4d0642cff7f28e85a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary standard thermodynamic property data of a phase from which others are computed. <br /></td></tr>
-<tr class="separator:a774bc6c120b3fbd4d0642cff7f28e85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe063da94300427e1e5c6900452d5b3"><td class="memItemLeft" align="right" valign="top"><a id="adfe063da94300427e1e5c6900452d5b3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#adfe063da94300427e1e5c6900452d5b3">ThermoPropsPhaseData</a> = <a class="el" href="structReaktoro_1_1ThermoPropsPhaseBaseData.html">ThermoPropsPhaseBaseData</a>&lt; TypeOpIdentity &gt;</td></tr>
+<tr class="memdesc:adfe063da94300427e1e5c6900452d5b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary standard thermodynamic property data of a phase from which others are computed. <br /></td></tr>
+<tr class="separator:adfe063da94300427e1e5c6900452d5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a646908e3c9ea5b70f6c8bb0548f84ee5"><td class="memItemLeft" align="right" valign="top"><a id="a646908e3c9ea5b70f6c8bb0548f84ee5"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a646908e3c9ea5b70f6c8bb0548f84ee5">ThermoPropsPhaseDataRef</a> = <a class="el" href="structReaktoro_1_1ThermoPropsPhaseBaseData.html">ThermoPropsPhaseBaseData</a>&lt; TypeOpRef &gt;</td></tr>
+<tr class="memdesc:a646908e3c9ea5b70f6c8bb0548f84ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary standard thermodynamic property data of a phase from which others are computed. <br /></td></tr>
+<tr class="separator:a646908e3c9ea5b70f6c8bb0548f84ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7fc5f000df5c7ff9d0c6e727cfd78f"><td class="memItemLeft" align="right" valign="top"><a id="a9a7fc5f000df5c7ff9d0c6e727cfd78f"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a9a7fc5f000df5c7ff9d0c6e727cfd78f">ThermoPropsPhaseDataConstRef</a> = <a class="el" href="structReaktoro_1_1ThermoPropsPhaseBaseData.html">ThermoPropsPhaseBaseData</a>&lt; TypeOpConstRef &gt;</td></tr>
+<tr class="memdesc:a9a7fc5f000df5c7ff9d0c6e727cfd78f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary standard thermodynamic property data of a phase from which others are computed. <br /></td></tr>
+<tr class="separator:a9a7fc5f000df5c7ff9d0c6e727cfd78f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bc7cff1b4f813a93e84b0e09f753e96"><td class="memItemLeft" align="right" valign="top"><a id="a8bc7cff1b4f813a93e84b0e09f753e96"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a8bc7cff1b4f813a93e84b0e09f753e96">ThermoPropsPhaseFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; void(<a class="el" href="namespaceReaktoro.html#a46e3b2e5e0ebea84ba728834d5a7e79e">ThermoPropsPhaseDataRef</a>, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a>)&gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a8bc7cff1b4f813a93e84b0e09f753e96">ThermoPropsPhaseFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; void(<a class="el" href="namespaceReaktoro.html#a646908e3c9ea5b70f6c8bb0548f84ee5">ThermoPropsPhaseDataRef</a>, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a>)&gt;</td></tr>
 <tr class="memdesc:a8bc7cff1b4f813a93e84b0e09f753e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of functions that computes the primary standard thermodynamic property data of a phase. <br /></td></tr>
 <tr class="separator:a8bc7cff1b4f813a93e84b0e09f753e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a898626a1995209234b2280adb079b52d"><td class="memItemLeft" align="right" valign="top"><a id="a898626a1995209234b2280adb079b52d"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a898626a1995209234b2280adb079b52d">ThermoPropsPhase</a> = <a class="el" href="classReaktoro_1_1ThermoPropsPhaseBase.html">ThermoPropsPhaseBase</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>, <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a> &gt;</td></tr>
-<tr class="memdesc:a898626a1995209234b2280adb079b52d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The standard thermodynamic properties of a phase and its species. <br /></td></tr>
-<tr class="separator:a898626a1995209234b2280adb079b52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1de93b1f22be6b9323a555bb3cab4458"><td class="memItemLeft" align="right" valign="top"><a id="a1de93b1f22be6b9323a555bb3cab4458"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1de93b1f22be6b9323a555bb3cab4458">ThermoPropsPhaseRef</a> = <a class="el" href="classReaktoro_1_1ThermoPropsPhaseBase.html">ThermoPropsPhaseBase</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#a9e820cb6e83ac3e0ad13e593438ea784">ArrayXrRef</a> &gt;</td></tr>
-<tr class="memdesc:a1de93b1f22be6b9323a555bb3cab4458"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-const view to the standard thermodynamic properties of a phase and its species. <br /></td></tr>
-<tr class="separator:a1de93b1f22be6b9323a555bb3cab4458"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a684e2d47faa865474fa6644af1bf68dc"><td class="memItemLeft" align="right" valign="top"><a id="a684e2d47faa865474fa6644af1bf68dc"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a684e2d47faa865474fa6644af1bf68dc">ThermoPropsPhaseConstRef</a> = <a class="el" href="classReaktoro_1_1ThermoPropsPhaseBase.html">ThermoPropsPhaseBase</a>&lt; const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;, <a class="el" href="namespaceReaktoro.html#ad77175a20a8738f0ec42a924e9220ea9">ArrayXrConstRef</a> &gt;</td></tr>
-<tr class="memdesc:a684e2d47faa865474fa6644af1bf68dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The const view to the standard thermodynamic properties of a phase and its species. <br /></td></tr>
-<tr class="separator:a684e2d47faa865474fa6644af1bf68dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a009bec9dfa29de376118d82f19cfb011"><td class="memItemLeft" align="right" valign="top"><a id="a009bec9dfa29de376118d82f19cfb011"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a009bec9dfa29de376118d82f19cfb011">ThermoPropsPhase</a> = <a class="el" href="classReaktoro_1_1ThermoPropsPhaseBase.html">ThermoPropsPhaseBase</a>&lt; TypeOpIdentity &gt;</td></tr>
+<tr class="memdesc:a009bec9dfa29de376118d82f19cfb011"><td class="mdescLeft">&#160;</td><td class="mdescRight">The standard thermodynamic properties of a phase and its species. <br /></td></tr>
+<tr class="separator:a009bec9dfa29de376118d82f19cfb011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7872bc53781012287296a95aa56545d"><td class="memItemLeft" align="right" valign="top"><a id="ad7872bc53781012287296a95aa56545d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ad7872bc53781012287296a95aa56545d">ThermoPropsPhaseRef</a> = <a class="el" href="classReaktoro_1_1ThermoPropsPhaseBase.html">ThermoPropsPhaseBase</a>&lt; TypeOpRef &gt;</td></tr>
+<tr class="memdesc:ad7872bc53781012287296a95aa56545d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The non-const view to the standard thermodynamic properties of a phase and its species. <br /></td></tr>
+<tr class="separator:ad7872bc53781012287296a95aa56545d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed86fabbcfa77487bcc513ccd2a0161e"><td class="memItemLeft" align="right" valign="top"><a id="aed86fabbcfa77487bcc513ccd2a0161e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aed86fabbcfa77487bcc513ccd2a0161e">ThermoPropsPhaseConstRef</a> = <a class="el" href="classReaktoro_1_1ThermoPropsPhaseBase.html">ThermoPropsPhaseBase</a>&lt; TypeOpConstRef &gt;</td></tr>
+<tr class="memdesc:aed86fabbcfa77487bcc513ccd2a0161e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The const view to the standard thermodynamic properties of a phase and its species. <br /></td></tr>
+<tr class="separator:aed86fabbcfa77487bcc513ccd2a0161e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa59055359c55321887b4b7117532d735"><td class="memItemLeft" align="right" valign="top"><a id="aa59055359c55321887b4b7117532d735"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aa59055359c55321887b4b7117532d735">ScalarFunction</a> = std::function&lt; double(<a class="el" href="namespaceReaktoro.html#a7264e20fe5126e1f28b255ed006250c3">VectorXdConstRef</a>)&gt;</td></tr>
 <tr class="memdesc:aa59055359c55321887b4b7117532d735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a scalar function type. <br /></td></tr>
@@ -1085,11 +1101,11 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a488dbb7da466050f45dd230e8822dab3">VectorFunction</a> = std::function&lt; <a class="el" href="namespaceReaktoro.html#a73c1535cdfdd552cd04f7676926858b6">VectorXd</a>(<a class="el" href="namespaceReaktoro.html#a7264e20fe5126e1f28b255ed006250c3">VectorXdConstRef</a>)&gt;</td></tr>
 <tr class="memdesc:a488dbb7da466050f45dd230e8822dab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a vector function type. <br /></td></tr>
 <tr class="separator:a488dbb7da466050f45dd230e8822dab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33472c06eb16294e49d01ef8da0f97e2"><td class="memTemplParams" colspan="2"><a id="a33472c06eb16294e49d01ef8da0f97e2"></a>
+<tr class="memitem:a0c42a34c06ef12d186645c4f9307b5d4"><td class="memTemplParams" colspan="2"><a id="a0c42a34c06ef12d186645c4f9307b5d4"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a33472c06eb16294e49d01ef8da0f97e2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">CubicRoots</a> = std::tuple&lt; std::complex&lt; T &gt;, std::complex&lt; T &gt;, std::complex&lt; T &gt; &gt;</td></tr>
-<tr class="memdesc:a33472c06eb16294e49d01ef8da0f97e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a type that describes the roots of a cubic equation. <br /></td></tr>
-<tr class="separator:a33472c06eb16294e49d01ef8da0f97e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c42a34c06ef12d186645c4f9307b5d4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">CubicRoots</a> = std::array&lt; std::complex&lt; T &gt;, 3 &gt;</td></tr>
+<tr class="memdesc:a0c42a34c06ef12d186645c4f9307b5d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a type that describes the roots of a cubic equation. <br /></td></tr>
+<tr class="separator:a0c42a34c06ef12d186645c4f9307b5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e5946d89012e491957d90304bb842f7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a6e5946d89012e491957d90304bb842f7">StandardVolumeModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P)&gt;</td></tr>
 <tr class="memdesc:a6e5946d89012e491957d90304bb842f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for calculation of standard volume of a product species in a formation reaction.  <a href="namespaceReaktoro.html#a6e5946d89012e491957d90304bb842f7">More...</a><br /></td></tr>
 <tr class="separator:a6e5946d89012e491957d90304bb842f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1127,14 +1143,15 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:a02ae90aadc24dbff1702399a9c3ca1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The aggregate states of substances according to IUPAC.  <a href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd">More...</a><br /></td></tr>
 <tr class="separator:a02ae90aadc24dbff1702399a9c3ca1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4adf93979f02687344ed5923c51ec4b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4b">StateOfMatter</a> { <br />
-&#160;&#160;<a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bae41480b6bbfbf7407974a88d3d34f4fa">Solid</a>
+&#160;&#160;<a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4ba6fcdc090caeade09d0efd6253932b6f5">Unspecified</a>
+, <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bae41480b6bbfbf7407974a88d3d34f4fa">Solid</a>
 , <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4ba5635bf596d97c1c2e7afe481ed060774">Liquid</a>
 , <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4ba635459702f9817de29e608fa3395637c">Gas</a>
-, <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bab20a4217acaf4316739c6a5f6679ef60">Plasma</a>
 , <br />
-&#160;&#160;<a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bac2e7db5ac7ab74ea4bb9a7a89d251f3a">Fluid</a>
+&#160;&#160;<a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4ba31f335361e7b90dd5b658acf5dd67968">Supercritical</a>
+, <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bab20a4217acaf4316739c6a5f6679ef60">Plasma</a>
+, <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bac2e7db5ac7ab74ea4bb9a7a89d251f3a">Fluid</a>
 , <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bacfe8a1f1fa60297441a4a04fe8100df3">Condensed</a>
-, <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4baed36a1ef76a59ee3f15180e0441188ad">Any</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ad4adf93979f02687344ed5923c51ec4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of states of matter for phases.  <a href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4b">More...</a><br /></td></tr>
@@ -1153,18 +1170,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ac780ae5358764d4645a3156314ad99c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The options for the cubic equation of state models. <br /></td></tr>
 <tr class="separator:ac780ae5358764d4645a3156314ad99c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94574198b52d72ca7ad06a3c30abd68d"><td class="memItemLeft" align="right" valign="top"><a id="a94574198b52d72ca7ad06a3c30abd68d"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a94574198b52d72ca7ad06a3c30abd68d">CubicEOSFluidType</a> { <b>Liquid</b>
-, <b>Vapor</b>
- }</td></tr>
-<tr class="memdesc:a94574198b52d72ca7ad06a3c30abd68d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The options for the fluid types supported by the cubic equation of state. <br /></td></tr>
-<tr class="separator:a94574198b52d72ca7ad06a3c30abd68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47a19fec22929fb826f0cfdebbddc386"><td class="memItemLeft" align="right" valign="top"><a id="a47a19fec22929fb826f0cfdebbddc386"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a47a19fec22929fb826f0cfdebbddc386">PhaseIdentificationMethod</a> { <b>None</b>
-, <b>VolumeMethod</b>
-, <b>IsothermalCompressibilityMethods</b>
-, <b>GibbsEnergyAndEquationOfStateMethod</b>
- }</td></tr>
-<tr class="memdesc:a47a19fec22929fb826f0cfdebbddc386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the enumeration of available phase identification methods. <br /></td></tr>
-<tr class="separator:a47a19fec22929fb826f0cfdebbddc386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -1283,6 +1288,11 @@ template&lt;typename Function &gt; </td></tr>
 <tr class="memitem:a1b12f03a804fe90f4540298767265063"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1b12f03a804fe90f4540298767265063">sum</a> (std::size_t iend, const Function &amp;f)</td></tr>
 <tr class="memdesc:a1b12f03a804fe90f4540298767265063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sum <code>f(0) + ... + f(iend-1)</code> for a given function <code>f</code>. <br /></td></tr>
 <tr class="separator:a1b12f03a804fe90f4540298767265063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59410521bd45add14e0013c9090f1c20"><td class="memTemplParams" colspan="2"><a id="a59410521bd45add14e0013c9090f1c20"></a>
+template&lt;typename Indices , typename Function , EnableIf&lt;!isArithmetic&lt; Indices &gt;&gt; ...&gt; </td></tr>
+<tr class="memitem:a59410521bd45add14e0013c9090f1c20"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a59410521bd45add14e0013c9090f1c20">sum</a> (const <a class="el" href="namespaceReaktoro.html#ac42d7bc3972860909680b814cc562dc2">Indices</a> &amp;inds, const Function &amp;f)</td></tr>
+<tr class="memdesc:a59410521bd45add14e0013c9090f1c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sum <code>f(inds[0]) + ... + f(inds[inds.size() - 1])</code> for a given function <code>f</code>. <br /></td></tr>
+<tr class="separator:a59410521bd45add14e0013c9090f1c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae938ca9dddda147e3cdaf7a592a5597"><td class="memTemplParams" colspan="2"><a id="aae938ca9dddda147e3cdaf7a592a5597"></a>
 template&lt;typename Scalar &gt; </td></tr>
 <tr class="memitem:aae938ca9dddda147e3cdaf7a592a5597"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aae938ca9dddda147e3cdaf7a592a5597">convertCelsiusToKelvin</a> (Scalar T) -&gt; decltype(T+273.15)</td></tr>
@@ -1796,6 +1806,9 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:aa66a5e4f4f3f557f97bf3d02f30ea7d8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aa66a5e4f4f3f557f97bf3d02f30ea7d8">parseElectricCharge</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;formula) -&gt; double</td></tr>
 <tr class="memdesc:aa66a5e4f4f3f557f97bf3d02f30ea7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the electric charge in a chemical formula.  <a href="namespaceReaktoro.html#aa66a5e4f4f3f557f97bf3d02f30ea7d8">More...</a><br /></td></tr>
 <tr class="separator:aa66a5e4f4f3f557f97bf3d02f30ea7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af19543dfdcb4705d4e5108b8a78ede81"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">parseReactionEquation</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;equation) -&gt; <a class="el" href="namespaceReaktoro.html#a054d0c2ff55635088140dce324f30ccb">Pairs</a>&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, double &gt;</td></tr>
+<tr class="memdesc:af19543dfdcb4705d4e5108b8a78ede81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a formatted string representing a reaction equation.  <a href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">More...</a><br /></td></tr>
+<tr class="separator:af19543dfdcb4705d4e5108b8a78ede81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c4b7ca91cbb999efbfcbe2d4193babc"><td class="memTemplParams" colspan="2"><a id="a2c4b7ca91cbb999efbfcbe2d4193babc"></a>
 template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a2c4b7ca91cbb999efbfcbe2d4193babc"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a2c4b7ca91cbb999efbfcbe2d4193babc">stringfy</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;sep, Args... items) -&gt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a></td></tr>
@@ -1876,7 +1889,7 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memdesc:a7881752a8048fb5e6b76f1858071375b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert lambda/function pointers/member functions to <code>std::function</code>.  <a href="namespaceReaktoro.html#a7881752a8048fb5e6b76f1858071375b">More...</a><br /></td></tr>
 <tr class="separator:a7881752a8048fb5e6b76f1858071375b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7027bc34dbb59721e04ae0d182f7eed9"><td class="memItemLeft" align="right" valign="top"><a id="a7027bc34dbb59721e04ae0d182f7eed9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>REAKTORO_DEFINE_REFERENCE_TYPE_OF</b> (<a class="el" href="namespaceReaktoro.html#a7201d49858a85a9efe9812fa738c7b99">ActivityProps</a>, <a class="el" href="namespaceReaktoro.html#a83d4f34be6b6bdd54c2042d399558461">ActivityPropsRef</a>)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>REAKTORO_DEFINE_REFERENCE_TYPE_OF</b> (<a class="el" href="namespaceReaktoro.html#afd03bb649d32c146d7ef44e27f73e23f">ActivityProps</a>, <a class="el" href="namespaceReaktoro.html#a92671ce8d11e057767112f77ddca30e9">ActivityPropsRef</a>)</td></tr>
 <tr class="separator:a7027bc34dbb59721e04ae0d182f7eed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51a06c5eb4d8950a2540283920494768"><td class="memItemLeft" align="right" valign="top"><a id="a51a06c5eb4d8950a2540283920494768"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a51a06c5eb4d8950a2540283920494768">chain</a> (const <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a> &gt; &amp;models) -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
@@ -2120,9 +2133,10 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a975c9b908323cef7c658537299445fe1">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classReaktoro_1_1ReactionEquation.html">ReactionEquation</a> &amp;equation) -&gt; std::ostream &amp;</td></tr>
 <tr class="memdesc:a975c9b908323cef7c658537299445fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object. <br /></td></tr>
 <tr class="separator:a975c9b908323cef7c658537299445fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af19543dfdcb4705d4e5108b8a78ede81"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">parseReactionEquation</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;equation) -&gt; <a class="el" href="namespaceReaktoro.html#a054d0c2ff55635088140dce324f30ccb">Pairs</a>&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, double &gt;</td></tr>
-<tr class="memdesc:af19543dfdcb4705d4e5108b8a78ede81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a formatted string representing a reaction equation.  <a href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">More...</a><br /></td></tr>
-<tr class="separator:af19543dfdcb4705d4e5108b8a78ede81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a322f6147e1672a14d6345d679fe8a3ef"><td class="memItemLeft" align="right" valign="top"><a id="a322f6147e1672a14d6345d679fe8a3ef"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a322f6147e1672a14d6345d679fe8a3ef">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="structReaktoro_1_1ReactionProps.html">ReactionProps</a> &amp;props) -&gt; std::ostream &amp;</td></tr>
+<tr class="memdesc:a322f6147e1672a14d6345d679fe8a3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a <a class="el" href="structReaktoro_1_1ReactionProps.html" title="The complete set of thermodynamic properties of a chemical reaction.">ReactionProps</a> object to an output stream. <br /></td></tr>
+<tr class="separator:a322f6147e1672a14d6345d679fe8a3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2e1ec1616ef7e647c65b0dc610ba62e"><td class="memItemLeft" align="right" valign="top"><a id="ad2e1ec1616ef7e647c65b0dc610ba62e"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ad2e1ec1616ef7e647c65b0dc610ba62e">operator&lt;</a> (const <a class="el" href="classReaktoro_1_1Species.html">Species</a> &amp;lhs, const <a class="el" href="classReaktoro_1_1Species.html">Species</a> &amp;rhs) -&gt; bool</td></tr>
 <tr class="memdesc:ad2e1ec1616ef7e647c65b0dc610ba62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if a <a class="el" href="classReaktoro_1_1Species.html" title="A type used to represent a chemical species and its attributes.">Species</a> object is less than another for sorting reasons. <br /></td></tr>
@@ -2135,6 +2149,10 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ac916c7c495b0c4ad479de43d1feae46c">operator+</a> (const <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> &amp;a, const <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> &amp;b) -&gt; <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a></td></tr>
 <tr class="memdesc:ac916c7c495b0c4ad479de43d1feae46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the concatenation of two <a class="el" href="classReaktoro_1_1SpeciesList.html" title="A type used as a collection of species.">SpeciesList</a> objects. <br /></td></tr>
 <tr class="separator:ac916c7c495b0c4ad479de43d1feae46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c321b1627d177a75fb731aa117614e8"><td class="memItemLeft" align="right" valign="top"><a id="a1c321b1627d177a75fb731aa117614e8"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1c321b1627d177a75fb731aa117614e8">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="structReaktoro_1_1SpeciesThermoProps.html">SpeciesThermoProps</a> &amp;props) -&gt; std::ostream &amp;</td></tr>
+<tr class="memdesc:a1c321b1627d177a75fb731aa117614e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a <a class="el" href="structReaktoro_1_1SpeciesThermoProps.html" title="The complete set of standard thermodynamic properties of a chemical species.">SpeciesThermoProps</a> object to an output stream. <br /></td></tr>
+<tr class="separator:a1c321b1627d177a75fb731aa117614e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03e50d69b214b7d408f4d687c286a947"><td class="memItemLeft" align="right" valign="top"><a id="a03e50d69b214b7d408f4d687c286a947"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a03e50d69b214b7d408f4d687c286a947">operator&lt;&lt;</a> (std::ostream &amp;out, <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4b">StateOfMatter</a> option) -&gt; std::ostream &amp;</td></tr>
 <tr class="memdesc:a03e50d69b214b7d408f4d687c286a947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a StateOfMatter value. <br /></td></tr>
@@ -2206,7 +2224,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memdesc:abe24a99b415f899805ac9ed2dd6d18d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the residual of the equation <code>A*x - b</code> with triple-precision. <br /></td></tr>
 <tr class="separator:abe24a99b415f899805ac9ed2dd6d18d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59f86b076b5ae4e3f6d6f0229969ad4b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a59f86b076b5ae4e3f6d6f0229969ad4b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">cardano</a> (const T &amp;b, const T &amp;c, const T &amp;d) -&gt; <a class="el" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">CubicRoots</a>&lt; T &gt;</td></tr>
+<tr class="memitem:a59f86b076b5ae4e3f6d6f0229969ad4b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">cardano</a> (const T &amp;b, const T &amp;c, const T &amp;d) -&gt; <a class="el" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">CubicRoots</a>&lt; T &gt;</td></tr>
 <tr class="memdesc:a59f86b076b5ae4e3f6d6f0229969ad4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the roots of a cubic equation using Cardano's method.  <a href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">More...</a><br /></td></tr>
 <tr class="separator:a59f86b076b5ae4e3f6d6f0229969ad4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb8f30c802dda37b9f12dfc8bfd16c8d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -2214,7 +2232,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memdesc:adb8f30c802dda37b9f12dfc8bfd16c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the root of a non-linear function using Newton's method.  <a href="namespaceReaktoro.html#adb8f30c802dda37b9f12dfc8bfd16c8d">More...</a><br /></td></tr>
 <tr class="separator:adb8f30c802dda37b9f12dfc8bfd16c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2e1c5cb024059556807bb1c5a9a80c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a7e2e1c5cb024059556807bb1c5a9a80c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">realRoots</a> (const <a class="el" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">CubicRoots</a>&lt; T &gt; &amp;roots) -&gt; std::vector&lt; T &gt;</td></tr>
+<tr class="memitem:a7e2e1c5cb024059556807bb1c5a9a80c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">realRoots</a> (const <a class="el" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">CubicRoots</a>&lt; T &gt; &amp;roots) -&gt; std::vector&lt; T &gt;</td></tr>
 <tr class="memdesc:a7e2e1c5cb024059556807bb1c5a9a80c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all real roots of a group of roots.  <a href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">More...</a><br /></td></tr>
 <tr class="separator:a7e2e1c5cb024059556807bb1c5a9a80c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f269353a610cc96083d7b8824c3fc0f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a3f269353a610cc96083d7b8824c3fc0f">ReactionThermoModelConstLgK</a> (const <a class="el" href="structReaktoro_1_1ReactionThermoModelParamsConstLgK.html">ReactionThermoModelParamsConstLgK</a> &amp;params) -&gt; <a class="el" href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">ReactionThermoModel</a></td></tr>
@@ -2513,15 +2531,6 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:ab9861a77917bae6e019267d3873932a3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ab9861a77917bae6e019267d3873932a3">ActivityModelSpycherReed</a> () -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
 <tr class="memdesc:ab9861a77917bae6e019267d3873932a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity model for gaseous phases formulated in Spycher and Reed (1988).  <a href="namespaceReaktoro.html#ab9861a77917bae6e019267d3873932a3">More...</a><br /></td></tr>
 <tr class="separator:ab9861a77917bae6e019267d3873932a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12ee0a4bf74de8736d8731d86379c19b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a12ee0a4bf74de8736d8731d86379c19b">identifyPhaseUsingVolume</a> (const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;temperature, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;pressure, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;Z, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;b) -&gt; <a class="el" href="namespaceReaktoro.html#a94574198b52d72ca7ad06a3c30abd68d">CubicEOSFluidType</a></td></tr>
-<tr class="memdesc:a12ee0a4bf74de8736d8731d86379c19b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a CubicEOSFluidType that says if the phase is a Liquid or Gas based on Volume Method.  <a href="namespaceReaktoro.html#a12ee0a4bf74de8736d8731d86379c19b">More...</a><br /></td></tr>
-<tr class="separator:a12ee0a4bf74de8736d8731d86379c19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1a4e7d0b95164880e21c8ad8451cd48"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ae1a4e7d0b95164880e21c8ad8451cd48">identifyPhaseUsingIsothermalCompressibility</a> (const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;temperature, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;pressure, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;Z) -&gt; <a class="el" href="namespaceReaktoro.html#a94574198b52d72ca7ad06a3c30abd68d">CubicEOSFluidType</a></td></tr>
-<tr class="memdesc:ae1a4e7d0b95164880e21c8ad8451cd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a CubicEOSFluidType that says if the phase is a Liquid or Gas based on Isothermal Compressibility.  <a href="namespaceReaktoro.html#ae1a4e7d0b95164880e21c8ad8451cd48">More...</a><br /></td></tr>
-<tr class="separator:ae1a4e7d0b95164880e21c8ad8451cd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8632909aa8879404750745a5f728cad8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a8632909aa8879404750745a5f728cad8">identifyPhaseUsingGibbsEnergyAndEos</a> (const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;pressure, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;temperature, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;amix, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;bmix, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;A, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;B, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;C, std::vector&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &gt; Zs, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> <a class="el" href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">epsilon</a>, const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> sigma) -&gt; <a class="el" href="namespaceReaktoro.html#a94574198b52d72ca7ad06a3c30abd68d">CubicEOSFluidType</a></td></tr>
-<tr class="memdesc:a8632909aa8879404750745a5f728cad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a CubicEOSFluidType that says if the phase is a Liquid or Gas based on gibbs residual energy and equation of state If size(Z) == 2, the values od Gibbs residual energy are compared.  <a href="namespaceReaktoro.html#a8632909aa8879404750745a5f728cad8">More...</a><br /></td></tr>
-<tr class="separator:a8632909aa8879404750745a5f728cad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae431d4c8a1f283910ae1cf35024091b8"><td class="memItemLeft" align="right" valign="top"><a id="ae431d4c8a1f283910ae1cf35024091b8"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ae431d4c8a1f283910ae1cf35024091b8">ActivityModelIdealAqueous</a> () -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
 <tr class="memdesc:ae431d4c8a1f283910ae1cf35024091b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity model for an ideal aqueous solution. <br /></td></tr>
@@ -2534,10 +2543,9 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a935652e5d1f590cc3571b8a4d97052a7">ActivityModelIdealIonExchange</a> () -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
 <tr class="memdesc:a935652e5d1f590cc3571b8a4d97052a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity model for the ideal ion exchange. <br /></td></tr>
 <tr class="separator:a935652e5d1f590cc3571b8a4d97052a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf42373e66e48b10e02163696b794e20"><td class="memItemLeft" align="right" valign="top"><a id="aaf42373e66e48b10e02163696b794e20"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aaf42373e66e48b10e02163696b794e20">ActivityModelIdealSolution</a> () -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
-<tr class="memdesc:aaf42373e66e48b10e02163696b794e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity model for an ideal solution. <br /></td></tr>
-<tr class="separator:aaf42373e66e48b10e02163696b794e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6581d5c0cde36cae6d9c46dbc32d56f8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a6581d5c0cde36cae6d9c46dbc32d56f8">ActivityModelIdealSolution</a> (<a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4b">StateOfMatter</a> stateofmatter) -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
+<tr class="memdesc:a6581d5c0cde36cae6d9c46dbc32d56f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity model for an ideal solution.  <a href="namespaceReaktoro.html#a6581d5c0cde36cae6d9c46dbc32d56f8">More...</a><br /></td></tr>
+<tr class="separator:a6581d5c0cde36cae6d9c46dbc32d56f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e56f2d17a5385c196cc06ff93ecc714"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a6e56f2d17a5385c196cc06ff93ecc714">ActivityModelRedlichKister</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> a0, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> a1, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> a2) -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
 <tr class="memdesc:a6e56f2d17a5385c196cc06ff93ecc714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity model for a binary solid solution phase based on Redlich-Kister model.  <a href="namespaceReaktoro.html#a6e56f2d17a5385c196cc06ff93ecc714">More...</a><br /></td></tr>
 <tr class="separator:a6e56f2d17a5385c196cc06ff93ecc714"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2802,30 +2810,6 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a id="a344e12e57f33613b35e7068d38a8d324"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a344e12e57f33613b35e7068d38a8d324">&#9670;&nbsp;</a></span>EquilibriumConstantFn</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespaceReaktoro.html#a344e12e57f33613b35e7068d38a8d324">EquilibriumConstantFn</a> =  std::function&lt;<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P)&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The function type for calculation of equilibrium constant of reaction (in natural log). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature for the calculation (in K) </td></tr>
-    <tr><td class="paramname">P</td><td>The pressure for the calculation (in Pa) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The ln equilibrium constant of the reaction ( \(\ln{K}\)) </dd></dl>
-
-</div>
-</div>
 <a id="a9933121318e42facfe6ccaebe69a5a2b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9933121318e42facfe6ccaebe69a5a2b">&#9670;&nbsp;</a></span>StandardThermoModel</h2>
 
@@ -2958,19 +2942,21 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>The list of states of matter for phases. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4bae41480b6bbfbf7407974a88d3d34f4fa"></a>Solid&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is always considered solid </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4ba6fcdc090caeade09d0efd6253932b6f5"></a>Unspecified&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is unspecified </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4ba5635bf596d97c1c2e7afe481ed060774"></a>Liquid&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is always considered liquid </p>
+<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4bae41480b6bbfbf7407974a88d3d34f4fa"></a>Solid&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is solid </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4ba635459702f9817de29e608fa3395637c"></a>Gas&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is always considered gas </p>
+<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4ba5635bf596d97c1c2e7afe481ed060774"></a>Liquid&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is liquid </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4bab20a4217acaf4316739c6a5f6679ef60"></a>Plasma&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is always considered plama </p>
+<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4ba635459702f9817de29e608fa3395637c"></a>Gas&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is gas </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4bac2e7db5ac7ab74ea4bb9a7a89d251f3a"></a>Fluid&#160;</td><td class="fielddoc"><p>when the state of matter of a phase can be either liquid, gas, or plasma </p>
+<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4ba31f335361e7b90dd5b658acf5dd67968"></a>Supercritical&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is supercritical </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4bacfe8a1f1fa60297441a4a04fe8100df3"></a>Condensed&#160;</td><td class="fielddoc"><p>when the state of matter of a phase can be either liquid or solid </p>
+<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4bab20a4217acaf4316739c6a5f6679ef60"></a>Plasma&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is plama </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4baed36a1ef76a59ee3f15180e0441188ad"></a>Any&#160;</td><td class="fielddoc"><p>when the state of matter of a phase is any of the above </p>
+<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4bac2e7db5ac7ab74ea4bb9a7a89d251f3a"></a>Fluid&#160;</td><td class="fielddoc"><p>when the state of matter of a phase can be either liquid, gas, or plasma // TODO: <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bac2e7db5ac7ab74ea4bb9a7a89d251f3a" title="when the state of matter of a phase can be either liquid, gas, or plasma // TODO: StateOfMatter::Flui...">StateOfMatter::Fluid</a> needs to go once StateOfMatter is a result of a activity model evaluation, and not a constant phase attribute. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad4adf93979f02687344ed5923c51ec4bacfe8a1f1fa60297441a4a04fe8100df3"></a>Condensed&#160;</td><td class="fielddoc"><p>when the state of matter of a phase can be either liquid or solid // TODO: <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bacfe8a1f1fa60297441a4a04fe8100df3" title="when the state of matter of a phase can be either liquid or solid // TODO: StateOfMatter::Condensed n...">StateOfMatter::Condensed</a> needs to go once StateOfMatter is a result of a activity model evaluation, and not a constant phase attribute. </p>
 </td></tr>
 </table>
 
@@ -5017,7 +5003,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> [name, suffix] = <a class="code" href="namespaceReaktoro.html#a5f094b7880b2d252912fec1bd9e5e9f4">splitSpeciesNameSuffix</a>(<span class="stringliteral">&quot;Methane(aq)&quot;</span>);       <span class="comment">// name: &quot;Methane&quot;, suffix: &quot;aq&quot;</span></div>
 <div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> [name, suffix] = <a class="code" href="namespaceReaktoro.html#a5f094b7880b2d252912fec1bd9e5e9f4">splitSpeciesNameSuffix</a>(<span class="stringliteral">&quot;Ca++&quot;</span>);              <span class="comment">// name: &quot;Ca++&quot;,    suffix: &quot;&quot;</span></div>
 <div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> [name, suffix] = <a class="code" href="namespaceReaktoro.html#a5f094b7880b2d252912fec1bd9e5e9f4">splitSpeciesNameSuffix</a>(<span class="stringliteral">&quot;Fe[3+](aq)&quot;</span>);        <span class="comment">// name: &quot;Fe[3+]&quot;,  suffix: &quot;aq&quot;</span></div>
-<div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:25</div></div>
+<div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a5f094b7880b2d252912fec1bd9e5e9f4"><div class="ttname"><a href="namespaceReaktoro.html#a5f094b7880b2d252912fec1bd9e5e9f4">Reaktoro::splitSpeciesNameSuffix</a></div><div class="ttdeci">auto splitSpeciesNameSuffix(std::string name) -&gt; std::pair&lt; std::string, std::string &gt;</div><div class="ttdoc">Split name and suffix from a substance name or chemical formula.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -5119,6 +5105,31 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div class="line"><span class="keyword">auto</span> charge11 = <a class="code" href="namespaceReaktoro.html#aa66a5e4f4f3f557f97bf3d02f30ea7d8">parseElectricCharge</a>(<span class="stringliteral">&quot;CO3-2&quot;</span>);        \\ charge11 === -2</div>
 <div class="ttc" id="anamespaceReaktoro_html_aa66a5e4f4f3f557f97bf3d02f30ea7d8"><div class="ttname"><a href="namespaceReaktoro.html#aa66a5e4f4f3f557f97bf3d02f30ea7d8">Reaktoro::parseElectricCharge</a></div><div class="ttdeci">auto parseElectricCharge(const String &amp;formula) -&gt; double</div><div class="ttdoc">Return the electric charge in a chemical formula.</div></div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceReaktoro.html#a85b31ac442f07ae463821e263cc57666" title="Return the element symbols and their coefficients in a chemical formula.">parseChemicalFormula</a> </dd></dl>
+
+</div>
+</div>
+<a id="af19543dfdcb4705d4e5108b8a78ede81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af19543dfdcb4705d4e5108b8a78ede81">&#9670;&nbsp;</a></span>parseReactionEquation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Reaktoro::parseReactionEquation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;&#160;</td>
+          <td class="paramname"><em>equation</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="namespaceReaktoro.html#a054d0c2ff55635088140dce324f30ccb">Pairs</a>&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, double &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse a formatted string representing a reaction equation. </p>
+<p>Below are examples of formatted strings representing reaction equations. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> pairs1 = <a class="code" href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">parseReactionEquation</a>(<span class="stringliteral">&quot;Calcite + H+ = Ca++ + HCO3-&quot;</span>);</div>
+<div class="line"><span class="keyword">auto</span> pairs2 = <a class="code" href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">parseReactionEquation</a>(<span class="stringliteral">&quot;CO2(g) + H2O(l) = H+ + HCO3-&quot;</span>);</div>
+<div class="line"><span class="keyword">auto</span> pairs3 = <a class="code" href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">parseReactionEquation</a>(<span class="stringliteral">&quot;Dolomite + 2*H+ = Ca++ + Mg++ + 2*HCO3-&quot;</span>);</div>
+<div class="ttc" id="anamespaceReaktoro_html_af19543dfdcb4705d4e5108b8a78ede81"><div class="ttname"><a href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">Reaktoro::parseReactionEquation</a></div><div class="ttdeci">auto parseReactionEquation(const String &amp;equation) -&gt; Pairs&lt; String, double &gt;</div><div class="ttdoc">Parse a formatted string representing a reaction equation.</div></div>
+</div><!-- fragment --><p> Note that unity stoichiometric coefficients can be ommited from the equation. The operator <code>*</code> must be used when this is not the case. </p><dl class="section return"><dt>Returns</dt><dd>The species names and their stoichiometric coefficients </dd></dl>
 
 </div>
 </div>
@@ -5322,31 +5333,6 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <div class="ttc" id="anamespaceReaktoro_html_a700d68f2a2a1d82ad91a3bd14fd32fea"><div class="ttname"><a href="namespaceReaktoro.html#a700d68f2a2a1d82ad91a3bd14fd32fea">Reaktoro::identifyAggregateState</a></div><div class="ttdeci">auto identifyAggregateState(const std::string &amp;name) -&gt; AggregateState</div><div class="ttdoc">Identify the aggregate state in the name of a substance or chemical species.</div></div>
 </div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>By default, charged species without explicit aggregate state identification is considered aqueous. Thus species names such as HCO3-, Ca++, H+ will produce <a class="el" href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cdaa6321bc893937f08e004b7f96f8a73a9" title="for a species in a solution in which water is the solvent (symbol aq)">AggregateState::Aqueous</a>. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd" title="The aggregate states of substances according to IUPAC.">AggregateState</a>, <a class="el" href="namespaceReaktoro.html#ac2794b83bf7cad5834726becea042eec" title="Return the AggregateState value from given aggregate state symbol.">parseAggregateState</a> </dd></dl>
-
-</div>
-</div>
-<a id="af19543dfdcb4705d4e5108b8a78ede81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af19543dfdcb4705d4e5108b8a78ede81">&#9670;&nbsp;</a></span>parseReactionEquation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto Reaktoro::parseReactionEquation </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;&#160;</td>
-          <td class="paramname"><em>equation</em></td><td>)</td>
-          <td> -&gt;  <a class="el" href="namespaceReaktoro.html#a054d0c2ff55635088140dce324f30ccb">Pairs</a>&lt; <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>, double &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Parse a formatted string representing a reaction equation. </p>
-<p>Below are examples of formatted strings representing reaction equations. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> pairs1 = <a class="code" href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">parseReactionEquation</a>(<span class="stringliteral">&quot;Calcite + H+ = Ca++ + HCO3-&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> pairs2 = <a class="code" href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">parseReactionEquation</a>(<span class="stringliteral">&quot;CO2(g) + H2O(l) = H+ + HCO3-&quot;</span>);</div>
-<div class="line"><span class="keyword">auto</span> pairs3 = <a class="code" href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">parseReactionEquation</a>(<span class="stringliteral">&quot;Dolomite + 2*H+ = Ca++ + Mg++ + 2*HCO3-&quot;</span>);</div>
-<div class="ttc" id="anamespaceReaktoro_html_af19543dfdcb4705d4e5108b8a78ede81"><div class="ttname"><a href="namespaceReaktoro.html#af19543dfdcb4705d4e5108b8a78ede81">Reaktoro::parseReactionEquation</a></div><div class="ttdeci">auto parseReactionEquation(const String &amp;equation) -&gt; Pairs&lt; String, double &gt;</div><div class="ttdoc">Parse a formatted string representing a reaction equation.</div></div>
-</div><!-- fragment --><p> Note that unity stoichiometric coefficients can be ommited from the equation. The operator <code>*</code> must be used when this is not the case. </p><dl class="section return"><dt>Returns</dt><dd>The species names and their stoichiometric coefficients </dd></dl>
 
 </div>
 </div>
@@ -5891,7 +5877,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">CubicRoots</a>&lt;T&gt;
+          <td></td><td> -&gt; <a class="el" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">CubicRoots</a>&lt;T&gt;
 </td>
         </tr>
       </table>
@@ -5908,7 +5894,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The three roots \( (r_1, r_2, r_3) \) that solve the cubic equation, where \( |r_1| \geq |r_2| \geq |r_3| \). If they are all real, they are returned in descending order (the first element is the highest). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The three roots \( (r_1, r_2, r_3) \) that solve the cubic equation. No ordering is performed on the roots! </dd></dl>
 
 </div>
 </div>
@@ -5974,7 +5960,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">auto Reaktoro::realRoots </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">CubicRoots</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">CubicRoots</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>roots</em></td><td>)</td>
           <td> -&gt; std::vector&lt;T&gt;
 </td>
@@ -6227,182 +6213,29 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a id="a12ee0a4bf74de8736d8731d86379c19b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12ee0a4bf74de8736d8731d86379c19b">&#9670;&nbsp;</a></span>identifyPhaseUsingVolume()</h2>
+<a id="a6581d5c0cde36cae6d9c46dbc32d56f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6581d5c0cde36cae6d9c46dbc32d56f8">&#9670;&nbsp;</a></span>ActivityModelIdealSolution()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto Reaktoro::identifyPhaseUsingVolume </td>
+          <td class="memname">auto Reaktoro::ActivityModelIdealSolution </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>temperature</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>pressure</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>Z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt;  <a class="el" href="namespaceReaktoro.html#a94574198b52d72ca7ad06a3c30abd68d">CubicEOSFluidType</a></td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4b">StateOfMatter</a>&#160;</td>
+          <td class="paramname"><em>stateofmatter</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return a CubicEOSFluidType that says if the phase is a Liquid or Gas based on Volume Method. </p>
+<p>Return the activity model for an ideal solution. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">temperature</td><td><a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> temperature </td></tr>
-    <tr><td class="paramname">pressure</td><td><a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> pressure </td></tr>
-    <tr><td class="paramname">Z</td><td><a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> compressibility factor </td></tr>
-    <tr><td class="paramname">b</td><td>The b factor </td></tr>
+    <tr><td class="paramname">stateofmatter</td><td>The state of matter of the solution </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The type of the phase</dd></dl>
-<p>Reference: Bennett, J. and Schmidt, K.A., 2016. Comparison of <a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> Identification Methods Used in Oil Industry Flow Simulations. Energy &amp; Fuels, 31(4), pp.3370-3379. </p>
-
-</div>
-</div>
-<a id="ae1a4e7d0b95164880e21c8ad8451cd48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1a4e7d0b95164880e21c8ad8451cd48">&#9670;&nbsp;</a></span>identifyPhaseUsingIsothermalCompressibility()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto Reaktoro::identifyPhaseUsingIsothermalCompressibility </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>temperature</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>pressure</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>Z</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt;  <a class="el" href="namespaceReaktoro.html#a94574198b52d72ca7ad06a3c30abd68d">CubicEOSFluidType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return a CubicEOSFluidType that says if the phase is a Liquid or Gas based on Isothermal Compressibility. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">temperature</td><td><a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> temperature </td></tr>
-    <tr><td class="paramname">pressure</td><td><a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> pressure </td></tr>
-    <tr><td class="paramname">Z</td><td><a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> compressibility factor </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The type of the phase</dd></dl>
-<p>Reference: Bennett, J. and Schmidt, K.A., 2016. Comparison of <a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> Identification Methods Used in Oil Industry Flow Simulations. Energy &amp; Fuels, 31(4), pp.3370-3379. </p>
-
-</div>
-</div>
-<a id="a8632909aa8879404750745a5f728cad8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8632909aa8879404750745a5f728cad8">&#9670;&nbsp;</a></span>identifyPhaseUsingGibbsEnergyAndEos()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto Reaktoro::identifyPhaseUsingGibbsEnergyAndEos </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>pressure</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>temperature</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>amix</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>bmix</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>A</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>B</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> &gt;&#160;</td>
-          <td class="paramname"><em>Zs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
-          <td class="paramname"><em>epsilon</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
-          <td class="paramname"><em>sigma</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt;  <a class="el" href="namespaceReaktoro.html#a94574198b52d72ca7ad06a3c30abd68d">CubicEOSFluidType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return a CubicEOSFluidType that says if the phase is a Liquid or Gas based on gibbs residual energy and equation of state If size(Z) == 2, the values od Gibbs residual energy are compared. </p>
-<p>It is a liquid phase if Gibbs residual energy of Z_min is the smallest and gaseous if Gibbs residual energy of Z_max is the smallest. If size(Z) == 1, the pressue is compared with the local P_min and local P_max of the EoS. It is a liquid phase if P &gt; P_min and gaseous if P &lt; Pmax. </p><dl class="section return"><dt>Returns</dt><dd>The type of the phase</dd></dl>
-<p>Reference: Bennett, J. and Schmidt, K.A., 2016. Comparison of <a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> Identification Methods Used in Oil Industry Flow Simulations. Energy &amp; Fuels, 31(4), pp.3370-3379. </p>
 
 </div>
 </div>
@@ -7241,7 +7074,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 18 2022 13:58:00 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Jan 21 2022 19:28:30 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

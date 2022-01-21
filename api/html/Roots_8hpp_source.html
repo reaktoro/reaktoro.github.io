@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Reaktoro is a unified framework for modeling chemically reactive systems.</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright © 2014-2021 Allan Leal</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright © 2014-2022 Allan Leal</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// This library is free software; you can redistribute it and/or</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// modify it under the terms of the GNU Lesser General Public</span></div>
@@ -148,110 +148,110 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// C++ includes</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;complex&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;complex&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">   29</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">CubicRoots</a> = std::tuple&lt;std::complex&lt;T&gt;, std::complex&lt;T&gt;, std::complex&lt;T&gt;&gt;;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">   29</a></span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">CubicRoots</a> = std::array&lt;std::complex&lt;T&gt;, 3&gt;;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">   45</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">cardano</a>(<span class="keyword">const</span> T&amp; b, <span class="keyword">const</span> T&amp; c, <span class="keyword">const</span> T&amp; d) -&gt; <a class="code" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">CubicRoots&lt;T&gt;</a></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">using</span> std::abs;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">using</span> std::acos;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">using</span> std::cbrt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">using</span> std::cos;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">using</span> std::sqrt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">using</span> std::complex;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> xn = -b/3;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> yn = d + xn*(c + xn*(b + xn));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> delta2 = (b*b - 3*c)/9;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> u = yn*yn;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> v = 4*delta2*delta2*delta2;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> discr = u - v;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> eps = 100*std::numeric_limits&lt;T&gt;::epsilon();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span>(discr &gt; eps) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> sqrtdiscr = <a class="code" href="namespaceReaktoro.html#ab5599c424c8c7fbb77e8df2070438a5c">sqrt</a>(discr);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> aux1 = cbrt( 0.5*(-yn + sqrtdiscr) );</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> aux2 = cbrt( 0.5*(-yn - sqrtdiscr) );</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> alpha = xn + aux1 + aux2;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> z1 = alpha - xn;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> aux3 = 0.5*<a class="code" href="namespaceReaktoro.html#ab5599c424c8c7fbb77e8df2070438a5c">sqrt</a>(3*(z1*z1 - 4*delta2));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> aux4 = xn - 0.5*z1;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> beta = complex{aux4, -aux3};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> gamma = complex{aux4, aux3};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> {alpha, beta, gamma};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(discr &lt; -eps) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> pi = 3.14159265358979323846;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> delta = <a class="code" href="namespaceReaktoro.html#ab5599c424c8c7fbb77e8df2070438a5c">sqrt</a>(delta2);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> h = 2*delta2*delta;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> theta = acos(-yn/h) / 3.0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> alpha = xn + 2*delta*cos(theta);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> beta  = xn + 2*delta*cos(2*pi/3 - theta);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> gamma = xn + 2*delta*cos(2*pi/3 + theta);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> {gamma, beta, alpha};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> delta = cbrt( 0.5*yn );</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> alpha = xn + delta;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> gamma = xn - 2*delta;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span>(alpha &lt; gamma) <span class="keywordflow">return</span> {alpha, alpha, gamma};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">return</span> {gamma, alpha, alpha};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#adb8f30c802dda37b9f12dfc8bfd16c8d">  104</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#adb8f30c802dda37b9f12dfc8bfd16c8d">newton</a>(<span class="keyword">const</span> std::function&lt;std::tuple&lt;T, T&gt;(<span class="keyword">const</span> T&amp;)&gt;&amp; f, <span class="keyword">const</span> T&amp; x0, <span class="keyword">const</span> T&amp; <a class="code" href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">epsilon</a>, std::size_t maxiter) -&gt; std::tuple&lt;T, std::size_t, bool&gt;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">using</span> std::abs;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    assert(<a class="code" href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">epsilon</a> &gt; 0.0);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    assert(maxiter &gt; 0);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    T x = x0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; i &lt; maxiter; ++i)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> [fx, dfx] = f(x);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        assert(dfx != 0.0);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        x -= fx/dfx;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespaceReaktoro.html#a18c2f670ae40a2716bc3172fee0ed4c8">abs</a>(fx) &lt; <a class="code" href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">epsilon</a>)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">return</span> { x, i, <span class="keyword">true</span> };</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> { x, maxiter, <span class="keyword">false</span> };</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">  125</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">realRoots</a>(<span class="keyword">const</span> <a class="code" href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">CubicRoots&lt;T&gt;</a>&amp; roots) -&gt; std::vector&lt;T&gt;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::vector&lt;T&gt; real_roots;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span>(std::get&lt;0&gt;(roots).imag() == 0.0)</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        real_roots.push_back(std::get&lt;0&gt;(roots).<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>());</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span>(std::get&lt;1&gt;(roots).imag() == 0.0)</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        real_roots.push_back(std::get&lt;1&gt;(roots).<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>());</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span>(std::get&lt;2&gt;(roots).imag() == 0.0)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        real_roots.push_back(std::get&lt;2&gt;(roots).<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>());</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> real_roots;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
-<div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:25</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a18c2f670ae40a2716bc3172fee0ed4c8"><div class="ttname"><a href="namespaceReaktoro.html#a18c2f670ae40a2716bc3172fee0ed4c8">Reaktoro::abs</a></div><div class="ttdeci">auto abs(const Eigen::MatrixBase&lt; Derived &gt; &amp;mat) -&gt; decltype(mat.cwiseAbs())</div><div class="ttdoc">Return the component-wise absolute entries of a matrix.</div><div class="ttdef"><b>Definition:</b> Matrix.hpp:764</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a33472c06eb16294e49d01ef8da0f97e2"><div class="ttname"><a href="namespaceReaktoro.html#a33472c06eb16294e49d01ef8da0f97e2">Reaktoro::CubicRoots</a></div><div class="ttdeci">std::tuple&lt; std::complex&lt; T &gt;, std::complex&lt; T &gt;, std::complex&lt; T &gt; &gt; CubicRoots</div><div class="ttdoc">Define a type that describes the roots of a cubic equation.</div><div class="ttdef"><b>Definition:</b> Roots.hpp:29</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a59f86b076b5ae4e3f6d6f0229969ad4b"><div class="ttname"><a href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">Reaktoro::cardano</a></div><div class="ttdeci">auto cardano(const T &amp;b, const T &amp;c, const T &amp;d) -&gt; CubicRoots&lt; T &gt;</div><div class="ttdoc">Calculate the roots of a cubic equation using Cardano's method.</div><div class="ttdef"><b>Definition:</b> Roots.hpp:45</div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">   44</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">cardano</a>(<span class="keyword">const</span> T&amp; b, <span class="keyword">const</span> T&amp; c, <span class="keyword">const</span> T&amp; d) -&gt; <a class="code" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">CubicRoots&lt;T&gt;</a></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">using</span> std::abs;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">using</span> std::acos;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">using</span> std::cbrt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">using</span> std::cos;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">using</span> std::sqrt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">using</span> std::complex;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> xn = -b/3;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> yn = d + xn*(c + xn*(b + xn));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> delta2 = (b*b - 3*c)/9;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> u = yn*yn;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> v = 4*delta2*delta2*delta2;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> discr = u - v;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> eps = 100*std::numeric_limits&lt;T&gt;::epsilon();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span>(discr &gt; eps) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> sqrtdiscr = <a class="code" href="namespaceReaktoro.html#ab5599c424c8c7fbb77e8df2070438a5c">sqrt</a>(discr);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> aux1 = cbrt( 0.5*(-yn + sqrtdiscr) );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> aux2 = cbrt( 0.5*(-yn - sqrtdiscr) );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> alpha = xn + aux1 + aux2;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> z1 = alpha - xn;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> aux3 = 0.5*<a class="code" href="namespaceReaktoro.html#ab5599c424c8c7fbb77e8df2070438a5c">sqrt</a>(3*(z1*z1 - 4*delta2));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> aux4 = xn - 0.5*z1;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> beta = complex{aux4, -aux3};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> gamma = complex{aux4, aux3};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> {alpha, beta, gamma};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(discr &lt; -eps) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> pi = 3.14159265358979323846;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> delta = <a class="code" href="namespaceReaktoro.html#ab5599c424c8c7fbb77e8df2070438a5c">sqrt</a>(delta2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> h = 2*delta2*delta;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> theta = acos(-yn/h) / 3.0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> alpha = xn + 2*delta*cos(theta);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> beta  = xn + 2*delta*cos(2*pi/3 - theta);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> gamma = xn + 2*delta*cos(2*pi/3 + theta);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> {gamma, beta, alpha};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> delta = cbrt( 0.5*yn );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> alpha = xn + delta;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> gamma = xn - 2*delta;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span>(alpha &lt; gamma) <span class="keywordflow">return</span> {alpha, alpha, gamma};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">return</span> {gamma, alpha, alpha};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#adb8f30c802dda37b9f12dfc8bfd16c8d">  103</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#adb8f30c802dda37b9f12dfc8bfd16c8d">newton</a>(<span class="keyword">const</span> std::function&lt;std::tuple&lt;T, T&gt;(<span class="keyword">const</span> T&amp;)&gt;&amp; f, <span class="keyword">const</span> T&amp; x0, <span class="keyword">const</span> T&amp; <a class="code" href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">epsilon</a>, std::size_t maxiter) -&gt; std::tuple&lt;T, std::size_t, bool&gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">using</span> std::abs;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    assert(<a class="code" href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">epsilon</a> &gt; 0.0);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    assert(maxiter &gt; 0);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    T x = x0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; i &lt; maxiter; ++i)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> [fx, dfx] = f(x);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        assert(dfx != 0.0);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        x -= fx/dfx;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespaceReaktoro.html#a18c2f670ae40a2716bc3172fee0ed4c8">abs</a>(fx) &lt; <a class="code" href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">epsilon</a>)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> { x, i, <span class="keyword">true</span> };</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> { x, maxiter, <span class="keyword">false</span> };</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">  124</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">realRoots</a>(<span class="keyword">const</span> <a class="code" href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">CubicRoots&lt;T&gt;</a>&amp; roots) -&gt; std::vector&lt;T&gt;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::vector&lt;T&gt; real_roots;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span>(std::get&lt;0&gt;(roots).imag() == 0.0)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        real_roots.push_back(std::get&lt;0&gt;(roots).<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>());</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span>(std::get&lt;1&gt;(roots).imag() == 0.0)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        real_roots.push_back(std::get&lt;1&gt;(roots).<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>());</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span>(std::get&lt;2&gt;(roots).imag() == 0.0)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        real_roots.push_back(std::get&lt;2&gt;(roots).<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>());</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">return</span> real_roots;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a0c42a34c06ef12d186645c4f9307b5d4"><div class="ttname"><a href="namespaceReaktoro.html#a0c42a34c06ef12d186645c4f9307b5d4">Reaktoro::CubicRoots</a></div><div class="ttdeci">std::array&lt; std::complex&lt; T &gt;, 3 &gt; CubicRoots</div><div class="ttdoc">Define a type that describes the roots of a cubic equation.</div><div class="ttdef"><b>Definition:</b> Roots.hpp:29</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a18c2f670ae40a2716bc3172fee0ed4c8"><div class="ttname"><a href="namespaceReaktoro.html#a18c2f670ae40a2716bc3172fee0ed4c8">Reaktoro::abs</a></div><div class="ttdeci">auto abs(const Eigen::MatrixBase&lt; Derived &gt; &amp;mat) -&gt; decltype(mat.cwiseAbs())</div><div class="ttdoc">Return the component-wise absolute entries of a matrix.</div><div class="ttdef"><b>Definition:</b> Matrix.hpp:798</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a59f86b076b5ae4e3f6d6f0229969ad4b"><div class="ttname"><a href="namespaceReaktoro.html#a59f86b076b5ae4e3f6d6f0229969ad4b">Reaktoro::cardano</a></div><div class="ttdeci">auto cardano(const T &amp;b, const T &amp;c, const T &amp;d) -&gt; CubicRoots&lt; T &gt;</div><div class="ttdoc">Calculate the roots of a cubic equation using Cardano's method.</div><div class="ttdef"><b>Definition:</b> Roots.hpp:44</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a60d9c89846499b1ea9c6cba13f462983"><div class="ttname"><a href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">Reaktoro::real</a></div><div class="ttdeci">autodiff::real real</div><div class="ttdoc">The number type used throughout the library.</div><div class="ttdef"><b>Definition:</b> Real.hpp:26</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a7e2e1c5cb024059556807bb1c5a9a80c"><div class="ttname"><a href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">Reaktoro::realRoots</a></div><div class="ttdeci">auto realRoots(const CubicRoots&lt; T &gt; &amp;roots) -&gt; std::vector&lt; T &gt;</div><div class="ttdoc">Return all real roots of a group of roots.</div><div class="ttdef"><b>Definition:</b> Roots.hpp:125</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a7e2e1c5cb024059556807bb1c5a9a80c"><div class="ttname"><a href="namespaceReaktoro.html#a7e2e1c5cb024059556807bb1c5a9a80c">Reaktoro::realRoots</a></div><div class="ttdeci">auto realRoots(const CubicRoots&lt; T &gt; &amp;roots) -&gt; std::vector&lt; T &gt;</div><div class="ttdoc">Return all real roots of a group of roots.</div><div class="ttdef"><b>Definition:</b> Roots.hpp:124</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_aa069b82474761553548da6051312c490"><div class="ttname"><a href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">Reaktoro::epsilon</a></div><div class="ttdeci">constexpr auto epsilon</div><div class="ttdoc">The value of machine precision epsilon.</div><div class="ttdef"><b>Definition:</b> Constants.hpp:62</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_ab5599c424c8c7fbb77e8df2070438a5c"><div class="ttname"><a href="namespaceReaktoro.html#ab5599c424c8c7fbb77e8df2070438a5c">Reaktoro::sqrt</a></div><div class="ttdeci">auto sqrt(const Eigen::MatrixBase&lt; Derived &gt; &amp;mat) -&gt; decltype(mat.cwiseSqrt())</div><div class="ttdoc">Return the component-wise square root of a matrix.</div><div class="ttdef"><b>Definition:</b> Matrix.hpp:770</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_adb8f30c802dda37b9f12dfc8bfd16c8d"><div class="ttname"><a href="namespaceReaktoro.html#adb8f30c802dda37b9f12dfc8bfd16c8d">Reaktoro::newton</a></div><div class="ttdeci">auto newton(const std::function&lt; std::tuple&lt; T, T &gt;(const T &amp;)&gt; &amp;f, const T &amp;x0, const T &amp;epsilon, std::size_t maxiter) -&gt; std::tuple&lt; T, std::size_t, bool &gt;</div><div class="ttdoc">Calculate the root of a non-linear function using Newton's method.</div><div class="ttdef"><b>Definition:</b> Roots.hpp:104</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_ab5599c424c8c7fbb77e8df2070438a5c"><div class="ttname"><a href="namespaceReaktoro.html#ab5599c424c8c7fbb77e8df2070438a5c">Reaktoro::sqrt</a></div><div class="ttdeci">auto sqrt(const Eigen::MatrixBase&lt; Derived &gt; &amp;mat) -&gt; decltype(mat.cwiseSqrt())</div><div class="ttdoc">Return the component-wise square root of a matrix.</div><div class="ttdef"><b>Definition:</b> Matrix.hpp:804</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_adb8f30c802dda37b9f12dfc8bfd16c8d"><div class="ttname"><a href="namespaceReaktoro.html#adb8f30c802dda37b9f12dfc8bfd16c8d">Reaktoro::newton</a></div><div class="ttdeci">auto newton(const std::function&lt; std::tuple&lt; T, T &gt;(const T &amp;)&gt; &amp;f, const T &amp;x0, const T &amp;epsilon, std::size_t maxiter) -&gt; std::tuple&lt; T, std::size_t, bool &gt;</div><div class="ttdoc">Calculate the root of a non-linear function using Newton's method.</div><div class="ttdef"><b>Definition:</b> Roots.hpp:103</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -261,7 +261,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 18 2022 13:58:00 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Jan 21 2022 19:28:30 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
