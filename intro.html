@@ -275,11 +275,28 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="tutorials/advanced/index.html">
-   Advanced
+  <a class="reference internal" href="tutorials/miscellaneous/index.html">
+   Miscellaneous
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials/miscellaneous/defining-materials.html">
+     Defining materials
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tutorials/advanced/index.html">
+   Advanced
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -444,6 +461,15 @@ useful enough to get started with this new version of Reaktoro!</p>
 <p class="admonition-title">Looking for Reaktoro v1 website?</p>
 <p>If you need to access Reaktoro v1 website, here is the link: <a class="reference external" href="https://reaktoro.org/v1">https://reaktoro.org/v1</a></p>
 </div>
+<div class="attention admonition">
+<p class="admonition-title">Examples in the tutorials not working?</p>
+<p>This website is under active development, and many new features in Reaktoro are being developed in parallel and documented here straight away. If you installed Reaktoro before a new feature was introduced and documented here, your installed <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> package will not support that feature. Make sure you update the conda environment containing the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> package, using either Anaconda Navigator or the following conda command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate rkt
+conda update --all
+</pre></div>
+</div>
+<p>assuming above you named <code class="docutils literal notranslate"><span class="pre">rkt</span></code> as the conda environment containing <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code>. For installation instructions using conda, please check <a class="reference internal" href="installation/installation-using-conda.html"><span class="doc std std-doc">these instructions</span></a>.</p>
+</div>
 <div class="section" id="quick-links">
 <h2>Quick Links!<a class="headerlink" href="#quick-links" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -483,6 +509,10 @@ useful enough to get started with this new version of Reaktoro!</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/kinetics/index.html">Chemical Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/miscellaneous/index.html">Miscellaneous</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/miscellaneous/defining-materials.html">Defining materials</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/advanced/index.html">Advanced</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/advanced/creating-custom-databases.html">Creating thermodynamic databases</a></li>
 </ul>

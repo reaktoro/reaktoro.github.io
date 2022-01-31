@@ -161,8 +161,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 <tr class="memdesc:add34c942c88d5f13e9c66a07d7f09961"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value multiplied by <code>epsilon</code> to compute the logarithm barrier penalty parameter \(\tau\). <br /></td></tr>
 <tr class="separator:add34c942c88d5f13e9c66a07d7f09961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1cf34d7bf458cd9e76b9187852756ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumOptions.html#ac1cf34d7bf458cd9e76b9187852756ce">warmstart</a> = true</td></tr>
-<tr class="memdesc:ac1cf34d7bf458cd9e76b9187852756ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The boolean flag that indicates if warm-start strategy should be used when possible.  <a href="structReaktoro_1_1EquilibriumOptions.html#ac1cf34d7bf458cd9e76b9187852756ce">More...</a><br /></td></tr>
+<tr class="memdesc:ac1cf34d7bf458cd9e76b9187852756ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flag indicating if warm-start strategy should be used when possible.  <a href="structReaktoro_1_1EquilibriumOptions.html#ac1cf34d7bf458cd9e76b9187852756ce">More...</a><br /></td></tr>
 <tr class="separator:ac1cf34d7bf458cd9e76b9187852756ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9116fe5e1354ba4141da51a966f8d95"><td class="memItemLeft" align="right" valign="top"><a id="aa9116fe5e1354ba4141da51a966f8d95"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumOptions.html#aa9116fe5e1354ba4141da51a966f8d95">use_ideal_activity_models</a> = false</td></tr>
+<tr class="memdesc:aa9116fe5e1354ba4141da51a966f8d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flag indicating if ideal activity models should be used in the calculations. <br /></td></tr>
+<tr class="separator:aa9116fe5e1354ba4141da51a966f8d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0145cb28e13ace56302ff81fdcef903"><td class="memItemLeft" align="right" valign="top"><a id="ab0145cb28e13ace56302ff81fdcef903"></a>
 <a class="el" href="namespaceReaktoro.html#a08a3b63249b9fa5180c3ded4c540ea8f">GibbsHessian</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumOptions.html#ab0145cb28e13ace56302ff81fdcef903">hessian</a> = <a class="el" href="namespaceReaktoro.html#a08a3b63249b9fa5180c3ded4c540ea8fa570c10df3fbff6a1a4ff18ef409229da">GibbsHessian::PartiallyExact</a></td></tr>
 <tr class="memdesc:ab0145cb28e13ace56302ff81fdcef903"><td class="mdescLeft">&#160;</td><td class="mdescRight">The calculation mode of the Hessian of the Gibbs energy function. <br /></td></tr>
@@ -187,7 +191,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
       </table>
 </div><div class="memdoc">
 
-<p>The boolean flag that indicates if warm-start strategy should be used when possible. </p>
+<p>The flag indicating if warm-start strategy should be used when possible. </p>
 <p>Setting this flag to true will cause equilibrium calculations to use the currect chemical state as an initial guess to the equilibrium calculation. If the current chemical state is detected to be uninitiallized (e.g., all species with zero molar amounts), then cold-start is inevitably used. In this case, a first estimate of a initial guess will be done using a simplex algorithm, which in most cases generates a chemical state that works well as initial guess for all equilibrium algorithms. </p>
 
 </div>
@@ -204,7 +208,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 21 2022 19:28:31 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jan 31 2022 17:50:51 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

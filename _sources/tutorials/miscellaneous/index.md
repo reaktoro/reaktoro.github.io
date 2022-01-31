@@ -1,6 +1,6 @@
 # Miscellaneous
 
-Follow the sections below to learn even more about Reaktoro that we did not cover in the previous tutorials.
+Follow the sections below to learn more components in Reaktoro that we didn't cover in previous tutorials.
 
 ```{tableofcontents}
 ```

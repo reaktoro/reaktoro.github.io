@@ -180,6 +180,9 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalFormula.html#ab81c71ddd442ac210c9c78f566d23f87">charge</a> () const -&gt; double</td></tr>
 <tr class="memdesc:ab81c71ddd442ac210c9c78f566d23f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the electric charge of the chemical formula. <br /></td></tr>
 <tr class="separator:ab81c71ddd442ac210c9c78f566d23f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a286860ad8e570055127b2e8caa952e92"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalFormula.html#a286860ad8e570055127b2e8caa952e92">molarMass</a> () const -&gt; double</td></tr>
+<tr class="memdesc:a286860ad8e570055127b2e8caa952e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molar mass of the chemical formula (in kg/mol).  <a href="classReaktoro_1_1ChemicalFormula.html#a286860ad8e570055127b2e8caa952e92">More...</a><br /></td></tr>
+<tr class="separator:a286860ad8e570055127b2e8caa952e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dbe55d256a61158626ff3cfe70a6214"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalFormula.html#a5dbe55d256a61158626ff3cfe70a6214">equivalent</a> (const <a class="el" href="classReaktoro_1_1ChemicalFormula.html">ChemicalFormula</a> &amp;other) const -&gt; bool</td></tr>
 <tr class="memdesc:a5dbe55d256a61158626ff3cfe70a6214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if another chemical formula is equivalent to this one.  <a href="classReaktoro_1_1ChemicalFormula.html#a5dbe55d256a61158626ff3cfe70a6214">More...</a><br /></td></tr>
 <tr class="separator:a5dbe55d256a61158626ff3cfe70a6214"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,6 +302,26 @@ static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a286860ad8e570055127b2e8caa952e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a286860ad8e570055127b2e8caa952e92">&#9670;&nbsp;</a></span>molarMass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto molarMass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the molar mass of the chemical formula (in kg/mol). </p>
+<dl class="section warning"><dt>Warning</dt><dd>An error is thrown if the formula contains symbols that do not exist in the periodic table. </dd></dl>
+
+</div>
+</div>
 <a id="a5dbe55d256a61158626ff3cfe70a6214"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5dbe55d256a61158626ff3cfe70a6214">&#9670;&nbsp;</a></span>equivalent()</h2>
 
@@ -332,7 +355,7 @@ static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 21 2022 19:28:30 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jan 31 2022 17:50:51 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

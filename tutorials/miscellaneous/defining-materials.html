@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defining materials</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customized_mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/customize.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Advanced" href="../advanced/index.html" />
+    <link rel="prev" title="Miscellaneous" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/reaktoro-for-python-and-cpp.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Get Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../installation/index.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-conda.html">
+     Installation using Conda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-cmake.html">
+     Installation using CMake
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-in-google-colab.html">
+     Installation in Google Colab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/api">
+   API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/v1">
+   Reaktoro v1
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basics/index.html">
+   Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/importing-reaktoro.html">
+     Importing Reaktoro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/loading-databases.html">
+     Loading thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/inspecting-databases.html">
+     Inspecting thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/defining-chemical-systems.html">
+     Defining chemical systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/creating-chemical-states.html">
+     Creating chemical states
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/computing-chemical-properties.html">
+     Computing chemical properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/computing-aqueous-properties.html">
+     Computing aqueous properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/computing-thermo-props-of-species.html">
+     Computing standard thermodynamic properties of species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/computing-thermo-props-of-reactions.html">
+     Computing standard thermodynamic properties of reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basics/specifying-activity-models.html">
+     Specifying activity models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../equilibrium/index.html">
+   Chemical Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-basics.html">
+     Chemical equilibrium: the basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-specifying-constraints.html">
+     Chemical equilibrium with constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph.html">
+     Chemical equilibrium with fixed pH
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-ph-charge-balance.html">
+     Chemical equilibrium with fixed pH and charge balance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-phase-amount.html">
+     Chemical equilibrium with fixed phase amount
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-fugacity.html">
+     Chemical equilibrium with fixed fugacity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-fixed-volume-internal-energy.html">
+     Chemical equilibrium with fixed volume and internal energy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-custom-constraints.html">
+     Chemical equilibrium with custom constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../equilibrium/equilibrium-with-given-component-amounts.html">
+     Chemical equilibrium with given element and charge amounts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../kinetics/index.html">
+   Chemical Kinetics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../kinetics/kinetics-basics.html">
+     How to perform chemical kinetics calculations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Miscellaneous
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Defining materials
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../advanced/index.html">
+   Advanced
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced/creating-custom-databases.html">
+     Creating thermodynamic databases
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About Reaktoro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/citing.html">
+   Citing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/contributing.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/miscellaneous/defining-materials.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftutorials/miscellaneous/defining-materials.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=tree/tutorials/miscellaneous/defining-materials.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-initial-chemical-state-not-so-conveniently-defined">
+   An initial chemical state not so conveniently defined
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simplifying-with-class-material">
+   Simplifying with class Material
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="defining-materials">
+<h1>Defining materials<a class="headerlink" href="#defining-materials" title="Permalink to this headline">¶</a></h1>
+<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on January 31, 2022</p>
+<p>When performing chemical equilibrium or chemical kinetics calculations, an <strong>initial chemical state</strong> is required. From this state, often in disequilibrium, you are interested in:</p>
+<ol class="simple">
+<li><p>immediately find a chemical equilibrium state that satisfies the desired constraints; or</p></li>
+<li><p>compute a sequence of states describing the evolution of the system as it reacts over a period of time.</p></li>
+</ol>
+<p>In most cases, you should be able to construct an initial state in terms of <em>given amounts of chemical species in the system</em> using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class. However, this may not always be convenient or possible for you. In this tutorial, we show an alternative way to define an initial chemical state using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> class. First, however, we give you an example that shows some disadvantages of working only with the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class as a motivation to use <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a>.</p>
+<div class="section" id="an-initial-chemical-state-not-so-conveniently-defined">
+<h2>An initial chemical state not so conveniently defined<a class="headerlink" href="#an-initial-chemical-state-not-so-conveniently-defined" title="Permalink to this headline">¶</a></h2>
+<p>Consider an aqueous solution with the following molal composition: 1 molal NaCl, 0.1 molal CaCl<sub>2</sub>, 0.05 molal MgCl<sub>2</sub> and 0.1 molal CO<sub>2</sub>. Consider a rock with the following mass composition: 80%<sub>kg</sub> quartz (SiO<sub>2</sub>) and 20%<sub>kg</sub> calcite (CaCO<sub>3</sub>). Mix 1 kg of this aqueous solution with 10 g of rock and find the chemical equilibrium state of the system (i.e., solution and minerals) at 60°C and 15 bar.</p>
+<p>As usual, we will start with the definition of a suitable chemical system to model this problem, which is done next.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">()</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
+
+<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">(</span><span class="s2">&quot;Halite Calcite Dolomite Quartz&quot;</span><span class="p">)</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this system, the aqueous species were selected automatically based on the chemical elements composing the explicitly listed minerals (i.e., all aqueous species with elements H, O, Na, Cl, Ca, Mg, and Si). If you are curious, copy the code above and print the species in the chemical system!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span> 
+</pre></div>
+</div>
+</div>
+<p>Let’s now create our initial chemical containing 1 kg of aqueous solution and 10 g of rock:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+
+<span class="c1"># Set initial brine composition</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span> <span class="p">,</span> <span class="mf">1.30</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span> <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set initial rock composition</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+
+<span class="c1"># Scale fluid and solid masses to 1 kg and 10 g respectively</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">scaleFluidMass</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">scaleSolidMass</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>While defining this initial chemical state, note that:</p>
+<ul class="simple">
+<li><p>we needed to specify amounts for ions <code class="docutils literal notranslate"><span class="pre">Na+</span></code>, <code class="docutils literal notranslate"><span class="pre">Ca+2</span></code>, and <code class="docutils literal notranslate"><span class="pre">Mg+2</span></code> that reflect the desired molality of NaCl, CaCl<sub>2</sub>, and MgCl<sub>2</sub>.</p></li>
+<li><p>we needed to specify an amount for <code class="docutils literal notranslate"><span class="pre">Cl-</span></code> that produces zero electric charge in the solution.</p></li>
+<li><p>we needed to provide species names exactly how they exist in the database instead of chemical formulas (e.g., names <code class="docutils literal notranslate"><span class="pre">Quartz</span></code> and <code class="docutils literal notranslate"><span class="pre">Calcite</span></code> instead of formulas <code class="docutils literal notranslate"><span class="pre">SiO2</span></code> and <code class="docutils literal notranslate"><span class="pre">CaCO3</span></code>).</p></li>
+<li><p>we needed to scale the mass of fluid and solids in the chemical state.</p></li>
+</ul>
+<p>Let’s now equilibrate this state at 60 °C and 15 bar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+
+<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+-------------+------+
+| Property        |       Value | Unit |
++-----------------+-------------+------+
+| Temperature     |      333.15 |    K |
+| Pressure        |     1.5e+06 |   Pa |
+| Charge:         | -4.0934e-16 |  mol |
+| Element Amount: |             |      |
+| :: H            |     102.913 |  mol |
+| :: C            |    0.112686 |  mol |
+| :: O            |     51.9681 |  mol |
+| :: Na           |    0.927039 |  mol |
+| :: Mg           |   0.0463519 |  mol |
+| :: Si           |    0.133146 |  mol |
+| :: Cl           |     1.20515 |  mol |
+| :: Ca           |    0.112686 |  mol |
+| Species Amount: |             |      |
+| :: CO3-2        | 2.30742e-06 |  mol |
+| :: H+           | 6.67715e-06 |  mol |
+| :: H2O          |     51.4444 |  mol |
+| :: CO2          |   0.0811717 |  mol |
+| :: (CO2)2       |       1e-16 |  mol |
+| :: HCO3-        |   0.0126081 |  mol |
+| :: CH4          |       1e-16 |  mol |
+| :: Ca+2         |   0.0987002 |  mol |
+| :: CaCO3        | 7.40765e-06 |  mol |
+| :: CaHCO3+      |  0.00554777 |  mol |
+| :: CaOH+        | 1.02167e-09 |  mol |
+| :: Cl-          |     1.20515 |  mol |
+| :: H2           |       1e-16 |  mol |
+| :: H4SiO4       | 0.000257914 |  mol |
+| :: H2SiO4-2     | 7.45022e-14 |  mol |
+| :: H3SiO4-      |  4.5289e-08 |  mol |
+| :: Mg+2         |   0.0438727 |  mol |
+| :: MgCO3        | 1.34392e-06 |  mol |
+| :: MgHCO3+      |  0.00247781 |  mol |
+| :: MgOH+        | 8.74263e-08 |  mol |
+| :: Na+          |      0.9246 |  mol |
+| :: NaCO3-       | 1.47454e-05 |  mol |
+| :: NaHCO3       |  0.00242418 |  mol |
+| :: OH-          | 3.27355e-08 |  mol |
+| :: NaOH         |       1e-16 |  mol |
+| :: O2           |       1e-16 |  mol |
+| :: Halite       |       1e-16 |  mol |
+| :: Calcite      |  0.00843032 |  mol |
+| :: Dolomite     | 1.18139e-14 |  mol |
+| :: Quartz       |    0.132888 |  mol |
++-----------------+-------------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>We managed to get the problem defined and solved, but the coding process could be simpler as shown in the next section.</p>
+</div>
+<div class="section" id="simplifying-with-class-material">
+<h2>Simplifying with class Material<a class="headerlink" href="#simplifying-with-class-material" title="Permalink to this headline">¶</a></h2>
+<p>Let’s now use class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> to obtain the same result with more convenience:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>  <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;NaCl&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CaCl2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;MgCl2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>  <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+
+<span class="n">rock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">rock</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;SiO2&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">rock</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CaCO3&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+
+<span class="n">mix</span> <span class="o">=</span> <span class="nf">brine</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">rock</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="n">mix</span><span class="p">.</span><span class="nf">equilibrate</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+-------------+------+
+| Property        |       Value | Unit |
++-----------------+-------------+------+
+| Temperature     |      333.15 |    K |
+| Pressure        |     1.5e+06 |   Pa |
+| Charge:         | 2.13121e-16 |  mol |
+| Element Amount: |             |      |
+| :: H            |     102.913 |  mol |
+| :: C            |    0.112686 |  mol |
+| :: O            |     51.9681 |  mol |
+| :: Na           |     0.92704 |  mol |
+| :: Mg           |    0.046352 |  mol |
+| :: Si           |    0.133146 |  mol |
+| :: Cl           |     1.20515 |  mol |
+| :: Ca           |    0.112686 |  mol |
+| Species Amount: |             |      |
+| :: CO3-2        | 2.30742e-06 |  mol |
+| :: H+           | 6.67716e-06 |  mol |
+| :: H2O          |     51.4444 |  mol |
+| :: CO2          |   0.0811718 |  mol |
+| :: (CO2)2       |       1e-16 |  mol |
+| :: HCO3-        |   0.0126081 |  mol |
+| :: CH4          |       1e-16 |  mol |
+| :: Ca+2         |   0.0987003 |  mol |
+| :: CaCO3        | 7.40766e-06 |  mol |
+| :: CaHCO3+      |  0.00554777 |  mol |
+| :: CaOH+        | 1.02167e-09 |  mol |
+| :: Cl-          |     1.20515 |  mol |
+| :: H2           |       1e-16 |  mol |
+| :: H4SiO4       | 0.000257914 |  mol |
+| :: H2SiO4-2     | 7.45023e-14 |  mol |
+| :: H3SiO4-      |  4.5289e-08 |  mol |
+| :: Mg+2         |   0.0438727 |  mol |
+| :: MgCO3        | 1.34392e-06 |  mol |
+| :: MgHCO3+      |  0.00247781 |  mol |
+| :: MgOH+        | 8.74264e-08 |  mol |
+| :: Na+          |    0.924601 |  mol |
+| :: NaCO3-       | 1.47454e-05 |  mol |
+| :: NaHCO3       |  0.00242418 |  mol |
+| :: OH-          | 3.27355e-08 |  mol |
+| :: NaOH         |       1e-16 |  mol |
+| :: O2           |       1e-16 |  mol |
+| :: Halite       |       1e-16 |  mol |
+| :: Calcite      |  0.00843031 |  mol |
+| :: Dolomite     | 1.18139e-14 |  mol |
+| :: Quartz       |    0.132888 |  mol |
++-----------------+-------------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>The code above should (hopefully!) be intuitive enough and self-explanatory. The table printed above should also be identical (or extremely close!) to the previous one.</p>
+<p>That’s it; you now have an extra Reaktoro component in your arsenal when performing your chemical modeling. The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> class should provide that extra level of convenience if things get a little more confusing if only the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class is used.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>You may have to use the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> class more carefully if chemical kinetics is considered. In this case, it is critical that species undergoing chemical reactions controlled by kinetic rates must have their initial amounts explicitly specified in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object, using their names instead of their formulas to avoid ambiguity. For example, suppose the minerals calcite and quartz are to react kinetically with the aqueous solution (and the aqueous species react instantaneously at equilibrium). In that case, the initial amounts of these minerals must be given in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object. The code below should give you an idea of how to proceed in this scenario:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>  <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;NaCl&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CaCl2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;MgCl2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>  <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+
+<span class="n">state</span> <span class="o">=</span> <span class="nf">brine</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">equilibrate</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+
+<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">scaleSolidMass</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+
+<span class="n">states</span> <span class="o">=</span> <span class="nf">react</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;minutes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em><strong>Note</strong>: chemical kinetics (available in Reaktoro v1) is still in development in Reaktoro v2 (a completely new kinetics solver with modeling capabilities as extensive as the new equilibrium solver in Reaktoro v2). Thus, the <code class="docutils literal notranslate"><span class="pre">react</span></code> function above is still not available! If kinetics is already available in v2 and we forgot to remove this note, please report to us in <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</em></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/miscellaneous"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="index.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Miscellaneous</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../advanced/index.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Advanced</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
