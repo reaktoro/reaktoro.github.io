@@ -166,6 +166,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a7a06adcbc0577228059c7631bb6537ab">operator=</a> (<a class="el" href="classReaktoro_1_1AqueousProps.html">AqueousProps</a> other) -&gt; <a class="el" href="classReaktoro_1_1AqueousProps.html">AqueousProps</a> &amp;</td></tr>
 <tr class="memdesc:a7a06adcbc0577228059c7631bb6537ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a <a class="el" href="classReaktoro_1_1AqueousProps.html" title="The chemical properties of an aqueous phase.">AqueousProps</a> object to this object. <br /></td></tr>
 <tr class="separator:a7a06adcbc0577228059c7631bb6537ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4302af565296f333af25c2e8a996b0c8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a4302af565296f333af25c2e8a996b0c8">setActivityModel</a> (const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;species, const <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a> &amp;generator) -&gt; void</td></tr>
+<tr class="memdesc:a4302af565296f333af25c2e8a996b0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an activity model for a non-aqueous species that will be used in the calculation of its saturation index.  <a href="classReaktoro_1_1AqueousProps.html#a4302af565296f333af25c2e8a996b0c8">More...</a><br /></td></tr>
+<tr class="separator:a4302af565296f333af25c2e8a996b0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6410a9925d1ded50e77dab62eb9e4a26"><td class="memItemLeft" align="right" valign="top"><a id="a6410a9925d1ded50e77dab62eb9e4a26"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a6410a9925d1ded50e77dab62eb9e4a26">update</a> (const <a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state) -&gt; void</td></tr>
 <tr class="memdesc:a6410a9925d1ded50e77dab62eb9e4a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the aqueous properties with given chemical state of the system. <br /></td></tr>
@@ -186,18 +189,18 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a3f2383787693bb72325e59394158625b">elementMolality</a> (const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;symbol) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
 <tr class="memdesc:a3f2383787693bb72325e59394158625b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molality of an element (in molal). <br /></td></tr>
 <tr class="separator:a3f2383787693bb72325e59394158625b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adef0a6a880f93a859d0592a864358482"><td class="memItemLeft" align="right" valign="top"><a id="adef0a6a880f93a859d0592a864358482"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#adef0a6a880f93a859d0592a864358482">elementMolalities</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a8f0ca43b09aed67e1bb6a3bd7702b78f">VectorXr</a></td></tr>
-<tr class="memdesc:adef0a6a880f93a859d0592a864358482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molality concentrations of the elements in (in molal). <br /></td></tr>
-<tr class="separator:adef0a6a880f93a859d0592a864358482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f0568ca53a73143cd417803c802bea"><td class="memItemLeft" align="right" valign="top"><a id="a41f0568ca53a73143cd417803c802bea"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a41f0568ca53a73143cd417803c802bea">elementMolalities</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:a41f0568ca53a73143cd417803c802bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molality concentrations of the elements in (in molal). <br /></td></tr>
+<tr class="separator:a41f0568ca53a73143cd417803c802bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c4c72ce409f4cc500975b739fbdf1bc"><td class="memItemLeft" align="right" valign="top"><a id="a5c4c72ce409f4cc500975b739fbdf1bc"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a5c4c72ce409f4cc500975b739fbdf1bc">speciesMolality</a> (const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;name) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
 <tr class="memdesc:a5c4c72ce409f4cc500975b739fbdf1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molality of an aqueous solute species (in molal). <br /></td></tr>
 <tr class="separator:a5c4c72ce409f4cc500975b739fbdf1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa13566007c588d57f3fa81cbb5525dd2"><td class="memItemLeft" align="right" valign="top"><a id="aa13566007c588d57f3fa81cbb5525dd2"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#aa13566007c588d57f3fa81cbb5525dd2">speciesMolalities</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a8f0ca43b09aed67e1bb6a3bd7702b78f">VectorXr</a></td></tr>
-<tr class="memdesc:aa13566007c588d57f3fa81cbb5525dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molality concentrations of the species (in molal). <br /></td></tr>
-<tr class="separator:aa13566007c588d57f3fa81cbb5525dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af9b779e9a908cca102ab0a2c6fe7c8"><td class="memItemLeft" align="right" valign="top"><a id="a9af9b779e9a908cca102ab0a2c6fe7c8"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a9af9b779e9a908cca102ab0a2c6fe7c8">speciesMolalities</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:a9af9b779e9a908cca102ab0a2c6fe7c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the molality concentrations of the species (in molal). <br /></td></tr>
+<tr class="separator:a9af9b779e9a908cca102ab0a2c6fe7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab634931d8b5f4f36e45b4d63fe7f0099"><td class="memItemLeft" align="right" valign="top"><a id="ab634931d8b5f4f36e45b4d63fe7f0099"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#ab634931d8b5f4f36e45b4d63fe7f0099">ionicStrength</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
 <tr class="memdesc:ab634931d8b5f4f36e45b4d63fe7f0099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the effective ionic strength of the aqueous phase (in molal). Equivalent to <a class="el" href="classReaktoro_1_1AqueousProps.html#aa7a2a39034d7a819fbad557a956bb17f">ionicStrengthEffective</a>. <br /></td></tr>
@@ -225,6 +228,27 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:abb8bf1564dc5b42f0fc8415eda2835c8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#abb8bf1564dc5b42f0fc8415eda2835c8">alkalinity</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
 <tr class="memdesc:abb8bf1564dc5b42f0fc8415eda2835c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the total alkalinity of the aqueous phase (in eq/L).  <a href="classReaktoro_1_1AqueousProps.html#abb8bf1564dc5b42f0fc8415eda2835c8">More...</a><br /></td></tr>
 <tr class="separator:abb8bf1564dc5b42f0fc8415eda2835c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab0c49f8c600acfb6294abe39561bc48"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">saturationSpecies</a> () const -&gt; <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a></td></tr>
+<tr class="memdesc:aab0c49f8c600acfb6294abe39561bc48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the non-aqueous species that could be formed from the aqueous solution.  <a href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">More...</a><br /></td></tr>
+<tr class="separator:aab0c49f8c600acfb6294abe39561bc48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae8e2ab028a6967f519f92f4addc0cc0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#aae8e2ab028a6967f519f92f4addc0cc0">saturationIndex</a> (const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:aae8e2ab028a6967f519f92f4addc0cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the saturation index of a given species.  <a href="classReaktoro_1_1AqueousProps.html#aae8e2ab028a6967f519f92f4addc0cc0">More...</a><br /></td></tr>
+<tr class="separator:aae8e2ab028a6967f519f92f4addc0cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9268ea14ea48ee9985ededaa373eedbd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a9268ea14ea48ee9985ededaa373eedbd">saturationIndexLn</a> (const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a9268ea14ea48ee9985ededaa373eedbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the saturation index of a given species (in natural log).  <a href="classReaktoro_1_1AqueousProps.html#a9268ea14ea48ee9985ededaa373eedbd">More...</a><br /></td></tr>
+<tr class="separator:a9268ea14ea48ee9985ededaa373eedbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7105deffdbb421dddc78664bc1e4c38"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#ac7105deffdbb421dddc78664bc1e4c38">saturationIndexLg</a> (const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:ac7105deffdbb421dddc78664bc1e4c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the saturation index of a given species (in log base 10).  <a href="classReaktoro_1_1AqueousProps.html#ac7105deffdbb421dddc78664bc1e4c38">More...</a><br /></td></tr>
+<tr class="separator:ac7105deffdbb421dddc78664bc1e4c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603b365a7c81823b8f16a8d8805ffb52"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a603b365a7c81823b8f16a8d8805ffb52">saturationIndices</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:a603b365a7c81823b8f16a8d8805ffb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the saturation indices of all non-aqueous species.  <a href="classReaktoro_1_1AqueousProps.html#a603b365a7c81823b8f16a8d8805ffb52">More...</a><br /></td></tr>
+<tr class="separator:a603b365a7c81823b8f16a8d8805ffb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9edaaf1dd6fe42bac20d54d650d06b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#add9edaaf1dd6fe42bac20d54d650d06b">saturationIndicesLn</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:add9edaaf1dd6fe42bac20d54d650d06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the saturation indices of all non-aqueous species (in natural log).  <a href="classReaktoro_1_1AqueousProps.html#add9edaaf1dd6fe42bac20d54d650d06b">More...</a><br /></td></tr>
+<tr class="separator:add9edaaf1dd6fe42bac20d54d650d06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac12b1d7162feb8034a2a50ecab661ce3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#ac12b1d7162feb8034a2a50ecab661ce3">saturationIndicesLg</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
+<tr class="memdesc:ac12b1d7162feb8034a2a50ecab661ce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the saturation indices of all non-aqueous species (in log base 10).  <a href="classReaktoro_1_1AqueousProps.html#ac12b1d7162feb8034a2a50ecab661ce3">More...</a><br /></td></tr>
+<tr class="separator:ac12b1d7162feb8034a2a50ecab661ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aae19d293b263e0908999a5a54b3ae3"><td class="memItemLeft" align="right" valign="top"><a id="a5aae19d293b263e0908999a5a54b3ae3"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1AqueousProps.html#a5aae19d293b263e0908999a5a54b3ae3">phase</a> () const -&gt; const <a class="el" href="classReaktoro_1_1Phase.html">Phase</a> &amp;</td></tr>
 <tr class="memdesc:a5aae19d293b263e0908999a5a54b3ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the underlying <a class="el" href="classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes.">Phase</a> object for the aqueous phase. <br /></td></tr>
@@ -241,6 +265,43 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The chemical properties of an aqueous phase. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4302af565296f333af25c2e8a996b0c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4302af565296f333af25c2e8a996b0c8">&#9670;&nbsp;</a></span>setActivityModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto setActivityModel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a> &amp;&#160;</td>
+          <td class="paramname"><em>generator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  void</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set an activity model for a non-aqueous species that will be used in the calculation of its saturation index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the non-aqueous species in the list of species returned by <a class="el" href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">saturationSpecies</a>. </td></tr>
+    <tr><td class="paramname">generator</td><td>The activity model generator to be assigned for the non-aqueous species. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="abb8bf1564dc5b42f0fc8415eda2835c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb8bf1564dc5b42f0fc8415eda2835c8">&#9670;&nbsp;</a></span>alkalinity()</h2>
 
@@ -264,6 +325,164 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="aab0c49f8c600acfb6294abe39561bc48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab0c49f8c600acfb6294abe39561bc48">&#9670;&nbsp;</a></span>saturationSpecies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto saturationSpecies </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the non-aqueous species that could be formed from the aqueous solution. </p>
+<p>This method returns, for example, gaseous and mineral species that could form when the aqueous solution is saturated with respect to them. </p>
+
+</div>
+</div>
+<a id="aae8e2ab028a6967f519f92f4addc0cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae8e2ab028a6967f519f92f4addc0cc0">&#9670;&nbsp;</a></span>saturationIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto saturationIndex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the saturation index of a given species. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the non-aqueous species in the list of species returned by <a class="el" href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">saturationSpecies</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9268ea14ea48ee9985ededaa373eedbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9268ea14ea48ee9985ededaa373eedbd">&#9670;&nbsp;</a></span>saturationIndexLn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto saturationIndexLn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the saturation index of a given species (in natural log). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the non-aqueous species in the list of species returned by <a class="el" href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">saturationSpecies</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac7105deffdbb421dddc78664bc1e4c38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7105deffdbb421dddc78664bc1e4c38">&#9670;&nbsp;</a></span>saturationIndexLg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto saturationIndexLg </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> &amp;&#160;</td>
+          <td class="paramname"><em>species</em></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the saturation index of a given species (in log base 10). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">species</td><td>The name or index of the non-aqueous species in the list of species returned by <a class="el" href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">saturationSpecies</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a603b365a7c81823b8f16a8d8805ffb52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603b365a7c81823b8f16a8d8805ffb52">&#9670;&nbsp;</a></span>saturationIndices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto saturationIndices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the saturation indices of all non-aqueous species. </p>
+<p>These non-aqueous species can be obtained with <a class="el" href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">saturationSpecies</a>. </p>
+
+</div>
+</div>
+<a id="add9edaaf1dd6fe42bac20d54d650d06b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9edaaf1dd6fe42bac20d54d650d06b">&#9670;&nbsp;</a></span>saturationIndicesLn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto saturationIndicesLn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the saturation indices of all non-aqueous species (in natural log). </p>
+<p>These non-aqueous species can be obtained with <a class="el" href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">saturationSpecies</a>. </p>
+
+</div>
+</div>
+<a id="ac12b1d7162feb8034a2a50ecab661ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12b1d7162feb8034a2a50ecab661ce3">&#9670;&nbsp;</a></span>saturationIndicesLg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto saturationIndicesLg </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the saturation indices of all non-aqueous species (in log base 10). </p>
+<p>These non-aqueous species can be obtained with <a class="el" href="classReaktoro_1_1AqueousProps.html#aab0c49f8c600acfb6294abe39561bc48">saturationSpecies</a>. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Reaktoro/Thermodynamics/Aqueous/<a class="el" href="AqueousProps_8hpp_source.html">AqueousProps.hpp</a></li>
 </ul>
@@ -276,7 +495,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 1 2022 23:50:52 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Feb 2 2022 00:28:08 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
