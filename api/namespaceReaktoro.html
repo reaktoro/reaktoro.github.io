@@ -507,6 +507,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1WaterThermoProps.html">WaterThermoProps</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Material.html">Material</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type used to represent a material composed of one or more substances.  <a href="classReaktoro_1_1Material.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -1918,6 +1921,10 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a5b0992d3eaf62da0bc2ee3f63b68574c">supportedAggregateStateValues</a> () -&gt; std::string</td></tr>
 <tr class="memdesc:a5b0992d3eaf62da0bc2ee3f63b68574c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a string containing the supported string values for AggregateState. <br /></td></tr>
 <tr class="separator:a5b0992d3eaf62da0bc2ee3f63b68574c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb23b871e5bd16c9b73f251694b02ec"><td class="memItemLeft" align="right" valign="top"><a id="a1eb23b871e5bd16c9b73f251694b02ec"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1eb23b871e5bd16c9b73f251694b02ec">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classReaktoro_1_1ChemicalFormula.html">ChemicalFormula</a> &amp;formula) -&gt; std::ostream &amp;</td></tr>
+<tr class="memdesc:a1eb23b871e5bd16c9b73f251694b02ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a <a class="el" href="classReaktoro_1_1ChemicalFormula.html" title="A type used to represent the chemical formula of a chemical species.">ChemicalFormula</a> object. <br /></td></tr>
+<tr class="separator:a1eb23b871e5bd16c9b73f251694b02ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0844a2f1f25dc8447794c9903e2c5988"><td class="memItemLeft" align="right" valign="top"><a id="a0844a2f1f25dc8447794c9903e2c5988"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a0844a2f1f25dc8447794c9903e2c5988">operator&lt;</a> (const <a class="el" href="classReaktoro_1_1ChemicalFormula.html">ChemicalFormula</a> &amp;lhs, const <a class="el" href="classReaktoro_1_1ChemicalFormula.html">ChemicalFormula</a> &amp;rhs) -&gt; bool</td></tr>
 <tr class="memdesc:a0844a2f1f25dc8447794c9903e2c5988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two <a class="el" href="classReaktoro_1_1ChemicalFormula.html" title="A type used to represent the chemical formula of a chemical species.">ChemicalFormula</a> objects for less than. <br /></td></tr>
@@ -2157,14 +2164,6 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a03e50d69b214b7d408f4d687c286a947">operator&lt;&lt;</a> (std::ostream &amp;out, <a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4b">StateOfMatter</a> option) -&gt; std::ostream &amp;</td></tr>
 <tr class="memdesc:a03e50d69b214b7d408f4d687c286a947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a StateOfMatter value. <br /></td></tr>
 <tr class="separator:a03e50d69b214b7d408f4d687c286a947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a286e2972325304934d631234abef9e87"><td class="memItemLeft" align="right" valign="top"><a id="a286e2972325304934d631234abef9e87"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a286e2972325304934d631234abef9e87">equilibrate</a> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
-<tr class="memdesc:a286e2972325304934d631234abef9e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equilibrate a chemical state instance. <br /></td></tr>
-<tr class="separator:a286e2972325304934d631234abef9e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ce65e1043040878a4525c8f9aada50"><td class="memItemLeft" align="right" valign="top"><a id="a61ce65e1043040878a4525c8f9aada50"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a61ce65e1043040878a4525c8f9aada50">equilibrate</a> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state, const <a class="el" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a> &amp;options) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
-<tr class="memdesc:a61ce65e1043040878a4525c8f9aada50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equilibrate a chemical state instance. <br /></td></tr>
-<tr class="separator:a61ce65e1043040878a4525c8f9aada50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ef1a294842e145b546ef8370826c474"><td class="memItemLeft" align="right" valign="top"><a id="a4ef1a294842e145b546ef8370826c474"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a4ef1a294842e145b546ef8370826c474">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classReaktoro_1_1PorousRockState.html">PorousRockState</a> &amp;state) -&gt; std::ostream &amp;</td></tr>
 <tr class="memdesc:a4ef1a294842e145b546ef8370826c474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a <a class="el" href="classReaktoro_1_1PorousRockState.html" title="The chemical state of a porous rock system filled with fluids.">PorousRockState</a> instance. <br /></td></tr>
@@ -2607,15 +2606,51 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:accbd164d7899b1e62b1f68e5046961ce"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#accbd164d7899b1e62b1f68e5046961ce">waterPressureWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> D) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
 <tr class="memdesc:accbd164d7899b1e62b1f68e5046961ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the pressure of water using the Wagner and Pruss (1995) equation of state.  <a href="namespaceReaktoro.html#accbd164d7899b1e62b1f68e5046961ce">More...</a><br /></td></tr>
 <tr class="separator:accbd164d7899b1e62b1f68e5046961ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a355ae854a837adc9394aa862a0848e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a2a355ae854a837adc9394aa862a0848e">waterSaturatedPressureWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
-<tr class="memdesc:a2a355ae854a837adc9394aa862a0848e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the saturated pressure of water using the Wagner and Pruss (1995) equation of state.  <a href="namespaceReaktoro.html#a2a355ae854a837adc9394aa862a0848e">More...</a><br /></td></tr>
+<tr class="memitem:a079df0bedff7996615288dca69d864de"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a079df0bedff7996615288dca69d864de">waterSaturationPressureWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a079df0bedff7996615288dca69d864de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the saturation pressure of water using the Wagner and Pruss (1995) equation of state.  <a href="namespaceReaktoro.html#a079df0bedff7996615288dca69d864de">More...</a><br /></td></tr>
+<tr class="separator:a079df0bedff7996615288dca69d864de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d9098a0a48ca2d6765e5957ef3e1e2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a90d9098a0a48ca2d6765e5957ef3e1e2">waterSaturationLiquidDensityWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a90d9098a0a48ca2d6765e5957ef3e1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the saturation liquid-density of water using the Wagner and Pruss (1995) equation of state.  <a href="namespaceReaktoro.html#a90d9098a0a48ca2d6765e5957ef3e1e2">More...</a><br /></td></tr>
+<tr class="separator:a90d9098a0a48ca2d6765e5957ef3e1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b6db26103f42d7406e6b4b89b4a012c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a6b6db26103f42d7406e6b4b89b4a012c">waterSaturationVapourDensityWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a6b6db26103f42d7406e6b4b89b4a012c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the saturation vapour-density of water using the Wagner and Pruss (1995) equation of state.  <a href="namespaceReaktoro.html#a6b6db26103f42d7406e6b4b89b4a012c">More...</a><br /></td></tr>
+<tr class="separator:a6b6db26103f42d7406e6b4b89b4a012c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a355ae854a837adc9394aa862a0848e"><td class="memItemLeft" align="right" valign="top"><a id="a2a355ae854a837adc9394aa862a0848e"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a2a355ae854a837adc9394aa862a0848e">waterSaturatedPressureWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a2a355ae854a837adc9394aa862a0848e"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEPRECATED (use <a class="el" href="namespaceReaktoro.html#a079df0bedff7996615288dca69d864de">waterSaturationPressureWagnerPruss</a>) <br /></td></tr>
 <tr class="separator:a2a355ae854a837adc9394aa862a0848e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4794ef562d2f5bea9e9f2618162d8ec5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a4794ef562d2f5bea9e9f2618162d8ec5">waterSaturatedLiquidDensityWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
-<tr class="memdesc:a4794ef562d2f5bea9e9f2618162d8ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the saturated liquid-density of water using the Wagner and Pruss (1995) equation of state.  <a href="namespaceReaktoro.html#a4794ef562d2f5bea9e9f2618162d8ec5">More...</a><br /></td></tr>
+<tr class="memitem:a4794ef562d2f5bea9e9f2618162d8ec5"><td class="memItemLeft" align="right" valign="top"><a id="a4794ef562d2f5bea9e9f2618162d8ec5"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a4794ef562d2f5bea9e9f2618162d8ec5">waterSaturatedLiquidDensityWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a4794ef562d2f5bea9e9f2618162d8ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEPRECATED (use <a class="el" href="namespaceReaktoro.html#a90d9098a0a48ca2d6765e5957ef3e1e2">waterSaturationLiquidDensityWagnerPruss</a>) <br /></td></tr>
 <tr class="separator:a4794ef562d2f5bea9e9f2618162d8ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bff0dcd11e14f12e91f07586edfb181"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1bff0dcd11e14f12e91f07586edfb181">waterSaturatedVapourDensityWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
-<tr class="memdesc:a1bff0dcd11e14f12e91f07586edfb181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the saturated vapour-density of water using the Wagner and Pruss (1995) equation of state.  <a href="namespaceReaktoro.html#a1bff0dcd11e14f12e91f07586edfb181">More...</a><br /></td></tr>
+<tr class="memitem:a1bff0dcd11e14f12e91f07586edfb181"><td class="memItemLeft" align="right" valign="top"><a id="a1bff0dcd11e14f12e91f07586edfb181"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1bff0dcd11e14f12e91f07586edfb181">waterSaturatedVapourDensityWagnerPruss</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T) -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:a1bff0dcd11e14f12e91f07586edfb181"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEPRECATED (use <a class="el" href="namespaceReaktoro.html#a6b6db26103f42d7406e6b4b89b4a012c">waterSaturationVapourDensityWagnerPruss</a>) <br /></td></tr>
 <tr class="separator:a1bff0dcd11e14f12e91f07586edfb181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d6bc202d8ae165921d9fd466da914b7"><td class="memItemLeft" align="right" valign="top"><a id="a2d6bc202d8ae165921d9fd466da914b7"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a2d6bc202d8ae165921d9fd466da914b7">operator+</a> (const <a class="el" href="classReaktoro_1_1Material.html">Material</a> &amp;l, const <a class="el" href="classReaktoro_1_1Material.html">Material</a> &amp;r) -&gt; <a class="el" href="classReaktoro_1_1Material.html">Material</a></td></tr>
+<tr class="memdesc:a2d6bc202d8ae165921d9fd466da914b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a material that is the result of the combination of two others. <br /></td></tr>
+<tr class="separator:a2d6bc202d8ae165921d9fd466da914b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eed8e5818d9d697a06621ab8fd02a78"><td class="memItemLeft" align="right" valign="top"><a id="a5eed8e5818d9d697a06621ab8fd02a78"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a5eed8e5818d9d697a06621ab8fd02a78">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classReaktoro_1_1Material.html">Material</a> &amp;material) -&gt; std::ostream &amp;</td></tr>
+<tr class="memdesc:a5eed8e5818d9d697a06621ab8fd02a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a <a class="el" href="classReaktoro_1_1Material.html" title="A type used to represent a material composed of one or more substances.">Material</a> object to an output stream. <br /></td></tr>
+<tr class="separator:a5eed8e5818d9d697a06621ab8fd02a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a286e2972325304934d631234abef9e87"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a286e2972325304934d631234abef9e87">equilibrate</a> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
+<tr class="memdesc:a286e2972325304934d631234abef9e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a chemical equilibrium calculation on a given chemical state.  <a href="namespaceReaktoro.html#a286e2972325304934d631234abef9e87">More...</a><br /></td></tr>
+<tr class="separator:a286e2972325304934d631234abef9e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ce65e1043040878a4525c8f9aada50"><td class="memItemLeft" align="right" valign="top"><a id="a61ce65e1043040878a4525c8f9aada50"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>equilibrate</b> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state, const <a class="el" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a> &amp;options) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
+<tr class="separator:a61ce65e1043040878a4525c8f9aada50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ae33f1eab2a7b3cd2661956fd6df7b"><td class="memItemLeft" align="right" valign="top"><a id="ae2ae33f1eab2a7b3cd2661956fd6df7b"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>equilibrate</b> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state, const <a class="el" href="classReaktoro_1_1EquilibriumRestrictions.html">EquilibriumRestrictions</a> &amp;restrictions) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
+<tr class="separator:ae2ae33f1eab2a7b3cd2661956fd6df7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a239886435018574ffbf6eec3ee44f930"><td class="memItemLeft" align="right" valign="top"><a id="a239886435018574ffbf6eec3ee44f930"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>equilibrate</b> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state, const <a class="el" href="classReaktoro_1_1EquilibriumRestrictions.html">EquilibriumRestrictions</a> &amp;restrictions, const <a class="el" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a> &amp;options) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
+<tr class="separator:a239886435018574ffbf6eec3ee44f930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e24647fbc184b071a53c29160abed5"><td class="memItemLeft" align="right" valign="top"><a id="a66e24647fbc184b071a53c29160abed5"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>equilibrate</b> (<a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;state, const <a class="el" href="classReaktoro_1_1EquilibriumRestrictions.html">EquilibriumRestrictions</a> &amp;restrictions, const <a class="el" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a> &amp;options, <a class="el" href="namespaceReaktoro.html#aa313f94a54e4dcd4ecc7d847e45f2ce9">ArrayXdConstRef</a> b0) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td></tr>
+<tr class="separator:a66e24647fbc184b071a53c29160abed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -5336,6 +5371,27 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
+<a id="a286e2972325304934d631234abef9e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a286e2972325304934d631234abef9e87">&#9670;&nbsp;</a></span>equilibrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Reaktoro::equilibrate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classReaktoro_1_1ChemicalState.html">ChemicalState</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform a chemical equilibrium calculation on a given chemical state. </p>
+<p>The calculation is performed with fixed temperature and pressure obtained from the chemical state, and the chemical system is closed, so chemical elements and electric charge are conserved. </p>
+
+</div>
+</div>
 <a id="a9ff9039e00c661e3e6127e3bfc87d407"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ff9039e00c661e3e6127e3bfc87d407">&#9670;&nbsp;</a></span>derivativeForward() <span class="overload">[1/2]</span></h2>
 
@@ -6701,13 +6757,13 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Calculate the density of water using the Haar&ndash;Gallagher&ndash;Kell (1984) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
-    <tr><td class="paramname">P</td><td>The pressure of water (in units of Pa) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
+    <tr><td class="paramname">P</td><td>The pressure of water (in Pa) </td></tr>
     <tr><td class="paramname">stateofmatter</td><td>The state of matter of water </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The density of liquid water (in units of kg/m3) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The density of liquid water (in kg/m3) </dd></dl>
 
 </div>
 </div>
@@ -6746,13 +6802,13 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Calculate the density of water using the Wagner and Pruss (1995) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
-    <tr><td class="paramname">P</td><td>The pressure of water (in units of Pa) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
+    <tr><td class="paramname">P</td><td>The pressure of water (in Pa) </td></tr>
     <tr><td class="paramname">stateofmatter</td><td>The state of matter of water </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The density of liquid water (in units of kg/m3) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The density of liquid water (in kg/m3) </dd></dl>
 
 </div>
 </div>
@@ -6785,12 +6841,12 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Calculate the density of liquid water using the Haar&ndash;Gallagher&ndash;Kell (1984) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
-    <tr><td class="paramname">P</td><td>The pressure of water (in units of Pa) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
+    <tr><td class="paramname">P</td><td>The pressure of water (in Pa) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The density of liquid water (in units of kg/m3) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The density of liquid water (in kg/m3) </dd></dl>
 
 </div>
 </div>
@@ -6823,12 +6879,12 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Calculate the density of liquid water using the Wagner and Pruss (1995) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
-    <tr><td class="paramname">P</td><td>The pressure of water (in units of Pa) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
+    <tr><td class="paramname">P</td><td>The pressure of water (in Pa) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The density of liquid water (in units of kg/m3) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The density of liquid water (in kg/m3) </dd></dl>
 
 </div>
 </div>
@@ -6861,12 +6917,12 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Calculate the density of vapor water using the Haar&ndash;Gallagher&ndash;Kell (1984) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
-    <tr><td class="paramname">P</td><td>The pressure of water (in units of Pa) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
+    <tr><td class="paramname">P</td><td>The pressure of water (in Pa) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The density of water (in units of kg/m3) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The density of water (in kg/m3) </dd></dl>
 
 </div>
 </div>
@@ -6899,12 +6955,12 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Calculate the density of vapor water using the Wagner and Pruss (1995) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
-    <tr><td class="paramname">P</td><td>The pressure of water (in units of Pa) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
+    <tr><td class="paramname">P</td><td>The pressure of water (in Pa) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The density of water (in units of kg/m3) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The density of water (in kg/m3) </dd></dl>
 
 </div>
 </div>
@@ -6937,12 +6993,12 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Calculate the pressure of water using the Haar&ndash;Gallagher&ndash;Kell (1984) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
-    <tr><td class="paramname">D</td><td>The density of water (in units of kg/m3) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
+    <tr><td class="paramname">D</td><td>The density of water (in kg/m3) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The pressure of water (in units of Pa) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The pressure of water (in Pa) </dd></dl>
 
 </div>
 </div>
@@ -6975,23 +7031,23 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Calculate the pressure of water using the Wagner and Pruss (1995) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
-    <tr><td class="paramname">D</td><td>The density of water (in units of kg/m3) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
+    <tr><td class="paramname">D</td><td>The density of water (in kg/m3) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The pressure of water (in units of Pa) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The pressure of water (in Pa) </dd></dl>
 
 </div>
 </div>
-<a id="a2a355ae854a837adc9394aa862a0848e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a355ae854a837adc9394aa862a0848e">&#9670;&nbsp;</a></span>waterSaturatedPressureWagnerPruss()</h2>
+<a id="a079df0bedff7996615288dca69d864de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079df0bedff7996615288dca69d864de">&#9670;&nbsp;</a></span>waterSaturationPressureWagnerPruss()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto Reaktoro::waterSaturatedPressureWagnerPruss </td>
+          <td class="memname">auto Reaktoro::waterSaturationPressureWagnerPruss </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
           <td class="paramname"><em>T</em></td><td>)</td>
@@ -7000,25 +7056,25 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
       </table>
 </div><div class="memdoc">
 
-<p>Calculate the saturated pressure of water using the Wagner and Pruss (1995) equation of state. </p>
+<p>Calculate the saturation pressure of water using the Wagner and Pruss (1995) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The saturated pressure of water (in units of Pa) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The saturation pressure of water (in Pa) </dd></dl>
 
 </div>
 </div>
-<a id="a4794ef562d2f5bea9e9f2618162d8ec5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4794ef562d2f5bea9e9f2618162d8ec5">&#9670;&nbsp;</a></span>waterSaturatedLiquidDensityWagnerPruss()</h2>
+<a id="a90d9098a0a48ca2d6765e5957ef3e1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d9098a0a48ca2d6765e5957ef3e1e2">&#9670;&nbsp;</a></span>waterSaturationLiquidDensityWagnerPruss()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto Reaktoro::waterSaturatedLiquidDensityWagnerPruss </td>
+          <td class="memname">auto Reaktoro::waterSaturationLiquidDensityWagnerPruss </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
           <td class="paramname"><em>T</em></td><td>)</td>
@@ -7027,25 +7083,25 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
       </table>
 </div><div class="memdoc">
 
-<p>Calculate the saturated liquid-density of water using the Wagner and Pruss (1995) equation of state. </p>
+<p>Calculate the saturation liquid-density of water using the Wagner and Pruss (1995) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The saturated liquid-density of water (in units of kg/m3) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The saturation liquid-density of water (in kg/m3) </dd></dl>
 
 </div>
 </div>
-<a id="a1bff0dcd11e14f12e91f07586edfb181"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bff0dcd11e14f12e91f07586edfb181">&#9670;&nbsp;</a></span>waterSaturatedVapourDensityWagnerPruss()</h2>
+<a id="a6b6db26103f42d7406e6b4b89b4a012c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b6db26103f42d7406e6b4b89b4a012c">&#9670;&nbsp;</a></span>waterSaturationVapourDensityWagnerPruss()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto Reaktoro::waterSaturatedVapourDensityWagnerPruss </td>
+          <td class="memname">auto Reaktoro::waterSaturationVapourDensityWagnerPruss </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&#160;</td>
           <td class="paramname"><em>T</em></td><td>)</td>
@@ -7054,14 +7110,14 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
       </table>
 </div><div class="memdoc">
 
-<p>Calculate the saturated vapour-density of water using the Wagner and Pruss (1995) equation of state. </p>
+<p>Calculate the saturation vapour-density of water using the Wagner and Pruss (1995) equation of state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The temperature of water (in units of K) </td></tr>
+    <tr><td class="paramname">T</td><td>The temperature of water (in K) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The saturated vapour-density of water (in units of kg/m3) </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The saturation vapour-density of water (in kg/m3) </dd></dl>
 
 </div>
 </div>
@@ -7074,7 +7130,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 21 2022 19:27:14 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Tue Feb 1 2022 23:50:52 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

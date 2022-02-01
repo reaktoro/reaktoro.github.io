@@ -615,24 +615,24 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FINAL STATE
-+-----------------+-------------+------+
-| Property        |       Value | Unit |
-+-----------------+-------------+------+
-| Temperature     |     1080.39 |    K |
-| Pressure        |      583621 |   Pa |
-| Charge:         |           0 |  mol |
-| Element Amount: |             |      |
-| :: H            |  0.00121019 |  mol |
-| :: C            | 0.000302547 |  mol |
-| :: O            | 0.000201698 |  mol |
-| Species Amount: |             |      |
-| :: CH4          | 0.000128967 |  mol |
-| :: O2           |       1e-16 |  mol |
-| :: CO2          | 9.68738e-06 |  mol |
-| :: CO           | 0.000163893 |  mol |
-| :: H2O          | 1.84304e-05 |  mol |
-| :: H2           | 0.000328729 |  mol |
-+-----------------+-------------+------+
++-----------------+------------+------+
+| Property        |      Value | Unit |
++-----------------+------------+------+
+| Temperature     |  1080.3867 |    K |
+| Pressure        |     5.8362 |  bar |
+| Charge:         | 0.0000e+00 |  mol |
+| Element Amount: |            |      |
+| :: H            | 1.2102e-03 |  mol |
+| :: C            | 3.0255e-04 |  mol |
+| :: O            | 2.0170e-04 |  mol |
+| Species Amount: |            |      |
+| :: CH4          | 1.2897e-04 |  mol |
+| :: O2           | 1.0000e-16 |  mol |
+| :: CO2          | 9.6874e-06 |  mol |
+| :: CO           | 1.6389e-04 |  mol |
+| :: H2O          | 1.8430e-05 |  mol |
+| :: H2           | 3.2873e-04 |  mol |
++-----------------+------------+------+
 </pre></div>
 </div>
 </div>
@@ -749,41 +749,50 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+--------------------------+-------------+-------+
-| Property                 |       Value |  Unit |
-+--------------------------+-------------+-------+
-| Temperature              |      303.15 |     K |
-| Pressure                 |      506625 |    Pa |
-| Ionic Strength (Effect.) |     1.01515 | molal |
-| Ionic Strength (Stoich.) |     1.01688 | molal |
-| pH                       |           7 |       |
-| pE                       |     2.40447 |       |
-| Eh                       |    0.144632 |     V |
-| Element Molality:        |             |       |
-| :: C                     |    0.012326 | molal |
-| :: Na                    |     1.00014 | molal |
-| :: Cl                    |     1.00014 | molal |
-| :: Ca                    |  0.00568214 | molal |
-| Species Molality:        |             |       |
-| :: CO3-2                 | 1.65904e-05 | molal |
-| :: H+                    | 1.61902e-07 | molal |
-| :: CO2                   |  0.00105592 | molal |
-| :: (CO2)2                | 1.00014e-16 | molal |
-| :: HCO3-                 |  0.00933859 | molal |
-| :: CH4                   | 1.00014e-16 | molal |
-| :: Ca+2                  |  0.00554735 | molal |
-| :: CaCO3                 | 4.61998e-06 | molal |
-| :: CaHCO3+               | 0.000130164 | molal |
-| :: CaOH+                 | 2.53285e-09 | molal |
-| :: Cl-                   |     1.00014 | molal |
-| :: H2                    | 1.00014e-16 | molal |
-| :: Na+                   |    0.998361 | molal |
-| :: NaCO3-                | 7.29396e-05 | molal |
-| :: NaHCO3                |  0.00170718 | molal |
-| :: OH-                   | 1.98565e-07 | molal |
-| :: NaOH                  | 1.00014e-16 | molal |
-| :: O2                    | 1.00014e-16 | molal |
-+--------------------------+-------------+-------+
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------------------------+------------+-------+
+| Property                          |      Value |  Unit |
++-----------------------------------+------------+-------+
+| Temperature                       |   303.1500 |     K |
+| Pressure                          |     5.0663 |   bar |
+| Ionic Strength (Effective)        |     1.0152 | molal |
+| Ionic Strength (Stoichiometric)   |     1.0169 | molal |
+| pH                                |     7.0000 |       |
+| pE                                |    -2.4045 |       |
+| Eh                                |    -0.1446 |     V |
+| Element Molality:                 |            |       |
+| :: C                              | 1.2326e-02 | molal |
+| :: Na                             | 1.0001e+00 | molal |
+| :: Cl                             | 1.0001e+00 | molal |
+| :: Ca                             | 5.6821e-03 | molal |
+| Species Molality:                 |            |       |
+| :: CO3-2                          | 1.6590e-05 | molal |
+| :: H+                             | 1.6190e-07 | molal |
+| :: CO2                            | 1.0559e-03 | molal |
+| :: (CO2)2                         | 1.0001e-16 | molal |
+| :: HCO3-                          | 9.3386e-03 | molal |
+| :: CH4                            | 1.0001e-16 | molal |
+| :: Ca+2                           | 5.5474e-03 | molal |
+| :: CaCO3                          | 4.6200e-06 | molal |
+| :: CaHCO3+                        | 1.3016e-04 | molal |
+| :: CaOH+                          | 2.5328e-09 | molal |
+| :: Cl-                            | 1.0001e+00 | molal |
+| :: H2                             | 1.0001e-16 | molal |
+| :: Na+                            | 9.9836e-01 | molal |
+| :: NaCO3-                         | 7.2940e-05 | molal |
+| :: NaHCO3                         | 1.7072e-03 | molal |
+| :: OH-                            | 1.9857e-07 | molal |
+| :: NaOH                           | 1.0001e-16 | molal |
+| :: O2                             | 1.0001e-16 | molal |
+| Saturation Indices (log base 10): |            |       |
+| :: CH4(g)                         |   -13.7561 |     - |
+| :: CO2(g)                         |    -2.0559 |     - |
+| :: H2(g)                          |    -9.9551 |     - |
+| :: H2O(g)                         |    -2.0951 |     - |
+| :: O2(g)                          |   -63.8737 |     - |
+| :: Aragonite :: CaCO3             |    -0.1400 |     - |
+| :: Calcite :: CaCO3               |     0.0000 |     - |
+| :: Halite :: NaCl                 |    -1.9376 |     - |
++-----------------------------------+------------+-------+
 </pre></div>
 </div>
 </div>

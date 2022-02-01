@@ -1,5 +1,0 @@
-<map id="DissociationReaction" name="DissociationReaction">
-<area shape="rect" id="node1" title="A type used to represent a dissociation reaction of a neutral substance into ions." alt="" coords="127,124,285,151"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,212,61"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1ChemicalFormula.html" title="A type used to represent the chemical formula of a chemical species." alt="" coords="237,20,373,47"/>
-</map>
