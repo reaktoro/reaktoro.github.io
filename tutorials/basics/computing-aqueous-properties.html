@@ -468,7 +468,7 @@
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca Si&quot;</span><span class="p">))</span>
 <span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
 
-<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>
+<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g) H2O(g)&quot;</span><span class="p">)</span>
 <span class="n">gases</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
 
 <span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
@@ -533,11 +533,11 @@
 | :: NaOH                           | 1.0004e-16 | molal |
 | :: O2                             | 1.0004e-16 | molal |
 | Saturation Indices (log base 10): |            |       |
-| :: CH4(g)                         |     1.5257 |     - |
+| :: CH4(g)                         |   -14.1826 |     - |
 | :: CO2(g)                         |     0.0000 |     - |
-| :: H2(g)                          |     5.5218 |     - |
+| :: H2(g)                          |   -10.1580 |     - |
 | :: H2O(g)                         |     0.0000 |     - |
-| :: O2(g)                          |   -40.4867 |     - |
+| :: O2(g)                          |   -56.1834 |     - |
 | :: Aragonite :: CaCO3             |    -1.4245 |     - |
 | :: Calcite :: CaCO3               |    -1.3039 |     - |
 | :: Chalcedony :: SiO2             |    -0.3316 |     - |
