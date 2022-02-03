@@ -455,7 +455,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="creating-chemical-states">
 <h1>Creating chemical states<a class="headerlink" href="#creating-chemical-states" title="Permalink to this headline">¶</a></h1>
-<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
+<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4, 2022. Last revised on Feb 3, 2022.</p>
 <p>After learning how to define chemical systems and create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, it is time to create some chemical states. In your applications, you will most often deal with a single <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object and multiple <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects in which the system’s temperature, pressure, and species amounts are specified.</p>
 <p>Let’s check the following simple example, in which a chemical system is constructed with a gaseous phase only.</p>
 <div class="cell docutils container">
@@ -537,7 +537,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;pitzer.dat&quot;</span><span class="p">)</span>
 
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">()</span>
-<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Halite Calcite Dolomite Quartz&quot;</span><span class="p">)</span>
+<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">(</span><span class="s2">&quot;Halite Calcite Dolomite Quartz&quot;</span><span class="p">)</span>
 
 <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
 
@@ -609,7 +609,81 @@
 <p>Zero is a numerically problematic value for species amounts; that’s why we set it to a very small positive value instead. This should not be an issue for you in most cases, but if for some reason 10<sup>-16</sup> is not small enough, you can use the method <code class="docutils literal notranslate"><span class="pre">ChemicalState.setSpeciesAmount(1e-40)</span></code> to set a common amount value for all species in the system.</p>
 <p><strong>Try:</strong> Create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object and print it before setting any property.</p>
 </div>
-<p>Continue reading to learn more interesting use cases for <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>, such as computing thermodynamic and chemical properties for the system using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>!</p>
+<p>Let’s now set some surface areas between some phases. You’ll need to do this if you plan to model chemical kinetics in which heterogeneous reactions (i.e., reactions containing species from different phases, such as mineral and gas dissolution reactions) are considered.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="p">.</span><span class="nf">surfaceArea</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">,</span> <span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="s2">&quot;m2&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">surfaceArea</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">,</span> <span class="s2">&quot;Quartz&quot;</span> <span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="s2">&quot;m2&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---------------------------+------------+------+
+| Property                  |      Value | Unit |
++---------------------------+------------+------+
+| Temperature               |   323.1500 |    K |
+| Pressure                  |     5.0663 |  bar |
+| Charge:                   | 2.0000e-03 |  mol |
+| Element Amount:           |            |      |
+| :: H                      | 1.1101e+02 |  mol |
+| :: C                      | 1.0002e-05 |  mol |
+| :: O                      | 2.0555e+03 |  mol |
+| :: Na                     | 1.0000e-01 |  mol |
+| :: Mg                     | 5.0001e-04 |  mol |
+| :: Si                     | 1.0000e+03 |  mol |
+| :: Cl                     | 1.0000e-01 |  mol |
+| :: Ca                     | 5.1000e-04 |  mol |
+| Species Amount:           |            |      |
+| :: H+                     | 1.0000e-16 |  mol |
+| :: H2O                    | 5.5506e+01 |  mol |
+| :: CO3-2                  | 1.0000e-16 |  mol |
+| :: CO2                    | 1.0000e-16 |  mol |
+| :: Ca+2                   | 5.0000e-04 |  mol |
+| :: Cl-                    | 1.0000e-01 |  mol |
+| :: H4SiO4                 | 1.0000e-16 |  mol |
+| :: H2SiO4-2               | 1.0000e-16 |  mol |
+| :: H3SiO4-                | 1.0000e-16 |  mol |
+| :: HCO3-                  | 1.0000e-16 |  mol |
+| :: Mg+2                   | 5.0000e-04 |  mol |
+| :: MgCO3                  | 1.0000e-16 |  mol |
+| :: MgOH+                  | 1.0000e-16 |  mol |
+| :: Na+                    | 1.0000e-01 |  mol |
+| :: OH-                    | 1.0000e-16 |  mol |
+| :: Halite :: NaCl         | 1.0000e-16 |  mol |
+| :: Calcite :: CaCO3       | 9.9909e-06 |  mol |
+| :: Dolomite :: CaMg(CO3)2 | 5.4228e-09 |  mol |
+| :: Quartz :: SiO2         | 1.0000e+03 |  mol |
+| Surface Areas:            |            |      |
+| :: AqueousPhase : Calcite |     1.2000 |   m2 |
+| :: AqueousPhase : Quartz  |     1.4000 |   m2 |
++---------------------------+------------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects start with no surface areas. As you set surface areas for some phase pairs, interphase surface information is saved in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object. The code below demonstrates how to access the phase pairs for which surfaces areas have been set and retrieve their values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EXISTING SURFACES IN THE CHEMICAL STATE OBJECT&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="ow">in</span> <span class="n">state</span><span class="p">.</span><span class="nf">surfaces</span><span class="p">():</span>
+    <span class="n">name1</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">phase</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="nf">name</span><span class="p">()</span>      <span class="c1"># the name of the first phase in the phase pair</span>
+    <span class="n">name2</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">phase</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="nf">name</span><span class="p">()</span>      <span class="c1"># the name of the other phase in the phase pair</span>
+    <span class="n">surfarea</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">surfaceArea</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>  <span class="c1"># the surface area of this phase pair</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Surface area between </span><span class="si">{</span><span class="n">name1</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">name2</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">surfarea</span><span class="si">}</span><span class="s2"> m2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EXISTING SURFACES IN THE CHEMICAL STATE OBJECT
+Surface area between AqueousPhase and Calcite: 1.2 m2
+Surface area between AqueousPhase and Quartz: 1.4 m2
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s it. Now you know how to create <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects and how to set their temperature, pressure, species amounts/mass, and surface areas between phases. Continue reading to learn more interesting use cases for <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>, such as computing thermodynamic and chemical properties for the system using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>!</p>
 </div>
 
     <script type="text/x-thebe-config">
