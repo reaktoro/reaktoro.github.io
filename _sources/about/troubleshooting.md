@@ -40,3 +40,47 @@ You can use the method `asarray` in these array/vector types to convert them to 
 ~~~python
 state.speciesAmounts().asarray()  # convert from autodiff.ArrayXreal1stConstRef to numpy.array with float values
 ~~~
+
+# SIGFPE signal and fatal arithmetic errors
+
+Users that couple Reaktoro's C++ library and [OpenFOAM](https://www.openfoam.com/) for reactive transport simulations often report problems related to [SIGFPE signals](https://en.cppreference.com/w/cpp/numeric/fenv) that are thrown following arithmetic exceptions (e.g., division by zero, logarithm of zero, etc.). Usually these errors happen in Reaktoro because some species in the chemical state have zero values (always try to set a very small amount instead of zero!), and during a chemical equilibrium or kinetic calculation the logarithm of zero may be evaluated. These arithmetic errors, however, do not compromise the calculation results and are ignored in Reaktoro when they occur.
+
+So you can safely disable these SIGFPE signals. Below is a demonstration using [`std::feclearexcept`](https://en.cppreference.com/w/cpp/numeric/fenv/feclearexcept):
+
+~~~c++
+#include <cfenv>
+
+#include <Reaktoro/Reaktoro.hpp>
+using namespace Reaktoro;
+
+int main()
+{
+    std::feclearexcept(FE_ALL_EXCEPT); // disable all SIGFPE exceptions
+
+    PhreeqcDatabase db("phreeqc.dat");
+
+    AqueousPhase aqueousphase(speciate("H O C Na Cl"));
+    aqueousphase.setActivityModel(ActivityModelPitzerHMW());
+
+    GaseousPhase gaseousphase("CO2(g)");
+    gaseousphase.setActivityModel(ActivityModelPengRobinson());
+
+    ChemicalSystem system(db, aqueousphase, gaseousphase);
+
+    ChemicalState state(system);
+    state.setTemperature(25.0, "celsius");
+    state.setPressure(1.0, "bar");
+    state.set("H2O"   , 1.00, "kg");
+    state.set("Na+"   , 4.00, "mol");
+    state.set("Cl-"   , 4.00, "mol");
+    state.set("CO2(g)", 10.0, "mol");
+
+    EquilibriumSolver solver(system);
+    solver.solve(state);
+
+    state.output("state.txt");
+
+    return 0;
+}
+
+~~~
