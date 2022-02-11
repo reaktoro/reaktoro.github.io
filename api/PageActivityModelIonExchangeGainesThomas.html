@@ -121,12 +121,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="contents">
 <div class="textblock"><p>The Gaines&ndash;Thomas activity model for ion exchange compositions.</p>
 <p>An instance of this class can be used to control how activities of the ion exchange species are calculated using the Gaines&ndash;Thomas activity model.</p>
-<p>The activity of <b>ion exchange species</b> are calculated using the equivalent fractions:</p>
+<p>The activity of <b>ion exchange species</b> are calculated using the either equivalent fractions</p>
 <p class="formulaDsp">
 \[\beta_{i}=-\dfrac{x_{i}z_{\mathrm{e},i}}{\sum_{j}x_{j}z_{\mathrm{e},j}},\]
 </p>
-<p>where \(x_{i}\) and \(x_{j}\) are species mole fractions and \(z_{\mathrm{e},i}\)} and \(z_{\mathrm{e},j}\)} are exchanger equivalents (or cation charges) in ion exchange species. </p>
-</div></div><!-- contents -->
+<p>where \(x_{i}\) and \(x_{j}\) are species mole fractions and \(z_{\mathrm{e},i}\)} and \(z_{\mathrm{e},j}\)} are exchanger equivalents (or cation charges) in ion exchange species, or the molar fractions</p>
+<p class="formulaDsp">
+\[\beta^M_{i}=-\dfrac{x_{i}}{\sum_{j}x_{j}}.\]
+</p>
+ </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -136,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 3 2022 13:06:14 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Feb 11 2022 10:23:32 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

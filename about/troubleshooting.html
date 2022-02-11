@@ -456,8 +456,8 @@
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sigfpe-signal-and-fatal-arithmetic-errors">
-   SIGFPE signal and fatal arithmetic errors
+  <a class="reference internal nav-link" href="#sigfpe-signals-and-fatal-arithmetic-errors">
+   SIGFPE signals and fatal arithmetic errors
   </a>
  </li>
 </ul>
@@ -488,7 +488,8 @@
 <h2>Expecting a float value but got autodiff.real instead<a class="headerlink" href="#expecting-a-float-value-but-got-autodiff-real-instead" title="Permalink to this headline">¶</a></h2>
 <p>Reaktoro relies on number types defined in the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library to enable automatic differentiation. It is because of <a class="reference external" href="https://autodiff.github.io">autodiff</a> that Reaktoro can have improved numerical algorithms and also compute derivatives of chemical/thermodynamic properties with respect to temperature, pressure, species amounts, and even the parameters used in the models.</p>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">float</span></code> function to convert an <code class="docutils literal notranslate"><span class="pre">autodiff.real</span></code> number into a Python <code class="docutils literal notranslate"><span class="pre">float</span></code> number type. Below is an example using the method <code class="docutils literal notranslate"><span class="pre">ChemicalProps.activity</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">))</span>  <span class="c1"># convert autodiff.real to float!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert autodiff.real to float!</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -503,13 +504,14 @@
 </ul>
 <p>These types are a combination of array/vector types from the C++ library <a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a> with the number types from the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library, both C++ libraries.</p>
 <p>You can use the method <code class="docutils literal notranslate"><span class="pre">asarray</span></code> in these array/vector types to convert them to a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmounts</span><span class="p">()</span><span class="o">.</span><span class="nf">asarray</span><span class="p">()</span>  <span class="c1"># convert from autodiff.ArrayXreal1stConstRef to numpy.array with float values</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert from autodiff.ArrayXreal1stConstRef to numpy.array with float values</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">speciesAmounts</span><span class="p">()</span><span class="o">.</span><span class="nf">asarray</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="sigfpe-signal-and-fatal-arithmetic-errors">
-<h1>SIGFPE signal and fatal arithmetic errors<a class="headerlink" href="#sigfpe-signal-and-fatal-arithmetic-errors" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="sigfpe-signals-and-fatal-arithmetic-errors">
+<h1>SIGFPE signals and fatal arithmetic errors<a class="headerlink" href="#sigfpe-signals-and-fatal-arithmetic-errors" title="Permalink to this headline">¶</a></h1>
 <p>Users that couple Reaktoro’s C++ library and <a class="reference external" href="https://www.openfoam.com/">OpenFOAM</a> for reactive transport simulations often report problems related to <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv">SIGFPE signals</a> that are thrown following arithmetic exceptions (e.g., division by zero, logarithm of zero, etc.). Usually these errors happen in Reaktoro because some species in the chemical state have zero values (always try to set a very small amount instead of zero!), and during a chemical equilibrium or kinetic calculation the logarithm of zero may be evaluated. These arithmetic errors, however, do not compromise the calculation results and are ignored in Reaktoro when they occur.</p>
 <p>So you can safely disable these SIGFPE signals. Below is a demonstration using <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv/feclearexcept"><code class="docutils literal notranslate"><span class="pre">std::feclearexcept</span></code></a>:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cfenv&gt;</span><span class="cp"></span>

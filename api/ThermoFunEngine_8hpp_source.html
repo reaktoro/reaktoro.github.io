@@ -152,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/StandardThermoProps.hpp&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Forward declaration of ThermoFun classes</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>ThermoFun { <span class="keyword">class </span>Database; }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>ThermoFun { <span class="keyword">class </span>Database; <span class="keyword">class </span>Substance; }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
@@ -165,13 +165,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classReaktoro_1_1ThermoFunEngine.html#a631bb3fccb4b814ac031c53be838c062">   41</a></span>&#160;    auto <a class="code" href="classReaktoro_1_1ThermoFunEngine.html#a631bb3fccb4b814ac031c53be838c062">props</a>(const <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&amp; T, const <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&amp; P, const <a class="code" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a>&amp; species) const -&gt; <a class="code" href="structReaktoro_1_1StandardThermoProps.html">StandardThermoProps</a>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;private:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    struct Impl;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classReaktoro_1_1ThermoFunEngine.html#a9f19d9b024d6fd30da0379c913f95598">   44</a></span>&#160;    auto <a class="code" href="classReaktoro_1_1ThermoFunEngine.html#a631bb3fccb4b814ac031c53be838c062">props</a>(const <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&amp; T, const <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&amp; P, const ThermoFun::Substance&amp; substance) const -&gt; <a class="code" href="structReaktoro_1_1StandardThermoProps.html">StandardThermoProps</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="namespaceReaktoro.html#ad71c1f3b8d46b57fd328d48cee283c1f">SharedPtr</a>&lt;Impl&gt; pimpl;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;private:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    struct Impl;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="namespaceReaktoro.html#ad71c1f3b8d46b57fd328d48cee283c1f">SharedPtr</a>&lt;Impl&gt; pimpl;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="aclassReaktoro_1_1Database_html"><div class="ttname"><a href="classReaktoro_1_1Database.html">Reaktoro::Database</a></div><div class="ttdoc">The class used to store and retrieve data of chemical species.</div><div class="ttdef"><b>Definition:</b> Database.hpp:32</div></div>
 <div class="ttc" id="aclassReaktoro_1_1ThermoFunEngine_html"><div class="ttname"><a href="classReaktoro_1_1ThermoFunEngine.html">Reaktoro::ThermoFunEngine</a></div><div class="ttdoc">The class used for standard thermodynamic property calculations based on ThermoFun.</div><div class="ttdef"><b>Definition:</b> ThermoFunEngine.hpp:32</div></div>
 <div class="ttc" id="aclassReaktoro_1_1ThermoFunEngine_html_a379aad1c0e05be975dae72aea14ce79a"><div class="ttname"><a href="classReaktoro_1_1ThermoFunEngine.html#a379aad1c0e05be975dae72aea14ce79a">Reaktoro::ThermoFunEngine::database</a></div><div class="ttdeci">auto database() const -&gt; const ThermoFun::Database &amp;</div><div class="ttdoc">Return the ThermoFun::Database object.</div></div>
@@ -191,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 3 2022 13:06:14 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Feb 11 2022 10:23:32 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

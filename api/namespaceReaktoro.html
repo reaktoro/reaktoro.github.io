@@ -2568,6 +2568,9 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:a6570535ff1aa6b6c89cb3b8d8b19765f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a6570535ff1aa6b6c89cb3b8d8b19765f">ActivityModelIonExchangeGainesThomas</a> () -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
 <tr class="memdesc:a6570535ff1aa6b6c89cb3b8d8b19765f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Gaines-Thomas activity model for ion exchange.  <a href="namespaceReaktoro.html#a6570535ff1aa6b6c89cb3b8d8b19765f">More...</a><br /></td></tr>
 <tr class="separator:a6570535ff1aa6b6c89cb3b8d8b19765f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a514e685e6753376b5e731601b1b142e5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a514e685e6753376b5e731601b1b142e5">ActivityModelIonExchangeVanselow</a> () -&gt; <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td></tr>
+<tr class="memdesc:a514e685e6753376b5e731601b1b142e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Vanselov activity model for ion exchange.  <a href="namespaceReaktoro.html#a514e685e6753376b5e731601b1b142e5">More...</a><br /></td></tr>
+<tr class="separator:a514e685e6753376b5e731601b1b142e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3fd35158537fd2a43b9d57c60388231"><td class="memItemLeft" align="right" valign="top"><a id="ac3fd35158537fd2a43b9d57c60388231"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ac3fd35158537fd2a43b9d57c60388231">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classReaktoro_1_1IonExchangeProps.html">IonExchangeProps</a> &amp;state) -&gt; std::ostream &amp;</td></tr>
 <tr class="memdesc:ac3fd35158537fd2a43b9d57c60388231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output an <a class="el" href="classReaktoro_1_1IonExchangeProps.html" title="The chemical properties of an aqueous phase.">IonExchangeProps</a> object to an output stream. <br /></td></tr>
@@ -6147,13 +6150,21 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>where \(\lg K_{\mathrm{r}}\) is a given equilibrium constant at a reference temperature and pressure.</p>
 <p>The standard Gibbs energy of the reaction is computed using:</p>
 <p class="formulaDsp">
-\[\Delta G^{\circ}(T,P)=-RT\ln K_{\mathrm{r}}+\Delta V^{\circ}(P-P_{\mathrm{r}})\]
+\[\Delta G^{\circ}(T,P)=-RT\ln K_{\mathrm{r}}+\Delta V^{\circ}(P-P_{\mathrm{r}}),\]
 </p>
-<p>while the standard enthalpy of the reaction is:</p>
+<p>the standard enthalpy of the reaction using:</p>
 <p class="formulaDsp">
 \[\Delta H^{\circ}(T,P)=\Delta V^{\circ}(P-P_{\mathrm{r}}).\]
 </p>
-<p>Note that a pressure correction is introduced above, where \(\Delta V^{\circ}\) is the change of standard molar volume of the reaction at \(T\) and \(P\), with \(P_{\mathrm{r}}\) denoting a given reference pressure. </p>
+<p>and the standard isobaric heat capacity of reaction using:</p>
+<p class="formulaDsp">
+\[\Delta C_{P}^{\circ}(T, P) = \Delta V^{\circ}_T(P-P_{\mathrm{r}}),\]
+</p>
+<p>where we have considered the following thermodynamic relations:</p>
+<p class="formulaDsp">
+\[\begin{align*} \Delta G^{\circ} &amp; \equiv-RT\ln K,\vphantom{\left(-\frac{\Delta G^{\circ}}{T}\right)}\\ \Delta H^{\circ} &amp; \equiv T^{2}\frac{\partial}{\partial T}\left(-\frac{\Delta G^{\circ}}{T}\right)_{P}=RT^{2}\frac{\partial\ln K}{\partial T},\\ \Delta C_{P}^{\circ} &amp; \equiv\left(\dfrac{\partial\Delta H^{\circ}}{\partial T}\right)_{P}. \end{align*}\]
+</p>
+<p>Note that a pressure correction is introduced above, where \(\Delta V^{\circ}\) is the change of standard molar volume of the reaction at \(T\) and \(P\), with \(P_{\mathrm{r}}\) denoting a given reference pressure. \(\Delta V^{\circ}_T\) is the temperature derivative of \(\Delta V^{\circ}\) at constant pressure. </p>
 
 </div>
 </div>
@@ -6176,25 +6187,27 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Return a function that calculates thermodynamic properties of a reaction using GEM-Selektor's expression for \(\lg K(T)\). </p>
 <p>In this model, the equilibrium constant of the reaction is computed at a given temperature with:</p>
 <p class="formulaDsp">
-\[\log_{10}K=A_{0}+A_{1}T+A_{2}T^{-1}+A_{3}\ln T+A_{4}T^{-2}+A_{5}T^{2}+A_{6}T^{-0.5},\]
+\[\lg K(T)=A_{0}+A_{1}T+A_{2}T^{-1}+A_{3}\ln T+A_{4}T^{-2}+A_{5}T^{2}+A_{6}T^{-0.5},\]
 </p>
-<p>where \(A_i\) are given coefficients. From this model, we can calculate the standard Gibbs energy of reaction using:</p>
+<p>where \(A_i\) are given coefficients.</p>
+<p>The standard Gibbs energy of reaction is computed using:</p>
 <p class="formulaDsp">
-\[\Delta G^{\circ}=-RT\left(A_{0}+A_{1}T+A_{2}T^{-1}+A_{3}\ln T+A_{4}T^{-2}+A_{5}T^{2}+A_{6}T^{-0.5}\right)\ln_{10}\]
+\[\Delta G^{\circ}(T,P)=-RT\left(A_{0}+A_{1}T+A_{2}T^{-1}+A_{3}\ln T+A_{4}T^{-2}+A_{5}T^{2}+A_{6}T^{-0.5}\right)\ln_{10}+\Delta V^{\circ}(P-P_{\mathrm{r}}),\]
 </p>
-<p>and the standard enthalpy of reaction using:</p>
+<p>the standard enthalpy of reaction using:</p>
 <p class="formulaDsp">
-\[\Delta H^{\circ}=R\left(A_{1}T^{2}-A_{2}+A_{3}T-2A_{4}T^{-1}+2A_{5}T^{3}-0.5A_{6}T^{0.5}\right)\ln_{10},\]
+\[\Delta H^{\circ}(T,P)=R\left(A_{1}T^{2}-A_{2}+A_{3}T-2A_{4}T^{-1}+2A_{5}T^{3}-0.5A_{6}T^{0.5}\right)\ln_{10}+\Delta V^{\circ}(P-P_{\mathrm{r}}),\]
 </p>
-<p>considering that:</p>
+<p>and the standard isobaric heat capacity of reaction using:</p>
 <p class="formulaDsp">
-\[\Delta G^{\circ}=-RT\ln K\]
+\[\Delta C_{P}^{\circ}(T,P)=R\left(2A_{1}T+A_{3}+2A_{4}T^{-2}+6A_{5}T^{2}-0.25A_{6}T^{-0.5}\right)\ln_{10}+\Delta V^{\circ}_T(P-P_{\mathrm{r}}),\]
 </p>
-<p>and</p>
+<p>where we have considered the following thermodynamic relations:</p>
 <p class="formulaDsp">
-\[\Delta H^{\circ}\equiv T^{2}\frac{\partial}{\partial T}\left(-\frac{\Delta G^{\circ}}{T}\right)=RT^{2}\frac{\partial\ln K}{\partial T}.\]
+\[\begin{align*} \Delta G^{\circ} &amp; \equiv-RT\ln K,\vphantom{\left(-\frac{\Delta G^{\circ}}{T}\right)}\\ \Delta H^{\circ} &amp; \equiv T^{2}\frac{\partial}{\partial T}\left(-\frac{\Delta G^{\circ}}{T}\right)_{P}=RT^{2}\frac{\partial\ln K}{\partial T},\\ \Delta C_{P}^{\circ} &amp; \equiv\left(\dfrac{\partial\Delta H^{\circ}}{\partial T}\right)_{P}. \end{align*}\]
 </p>
-<p>Reference:</p><ul>
+<p>Note that a pressure correction is introduced above, where \(\Delta V^{\circ}\) is the change of standard molar volume of the reaction at \(T\) and \(P\), with \(P_{\mathrm{r}}\) denoting a given reference pressure. \(\Delta V^{\circ}_T\) is the temperature derivative of \(\Delta V^{\circ}\) at constant pressure.</p>
+<p><b>References:</b></p><ul>
 <li>Kulik, D., Wagner T. (2010) Part 3. Temperature corrections of standard molar (partial molal) thermodynamic properties of substances and reactions using data in ReacDC records of GEM-Selektor.</li>
 <li>Haas, J.L., Fisher, J.R. (1976). Simultaneous evaluation and correlation of thermodynamic data. In American Journal of Science (Vol. 276, Issue 4, pp. 525–545). <a href="https://doi.org/10.2475/ajs.276.4.525">https://doi.org/10.2475/ajs.276.4.525</a> </li>
 </ul>
@@ -6220,24 +6233,26 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Return a function that calculates thermodynamic properties of a reaction using PHREEQC's analytical expression. </p>
 <p>In this model, the equilibrium constant of the reaction is computed at a given temperature with:</p>
 <p class="formulaDsp">
-\[\log_{10}K=A_{1}+A_{2}T+A_{3}T^{-1}+A_{4}\log_{10}T+A_{5}T^{-2}+A_{6}T^{2},\]
+\[\lg K(T)=A_{1}+A_{2}T+A_{3}T^{-1}+A_{4}\log_{10}T+A_{5}T^{-2}+A_{6}T^{2},\]
 </p>
-<p>where \(A_i\) are given coefficients. From this model, we can calculate the standard Gibbs energy of reaction using:</p>
+<p>where \(A_i\) are given coefficients.</p>
+<p>The standard Gibbs energy of reaction is computed using:</p>
 <p class="formulaDsp">
-\[\Delta G^{\circ}=-RT\left(A_{1}+A_{2}T+A_{3}T^{-1}+A_{4}\log_{10}T+A_{5}T^{-2}+A_{6}T^{2}\right)\ln_{10}+\Delta V^{\circ}(P-P_{\mathrm{r}})\]
+\[\Delta G^{\circ}(T,P)=-RT\left(A_{1}+A_{2}T+A_{3}T^{-1}+A_{4}\log_{10}T+A_{5}T^{-2}+A_{6}T^{2}\right)\ln_{10}+\Delta V^{\circ}(P-P_{\mathrm{r}}),\]
 </p>
-<p>and the standard enthalpy of reaction using:</p>
+<p>the standard enthalpy of reaction using:</p>
 <p class="formulaDsp">
-\[\Delta H^{\circ}=R\left(A_{2}T^{2}-A_{3}+\frac{A_{4}}{\ln10}T-2A_{5}T^{-1}+2A_{6}T^{3}\right)\ln_{10}+\Delta V^{\circ}(P-P_{\mathrm{r}}),\]
+\[\Delta H^{\circ}(T,P)=R\left(A_{2}T^{2}-A_{3}+\frac{A_{4}}{\ln10}T-2A_{5}T^{-1}+2A_{6}T^{3}\right)\ln_{10}+\Delta V^{\circ}(P-P_{\mathrm{r}}),\]
 </p>
-<p>considering that:</p>
+<p>and the standard isobaric heat capacity of reaction using:</p>
 <p class="formulaDsp">
-\[\Delta G^{\circ}=-RT\ln K+\Delta V^{\circ}(P-P_{\mathrm{r}})\]
+\[\Delta C_{P}^{\circ}(T,P)=R\left(2A_{2}T+\frac{A_{4}}{\ln10}+2A_{5}T^{-2}+6A_{6}T^{2}\right)\ln_{10}+\Delta V_{T}^{\circ}(P-P_{\mathrm{r}}),\]
 </p>
-<p>and</p>
+<p>where we have considered the following thermodynamic relations:</p>
 <p class="formulaDsp">
-\[\Delta H^{\circ}\equiv T^{2}\frac{\partial}{\partial T}\left(-\frac{\Delta G^{\circ}}{T}\right)=RT^{2}\frac{\partial\ln K}{\partial T}+\Delta V^{\circ}(P-P_{\mathrm{r}}).\]
+\[\begin{align*} \Delta G^{\circ} &amp; \equiv-RT\ln K,\vphantom{\left(-\frac{\Delta G^{\circ}}{T}\right)}\\ \Delta H^{\circ} &amp; \equiv T^{2}\frac{\partial}{\partial T}\left(-\frac{\Delta G^{\circ}}{T}\right)_{P}=RT^{2}\frac{\partial\ln K}{\partial T},\\ \Delta C_{P}^{\circ} &amp; \equiv\left(\dfrac{\partial\Delta H^{\circ}}{\partial T}\right)_{P}. \end{align*}\]
 </p>
+<p>Note that a pressure correction is introduced above, where \(\Delta V^{\circ}\) is the change of standard molar volume of the reaction at \(T\) and \(P\), with \(P_{\mathrm{r}}\) denoting a given reference pressure. \(\Delta V^{\circ}_T\) is the temperature derivative of \(\Delta V^{\circ}\) at constant pressure.</p>
 <p>Reference:</p><ul>
 <li>Parkhurst, D.L., Appelo, C.A.J. (2013). Description of input and examples for PHREEQC version 3—A computer program for speciation, batch-reaction, one-dimensional transport, and inverse geochemical calculations. In Groundwater Book 6, Modeling Techniques (p. 497). U.S. Geological Survey Techniques and Methods. <a href="http://pubs.usgs.gov/tm/06/a43">http://pubs.usgs.gov/tm/06/a43</a> </li>
 </ul>
@@ -6261,15 +6276,17 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><div class="memdoc">
 
 <p>Return a function that calculates pressure correction for standard Gibbs energy and enthalpy a reaction. </p>
-<p>In this model, the standard Gibbs energy and enthalpy of reaction are computed using:</p>
+<p>In this model, the standard Gibbs energy, enthalpy, and isobatic heat capacity of reaction are computed using:</p>
 <p class="formulaDsp">
 \[\Delta G^{\circ}=\Delta G_{\mathrm{base}}^{\circ}+\Delta V^{\circ}(P-P_{r})\]
 </p>
  <p class="formulaDsp">
 \[\Delta H^{\circ}=\Delta H_{\mathrm{base}}^{\circ}+\Delta V^{\circ}(P-P_{r})\]
 </p>
-<p>where \(\Delta G_{\mathrm{base}}^{\circ}\) and \(\Delta H_{\mathrm{base}}^{\circ}\) denote standard properties computed using a given base thermodynamic model function of the reaction.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+ <p class="formulaDsp">
+\[\Delta C_P^{\circ}=\Delta C_{P,\mathrm{base}}^{\circ}\]
+</p>
+<p>where \(\Delta G_{\mathrm{base}}^{\circ}\), \(\Delta H_{\mathrm{base}}^{\circ}\), and \(\Delta C_{P,\mathrm{base}}^{\circ}\) denote standard properties computed using a given base thermodynamic model function of the reaction. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Pr</td><td>The reference pressure for the pressure correction (in Pa). </td></tr>
   </table>
@@ -6297,17 +6314,26 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Return a function that calculates thermodynamic properties of a reaction using van't Hoff's model. </p>
 <p>In this model, the equilibrium constant of the reaction is computed at a given temperature with:</p>
 <p class="formulaDsp">
-\[\ln K=\ln K_{\mathrm{r}}-\frac{\Delta H_{\mathrm{r}}^{\circ}}{R}\left(\frac{1}{T}-\frac{1}{T_{\mathrm{r}}}\right),\]
+\[\ln K(T)=\ln K_{\mathrm{r}}-\frac{\Delta H_{\mathrm{r}}^{\circ}}{R}\left(\frac{1}{T}-\frac{1}{T_{\mathrm{r}}}\right),\]
 </p>
-<p>where \(\ln K_{\mathrm{r}}\) and \(\Delta H_{\mathrm{r}}^{\circ}\) are the equilibrium constant and enthalpy of reaction at reference temperature \(T_\mathrm{r}\). From this model, we can calculate the standard Gibbs energy of reaction using:</p>
+<p>where \(\ln K_{\mathrm{r}}\) and \(\Delta H_{\mathrm{r}}^{\circ}\) are the equilibrium constant and enthalpy of reaction at reference temperature \(T_\mathrm{r}\).</p>
+<p>The standard Gibbs energy of reaction is computed using:</p>
 <p class="formulaDsp">
-\[\Delta G^{\circ}=-RT\ln K_{\mathrm{r}}+\Delta V^{\circ}(P-P_{\mathrm{r}})\]
+\[\Delta G^{\circ}(T, P)=-RT\ln K_{\mathrm{r}}+\Delta V^{\circ}(P-P_{\mathrm{r}}),\]
 </p>
-<p>while the standard enthalpy of reaction is:</p>
+<p>the standard enthalpy of the reaction using:</p>
 <p class="formulaDsp">
-\[\Delta H^{\circ}=\Delta H_{\mathrm{r}}^{\circ}+\Delta V^{\circ}(P-P_{\mathrm{r}}).\]
+\[\Delta H^{\circ}(T, P)=\Delta H_{\mathrm{r}}^{\circ}+\Delta V^{\circ}(P-P_{\mathrm{r}}).\]
 </p>
-<p>Note that a pressure correction is introduced above, where \(\Delta V^{\circ}\) is the change of standard molar volume of the reaction at \(T\) and \(P\), with \(P_{\mathrm{r}}\) denoting a given reference pressure. </p>
+<p>and the standard isobaric heat capacity of reaction using:</p>
+<p class="formulaDsp">
+\[\Delta C_{P}^{\circ}(T, P) = \Delta V^{\circ}_T(P-P_{\mathrm{r}}),\]
+</p>
+<p>where we have considered the following thermodynamic relations:</p>
+<p class="formulaDsp">
+\[\begin{align*} \Delta G^{\circ} &amp; \equiv-RT\ln K,\vphantom{\left(-\frac{\Delta G^{\circ}}{T}\right)}\\ \Delta H^{\circ} &amp; \equiv T^{2}\frac{\partial}{\partial T}\left(-\frac{\Delta G^{\circ}}{T}\right)_{P}=RT^{2}\frac{\partial\ln K}{\partial T},\\ \Delta C_{P}^{\circ} &amp; \equiv\left(\dfrac{\partial\Delta H^{\circ}}{\partial T}\right)_{P}. \end{align*}\]
+</p>
+<p>Note that a pressure correction is introduced above, where \(\Delta V^{\circ}\) is the change of standard molar volume of the reaction at \(T\) and \(P\), with \(P_{\mathrm{r}}\) denoting a given reference pressure. \(\Delta V^{\circ}_T\) is the temperature derivative of \(\Delta V^{\circ}\) at constant pressure. </p>
 
 </div>
 </div>
@@ -6472,6 +6498,26 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>Return the Gaines-Thomas activity model for ion exchange. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="PageActivityModelIonExchangeGainesThomas.html">Gaines&ndash;Thomas ion exchange activity model</a> </dd></dl>
+
+</div>
+</div>
+<a id="a514e685e6753376b5e731601b1b142e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a514e685e6753376b5e731601b1b142e5">&#9670;&nbsp;</a></span>ActivityModelIonExchangeVanselow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Reaktoro::ActivityModelIonExchangeVanselow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  <a class="el" href="namespaceReaktoro.html#afaf4ce79487bc7842af13bc506fbd802">ActivityModelGenerator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the Vanselov activity model for ion exchange. </p>
+<dl class="section see"><dt>See also</dt><dd>PageActivityModelIonExchangeVanselov </dd></dl>
 
 </div>
 </div>
@@ -7218,7 +7264,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 3 2022 13:06:14 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Feb 11 2022 10:23:32 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
