@@ -46,17 +46,16 @@
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Citing" href="../about/citing.html" />
+    <link rel="next" title="Solubility" href="../applications/solubility/index.html" />
     <link rel="prev" title="Creating thermodynamic databases" href="advanced/creating-custom-databases.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -317,6 +316,65 @@
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/solubility/index.html">
+   Solubility
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/solubility/solubility-calcite.html">
+     Solubility calculation of calcite in water
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/exchange/index.html">
+   Ion-exchange
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/exchange/ion-exchange-dune-sand.html">
+     Ion exchange in dune sand and groundwater
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+     Extraction of exchangeable cations in dune sand
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+     Effect of calcite dissolution on exchangeable cations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
   About Reaktoro
  </span>
 </p>
@@ -439,6 +497,9 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="bibliography">
 <h1>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h1>
 <p id="id1"><dl class="citation">
+<dt class="label" id="id500"><span class="brackets">AP05</span></dt>
+<dd><p>C.A.J. Appelo and Dieke Postma. <em>Geochemistry, Groundwater and Pollution</em>. CRC Press, 2nd edition, 2005. ISBN 9780415364218.</p>
+</dd>
 <dt class="label" id="id648"><span class="brackets">Dru81</span></dt>
 <dd><p>S.E. Drummond. <em>Boiling and mixing of hydrothermal fluids: chemical effects on mineral precipitation</em>. Ph.D., Pennsylvania State University, 1981.</p>
 </dd>
@@ -554,10 +615,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../about/citing.html" title="next page">
+        <a class="right-next" href="../applications/solubility/index.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Citing</p>
+                <p class="prevnext-title">Solubility</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -1,0 +1,794 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ion exchange in dune sand and groundwater</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/customized_mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/customize.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Extraction of exchangeable cations in dune sand" href="ion-exchnage-mix-porewater-extractant.html" />
+    <link rel="prev" title="Ion-exchange" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/reaktoro-for-python-and-cpp.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Get Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../installation/index.html">
+   Installation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-conda.html">
+     Installation using Conda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-using-cmake.html">
+     Installation using CMake
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../installation/installation-in-google-colab.html">
+     Installation in Google Colab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/api">
+   API Reference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://reaktoro.org/v1">
+   Reaktoro v1
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/basics/index.html">
+   Basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/importing-reaktoro.html">
+     Importing Reaktoro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/loading-databases.html">
+     Loading thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/inspecting-databases.html">
+     Inspecting thermodynamic databases
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/defining-chemical-systems.html">
+     Defining chemical systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/creating-chemical-states.html">
+     Creating chemical states
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/computing-chemical-properties.html">
+     Computing chemical properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/computing-aqueous-properties.html">
+     Computing aqueous properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/computing-thermo-props-of-species.html">
+     Computing standard thermodynamic properties of species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/computing-thermo-props-of-reactions.html">
+     Computing standard thermodynamic properties of reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/basics/specifying-activity-models.html">
+     Specifying activity models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/equilibrium/index.html">
+   Chemical Equilibrium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-basics.html">
+     Chemical equilibrium: the basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-specifying-constraints.html">
+     Chemical equilibrium with constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-with-fixed-ph.html">
+     Chemical equilibrium with fixed pH
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-with-fixed-ph-charge-balance.html">
+     Chemical equilibrium with fixed pH and charge balance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-with-fixed-phase-amount.html">
+     Chemical equilibrium with fixed phase amount
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-with-fixed-fugacity.html">
+     Chemical equilibrium with fixed fugacity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-with-fixed-volume-internal-energy.html">
+     Chemical equilibrium with fixed volume and internal energy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-with-custom-constraints.html">
+     Chemical equilibrium with custom constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/equilibrium/equilibrium-with-given-component-amounts.html">
+     Chemical equilibrium with given element and charge amounts
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/kinetics/index.html">
+   Chemical Kinetics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/kinetics/kinetics-basics.html">
+     How to perform chemical kinetics calculations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/miscellaneous/index.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/miscellaneous/defining-materials.html">
+     Defining materials
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/advanced/index.html">
+   Advanced
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/advanced/creating-custom-databases.html">
+     Creating thermodynamic databases
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorials/bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../solubility/index.html">
+   Solubility
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solubility/solubility-calcite.html">
+     Solubility calculation of calcite in water
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Ion-exchange
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Ion exchange in dune sand and groundwater
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ion-exchnage-mix-porewater-extractant.html">
+     Extraction of exchangeable cations in dune sand
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ion-exhcange-calcite-cax-vs-ph.html">
+     Effect of calcite dissolution on exchangeable cations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  About Reaktoro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/citing.html">
+   Citing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/faq.html">
+   FAQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/contributing.html">
+   Contributing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../about/license.html">
+   License
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/applications/exchange/ion-exchange-dune-sand.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/reaktoro/reaktoro"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/reaktoro/reaktoro/issues/new?title=Issue%20on%20page%20%2Fapplications/exchange/ion-exchange-dune-sand.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/reaktoro/reaktoro/main?urlpath=tree/applications/exchange/ion-exchange-dune-sand.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ion-exchange-in-dune-sand-and-groundwater">
+<h1>Ion exchange in dune sand and groundwater<a class="headerlink" href="#ion-exchange-in-dune-sand-and-groundwater" title="Permalink to this headline">¶</a></h1>
+<p class="acknowledgement">Written by Svetlana Kyas (ETH Zurich) on Mar 10th, 2022</p>
+<p>In this tutorial, we calculate the exchanger composition in contact with groundwater. To represent the exchanger, we consider 6 g of dune sand with 10 meq/kg of CEC (cation exchange capacity), which results in 0.06 mol of exchanger X (60 meq/L, default 1L).</p>
+<p>Our goal is to reproduce the results of the PHREEQC script below.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>DATABASE ../database/phreeqc.dat
+TITLE Exchange in Dune sand
+
+SOLUTION 1
+pressure 1.0
+temperature 25.0
+Na 1.10006
+Mg 0.48
+Ca 1.9
+
+EXCHANGE 1
+X 0.06	#moles
+-equilibrate 1
+</pre></div>
+</div>
+<p>We start with setting up the chemical system and other means of modelling ion exchange in Reaktoro. For that, we use the PHREEQC database <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> that contains ion exchange species, their corresponding reactions, and necessary parameters.</p>
+<div class="cell tag_remove_output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O C Ca Na Mg Cl&quot;</span><span class="p">))</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="nf">chain</span><span class="p">(</span>
+    <span class="n">ActivityModelHKF</span><span class="p">(),</span>
+    <span class="n">ActivityModelDrummond</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>
+<span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The ion exchange phase is modelled by the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangePhase.html"><code class="docutils literal notranslate"><span class="pre">IonExchangePhase</span></code></a> class. We select only three ion exchange species: NaX, CaX<sub>2</sub>, and MgX<sub>2</sub>, which can be formed from major ions Na<sup>+</sup>, Ca<sup>2+</sup>, and Mg<sup>2+</sup> in the dunewater. We use the Gaines-Thomas activity model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangePhase</span><span class="p">(</span><span class="s2">&quot;NaX CaX2 MgX2&quot;</span><span class="p">)</span>
+<span class="n">exchange</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIonExchangeGainesThomas</span><span class="p">())</span>
+
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">exchange</span><span class="p">)</span>
+
+<span class="c1"># Define the equilibrium solver</span>
+<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below, we define the initial chemical state for the ion exchange calculation involving dune sand and dunewater at 25 °C and 1 bar.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We deliberately consider a very small initial amount of NaX, 0.06 μmol (and therefore there is 0.06 μmol of X<sup>-</sup> ion exchanger available for further formation of CaX<sub>2</sub> and MgX<sub>2</sub> during the equilibrium calculation). The rationale for this is to approximate the condition where there is an abundance of brine solution compared to the available ion exchanger, so that changes in fluid composition are negligible. This is necessary to compare our results with those produced by the PHREEQC script above, which ignores compositional changes in the aqueous solution when determining the distribution of NaX, CaX<sub>2</sub> and MgX<sub>2</sub> . Reaktoro, on the other hand, calculates not only this distribution, but also its effects on the brine composition, which we want to limit in this example.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike PHREEQC, to model ion exchange in Reaktoro we always assume that the exchanger (X<sup>-</sup>, in this case) is occupied by ions.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define initial equilibrium state</span>
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="c1"># Scale solution recipe to match the values of the PHREEQC examples</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>   <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span> <span class="p">,</span> <span class="mf">1.10</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="mf">1.90</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="c1"># Set the number of exchange assuming that it is completely occupied by sodium</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;NaX&quot;</span> <span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="s2">&quot;umol&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We expect the following set of ion exchange reactions happening between dunewater and exchanger site X<sup>-</sup> (initially fully occupied with sodium ion):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{alignat}{4}
+\tfrac{1}{2} {\rm Ca^{+2}} + {\rm NaX} &amp; \rightleftharpoons {\rm Na}^+ + \tfrac{1}{2} {\rm CaX}_2\\
+\tfrac{1}{2} {\rm Mg^{+2}} + {\rm NaX} &amp; \rightleftharpoons {\rm Na}^+ + \tfrac{1}{2} {\rm MgX}_2\\
+\end{alignat}
+\end{split}\]</div>
+<p>After the initial chemical state is defined, we can create the equilibrium solver that will perform a Gibbs energy minimization calculation to find the equilibrium state:</p>
+<div class="cell tag_remove_output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By printing the instance <code class="docutils literal notranslate"><span class="pre">state</span></code>, we can inspect the content of calculated equilibrium state:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------+------------+------+
+| Property        |      Value | Unit |
++-----------------+------------+------+
+| Temperature     |   298.1500 |    K |
+| Pressure        |     1.0000 |  bar |
+| Charge:         | 5.8600e-03 |  mol |
+| Element Amount: |            |      |
+| :: X            | 6.0000e-08 |  mol |
+| :: H            | 1.1101e+02 |  mol |
+| :: C            | 1.2000e-15 |  mol |
+| :: O            | 5.5506e+01 |  mol |
+| :: Na           | 1.1001e-03 |  mol |
+| :: Mg           | 4.8000e-04 |  mol |
+| :: Cl           | 1.0000e-16 |  mol |
+| :: Ca           | 1.9000e-03 |  mol |
+| Species Amount: |            |      |
+| :: CO3-2        | 1.0000e-16 |  mol |
+| :: H+           | 1.1653e-07 |  mol |
+| :: H2O          | 5.5506e+01 |  mol |
+| :: CO2          | 1.0000e-16 |  mol |
+| :: (CO2)2       | 1.0000e-16 |  mol |
+| :: HCO3-        | 1.0000e-16 |  mol |
+| :: CH4          | 1.0000e-16 |  mol |
+| :: Ca+2         | 1.9000e-03 |  mol |
+| :: CaCO3        | 1.0000e-16 |  mol |
+| :: CaHCO3+      | 1.0000e-16 |  mol |
+| :: CaOH+        | 2.3176e-09 |  mol |
+| :: Cl-          | 1.0000e-16 |  mol |
+| :: H2           | 1.0000e-16 |  mol |
+| :: Mg+2         | 4.7998e-04 |  mol |
+| :: MgCO3        | 1.0000e-16 |  mol |
+| :: MgHCO3+      | 1.0000e-16 |  mol |
+| :: MgOH+        | 1.2799e-08 |  mol |
+| :: Na+          | 1.1001e-03 |  mol |
+| :: NaCO3-       | 1.0000e-16 |  mol |
+| :: NaHCO3       | 1.0000e-16 |  mol |
+| :: OH-          | 1.0141e-07 |  mol |
+| :: NaOH         | 1.0000e-16 |  mol |
+| :: O2           | 1.0000e-16 |  mol |
+| :: NaX          | 5.5828e-10 |  mol |
+| :: CaX2         | 2.5651e-08 |  mol |
+| :: MgX2         | 4.0703e-09 |  mol |
++-----------------+------------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now compute the properties of the brine solution after the ion exchange has been carried out. For this purpose, the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> class is used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aqprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I  = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">ionicStrength</span><span class="p">()</span><span class="si">}</span><span class="s2"> mol/kgw&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pH = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pE = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">pE</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I  = 0.00531027 mol/kgw
+pH = 6.96694
+pE = -3.99932
+</pre></div>
+</div>
+</div>
+</div>
+<p>To inspect the ion exchange properties of species NaX, CaX<sub>2</sub>, and MgX<sub>2</sub>, the class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangeProps.html"><code class="docutils literal notranslate"><span class="pre">IonExchageProps</span></code></a> can be used, which is done next:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangeProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exprops</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+--------------------------------------+------------+------+
+| Property                             |      Value | Unit |
++--------------------------------------+------------+------+
+| Element Amounts:                     |            |      |
+| :: X                                 | 6.0000e-08 |  mol |
+| :: Na                                | 5.5828e-10 |  mol |
+| :: Mg                                | 4.0703e-09 |  mol |
+| :: Ca                                | 2.5651e-08 |  mol |
+| Species Amounts:                     |            |      |
+| :: NaX                               | 5.5828e-10 |  mol |
+| :: CaX2                              | 2.5651e-08 |  mol |
+| :: MgX2                              | 4.0703e-09 |  mol |
+| Equivalents:                         |            |      |
+| :: NaX                               |     0.0000 |   eq |
+| :: CaX2                              |     0.0000 |   eq |
+| :: MgX2                              |     0.0000 |   eq |
+| Equivalent Fractions:                |            |      |
+| :: NaX                               |     0.0093 |      |
+| :: CaX2                              |     0.8550 |      |
+| :: MgX2                              |     0.1357 |      |
+| Activity Coefficients (log base 10): |            |      |
+| :: NaX                               |    -0.0335 |      |
+| :: CaX2                              |    -0.1322 |      |
+| :: MgX2                              |    -0.1306 |      |
++--------------------------------------+------------+------+
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that CaX<sub>2</sub> has highest equivalent fraction of all ion exchange species, which causes its highest mole amounts. The table also includes the information on activity coefficient in logarithmic format with teh base 10. Such a detailed summary on the ion exchange properties was designed to compare PHREEQC outputs with those produced by Reaktoro.</p>
+<p>To finalise, we have learned in this tutorial how to calculate the cation exchange complex in equilibrium with groundwater using the Gaines-Thomas framework. Similar studies can be conducted for different types of soil and alternative brines (such as seawater). The next tutorial, considers  or particular a NaCl extractant to calculate the exchangeable cations in dune sand.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./applications/exchange"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="index.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Ion-exchange</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ion-exchnage-mix-porewater-extractant.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Extraction of exchangeable cations in dune sand</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

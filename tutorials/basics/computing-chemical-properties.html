@@ -46,12 +46,11 @@
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -313,6 +312,65 @@
   <a class="reference internal" href="../bibliography.html">
    Bibliography
   </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Applications
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../applications/solubility/index.html">
+   Solubility
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/solubility/solubility-calcite.html">
+     Solubility calculation of calcite in water
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../applications/exchange/index.html">
+   Ion-exchange
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-dune-sand.html">
+     Ion exchange in dune sand and groundwater
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+     Extraction of exchangeable cations in dune sand
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+     Effect of calcite dissolution on exchangeable cations
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption" role="heading">
@@ -766,40 +824,40 @@
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
-| :: CO2                                 |       0.0000 | J/(mol*K) |
-| :: (CO2)2                              |       0.0000 | J/(mol*K) |
-| :: HCO3-                               |       0.0000 | J/(mol*K) |
+| :: CO2                                 |     589.5805 | J/(mol*K) |
+| :: (CO2)2                              |    -131.3884 | J/(mol*K) |
+| :: HCO3-                               |     285.7657 | J/(mol*K) |
 | :: CH4                                 |       0.0000 | J/(mol*K) |
 | :: Cl-                                 |       0.0000 | J/(mol*K) |
 | :: H2                                  |       0.0000 | J/(mol*K) |
 | :: Na+                                 |       0.0000 | J/(mol*K) |
 | :: NaCO3-                              |       0.0000 | J/(mol*K) |
-| :: NaHCO3                              |       0.0000 | J/(mol*K) |
-| :: OH-                                 |       0.0000 | J/(mol*K) |
-| :: NaOH                                |       0.0000 | J/(mol*K) |
+| :: NaHCO3                              |     285.7657 | J/(mol*K) |
+| :: OH-                                 |    -184.8499 | J/(mol*K) |
+| :: NaOH                                |    -184.8499 | J/(mol*K) |
 | :: O2                                  |       0.0000 | J/(mol*K) |
 | Standard Heat Capacity (constant V):   |              |           |
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
-| :: CO2                                 |       0.0000 | J/(mol*K) |
-| :: (CO2)2                              |       0.0000 | J/(mol*K) |
-| :: HCO3-                               |       0.0000 | J/(mol*K) |
+| :: CO2                                 |     589.5805 | J/(mol*K) |
+| :: (CO2)2                              |    -131.3884 | J/(mol*K) |
+| :: HCO3-                               |     285.7657 | J/(mol*K) |
 | :: CH4                                 |       0.0000 | J/(mol*K) |
 | :: Cl-                                 |       0.0000 | J/(mol*K) |
 | :: H2                                  |       0.0000 | J/(mol*K) |
 | :: Na+                                 |       0.0000 | J/(mol*K) |
 | :: NaCO3-                              |       0.0000 | J/(mol*K) |
-| :: NaHCO3                              |       0.0000 | J/(mol*K) |
-| :: OH-                                 |       0.0000 | J/(mol*K) |
-| :: NaOH                                |       0.0000 | J/(mol*K) |
+| :: NaHCO3                              |     285.7657 | J/(mol*K) |
+| :: OH-                                 |    -184.8499 | J/(mol*K) |
+| :: NaOH                                |    -184.8499 | J/(mol*K) |
 | :: O2                                  |       0.0000 | J/(mol*K) |
 +----------------------------------------+--------------+-----------+
 </pre></div>
 </div>
 </div>
 </div>
-<p>By default, when defining a chemical system using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousPhase.html"><code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SolidPhase.html"><code class="docutils literal notranslate"><span class="pre">SolidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1MineralPhase.html"><code class="docutils literal notranslate"><span class="pre">MineralPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1CondensedPhase.html"><code class="docutils literal notranslate"><span class="pre">CondensedPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1MineralPhases.html"><code class="docutils literal notranslate"><span class="pre">MineralPhases</span></code></a>, etc., these objects are created with <strong>ideal activity models</strong>. That’s why you should see unit activity coefficients above for all species.</p>
+<p>By default, when defining a chemical system using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousPhase.html"><code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SolidPhase.html"><code class="docutils literal notranslate"><span class="pre">SolidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1MineralPhase.html"><code class="docutils literal notranslate"><span class="pre">MineralPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1CondensedPhase.html"><code class="docutils literal notranslate"><span class="pre">CondensedPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangePhase.html"><code class="docutils literal notranslate"><span class="pre">IonExchangePhase</span></code></a>, etc., these objects are created with <strong>ideal activity models</strong>. That’s why you should see unit activity coefficients above for all species.</p>
 <p>We will learn later how to specify more sophisticated and accurate activity models for each phase, but out of curiosity, we will define Pitzer’s activity model from <span id="id1">Harvie <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id993">1984</a>], Harvie and Weare [<a class="reference internal" href="../bibliography.html#id475">1980</a>]</span>. Let’s also consider a gaseous phase and some mineral phases. For the gaseous phase, we shall use Peng-Robinson’s equation of state <span id="id2">[<a class="reference internal" href="../bibliography.html#id760">Peng and Robinson, 1976</a>]</span> as its activity model.</p>
 <p>We will need to reconstruct the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, as well as the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> and <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> objects:</p>
 <div class="cell tag_output_scroll docutils container">
@@ -1299,32 +1357,32 @@
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
-| :: CO2                                 |       0.0000 | J/(mol*K) |
-| :: (CO2)2                              |       0.0000 | J/(mol*K) |
-| :: HCO3-                               |       0.0000 | J/(mol*K) |
+| :: CO2                                 |     589.5805 | J/(mol*K) |
+| :: (CO2)2                              |    -131.3884 | J/(mol*K) |
+| :: HCO3-                               |     285.7657 | J/(mol*K) |
 | :: CH4                                 |       0.0000 | J/(mol*K) |
 | :: Ca+2                                |       0.0000 | J/(mol*K) |
-| :: CaCO3                               |       0.0000 | J/(mol*K) |
-| :: CaHCO3+                             |       0.0000 | J/(mol*K) |
+| :: CaCO3                               |     219.6134 | J/(mol*K) |
+| :: CaHCO3+                             |     296.8666 | J/(mol*K) |
 | :: CaOH+                               |       0.0000 | J/(mol*K) |
 | :: Cl-                                 |       0.0000 | J/(mol*K) |
 | :: H2                                  |       0.0000 | J/(mol*K) |
 | :: H4SiO4                              |       0.0000 | J/(mol*K) |
-| :: H2SiO4-2                            |       0.0000 | J/(mol*K) |
-| :: H3SiO4-                             |       0.0000 | J/(mol*K) |
+| :: H2SiO4-2                            |    -413.5061 | J/(mol*K) |
+| :: H3SiO4-                             |    -133.4831 | J/(mol*K) |
 | :: Na+                                 |       0.0000 | J/(mol*K) |
 | :: NaCO3-                              |       0.0000 | J/(mol*K) |
-| :: NaHCO3                              |       0.0000 | J/(mol*K) |
-| :: OH-                                 |       0.0000 | J/(mol*K) |
-| :: NaOH                                |       0.0000 | J/(mol*K) |
+| :: NaHCO3                              |     285.7657 | J/(mol*K) |
+| :: OH-                                 |    -184.8499 | J/(mol*K) |
+| :: NaOH                                |    -184.8499 | J/(mol*K) |
 | :: O2                                  |       0.0000 | J/(mol*K) |
-| :: CH4(g)                              |       0.0000 | J/(mol*K) |
-| :: CO2(g)                              |       0.0000 | J/(mol*K) |
-| :: H2(g)                               |       0.0000 | J/(mol*K) |
-| :: H2O(g)                              |       0.0000 | J/(mol*K) |
-| :: O2(g)                               |       0.0000 | J/(mol*K) |
-| :: Aragonite :: CaCO3                  |       0.0000 | J/(mol*K) |
-| :: Calcite :: CaCO3                    |       0.0000 | J/(mol*K) |
+| :: CH4(g)                              |    -252.2302 | J/(mol*K) |
+| :: CO2(g)                              |     442.5779 | J/(mol*K) |
+| :: H2(g)                               |    -115.4153 | J/(mol*K) |
+| :: H2O(g)                              |     -34.3298 | J/(mol*K) |
+| :: O2(g)                               |    -169.8395 | J/(mol*K) |
+| :: Aragonite :: CaCO3                  |     399.6166 | J/(mol*K) |
+| :: Calcite :: CaCO3                    |     399.6166 | J/(mol*K) |
 | :: Chalcedony :: SiO2                  |       0.0000 | J/(mol*K) |
 | :: Halite :: NaCl                      |       0.0000 | J/(mol*K) |
 | :: Quartz :: SiO2                      |       0.0000 | J/(mol*K) |
@@ -1333,32 +1391,32 @@
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
-| :: CO2                                 |       0.0000 | J/(mol*K) |
-| :: (CO2)2                              |       0.0000 | J/(mol*K) |
-| :: HCO3-                               |       0.0000 | J/(mol*K) |
+| :: CO2                                 |     589.5805 | J/(mol*K) |
+| :: (CO2)2                              |    -131.3884 | J/(mol*K) |
+| :: HCO3-                               |     285.7657 | J/(mol*K) |
 | :: CH4                                 |       0.0000 | J/(mol*K) |
 | :: Ca+2                                |       0.0000 | J/(mol*K) |
-| :: CaCO3                               |       0.0000 | J/(mol*K) |
-| :: CaHCO3+                             |       0.0000 | J/(mol*K) |
+| :: CaCO3                               |     219.6134 | J/(mol*K) |
+| :: CaHCO3+                             |     296.8666 | J/(mol*K) |
 | :: CaOH+                               |       0.0000 | J/(mol*K) |
 | :: Cl-                                 |       0.0000 | J/(mol*K) |
 | :: H2                                  |       0.0000 | J/(mol*K) |
 | :: H4SiO4                              |       0.0000 | J/(mol*K) |
-| :: H2SiO4-2                            |       0.0000 | J/(mol*K) |
-| :: H3SiO4-                             |       0.0000 | J/(mol*K) |
+| :: H2SiO4-2                            |    -413.5061 | J/(mol*K) |
+| :: H3SiO4-                             |    -133.4831 | J/(mol*K) |
 | :: Na+                                 |       0.0000 | J/(mol*K) |
 | :: NaCO3-                              |       0.0000 | J/(mol*K) |
-| :: NaHCO3                              |       0.0000 | J/(mol*K) |
-| :: OH-                                 |       0.0000 | J/(mol*K) |
-| :: NaOH                                |       0.0000 | J/(mol*K) |
+| :: NaHCO3                              |     285.7657 | J/(mol*K) |
+| :: OH-                                 |    -184.8499 | J/(mol*K) |
+| :: NaOH                                |    -184.8499 | J/(mol*K) |
 | :: O2                                  |       0.0000 | J/(mol*K) |
-| :: CH4(g)                              |       0.0000 | J/(mol*K) |
-| :: CO2(g)                              |       0.0000 | J/(mol*K) |
-| :: H2(g)                               |       0.0000 | J/(mol*K) |
-| :: H2O(g)                              |       0.0000 | J/(mol*K) |
-| :: O2(g)                               |       0.0000 | J/(mol*K) |
-| :: Aragonite :: CaCO3                  |       0.0000 | J/(mol*K) |
-| :: Calcite :: CaCO3                    |       0.0000 | J/(mol*K) |
+| :: CH4(g)                              |    -252.2302 | J/(mol*K) |
+| :: CO2(g)                              |     442.5779 | J/(mol*K) |
+| :: H2(g)                               |    -115.4153 | J/(mol*K) |
+| :: H2O(g)                              |     -34.3298 | J/(mol*K) |
+| :: O2(g)                               |    -169.8395 | J/(mol*K) |
+| :: Aragonite :: CaCO3                  |     399.6166 | J/(mol*K) |
+| :: Calcite :: CaCO3                    |     399.6166 | J/(mol*K) |
 | :: Chalcedony :: SiO2                  |       0.0000 | J/(mol*K) |
 | :: Halite :: NaCl                      |       0.0000 | J/(mol*K) |
 | :: Quartz :: SiO2                      |       0.0000 | J/(mol*K) |
@@ -1849,32 +1907,32 @@
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
-| :: CO2                                 |       0.0000 | J/(mol*K) |
-| :: (CO2)2                              |       0.0000 | J/(mol*K) |
-| :: HCO3-                               |       0.0000 | J/(mol*K) |
+| :: CO2                                 |     580.8071 | J/(mol*K) |
+| :: (CO2)2                              |    -135.3322 | J/(mol*K) |
+| :: HCO3-                               |     287.0513 | J/(mol*K) |
 | :: CH4                                 |       0.0000 | J/(mol*K) |
 | :: Ca+2                                |       0.0000 | J/(mol*K) |
-| :: CaCO3                               |       0.0000 | J/(mol*K) |
-| :: CaHCO3+                             |       0.0000 | J/(mol*K) |
+| :: CaCO3                               |     104.9593 | J/(mol*K) |
+| :: CaHCO3+                             |     417.9755 | J/(mol*K) |
 | :: CaOH+                               |       0.0000 | J/(mol*K) |
 | :: Cl-                                 |       0.0000 | J/(mol*K) |
 | :: H2                                  |       0.0000 | J/(mol*K) |
 | :: H4SiO4                              |       0.0000 | J/(mol*K) |
-| :: H2SiO4-2                            |       0.0000 | J/(mol*K) |
-| :: H3SiO4-                             |       0.0000 | J/(mol*K) |
+| :: H2SiO4-2                            |    -419.1384 | J/(mol*K) |
+| :: H3SiO4-                             |    -130.7100 | J/(mol*K) |
 | :: Na+                                 |       0.0000 | J/(mol*K) |
 | :: NaCO3-                              |       0.0000 | J/(mol*K) |
-| :: NaHCO3                              |       0.0000 | J/(mol*K) |
-| :: OH-                                 |       0.0000 | J/(mol*K) |
-| :: NaOH                                |       0.0000 | J/(mol*K) |
+| :: NaHCO3                              |     287.0513 | J/(mol*K) |
+| :: OH-                                 |    -187.0966 | J/(mol*K) |
+| :: NaOH                                |    -187.0966 | J/(mol*K) |
 | :: O2                                  |       0.0000 | J/(mol*K) |
-| :: CH4(g)                              |       0.0000 | J/(mol*K) |
-| :: CO2(g)                              |       0.0000 | J/(mol*K) |
-| :: H2(g)                               |       0.0000 | J/(mol*K) |
-| :: H2O(g)                              |       0.0000 | J/(mol*K) |
-| :: O2(g)                               |       0.0000 | J/(mol*K) |
-| :: Aragonite :: CaCO3                  |       0.0000 | J/(mol*K) |
-| :: Calcite :: CaCO3                    |       0.0000 | J/(mol*K) |
+| :: CH4(g)                              |    -229.2097 | J/(mol*K) |
+| :: CO2(g)                              |     439.5494 | J/(mol*K) |
+| :: H2(g)                               |    -114.6555 | J/(mol*K) |
+| :: H2O(g)                              |     -35.3037 | J/(mol*K) |
+| :: O2(g)                               |    -168.8955 | J/(mol*K) |
+| :: Aragonite :: CaCO3                  |     429.4797 | J/(mol*K) |
+| :: Calcite :: CaCO3                    |     429.4797 | J/(mol*K) |
 | :: Chalcedony :: SiO2                  |       0.0000 | J/(mol*K) |
 | :: Halite :: NaCl                      |       0.0000 | J/(mol*K) |
 | :: Quartz :: SiO2                      |       0.0000 | J/(mol*K) |
@@ -1883,32 +1941,32 @@
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
-| :: CO2                                 |       0.0000 | J/(mol*K) |
-| :: (CO2)2                              |       0.0000 | J/(mol*K) |
-| :: HCO3-                               |       0.0000 | J/(mol*K) |
+| :: CO2                                 |     580.8071 | J/(mol*K) |
+| :: (CO2)2                              |    -135.3322 | J/(mol*K) |
+| :: HCO3-                               |     287.0513 | J/(mol*K) |
 | :: CH4                                 |       0.0000 | J/(mol*K) |
 | :: Ca+2                                |       0.0000 | J/(mol*K) |
-| :: CaCO3                               |       0.0000 | J/(mol*K) |
-| :: CaHCO3+                             |       0.0000 | J/(mol*K) |
+| :: CaCO3                               |     104.9593 | J/(mol*K) |
+| :: CaHCO3+                             |     417.9755 | J/(mol*K) |
 | :: CaOH+                               |       0.0000 | J/(mol*K) |
 | :: Cl-                                 |       0.0000 | J/(mol*K) |
 | :: H2                                  |       0.0000 | J/(mol*K) |
 | :: H4SiO4                              |       0.0000 | J/(mol*K) |
-| :: H2SiO4-2                            |       0.0000 | J/(mol*K) |
-| :: H3SiO4-                             |       0.0000 | J/(mol*K) |
+| :: H2SiO4-2                            |    -419.1384 | J/(mol*K) |
+| :: H3SiO4-                             |    -130.7100 | J/(mol*K) |
 | :: Na+                                 |       0.0000 | J/(mol*K) |
 | :: NaCO3-                              |       0.0000 | J/(mol*K) |
-| :: NaHCO3                              |       0.0000 | J/(mol*K) |
-| :: OH-                                 |       0.0000 | J/(mol*K) |
-| :: NaOH                                |       0.0000 | J/(mol*K) |
+| :: NaHCO3                              |     287.0513 | J/(mol*K) |
+| :: OH-                                 |    -187.0966 | J/(mol*K) |
+| :: NaOH                                |    -187.0966 | J/(mol*K) |
 | :: O2                                  |       0.0000 | J/(mol*K) |
-| :: CH4(g)                              |       0.0000 | J/(mol*K) |
-| :: CO2(g)                              |       0.0000 | J/(mol*K) |
-| :: H2(g)                               |       0.0000 | J/(mol*K) |
-| :: H2O(g)                              |       0.0000 | J/(mol*K) |
-| :: O2(g)                               |       0.0000 | J/(mol*K) |
-| :: Aragonite :: CaCO3                  |       0.0000 | J/(mol*K) |
-| :: Calcite :: CaCO3                    |       0.0000 | J/(mol*K) |
+| :: CH4(g)                              |    -229.2097 | J/(mol*K) |
+| :: CO2(g)                              |     439.5494 | J/(mol*K) |
+| :: H2(g)                               |    -114.6555 | J/(mol*K) |
+| :: H2O(g)                              |     -35.3037 | J/(mol*K) |
+| :: O2(g)                               |    -168.8955 | J/(mol*K) |
+| :: Aragonite :: CaCO3                  |     429.4797 | J/(mol*K) |
+| :: Calcite :: CaCO3                    |     429.4797 | J/(mol*K) |
 | :: Chalcedony :: SiO2                  |       0.0000 | J/(mol*K) |
 | :: Halite :: NaCl                      |       0.0000 | J/(mol*K) |
 | :: Quartz :: SiO2                      |       0.0000 | J/(mol*K) |
