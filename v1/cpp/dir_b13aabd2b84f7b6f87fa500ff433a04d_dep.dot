@@ -1,0 +1,12 @@
+digraph "Reaktoro/Optimization"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_8e92d4b241d211e8bbb38ad86320f5f7 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="Reaktoro", fontname="Helvetica", fontsize="10", URL="dir_8e92d4b241d211e8bbb38ad86320f5f7.html"]
+  dir_b13aabd2b84f7b6f87fa500ff433a04d [shape=box, label="Optimization", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_b13aabd2b84f7b6f87fa500ff433a04d.html"];
+  }
+}

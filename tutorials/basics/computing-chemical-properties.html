@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computing chemical properties</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -33,19 +33,22 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -58,7 +61,10 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Computing aqueous properties" href="computing-aqueous-properties.html" />
     <link rel="prev" title="Creating chemical states" href="creating-chemical-states.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -88,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Get Started
  </span>
@@ -132,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -314,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Applications
  </span>
@@ -373,7 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   About Reaktoro
  </span>
@@ -450,7 +456,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -501,14 +507,24 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Computing chemical properties</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="computing-chemical-properties">
@@ -520,11 +536,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C&quot;</span><span class="p">))</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C&quot;</span><span class="p">))</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -532,15 +548,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s create a chemical state for this system representing a 1 molal NaCl solution with 0.7 molal dissolved CO<sub>2</sub>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -588,7 +604,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Computing chemical properties of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> objects is a task for class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -858,33 +874,33 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>By default, when defining a chemical system using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousPhase.html"><code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SolidPhase.html"><code class="docutils literal notranslate"><span class="pre">SolidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1MineralPhase.html"><code class="docutils literal notranslate"><span class="pre">MineralPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1CondensedPhase.html"><code class="docutils literal notranslate"><span class="pre">CondensedPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangePhase.html"><code class="docutils literal notranslate"><span class="pre">IonExchangePhase</span></code></a>, etc., these objects are created with <strong>ideal activity models</strong>. That’s why you should see unit activity coefficients above for all species.</p>
-<p>We will learn later how to specify more sophisticated and accurate activity models for each phase, but out of curiosity, we will define Pitzer’s activity model from <span id="id1">Harvie <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id993">1984</a>], Harvie and Weare [<a class="reference internal" href="../bibliography.html#id475">1980</a>]</span>. Let’s also consider a gaseous phase and some mineral phases. For the gaseous phase, we shall use Peng-Robinson’s equation of state <span id="id2">[<a class="reference internal" href="../bibliography.html#id760">Peng and Robinson, 1976</a>]</span> as its activity model.</p>
+<p>We will learn later how to specify more sophisticated and accurate activity models for each phase, but out of curiosity, we will define Pitzer’s activity model from <span id="id1">Harvie <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id993" title="Charles E Harvie, Nancy Møller, and John H Weare. The prediction of mineral solubilities in natural waters: The Na-K-Mg-Ca-H-Cl-SO4-OH-HCO3-CO3-CO2-H2O system to high ionic strengths at 25°C. Geochimica et Cosmochimica Acta, 48(4):723–751, apr 1984. URL: http://linkinghub.elsevier.com/retrieve/pii/001670378490098X, doi:10.1016/0016-7037(84)90098-X.">1984</a>], Harvie and Weare [<a class="reference internal" href="../bibliography.html#id475" title="Charles E. Harvie and John H. Weare. The prediction of mineral soluhilities in natural waters: the system from zero to high concentration at 25 °C. Geochimica et Cosmochimica Acta, 44(7):981–997, 1980.">1980</a>]</span>. Let’s also consider a gaseous phase and some mineral phases. For the gaseous phase, we shall use Peng-Robinson’s equation of state <span id="id2">[<a class="reference internal" href="../bibliography.html#id760" title="Ding-Yu Peng and Donald B. Robinson. A New Two-Constant Equation of State. Industrial &amp; Engineering Chemistry Fundamentals, 15(1):59–64, feb 1976. URL: http://pubs.acs.org/doi/abs/10.1021/i160057a011, doi:10.1021/i160057a011.">Peng and Robinson, 1976</a>]</span> as its activity model.</p>
 <p>We will need to reconstruct the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, as well as the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> and <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> objects:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca Si&quot;</span><span class="p">))</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca Si&quot;</span><span class="p">))</span>
+<span class="n">solution</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
 
-<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>
-<span class="n">gases</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
+<span class="n">gases</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">()</span>
+<span class="n">gases</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
 
-<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
+<span class="n">minerals</span> <span class="o">=</span> <span class="n">MineralPhases</span><span class="p">()</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gases</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gases</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>    <span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>    <span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
-<span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">props</span> <span class="o">=</span> <span class="n">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
 </pre></div>
@@ -902,7 +918,7 @@ const thebe_selector_output = ".output, .cell_output"
 | Entropy                                |     254.0955 |       J/K |
 | Internal Energy                        |    2119.5804 |         J |
 | Helmholtz Energy                       |  -82532.3478 |         J |
-| Charge                                 |  -2.1577e-16 |       mol |
+| Charge                                 |  -2.1583e-16 |       mol |
 | Element Amount:                        |              |           |
 | :: H                                   |   1.1101e+02 |       mol |
 | :: C                                   |   7.0999e-01 |       mol |
@@ -1430,11 +1446,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Now consider a scenario where your <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object <code class="docutils literal notranslate"><span class="pre">state</span></code> has changed, for example 1 mol of NaCl has been added to it and the temperature has increased by 10 °C. The chemical properties of the system must then be updated as shown below:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">70.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">70.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="n">props</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">props</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
 </pre></div>
@@ -1452,7 +1468,7 @@ const thebe_selector_output = ".output, .cell_output"
 | Entropy                                |     264.1252 |       J/K |
 | Internal Energy                        |    5429.3260 |         J |
 | Helmholtz Energy                       |  -85205.2423 |         J |
-| Charge                                 |  -2.1577e-16 |       mol |
+| Charge                                 |  -2.1583e-16 |       mol |
 | Element Amount:                        |              |           |
 | :: H                                   |   1.1101e+02 |       mol |
 | :: C                                   |   7.0999e-01 |       mol |
@@ -1979,24 +1995,24 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The printed table above shows many different properties. Let’s now use some methods from class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> to retrieve some specific properties for the system, its phases, and its species:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S TEMPERATURE     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>                         <span class="p">,</span> <span class="s2">&quot;K&quot;</span>     <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S PRESSURE        :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>                            <span class="p">,</span> <span class="s2">&quot;Pa&quot;</span>    <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S VOLUME          :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">volume</span><span class="p">()</span>                              <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S DENSITY  :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">density</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;kg/m3&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S MASS     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">mass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;kg&quot;</span>    <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S VOLUME   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">volume</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S ENTHALPY :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">enthalpy</span><span class="p">()</span> <span class="p">,</span> <span class="s2">&quot;J/mol&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S DENSITY  :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">density</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;kg/m3&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S MASS     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">mass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;kg&quot;</span>    <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S VOLUME   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">volume</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S ENTHALPY :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">enthalpy</span><span class="p">()</span> <span class="p">,</span> <span class="s2">&quot;J/mol&quot;</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY H+              :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivity</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>                           <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY H+ (LOG10)      :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityLg</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>                         <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY COEFF. CO2      :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>               <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY COEFF. HCO3-    :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span><span class="p">)</span>             <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. CO2(g)   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>            <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. H2O(g)   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;H2O(g)&quot;</span><span class="p">)</span>            <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. O2(g)    :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;O2(g)&quot;</span><span class="p">)</span>             <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S TEMPERATURE     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>                         <span class="p">,</span> <span class="s2">&quot;K&quot;</span>     <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S PRESSURE        :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>                            <span class="p">,</span> <span class="s2">&quot;Pa&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S VOLUME          :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>                              <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S DENSITY  :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">density</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;kg/m3&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S MASS     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;kg&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S VOLUME   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PHASE&#39;S ENTHALPY :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">phaseProps</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">enthalpy</span><span class="p">()</span> <span class="p">,</span> <span class="s2">&quot;J/mol&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S DENSITY  :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">density</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;kg/m3&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S MASS     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;kg&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S VOLUME   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;m3&quot;</span>    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GASEOUS PHASE&#39;S ENTHALPY :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">phaseProps</span><span class="p">(</span><span class="s2">&quot;GaseousPhase&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">enthalpy</span><span class="p">()</span> <span class="p">,</span> <span class="s2">&quot;J/mol&quot;</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY H+              :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesActivity</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>                           <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY H+ (LOG10)      :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesActivityLg</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>                         <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY COEFF. CO2      :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>               <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ACTIVITY COEFF. HCO3-    :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span><span class="p">)</span>             <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. CO2(g)   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>            <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. H2O(g)   :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;H2O(g)&quot;</span><span class="p">)</span>            <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FUGACITY COEFF. O2(g)    :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesActivityCoefficient</span><span class="p">(</span><span class="s2">&quot;O2(g)&quot;</span><span class="p">)</span>             <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2051,52 +2067,40 @@ FUGACITY COEFF. O2(g)    : 1.0112
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="creating-chemical-states.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Creating chemical states</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="creating-chemical-states.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Creating chemical states</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="computing-aqueous-properties.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Computing aqueous properties</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="computing-aqueous-properties.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Computing aqueous properties</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -1,0 +1,25 @@
+digraph "AqueousMixtureState"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="AqueousMixtureState",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A type used to describe the state of an aqueous mixture."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MixtureState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structReaktoro_1_1MixtureState.html",tooltip="A type used to describe the state of a mixture."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" T" ,fontname="Helvetica"];
+  Node3 [label="Temperature",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReaktoro_1_1Temperature.html",tooltip="A type that describes temperature in units of K."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ThermoScalar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReaktoro_1_1ThermoScalarBase.html",tooltip=" "];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" P" ,fontname="Helvetica"];
+  Node5 [label="Pressure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReaktoro_1_1Pressure.html",tooltip="A type that describes pressure in units of Pa."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" x" ,fontname="Helvetica"];
+  Node6 [label="ChemicalVectorBase\l\< Vector, Vector, Vector,\l Matrix \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReaktoro_1_1ChemicalVectorBase.html",tooltip=" "];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" epsilon\nrho" ,fontname="Helvetica"];
+  Node7 [label="ThermoScalarBase\< double \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReaktoro_1_1ThermoScalarBase.html",tooltip=" "];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Ie\nIs" ,fontname="Helvetica"];
+  Node8 [label="ChemicalScalarBase\l\< double, RowVector \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReaktoro_1_1ChemicalScalarBase.html",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m\nms" ,fontname="Helvetica"];
+}

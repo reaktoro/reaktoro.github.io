@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computing standard thermodynamic properties of species</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -33,34 +33,40 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Computing standard thermodynamic properties of reactions" href="computing-thermo-props-of-reactions.html" />
     <link rel="prev" title="Computing aqueous properties" href="computing-aqueous-properties.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -90,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Get Started
  </span>
@@ -134,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -316,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Applications
  </span>
@@ -375,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   About Reaktoro
  </span>
@@ -452,7 +458,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -503,14 +509,24 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Computing standard thermodynamic properties of species</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="computing-standard-thermodynamic-properties-of-species">
@@ -527,7 +543,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>the standard molar heat capacity (constant pressure), <span class="math notranslate nohighlight">\(C_{P,i}^\circ\)</span></p></li>
 <li><p>the standard molar heat capacity (constant volume), <span class="math notranslate nohighlight">\(C_{V,i}^\circ\)</span></p></li>
 </ul>
-<p>Let’s start with the use of the SUPCRTBL database <span id="id1">[<a class="reference internal" href="../bibliography.html#id20">Zimmer <em>et al.</em>, 2016</a>]</span> to compute the standard thermodynamic properties of the following chemical species:</p>
+<p>Let’s start with the use of the SUPCRTBL database <span id="id1">[<a class="reference internal" href="../bibliography.html#id20" title="Kurt Zimmer, Yilun Zhang, Peng Lu, Yanyan Chen, Guanru Zhang, Mehmet Dalkilic, and Chen Zhu. SUPCRTBL: A revised and extended thermodynamic dataset and software package of SUPCRT92. Computers and Geosciences, 90:97–111, 2016. URL: http://dx.doi.org/10.1016/j.cageo.2016.02.013, doi:10.1016/j.cageo.2016.02.013.">Zimmer <em>et al.</em>, 2016</a>]</span> to compute the standard thermodynamic properties of the following chemical species:</p>
 <ul class="simple">
 <li><p>CO<sub>2</sub>(aq)</p></li>
 <li><p>CO<sub>2</sub>(g)</p></li>
@@ -537,11 +553,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
 
-<span class="n">CO2g</span>    <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
-<span class="n">CO2aq</span>   <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;CO2(aq)&quot;</span><span class="p">)</span>
-<span class="n">calcite</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
+<span class="n">CO2g</span>    <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
+<span class="n">CO2aq</span>   <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;CO2(aq)&quot;</span><span class="p">)</span>
+<span class="n">calcite</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -550,13 +566,13 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STANDARD THERMODYNAMIC PROPERTIES OF CO2(G) AT 60 °C AND 100 BAR&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">CO2g</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CO2g</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STANDARD THERMODYNAMIC PROPERTIES OF CO2(AQ) AT 60 °C AND 100 BAR&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">CO2aq</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CO2aq</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STANDARD THERMODYNAMIC PROPERTIES OF CALCITE AT 60 °C AND 100 BAR&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">calcite</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calcite</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -621,23 +637,23 @@ STANDARD THERMODYNAMIC PROPERTIES OF CALCITE AT 60 °C AND 100 BAR
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="mf">300.0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mf">273.15</span>  <span class="c1"># in K</span>
+<span class="n">temperatures</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="mf">300.0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mf">273.15</span>  <span class="c1"># in K</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;T&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;G0&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;H0&quot;</span><span class="p">:</span> <span class="p">[]</span> <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">:</span>
-    <span class="n">P</span> <span class="o">=</span> <span class="nf">waterSaturationPressureWagnerPruss</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>   <span class="c1"># in Pa</span>
-    <span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">CO2aq</span><span class="o">.</span><span class="nf">props</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
-    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;T&quot;</span> <span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>        <span class="c1"># in °C</span>
-    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;G0&quot;</span><span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">props</span><span class="o">.</span><span class="n">G0</span> <span class="o">*</span> <span class="mf">0.001</span><span class="p">))</span>  <span class="c1"># in kJ/mol</span>
-    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;H0&quot;</span><span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">props</span><span class="o">.</span><span class="n">H0</span> <span class="o">*</span> <span class="mf">0.001</span><span class="p">))</span>  <span class="c1"># in kJ/mol</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">waterSaturationPressureWagnerPruss</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>   <span class="c1"># in Pa</span>
+    <span class="n">props</span> <span class="o">=</span> <span class="n">CO2aq</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;T&quot;</span> <span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">))</span>        <span class="c1"># in °C</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;G0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">props</span><span class="o">.</span><span class="n">G0</span> <span class="o">*</span> <span class="mf">0.001</span><span class="p">))</span>  <span class="c1"># in kJ/mol</span>
+    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;H0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">props</span><span class="o">.</span><span class="n">H0</span> <span class="o">*</span> <span class="mf">0.001</span><span class="p">))</span>  <span class="c1"># in kJ/mol</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You might also be interested in other methods for calculating the thermodynamic properties of water besides <code class="docutils literal notranslate"><span class="pre">waterSaturationPressureWagnerPruss</span></code>, which implements the water saturation pressure equation in <span id="id2">Wagner and Pruss [<a class="reference internal" href="../bibliography.html#id262">2002</a>]</span>. Below are other methods available in Reaktoro:</p>
+<p>You might also be interested in other methods for calculating the thermodynamic properties of water besides <code class="docutils literal notranslate"><span class="pre">waterSaturationPressureWagnerPruss</span></code>, which implements the water saturation pressure equation in <span id="id2">Wagner and Pruss [<a class="reference internal" href="../bibliography.html#id262" title="W. Wagner and A. Pruss. The IAPWS Formulation 1995 for the Thermodynamic Properties of Ordinary Water Substance for General and Scientific Use. Journal of Physical and Chemical Reference Data, 31(2):387, 2002. URL: http://link.aip.org/link/?JPR/31/387/1{\&amp;}Agg=doi http://scitation.aip.org/content/aip/journal/jpcrd/31/2/10.1063/1.1461829, doi:10.1063/1.1461829.">2002</a>]</span>. Below are other methods available in Reaktoro:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">waterDensityHGK</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">waterDensityWagnerPruss</span></code></p></li>
@@ -661,7 +677,7 @@ STANDARD THERMODYNAMIC PROPERTIES OF CALCITE AT 60 °C AND 100 BAR
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">show</span>
 <span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span>
 <span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">output_notebook</span>
-<span class="nf">output_notebook</span><span class="p">()</span>
+<span class="n">output_notebook</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -964,21 +980,21 @@ STANDARD THERMODYNAMIC PROPERTIES OF CALCITE AT 60 °C AND 100 BAR
 <p>We can now define our interactive plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hovertool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">HoverTool</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hovertool</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">()</span>
 <span class="n">hovertool</span><span class="o">.</span><span class="n">tooltips</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;@T °C&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;G°,CO2(aq)&quot;</span><span class="p">,</span> <span class="s2">&quot;@G0 kJ/mol&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;H°,CO2(aq)&quot;</span><span class="p">,</span> <span class="s2">&quot;@H0 kJ/mol&quot;</span><span class="p">)]</span>
 
-<span class="n">p</span> <span class="o">=</span> <span class="nf">figure</span><span class="p">(</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;STANDARD THERMODYNAMIC PROPERTIES OF CO2(AQ)</span><span class="se">\n</span><span class="s2">ALONG WATER SATURATION PRESSURE&quot;</span><span class="p">,</span> 
     <span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;TEMPERATURE [°C]&#39;</span><span class="p">,</span> 
     <span class="n">y_axis_label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;scale_width&quot;</span><span class="p">)</span>
 
-<span class="n">p</span><span class="p">.</span><span class="nf">add_tools</span><span class="p">(</span><span class="n">hovertool</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_tools</span><span class="p">(</span><span class="n">hovertool</span><span class="p">)</span>
 
-<span class="n">p</span><span class="p">.</span><span class="nf">line</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;G0&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;G°,CO2(aq)&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">line_cap</span><span class="o">=</span><span class="s2">&quot;round&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;midnightblue&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="p">.</span><span class="nf">line</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;H0&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;H°,CO2(aq)&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">line_cap</span><span class="o">=</span><span class="s2">&quot;round&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;G0&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;G°,CO2(aq)&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">line_cap</span><span class="o">=</span><span class="s2">&quot;round&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;midnightblue&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;H0&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;H°,CO2(aq)&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">line_cap</span><span class="o">=</span><span class="s2">&quot;round&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 
-<span class="nf">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -989,12 +1005,12 @@ STANDARD THERMODYNAMIC PROPERTIES OF CALCITE AT 60 °C AND 100 BAR
 
 
 
-<div class="bk-root" id="93403672-3705-402d-964d-7b09b14e42e6" data-root-id="1004"></div>
+<div class="bk-root" id="037fe6a4-a2c7-4971-bd8d-2e614e2e0caf" data-root-id="1004"></div>
 </div><script type="application/javascript">(function(root) {
   function embed_document(root) {
     
-  const docs_json = {"3460d984-44e5-49bd-8c88-581f3591038d":{"defs":[],"roots":{"references":[{"attributes":{"below":[{"id":"1015"}],"center":[{"id":"1018"},{"id":"1022"},{"id":"1055"}],"left":[{"id":"1019"}],"renderers":[{"id":"1043"},{"id":"1062"}],"sizing_mode":"scale_width","title":{"id":"1005"},"toolbar":{"id":"1030"},"x_range":{"id":"1007"},"x_scale":{"id":"1011"},"y_range":{"id":"1009"},"y_scale":{"id":"1013"}},"id":"1004","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"1028","type":"HelpTool"},{"attributes":{},"id":"1052","type":"UnionRenderers"},{"attributes":{},"id":"1026","type":"SaveTool"},{"attributes":{},"id":"1027","type":"ResetTool"},{"attributes":{"axis":{"id":"1019"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1022","type":"Grid"},{"attributes":{},"id":"1020","type":"BasicTicker"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1029","type":"BoxAnnotation"},{"attributes":{},"id":"1007","type":"DataRange1d"},{"attributes":{"label":{"value":"G\u00b0,CO2(aq)"},"renderers":[{"id":"1043"}]},"id":"1056","type":"LegendItem"},{"attributes":{},"id":"1023","type":"PanTool"},{"attributes":{"line_alpha":0.1,"line_cap":"round","line_color":"midnightblue","line_width":5,"x":{"field":"T"},"y":{"field":"G0"}},"id":"1041","type":"Line"},{"attributes":{},"id":"1024","type":"WheelZoomTool"},{"attributes":{"axis":{"id":"1015"},"coordinates":null,"group":null,"ticker":null},"id":"1018","type":"Grid"},{"attributes":{},"id":"1047","type":"BasicTickFormatter"},{"attributes":{"label":{"value":"H\u00b0,CO2(aq)"},"renderers":[{"id":"1062"}]},"id":"1076","type":"LegendItem"},{"attributes":{"tools":[{"id":"1023"},{"id":"1024"},{"id":"1025"},{"id":"1026"},{"id":"1027"},{"id":"1028"},{"id":"1003"}]},"id":"1030","type":"Toolbar"},{"attributes":{"overlay":{"id":"1029"}},"id":"1025","type":"BoxZoomTool"},{"attributes":{},"id":"1053","type":"Selection"},{"attributes":{"line_alpha":0.2,"line_cap":"round","line_color":"midnightblue","line_width":5,"x":{"field":"T"},"y":{"field":"G0"}},"id":"1042","type":"Line"},{"attributes":{"line_cap":"round","line_color":"orange","line_width":5,"x":{"field":"T"},"y":{"field":"H0"}},"id":"1059","type":"Line"},{"attributes":{"line_alpha":0.1,"line_cap":"round","line_color":"orange","line_width":5,"x":{"field":"T"},"y":{"field":"H0"}},"id":"1060","type":"Line"},{"attributes":{},"id":"1073","type":"UnionRenderers"},{"attributes":{"source":{"id":"1057"}},"id":"1063","type":"CDSView"},{"attributes":{},"id":"1048","type":"AllLabels"},{"attributes":{"coordinates":null,"formatter":{"id":"1047"},"group":null,"major_label_policy":{"id":"1048"},"ticker":{"id":"1020"}},"id":"1019","type":"LinearAxis"},{"attributes":{},"id":"1051","type":"AllLabels"},{"attributes":{},"id":"1013","type":"LinearScale"},{"attributes":{},"id":"1009","type":"DataRange1d"},{"attributes":{"data":{"G0":[-385.9771767699132,-386.30687257624396,-386.64265510839425,-386.9843416950836,-387.3317660669607,-387.6847761600494,-388.04323228308175,-388.4070055742092,-388.77597669620354,-389.1500347254892,-389.5290762028274,-389.9130043167122,-390.30172819930215,-390.6951623148727,-391.0932259279476,-391.4958426383583,-391.90293997304025,-392.3144490268058,-392.73030414485623,-393.15044264146917,-393.57480454983624,-394.0033323990366,-394.43597101456726,-394.87266733963094,-395.3133702743612,-395.75803053106705,-396.20660050352944,-396.65903414858127,-397.1152868788791,-397.5753154653095,-398.03907794823084,-398.50653355645034,-398.9776426332383,-399.45236656858646,-399.9306677371364,-400.4125094412002,-400.8978558583662,-401.3866719933151,-401.8789236333882,-402.3745773076211,-402.8736002489135,-403.3759603590605,-403.8816261764186,-404.3905668459617,-404.9027520915664,-405.4181521903086,-405.93673794866055,-406.4584806804032,-406.9833521861546,-407.5113247343873,-408.042371043831,-408.5764642671742,-409.113577975973,-409.65368614669757,-410.1967631478451,-410.74278372806316,-411.2917230052244,-411.8435564564141,-412.3982599087782,-412.9558095312072,-413.5161818268195,-414.0793536262193,-414.6453020815099,-415.214004661053,-415.78543914494986,-416.359583621258,-416.9364164829304,-417.5159164254869,-418.0980624454324,-418.6828338394396,-419.2702102043167,-419.86017143779924,-420.45269774020124,-421.04776961697905,-421.6453678822668,-422.24547366345456,-422.8480684068955,-423.45313388484067,-424.0606522037222,-424.67060581391644,-425.28297752115634,-425.89775049977544,-426.5149083080042,-427.13443490558166,-427.75631467397733,-428.3805324395841,-429.0070735002947,-429.6359236559557,-430.2670692432773,-430.9004971758854,-431.53619499033476,-432.17415089905484,-432.81435385139036,-433.45679360414044,-434.1014608032813,-434.748347078922,-435.39744515599267,-436.0487489837325,-436.7022538877712,-437.3579567495334],"H0":[-413.79894079361713,-413.13177745643833,-412.4792480169194,-411.83979388024886,-411.21206928556694,-410.5949061278658,-409.9872855272911,-409.38831468692047,-408.79720792321655,-408.2132710185576,-407.6358882345542,-407.06451147418625,-406.4986511871224,-405.9378687015248,-405.38176972613826,-404.829998819856,-404.28223466492994,-403.7381860101409,-403.1975881758793,-402.6602000320046,-402.1258013755163,-401.59419064740285,-401.0651829385073,-400.5386082422353,-400.01430991933785,-399.49214334486896,-398.9719747124964,-398.45367997523897,-397.9371439042401,-397.4222592507243,-396.9089259976622,-396.3970506901375,-395.88654583456173,-395.377329358487,-394.86932412369725,-394.36245748631353,-393.85666089846234,-393.3518695466276,-392.84802202259954,-392.3450600232519,-391.8429280759299,-391.34157328658034,-390.8409451080514,-390.3409951263272,-389.84167686262117,-389.3429455895683,-388.8447581598047,-388.34707284551234,-387.84984918753156,-387.3530478528128,-386.85663049906196,-386.3605596455004,-385.8647985487405,-385.36931108282056,-384.87406162248715,-384.37901492882986,-383.884136036407,-383.3893901409779,-382.89474248698644,-382.40015825387746,-381.90560244033844,-381.41103974548463,-380.91643444596355,-380.4217502678543,-379.9269502521978,-379.43199661280187,-378.9368505849021,-378.44147226306114,-377.94582042649483,-377.449852349792,-376.9535235967329,-376.4567877945725,-375.95959638578705,-375.4618983538425,-374.9636399189867,-374.46476419947714,-373.9652108328654,-373.46491555110276,-372.9638097021403,-372.46181970943974,-371.95886645925106,-371.4548646036912,-370.9497217653923,-370.4433376267769,-369.9356028837004,-369.4263980391385,-368.9155920075981,-368.4030404947659,-367.8885841092541,-367.3720461537473,-366.85323003086023,-366.3319161839099,-365.8078584735762,-365.28077986684445,-364.7503672829563,-364.21626539989285,-363.6780691708845,-363.135314728786,-362.5874682600477,-362.03391229943344],"T":[25.0,27.77777777777777,30.555555555555543,33.333333333333314,36.111111111111086,38.888888888888914,41.666666666666686,44.44444444444446,47.22222222222223,50.0,52.77777777777777,55.55555555555554,58.333333333333314,61.111111111111086,63.888888888888914,66.66666666666663,69.44444444444446,72.22222222222223,75.0,77.77777777777777,80.55555555555554,83.33333333333331,86.11111111111109,88.88888888888891,91.66666666666663,94.44444444444446,97.22222222222223,100.0,102.77777777777777,105.55555555555554,108.33333333333331,111.11111111111109,113.88888888888891,116.66666666666663,119.44444444444446,122.22222222222223,125.0,127.77777777777777,130.55555555555554,133.33333333333331,136.1111111111111,138.8888888888889,141.66666666666663,144.44444444444446,147.22222222222223,150.0,152.77777777777777,155.55555555555554,158.33333333333331,161.1111111111111,163.8888888888889,166.66666666666663,169.44444444444446,172.22222222222223,175.0,177.77777777777777,180.55555555555554,183.33333333333331,186.1111111111111,188.8888888888889,191.66666666666663,194.44444444444446,197.22222222222223,200.0,202.77777777777777,205.55555555555554,208.33333333333331,211.1111111111111,213.8888888888889,216.66666666666663,219.44444444444446,222.22222222222223,225.0,227.77777777777777,230.55555555555554,233.33333333333331,236.1111111111111,238.8888888888889,241.66666666666663,244.44444444444446,247.22222222222229,250.0,252.77777777777771,255.55555555555554,258.33333333333337,261.1111111111111,263.8888888888889,266.66666666666663,269.44444444444446,272.2222222222222,275.0,277.7777777777777,280.55555555555554,283.33333333333337,286.1111111111111,288.8888888888888,291.66666666666663,294.44444444444446,297.2222222222223,300.0]},"selected":{"id":"1074"},"selection_policy":{"id":"1073"}},"id":"1057","type":"ColumnDataSource"},{"attributes":{},"id":"1016","type":"BasicTicker"},{"attributes":{},"id":"1074","type":"Selection"},{"attributes":{"coordinates":null,"group":null,"text":"STANDARD THERMODYNAMIC PROPERTIES OF CO2(AQ)\nALONG WATER SATURATION PRESSURE"},"id":"1005","type":"Title"},{"attributes":{},"id":"1050","type":"BasicTickFormatter"},{"attributes":{"coordinates":null,"data_source":{"id":"1038"},"glyph":{"id":"1040"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1042"},"nonselection_glyph":{"id":"1041"},"view":{"id":"1044"}},"id":"1043","type":"GlyphRenderer"},{"attributes":{"axis_label":"TEMPERATURE [\u00b0C]","coordinates":null,"formatter":{"id":"1050"},"group":null,"major_label_policy":{"id":"1051"},"ticker":{"id":"1016"}},"id":"1015","type":"LinearAxis"},{"attributes":{},"id":"1011","type":"LinearScale"},{"attributes":{"coordinates":null,"group":null,"items":[{"id":"1056"},{"id":"1076"}]},"id":"1055","type":"Legend"},{"attributes":{"line_alpha":0.2,"line_cap":"round","line_color":"orange","line_width":5,"x":{"field":"T"},"y":{"field":"H0"}},"id":"1061","type":"Line"},{"attributes":{"coordinates":null,"data_source":{"id":"1057"},"glyph":{"id":"1059"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1061"},"nonselection_glyph":{"id":"1060"},"view":{"id":"1063"}},"id":"1062","type":"GlyphRenderer"},{"attributes":{"line_cap":"round","line_color":"midnightblue","line_width":5,"x":{"field":"T"},"y":{"field":"G0"}},"id":"1040","type":"Line"},{"attributes":{"data":{"G0":[-385.9771767699132,-386.30687257624396,-386.64265510839425,-386.9843416950836,-387.3317660669607,-387.6847761600494,-388.04323228308175,-388.4070055742092,-388.77597669620354,-389.1500347254892,-389.5290762028274,-389.9130043167122,-390.30172819930215,-390.6951623148727,-391.0932259279476,-391.4958426383583,-391.90293997304025,-392.3144490268058,-392.73030414485623,-393.15044264146917,-393.57480454983624,-394.0033323990366,-394.43597101456726,-394.87266733963094,-395.3133702743612,-395.75803053106705,-396.20660050352944,-396.65903414858127,-397.1152868788791,-397.5753154653095,-398.03907794823084,-398.50653355645034,-398.9776426332383,-399.45236656858646,-399.9306677371364,-400.4125094412002,-400.8978558583662,-401.3866719933151,-401.8789236333882,-402.3745773076211,-402.8736002489135,-403.3759603590605,-403.8816261764186,-404.3905668459617,-404.9027520915664,-405.4181521903086,-405.93673794866055,-406.4584806804032,-406.9833521861546,-407.5113247343873,-408.042371043831,-408.5764642671742,-409.113577975973,-409.65368614669757,-410.1967631478451,-410.74278372806316,-411.2917230052244,-411.8435564564141,-412.3982599087782,-412.9558095312072,-413.5161818268195,-414.0793536262193,-414.6453020815099,-415.214004661053,-415.78543914494986,-416.359583621258,-416.9364164829304,-417.5159164254869,-418.0980624454324,-418.6828338394396,-419.2702102043167,-419.86017143779924,-420.45269774020124,-421.04776961697905,-421.6453678822668,-422.24547366345456,-422.8480684068955,-423.45313388484067,-424.0606522037222,-424.67060581391644,-425.28297752115634,-425.89775049977544,-426.5149083080042,-427.13443490558166,-427.75631467397733,-428.3805324395841,-429.0070735002947,-429.6359236559557,-430.2670692432773,-430.9004971758854,-431.53619499033476,-432.17415089905484,-432.81435385139036,-433.45679360414044,-434.1014608032813,-434.748347078922,-435.39744515599267,-436.0487489837325,-436.7022538877712,-437.3579567495334],"H0":[-413.79894079361713,-413.13177745643833,-412.4792480169194,-411.83979388024886,-411.21206928556694,-410.5949061278658,-409.9872855272911,-409.38831468692047,-408.79720792321655,-408.2132710185576,-407.6358882345542,-407.06451147418625,-406.4986511871224,-405.9378687015248,-405.38176972613826,-404.829998819856,-404.28223466492994,-403.7381860101409,-403.1975881758793,-402.6602000320046,-402.1258013755163,-401.59419064740285,-401.0651829385073,-400.5386082422353,-400.01430991933785,-399.49214334486896,-398.9719747124964,-398.45367997523897,-397.9371439042401,-397.4222592507243,-396.9089259976622,-396.3970506901375,-395.88654583456173,-395.377329358487,-394.86932412369725,-394.36245748631353,-393.85666089846234,-393.3518695466276,-392.84802202259954,-392.3450600232519,-391.8429280759299,-391.34157328658034,-390.8409451080514,-390.3409951263272,-389.84167686262117,-389.3429455895683,-388.8447581598047,-388.34707284551234,-387.84984918753156,-387.3530478528128,-386.85663049906196,-386.3605596455004,-385.8647985487405,-385.36931108282056,-384.87406162248715,-384.37901492882986,-383.884136036407,-383.3893901409779,-382.89474248698644,-382.40015825387746,-381.90560244033844,-381.41103974548463,-380.91643444596355,-380.4217502678543,-379.9269502521978,-379.43199661280187,-378.9368505849021,-378.44147226306114,-377.94582042649483,-377.449852349792,-376.9535235967329,-376.4567877945725,-375.95959638578705,-375.4618983538425,-374.9636399189867,-374.46476419947714,-373.9652108328654,-373.46491555110276,-372.9638097021403,-372.46181970943974,-371.95886645925106,-371.4548646036912,-370.9497217653923,-370.4433376267769,-369.9356028837004,-369.4263980391385,-368.9155920075981,-368.4030404947659,-367.8885841092541,-367.3720461537473,-366.85323003086023,-366.3319161839099,-365.8078584735762,-365.28077986684445,-364.7503672829563,-364.21626539989285,-363.6780691708845,-363.135314728786,-362.5874682600477,-362.03391229943344],"T":[25.0,27.77777777777777,30.555555555555543,33.333333333333314,36.111111111111086,38.888888888888914,41.666666666666686,44.44444444444446,47.22222222222223,50.0,52.77777777777777,55.55555555555554,58.333333333333314,61.111111111111086,63.888888888888914,66.66666666666663,69.44444444444446,72.22222222222223,75.0,77.77777777777777,80.55555555555554,83.33333333333331,86.11111111111109,88.88888888888891,91.66666666666663,94.44444444444446,97.22222222222223,100.0,102.77777777777777,105.55555555555554,108.33333333333331,111.11111111111109,113.88888888888891,116.66666666666663,119.44444444444446,122.22222222222223,125.0,127.77777777777777,130.55555555555554,133.33333333333331,136.1111111111111,138.8888888888889,141.66666666666663,144.44444444444446,147.22222222222223,150.0,152.77777777777777,155.55555555555554,158.33333333333331,161.1111111111111,163.8888888888889,166.66666666666663,169.44444444444446,172.22222222222223,175.0,177.77777777777777,180.55555555555554,183.33333333333331,186.1111111111111,188.8888888888889,191.66666666666663,194.44444444444446,197.22222222222223,200.0,202.77777777777777,205.55555555555554,208.33333333333331,211.1111111111111,213.8888888888889,216.66666666666663,219.44444444444446,222.22222222222223,225.0,227.77777777777777,230.55555555555554,233.33333333333331,236.1111111111111,238.8888888888889,241.66666666666663,244.44444444444446,247.22222222222229,250.0,252.77777777777771,255.55555555555554,258.33333333333337,261.1111111111111,263.8888888888889,266.66666666666663,269.44444444444446,272.2222222222222,275.0,277.7777777777777,280.55555555555554,283.33333333333337,286.1111111111111,288.8888888888888,291.66666666666663,294.44444444444446,297.2222222222223,300.0]},"selected":{"id":"1053"},"selection_policy":{"id":"1052"}},"id":"1038","type":"ColumnDataSource"},{"attributes":{"callback":null,"tooltips":[["Temperature","@T \u00b0C"],["G\u00b0,CO2(aq)","@G0 kJ/mol"],["H\u00b0,CO2(aq)","@H0 kJ/mol"]]},"id":"1003","type":"HoverTool"},{"attributes":{"source":{"id":"1038"}},"id":"1044","type":"CDSView"}],"root_ids":["1004"]},"title":"Bokeh Application","version":"2.4.2"}};
-  const render_items = [{"docid":"3460d984-44e5-49bd-8c88-581f3591038d","root_ids":["1004"],"roots":{"1004":"93403672-3705-402d-964d-7b09b14e42e6"}}];
+  const docs_json = {"ad1550ef-5088-4543-9ab2-4f05216cb0d7":{"defs":[],"roots":{"references":[{"attributes":{"below":[{"id":"1015"}],"center":[{"id":"1018"},{"id":"1022"},{"id":"1055"}],"left":[{"id":"1019"}],"renderers":[{"id":"1043"},{"id":"1062"}],"sizing_mode":"scale_width","title":{"id":"1005"},"toolbar":{"id":"1030"},"x_range":{"id":"1007"},"x_scale":{"id":"1011"},"y_range":{"id":"1009"},"y_scale":{"id":"1013"}},"id":"1004","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"1053","type":"Selection"},{"attributes":{},"id":"1007","type":"DataRange1d"},{"attributes":{"line_cap":"round","line_color":"midnightblue","line_width":5,"x":{"field":"T"},"y":{"field":"G0"}},"id":"1040","type":"Line"},{"attributes":{},"id":"1074","type":"Selection"},{"attributes":{"coordinates":null,"group":null,"items":[{"id":"1056"},{"id":"1076"}]},"id":"1055","type":"Legend"},{"attributes":{"data":{"G0":[-385.9771767699132,-386.30687257624396,-386.64265510839425,-386.9843416950836,-387.3317660669607,-387.6847761600494,-388.04323228308175,-388.4070055742092,-388.77597669620354,-389.1500347254892,-389.5290762028274,-389.9130043167122,-390.30172819930215,-390.6951623148727,-391.0932259279476,-391.4958426383583,-391.90293997304025,-392.3144490268058,-392.73030414485623,-393.15044264146917,-393.57480454983624,-394.0033323990366,-394.43597101456726,-394.87266733963094,-395.3133702743612,-395.75803053106705,-396.20660050352944,-396.65903414858127,-397.1152868788791,-397.5753154653095,-398.03907794823084,-398.50653355645034,-398.9776426332383,-399.45236656858646,-399.9306677371364,-400.4125094412002,-400.8978558583662,-401.3866719933151,-401.8789236333882,-402.3745773076211,-402.8736002489135,-403.3759603590605,-403.8816261764186,-404.3905668459626,-404.9027520915664,-405.4181521903086,-405.93673794866055,-406.4584806804032,-406.9833521861546,-407.5113247343873,-408.042371043831,-408.5764642671741,-409.113577975973,-409.65368614669745,-410.1967631478451,-410.74278372806316,-411.2917230052244,-411.8435564564141,-412.3982599087782,-412.9558095312072,-413.5161818268195,-414.0793536262193,-414.64530208151035,-415.214004661053,-415.78543914494986,-416.359583621258,-416.9364164829304,-417.5159164254868,-418.0980624454324,-418.6828338394396,-419.2702102043167,-419.86017143779924,-420.45269774020124,-421.04776961697905,-421.6453678822668,-422.24547366345456,-422.8480684068955,-423.45313388484067,-424.0606522037222,-424.67060581391644,-425.28297752115634,-425.89775049977544,-426.5149083080042,-427.13443490558166,-427.75631467397733,-428.3805324395841,-429.0070735002947,-429.6359236559557,-430.2670692432773,-430.9004971758854,-431.53619499033476,-432.17415089905484,-432.81435385139036,-433.45679360414044,-434.1014608032813,-434.748347078922,-435.39744515599267,-436.0487489837325,-436.7022538877712,-437.3579567495334],"H0":[-413.79894079361713,-413.13177745643833,-412.4792480169194,-411.83979388024886,-411.21206928556694,-410.5949061278658,-409.9872855272911,-409.38831468692047,-408.79720792321655,-408.2132710185576,-407.6358882345542,-407.06451147418625,-406.4986511871224,-405.9378687015248,-405.38176972613826,-404.829998819856,-404.28223466492994,-403.7381860101409,-403.1975881758793,-402.6602000320046,-402.1258013755163,-401.59419064740285,-401.0651829385073,-400.5386082422353,-400.01430991933785,-399.49214334486896,-398.9719747124964,-398.45367997523897,-397.9371439042401,-397.4222592507243,-396.9089259976622,-396.3970506901375,-395.88654583456173,-395.377329358487,-394.86932412369725,-394.36245748631353,-393.85666089846234,-393.3518695466276,-392.84802202259954,-392.3450600232519,-391.8429280759299,-391.34157328658034,-390.8409451080514,-390.3409951263255,-389.84167686262117,-389.3429455895683,-388.8447581598047,-388.34707284551234,-387.84984918753156,-387.3530478528128,-386.85663049906196,-386.3605596455005,-385.8647985487405,-385.3693110828208,-384.87406162248715,-384.37901492882986,-383.884136036407,-383.3893901409779,-382.89474248698644,-382.40015825387746,-381.90560244033844,-381.41103974548463,-380.91643444596247,-380.4217502678543,-379.9269502521978,-379.43199661280187,-378.9368505849021,-378.4414722630614,-377.94582042649483,-377.449852349792,-376.9535235967329,-376.4567877945725,-375.95959638578705,-375.4618983538425,-374.9636399189867,-374.46476419947714,-373.9652108328654,-373.46491555110276,-372.9638097021403,-372.46181970943974,-371.95886645925106,-371.4548646036912,-370.9497217653923,-370.4433376267769,-369.9356028837004,-369.4263980391385,-368.9155920075981,-368.4030404947659,-367.8885841092541,-367.3720461537473,-366.85323003086023,-366.3319161839099,-365.8078584735762,-365.28077986684445,-364.7503672829563,-364.21626539989285,-363.6780691708845,-363.135314728786,-362.5874682600477,-362.03391229943344],"T":[25.0,27.77777777777777,30.555555555555543,33.333333333333314,36.111111111111086,38.888888888888914,41.666666666666686,44.44444444444446,47.22222222222223,50.0,52.77777777777777,55.55555555555554,58.333333333333314,61.111111111111086,63.888888888888914,66.66666666666663,69.44444444444446,72.22222222222223,75.0,77.77777777777777,80.55555555555554,83.33333333333331,86.11111111111109,88.88888888888891,91.66666666666663,94.44444444444446,97.22222222222223,100.0,102.77777777777777,105.55555555555554,108.33333333333331,111.11111111111109,113.88888888888891,116.66666666666663,119.44444444444446,122.22222222222223,125.0,127.77777777777777,130.55555555555554,133.33333333333331,136.1111111111111,138.8888888888889,141.66666666666663,144.44444444444446,147.22222222222223,150.0,152.77777777777777,155.55555555555554,158.33333333333331,161.1111111111111,163.8888888888889,166.66666666666663,169.44444444444446,172.22222222222223,175.0,177.77777777777777,180.55555555555554,183.33333333333331,186.1111111111111,188.8888888888889,191.66666666666663,194.44444444444446,197.22222222222223,200.0,202.77777777777777,205.55555555555554,208.33333333333331,211.1111111111111,213.8888888888889,216.66666666666663,219.44444444444446,222.22222222222223,225.0,227.77777777777777,230.55555555555554,233.33333333333331,236.1111111111111,238.8888888888889,241.66666666666663,244.44444444444446,247.22222222222229,250.0,252.77777777777771,255.55555555555554,258.33333333333337,261.1111111111111,263.8888888888889,266.66666666666663,269.44444444444446,272.2222222222222,275.0,277.7777777777777,280.55555555555554,283.33333333333337,286.1111111111111,288.8888888888888,291.66666666666663,294.44444444444446,297.2222222222223,300.0]},"selected":{"id":"1074"},"selection_policy":{"id":"1073"}},"id":"1057","type":"ColumnDataSource"},{"attributes":{"label":{"value":"G\u00b0,CO2(aq)"},"renderers":[{"id":"1043"}]},"id":"1056","type":"LegendItem"},{"attributes":{"callback":null,"tooltips":[["Temperature","@T \u00b0C"],["G\u00b0,CO2(aq)","@G0 kJ/mol"],["H\u00b0,CO2(aq)","@H0 kJ/mol"]]},"id":"1003","type":"HoverTool"},{"attributes":{"tools":[{"id":"1023"},{"id":"1024"},{"id":"1025"},{"id":"1026"},{"id":"1027"},{"id":"1028"},{"id":"1003"}]},"id":"1030","type":"Toolbar"},{"attributes":{},"id":"1020","type":"BasicTicker"},{"attributes":{"axis":{"id":"1019"},"coordinates":null,"dimension":1,"group":null,"ticker":null},"id":"1022","type":"Grid"},{"attributes":{"coordinates":null,"formatter":{"id":"1047"},"group":null,"major_label_policy":{"id":"1048"},"ticker":{"id":"1020"}},"id":"1019","type":"LinearAxis"},{"attributes":{},"id":"1047","type":"BasicTickFormatter"},{"attributes":{"overlay":{"id":"1029"}},"id":"1025","type":"BoxZoomTool"},{"attributes":{},"id":"1026","type":"SaveTool"},{"attributes":{},"id":"1023","type":"PanTool"},{"attributes":{"line_alpha":0.2,"line_cap":"round","line_color":"midnightblue","line_width":5,"x":{"field":"T"},"y":{"field":"G0"}},"id":"1042","type":"Line"},{"attributes":{"line_alpha":0.2,"line_cap":"round","line_color":"orange","line_width":5,"x":{"field":"T"},"y":{"field":"H0"}},"id":"1061","type":"Line"},{"attributes":{},"id":"1048","type":"AllLabels"},{"attributes":{"coordinates":null,"data_source":{"id":"1057"},"glyph":{"id":"1059"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1061"},"nonselection_glyph":{"id":"1060"},"view":{"id":"1063"}},"id":"1062","type":"GlyphRenderer"},{"attributes":{},"id":"1050","type":"BasicTickFormatter"},{"attributes":{},"id":"1024","type":"WheelZoomTool"},{"attributes":{},"id":"1051","type":"AllLabels"},{"attributes":{"source":{"id":"1038"}},"id":"1044","type":"CDSView"},{"attributes":{"coordinates":null,"group":null,"text":"STANDARD THERMODYNAMIC PROPERTIES OF CO2(AQ)\nALONG WATER SATURATION PRESSURE"},"id":"1005","type":"Title"},{"attributes":{"line_cap":"round","line_color":"orange","line_width":5,"x":{"field":"T"},"y":{"field":"H0"}},"id":"1059","type":"Line"},{"attributes":{"axis_label":"TEMPERATURE [\u00b0C]","coordinates":null,"formatter":{"id":"1050"},"group":null,"major_label_policy":{"id":"1051"},"ticker":{"id":"1016"}},"id":"1015","type":"LinearAxis"},{"attributes":{"line_alpha":0.1,"line_cap":"round","line_color":"orange","line_width":5,"x":{"field":"T"},"y":{"field":"H0"}},"id":"1060","type":"Line"},{"attributes":{"coordinates":null,"data_source":{"id":"1038"},"glyph":{"id":"1040"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1042"},"nonselection_glyph":{"id":"1041"},"view":{"id":"1044"}},"id":"1043","type":"GlyphRenderer"},{"attributes":{},"id":"1009","type":"DataRange1d"},{"attributes":{},"id":"1027","type":"ResetTool"},{"attributes":{},"id":"1013","type":"LinearScale"},{"attributes":{"axis":{"id":"1015"},"coordinates":null,"group":null,"ticker":null},"id":"1018","type":"Grid"},{"attributes":{"bottom_units":"screen","coordinates":null,"fill_alpha":0.5,"fill_color":"lightgrey","group":null,"left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1029","type":"BoxAnnotation"},{"attributes":{},"id":"1016","type":"BasicTicker"},{"attributes":{"source":{"id":"1057"}},"id":"1063","type":"CDSView"},{"attributes":{},"id":"1028","type":"HelpTool"},{"attributes":{"label":{"value":"H\u00b0,CO2(aq)"},"renderers":[{"id":"1062"}]},"id":"1076","type":"LegendItem"},{"attributes":{"data":{"G0":[-385.9771767699132,-386.30687257624396,-386.64265510839425,-386.9843416950836,-387.3317660669607,-387.6847761600494,-388.04323228308175,-388.4070055742092,-388.77597669620354,-389.1500347254892,-389.5290762028274,-389.9130043167122,-390.30172819930215,-390.6951623148727,-391.0932259279476,-391.4958426383583,-391.90293997304025,-392.3144490268058,-392.73030414485623,-393.15044264146917,-393.57480454983624,-394.0033323990366,-394.43597101456726,-394.87266733963094,-395.3133702743612,-395.75803053106705,-396.20660050352944,-396.65903414858127,-397.1152868788791,-397.5753154653095,-398.03907794823084,-398.50653355645034,-398.9776426332383,-399.45236656858646,-399.9306677371364,-400.4125094412002,-400.8978558583662,-401.3866719933151,-401.8789236333882,-402.3745773076211,-402.8736002489135,-403.3759603590605,-403.8816261764186,-404.3905668459626,-404.9027520915664,-405.4181521903086,-405.93673794866055,-406.4584806804032,-406.9833521861546,-407.5113247343873,-408.042371043831,-408.5764642671741,-409.113577975973,-409.65368614669745,-410.1967631478451,-410.74278372806316,-411.2917230052244,-411.8435564564141,-412.3982599087782,-412.9558095312072,-413.5161818268195,-414.0793536262193,-414.64530208151035,-415.214004661053,-415.78543914494986,-416.359583621258,-416.9364164829304,-417.5159164254868,-418.0980624454324,-418.6828338394396,-419.2702102043167,-419.86017143779924,-420.45269774020124,-421.04776961697905,-421.6453678822668,-422.24547366345456,-422.8480684068955,-423.45313388484067,-424.0606522037222,-424.67060581391644,-425.28297752115634,-425.89775049977544,-426.5149083080042,-427.13443490558166,-427.75631467397733,-428.3805324395841,-429.0070735002947,-429.6359236559557,-430.2670692432773,-430.9004971758854,-431.53619499033476,-432.17415089905484,-432.81435385139036,-433.45679360414044,-434.1014608032813,-434.748347078922,-435.39744515599267,-436.0487489837325,-436.7022538877712,-437.3579567495334],"H0":[-413.79894079361713,-413.13177745643833,-412.4792480169194,-411.83979388024886,-411.21206928556694,-410.5949061278658,-409.9872855272911,-409.38831468692047,-408.79720792321655,-408.2132710185576,-407.6358882345542,-407.06451147418625,-406.4986511871224,-405.9378687015248,-405.38176972613826,-404.829998819856,-404.28223466492994,-403.7381860101409,-403.1975881758793,-402.6602000320046,-402.1258013755163,-401.59419064740285,-401.0651829385073,-400.5386082422353,-400.01430991933785,-399.49214334486896,-398.9719747124964,-398.45367997523897,-397.9371439042401,-397.4222592507243,-396.9089259976622,-396.3970506901375,-395.88654583456173,-395.377329358487,-394.86932412369725,-394.36245748631353,-393.85666089846234,-393.3518695466276,-392.84802202259954,-392.3450600232519,-391.8429280759299,-391.34157328658034,-390.8409451080514,-390.3409951263255,-389.84167686262117,-389.3429455895683,-388.8447581598047,-388.34707284551234,-387.84984918753156,-387.3530478528128,-386.85663049906196,-386.3605596455005,-385.8647985487405,-385.3693110828208,-384.87406162248715,-384.37901492882986,-383.884136036407,-383.3893901409779,-382.89474248698644,-382.40015825387746,-381.90560244033844,-381.41103974548463,-380.91643444596247,-380.4217502678543,-379.9269502521978,-379.43199661280187,-378.9368505849021,-378.4414722630614,-377.94582042649483,-377.449852349792,-376.9535235967329,-376.4567877945725,-375.95959638578705,-375.4618983538425,-374.9636399189867,-374.46476419947714,-373.9652108328654,-373.46491555110276,-372.9638097021403,-372.46181970943974,-371.95886645925106,-371.4548646036912,-370.9497217653923,-370.4433376267769,-369.9356028837004,-369.4263980391385,-368.9155920075981,-368.4030404947659,-367.8885841092541,-367.3720461537473,-366.85323003086023,-366.3319161839099,-365.8078584735762,-365.28077986684445,-364.7503672829563,-364.21626539989285,-363.6780691708845,-363.135314728786,-362.5874682600477,-362.03391229943344],"T":[25.0,27.77777777777777,30.555555555555543,33.333333333333314,36.111111111111086,38.888888888888914,41.666666666666686,44.44444444444446,47.22222222222223,50.0,52.77777777777777,55.55555555555554,58.333333333333314,61.111111111111086,63.888888888888914,66.66666666666663,69.44444444444446,72.22222222222223,75.0,77.77777777777777,80.55555555555554,83.33333333333331,86.11111111111109,88.88888888888891,91.66666666666663,94.44444444444446,97.22222222222223,100.0,102.77777777777777,105.55555555555554,108.33333333333331,111.11111111111109,113.88888888888891,116.66666666666663,119.44444444444446,122.22222222222223,125.0,127.77777777777777,130.55555555555554,133.33333333333331,136.1111111111111,138.8888888888889,141.66666666666663,144.44444444444446,147.22222222222223,150.0,152.77777777777777,155.55555555555554,158.33333333333331,161.1111111111111,163.8888888888889,166.66666666666663,169.44444444444446,172.22222222222223,175.0,177.77777777777777,180.55555555555554,183.33333333333331,186.1111111111111,188.8888888888889,191.66666666666663,194.44444444444446,197.22222222222223,200.0,202.77777777777777,205.55555555555554,208.33333333333331,211.1111111111111,213.8888888888889,216.66666666666663,219.44444444444446,222.22222222222223,225.0,227.77777777777777,230.55555555555554,233.33333333333331,236.1111111111111,238.8888888888889,241.66666666666663,244.44444444444446,247.22222222222229,250.0,252.77777777777771,255.55555555555554,258.33333333333337,261.1111111111111,263.8888888888889,266.66666666666663,269.44444444444446,272.2222222222222,275.0,277.7777777777777,280.55555555555554,283.33333333333337,286.1111111111111,288.8888888888888,291.66666666666663,294.44444444444446,297.2222222222223,300.0]},"selected":{"id":"1053"},"selection_policy":{"id":"1052"}},"id":"1038","type":"ColumnDataSource"},{"attributes":{"line_alpha":0.1,"line_cap":"round","line_color":"midnightblue","line_width":5,"x":{"field":"T"},"y":{"field":"G0"}},"id":"1041","type":"Line"},{"attributes":{},"id":"1052","type":"UnionRenderers"},{"attributes":{},"id":"1011","type":"LinearScale"},{"attributes":{},"id":"1073","type":"UnionRenderers"}],"root_ids":["1004"]},"title":"Bokeh Application","version":"2.4.2"}};
+  const render_items = [{"docid":"ad1550ef-5088-4543-9ab2-4f05216cb0d7","root_ids":["1004"],"roots":{"1004":"037fe6a4-a2c7-4971-bd8d-2e614e2e0caf"}}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
 
   }
@@ -1042,52 +1058,40 @@ STANDARD THERMODYNAMIC PROPERTIES OF CALCITE AT 60 °C AND 100 BAR
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="computing-aqueous-properties.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Computing aqueous properties</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="computing-aqueous-properties.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Computing aqueous properties</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="computing-thermo-props-of-reactions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Computing standard thermodynamic properties of reactions</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="computing-thermo-props-of-reactions.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Computing standard thermodynamic properties of reactions</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

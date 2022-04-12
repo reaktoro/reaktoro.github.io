@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computing standard thermodynamic properties of reactions</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -33,34 +33,40 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Specifying activity models" href="specifying-activity-models.html" />
     <link rel="prev" title="Computing standard thermodynamic properties of species" href="computing-thermo-props-of-species.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -90,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Get Started
  </span>
@@ -134,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -316,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Applications
  </span>
@@ -375,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   About Reaktoro
  </span>
@@ -452,7 +458,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -503,14 +509,24 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Computing standard thermodynamic properties of reactions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="computing-standard-thermodynamic-properties-of-reactions">
@@ -544,11 +560,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">reaction</span><span class="p">(</span><span class="s2">&quot;H+ + OH- = H2O&quot;</span><span class="p">)</span>
+<span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reaction</span><span class="p">(</span><span class="s2">&quot;H+ + OH- = H2O&quot;</span><span class="p">)</span>
 
-<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -578,9 +594,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Another more complicated example (mineral dissolution reaction):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">reaction</span><span class="p">(</span><span class="s2">&quot;Kaolinite + 6*H+ = H2O + 2*H4SiO4 + 2*Al+3&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reaction</span><span class="p">(</span><span class="s2">&quot;Kaolinite + 6*H+ = H2O + 2*H4SiO4 + 2*Al+3&quot;</span><span class="p">)</span>
 
-<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -632,52 +648,40 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="computing-thermo-props-of-species.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Computing standard thermodynamic properties of species</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="computing-thermo-props-of-species.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Computing standard thermodynamic properties of species</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="specifying-activity-models.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Specifying activity models</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="specifying-activity-models.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Specifying activity models</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

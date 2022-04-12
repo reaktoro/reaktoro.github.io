@@ -1,0 +1,12 @@
+digraph "OptimumState"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="OptimumState",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A type that describes the state of an optimum solution."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" f" ,fontname="Helvetica"];
+  Node2 [label="ObjectiveResult",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structReaktoro_1_1ObjectiveResult.html",tooltip="A type that describes the result of the evaluation of an objective function."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" hessian" ,fontname="Helvetica"];
+  Node3 [label="Hessian",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structReaktoro_1_1Hessian.html",tooltip="A type to describe the Hessian of an objective function."];
+}

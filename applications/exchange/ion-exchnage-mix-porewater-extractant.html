@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Extraction of exchangeable cations in dune sand</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -33,34 +33,40 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Ion exchange competition among NaX, KX, and CaX2" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html" />
     <link rel="prev" title="Ion exchange in dune sand and groundwater" href="ion-exchange-dune-sand.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -90,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Get Started
  </span>
@@ -134,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -316,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Applications
  </span>
@@ -375,7 +381,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   About Reaktoro
  </span>
@@ -452,7 +458,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -503,14 +509,24 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Extraction of exchangeable cations in dune sand</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="extraction-of-exchangeable-cations-in-dune-sand">
@@ -518,14 +534,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This tutorial models an extraction of exchangeable cations in dune sand discussed in the previous tutorial. The extractant is represented by the 1-molal NaCl brine. Usually, the extraction must be repeated more than once since not all CaX<sub>2</sub> is displaced in the first step.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>According to <span id="id1">[<a class="reference internal" href="../../tutorials/bibliography.html#id500">Appelo and Postma, 2005</a>]</span>, due to the low CEC (cation exchange capacity) of the sample, the low concentrations can be analyzed only if pure NaCl is used in the extraction.</p>
+<p>According to <span id="id1">[<a class="reference internal" href="../../tutorials/bibliography.html#id500" title="C.A.J. Appelo and Dieke Postma. Geochemistry, Groundwater and Pollution. CRC Press, 2nd edition, 2005. ISBN 9780415364218.">Appelo and Postma, 2005</a>]</span>, due to the low CEC (cation exchange capacity) of the sample, the low concentrations can be analyzed only if pure NaCl is used in the extraction.</p>
 </div>
 <p>Below, we set up the chemical system based on the PHREEQC database phreeqc.dat.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -534,8 +550,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define an aqueous phase</span>
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O Na+ Cl- H+ OH- K+ Ca+2 Mg+2&quot;</span><span class="p">)</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelHKF</span><span class="p">())</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O Na+ Cl- H+ OH- K+ Ca+2 Mg+2&quot;</span><span class="p">)</span>
+<span class="n">solution</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelHKF</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -544,16 +560,16 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define an ion exchange phase</span>
-<span class="n">exchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangePhase</span><span class="p">(</span><span class="s2">&quot;CaX2 MgX2 NaX&quot;</span><span class="p">)</span>
-<span class="n">exchange</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIonExchangeVanselow</span><span class="p">())</span>
+<span class="n">exchange</span> <span class="o">=</span> <span class="n">IonExchangePhase</span><span class="p">(</span><span class="s2">&quot;CaX2 MgX2 NaX&quot;</span><span class="p">)</span>
+<span class="n">exchange</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIonExchangeVanselow</span><span class="p">())</span>
 
 <span class="c1"># Create the chemical system</span>
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">exchange</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">exchange</span><span class="p">)</span>
 
 <span class="c1"># Calculate aqueous and exchange properties</span>
-<span class="n">aqprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">exprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangeProps</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">aqprops</span> <span class="o">=</span> <span class="n">AqueousProps</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">exprops</span> <span class="o">=</span> <span class="n">IonExchangeProps</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -574,15 +590,15 @@ END
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define porewater</span>
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;NaX&quot;</span><span class="p">,</span> <span class="mf">0.05e-3</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05e-3</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">setTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;NaX&quot;</span><span class="p">,</span> <span class="mf">0.05e-3</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05e-3</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -590,9 +606,9 @@ END
 <p>Next, we equilibrate this chemical state and update aqueous and exchange properties, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="n">aqprops</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="n">exprops</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">aqprops</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">exprops</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -602,13 +618,13 @@ END
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porewater in equilibrium with exchanger X:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I  = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">ionicStrength</span><span class="p">()</span><span class="si">}</span><span class="s2"> mol/kgw&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Z  = </span><span class="si">{</span><span class="n">state</span><span class="p">.</span><span class="nf">charge</span><span class="p">()</span><span class="si">}</span><span class="s2"> eq/kgw&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pH = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I  = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">ionicStrength</span><span class="p">()</span><span class="si">}</span><span class="s2"> mol/kgw&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Z  = </span><span class="si">{</span><span class="n">state</span><span class="o">.</span><span class="n">charge</span><span class="p">()</span><span class="si">}</span><span class="s2"> eq/kgw&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pH = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">pH</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(CaX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CaX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(MgX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;MgX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(NaX)  = </span><span class="si">{</span><span class="n">exprops</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;NaX&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(CaX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CaX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(MgX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;MgX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(NaX)  = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;NaX&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -639,7 +655,7 @@ SAVE solution 3 # centrifuge and decant
 END
 </pre></div>
 </div>
-<p>Here, we place 5 g of soil in a centrifuge tube and extract cations with 20 mL 1-molal NaCl-brine. This equilibration step is accompanied with the set of the following exchange reactions:</p>
+<p>Here, we place 5 g of soil in a centrifuge tube and extract cations with 20 mL 1-molal NaCl-brine. This equilibration step is accompanied by the set of the following exchange reactions:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{alignat}{2}
@@ -650,13 +666,13 @@ END
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span> <span class="o">=</span> <span class="mf">20e-3</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
 
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="n">aqprops</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="n">exprops</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">aqprops</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">exprops</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -666,18 +682,18 @@ END
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mix exchanger with 20 g of extractant:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I  = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">ionicStrength</span><span class="p">()</span><span class="si">}</span><span class="s2"> mol/kgw&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Z  = </span><span class="si">{</span><span class="n">state</span><span class="p">.</span><span class="nf">charge</span><span class="p">()</span><span class="si">}</span><span class="s2"> eq/kgw&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pH = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I  = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">ionicStrength</span><span class="p">()</span><span class="si">}</span><span class="s2"> mol/kgw&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Z  = </span><span class="si">{</span><span class="n">state</span><span class="o">.</span><span class="n">charge</span><span class="p">()</span><span class="si">}</span><span class="s2"> eq/kgw&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pH = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">pH</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(CaX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CaX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(MgX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;MgX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(NaX)  = </span><span class="si">{</span><span class="n">exprops</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;NaX&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(CaX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CaX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(MgX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;MgX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(NaX)  = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;NaX&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;m(Ca+2) = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">speciesMolality</span><span class="p">(</span><span class="s1">&#39;Ca+2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> molal&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;m(Mg+2) = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">speciesMolality</span><span class="p">(</span><span class="s1">&#39;Mg+2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> molal&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;m(Cl-)  = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">speciesMolality</span><span class="p">(</span><span class="s1">&#39;Cl-&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> molal&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;m(Na+)  = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">speciesMolality</span><span class="p">(</span><span class="s1">&#39;Na+&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;m(Ca+2) = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">speciesMolality</span><span class="p">(</span><span class="s1">&#39;Ca+2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;m(Mg+2) = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">speciesMolality</span><span class="p">(</span><span class="s1">&#39;Mg+2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;m(Cl-)  = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">speciesMolality</span><span class="p">(</span><span class="s1">&#39;Cl-&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;m(Na+)  = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">speciesMolality</span><span class="p">(</span><span class="s1">&#39;Na+&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> molal&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -701,6 +717,58 @@ m(Na+)  = 0.0206827 molal
 </div>
 </div>
 <p>Due to the presence of 1-molal brine, we obtain the one order of magnitude higher ionic strength after the second equilibration. The charge remains the same since the added extractant is neutral. We see that in comparison to the first equilibration, the amount of CaX<sub>2</sub> and MgX<sub>2</sub> species decrease due to the extensive presence of sodium ions (provided by the extractant), whereas the amount of NaX became one order of magnitude higher.</p>
+<p>As the third step, we try to replicate the PHREEQC script</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>USE exchange 1 # repeat extraction, 2nd time
+MIX # 20 g new extractant, 2.5 g of the old extractant
+2 20e-3
+3 0.125 # 2.5 / 20 part of the old extractant
+SAVE solution 4
+END
+</pre></div>
+</div>
+<p>or perform the so-called 2nd extraction, i.e., a fraction 2.5 / 20 =  0.125 of the first extraction is added to the second one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Consider 2.5 / 20 part of the old extractant</span>
+<span class="n">state</span><span class="o">.</span><span class="n">scaleMass</span><span class="p">(</span><span class="mf">0.125</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+
+<span class="c1"># Take 20 g of the new extractant</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">20e-3</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="n">scale</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">aqprops</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">exprops</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Second extraction:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I  = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">ionicStrength</span><span class="p">()</span><span class="si">}</span><span class="s2"> mol/kgw&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Z  = </span><span class="si">{</span><span class="n">state</span><span class="o">.</span><span class="n">charge</span><span class="p">()</span><span class="si">}</span><span class="s2"> eq/kgw&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pH = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">pH</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(CaX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CaX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(MgX2) = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;MgX2&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n(NaX)  = </span><span class="si">{</span><span class="n">exprops</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s1">&#39;NaX&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> mole</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Second extraction:
+--------------------------------------
+I  = 0.159445 mol/kgw
+Z  = 0.000711116 eq/kgw
+pH = 6.99884
+
+n(CaX2) = 1.08239e-06 mole
+n(MgX2) = 1.63006e-07 mole
+n(NaX)  = 3.62897e-06 mole
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, we see an increase of the ionic strength of the mixture by one order of magnitude and further decrease of all ionic species amounts.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Alternatively, the extraction can be performed with NH<sub>4</sub>Cl-brine.</p>
@@ -729,52 +797,40 @@ m(Na+)  = 0.0206827 molal
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="ion-exchange-dune-sand.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Ion exchange in dune sand and groundwater</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ion-exchange-dune-sand.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Ion exchange in dune sand and groundwater</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Ion exchange competition among NaX, KX, and CaX<sub>2</sub></p>
     </div>
-     <div id="next">
-        <a class="right-next" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Ion exchange competition among NaX, KX, and CaX<sub>2</sub></p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

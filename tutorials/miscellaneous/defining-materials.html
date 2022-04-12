@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Defining materials</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -33,19 +33,22 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -58,7 +61,10 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Advanced" href="../advanced/index.html" />
     <link rel="prev" title="Miscellaneous" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -88,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Get Started
  </span>
@@ -132,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -314,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Applications
  </span>
@@ -373,7 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   About Reaktoro
  </span>
@@ -450,7 +456,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -501,7 +507,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -526,7 +532,35 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Defining materials</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-initial-chemical-state-not-so-conveniently-defined">
+   An initial chemical state not so conveniently defined
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simplifying-with-class-material">
+   Simplifying with class Material
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="defining-materials">
@@ -546,14 +580,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">()</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">()</span>
+<span class="n">solution</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
 
-<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">(</span><span class="s2">&quot;Halite Calcite Dolomite Quartz&quot;</span><span class="p">)</span>
+<span class="n">minerals</span> <span class="o">=</span> <span class="n">MineralPhases</span><span class="p">(</span><span class="s2">&quot;Halite Calcite Dolomite Quartz&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -561,31 +595,31 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In this system, the aqueous species were selected automatically based on the chemical elements composing the explicitly listed minerals (i.e., all aqueous species with elements H, O, Na, Cl, Ca, Mg, and Si). If you are curious, copy the code above and print the species in the chemical system!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span> 
 </pre></div>
 </div>
 </div>
 <p>Let’s now create our initial chemical containing 1 kg of aqueous solution and 10 g of rock:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 
 <span class="c1"># Set initial brine composition</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span> <span class="p">,</span> <span class="mf">1.30</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span> <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span> <span class="p">,</span> <span class="mf">1.30</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span> <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
 <span class="c1"># Set initial rock composition</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 
 <span class="c1"># Scale fluid and solid masses to 1 kg and 10 g respectively</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">scaleFluidMass</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">scaleSolidMass</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">scaleFluidMass</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">scaleSolidMass</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -600,10 +634,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s now equilibrate this state at 60 °C and 15 bar:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -615,7 +649,7 @@ const thebe_selector_output = ".output, .cell_output"
 +---------------------------+-------------+------+
 | Temperature               |    333.1500 |    K |
 | Pressure                  |     15.0000 |  bar |
-| Charge:                   | -4.0934e-16 |  mol |
+| Charge:                   | -4.0936e-16 |  mol |
 | Element Amount:           |             |      |
 | :: H                      |  1.0291e+02 |  mol |
 | :: C                      |  1.1269e-01 |  mol |
@@ -668,73 +702,73 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s now use class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> to obtain the same result with more convenience:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>  <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;NaCl&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CaCl2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;MgCl2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>  <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brine</span> <span class="o">=</span> <span class="n">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>  <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;NaCl&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;CaCl2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;MgCl2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>  <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="n">rock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">rock</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;SiO2&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
-<span class="n">rock</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CaCO3&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">rock</span> <span class="o">=</span> <span class="n">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">rock</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;SiO2&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">rock</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;CaCO3&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 
-<span class="n">mix</span> <span class="o">=</span> <span class="nf">brine</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">rock</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">mix</span> <span class="o">=</span> <span class="n">brine</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">rock</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 
-<span class="n">state</span> <span class="o">=</span> <span class="n">mix</span><span class="p">.</span><span class="nf">equilibrate</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">mix</span><span class="o">.</span><span class="n">equilibrate</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---------------------------+------------+------+
-| Property                  |      Value | Unit |
-+---------------------------+------------+------+
-| Temperature               |   333.1500 |    K |
-| Pressure                  |    15.0000 |  bar |
-| Charge:                   | 2.1312e-16 |  mol |
-| Element Amount:           |            |      |
-| :: H                      | 1.0291e+02 |  mol |
-| :: C                      | 1.1269e-01 |  mol |
-| :: O                      | 5.1968e+01 |  mol |
-| :: Na                     | 9.2704e-01 |  mol |
-| :: Mg                     | 4.6352e-02 |  mol |
-| :: Si                     | 1.3315e-01 |  mol |
-| :: Cl                     | 1.2052e+00 |  mol |
-| :: Ca                     | 1.1269e-01 |  mol |
-| Species Amount:           |            |      |
-| :: CO3-2                  | 2.3074e-06 |  mol |
-| :: H+                     | 6.6772e-06 |  mol |
-| :: H2O                    | 5.1444e+01 |  mol |
-| :: CO2                    | 8.1172e-02 |  mol |
-| :: (CO2)2                 | 1.0000e-16 |  mol |
-| :: HCO3-                  | 1.2608e-02 |  mol |
-| :: CH4                    | 1.0000e-16 |  mol |
-| :: Ca+2                   | 9.8700e-02 |  mol |
-| :: CaCO3                  | 7.4077e-06 |  mol |
-| :: CaHCO3+                | 5.5478e-03 |  mol |
-| :: CaOH+                  | 1.0217e-09 |  mol |
-| :: Cl-                    | 1.2052e+00 |  mol |
-| :: H2                     | 1.0000e-16 |  mol |
-| :: H4SiO4                 | 2.5791e-04 |  mol |
-| :: H2SiO4-2               | 7.4502e-14 |  mol |
-| :: H3SiO4-                | 4.5289e-08 |  mol |
-| :: Mg+2                   | 4.3873e-02 |  mol |
-| :: MgCO3                  | 1.3439e-06 |  mol |
-| :: MgHCO3+                | 2.4778e-03 |  mol |
-| :: MgOH+                  | 8.7426e-08 |  mol |
-| :: Na+                    | 9.2460e-01 |  mol |
-| :: NaCO3-                 | 1.4745e-05 |  mol |
-| :: NaHCO3                 | 2.4242e-03 |  mol |
-| :: OH-                    | 3.2736e-08 |  mol |
-| :: NaOH                   | 1.0000e-16 |  mol |
-| :: O2                     | 1.0000e-16 |  mol |
-| :: Halite :: NaCl         | 1.0000e-16 |  mol |
-| :: Calcite :: CaCO3       | 8.4303e-03 |  mol |
-| :: Dolomite :: CaMg(CO3)2 | 1.1814e-14 |  mol |
-| :: Quartz :: SiO2         | 1.3289e-01 |  mol |
-+---------------------------+------------+------+
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---------------------------+-------------+------+
+| Property                  |       Value | Unit |
++---------------------------+-------------+------+
+| Temperature               |    333.1500 |    K |
+| Pressure                  |     15.0000 |  bar |
+| Charge:                   | -8.9543e-18 |  mol |
+| Element Amount:           |             |      |
+| :: H                      |  1.0291e+02 |  mol |
+| :: C                      |  1.1269e-01 |  mol |
+| :: O                      |  5.1968e+01 |  mol |
+| :: Na                     |  9.2704e-01 |  mol |
+| :: Mg                     |  4.6352e-02 |  mol |
+| :: Si                     |  1.3315e-01 |  mol |
+| :: Cl                     |  1.2052e+00 |  mol |
+| :: Ca                     |  1.1269e-01 |  mol |
+| Species Amount:           |             |      |
+| :: CO3-2                  |  2.3074e-06 |  mol |
+| :: H+                     |  6.6772e-06 |  mol |
+| :: H2O                    |  5.1444e+01 |  mol |
+| :: CO2                    |  8.1172e-02 |  mol |
+| :: (CO2)2                 |  1.0000e-16 |  mol |
+| :: HCO3-                  |  1.2608e-02 |  mol |
+| :: CH4                    |  1.0000e-16 |  mol |
+| :: Ca+2                   |  9.8700e-02 |  mol |
+| :: CaCO3                  |  7.4077e-06 |  mol |
+| :: CaHCO3+                |  5.5478e-03 |  mol |
+| :: CaOH+                  |  1.0217e-09 |  mol |
+| :: Cl-                    |  1.2052e+00 |  mol |
+| :: H2                     |  1.0000e-16 |  mol |
+| :: H4SiO4                 |  2.5791e-04 |  mol |
+| :: H2SiO4-2               |  7.4502e-14 |  mol |
+| :: H3SiO4-                |  4.5289e-08 |  mol |
+| :: Mg+2                   |  4.3873e-02 |  mol |
+| :: MgCO3                  |  1.3439e-06 |  mol |
+| :: MgHCO3+                |  2.4778e-03 |  mol |
+| :: MgOH+                  |  8.7426e-08 |  mol |
+| :: Na+                    |  9.2460e-01 |  mol |
+| :: NaCO3-                 |  1.4745e-05 |  mol |
+| :: NaHCO3                 |  2.4242e-03 |  mol |
+| :: OH-                    |  3.2736e-08 |  mol |
+| :: NaOH                   |  1.0000e-16 |  mol |
+| :: O2                     |  1.0000e-16 |  mol |
+| :: Halite :: NaCl         |  1.0000e-16 |  mol |
+| :: Calcite :: CaCO3       |  8.4303e-03 |  mol |
+| :: Dolomite :: CaMg(CO3)2 |  1.1814e-14 |  mol |
+| :: Quartz :: SiO2         |  1.3289e-01 |  mol |
++---------------------------+-------------+------+
 </pre></div>
 </div>
 </div>
@@ -744,20 +778,20 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>You may have to use the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> class more carefully if chemical kinetics is considered. In this case, it is critical that species undergoing chemical reactions controlled by kinetic rates must have their initial amounts explicitly specified in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object, using their names instead of their formulas to avoid ambiguity. For example, suppose the minerals calcite and quartz are to react kinetically with the aqueous solution (and the aqueous species react instantaneously at equilibrium). In that case, the initial amounts of these minerals must be given in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object. The code below should give you an idea of how to proceed in this scenario:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>  <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;NaCl&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CaCl2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;MgCl2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>  <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brine</span> <span class="o">=</span> <span class="n">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>  <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;NaCl&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;CaCl2&quot;</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;MgCl2&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">brine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>  <span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="n">state</span> <span class="o">=</span> <span class="nf">brine</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">equilibrate</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">brine</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">equilibrate</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
 
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">scaleSolidMass</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span><span class="p">,</span>  <span class="mf">80.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">scaleSolidMass</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 
-<span class="n">states</span> <span class="o">=</span> <span class="nf">react</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;minutes&quot;</span><span class="p">)</span>
+<span class="n">states</span> <span class="o">=</span> <span class="n">react</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;minutes&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><em><strong>Note</strong>: chemical kinetics (available in Reaktoro v1) is still in development in Reaktoro v2 (a completely new kinetics solver with modeling capabilities as extensive as the new equilibrium solver in Reaktoro v2). Thus, the <code class="docutils literal notranslate"><span class="pre">react</span></code> function above is still not available! If kinetics is already available in v2 and we forgot to remove this note, please report to us in <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</em></p>
@@ -787,52 +821,40 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="index.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Miscellaneous</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Miscellaneous</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../advanced/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="../advanced/index.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Advanced</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

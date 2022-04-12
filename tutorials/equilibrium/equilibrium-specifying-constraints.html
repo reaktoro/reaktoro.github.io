@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chemical equilibrium with constraints</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -33,19 +33,22 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -58,7 +61,10 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Chemical equilibrium with fixed pH" href="equilibrium-with-fixed-ph.html" />
     <link rel="prev" title="Chemical equilibrium: the basics" href="equilibrium-basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -88,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Get Started
  </span>
@@ -132,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tutorials
  </span>
@@ -314,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Applications
  </span>
@@ -373,7 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   About Reaktoro
  </span>
@@ -450,7 +456,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -501,7 +507,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -531,7 +537,40 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chemical equilibrium with constraints</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifying-constrained-properties">
+   Specifying constrained properties
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifying-open-conditions">
+   Specifying open conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-constraints">
@@ -547,13 +586,13 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 
-<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">)</span>
+<span class="n">gases</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
 
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -567,18 +606,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This is not always the desired behavior, however. If we want to impose the temperature and volume of the system, we will need to construct a specialized <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object that can handle these constraint specifications.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Chemical equilibrium problems in which temperature and volume are prescribed belong to the class of <em>Helmholtz energy minimization problems</em> <span id="id1">[<a class="reference internal" href="../bibliography.html#id897">Smith and Missen, 1982</a>]</span>. Reaktoro, however, does not implement a Helmholtz energy minimization solver. Instead, Reaktoro implements a single <strong>parametric Gibbs energy minimization solver that accepts general equilibrium constraints</strong>, which can be configured to efficiently solve all other classes of equilibrium problems (including Helmholtz energy minimization problems!).</p>
+<p>Chemical equilibrium problems in which temperature and volume are prescribed belong to the class of <em>Helmholtz energy minimization problems</em> <span id="id1">[<a class="reference internal" href="../bibliography.html#id897" title="WR Smith and RW Missen. Chemical Reaction Equilibrium Analysis: Theory and Algorithms. Wiley-Interscience, New York, 1982. ISBN 0471093475. URL: http://scholar.google.co.uk/scholar?q=hemical+Reaction+Equilibrium+Analysis{\&amp;}btnG={\&amp;}hl=en{\&amp;}as{\_}sdt=0{\%}2C5{\#}0.">Smith and Missen, 1982</a>]</span>. Reaktoro, however, does not implement a Helmholtz energy minimization solver. Instead, Reaktoro implements a single <strong>parametric Gibbs energy minimization solver that accepts general equilibrium constraints</strong>, which can be configured to efficiently solve all other classes of equilibrium problems (including Helmholtz energy minimization problems!).</p>
 </div>
 <div class="section" id="specifying-constrained-properties">
 <h2>Specifying constrained properties<a class="headerlink" href="#specifying-constrained-properties" title="Permalink to this headline">¶</a></h2>
 <p>Let’s create an equilibrium solver that can solve problems with prescribed <strong>temperature</strong> and <strong>volume</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">volume</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>
 
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -591,9 +630,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>It’s now time to demonstrate how we use this specialized equilibrium solver. We want to model the combustion of 1 mol of CH<sub>4</sub> and 0.5 mol of O<sub>2</sub> in a chamber of 10 cm³ at 1000 °C. We create below an initial chemical state with this gas composition:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -627,11 +666,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This state is in disequilibrium. We use <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> below to specify the desired conditions of temperature and volume at the equilibrium state, and then equilibrate the <code class="docutils literal notranslate"><span class="pre">state</span></code> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">1000.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">volume</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span> <span class="o">=</span> <span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">1000.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">)</span>
 
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -665,11 +704,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p>This printed state does not show volume. Let’s check the volume in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object attached by <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> to the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object <code class="docutils literal notranslate"><span class="pre">state</span></code> at the end of the computation. Let’s also print the computed pressure:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">props</span><span class="p">()</span><span class="o">.</span><span class="nf">volume</span><span class="p">()</span>  <span class="c1"># volume in m³</span>
-<span class="n">P</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>        <span class="c1"># pressure in Pa</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">props</span><span class="p">()</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>  <span class="c1"># volume in m³</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>        <span class="c1"># pressure in Pa</span>
 
-<span class="n">V</span> <span class="o">=</span> <span class="n">units</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="s2">&quot;m3&quot;</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">)</span>  <span class="c1"># convert volume from m³ to cm³</span>
-<span class="n">P</span> <span class="o">=</span> <span class="n">units</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="s2">&quot;Pa&quot;</span><span class="p">,</span> <span class="s2">&quot;GPa&quot;</span><span class="p">)</span>  <span class="c1"># convert pressure from Pa to GPa</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="s2">&quot;m3&quot;</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">)</span>  <span class="c1"># convert volume from m³ to cm³</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="s2">&quot;Pa&quot;</span><span class="p">,</span> <span class="s2">&quot;GPa&quot;</span><span class="p">)</span>  <span class="c1"># convert pressure from Pa to GPa</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volume at equilibrium state is&quot;</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="s2">&quot;cm³!&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pressure at equilibrium state is&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="s2">&quot;GPa!&quot;</span><span class="p">)</span>
@@ -691,21 +730,21 @@ Pressure at equilibrium state is 1.66032 GPa!
 <div class="admonition-did-you-know admonition">
 <p class="admonition-title">Did you know?</p>
 <p>The Gibbs energy minimization computation performed with:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>is executed in the background with the following code:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
 
-<span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">())</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">())</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">())</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">())</span>
 
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>so you can type a lot less if all you need is equilibrium calculations with specified temperatures and pressures!</p>
@@ -718,8 +757,8 @@ Pressure at equilibrium state is 1.66032 GPa!
 <p>The code below starts by creating a chemical state in which there is only 0.5 mols of O<sub>2</sub>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -727,13 +766,13 @@ Pressure at equilibrium state is 1.66032 GPa!
 <p>Next, we create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object in which we specify that <strong>temperature</strong>, <strong>volume</strong>, and <strong>pressure</strong> are constrained properties. We also specify that the system is open to CH<sub>4</sub>. This is all followed by the creation of a specialized and optimized <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object to handle this kind of equilibrium calculations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">volume</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">openTo</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">openTo</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">)</span>
 
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -741,14 +780,14 @@ Pressure at equilibrium state is 1.66032 GPa!
 <p>We can now create the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object in which we provide the values for temperature, volume, and pressure, and then perform the calculation:</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">1000.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">volume</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;GPa&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span> <span class="o">=</span> <span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">1000.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;GPa&quot;</span><span class="p">)</span>
 
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">props</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">props</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -882,7 +921,7 @@ Pressure at equilibrium state is 1.66032 GPa!
 <p>The above table shows that we obtained an equilibrium state with desired values for temperature, pressure, and volume (in SI units). We can also see below the amount of CH<sub>4</sub> that entered the system so that all these prescribed conditions could be attained:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amount of CH4 titrated in:&quot;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">equilibrium</span><span class="p">()</span><span class="o">.</span><span class="nf">explicitTitrantAmounts</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Amount of CH4 titrated in: </span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">equilibrium</span><span class="p">()</span><span class="o">.</span><span class="n">explicitTitrantAmounts</span><span class="p">())</span><span class="si">}</span><span class="s2"> mol&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -927,52 +966,40 @@ Pressure at equilibrium state is 1.66032 GPa!
 
               </div>
               
-        
             
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="equilibrium-basics.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Chemical equilibrium: the basics</p>
-            </div>
-        </a>
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="equilibrium-basics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chemical equilibrium: the basics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="equilibrium-with-fixed-ph.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chemical equilibrium with fixed pH</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="equilibrium-with-fixed-ph.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Chemical equilibrium with fixed pH</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-            &copy; Copyright 2022.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -1,0 +1,16 @@
+digraph "docs/doxystrap/src"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_f315c4c9de4694717dec26f425c7a450 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="doxystrap", fontname="Helvetica", fontsize="10", URL="dir_f315c4c9de4694717dec26f425c7a450.html"]
+  subgraph clusterdir_bfc7c08c8899ceb727afb9ded994643b {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_bfc7c08c8899ceb727afb9ded994643b.html"]
+    dir_bfc7c08c8899ceb727afb9ded994643b [shape=plaintext, label="src"];
+  dir_d125cee24b2ecc80b064bd5373387b13 [shape=box, label="tutorial", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_d125cee24b2ecc80b064bd5373387b13.html"];
+  }
+  }
+}

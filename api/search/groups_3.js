@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['singletons_2854',['Singletons',['../group__Singletons.html',1,'']]]
+  ['singletons_0',['Singletons',['../group___singletons.html',1,'']]]
 ];
