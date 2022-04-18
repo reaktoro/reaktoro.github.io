@@ -1,0 +1,4 @@
+<map id="OptimumParamsRegularization" name="OptimumParamsRegularization">
+<area shape="rect" id="node1" title="A type that describes the regularization options for the optimisation calculation." alt="" coords="5,80,208,107"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1RegularizerOptions.html" title="A type that describes the options for regularizing linear constraints." alt="" coords="40,5,173,32"/>
+</map>

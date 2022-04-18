@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Thermodynamic Databases &mdash; Reaktoro  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Thermodynamic Backends" href="thermodynamic-backends.html" />
+    <link rel="prev" title="Coupling Reaktoro into other reactive transport codes" href="tutorials/transport/reactive-transport-calcite-dolomite-custom.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Reaktoro
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Programming Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/equilibrium/index.html">Chemical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/kinetics/index.html">Chemical Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/transport/index.html">Chemical Transport</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Thermodynamic Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thermodynamic-backends.html">Thermodynamic Backends</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Reaktoro</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Thermodynamic Databases</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/thermodynamic-databases.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="thermodynamic-databases">
+<h1>Thermodynamic Databases<a class="headerlink" href="#thermodynamic-databases" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter/master?filepath=tutorial%2Foverview.ipynb"><img alt="https://img.shields.io/badge/Reaktoro%20Tutorial-Interactive!-E66581.svg?logo=data:image/png;base64,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" src="https://img.shields.io/badge/Reaktoro%20Tutorial-Interactive!-E66581.svg?logo=data:image/png;base64,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" /></a>
+<p>Thermodynamic databases allow us to define and model a chemically reactive
+system by providing the means for the computation of necessary thermodynamic
+properties (e.g., standard Gibbs energies of species, equilibrium constants of
+reactions). In such databases, we find a collection of chemical species and/or
+reactions and their accompanying data, which include substance’s name and
+chemical formula, reaction equations, thermodynamic data and/or model
+parameters.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>There are many thermodynamic databases available in the literature and they
+are in general very different from each other. At the moment, there is no
+standard on how thermodynamic databases should be formatted. Some databases
+are based on chemical reactions and their equilibrium constants (e.g.,
+PHREEQC databases), while others are based on substances and their model
+parameters for evaluation of their standard thermodynamic properties at
+temperature and pressure of interest (e.g., SUPCRT92 databases).</p>
+</div>
+<p>Reaktoro currently supports the following thermodynamic databases:</p>
+<ul class="simple">
+<li><p>SUPCRT92 databases;</p></li>
+<li><p>PHREEQC databases; and</p></li>
+<li><p>GEMS databases.</p></li>
+</ul>
+<section id="supcrt92-databases">
+<h2>SUPCRT92 Databases<a class="headerlink" href="#supcrt92-databases" title="Permalink to this headline">¶</a></h2>
+<aside class="sidebar">
+<p class="sidebar-title">SUPCRT92 Database Files</p>
+<div class="line-block">
+<div class="line"><a class="reference download internal" download="" href="_downloads/46d8420cb9f33d28a7edb44a7f894f88/supcrt98.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt98.xml</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/8305025907f0c0196e0e180f2ed6d4c2/supcrt98-organics.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt98-organics.xml</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/8183b5fc52701dbee9830c5ca767d396/supcrt07.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt07.xml</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/2f52d97bc430441c793fdeb5ea7f7b06/supcrt07-organics.xml"><code class="xref download docutils literal notranslate"><span class="pre">supcrt07-organics.xml</span></code></a></div>
+</div>
+</aside>
+<p>The SUPCRT92 thermodynamic databases supported in Reaktoro are presented next.
+They contain parameters for the calculation of standard thermodynamic
+properties of aqueous species, gases, and minerals for temperatures 0-1000 °C
+and pressures 1-5000 bar. The standard properties of aqueous species are
+calculated using the revised <em>Helgeson-Kirkham-Flowers</em> (HKF) equations of
+state and, for the gases and minerals, a thermodynamic model based on
+Maier–Kelly heat capacity polynomial equation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The thermodynamic databases <code class="docutils literal notranslate"><span class="pre">supcrt98.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">supcrt07.xml</span></code>, in XML
+format, were derived, respectively, from the original SUPCRT92 database
+files <a class="reference download internal" download="" href="_downloads/0a6b6dfe14cc3ed477ab090343a6d4e9/slop98.dat"><code class="xref download docutils literal notranslate"><span class="pre">slop98.dat</span></code></a> and <a class="reference download internal" download="" href="_downloads/968d2637941604c918976bfa75dd9bfc/slop07.dat"><code class="xref download docutils literal notranslate"><span class="pre">slop07.dat</span></code></a>. In the process, <strong>all organic aqueous species
+were removed</strong>! If you need them in your modeling problem, you should then
+use instead <code class="docutils literal notranslate"><span class="pre">supcrt98-organics.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">supcrt07-organics.xml</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your problem requires an aqueous phase without organic species and you
+are using an automatic initialization scheme for its construction (e.g.,
+creating an aqueous phase with all species in the database whose elements
+are H, O, C, or Ca), then make sure you are using one of the SUPCRT92
+databases <strong>without organic species</strong>! Otherwise, you might end up with an
+aqueous phase containing an extremely long list of organic species that
+will only serve to decrease the performance of the calculations.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The equation of state of Wagner and Pruss (2002) is used to calculate the
+thermodynamic properties of water and its temperature and pressure
+derivatives.</p>
+</div>
+</section>
+<section id="phreeqc-databases">
+<h2>PHREEQC Databases<a class="headerlink" href="#phreeqc-databases" title="Permalink to this headline">¶</a></h2>
+<p>Reaktoro can use <a class="reference external" href="https://wwwbrr.cr.usgs.gov/projects/GWC_coupled/phreeqc/">PHREEQC</a> as a <a class="reference internal" href="thermodynamic-backends.html#thermodynamic-backends"><span class="std std-ref">thermodynamic backend</span></a>, which permits us to take advantage of the rich collection of
+PHREEQC thermodynamic databases that are listed next.</p>
+<aside class="sidebar">
+<p class="sidebar-title">PHREEQC Database Files</p>
+<div class="line-block">
+<div class="line"><a class="reference download internal" download="" href="_downloads/09a31449d17eb4c534ec4fd9446c9de4/Amm.dat"><code class="xref download docutils literal notranslate"><span class="pre">Amm.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/fe0a01f4dcf548f08fdd20540c037f4b/frezchem.dat"><code class="xref download docutils literal notranslate"><span class="pre">frezchem.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/f4a6b3016ebef45d2560b0ec4c66c68a/iso.dat"><code class="xref download docutils literal notranslate"><span class="pre">iso.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/aa9fd687f0e8c996d06556c7983b5e95/llnl.dat"><code class="xref download docutils literal notranslate"><span class="pre">llnl.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/b080234bbc9f5b0d057359f15b6e5653/minteq.dat"><code class="xref download docutils literal notranslate"><span class="pre">minteq.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/a66f7cb73fba207df13c5a3e7c06e7cc/minteq.v4.dat"><code class="xref download docutils literal notranslate"><span class="pre">minteq.v4.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/1620356b3bb3f18596e4d59933d58fd5/phreeqc.dat"><code class="xref download docutils literal notranslate"><span class="pre">phreeqc.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/e5eb26a501650ae16b2f161292fc1e84/pitzer.dat"><code class="xref download docutils literal notranslate"><span class="pre">pitzer.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/fbbc97e1b52d207c56e74ba8c9d76269/sit.dat"><code class="xref download docutils literal notranslate"><span class="pre">sit.dat</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/559d241aed6148db83733db70fe3923e/wateq4f.dat"><code class="xref download docutils literal notranslate"><span class="pre">wateq4f.dat</span></code></a></div>
+</div>
+</aside>
+</section>
+<section id="gems-databases">
+<h2>GEMS Databases<a class="headerlink" href="#gems-databases" title="Permalink to this headline">¶</a></h2>
+<p>Reaktoro can also use GEMS as a <a class="reference internal" href="thermodynamic-backends.html#thermodynamic-backends"><span class="std std-ref">thermodynamic backend</span></a> and take advantage of its databases.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Write about GEMS databases.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="thermodynamic-backends.html" class="btn btn-neutral float-right" title="Thermodynamic Backends" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tutorials/transport/reactive-transport-calcite-dolomite-custom.html" class="btn btn-neutral float-left" title="Coupling Reaktoro into other reactive transport codes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Allan Leal and Reaktoro contributors
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

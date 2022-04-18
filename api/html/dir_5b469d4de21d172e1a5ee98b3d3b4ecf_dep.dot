@@ -1,0 +1,23 @@
+digraph "Reaktoro/Extensions"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_8e92d4b241d211e8bbb38ad86320f5f7 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="Reaktoro", fontname="Helvetica", fontsize="10", URL="dir_8e92d4b241d211e8bbb38ad86320f5f7.html"]
+  subgraph clusterdir_5b469d4de21d172e1a5ee98b3d3b4ecf {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_5b469d4de21d172e1a5ee98b3d3b4ecf.html"]
+    dir_5b469d4de21d172e1a5ee98b3d3b4ecf [shape=plaintext, label="Extensions"];
+  dir_0905060de203134e0d07d242bd4d58a2 [shape=box, label="Interfaces", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_0905060de203134e0d07d242bd4d58a2.html"];
+  dir_0778197b52d3f227e61e41de3a82237a [shape=box, label="Interpreter", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_0778197b52d3f227e61e41de3a82237a.html"];
+  dir_81ce6ebd32ff5fa972675c3937a7e1ca [shape=box, label="Nasa", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_81ce6ebd32ff5fa972675c3937a7e1ca.html"];
+  dir_bd74367901f2bd95e90dbd17e14ad837 [shape=box, label="Phreeqc", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_bd74367901f2bd95e90dbd17e14ad837.html"];
+  dir_56b64d8220841ad48613726afbef6da9 [shape=box, label="PorousMedia", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_56b64d8220841ad48613726afbef6da9.html"];
+  dir_7db79c81f6531fc421817a23a31f399a [shape=box, label="Supcrt", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_7db79c81f6531fc421817a23a31f399a.html"];
+  dir_3a45fc2ac15f92d6c8a3ac70e688f8d7 [shape=box, label="ThermoFun", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_3a45fc2ac15f92d6c8a3ac70e688f8d7.html"];
+  }
+  }
+}

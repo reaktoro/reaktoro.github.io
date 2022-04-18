@@ -1,0 +1,13 @@
+digraph "Reaktoro/Models/Support"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_b262c4b69f57fe79a08985848a5dbb2f {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="Models", fontname="Helvetica", fontsize="10", URL="dir_b262c4b69f57fe79a08985848a5dbb2f.html"]
+  dir_1ada6df08af5f8c306d7ce9f4d7d4415 [shape=box, label="Support", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_1ada6df08af5f8c306d7ce9f4d7d4415.html"];
+  }
+}

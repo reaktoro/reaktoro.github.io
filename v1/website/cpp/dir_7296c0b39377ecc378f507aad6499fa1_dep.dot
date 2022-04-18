@@ -1,0 +1,26 @@
+digraph "Reaktoro/Thermodynamics"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_8e92d4b241d211e8bbb38ad86320f5f7 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="Reaktoro", fontname="Helvetica", fontsize="10", URL="dir_8e92d4b241d211e8bbb38ad86320f5f7.html"]
+  subgraph clusterdir_7296c0b39377ecc378f507aad6499fa1 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_7296c0b39377ecc378f507aad6499fa1.html"]
+    dir_7296c0b39377ecc378f507aad6499fa1 [shape=plaintext, label="Thermodynamics"];
+  dir_571b1ebec660518a04da660ae77746d2 [shape=box, label="Activity", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_571b1ebec660518a04da660ae77746d2.html"];
+  dir_00947c7bb1ce3044ffdb2ed2fd5c942a [shape=box, label="Common", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_00947c7bb1ce3044ffdb2ed2fd5c942a.html"];
+  dir_6f1e2616c34bd60bc66f89772e000d34 [shape=box, label="Core", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_6f1e2616c34bd60bc66f89772e000d34.html"];
+  dir_e05f05ead499809d2b5a3737b3809f8d [shape=box, label="Databases", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_e05f05ead499809d2b5a3737b3809f8d.html"];
+  dir_7479183513595784a31df51b16faf914 [shape=box, label="EOS", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_7479183513595784a31df51b16faf914.html"];
+  dir_57b0b636d1e64ce35de9c87e37d8e8f2 [shape=box, label="Mixtures", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_57b0b636d1e64ce35de9c87e37d8e8f2.html"];
+  dir_37318fed0a80e526bd5c19de015fe420 [shape=box, label="Models", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_37318fed0a80e526bd5c19de015fe420.html"];
+  dir_e64d1a6671eb96d61924106279e1cfc0 [shape=box, label="Phases", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_e64d1a6671eb96d61924106279e1cfc0.html"];
+  dir_8d4923f3ef1a8f1c2988ef3d431beb04 [shape=box, label="Reactions", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_8d4923f3ef1a8f1c2988ef3d431beb04.html"];
+  dir_a21c22642b9c0cd611cccf76c577808a [shape=box, label="Species", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_a21c22642b9c0cd611cccf76c577808a.html"];
+  dir_b45bc4b01eb3b2529158727b9934f9bf [shape=box, label="Water", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_b45bc4b01eb3b2529158727b9934f9bf.html"];
+  }
+  }
+}

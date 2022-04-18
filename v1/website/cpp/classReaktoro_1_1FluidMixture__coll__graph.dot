@@ -1,0 +1,10 @@
+digraph "FluidMixture"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="FluidMixture",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Provides a computational representation of a fluid (gaseous or liquid) mixture."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="GeneralMixture\< FluidSpecies \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classReaktoro_1_1GeneralMixture.html",tooltip=" "];
+}

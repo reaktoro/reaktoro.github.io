@@ -1,0 +1,5 @@
+<map id="AqueousOptions" name="AqueousOptions">
+<area shape="rect" id="node1" title="A type used to describe all options related to aqueous models." alt="" coords="20,95,139,121"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1global_1_1AqueousOptions_1_1HKF.html" title="A type used to describe all options related to HKF model." alt="" coords="5,5,55,32"/>
+<area shape="rect" id="node3" href="$structReaktoro_1_1global_1_1AqueousOptions_1_1DebyeHuckel.html" title="A type used to describe all options related to Debye&#45;Huckel model." alt="" coords="79,5,181,32"/>
+</map>

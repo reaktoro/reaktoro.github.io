@@ -1,0 +1,6 @@
+<map id="EquilibriumPathResult" name="EquilibriumPathResult">
+<area shape="rect" id="node1" title="A struct that describes the result of an equilibrium path calculation." alt="" coords="67,184,217,211"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1EquilibriumResult.html" title="A type used to describe the result of an equilibrium calculation." alt="" coords="80,95,204,121"/>
+<area shape="rect" id="node3" href="$structReaktoro_1_1OptimumResult.html" title="A type that describes the result of an optimisation calculation." alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node4" href="$structReaktoro_1_1SmartEquilibriumResult.html" title="A type used to describe the result of a smart equilibrium calculation." alt="" coords="143,5,301,32"/>
+</map>

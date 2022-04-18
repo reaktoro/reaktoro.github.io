@@ -1,0 +1,11 @@
+digraph "EquilibriumResult"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="EquilibriumResult",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A type used to describe the result of an equilibrium calculation."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" smart" ,fontname="Helvetica"];
+  Node2 [label="SmartEquilibriumResult",height=0.2,width=0.4,color="black",URL="$struct_reaktoro_1_1_smart_equilibrium_result.html",tooltip="A type used to describe the result of a smart equilibrium calculation."];
+}

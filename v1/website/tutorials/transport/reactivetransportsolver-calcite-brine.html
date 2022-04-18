@@ -1,0 +1,663 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reactive transport of CO2-saturated brine along a porous rock column &mdash; Reaktoro  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Coupling Reaktoro into other reactive transport codes" href="reactive-transport-calcite-dolomite-custom.html" />
+    <link rel="prev" title="Tutorials: Chemical Transport" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Reaktoro
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Programming Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../equilibrium/index.html">Chemical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kinetics/index.html">Chemical Kinetics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chemical Transport</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Reactive transport of CO<sub>2</sub>-saturated brine along a porous rock column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reactive-transport-calcite-dolomite-custom.html">Coupling Reaktoro into other reactive transport codes</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../thermodynamic-databases.html">Thermodynamic Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermodynamic-backends.html">Thermodynamic Backends</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Reaktoro</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorials: Chemical Transport</a> &raquo;</li>
+        
+      <li>Reactive transport of CO<sub>2</sub>-saturated brine along a porous rock column</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/tutorials/transport/reactivetransportsolver-calcite-brine.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="reactive-transport-of-co2-saturated-brine-along-a-porous-rock-column">
+<h1>Reactive transport of CO<sub>2</sub>-saturated brine along a porous rock column<a class="headerlink" href="#reactive-transport-of-co2-saturated-brine-along-a-porous-rock-column" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, we show how Reaktoro can be used for one-dimensional reactive
+transport calculations for modeling the geochemical reactions that occur along
+a porous rock column as an aqueous fluid is continuously injected on its left
+side.</p>
+<p>The injected fluid is a brine with 0.9 molal NaCl, 0.05 molal MgCl<sub>2</sub>, 0.01
+molal CaCl<sub>2</sub> and almost CO<sub>2</sub>-saturated, with 0.75 molal of CO<sub>2</sub> dissolved.</p>
+<p>The porous rock is initially composed of minerals quartz (SiO<sub>2</sub>) and calcite
+(CaCO<sub>3</sub>). The initial porosity is 10 %, and the initial volume percentages of
+the minerals are 98 %<sub>vol</sub> of quartz, 2 %<sub>vol</sub> calcite. The initial conditions
+for the fluid in the rock is a 0.7 molal NaCl brine in equilibrium with the
+existing rock minerals calcite and quartz. These initial fluid and rock
+composition conditions are uniform throughout the rock core. We assume a rock
+column length of 100 m at temperature 60 °C and 100 bar throughout.</p>
+<div class="admonition-assumptions admonition">
+<p class="admonition-title">Assumptions</p>
+<p>To simplify this tutorial, the following assumptions are made:</p>
+<ul class="simple">
+<li><p>Chemical equilibrium is used for modeling the chemical reactions
+in this problem, not only for reactions between aqueous-aqueous species
+but also for those between mineral and aqueous species.</p></li>
+<li><p>A uniform constant velocity field is imposed and it is not updated
+by solving, for example, Darcy equation.</p></li>
+<li><p>Both temperature and pressure are also kept constant along the rock.</p></li>
+</ul>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Create other more complicated tutorials that do not consider the previous
+assumptions so that chemical kinetics is considered for mineral dissolution
+and precipitation reactions and the partial chemical equilibrium assumption
+is assumed for aqueous and gaseous species. Also, create tutorials in which
+velocity and pressure fields are physically consistent with each other and
+computed via the solution of Darcy equation for porous media flow coupled
+with mass transport equations.</p>
+</div>
+<p>More details about the problem setup can be found in the script below, and also
+in the step-by-step explanation that follows it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Import the reaktoro Python package (and other packages)</span>
+<span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Step 2: Initialise auxiliary time-related constants</span>
+<span class="n">second</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">minute</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">hour</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">minute</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">hour</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="n">day</span>
+
+<span class="c1"># Step 3: Define parameters for the reactive transport simulation</span>
+<span class="n">xl</span> <span class="o">=</span> <span class="mf">0.0</span>          <span class="c1"># the x-coordinate of the left boundary</span>
+<span class="n">xr</span> <span class="o">=</span> <span class="mf">100.0</span>        <span class="c1"># the x-coordinate of the right boundary</span>
+<span class="n">nsteps</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># the number of steps in the reactive transport simulation</span>
+<span class="n">ncells</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># the number of cells in the discretization</span>
+<span class="n">D</span>  <span class="o">=</span> <span class="mf">1.0e-9</span>       <span class="c1"># the diffusion coefficient (in units of m2/s)</span>
+<span class="n">v</span>  <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">day</span>      <span class="c1"># the fluid pore velocity (1 m/day in units of m/s)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">day</span>      <span class="c1"># the time step (0.5 day in units of s)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">60.0</span>          <span class="c1"># the temperature (in units of degC)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">100</span>           <span class="c1"># the pressure (in units of bar)</span>
+
+<span class="c1"># Step 4: Construct the chemical system with its phases and species</span>
+<span class="n">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalEditor</span><span class="p">()</span>
+<span class="n">editor</span><span class="p">.</span><span class="nf">addAqueousPhaseWithElementsOf</span><span class="p">(</span><span class="s1">&#39;H2O NaCl CaCl2 MgCl2 CO2&#39;</span><span class="p">)</span>
+<span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">)</span>
+<span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">)</span>
+<span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">)</span>
+
+<span class="c1"># Step 5: Create the ChemicalSystem object using the configured editor</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">editor</span><span class="p">)</span>
+
+<span class="c1"># Step 6: Define the initial condition of the reactive transport modeling problem</span>
+<span class="n">problem_ic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;celsius&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCO3&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;SiO2&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+
+<span class="c1"># Step 7: Define the boundary condition of the reactive transport modeling problem</span>
+<span class="n">problem_bc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;celsius&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;MgCl2&#39;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCl2&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+
+<span class="c1"># Step 8: Calculate the equilibrium states for the initial and boundary conditions</span>
+<span class="n">state_ic</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_ic</span><span class="p">)</span>
+<span class="n">state_bc</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_bc</span><span class="p">)</span>
+
+<span class="c1"># Step 9: Scale the volumes of the phases in the initial condition</span>
+<span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Aqueous&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span> <span class="c1"># corresponds to the initial porosity of 10%.</span>
+<span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">,</span> <span class="mf">0.882</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+<span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">,</span> <span class="mf">0.018</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+
+<span class="c1"># Step 10: Scale the boundary condition state</span>
+<span class="n">state_bc</span><span class="p">.</span><span class="nf">scaleVolume</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+
+<span class="c1"># Step 11: Create the mesh for the column</span>
+<span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Mesh</span><span class="p">(</span><span class="n">ncells</span><span class="p">,</span> <span class="n">xl</span><span class="p">,</span> <span class="n">xr</span><span class="p">)</span>
+
+<span class="c1"># Step 12: Create a chemical field object with every cell having state given by state_ic</span>
+<span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalField</span><span class="p">(</span><span class="n">mesh</span><span class="p">.</span><span class="nf">numCells</span><span class="p">(),</span> <span class="n">state_ic</span><span class="p">)</span>
+
+<span class="c1"># Step 13: Initialize the reactive transport solver</span>
+<span class="n">rt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ReactiveTransportSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setMesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setVelocity</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setDiffusionCoeff</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setBoundaryState</span><span class="p">(</span><span class="n">state_bc</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setTimeStep</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">initialize</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+
+<span class="c1"># Step 14: Set the output of the reactive transport simulation</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">rt</span><span class="p">.</span><span class="nf">output</span><span class="p">()</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(H+)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(Ca++)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(Mg++)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(HCO3-)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(CO2(aq))&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;phaseVolume(Calcite)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;phaseVolume(Dolomite)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/reactive-transport.txt&#39;</span><span class="p">)</span>  <span class="c1"># Set the name of the output files</span>
+
+<span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p results&#39;</span><span class="p">)</span>  <span class="c1"># Ensure a results folder exist</span>
+
+<span class="c1"># Step 15: Perform given number of reactive tranport steps</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># current time variable</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># current number of steps</span>
+
+<span class="k">while</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="n">nsteps</span><span class="p">:</span>  <span class="c1"># step until the number of steps are achieved</span>
+    <span class="c1"># Print the progress of the simulation</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Progress: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2"> steps, </span><span class="si">{}</span><span class="s2"> min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
+
+    <span class="c1"># Perform one reactive transport time step</span>
+    <span class="n">rt</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+
+    <span class="c1"># Increment time step and number of time steps</span>
+    <span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span>
+    <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<section id="importing-the-reaktoro-package">
+<h2>Importing the reaktoro package<a class="headerlink" href="#importing-the-reaktoro-package" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Import the reaktoro Python package (and other packages)</span>
+<span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+</div>
+<p>First, we import the <strong>reaktoro</strong> Python package so that we can use its classes
+and methods for performing the chemical reaction calculations.</p>
+</section>
+<section id="defining-auxiliary-time-related-constants">
+<h2>Defining auxiliary time-related constants<a class="headerlink" href="#defining-auxiliary-time-related-constants" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 2: Initialise auxiliary time-related constants</span>
+<span class="n">second</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">minute</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">hour</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">minute</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">hour</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="n">day</span>
+</pre></div>
+</div>
+<p>In this step, we initialize auxiliary time-related constants from seconds to
+years. This is only done for convenience, so that we can specify later, for
+example, fluid velocity as 1 m/day.</p>
+</section>
+<section id="defining-parameters-for-the-reactive-transport-simulation">
+<h2>Defining parameters for the reactive transport simulation<a class="headerlink" href="#defining-parameters-for-the-reactive-transport-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Next, we define reactive transport and numerical discretization parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 3: Define parameters for the reactive transport simulation</span>
+<span class="n">xl</span> <span class="o">=</span> <span class="mf">0.0</span>          <span class="c1"># the x-coordinate of the left boundary</span>
+<span class="n">xr</span> <span class="o">=</span> <span class="mf">100.0</span>        <span class="c1"># the x-coordinate of the right boundary</span>
+<span class="n">nsteps</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># the number of steps in the reactive transport simulation</span>
+<span class="n">ncells</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># the number of cells in the discretization</span>
+<span class="n">D</span>  <span class="o">=</span> <span class="mf">1.0e-9</span>       <span class="c1"># the diffusion coefficient (in units of m2/s)</span>
+<span class="n">v</span>  <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">day</span>      <span class="c1"># the fluid pore velocity (1 m/day in units of m/s)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">day</span>      <span class="c1"># the time step (0.5 day in units of s)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">60.0</span>          <span class="c1"># the temperature (in units of degC)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">100</span>           <span class="c1"># the pressure (in units of bar)</span>
+</pre></div>
+</div>
+<p>First, we define the considered rock domain by setting coordinates of its left
+and right boundaries to 0.0 m and 100.0 m, respectively. The number of cells
+and steps in time are both set to 100. The reactive transport modeling
+procedure assumes a constant fluid velocity of <em>v</em> = 1 m/day (1.16 · 10<sup>-5</sup>
+m/s) and the same diffusion coefficient <em>D</em> = 10<sup>-9</sup> m<sup>2</sup>/s for all fluid
+species. The size of the time-step is set to be half of the day. As highlighted
+earlier, the temperature and pressure of the fluids are selected to be 60 °C
+and 100 bar, respectively.</p>
+</section>
+<section id="defining-the-chemical-system">
+<h2>Defining the chemical system<a class="headerlink" href="#defining-the-chemical-system" title="Permalink to this headline">¶</a></h2>
+<p>We need to define a chemical system that can represent both our fluid and rock.
+We use class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalEditor.html">ChemicalEditor</a> below to define a system with an aqueous phase
+and three mineral phases: quartz, calcite and dolomite. Initially, our rock has
+no dolomite (CaMg(CO<sub>3</sub>)<sub>2</sub>), but since this is a mineral that could potentially
+precipitate given the fluid composition injected (containing CaCl<sub>2</sub> and
+MgCl<sub>2</sub> dissolved), we add it here in the chemical system to ensure that the
+calculations are able to model dolomite precipitation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 4: Construct the chemical system with its phases and species</span>
+<span class="n">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalEditor</span><span class="p">()</span>
+<span class="n">editor</span><span class="p">.</span><span class="nf">addAqueousPhaseWithElementsOf</span><span class="p">(</span><span class="s1">&#39;H2O NaCl CaCl2 MgCl2 CO2&#39;</span><span class="p">)</span>
+<span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">)</span>
+<span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">)</span>
+<span class="n">editor</span><span class="p">.</span><span class="nf">addMineralPhase</span><span class="p">(</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The aqueous phase is defined above by using a list of compounds, which is
+then broken automatically by Reaktoro into a list of element names. These
+element names are then used to find in the database all the aqueous species
+that could be formed out of them.</p>
+</div>
+</section>
+<section id="constructing-the-chemical-system">
+<h2>Constructing the chemical system<a class="headerlink" href="#constructing-the-chemical-system" title="Permalink to this headline">¶</a></h2>
+<p>This step is where we create an object of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> using the
+chemical system definition details stored in the object <code class="docutils literal notranslate"><span class="pre">editor</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 5: Create the ChemicalSystem object using the configured editor</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">editor</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="initial-condition-ic-for-the-fluid-composition">
+<h2>Initial condition (IC) for the fluid composition<a class="headerlink" href="#initial-condition-ic-for-the-fluid-composition" title="Permalink to this headline">¶</a></h2>
+<p>Below, we define the <strong>initial condition</strong> for the fluid composition in the
+rock. We want an aqueous fluid that is 0.7 molal of NaCl and in equilibrium
+with calcite (CaCO<sub>3</sub>) and quartz (SiO<sub>2</sub>). To achieve this, we mix 1 kg of H<sub>2</sub>O,
+0.7 mol of NaCl, and plenty of calcite and quartz (10 mol each) to ensure that
+the aqueous solution is saturated with respect to these minerals.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 6: Define the initial condition of the reactive transport modeling problem</span>
+<span class="n">problem_ic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;celsius&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCO3&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_ic</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;SiO2&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="boundary-condition-bc-for-the-fluid-composition">
+<h2>Boundary condition (BC) for the fluid composition<a class="headerlink" href="#boundary-condition-bc-for-the-fluid-composition" title="Permalink to this headline">¶</a></h2>
+<p>Next, we define the <strong>boundary condition</strong> for the fluid composition on the
+left side of the rock, which should be the one that represents the fluid being
+continuously injected: 0.9 molal NaCl, 0.05 molal MgCl<sub>2</sub>, 0.01 molal CaCl<sub>2</sub>
+and almost CO<sub>2</sub>-saturated, with 0.75 molal of CO<sub>2</sub> dissolved. To provide that,
+we mix 1 kg of H<sub>2</sub>O with 0.9 mol of NaCl, 0.05 mol of MgCl<sub>2</sub>, 0.01 mol
+of CaCl<sub>2</sub>, and 0.75 mol of CO<sub>2</sub>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 7: Define the boundary condition of the reactive transport modeling problem</span>
+<span class="n">problem_bc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumProblem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;celsius&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;H2O&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;kg&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;NaCl&#39;</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;MgCl2&#39;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CaCl2&#39;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+<span class="n">problem_bc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;mol&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="calculating-the-ic-and-bc-fluid-compositions">
+<h2>Calculating the IC and BC fluid compositions<a class="headerlink" href="#calculating-the-ic-and-bc-fluid-compositions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 8: Calculate the equilibrium states for the initial and boundary conditions</span>
+<span class="n">state_ic</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_ic</span><span class="p">)</span>
+<span class="n">state_bc</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_bc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this step, we use the <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code> function to calculate the chemical
+equilibrium state of the system with the given initial and boundary equilibrium
+conditions stored in the object <code class="docutils literal notranslate"><span class="pre">problem_ic</span></code> and <code class="docutils literal notranslate"><span class="pre">problem_bc</span></code>, respectively.
+The result is stored in the corresponding instances of the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a>,
+i.e., <code class="docutils literal notranslate"><span class="pre">state_ic</span></code> and <code class="docutils literal notranslate"><span class="pre">state_bc</span></code>.</p>
+</section>
+<section id="scaling-the-phases-in-the-initial-condition">
+<h2>Scaling the phases in the initial condition<a class="headerlink" href="#scaling-the-phases-in-the-initial-condition" title="Permalink to this headline">¶</a></h2>
+<p>The initial chemical state <code class="docutils literal notranslate"><span class="pre">state_ic</span></code> computed before has, at this point,
+phases with volumes that do not correspond to our desired porosity of 10 % and
+rock mineral composition of 98 %<sub>vol</sub> of quartz and 2 %<sub>vol</sub> of calcite.</p>
+<p>To obtain this, we scale the volumes of the aqueous and mineral phases as shown
+below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 9: Scale the volumes of the phases in the initial condition</span>
+<span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Aqueous&#39;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span> <span class="c1"># corresponds to the initial porosity of 10%.</span>
+<span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">,</span> <span class="mf">0.882</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+<span class="n">state_ic</span><span class="p">.</span><span class="nf">scalePhaseVolume</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">,</span> <span class="mf">0.018</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After this scaling step, the sum of the phase volumes in <code class="docutils literal notranslate"><span class="pre">state_ic</span></code> is 1
+m<sup>3</sup>. This also ensures that the amounts of the species in the chemical
+system are normalized by m<sup>3</sup>, and thus they can be regarded as
+concentrations in a unit of mol/m<sup>3</sup> (<em>bulk volume, not fluid volume!</em>).</p>
+</div>
+</section>
+<section id="scaling-the-boundary-condition-state">
+<h2>Scaling the boundary condition state<a class="headerlink" href="#scaling-the-boundary-condition-state" title="Permalink to this headline">¶</a></h2>
+<p>Next, we scale the boundary condition state to 1 m<sup>3</sup>, so that we have the
+amounts of fluid species in <code class="docutils literal notranslate"><span class="pre">state_bc</span></code> also normalized by m<sup>3</sup>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 10: Scale the boundary condition state</span>
+<span class="n">state_bc</span><span class="p">.</span><span class="nf">scaleVolume</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;m3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The chemical state represented by <code class="docutils literal notranslate"><span class="pre">state_bc</span></code> has no other stable phase
+than the aqueous phase (i.e., all mineral phases have zero or negligible
+amounts such as 10<sup>-21</sup> mol).</p>
+</div>
+</section>
+<section id="creating-the-mesh">
+<h2>Creating the mesh<a class="headerlink" href="#creating-the-mesh" title="Permalink to this headline">¶</a></h2>
+<p>We define the mesh with the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1Mesh.html">Mesh</a> in order to use in the initialization
+of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ReactiveTransportSolver.html">ReactiveTransportSolver</a> later.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 11: Create the mesh for the column</span>
+<span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Mesh</span><span class="p">(</span><span class="n">ncells</span><span class="p">,</span> <span class="n">xl</span><span class="p">,</span> <span class="n">xr</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we specify the number of cells in the mesh and the x-coordinates of the
+left and right boundaries (in m).</p>
+</section>
+<section id="creating-a-chemical-field-object">
+<h2>Creating a chemical field object<a class="headerlink" href="#creating-a-chemical-field-object" title="Permalink to this headline">¶</a></h2>
+<p>We have been using class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a> to represent an individual chemical
+state. We will now use class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalField.html">ChemicalField</a> to represent a collection of
+chemical states: one for each mesh cell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 12: Create a chemical field object with every cell having state given by state_ic</span>
+<span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalField</span><span class="p">(</span><span class="n">mesh</span><span class="p">.</span><span class="nf">numCells</span><span class="p">(),</span> <span class="n">state_ic</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Different initial conditions across the mesh cells are possible by assigning
+different chemical states to each mesh cell. Here, the same chemical state
+in <code class="docutils literal notranslate"><span class="pre">state_ic</span></code> is used for all cells.</p>
+</div>
+</section>
+<section id="initializing-the-reactive-transport-solver">
+<h2>Initializing the reactive transport solver<a class="headerlink" href="#initializing-the-reactive-transport-solver" title="Permalink to this headline">¶</a></h2>
+<p>At last, we define the object responsible for solving the reactive
+transport problem, which is handled by the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ReactiveTransportSolver.html">ReactiveTransportSolver</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 13: Initialize the reactive transport solver</span>
+<span class="n">rt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ReactiveTransportSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setMesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setVelocity</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setDiffusionCoeff</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setBoundaryState</span><span class="p">(</span><span class="n">state_bc</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">setTimeStep</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">rt</span><span class="p">.</span><span class="nf">initialize</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, we set the mesh and problem parameters such as velocity, diffusion
+coefficient, the chemical state representing the boundary condition, and the
+time step. We also initialize the reactive solver object with the chemical
+field object specified on the previous step, at this point containing the
+initial condition for the chemical state of each mesh cell.</p>
+</section>
+<section id="defining-the-output-quantities">
+<h2>Defining the output quantities<a class="headerlink" href="#defining-the-output-quantities" title="Permalink to this headline">¶</a></h2>
+<p>Before starting the reactive transport calculations, we define the quantities
+that will be output for every mesh cell, at every time step. For this, we use
+an object of the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalOutput.html">ChemicalOutput</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 14: Set the output of the reactive transport simulation</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">rt</span><span class="p">.</span><span class="nf">output</span><span class="p">()</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(H+)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(Ca++)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(Mg++)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(HCO3-)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;speciesMolality(CO2(aq))&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;phaseVolume(Calcite)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s1">&#39;phaseVolume(Dolomite)&#39;</span><span class="p">)</span>
+<span class="n">output</span><span class="p">.</span><span class="nf">filename</span><span class="p">(</span><span class="s1">&#39;results/reactive-transport.txt&#39;</span><span class="p">)</span>  <span class="c1"># Set the name of the output files</span>
+
+<span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p results&#39;</span><span class="p">)</span>  <span class="c1"># Ensure a results folder exist</span>
+</pre></div>
+</div>
+<p>The name of the output file is to <code class="docutils literal notranslate"><span class="pre">reactive-transport.txt</span></code>. We specify the
+parameters that we are interested in outputting. In this case, it is pH,
+molality of H<sup>+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, HCO<sub>3</sub><sup>-</sup>, CO<sub>2</sub> (aq), as well as a phase volume
+of calcite and dolomite.</p>
+</section>
+<section id="running-the-reactive-transport-simulation">
+<h2>Running the reactive transport simulation<a class="headerlink" href="#running-the-reactive-transport-simulation" title="Permalink to this headline">¶</a></h2>
+<p>As shown below, we perform a sequence of reactive transport calculations, one
+for each time step, during which the chemical state of each mesh cell is
+updated. The iterations continue until the maximum number of steps is
+achieved.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 15: Perform given number of reactive tranport steps</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># current time variable</span>
+<span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># current number of steps</span>
+
+<span class="k">while</span> <span class="n">step</span> <span class="o">&lt;=</span> <span class="n">nsteps</span><span class="p">:</span>  <span class="c1"># step until the number of steps are achieved</span>
+    <span class="c1"># Print the progress of the simulation</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Progress: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2"> steps, </span><span class="si">{}</span><span class="s2"> min&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">nsteps</span><span class="p">,</span> <span class="n">t</span><span class="o">/</span><span class="n">minute</span><span class="p">))</span>
+
+    <span class="c1"># Perform one reactive transport time step</span>
+    <span class="n">rt</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+
+    <span class="c1"># Increment time step and number of time steps</span>
+    <span class="n">t</span> <span class="o">+=</span> <span class="n">dt</span>
+    <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>At each time step, we print the progress of the simulation. We then use the method
+<code class="docutils literal notranslate"><span class="pre">step</span></code> of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ReactiveTransportSolver.html">ReactiveTransportSolver</a> to perform a single reactive
+transport time-stepping. This method also produces a new output file containing
+the requested output properties for every mesh cell. In each such file, rows
+correspond to cells, whereas the columns correspond to the requested output
+properties, i.e., pH, molality of H<sup>+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, HCO<sub>3</sub><sup>-</sup>, CO<sub>2</sub> (aq), as
+well as the phase volume of calcite and dolomite.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Use the result files to general plots and videos, and add them here in the
+tutorial.</p>
+</div>
+</section>
+<section id="have-you-got-an-issue">
+<h2>Have you got an issue?<a class="headerlink" href="#have-you-got-an-issue" title="Permalink to this headline">¶</a></h2>
+<p>Have you found any issue or error in this tutorial? Do you have any
+recommendations or you think something is not clear enough? Please, let us know
+by filling a new issue here:</p>
+<p class="centered">
+<strong><a class="reference external" href="https://github.com/reaktoro/reaktoro/issues/new">Reaktoro’s GitHub Issues</a></strong></p><p>You’ll need a GitHub account - but this is easy to sort out if you don’t have
+one yet!</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="reactive-transport-calcite-dolomite-custom.html" class="btn btn-neutral float-right" title="Coupling Reaktoro into other reactive transport codes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Tutorials: Chemical Transport" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Allan Leal and Reaktoro contributors
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
