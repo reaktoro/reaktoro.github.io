@@ -1,0 +1,4 @@
+<map id="FluidSpecies" name="FluidSpecies">
+<area shape="rect" id="node1" title="A type to describe the attributes of a fluids (gaseous or liquid) species." alt="" coords="5,80,103,107"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Species.html" title="A type used to describe a species and its attributes." alt="" coords="19,5,89,32"/>
+</map>

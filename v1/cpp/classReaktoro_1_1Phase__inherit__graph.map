@@ -1,0 +1,8 @@
+<map id="Phase" name="Phase">
+<area shape="rect" id="node1" title="A type used to define a phase and its attributes." alt="" coords="154,5,213,32"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1AqueousPhase.html" title="A type used to describe an aqueous phase." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1FluidPhase.html" title="Class that defines a fluid (gaseous or liquid) phase." alt="" coords="140,80,227,107"/>
+<area shape="rect" id="node6" href="$classReaktoro_1_1MineralPhase.html" title="Class that defines a mineral phase." alt="" coords="251,80,353,107"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1GaseousPhase.html" title=" " alt="" coords="64,155,175,181"/>
+<area shape="rect" id="node5" href="$classReaktoro_1_1LiquidPhase.html" title=" " alt="" coords="199,155,293,181"/>
+</map>

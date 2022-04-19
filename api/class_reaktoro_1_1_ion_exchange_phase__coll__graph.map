@@ -1,0 +1,4 @@
+<map id="IonExchangePhase" name="IonExchangePhase">
+<area shape="rect" id="node1" title="The class used to configure an ion exchange phase." alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node2" href="$class_reaktoro_1_1_generic_phase.html" title="The base type for all other classes defining more specific phases." alt="" coords="21,5,125,32"/>
+</map>

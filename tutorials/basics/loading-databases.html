@@ -339,8 +339,35 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/solubility/solubility-calcite.html">
-     Solubility calculation of calcite in water
+    <a class="reference internal" href="../../applications/solubility/solubility-calcite-on-acidity-and-temperature.html">
+     Calcite solubility in water, rainwater, and seawater
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/solubility/solubility-co2-on-salinity-and-temperature.html">
+     Carbon-dioxide solubility in brines with different salinity and temperature
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../applications/geobiology/index.html">
+   Geobiology
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/geobiology/geobiology-streammodel-fixed-fugacity.html">
+     Carbonate-rich lakes modeling on the early Earth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/geobiology/geobiology-phreeqc-fixed-fugacity.html">
+     Phosphate accumulation in carbonate-rich brines
     </a>
    </li>
   </ul>
@@ -349,8 +376,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -376,6 +403,64 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../applications/thermofun/index.html">
+   ThermoFun
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/thermofun/thermofun-cement-simulation-with-solid-solutions.html">
+     Addition of limestone to the cement recipe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/thermofun/thermofun-uraniun-solubility-vs-pH.html">
+     Uranium (VI) speciation as a function of pH at fixed CO
+     <sub>
+      2
+     </sub>
+     partial pressure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../applications/miscellaneous/index.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/miscellaneous/ph-dependence-on-co2-addition-in-seawater.html">
+     Dependence of the pH on the added carbon dioxide amount
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/miscellaneous/ph-dependence-on-contaminants-in-water.html">
+     pH-dependence on added contaminants in water
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/miscellaneous/evian-water-analysis.html">
+     Analysis of the Evian water
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../applications/miscellaneous/opening-bottle-with-sparkling-water.html">
+     Opening bottle with sparkling water
     </a>
    </li>
   </ul>
@@ -707,7 +792,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Read the next sections to learn how different thermodynamic databases from distinct providers can be loaded in Reaktoro.</p>
 <div class="section" id="phreeqc-databases">
 <h2>PHREEQC Databases<a class="headerlink" href="#phreeqc-databases" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.usgs.gov/software/phreeqc-version-3">PHREEQC</a> <span id="id1">[<a class="reference internal" href="../bibliography.html#id846" title="D.L. Parkhurst and C.A.J. Appelo. Description of input and examples for PHREEQC version 3—A computer program for speciation, batch-reaction, one-dimensional transport, and inverse geochemical calculations. In Groundwater Book 6, Modeling Techniques, chapter A43, pages 497. U.S. Geological Survey Techniques and Methods, 2013. URL: http://pubs.usgs.gov/tm/06/a43.">Parkhurst and Appelo, 2013</a>]</span> is a well-known scientific software used for geochemical and biogeochemical modelling, and many thermodynamic databases have been compiled for it in the last decades. If you’d like to use Reaktoro with PHREEQC databases, we’ve got you covered. You can do this using a database file available on your computer or one of the following database files embedded into Reaktoro (those provided with PHREEQC v3):</p>
+<p><a class="reference external" href="https://www.usgs.gov/software/phreeqc-version-3">PHREEQC</a> <span id="id1">[<a class="reference internal" href="../bibliography.html#id846" title="D.L. Parkhurst and C.A.J. Appelo. Description of input and examples for PHREEQC version 3—A computer program for speciation, batch-reaction, one-dimensional transport, and inverse geochemical calculations. In Groundwater Book 6, Modeling Techniques, chapter A43, pages 497. U.S. Geological Survey Techniques and Methods, 2013. URL: http://pubs.usgs.gov/tm/06/a43.">Parkhurst and Appelo, 2013</a>]</span> is a well-known scientific software used for geochemical and biogeochemical modeling, and many thermodynamic databases have been compiled for it in the last decades. If you’d like to use Reaktoro with PHREEQC databases, we’ve got you covered. You can do this using a database file available on your computer or one of the following database files embedded into Reaktoro (those provided with PHREEQC v3):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/Amm.dat">Amm.dat</a></p></li>
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/databases/phreeqc/ColdChem.dat">ColdChem.dat</a></p></li>

@@ -1,0 +1,4 @@
+<map id="CondensedPhases" name="CondensedPhases">
+<area shape="rect" id="node1" title="The class used to configure automatic selection of pure condensed phases." alt="" coords="23,80,155,107"/>
+<area shape="rect" id="node2" href="$class_reaktoro_1_1_generic_phases_generator.html" title="The base type for a generator of generic phases with a single species." alt="" coords="5,5,173,32"/>
+</map>

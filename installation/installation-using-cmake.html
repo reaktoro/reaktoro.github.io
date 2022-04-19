@@ -337,8 +337,35 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../applications/solubility/solubility-calcite.html">
-     Solubility calculation of calcite in water
+    <a class="reference internal" href="../applications/solubility/solubility-calcite-on-acidity-and-temperature.html">
+     Calcite solubility in water, rainwater, and seawater
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/solubility/solubility-co2-on-salinity-and-temperature.html">
+     Carbon-dioxide solubility in brines with different salinity and temperature
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/geobiology/index.html">
+   Geobiology
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/geobiology/geobiology-streammodel-fixed-fugacity.html">
+     Carbonate-rich lakes modeling on the early Earth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/geobiology/geobiology-phreeqc-fixed-fugacity.html">
+     Phosphate accumulation in carbonate-rich brines
     </a>
    </li>
   </ul>
@@ -347,8 +374,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -374,6 +401,64 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/thermofun/index.html">
+   ThermoFun
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/thermofun/thermofun-cement-simulation-with-solid-solutions.html">
+     Addition of limestone to the cement recipe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/thermofun/thermofun-uraniun-solubility-vs-pH.html">
+     Uranium (VI) speciation as a function of pH at fixed CO
+     <sub>
+      2
+     </sub>
+     partial pressure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../applications/miscellaneous/index.html">
+   Miscellaneous
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/miscellaneous/ph-dependence-on-co2-addition-in-seawater.html">
+     Dependence of the pH on the added carbon dioxide amount
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/miscellaneous/ph-dependence-on-contaminants-in-water.html">
+     pH-dependence on added contaminants in water
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/miscellaneous/evian-water-analysis.html">
+     Analysis of the Evian water
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applications/miscellaneous/opening-bottle-with-sparkling-water.html">
+     Opening bottle with sparkling water
     </a>
    </li>
   </ul>
@@ -632,7 +717,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="installation-using-cmake">
 <h1>Installation using CMake<a class="headerlink" href="#installation-using-cmake" title="Permalink to this headline">¶</a></h1>
-<p>Reaktoro has several software and library dependencies that need to be
+<p>Reaktoro has several external software and library dependencies that need to be
 pre-installed for its successful compilation and installation using
 <a class="reference external" href="https://cmake.org/">CMake</a>. To greatly simplify the building process of
 Reaktoro for Linux, Windows, and macOS, you’ll need
@@ -681,7 +766,7 @@ are deloping Reaktoro, make sure you use <code class="docutils literal notransla
 <div class="section" id="installing-reaktoro-s-software-dependencies">
 <h2>Installing Reaktoro’s software dependencies<a class="headerlink" href="#installing-reaktoro-s-software-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>Before building Reaktoro, we need to install all software dependencies needed
-during the build process. We do not want, however, all these dependencies poluting our system and possibly causing conflicts and/or corrupting existing software.</p>
+during the build process. We do not want, however, all these dependencies polluting our system and possibly causing conflicts and/or corrupting existing software.</p>
 <p>This is achieved by installing all Reaktoro’s dependencies in a dedicated <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#conda-environments">conda environment</a>.</p>
 <p>In the <strong>root of the reaktoro directory</strong>, execute:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">devenv</span>

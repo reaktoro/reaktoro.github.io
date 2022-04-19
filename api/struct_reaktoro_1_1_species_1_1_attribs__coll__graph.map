@@ -1,0 +1,9 @@
+<map id="Species::Attribs" name="Species::Attribs">
+<area shape="rect" id="node1" title="The attributes of a Species object." alt="" coords="717,129,832,156"/>
+<area shape="rect" id="node2" title=" " alt="" coords="199,48,253,75"/>
+<area shape="rect" id="node7" title=" " alt="" coords="388,79,528,105"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,48,149,75"/>
+<area shape="rect" id="node4" href="$class_reaktoro_1_1_elemental_composition.html" title="A type used to describe the elemental composition of chemical species." alt="" coords="381,129,535,156"/>
+<area shape="rect" id="node5" href="$class_reaktoro_1_1_formation_reaction.html" title="A class to represent a formation reaction of a chemical species." alt="" coords="392,180,524,207"/>
+<area shape="rect" id="node6" href="$class_reaktoro_1_1_model.html" title=" " alt="" coords="359,231,557,273"/>
+</map>

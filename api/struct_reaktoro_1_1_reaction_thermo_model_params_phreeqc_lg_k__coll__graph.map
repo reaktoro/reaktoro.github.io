@@ -1,0 +1,4 @@
+<map id="ReactionThermoModelParamsPhreeqcLgK" name="ReactionThermoModelParamsPhreeqcLgK">
+<area shape="rect" id="node1" title="The parameters in the thermodynamic model for a formation reaction based on PHREEQC&#39;s expression for ..." alt="" coords="5,168,204,209"/>
+<area shape="rect" id="node2" href="$class_reaktoro_1_1_param.html" title="A type used to represent the value of a parameter and its lower and upper bounds." alt="" coords="75,5,135,32"/>
+</map>
