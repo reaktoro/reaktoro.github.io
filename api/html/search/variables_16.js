@@ -16,7 +16,7 @@ var searchData=
   ['wpp_13',['wPP',['../struct_reaktoro_1_1_species_electro_props.html#acb16f84dbdf556868f6df9e3f6914c74',1,'Reaktoro::SpeciesElectroProps']]],
   ['wref_14',['wref',['../struct_reaktoro_1_1_standard_thermo_model_params_h_k_f.html#a00f94a1ae61c43d6c80217bf91bbd988',1,'Reaktoro::StandardThermoModelParamsHKF']]],
   ['wt_15',['wT',['../struct_reaktoro_1_1_species_electro_props.html#a2d03e2cf20db69710fac066fa5138236',1,'Reaktoro::SpeciesElectroProps']]],
-  ['wtp_16',['wtp',['../struct_reaktoro_1_1_phreeqc_utils_1_1_phreeqc_water_props.html#a05160430a2ff38c074175f2b008b5377',1,'Reaktoro::PhreeqcUtils::PhreeqcWaterProps']]],
-  ['wtp_17',['wTP',['../struct_reaktoro_1_1_species_electro_props.html#a1902ab2f9f7d74536613be73041d0057',1,'Reaktoro::SpeciesElectroProps']]],
+  ['wtp_16',['wTP',['../struct_reaktoro_1_1_species_electro_props.html#a1902ab2f9f7d74536613be73041d0057',1,'Reaktoro::SpeciesElectroProps']]],
+  ['wtp_17',['wtp',['../struct_reaktoro_1_1_phreeqc_utils_1_1_phreeqc_water_props.html#a05160430a2ff38c074175f2b008b5377',1,'Reaktoro::PhreeqcUtils::PhreeqcWaterProps']]],
   ['wtt_18',['wTT',['../struct_reaktoro_1_1_species_electro_props.html#a005db5674c33e70c6f80c960a92cadf9',1,'Reaktoro::SpeciesElectroProps']]]
 ];
