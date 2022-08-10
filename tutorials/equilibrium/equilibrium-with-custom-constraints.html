@@ -687,7 +687,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>These options may not suffice to you. This tutorial will demonstrate how <strong>your own constraints</strong> can be defined and used by the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> class to honor the conditions you want to see attained at an equilibrium state.</p>
 <p>Before we proceed, we need to understand how equilibrium constraints are formulated in Reaktoro and used by its equilibrium solver. Let’s consider you want to impose a value for the enthalpy of the system, <span class="math notranslate nohighlight">\(H_{\mathrm{desired}}\)</span>. A chemical state that honors all imposed equilibrium constraints and mass/charge conservation conditions is sought during the chemical equilibrium calculation. This happens iteratively, and in a given iteration of the algorithm, the enthalpy of the system, <span class="math notranslate nohighlight">\(H_{\mathrm{current}}\)</span>, may still be different than that you want, <span class="math notranslate nohighlight">\(H_{\mathrm{desired}}\)</span>. At some point, the algorithm will converge to a chemical state in which the <em>equilibrium constraint residual</em> satisfies:</p>
 <div class="math notranslate nohighlight">
-\[|H_{\mathrm{current}}-H_{\mathrm{desired}}|&lt;\epsilon_{\mathrm{tolerance}}\]</div>
+\[|H_{\mathrm{current}}-H_{\mathrm{desired}}|&lt;\epsilon_{\mathrm{tolerance}},\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon_{\mathrm{tolerance}}\)</span> is a small positive tolerance value (e.g., 10<sup>-6</sup>).</p>
 <p>We will learn in the next sections that equilibrium constraints in Reaktoro can be defined by writing <strong>residual expressions</strong> like the one above.</p>
 <div class="admonition tip">
@@ -756,9 +756,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>As usual, we start with the creation of an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object. Besides the code comments above, it’s worth commenting further that:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">idxV</span></code> and <code class="docutils literal notranslate"><span class="pre">idxU</span></code> are the indices of the newly added inputs to the equilibrium problem (namely <code class="docutils literal notranslate"><span class="pre">V</span></code> and <code class="docutils literal notranslate"><span class="pre">U</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">props,</span> <span class="pre">w:</span> <span class="pre">props.volume()</span> <span class="pre">-</span> <span class="pre">w[idxV]</span></code> is a <a class="reference external" href="https://www.w3schools.com/python/python_lambda.asp">lambda function</a> defining our <em>residual expression for the volume constraint</em>: $<span class="math notranslate nohighlight">\(V_\mathrm{current} - V_\mathrm{desired}\)</span>$</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">props,</span> <span class="pre">w:</span> <span class="pre">props.volume()</span> <span class="pre">-</span> <span class="pre">w[idxV]</span></code> is a <a class="reference external" href="https://www.w3schools.com/python/python_lambda.asp">lambda function</a> defining our <em>residual expression for the volume constraint</em>: <span class="math notranslate nohighlight">\(V_\mathrm{current} - V_\mathrm{desired}\)</span></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">props,</span> <span class="pre">w:</span> <span class="pre">props.internalEnergy()</span> <span class="pre">-</span> <span class="pre">w[idxV]</span></code> is a lambda function defining our <em>residual expression for the internal energy constraint</em></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">props</span></code> is the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object containing the current chemical properties of the system from where we get <em>current volume and internal energy</em>: $<span class="math notranslate nohighlight">\(U_\mathrm{current} - U_\mathrm{desired}\)</span>$</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">props</span></code> is the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object containing the current chemical properties of the system from where we get <em>current volume and internal energy</em>: <span class="math notranslate nohighlight">\(U_\mathrm{current} - U_\mathrm{desired}\)</span></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">w</span></code> is the array with the values of the inputs introduced in the equilibrium problem from where we get the <em>desired volume and internal energy</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">w[idxV]</span></code> and <code class="docutils literal notranslate"><span class="pre">w[idxU]</span></code> are the values of introduced inputs <code class="docutils literal notranslate"><span class="pre">V</span></code> and <code class="docutils literal notranslate"><span class="pre">U</span></code> (the desired values of volume and internal energy)</p></li>
 </ul>
@@ -883,7 +883,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="n">pHConstraint</span> <span class="o">=</span> <span class="n">ConstraintEquation</span><span class="p">()</span>
 <span class="n">pHConstraint</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;pHConstraint&quot;</span>  <span class="c1"># give some identification name to the constraint (it&#39;s up to you how you call this)</span>
-<span class="n">pHConstraint</span><span class="o">.</span><span class="n">fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">props</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="n">pH</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>  <span class="c1"># the residual function defining pH(current) - pH(desired)</span>
+<span class="n">pHConstraint</span><span class="o">.</span><span class="n">fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">props</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="n">pH</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># the residual function defining pH(current) - pH(desired)</span>
 
 <span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
 <span class="n">specs</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
@@ -926,23 +926,50 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 7&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conditions</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;pH&quot;</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">)</span>  <span class="c1"># remember the symbol &quot;pH&quot; introduced before? you&#39;re using it here!</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">aprops</span> <span class="o">=</span> <span class="n">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">aprops</span><span class="p">)</span>
-
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(props, w)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">pHConstraint</span> <span class="o">=</span> <span class="n">ConstraintEquation</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">pHConstraint</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="s2">&quot;pHConstraint&quot;</span>  <span class="c1"># give some identification name to the constraint (it&#39;s up to you how you call this)</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">pHConstraint</span><span class="o">.</span><span class="n">fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">props</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="n">pH</span><span class="p">(</span><span class="n">props</span><span class="p">)</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>  <span class="c1"># the residual function defining pH(current) - pH(desired)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">specs</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
-
-<span class="ne">TypeError</span>: float() argument must be a string or a number, not &#39;autodiff.autodiff4py.VectorXreal1stConstRef&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------------------------+------------+-------+
+| Property                          |      Value |  Unit |
++-----------------------------------+------------+-------+
+| Temperature                       |   303.1500 |     K |
+| Pressure                          |     5.0663 |   bar |
+| Ionic Strength (Effective)        |     1.0152 | molal |
+| Ionic Strength (Stoichiometric)   |     1.0169 | molal |
+| pH                                |     7.0000 |       |
+| pE                                |    -2.4045 |       |
+| Eh                                |    -0.1446 |     V |
+| Element Molality:                 |            |       |
+| :: C                              | 1.2326e-02 | molal |
+| :: Na                             | 1.0001e+00 | molal |
+| :: Cl                             | 1.0001e+00 | molal |
+| :: Ca                             | 5.6821e-03 | molal |
+| Species Molality:                 |            |       |
+| :: CO3-2                          | 1.6590e-05 | molal |
+| :: H+                             | 1.6190e-07 | molal |
+| :: CO2                            | 1.0559e-03 | molal |
+| :: (CO2)2                         | 1.0001e-16 | molal |
+| :: HCO3-                          | 9.3386e-03 | molal |
+| :: CH4                            | 1.0001e-16 | molal |
+| :: Ca+2                           | 5.5474e-03 | molal |
+| :: CaCO3                          | 4.6200e-06 | molal |
+| :: CaHCO3+                        | 1.3016e-04 | molal |
+| :: CaOH+                          | 2.5328e-09 | molal |
+| :: Cl-                            | 1.0001e+00 | molal |
+| :: H2                             | 1.0001e-16 | molal |
+| :: Na+                            | 9.9836e-01 | molal |
+| :: NaCO3-                         | 7.2940e-05 | molal |
+| :: NaHCO3                         | 1.7072e-03 | molal |
+| :: OH-                            | 1.9857e-07 | molal |
+| :: NaOH                           | 1.0001e-16 | molal |
+| :: O2                             | 1.0001e-16 | molal |
+| Saturation Indices (log base 10): |            |       |
+| :: H2(g)                          |    -9.9551 |     - |
+| :: H2O(g)                         |    -0.2394 |     - |
+| :: CH4(g)                         |   -13.7561 |     - |
+| :: CO2(g)                         |    -3.1537 |     - |
+| :: O2(g)                          |   -63.8737 |     - |
+| :: Calcite :: CaCO3               |     0.0000 |     - |
+| :: Halite :: NaCl                 |    -1.9376 |     - |
+| :: Aragonite :: CaCO3             |    -0.1400 |     - |
++-----------------------------------+------------+-------+
 </pre></div>
 </div>
 </div>
