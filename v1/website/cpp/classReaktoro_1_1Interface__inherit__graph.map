@@ -1,5 +1,5 @@
 <map id="Interface" name="Interface">
-<area shape="rect" id="node1" title="A class used to interface other codes with Reaktoro." alt="" coords="41,5,115,32"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1Gems.html" title="A wrapper class for Gems code." alt="" coords="5,80,63,107"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1Phreeqc.html" title=" " alt="" coords="87,80,157,107"/>
+<area shape="rect" id="node1" title="A class used to interface other codes with Reaktoro." alt="" coords="41,5,121,32"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Gems.html" title="A wrapper class for Gems code." alt="" coords="5,80,65,107"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1Phreeqc.html" title=" " alt="" coords="90,80,165,107"/>
 </map>

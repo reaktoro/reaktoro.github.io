@@ -1,4 +1,0 @@
-<map id="ThermoFunDatabase" name="ThermoFunDatabase">
-<area shape="rect" id="node1" title="The class used to store and retrieve data of chemical species from ThermoFun databases." alt="" coords="5,80,149,107"/>
-<area shape="rect" id="node2" href="$class_reaktoro_1_1_database.html" title="The class used to store and retrieve data of chemical species." alt="" coords="38,5,117,32"/>
-</map>

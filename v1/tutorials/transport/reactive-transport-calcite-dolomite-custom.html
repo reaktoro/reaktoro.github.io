@@ -1,74 +1,37 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coupling Reaktoro into other reactive transport codes &mdash; Reaktoro  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Thermodynamic Databases" href="../../thermodynamic-databases.html" />
     <link rel="prev" title="Reactive transport of CO2-saturated brine along a porous rock column" href="reactivetransportsolver-calcite-brine.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> Reaktoro
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -76,17 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
@@ -114,72 +67,33 @@
 <li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Reaktoro</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Tutorials: Chemical Transport</a> &raquo;</li>
-        
       <li>Coupling Reaktoro into other reactive transport codes</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../../_sources/tutorials/transport/reactive-transport-calcite-dolomite-custom.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="coupling-reaktoro-into-other-reactive-transport-codes">
-<h1>Coupling Reaktoro into other reactive transport codes<a class="headerlink" href="#coupling-reaktoro-into-other-reactive-transport-codes" title="Permalink to this heading">¶</a></h1>
+<h1>Coupling Reaktoro into other reactive transport codes<a class="headerlink" href="#coupling-reaktoro-into-other-reactive-transport-codes" title="Permalink to this headline">¶</a></h1>
 <p>In this tutorial, we show how Reaktoro can be used in other codes for reactive
 transport modeling. Here, you will find that we have split the mass transport
 and chemical reaction calculations so that you can clearly see how a dedicated
@@ -192,7 +106,7 @@ similar to the one presented in the tutorial
 Unlike other tutorials, we proceed here first with a step-by-step
 explanation of the full script found at the end of this tutorial.</p>
 <section id="importing-python-packages">
-<h2>Importing python packages<a class="headerlink" href="#importing-python-packages" title="Permalink to this heading">¶</a></h2>
+<h2>Importing python packages<a class="headerlink" href="#importing-python-packages" title="Permalink to this headline">¶</a></h2>
 <p>First, we need to import a few Python packages to enable us to perform the
 numerical calculations and plotting.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -209,7 +123,7 @@ parallel computing, and, finally, <strong>os</strong>, to provide a portable way
 operating system dependent functionality.</p>
 </section>
 <section id="initializing-auxiliary-time-related-constants">
-<h2>Initializing auxiliary time-related constants<a class="headerlink" href="#initializing-auxiliary-time-related-constants" title="Permalink to this heading">¶</a></h2>
+<h2>Initializing auxiliary time-related constants<a class="headerlink" href="#initializing-auxiliary-time-related-constants" title="Permalink to this headline">¶</a></h2>
 <p>In this step, we initialize auxiliary time-related constants from seconds up to
 years used in the rest of the code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">second</span> <span class="o">=</span> <span class="mi">1</span>
@@ -221,7 +135,7 @@ years used in the rest of the code.</p>
 </div>
 </section>
 <section id="defining-parameters-for-the-reactive-transport-simulation">
-<h2>Defining parameters for the reactive transport simulation<a class="headerlink" href="#defining-parameters-for-the-reactive-transport-simulation" title="Permalink to this heading">¶</a></h2>
+<h2>Defining parameters for the reactive transport simulation<a class="headerlink" href="#defining-parameters-for-the-reactive-transport-simulation" title="Permalink to this headline">¶</a></h2>
 <p>Next, we define reactive transport and numerical discretization parameters.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xl</span> <span class="o">=</span> <span class="mf">0.0</span>          <span class="c1"># the x-coordinate of the left boundary</span>
 <span class="n">xr</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># the x-coordinate of the right boundary</span>
@@ -254,7 +168,7 @@ which boundary condition is considered in the numerical calculation. Set to
 <code class="docutils literal notranslate"><span class="pre">True</span></code> for imposing the composition of the fluid on the left boundary.</p>
 </section>
 <section id="specifying-the-quantities-and-properties-to-be-outputted">
-<h2>Specifying the quantities and properties to be outputted<a class="headerlink" href="#specifying-the-quantities-and-properties-to-be-outputted" title="Permalink to this heading">¶</a></h2>
+<h2>Specifying the quantities and properties to be outputted<a class="headerlink" href="#specifying-the-quantities-and-properties-to-be-outputted" title="Permalink to this headline">¶</a></h2>
 <p>Before running the reactive transport simulations, we specify the list of
 parameters we are interested in outputting. In this case, it is pH, molality of
 H<sup>+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, HCO<sub>3</sub><sup>-</sup>, CO<sub>2</sub> (aq), as well as a phase volume of calcite
@@ -273,7 +187,7 @@ and dolomite.</p>
 </div>
 </section>
 <section id="organizing-the-main-function-in-three-parts">
-<h2>Organizing the main function in three parts<a class="headerlink" href="#organizing-the-main-function-in-three-parts" title="Permalink to this heading">¶</a></h2>
+<h2>Organizing the main function in three parts<a class="headerlink" href="#organizing-the-main-function-in-three-parts" title="Permalink to this headline">¶</a></h2>
 <p>Below is the main function in our script, which shows three parts, each
 represented by a Python function documented in the next sections:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -292,7 +206,7 @@ represented by a Python function documented in the next sections:</p>
 reactive transport simulation, and, finally, plot the outputted results.</p>
 </section>
 <section id="creating-folders-for-the-outputted-results">
-<h2>Creating folders for the outputted results<a class="headerlink" href="#creating-folders-for-the-outputted-results" title="Permalink to this heading">¶</a></h2>
+<h2>Creating folders for the outputted results<a class="headerlink" href="#creating-folders-for-the-outputted-results" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_results_folders</span><span class="p">():</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p results&#39;</span><span class="p">)</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="s1">&#39;mkdir -p figures/ph&#39;</span><span class="p">)</span>
@@ -305,7 +219,7 @@ reactive transport simulation, and, finally, plot the outputted results.</p>
 results and for the plot and video files later.</p>
 </section>
 <section id="perform-the-reactive-transport-simulation">
-<h2>Perform the reactive transport simulation<a class="headerlink" href="#perform-the-reactive-transport-simulation" title="Permalink to this heading">¶</a></h2>
+<h2>Perform the reactive transport simulation<a class="headerlink" href="#perform-the-reactive-transport-simulation" title="Permalink to this headline">¶</a></h2>
 <p>The reactive transport simulation is performed in the function <code class="docutils literal notranslate"><span class="pre">simulate</span></code>
 (you may want to have a quick look in the code below and move to a
 detailed explanation in the subsequent sections):</p>
@@ -492,7 +406,7 @@ specifying the chemical species, instead of automatic collection of species
 from database. There are three pure mineral phase considered: quartz (SiO<sub>2</sub>),
 calcite (CaCO<sub>3</sub>), and dolomite (CaMg(CO<sub>3</sub>)<sub>2</sub>).</p>
 <section id="creating-the-chemical-system">
-<h3>Creating the chemical system<a class="headerlink" href="#creating-the-chemical-system" title="Permalink to this heading">¶</a></h3>
+<h3>Creating the chemical system<a class="headerlink" href="#creating-the-chemical-system" title="Permalink to this headline">¶</a></h3>
 <p>This step is where we create an object of class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> using the
 chemical system definition details stored in the object <code class="docutils literal notranslate"><span class="pre">editor</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">editor</span><span class="p">)</span>
@@ -500,7 +414,7 @@ chemical system definition details stored in the object <code class="docutils li
 </div>
 </section>
 <section id="initial-condition-ic-of-the-reactive-transport-problem">
-<h3>Initial condition (IC) of the reactive transport problem<a class="headerlink" href="#initial-condition-ic-of-the-reactive-transport-problem" title="Permalink to this heading">¶</a></h3>
+<h3>Initial condition (IC) of the reactive transport problem<a class="headerlink" href="#initial-condition-ic-of-the-reactive-transport-problem" title="Permalink to this headline">¶</a></h3>
 <p>After constructing the chemical system of interest, we can proceed to the
 definition of a chemical equilibrium problem to set the <strong>initial condition</strong>
 for the fluid and rock composition that is consistent with our intention of
@@ -523,7 +437,7 @@ are consistent with a 10 % porosity and the required volume percentages of the
 rock minerals (98 %<sub>vol</sub> of quartz and 2 %<sub>vol</sub> of calcite).</p>
 </section>
 <section id="boundary-condition-bc-of-the-reactive-transport-problem">
-<h3>Boundary condition (BC) of the reactive transport problem<a class="headerlink" href="#boundary-condition-bc-of-the-reactive-transport-problem" title="Permalink to this heading">¶</a></h3>
+<h3>Boundary condition (BC) of the reactive transport problem<a class="headerlink" href="#boundary-condition-bc-of-the-reactive-transport-problem" title="Permalink to this headline">¶</a></h3>
 <p>For the boundary condition, we need to specify the composition of the fluid
 that is injected into the rock. This is done below, by defining an equilibrium
 problem that will later be solved to produce an aqueous fluid with 0.9 molal
@@ -544,7 +458,7 @@ above equilibrium problem, in which 1 kg of H<sub>2</sub>O is mixed with 0.90 mo
 NaCl, 0.05 moles of MgCl<sub>2</sub>, 0.01 moles of CaCl<sub>2</sub>, and 0.75 moles of CO<sub>2</sub>.</p>
 </section>
 <section id="calculate-the-equilibrium-states-for-the-initial-and-boundary-conditions">
-<h3>Calculate the equilibrium states for the initial and boundary conditions<a class="headerlink" href="#calculate-the-equilibrium-states-for-the-initial-and-boundary-conditions" title="Permalink to this heading">¶</a></h3>
+<h3>Calculate the equilibrium states for the initial and boundary conditions<a class="headerlink" href="#calculate-the-equilibrium-states-for-the-initial-and-boundary-conditions" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">state_ic</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_ic</span><span class="p">)</span>
     <span class="n">state_bc</span> <span class="o">=</span> <span class="nf">equilibrate</span><span class="p">(</span><span class="n">problem_bc</span><span class="p">)</span>
 </pre></div>
@@ -557,7 +471,7 @@ and <code class="docutils literal notranslate"><span class="pre">state_bc</span>
 temperature, pressure, and the amounts of every species in the system.</p>
 </section>
 <section id="scaling-the-volumes-of-the-phases">
-<h3>Scaling the volumes of the phases<a class="headerlink" href="#scaling-the-volumes-of-the-phases" title="Permalink to this heading">¶</a></h3>
+<h3>Scaling the volumes of the phases<a class="headerlink" href="#scaling-the-volumes-of-the-phases" title="Permalink to this headline">¶</a></h3>
 <p>We scale the volumes of the phases in the initial condition according to the
 condition that porosity is 10 % (ratio of fluid volume to total volume), and
 the volume fractions of minerals are 98 %<sub>vol</sub> of quartz (SiO<sub>2</sub>) and 2 %<sub>vol</sub>
@@ -575,7 +489,7 @@ amounts of the species in the fluid is consistent with a mol/m<sup>3</sup> scale
 </div>
 </section>
 <section id="partitioning-fluid-and-solid-species">
-<h3>Partitioning fluid and solid species<a class="headerlink" href="#partitioning-fluid-and-solid-species" title="Permalink to this heading">¶</a></h3>
+<h3>Partitioning fluid and solid species<a class="headerlink" href="#partitioning-fluid-and-solid-species" title="Permalink to this headline">¶</a></h3>
 <p>Only species in fluid phases are mobile and transported by advection and
 diffusion mechanisms. The solid phases are immobile.</p>
 <p>The code below identify the indices of the fluid and solid species, and also
@@ -618,7 +532,7 @@ initial chemical state, <code class="docutils literal notranslate"><span class="
 on the boundary.</p>
 </section>
 <section id="create-a-list-of-chemical-states-for-the-mesh-cells">
-<h3>Create a list of chemical states for the mesh cells<a class="headerlink" href="#create-a-list-of-chemical-states-for-the-mesh-cells" title="Permalink to this heading">¶</a></h3>
+<h3>Create a list of chemical states for the mesh cells<a class="headerlink" href="#create-a-list-of-chemical-states-for-the-mesh-cells" title="Permalink to this headline">¶</a></h3>
 <p>Every mesh cell needs a <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalState.html">ChemicalState</a> object, which is done below with the
 creation of a list <code class="docutils literal notranslate"><span class="pre">states</span></code> of length <code class="docutils literal notranslate"><span class="pre">ncells</span></code>, initialized with <code class="docutils literal notranslate"><span class="pre">state_ic</span></code>
 for each cell (i.e., all cells have initially the same fluid and rock composition).</p>
@@ -628,7 +542,7 @@ for each cell (i.e., all cells have initially the same fluid and rock compositio
 </div>
 </section>
 <section id="cell-coordinates-and-lengths">
-<h3>Cell coordinates and lengths<a class="headerlink" href="#cell-coordinates-and-lengths" title="Permalink to this heading">¶</a></h3>
+<h3>Cell coordinates and lengths<a class="headerlink" href="#cell-coordinates-and-lengths" title="Permalink to this headline">¶</a></h3>
 <p>Next, we generate the coordinates of the mesh nodes (array <code class="docutils literal notranslate"><span class="pre">x</span></code>) by equally
 dividing the interval <em>[xr, xl]</em> into <code class="docutils literal notranslate"><span class="pre">ncells</span></code>. The length between each
 consecutive mesh nodes is computed and stored in <code class="docutils literal notranslate"><span class="pre">dx</span></code> (the length of the mesh
@@ -642,7 +556,7 @@ cells).</p>
 </div>
 </section>
 <section id="creating-the-equilibrium-solver">
-<h3>Creating the equilibrium solver<a class="headerlink" href="#creating-the-equilibrium-solver" title="Permalink to this heading">¶</a></h3>
+<h3>Creating the equilibrium solver<a class="headerlink" href="#creating-the-equilibrium-solver" title="Permalink to this headline">¶</a></h3>
 <p>For the repeated equilibrium calculation, we define an equilibrium solver
 object using <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumSolver.html">EquilibriumSolver</a>  class.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -650,7 +564,7 @@ object using <a class="reference external" href="https://reaktoro.org/cpp/classR
 </div>
 </section>
 <section id="define-an-auxiliary-function-for-creating-the-output-file">
-<h3>Define an auxiliary function for creating the output file<a class="headerlink" href="#define-an-auxiliary-function-for-creating-the-output-file" title="Permalink to this heading">¶</a></h3>
+<h3>Define an auxiliary function for creating the output file<a class="headerlink" href="#define-an-auxiliary-function-for-creating-the-output-file" title="Permalink to this headline">¶</a></h3>
 <p>The auxiliary function <code class="docutils literal notranslate"><span class="pre">outputstate</span></code> uses the class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalOutput.html">ChemicalOutput</a> to
 output quantities and properties at each mesh cell, at every time step.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">outputstate</span><span class="p">():</span>
@@ -680,7 +594,7 @@ output quantities and properties at each mesh cell, at every time step.</p>
 </div>
 </section>
 <section id="running-the-reactive-transport-simulation">
-<h3>Running the reactive transport simulation<a class="headerlink" href="#running-the-reactive-transport-simulation" title="Permalink to this heading">¶</a></h3>
+<h3>Running the reactive transport simulation<a class="headerlink" href="#running-the-reactive-transport-simulation" title="Permalink to this headline">¶</a></h3>
 <p>Before proceeding to the reactive transport calculations, we set the initial
 time and a counter for the number of time steps.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># the current step number</span>
@@ -735,7 +649,7 @@ precipitation, depending on how much the amount of mineral species changes. This
 can then be used, for example, to compute new porosity value for the cell.</p>
 </section>
 <section id="solving-the-transport-equations">
-<h3>Solving the transport equations<a class="headerlink" href="#solving-the-transport-equations" title="Permalink to this heading">¶</a></h3>
+<h3>Solving the transport equations<a class="headerlink" href="#solving-the-transport-equations" title="Permalink to this headline">¶</a></h3>
 <p>Reactive transport calculations involve the solution of a system of
 advection-diffusion-reaction equations. Due to the use of operator splitting
 scheme in this tutorial, we solve the transport equations and then perform the
@@ -803,7 +717,7 @@ as the Thomas algorithm:</p>
 </section>
 </section>
 <section id="plotting-of-the-results">
-<h2>Plotting of the results<a class="headerlink" href="#plotting-of-the-results" title="Permalink to this heading">¶</a></h2>
+<h2>Plotting of the results<a class="headerlink" href="#plotting-of-the-results" title="Permalink to this headline">¶</a></h2>
 <p>The last block of the main routine is plotting of the results.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">():</span>
     <span class="c1"># Plot all result files</span>
@@ -1151,7 +1065,7 @@ as the Thomas algorithm:</p>
 </div>
 </section>
 <section id="have-you-got-an-issue">
-<h2>Have you got an issue?<a class="headerlink" href="#have-you-got-an-issue" title="Permalink to this heading">¶</a></h2>
+<h2>Have you got an issue?<a class="headerlink" href="#have-you-got-an-issue" title="Permalink to this headline">¶</a></h2>
 <p>Have you found any issue or error in this tutorial? Do you have any
 recommendations or you think something is not clear enough? Please, let us know
 by filling a new issue here:</p>
@@ -1163,51 +1077,33 @@ one yet!</p>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../../thermodynamic-databases.html" class="btn btn-neutral float-right" title="Thermodynamic Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="reactivetransportsolver-calcite-brine.html" class="btn btn-neutral float-left" title="Reactive transport of CO2-saturated brine along a porous rock column" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reactivetransportsolver-calcite-brine.html" class="btn btn-neutral float-left" title="Reactive transport of CO2-saturated brine along a porous rock column" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../thermodynamic-databases.html" class="btn btn-neutral float-right" title="Thermodynamic Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2021, Allan Leal and Reaktoro contributors
-
-    </p>
+    <p>&#169; Copyright 2021, Allan Leal and Reaktoro contributors.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

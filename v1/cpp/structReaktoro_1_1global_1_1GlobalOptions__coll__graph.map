@@ -1,34 +1,34 @@
 <map id="GlobalOptions" name="GlobalOptions">
-<area shape="rect" id="node1" title="A type used to describe all options related to chemical calculations." alt="" coords="1861,371,1965,397"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1EquilibriumOptions.html" title="The options for the equilibrium calculations." alt="" coords="1299,349,1429,376"/>
-<area shape="rect" id="node23" href="$structReaktoro_1_1EquilibriumPathOptions.html" title="A struct that describes the options from an equilibrium path calculation." alt="" coords="1563,319,1721,345"/>
-<area shape="rect" id="node25" href="$structReaktoro_1_1KineticOptions.html" title="A struct to describe the options for a chemical kinetics calculation." alt="" coords="1589,212,1695,239"/>
-<area shape="rect" id="node3" href="$structReaktoro_1_1OptimumOptions.html" title="A type that describes the options of a optimisation calculation." alt="" coords="1050,393,1170,420"/>
-<area shape="rect" id="node4" href="$structReaktoro_1_1OptimumOutputOptions.html" title="A type that describes the options for the output of a optimisation calculation." alt="" coords="717,627,875,653"/>
-<area shape="rect" id="node5" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="369,389,491,416"/>
-<area shape="rect" id="node21" href="$structReaktoro_1_1NonlinearOutput.html" title="A type that describes the options for the output of a non&#45;linear problem calculation." alt="" coords="738,221,854,248"/>
-<area shape="rect" id="node6" title=" " alt="" coords="199,245,253,272"/>
-<area shape="rect" id="node8" title=" " alt="" coords="360,283,500,309"/>
-<area shape="rect" id="node26" href="$structReaktoro_1_1KineticOutputOptions.html" title=" " alt="" coords="524,156,671,183"/>
-<area shape="rect" id="node27" href="$structReaktoro_1_1global_1_1InterpolationOptions.html" title="A type used to describe all options related to interpolation." alt="" coords="727,55,865,81"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,245,149,272"/>
-<area shape="rect" id="node9" href="$structReaktoro_1_1OptimumParamsActNewton.html" title=" " alt="" coords="703,525,889,552"/>
-<area shape="rect" id="node10" href="$structReaktoro_1_1OptimumParamsIpAction.html" title=" " alt="" coords="712,576,880,603"/>
-<area shape="rect" id="node11" href="$structReaktoro_1_1OptimumParamsIpOpt.html" title=" " alt="" coords="720,105,872,132"/>
-<area shape="rect" id="node12" title=" " alt="" coords="370,88,490,115"/>
-<area shape="rect" id="node13" href="$structReaktoro_1_1OptimumParamsIpNewton.html" title=" " alt="" coords="708,272,884,299"/>
-<area shape="rect" id="node14" href="$structReaktoro_1_1OptimumParamsIpActive.html" title=" " alt="" coords="712,323,880,349"/>
-<area shape="rect" id="node15" href="$structReaktoro_1_1OptimumParamsKarpov.html" title=" " alt="" coords="715,373,877,400"/>
-<area shape="rect" id="node16" href="$structReaktoro_1_1OptimumParamsRefiner.html" title=" " alt="" coords="715,424,877,451"/>
-<area shape="rect" id="node17" href="$structReaktoro_1_1OptimumParamsRegularization.html" title="A type that describes the regularization options for the optimisation calculation." alt="" coords="695,677,897,704"/>
-<area shape="rect" id="node18" href="$structReaktoro_1_1RegularizerOptions.html" title="A type that describes the options for regularizing linear constraints." alt="" coords="363,677,497,704"/>
-<area shape="rect" id="node19" href="$structReaktoro_1_1KktOptions.html" title="A type to describe the options for the KKT calculation." alt="" coords="753,475,839,501"/>
-<area shape="rect" id="node20" href="$structReaktoro_1_1NonlinearOptions.html" title="A type that describes the options for the solution of a non&#45;linear problem." alt="" coords="1049,281,1171,308"/>
-<area shape="rect" id="node22" href="$structReaktoro_1_1SmartEquilibriumOptions.html" title="The options for the smart equilibrium calculations." alt="" coords="1027,444,1193,471"/>
-<area shape="rect" id="node24" href="$structReaktoro_1_1ODEOptions.html" title="A struct that defines the options for the ODESolver." alt="" coords="1316,244,1412,271"/>
-<area shape="rect" id="node28" href="$structReaktoro_1_1global_1_1ExceptionOptions.html" title="A type used to describe all options related to exception handling." alt="" coords="1579,432,1705,459"/>
-<area shape="rect" id="node29" href="$structReaktoro_1_1global_1_1DatabaseOptions.html" title="A type used to describe all options related to database management." alt="" coords="1581,483,1703,509"/>
-<area shape="rect" id="node30" href="$structReaktoro_1_1global_1_1AqueousOptions.html" title="A type used to describe all options related to aqueous models." alt="" coords="1583,533,1701,560"/>
-<area shape="rect" id="node31" href="$structReaktoro_1_1global_1_1AqueousOptions_1_1HKF.html" title="A type used to describe all options related to HKF model." alt="" coords="1339,559,1389,585"/>
-<area shape="rect" id="node32" href="$structReaktoro_1_1global_1_1AqueousOptions_1_1DebyeHuckel.html" title="A type used to describe all options related to Debye&#45;Huckel model." alt="" coords="1313,508,1415,535"/>
+<area shape="rect" id="node1" title="A type used to describe all options related to chemical calculations." alt="" coords="2040,231,2155,257"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1global_1_1ExceptionOptions.html" title="A type used to describe all options related to exception handling." alt="" coords="1729,23,1865,49"/>
+<area shape="rect" id="node3" href="$structReaktoro_1_1KineticOptions.html" title="A struct to describe the options for a chemical kinetics calculation." alt="" coords="1738,160,1855,187"/>
+<area shape="rect" id="node4" href="$structReaktoro_1_1ODEOptions.html" title="A struct that defines the options for the ODESolver." alt="" coords="1445,152,1545,179"/>
+<area shape="rect" id="node27" href="$structReaktoro_1_1EquilibriumPathOptions.html" title="A struct that describes the options from an equilibrium path calculation." alt="" coords="1709,231,1884,257"/>
+<area shape="rect" id="node5" href="$structReaktoro_1_1KineticOutputOptions.html" title=" " alt="" coords="569,20,731,47"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="213,248,272,275"/>
+<area shape="rect" id="node21" href="$structReaktoro_1_1OptimumOutputOptions.html" title="A type that describes the options for the output of a optimisation calculation." alt="" coords="779,528,956,555"/>
+<area shape="rect" id="node22" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="399,392,533,419"/>
+<area shape="rect" id="node23" title=" " alt="" coords="387,285,545,312"/>
+<area shape="rect" id="node25" href="$structReaktoro_1_1NonlinearOutput.html" title="A type that describes the options for the output of a non&#45;linear problem calculation." alt="" coords="803,224,932,251"/>
+<area shape="rect" id="node31" href="$structReaktoro_1_1global_1_1InterpolationOptions.html" title="A type used to describe all options related to interpolation." alt="" coords="790,85,945,112"/>
+<area shape="rect" id="node7" title="STL class." alt="" coords="5,248,164,275"/>
+<area shape="rect" id="node8" href="$structReaktoro_1_1EquilibriumOptions.html" title="The options for the equilibrium calculations." alt="" coords="1421,277,1568,304"/>
+<area shape="rect" id="node9" href="$structReaktoro_1_1OptimumOptions.html" title="A type that describes the options of a optimisation calculation." alt="" coords="1149,427,1282,453"/>
+<area shape="rect" id="node10" href="$structReaktoro_1_1OptimumParamsIpAction.html" title=" " alt="" coords="775,579,959,605"/>
+<area shape="rect" id="node11" href="$structReaktoro_1_1OptimumParamsIpOpt.html" title=" " alt="" coords="784,173,951,200"/>
+<area shape="rect" id="node12" title=" " alt="" coords="397,152,535,179"/>
+<area shape="rect" id="node13" href="$structReaktoro_1_1OptimumParamsIpActive.html" title=" " alt="" coords="775,680,959,707"/>
+<area shape="rect" id="node14" href="$structReaktoro_1_1OptimumParamsIpNewton.html" title=" " alt="" coords="771,275,964,301"/>
+<area shape="rect" id="node15" href="$structReaktoro_1_1KktOptions.html" title="A type to describe the options for the KKT calculation." alt="" coords="820,325,915,352"/>
+<area shape="rect" id="node16" href="$structReaktoro_1_1OptimumParamsRegularization.html" title="A type that describes the regularization options for the optimisation calculation." alt="" coords="755,629,980,656"/>
+<area shape="rect" id="node17" href="$structReaktoro_1_1RegularizerOptions.html" title="A type that describes the options for regularizing linear constraints." alt="" coords="393,629,539,656"/>
+<area shape="rect" id="node18" href="$structReaktoro_1_1OptimumParamsRefiner.html" title=" " alt="" coords="779,376,956,403"/>
+<area shape="rect" id="node19" href="$structReaktoro_1_1OptimumParamsKarpov.html" title=" " alt="" coords="779,427,956,453"/>
+<area shape="rect" id="node20" href="$structReaktoro_1_1OptimumParamsActNewton.html" title=" " alt="" coords="766,477,969,504"/>
+<area shape="rect" id="node24" href="$structReaktoro_1_1NonlinearOptions.html" title="A type that describes the options for the solution of a non&#45;linear problem." alt="" coords="1148,205,1283,232"/>
+<area shape="rect" id="node26" href="$structReaktoro_1_1SmartEquilibriumOptions.html" title="The options for the smart equilibrium calculations." alt="" coords="1123,277,1308,304"/>
+<area shape="rect" id="node28" href="$structReaktoro_1_1global_1_1AqueousOptions.html" title="A type used to describe all options related to aqueous models." alt="" coords="1733,383,1861,409"/>
+<area shape="rect" id="node29" href="$structReaktoro_1_1global_1_1AqueousOptions_1_1HKF.html" title="A type used to describe all options related to HKF model." alt="" coords="1470,420,1519,447"/>
+<area shape="rect" id="node30" href="$structReaktoro_1_1global_1_1AqueousOptions_1_1DebyeHuckel.html" title="A type used to describe all options related to Debye&#45;Huckel model." alt="" coords="1441,369,1549,396"/>
+<area shape="rect" id="node32" href="$structReaktoro_1_1global_1_1DatabaseOptions.html" title="A type used to describe all options related to database management." alt="" coords="1729,433,1864,460"/>
 </map>

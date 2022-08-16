@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['b_0',['b',['../struct_reaktoro_1_1_standard_thermo_model_params_holland_powell.html#ac59f8f590c99f0cc6a8fa1af173dbcd1',1,'Reaktoro::StandardThermoModelParamsHollandPowell::b()'],['../struct_reaktoro_1_1_standard_thermo_model_params_maier_kelley.html#ac59f8f590c99f0cc6a8fa1af173dbcd1',1,'Reaktoro::StandardThermoModelParamsMaierKelley::b()'],['../struct_reaktoro_1_1_standard_thermo_model_params_mineral_h_k_f.html#ae240c314612426aa4bcfe30c7d88d821',1,'Reaktoro::StandardThermoModelParamsMineralHKF::b()']]],
-  ['b1_1',['b1',['../struct_reaktoro_1_1_standard_thermo_model_params_nasa_1_1_polynomial.html#a5f06da6d70200d5b4f687015e92cc8ae',1,'Reaktoro::StandardThermoModelParamsNasa::Polynomial']]],
-  ['b2_2',['b2',['../struct_reaktoro_1_1_standard_thermo_model_params_nasa_1_1_polynomial.html#a1dad1639589684be2c5e927263734eae',1,'Reaktoro::StandardThermoModelParamsNasa::Polynomial']]],
-  ['bartopascal_3',['barToPascal',['../namespace_reaktoro.html#a4f19985c36114674b385ba7e6a860e04',1,'Reaktoro']]],
-  ['beta_4',['beta',['../struct_reaktoro_1_1_ion_exchange_surface_state.html#a01cab161489ca22cd97e7b41eb440db6',1,'Reaktoro::IonExchangeSurfaceState']]],
-  ['biondefault_5',['biondefault',['../struct_reaktoro_1_1_activity_model_debye_huckel_params.html#af3c088b1fb5bb6dc61bd834a7cafecd1',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
-  ['bions_6',['bions',['../struct_reaktoro_1_1_activity_model_debye_huckel_params.html#a7c1c49ae02881d363dfd9838f149f4b4',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
-  ['bneutraldefault_7',['bneutraldefault',['../struct_reaktoro_1_1_activity_model_debye_huckel_params.html#afd9935f1bd3f050119d8e3eeb9deb03f',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
-  ['bneutrals_8',['bneutrals',['../struct_reaktoro_1_1_activity_model_debye_huckel_params.html#a659432334374fbaf93e6025f8feb6aa7',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
-  ['bornn_9',['bornN',['../struct_reaktoro_1_1_water_electro_props.html#ad0173cbabe90e6a0e4c8f809f26254dd',1,'Reaktoro::WaterElectroProps']]],
-  ['bornq_10',['bornQ',['../struct_reaktoro_1_1_water_electro_props.html#a28caa232295ff8cb31e17708c8a7528f',1,'Reaktoro::WaterElectroProps']]],
-  ['bornu_11',['bornU',['../struct_reaktoro_1_1_water_electro_props.html#a9d9681b9decfabb38a2fba217536c30a',1,'Reaktoro::WaterElectroProps']]],
-  ['bornx_12',['bornX',['../struct_reaktoro_1_1_water_electro_props.html#a3b1126cf2fbf644bacd5d79c7ae52e59',1,'Reaktoro::WaterElectroProps']]],
-  ['borny_13',['bornY',['../struct_reaktoro_1_1_water_electro_props.html#a1d4a3bcaeb99f6639aac66ce88246180',1,'Reaktoro::WaterElectroProps']]],
-  ['bornz_14',['bornZ',['../struct_reaktoro_1_1_water_electro_props.html#a5d8f0290b959eb8a422f1d5d8dae3713',1,'Reaktoro::WaterElectroProps']]]
+  ['b_2454',['b',['../structReaktoro_1_1StandardThermoModelParamsMaierKelley.html#ac59f8f590c99f0cc6a8fa1af173dbcd1',1,'Reaktoro::StandardThermoModelParamsMaierKelley::b()'],['../structReaktoro_1_1StandardThermoModelParamsMineralHKF.html#ae240c314612426aa4bcfe30c7d88d821',1,'Reaktoro::StandardThermoModelParamsMineralHKF::b()'],['../structReaktoro_1_1StandardThermoModelParamsHollandPowell.html#ac59f8f590c99f0cc6a8fa1af173dbcd1',1,'Reaktoro::StandardThermoModelParamsHollandPowell::b()']]],
+  ['b1_2455',['b1',['../structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html#a5f06da6d70200d5b4f687015e92cc8ae',1,'Reaktoro::StandardThermoModelParamsNasa::Polynomial']]],
+  ['b2_2456',['b2',['../structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html#a1dad1639589684be2c5e927263734eae',1,'Reaktoro::StandardThermoModelParamsNasa::Polynomial']]],
+  ['bartopascal_2457',['barToPascal',['../namespaceReaktoro.html#a4f19985c36114674b385ba7e6a860e04',1,'Reaktoro']]],
+  ['beta_2458',['beta',['../structReaktoro_1_1IonExchangeSurfaceState.html#a01cab161489ca22cd97e7b41eb440db6',1,'Reaktoro::IonExchangeSurfaceState']]],
+  ['biondefault_2459',['biondefault',['../structReaktoro_1_1ActivityModelDebyeHuckelParams.html#af3c088b1fb5bb6dc61bd834a7cafecd1',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
+  ['bions_2460',['bions',['../structReaktoro_1_1ActivityModelDebyeHuckelParams.html#a7c1c49ae02881d363dfd9838f149f4b4',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
+  ['bneutraldefault_2461',['bneutraldefault',['../structReaktoro_1_1ActivityModelDebyeHuckelParams.html#afd9935f1bd3f050119d8e3eeb9deb03f',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
+  ['bneutrals_2462',['bneutrals',['../structReaktoro_1_1ActivityModelDebyeHuckelParams.html#a659432334374fbaf93e6025f8feb6aa7',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
+  ['bornn_2463',['bornN',['../structReaktoro_1_1WaterElectroProps.html#ad0173cbabe90e6a0e4c8f809f26254dd',1,'Reaktoro::WaterElectroProps']]],
+  ['bornq_2464',['bornQ',['../structReaktoro_1_1WaterElectroProps.html#a28caa232295ff8cb31e17708c8a7528f',1,'Reaktoro::WaterElectroProps']]],
+  ['bornu_2465',['bornU',['../structReaktoro_1_1WaterElectroProps.html#a9d9681b9decfabb38a2fba217536c30a',1,'Reaktoro::WaterElectroProps']]],
+  ['bornx_2466',['bornX',['../structReaktoro_1_1WaterElectroProps.html#a3b1126cf2fbf644bacd5d79c7ae52e59',1,'Reaktoro::WaterElectroProps']]],
+  ['borny_2467',['bornY',['../structReaktoro_1_1WaterElectroProps.html#a1d4a3bcaeb99f6639aac66ce88246180',1,'Reaktoro::WaterElectroProps']]],
+  ['bornz_2468',['bornZ',['../structReaktoro_1_1WaterElectroProps.html#a5d8f0290b959eb8a422f1d5d8dae3713',1,'Reaktoro::WaterElectroProps']]]
 ];

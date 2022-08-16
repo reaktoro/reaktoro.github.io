@@ -1,25 +1,25 @@
 <map id="EquilibriumPathOptions" name="EquilibriumPathOptions">
-<area shape="rect" id="node1" title="A struct that describes the options from an equilibrium path calculation." alt="" coords="1448,355,1607,381"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1EquilibriumOptions.html" title="The options for the equilibrium calculations." alt="" coords="1203,327,1333,353"/>
-<area shape="rect" id="node3" href="$structReaktoro_1_1OptimumOptions.html" title="A type that describes the options of a optimisation calculation." alt="" coords="954,327,1074,353"/>
-<area shape="rect" id="node4" href="$structReaktoro_1_1OptimumOutputOptions.html" title="A type that describes the options for the output of a optimisation calculation." alt="" coords="621,175,779,201"/>
-<area shape="rect" id="node5" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="369,143,491,169"/>
-<area shape="rect" id="node21" href="$structReaktoro_1_1NonlinearOutput.html" title="A type that describes the options for the output of a non&#45;linear problem calculation." alt="" coords="642,61,758,88"/>
-<area shape="rect" id="node6" title=" " alt="" coords="199,117,253,144"/>
-<area shape="rect" id="node8" title=" " alt="" coords="360,92,500,119"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,117,149,144"/>
-<area shape="rect" id="node9" href="$structReaktoro_1_1OptimumParamsActNewton.html" title=" " alt="" coords="607,225,793,252"/>
-<area shape="rect" id="node10" href="$structReaktoro_1_1OptimumParamsIpAction.html" title=" " alt="" coords="616,276,784,303"/>
-<area shape="rect" id="node11" href="$structReaktoro_1_1OptimumParamsIpOpt.html" title=" " alt="" coords="624,580,776,607"/>
-<area shape="rect" id="node12" title=" " alt="" coords="370,580,490,607"/>
-<area shape="rect" id="node13" href="$structReaktoro_1_1OptimumParamsIpNewton.html" title=" " alt="" coords="612,377,788,404"/>
-<area shape="rect" id="node14" href="$structReaktoro_1_1OptimumParamsIpActive.html" title=" " alt="" coords="616,428,784,455"/>
-<area shape="rect" id="node15" href="$structReaktoro_1_1OptimumParamsKarpov.html" title=" " alt="" coords="619,479,781,505"/>
-<area shape="rect" id="node16" href="$structReaktoro_1_1OptimumParamsRefiner.html" title=" " alt="" coords="619,529,781,556"/>
-<area shape="rect" id="node17" href="$structReaktoro_1_1OptimumParamsRegularization.html" title="A type that describes the regularization options for the optimisation calculation." alt="" coords="599,327,801,353"/>
-<area shape="rect" id="node18" href="$structReaktoro_1_1RegularizerOptions.html" title="A type that describes the options for regularizing linear constraints." alt="" coords="363,327,497,353"/>
-<area shape="rect" id="node19" href="$structReaktoro_1_1KktOptions.html" title="A type to describe the options for the KKT calculation." alt="" coords="657,124,743,151"/>
-<area shape="rect" id="node20" href="$structReaktoro_1_1NonlinearOptions.html" title="A type that describes the options for the solution of a non&#45;linear problem." alt="" coords="953,177,1075,204"/>
-<area shape="rect" id="node22" href="$structReaktoro_1_1SmartEquilibriumOptions.html" title="The options for the smart equilibrium calculations." alt="" coords="931,377,1097,404"/>
-<area shape="rect" id="node23" href="$structReaktoro_1_1ODEOptions.html" title="A struct that defines the options for the ODESolver." alt="" coords="1220,377,1316,404"/>
+<area shape="rect" id="node1" title="A struct that describes the options from an equilibrium path calculation." alt="" coords="1591,380,1765,407"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1ODEOptions.html" title="A struct that defines the options for the ODESolver." alt="" coords="1341,355,1441,381"/>
+<area shape="rect" id="node3" href="$structReaktoro_1_1EquilibriumOptions.html" title="The options for the equilibrium calculations." alt="" coords="1317,405,1464,432"/>
+<area shape="rect" id="node4" href="$structReaktoro_1_1OptimumOptions.html" title="A type that describes the options of a optimisation calculation." alt="" coords="1045,259,1178,285"/>
+<area shape="rect" id="node5" href="$structReaktoro_1_1OptimumParamsIpAction.html" title=" " alt="" coords="671,5,855,32"/>
+<area shape="rect" id="node6" href="$structReaktoro_1_1OptimumParamsIpOpt.html" title=" " alt="" coords="680,56,847,83"/>
+<area shape="rect" id="node7" title=" " alt="" coords="397,56,535,83"/>
+<area shape="rect" id="node8" href="$structReaktoro_1_1OptimumParamsIpActive.html" title=" " alt="" coords="671,107,855,133"/>
+<area shape="rect" id="node9" href="$structReaktoro_1_1OptimumParamsIpNewton.html" title=" " alt="" coords="667,157,860,184"/>
+<area shape="rect" id="node10" href="$structReaktoro_1_1KktOptions.html" title="A type to describe the options for the KKT calculation." alt="" coords="716,208,811,235"/>
+<area shape="rect" id="node11" href="$structReaktoro_1_1OptimumParamsRegularization.html" title="A type that describes the regularization options for the optimisation calculation." alt="" coords="651,259,876,285"/>
+<area shape="rect" id="node12" href="$structReaktoro_1_1RegularizerOptions.html" title="A type that describes the options for regularizing linear constraints." alt="" coords="393,259,539,285"/>
+<area shape="rect" id="node13" href="$structReaktoro_1_1OptimumParamsRefiner.html" title=" " alt="" coords="675,309,852,336"/>
+<area shape="rect" id="node14" href="$structReaktoro_1_1OptimumParamsKarpov.html" title=" " alt="" coords="675,360,852,387"/>
+<area shape="rect" id="node15" href="$structReaktoro_1_1OptimumParamsActNewton.html" title=" " alt="" coords="662,411,865,437"/>
+<area shape="rect" id="node16" href="$structReaktoro_1_1OptimumOutputOptions.html" title="A type that describes the options for the output of a optimisation calculation." alt="" coords="675,461,852,488"/>
+<area shape="rect" id="node17" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="399,451,533,477"/>
+<area shape="rect" id="node22" href="$structReaktoro_1_1NonlinearOutput.html" title="A type that describes the options for the output of a non&#45;linear problem calculation." alt="" coords="699,521,828,548"/>
+<area shape="rect" id="node18" title="STL class." alt="" coords="213,473,272,500"/>
+<area shape="rect" id="node20" title=" " alt="" coords="387,515,545,541"/>
+<area shape="rect" id="node19" title="STL class." alt="" coords="5,473,164,500"/>
+<area shape="rect" id="node21" href="$structReaktoro_1_1NonlinearOptions.html" title="A type that describes the options for the solution of a non&#45;linear problem." alt="" coords="1044,405,1179,432"/>
+<area shape="rect" id="node23" href="$structReaktoro_1_1SmartEquilibriumOptions.html" title="The options for the smart equilibrium calculations." alt="" coords="1019,456,1204,483"/>
 </map>

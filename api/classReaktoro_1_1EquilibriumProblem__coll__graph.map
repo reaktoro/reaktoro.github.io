@@ -1,0 +1,5 @@
+<map id="EquilibriumProblem" name="EquilibriumProblem">
+<area shape="rect" id="node1" title="The class used to define chemical equilibrium problems." alt="" coords="109,80,259,107"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1EquilibriumConditions.html" title="The class used to define conditions to be satisfied at chemical equilibrium." alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1EquilibriumRestrictions.html" title="The class used to define reactivity restrictions in a chemical equilibrium calculation." alt="" coords="195,5,368,32"/>
+</map>

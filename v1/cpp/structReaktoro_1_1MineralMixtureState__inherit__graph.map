@@ -1,4 +1,4 @@
 <map id="MineralMixtureState" name="MineralMixtureState">
-<area shape="rect" id="node1" title="A type used to describe the state of a mineral mixture." alt="" coords="5,80,144,107"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1MixtureState.html" title="A type used to describe the state of a mixture." alt="" coords="27,5,123,32"/>
+<area shape="rect" id="node1" title="A type used to describe the state of a mineral mixture." alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1MixtureState.html" title="A type used to describe the state of a mixture." alt="" coords="29,5,136,32"/>
 </map>
