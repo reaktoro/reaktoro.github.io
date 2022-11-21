@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -420,7 +422,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -814,8 +819,8 @@ title="Print to PDF"
 <li><p>a gaseous phase containing most of the gases relevant to the process; and</p></li>
 <li><p>one or more solid/liquid substances (condensed phases) that may appear during the combustion process.</p></li>
 </ul>
-<p>The concept of a chemical system is represented in Reaktoro using the {{ChemicalSystem}} class. You should expect to construct one object of this class for almost every chemical process you want to model.</p>
-<p>In a {{ChemicalSystem}} object, you can find a list of {{Phase}} objects representing the phases. The {{Phase}} class is also an essential component of Reaktoro. It contains the list of chemical species composing the phase, as a list of {{Species}} objects. Additionally, each {{Phase}} object includes its activity model to account for its non-ideal thermodynamic behavior.</p>
+<p>The concept of a chemical system is represented in Reaktoro using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class. You should expect to construct one object of this class for almost every chemical process you want to model.</p>
+<p>In a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, you can find a list of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> objects representing the phases. The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> class is also an essential component of Reaktoro. It contains the list of chemical species composing the phase, as a list of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a> objects. Additionally, each <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> object includes its activity model to account for its non-ideal thermodynamic behavior.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We’ll learn more about activity models in a subsequent section and how to specify them for our phases.</p>
@@ -823,7 +828,7 @@ title="Print to PDF"
 <p>Next, we will present how to construct a chemical system in Reaktoro for different applications.</p>
 <div class="section" id="chemical-system-definition-for-a-mineral-solubility-problem">
 <h2>Chemical system definition for a mineral solubility problem<a class="headerlink" href="#chemical-system-definition-for-a-mineral-solubility-problem" title="Permalink to this headline">#</a></h2>
-<p>Let’s consider the chemical equilibrium problem associated with calculating the solubility of halite (NaCl) in water. The code block below demonstrates how a {{ChemicalSystem}} object is created with an aqueous and mineral phase.</p>
+<p>Let’s consider the chemical equilibrium problem associated with calculating the solubility of halite (NaCl) in water. The code block below demonstrates how a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object is created with an aqueous and mineral phase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -843,7 +848,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>That’s it! With the {{ChemicalSystem}} object created above, we can do some exciting things. For example, we can inspect the phases in the system and their composing chemical species:</p>
+<p>That’s it! With the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object created above, we can do some exciting things. For example, we can inspect the phases in the system and their composing chemical species:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">():</span>
@@ -906,7 +911,7 @@ Cl
 </div>
 </div>
 </div>
-<p>The {{ChemicalSystem}} class also contains the formula matrix $A$ of the system, which is a matrix whose entry $A_{j,i}$ contains the number of atoms of element with index $j$ in species with index $i$:</p>
+<p>The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class also contains the formula matrix <span class="math notranslate nohighlight">\(A\)</span> of the system, which is a matrix whose entry <span class="math notranslate nohighlight">\(A_{j,i}\)</span> contains the number of atoms of element with index <span class="math notranslate nohighlight">\(j\)</span> in species with index <span class="math notranslate nohighlight">\(i\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="p">.</span><span class="nf">formulaMatrix</span><span class="p">())</span>
@@ -926,7 +931,7 @@ Cl
 <p>The last row in the formula matrix contains the electric charge of each species.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Access the link {{ChemicalSystem}} to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code>!</p>
+<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code>!</p>
 </div>
 </div>
 <div class="section" id="chemical-system-definition-for-a-gas-solubility-problem">
@@ -1176,9 +1181,9 @@ Ethylene(g)              C2H4                     0.028054
 </div>
 <p>This chemical system contains many species. The SUPCRTBL database contains many
 organic species that should play an insignificant role in accurately computing
-CO{{_2}} solubility. All organic species in SUPCRT and SUPCRTBL databases in
+CO<sub>2</sub> solubility. All organic species in SUPCRT and SUPCRTBL databases in
 Reaktoro’s YAML format have an organic tag which we can use to filter out them.</p>
-<p>Let’s then redefine our {{ChemicalSystem}} object <code class="docutils literal notranslate"><span class="pre">system</span></code> by excluding those
+<p>Let’s then redefine our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object <code class="docutils literal notranslate"><span class="pre">system</span></code> by excluding those
 organic aqueous species and specifying exactly the gases we want:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1193,7 +1198,7 @@ organic aqueous species and specifying exactly the gases we want:</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Make sure you specify species names exactly how they exist in the {{Database}}
+<p>Make sure you specify species names exactly how they exist in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a>
 object you have created, such as in <code class="docutils literal notranslate"><span class="pre">GaseousPhase(&quot;CO2(g)&quot;)</span></code> above. Otherwise
 you will get a runtime exception!</p>
 </div>
@@ -2074,9 +2079,9 @@ Number of phases in the system: 67
 <p>This is an impressive number of species and phases to be able to model the combustion of black powder!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By including as many gases and condensed phases as possible, Reaktoro will be able to determine those that may appear after burning black powder. For example, K{{_2}}S(cd), K{{_2}}SO{{_4}}(cd) and CaS(cd) are typically formed in the combustion process. By including them in the definition of the chemical system, the chemical equilibrium solver will be able to find positive amounts for them (i.e., the solver will identify these condensed phases as stable in equilibrium).</p>
+<p>By including as many gases and condensed phases as possible, Reaktoro will be able to determine those that may appear after burning black powder. For example, K<sub>2</sub>S(cd), K<sub>2</sub>SO<sub>4</sub>(cd) and CaS(cd) are typically formed in the combustion process. By including them in the definition of the chemical system, the chemical equilibrium solver will be able to find positive amounts for them (i.e., the solver will identify these condensed phases as stable in equilibrium).</p>
 </div>
-<p>Keep reading to learn more about how the {{ChemicalSystem}} class plays an important role in Reaktoro!</p>
+<p>Keep reading to learn more about how the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class plays an important role in Reaktoro!</p>
 </div>
 </div>
 

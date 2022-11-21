@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -738,7 +741,7 @@ title="Print to PDF"
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
 <p>As we saw in the previous tutorial, imposing the pH of a solution in a chemical equilibrium calculation leaves the system open to H<sup>+</sup>. As a result, the final solution may not have zero electrical charge.</p>
 <p>So, in this tutorial we demonstrate how to perform chemical equilibrium calculations with fixed pH values while simultaneously satisfying charge balance.</p>
-<p>Let’s create a chemical system (using {{ChemicalSystem}}) with just a single aqueous phase containing a few selected species. For this phase, we use a Debye–Hückel activity model. The required thermodynamic data for the species is extracted from the {{SupcrtDatabase}} object:</p>
+<p>Let’s create a chemical system (using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a>) with just a single aqueous phase containing a few selected species. For this phase, we use a Debye–Hückel activity model. The required thermodynamic data for the species is extracted from the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SupcrtDatabase.html"><code class="docutils literal notranslate"><span class="pre">SupcrtDatabase</span></code></a> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -761,7 +764,7 @@ title="Print to PDF"
 <li><p>electric charge.</p></li>
 </ul>
 <p>To attain a desired charge value in the solution, we will need to make the system open to a anion (negative ion) to counterbalance the amount of H<sup>+</sup> entering/leaving the system. We will use Cl<sup>-</sup> for this.</p>
-<p>Let’s now create a specialized and optimized {{EquilibriumSolver}} object to handle equilibrium problems with these specifications (note the use of {{EquilibriumSpecs}} below to achieve this):</p>
+<p>Let’s now create a specialized and optimized <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object to handle equilibrium problems with these specifications (note the use of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> below to achieve this):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -820,7 +823,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s now define the temperature, pressure, pH, and charge conditions we want to impose at equilibrium for this aqueous solution currently in disequilibrium. We do this by using an object of class {{EquilibriumConditions}}:</p>
+<p>Let’s now define the temperature, pressure, pH, and charge conditions we want to impose at equilibrium for this aqueous solution currently in disequilibrium. We do this by using an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
@@ -834,9 +837,9 @@ title="Print to PDF"
 </div>
 <p>We have everything we need now to perform the equilibrium calculation:</p>
 <ul class="simple">
-<li><p>an equilibrium solver (the <code class="docutils literal notranslate"><span class="pre">solver</span></code> object of class {{EquilibriumSolver}}),</p></li>
-<li><p>an initial chemical state to equilibrate (the <code class="docutils literal notranslate"><span class="pre">state</span></code> object of class {{ChemicalState}}), and</p></li>
-<li><p>the conditions we are imposing for this equilibrium state (the <code class="docutils literal notranslate"><span class="pre">conditions</span></code> object of class {{EquilibriumConditions}}).</p></li>
+<li><p>an equilibrium solver (the <code class="docutils literal notranslate"><span class="pre">solver</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a>),</p></li>
+<li><p>an initial chemical state to equilibrate (the <code class="docutils literal notranslate"><span class="pre">state</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>), and</p></li>
+<li><p>the conditions we are imposing for this equilibrium state (the <code class="docutils literal notranslate"><span class="pre">conditions</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>).</p></li>
 </ul>
 <p>The code below will perform the equilibrium calculation and modify the <code class="docutils literal notranslate"><span class="pre">state</span></code> object to reflect the computed chemical equilibrium state:</p>
 <div class="cell docutils container">

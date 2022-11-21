@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -736,9 +739,9 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-fixed-phase-amount">
 <h1>Chemical equilibrium with fixed phase amount<a class="headerlink" href="#chemical-equilibrium-with-fixed-phase-amount" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
-<p>Consider an aqueous solution at 60 °C obtained by mixing 1 kg of H{{_2}}O, 1 mol of NaCl and 1 mol of CO{{_2}}. What must the pressure of this aqueous solution be so that it is saturated with CO{{_2}}? In other words, what is the pressure that causes a bubble of CO{{_2}} to form (the bubble pressure)?</p>
-<p>In this tutorial, we formulate a chemical equilibrium problem to calculate the CO{{_2}} bubble/saturation pressure of this aqueous saline solution. In this problem, we consider a chemical system with aqueous and gaseous phases. Our equilibrium problem will consider <strong>a constraint that imposes the amount of the gas phase to be a minuscule value</strong> (to model the limit condition in which a bubble is formed).</p>
-<p>Let’s create our {{ChemicalSystem}} object with these phases:</p>
+<p>Consider an aqueous solution at 60 °C obtained by mixing 1 kg of H<sub>2</sub>O, 1 mol of NaCl and 1 mol of CO<sub>2</sub>. What must the pressure of this aqueous solution be so that it is saturated with CO<sub>2</sub>? In other words, what is the pressure that causes a bubble of CO<sub>2</sub> to form (the bubble pressure)?</p>
+<p>In this tutorial, we formulate a chemical equilibrium problem to calculate the CO<sub>2</sub> bubble/saturation pressure of this aqueous saline solution. In this problem, we consider a chemical system with aqueous and gaseous phases. Our equilibrium problem will consider <strong>a constraint that imposes the amount of the gas phase to be a minuscule value</strong> (to model the limit condition in which a bubble is formed).</p>
+<p>Let’s create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object with these phases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -756,7 +759,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Next, we create an initial chemical state for this system representing our aqueous solution at 60 °C (with composition 1 molal NaCl and 1 molal CO{{_2}}):</p>
+<p>Next, we create an initial chemical state for this system representing our aqueous solution at 60 °C (with composition 1 molal NaCl and 1 molal CO<sub>2</sub>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -801,12 +804,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We need now to create an {{EquilibriumSolver}} that can solve equilibrium problems with the following constrained properties:</p>
+<p>We need now to create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> that can solve equilibrium problems with the following constrained properties:</p>
 <ul class="simple">
 <li><p>temperature and</p></li>
 <li><p>amount of gaseous phase.</p></li>
 </ul>
-<p>These constraint specifications are provided to the {{EquilibriumSpecs}} object below, which is then used to construct our {{EquilibriumSolver}} object:</p>
+<p>These constraint specifications are provided to the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object below, which is then used to construct our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -818,7 +821,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The next step is to create an object {{EquilibriumConditions}} in which we specify the values of <strong>temperature</strong> and <strong>amount of gas phase</strong> (which should be a small amount). We do this in the next code block, which also defines the lower and upper limits for pressure (to avoid negative and unrealistic large pressure values during the equilibrium calculation!):</p>
+<p>The next step is to create an object <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> in which we specify the values of <strong>temperature</strong> and <strong>amount of gas phase</strong> (which should be a small amount). We do this in the next code block, which also defines the lower and upper limits for pressure (to avoid negative and unrealistic large pressure values during the equilibrium calculation!):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
@@ -870,7 +873,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The CO{{_2}} saturation pressure for our aqueous solution is printed next:</p>
+<p>The CO<sub>2</sub> saturation pressure for our aqueous solution is printed next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1e-5</span>  <span class="c1"># convert pressure from Pa to bar</span>
@@ -884,7 +887,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>And with that, we conclude this tutorial, which demonstrates how Reaktoro can perform chemical equilibrium calculations with given <strong>temperature</strong> and <strong>phase amounts</strong> to calculate the CO{{_2}} saturation/bubble pressure of an aqueous electrolyte solution.</p>
+<p>And with that, we conclude this tutorial, which demonstrates how Reaktoro can perform chemical equilibrium calculations with given <strong>temperature</strong> and <strong>phase amounts</strong> to calculate the CO<sub>2</sub> saturation/bubble pressure of an aqueous electrolyte solution.</p>
 </div>
 
     <script type="text/x-thebe-config">

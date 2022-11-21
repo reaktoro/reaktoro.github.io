@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -420,7 +422,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -794,16 +799,16 @@ title="Print to PDF"
 <h1>Creating thermodynamic databases<a class="headerlink" href="#creating-thermodynamic-databases" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 14th, 2022</p>
 <p>In this tutorial, we will demonstrate how you create your own thermodynamic databases in Reaktoro’s YAML format. In these databases, you will have blocks of data for each species (and possibly elements as well, if they are not standard chemical elements from the periodic table).</p>
-<p>It is important to understand that Reaktoro expects each chemical species to know how to calculate its own <em>standard thermodynamic properties</em> at a given temperature $T$ and pressure $P$. The following standard thermodynamic properties of a species are expected as output in a standard thermodynamic model in Reaktoro:</p>
+<p>It is important to understand that Reaktoro expects each chemical species to know how to calculate its own <em>standard thermodynamic properties</em> at a given temperature <span class="math notranslate nohighlight">\(T\)</span> and pressure <span class="math notranslate nohighlight">\(P\)</span>. The following standard thermodynamic properties of a species are expected as output in a standard thermodynamic model in Reaktoro:</p>
 <ul class="simple">
-<li><p>its standard molar Gibbs energy of formation $G^{\circ}$ (in J/mol)</p></li>
-<li><p>its standard molar enthalpy of formation $H^{\circ}$ (in J/mol)</p></li>
-<li><p>its standard molar volume $V^{\circ}$ (in m³/mol)</p></li>
-<li><p>its standard molar isobaric heat capacity $C_{P}^{\circ}$ (in J/(mol·K))</p></li>
-<li><p>the temperature derivative of $V^{\circ}$ at constant pressure $(\partial V^{\circ}/\partial T)_P$ of the species (in m³/(mol·K))</p></li>
-<li><p>the pressure derivative of $V^{\circ}$ at constant temperature $(\partial V^{\circ}/\partial P)_T$ (in m³/(mol·Pa))</p></li>
+<li><p>its standard molar Gibbs energy of formation <span class="math notranslate nohighlight">\(G^{\circ}\)</span> (in J/mol)</p></li>
+<li><p>its standard molar enthalpy of formation <span class="math notranslate nohighlight">\(H^{\circ}\)</span> (in J/mol)</p></li>
+<li><p>its standard molar volume <span class="math notranslate nohighlight">\(V^{\circ}\)</span> (in m³/mol)</p></li>
+<li><p>its standard molar isobaric heat capacity <span class="math notranslate nohighlight">\(C_{P}^{\circ}\)</span> (in J/(mol·K))</p></li>
+<li><p>the temperature derivative of <span class="math notranslate nohighlight">\(V^{\circ}\)</span> at constant pressure <span class="math notranslate nohighlight">\((\partial V^{\circ}/\partial T)_P\)</span> of the species (in m³/(mol·K))</p></li>
+<li><p>the pressure derivative of <span class="math notranslate nohighlight">\(V^{\circ}\)</span> at constant temperature <span class="math notranslate nohighlight">\((\partial V^{\circ}/\partial P)_T\)</span> (in m³/(mol·Pa))</p></li>
 </ul>
-<p>After computing these properties for a given $(T,P)$, several others can be easily obtained using thermodynamic relationships (e.g. $U^{\circ} = H^{\circ} - PV^{\circ }$).</p>
+<p>After computing these properties for a given <span class="math notranslate nohighlight">\((T,P)\)</span>, several others can be easily obtained using thermodynamic relationships (e.g. <span class="math notranslate nohighlight">\(U^{\circ} = H^{\circ} - PV^{\circ }\)</span>).</p>
 <p>Reaktoro already implements several standard thermodynamic models for you:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">StandardThermoModelConstant</span></code></p></li>
@@ -822,10 +827,10 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelPhreeqcLgK</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelGemsLgK</span></code></p></li>
 </ul>
-<p>These models also expect temperature $T$ and pressure $P$ as inputs, and their output should be:</p>
+<p>These models also expect temperature <span class="math notranslate nohighlight">\(T\)</span> and pressure <span class="math notranslate nohighlight">\(P\)</span> as inputs, and their output should be:</p>
 <ul class="simple">
-<li><p>the standard molar Gibbs energy of the reaction $\Delta G^{\circ}$ (in J/mol)</p></li>
-<li><p>the standard molar enthalpy of the reaction $\Delta H^{\circ}$ (in J/mol)</p></li>
+<li><p>the standard molar Gibbs energy of the reaction <span class="math notranslate nohighlight">\(\Delta G^{\circ}\)</span> (in J/mol)</p></li>
+<li><p>the standard molar enthalpy of the reaction <span class="math notranslate nohighlight">\(\Delta H^{\circ}\)</span> (in J/mol)</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -834,13 +839,14 @@ title="Print to PDF"
 <div class="section" id="a-very-simple-custom-thermodynamic-database-in-yaml-format">
 <h2>A very simple custom thermodynamic database in YAML format<a class="headerlink" href="#a-very-simple-custom-thermodynamic-database-in-yaml-format" title="Permalink to this headline">#</a></h2>
 <p>Let’s consider fictitious gaseous species A<sup>+</sup>, B<sup>-</sup>, and AB. The elements constituting these species are A and B. We consider the following reaction among them:</p>
-<p>$$\mathrm{A}^{+}+\mathrm{B}^{-}\rightleftharpoons\mathrm{AB}\qquad(\lg K_{\mathrm{AB}}=2)$$</p>
-<p>where $\lg\equiv\log_{10}$.</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{A}^{+}+\mathrm{B}^{-}\rightleftharpoons\mathrm{AB}\qquad(\lg K_{\mathrm{AB}}=2)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lg\equiv\log_{10}\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example can be modified to work with species of other aggregate state as well, not just gaseous. And yes, gases can exist in charged state: plasma!</p>
 </div>
-<p>Let’s say we are interested in calculating the equilibrium state of these species at 25 {{deg}}C and 1 atm starting from an initial state with the same temperature and pressure containing 1 mol of AB. The first step is to create a database file in Reaktoro’s YAML format containing the details and thermodynamic data of these species:</p>
+<p>Let’s say we are interested in calculating the equilibrium state of these species at 25 °C and 1 atm starting from an initial state with the same temperature and pressure containing 1 mol of AB. The first step is to create a database file in Reaktoro’s YAML format containing the details and thermodynamic data of these species:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Old Format</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Elements</span><span class="p">:</span>
@@ -930,17 +936,20 @@ title="Print to PDF"
 </div>
 <p>Remarks on the above database:</p>
 <p><strong>Remark 1:</strong> Elements A and B in this problem are not on the periodic table (element B here is not boron!). Thus, they need to be entered into the database. They are needed when building the chemical species. Note that their symbols are referred to in the <code class="docutils literal notranslate"><span class="pre">Elements</span></code> field of the species, eg <code class="docutils literal notranslate"><span class="pre">Elements:</span> <span class="pre">1:A</span> <span class="pre">1:B</span></code> for the <code class="docutils literal notranslate"><span class="pre">AB</span></code> species.</p>
-<p><strong>Remark 2:</strong> Species <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> compute their standard thermodynamic properties with a <em>constant standard thermodynamic model</em> implemented in <code class="docutils literal notranslate"><span class="pre">StandardThermoModelConstant</span></code>. For any $(T,P)$, its properties are constants. By setting <code class="docutils literal notranslate"><span class="pre">G0</span></code> to zero it means $G^{\circ}_i=0$ for any temperature and pressure. We could have assigned values ​​to <code class="docutils literal notranslate"><span class="pre">H0</span></code>, <code class="docutils literal notranslate"><span class="pre">V0</span></code>, <code class="docutils literal notranslate"><span class="pre">VT0</span></code>, <code class="docutils literal notranslate"><span class="pre">VP0</span></code>, and <code class="docutils literal notranslate"><span class="pre">Cp0</span></code> as well. If not provided, they are zero.</p>
+<p><strong>Remark 2:</strong> Species <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> compute their standard thermodynamic properties with a <em>constant standard thermodynamic model</em> implemented in <code class="docutils literal notranslate"><span class="pre">StandardThermoModelConstant</span></code>. For any <span class="math notranslate nohighlight">\((T,P)\)</span>, its properties are constants. By setting <code class="docutils literal notranslate"><span class="pre">G0</span></code> to zero it means <span class="math notranslate nohighlight">\(G^{\circ}_i=0\)</span> for any temperature and pressure. We could have assigned values ​​to <code class="docutils literal notranslate"><span class="pre">H0</span></code>, <code class="docutils literal notranslate"><span class="pre">V0</span></code>, <code class="docutils literal notranslate"><span class="pre">VT0</span></code>, <code class="docutils literal notranslate"><span class="pre">VP0</span></code>, and <code class="docutils literal notranslate"><span class="pre">Cp0</span></code> as well. If not provided, they are zero.</p>
 <p><strong>Remark 3:</strong> The thermodynamic data available for species <code class="docutils literal notranslate"><span class="pre">AB</span></code> is in the form of reaction properties (reaction equilibrium constant). So we used <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> above instead of <code class="docutils literal notranslate"><span class="pre">StandardThermoModel</span></code> for this. Reaktoro requires that a reaction that provides thermodynamic properties for a species be written as a <em>formation reaction</em>. In this example, the species <code class="docutils literal notranslate"><span class="pre">AB</span></code> should be considered as a product in the reaction and both <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> as reactants. The reaction is therefore expected to be <code class="docutils literal notranslate"><span class="pre">A+</span> <span class="pre">+</span> <span class="pre">B-</span> <span class="pre">=</span> <span class="pre">AB</span></code>, with <code class="docutils literal notranslate"><span class="pre">AB</span></code> on the right side. In the <code class="docutils literal notranslate"><span class="pre">Reactants</span></code> field of <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> for species <code class="docutils literal notranslate"><span class="pre">AB</span></code> we provide <code class="docutils literal notranslate"><span class="pre">1:A+</span> <span class="pre">1:B-</span></code>.</p>
 <p><strong>Remark 4:</strong> If the reaction has more than one product, the other products are considered reactants with negative coefficients. For example, <code class="docutils literal notranslate"><span class="pre">H+</span> <span class="pre">+</span> <span class="pre">HCO3-</span> <span class="pre">=</span> <span class="pre">CO2</span> <span class="pre">+</span> <span class="pre">H2O</span></code>, a forming reaction for <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, also has <code class="docutils literal notranslate"><span class="pre">H2O</span></code> as a product. This reaction can be interpreted as <code class="docutils literal notranslate"><span class="pre">H+</span> <span class="pre">+</span> <span class="pre">HCO3-</span> <span class="pre">-</span> <span class="pre">H2O</span> <span class="pre">=</span> <span class="pre">CO2</span></code>, which would produce <code class="docutils literal notranslate"><span class="pre">Reagents:</span> <span class="pre">1:H+</span> <span class="pre">1:HCO3-</span> <span class="pre">-1:H2O</span></code> for the <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> of <code class="docutils literal notranslate"><span class="pre">CO2</span></code>. You’ll see this in the next section where we show another example of constructing a custom database.</p>
-<p><strong>Remark 5:</strong> The <code class="docutils literal notranslate"><span class="pre">AB</span></code> species calculates its standard thermodynamic properties with a <em>constant lgK reaction model</em> implemented in <code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelConstLgK</span></code>. For each $(T,P)$ the equilibrium constant is the same. This equilibrium constant $K_{\mathrm{AB}}$ is thus converted by the model to $\Delta G_{\mathrm{AB}}^{\circ}$ as follows:</p>
-<p>$$\Delta G_{\mathrm{AB}}^{\circ}=-RT\ln K_{\mathrm{AB}}$$</p>
-<p>and from the definition of $\Delta G_{\mathrm{AB}}^{\circ}$:</p>
-<p>$$\Delta G_{\mathrm{AB}}^{\circ}\equiv G_{\mathrm{AB}}^{\circ}-G_{\mathrm{A^{+}}}^{\circ} -G_{\mathrm{B^{-}}}^{\circ}$$</p>
-<p>Reaktoro will calculate $G_{\mathrm{AB}}^{\circ}$ using:</p>
-<p>$$G_{\mathrm{AB}}^{\circ}=\Delta G_{\mathrm{AB}}^{\circ}+G_{\mathrm{A^{+}}}^{\circ}+ G_{\mathrm{B^{-}}}^{\circ}.$$</p>
+<p><strong>Remark 5:</strong> The <code class="docutils literal notranslate"><span class="pre">AB</span></code> species calculates its standard thermodynamic properties with a <em>constant lgK reaction model</em> implemented in <code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelConstLgK</span></code>. For each <span class="math notranslate nohighlight">\((T,P)\)</span> the equilibrium constant is the same. This equilibrium constant <span class="math notranslate nohighlight">\(K_{\mathrm{AB}}\)</span> is thus converted by the model to <span class="math notranslate nohighlight">\(\Delta G_{\mathrm{AB}}^{\circ}\)</span> as follows:</p>
+<div class="math notranslate nohighlight">
+\[\Delta G_{\mathrm{AB}}^{\circ}=-RT\ln K_{\mathrm{AB}}\]</div>
+<p>and from the definition of <span class="math notranslate nohighlight">\(\Delta G_{\mathrm{AB}}^{\circ}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\Delta G_{\mathrm{AB}}^{\circ}\equiv G_{\mathrm{AB}}^{\circ}-G_{\mathrm{A^{+}}}^{\circ} -G_{\mathrm{B^{-}}}^{\circ}\]</div>
+<p>Reaktoro will calculate <span class="math notranslate nohighlight">\(G_{\mathrm{AB}}^{\circ}\)</span> using:</p>
+<div class="math notranslate nohighlight">
+\[G_{\mathrm{AB}}^{\circ}=\Delta G_{\mathrm{AB}}^{\circ}+G_{\mathrm{A^{+}}}^{\circ}+ G_{\mathrm{B^{-}}}^{\circ}.\]</div>
 <p>This is the principle behind Reaktoro’s automated transformation of a thermodynamic model for a reaction to a standard thermodynamic model for a species.</p>
-<p><strong>Remark 6:</strong> The above conversion technique can produce infinite recursion if all species are defined in terms of formation reactions. We leave the mathematical identification of this recursion for you to figure out. Just note that it would make no sense to define the formation reaction for <code class="docutils literal notranslate"><span class="pre">AB</span></code> in terms of <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> and also define formation reactions for <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> in terms of themselves and <code class="docutils literal notranslate"><span class="pre">AB</span></code> . Infinite recursion can be removed by assigning a standard thermodynamic model to some species, the basic/master species. For example, a constant model that sets $G_{\mathrm{A^{+}}}^{\circ}$ and $G_{\mathrm{B^{-}}}^{\circ}$ to zero for the basic species.</p>
+<p><strong>Remark 6:</strong> The above conversion technique can produce infinite recursion if all species are defined in terms of formation reactions. We leave the mathematical identification of this recursion for you to figure out. Just note that it would make no sense to define the formation reaction for <code class="docutils literal notranslate"><span class="pre">AB</span></code> in terms of <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> and also define formation reactions for <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> in terms of themselves and <code class="docutils literal notranslate"><span class="pre">AB</span></code> . Infinite recursion can be removed by assigning a standard thermodynamic model to some species, the basic/master species. For example, a constant model that sets <span class="math notranslate nohighlight">\(G_{\mathrm{A^{+}}}^{\circ}\)</span> and <span class="math notranslate nohighlight">\(G_{\mathrm{B^{-}}}^{\circ}\)</span> to zero for the basic species.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The above convention of formation reactions is only necessary when providing the means to calculate standard thermodynamic properties for a species. When modeling chemical kinetics, Reaktoro has no absolute imposition on how you define your reactions!</p>
@@ -1188,7 +1197,7 @@ FINAL STATE
 </div>
 </div>
 </div>
-<p>We will now use this database, saved locally under the name <code class="docutils literal notranslate"><span class="pre">db-geo-complicated.yaml</span></code>, to perform a chemical equilibrium calculation in an initial chemical state at 25 {{deg}}C and 1 bar containing 1 kg of H{{_2}}O, 0.1 mol of CO{{_2}}, and 1 mol of mineral calcite (CaCO{{_3}}):</p>
+<p>We will now use this database, saved locally under the name <code class="docutils literal notranslate"><span class="pre">db-geo-complicated.yaml</span></code>, to perform a chemical equilibrium calculation in an initial chemical state at 25 °C and 1 bar containing 1 kg of H<sub>2</sub>O, 0.1 mol of CO<sub>2</sub>, and 1 mol of mineral calcite (CaCO<sub>3</sub>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -1294,13 +1303,13 @@ FINAL STATE
 </div>
 </div>
 </div>
-<p>The amounts of species above should be comparable. Not identical, because for some species in our custom database, we are not using the same calculation mode for equilibrium constants (e.g. in our custom database we use a certain value for $\lg K$ for <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, 16.681, while in <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> an analytic expression is used).</p>
+<p>The amounts of species above should be comparable. Not identical, because for some species in our custom database, we are not using the same calculation mode for equilibrium constants (e.g. in our custom database we use a certain value for <span class="math notranslate nohighlight">\(\lg K\)</span> for <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, 16.681, while in <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> an analytic expression is used).</p>
 </div>
 <div class="section" id="a-very-simple-custom-thermodynamic-database-using-python-api">
 <h2>A very simple custom thermodynamic database using Python API<a class="headerlink" href="#a-very-simple-custom-thermodynamic-database-using-python-api" title="Permalink to this headline">#</a></h2>
-<p>We will now construct a {{Database}} object using Reaktoro’s Python API only (no YAML files!). This is a more complicated way to construct a custom {{Database}} object, but maybe this guide can be helpful to you in ways we cannot foresee now.</p>
+<p>We will now construct a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object using Reaktoro’s Python API only (no YAML files!). This is a more complicated way to construct a custom <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object, but maybe this guide can be helpful to you in ways we cannot foresee now.</p>
 <p>We want to construct a database to model the equilibrium of <code class="docutils literal notranslate"><span class="pre">H2O</span></code>, <code class="docutils literal notranslate"><span class="pre">H+</span></code>, and <code class="docutils literal notranslate"><span class="pre">OH-</span></code>. The elements composing these species are <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">O</span></code>.</p>
-<p>The code block below implements function <code class="docutils literal notranslate"><span class="pre">createElementList</span></code> that construct an {{ElementList}} object containing the {{Element}} objects that constitute the {{Species}} objects we will construct next:</p>
+<p>The code block below implements function <code class="docutils literal notranslate"><span class="pre">createElementList</span></code> that construct an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ElementList.html"><code class="docutils literal notranslate"><span class="pre">ElementList</span></code></a> object containing the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Element.html"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a> objects that constitute the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a> objects we will construct next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createElementList</span><span class="p">():</span>
@@ -1321,7 +1330,7 @@ FINAL STATE
 </div>
 </div>
 </div>
-<p>We now define a function <code class="docutils literal notranslate"><span class="pre">createSpeciesList</span></code> that construct the {{Species}} objects that will populate our {{Database}} object:</p>
+<p>We now define a function <code class="docutils literal notranslate"><span class="pre">createSpeciesList</span></code> that construct the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a> objects that will populate our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createSpeciesList</span><span class="p">(</span><span class="n">elements</span><span class="p">:</span> <span class="n">ElementList</span><span class="p">):</span>
@@ -1367,7 +1376,7 @@ FINAL STATE
 </div>
 </div>
 </div>
-<p>We now create our auxiliary <code class="docutils literal notranslate"><span class="pre">createCustomDatabase</span></code> function that creates our {{Database}} object:</p>
+<p>We now create our auxiliary <code class="docutils literal notranslate"><span class="pre">createCustomDatabase</span></code> function that creates our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createCustomDatabase</span><span class="p">():</span>

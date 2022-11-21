@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -420,7 +422,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -738,24 +743,27 @@ title="Print to PDF"
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 21th, 2022</p>
 <p>This tutorial demonstrates the use of Reaktoro for the computation of standard thermodynamic properties of a chemical reaction such as:</p>
 <ul class="simple">
-<li><p>the equilibrium constant of reaction, $K_r$</p></li>
-<li><p>the standard Gibbs energy of reaction, $\Delta G_r^\circ$</p></li>
-<li><p>the standard Helmholtz energy of reaction, $\Delta A_r^\circ$</p></li>
-<li><p>the standard enthalpy of reaction, $\Delta H_r^\circ$</p></li>
-<li><p>the standard internal energy of reaction, $\Delta U_r^\circ$</p></li>
-<li><p>the standard entropy of reaction, $\Delta S_r^\circ$</p></li>
-<li><p>the standard volume of reaction, $\Delta V_r^\circ$</p></li>
-<li><p>the standard heat capacity (constant pressure) of reaction, $\Delta C_{P,r}^\circ$</p></li>
-<li><p>the standard heat capacity (constant volume) of reaction, $\Delta C_{V,r}^\circ$</p></li>
+<li><p>the equilibrium constant of reaction, <span class="math notranslate nohighlight">\(K_r\)</span></p></li>
+<li><p>the standard Gibbs energy of reaction, <span class="math notranslate nohighlight">\(\Delta G_r^\circ\)</span></p></li>
+<li><p>the standard Helmholtz energy of reaction, <span class="math notranslate nohighlight">\(\Delta A_r^\circ\)</span></p></li>
+<li><p>the standard enthalpy of reaction, <span class="math notranslate nohighlight">\(\Delta H_r^\circ\)</span></p></li>
+<li><p>the standard internal energy of reaction, <span class="math notranslate nohighlight">\(\Delta U_r^\circ\)</span></p></li>
+<li><p>the standard entropy of reaction, <span class="math notranslate nohighlight">\(\Delta S_r^\circ\)</span></p></li>
+<li><p>the standard volume of reaction, <span class="math notranslate nohighlight">\(\Delta V_r^\circ\)</span></p></li>
+<li><p>the standard heat capacity (constant pressure) of reaction, <span class="math notranslate nohighlight">\(\Delta C_{P,r}^\circ\)</span></p></li>
+<li><p>the standard heat capacity (constant volume) of reaction, <span class="math notranslate nohighlight">\(\Delta C_{V,r}^\circ\)</span></p></li>
 </ul>
 <p>Reaktoro computes these reaction properties using the standard thermodynamic properties of the reacting species at a given temperature and pressure. For example, consider the reaction</p>
-<p>$$2\mathrm{A}+3\mathrm{B}=\mathrm{C}.$$</p>
+<div class="math notranslate nohighlight">
+\[2\mathrm{A}+3\mathrm{B}=\mathrm{C}.\]</div>
 <p>The standard Gibbs energy of this reaction is computed using</p>
-<p>$$\Delta G_{r}^{\circ}=G_{\mathrm{C}}^{\circ}-2G_{\mathrm{A}}^{\circ}-3G_{\mathrm{B}}^{\circ}.$$</p>
-<p>This rationale (stoichiometric property contribution from product species minus the contribution of reactant species) can be applied to all other standard thermodynamic properties (e.g., $\Delta H_r^\circ$) and every reaction.</p>
+<div class="math notranslate nohighlight">
+\[\Delta G_{r}^{\circ}=G_{\mathrm{C}}^{\circ}-2G_{\mathrm{A}}^{\circ}-3G_{\mathrm{B}}^{\circ}.\]</div>
+<p>This rationale (stoichiometric property contribution from product species minus the contribution of reactant species) can be applied to all other standard thermodynamic properties (e.g., <span class="math notranslate nohighlight">\(\Delta H_r^\circ\)</span>) and every reaction.</p>
 <p>The equilibrium constant of the reaction is defined as:</p>
-<p>$$\ln K_r = -\dfrac{\Delta G^{\circ}_m}{RT}$$</p>
-<p>but it’s often handled in logarithm base 10, $\lg K_r = \ln K_r/\ln 10$.</p>
+<div class="math notranslate nohighlight">
+\[\ln K_r = -\dfrac{\Delta G^{\circ}_m}{RT}\]</div>
+<p>but it’s often handled in logarithm base 10, <span class="math notranslate nohighlight">\(\lg K_r = \ln K_r/\ln 10\)</span>.</p>
 <p>It’s very easy to compute these reaction properties in Reaktoro as shown next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

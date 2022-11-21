@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -736,7 +739,7 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="creating-chemical-states">
 <h1>Creating chemical states<a class="headerlink" href="#creating-chemical-states" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4, 2022. Last revised on Feb 3, 2022.</p>
-<p>After learning how to define chemical systems and create a {{ChemicalSystem}} object, it is time to create some chemical states. In your applications, you will most often deal with a single {{ChemicalSystem}} object and multiple {{ChemicalState}} objects in which the system’s temperature, pressure, and species amounts are specified.</p>
+<p>After learning how to define chemical systems and create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, it is time to create some chemical states. In your applications, you will most often deal with a single <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object and multiple <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects in which the system’s temperature, pressure, and species amounts are specified.</p>
 <p>Let’s check the following simple example, in which a chemical system is constructed with a gaseous phase only.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -751,7 +754,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can now create a {{ChemicalState}} object to represent the state of the system:</p>
+<p>We can now create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object to represent the state of the system:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -799,12 +802,12 @@ title="Print to PDF"
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Access the link {{ChemicalState}} to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code>!</p>
+<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code>!</p>
 </div>
-<p>From the table above we see that {{ChemicalState}} objects do not have thermodynamic properties of the system; only temperature, pressure, species amounts, element amounts, and the electric charge. We will learn in the next guide how to evaluate thermodynamic and chemical properties of the system such as Gibbs energy, enthalpy, volume, heat capacities, species activities, etc.</p>
+<p>From the table above we see that <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects do not have thermodynamic properties of the system; only temperature, pressure, species amounts, element amounts, and the electric charge. We will learn in the next guide how to evaluate thermodynamic and chemical properties of the system such as Gibbs energy, enthalpy, volume, heat capacities, species activities, etc.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You will often use class {{ChemicalState}} for:</p>
+<p>You will often use class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> for:</p>
 <ul class="simple">
 <li><p>specifying initial conditions for chemical equilibrium and kinetics calculations</p></li>
 <li><p>storing computed states from the above computations (e.g., chemical equilibrium states)</p></li>
@@ -880,17 +883,17 @@ title="Print to PDF"
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>By default, a {{ChemicalState}} object is initialized with the following conditions:</p>
+<p>By default, a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object is initialized with the following conditions:</p>
 <ul class="simple">
 <li><p>273.15 K (or 25 °C)</p></li>
 <li><p>10<sup>5</sup> Pa (or 1 bar)</p></li>
 <li><p>10<sup>-16</sup> mol as the amounts of every species</p></li>
 </ul>
 <p>Zero is a numerically problematic value for species amounts; that’s why we set it to a very small positive value instead. This should not be an issue for you in most cases, but if for some reason 10<sup>-16</sup> is not small enough, you can use the method <code class="docutils literal notranslate"><span class="pre">ChemicalState.setSpeciesAmount(1e-40)</span></code> to set a common amount value for all species in the system.</p>
-<p><strong>Try:</strong> Create a {{ChemicalState}} object and print it before setting any property.</p>
+<p><strong>Try:</strong> Create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object and print it before setting any property.</p>
 </div>
-<p>{{ChemicalState}} objects start with no surface areas. As you set surface areas for some phase pairs, interphase surface information is saved in the {{ChemicalState}} object. The code below demonstrates how to access the phase pairs for which surfaces areas have been set and retrieve their values:</p>
-<p>That’s it. Now you know how to create {{ChemicalState}} objects and how to set their temperature, pressure, and species amounts/mass. Continue reading to learn more interesting use cases for {{ChemicalState}}, such as computing thermodynamic and chemical properties for the system using class {{ChemicalProps}}!</p>
+<p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects start with no surface areas. As you set surface areas for some phase pairs, interphase surface information is saved in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object. The code below demonstrates how to access the phase pairs for which surfaces areas have been set and retrieve their values:</p>
+<p>That’s it. Now you know how to create <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects and how to set their temperature, pressure, and species amounts/mass. Continue reading to learn more interesting use cases for <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>, such as computing thermodynamic and chemical properties for the system using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>!</p>
 </div>
 
     <script type="text/x-thebe-config">

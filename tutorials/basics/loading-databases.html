@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -420,7 +422,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -871,22 +876,22 @@ title="Print to PDF"
 <h1>Loading thermodynamic databases<a class="headerlink" href="#loading-thermodynamic-databases" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 5th, 2022
 <p>Reaktoro requires thermodynamic databases to calculate the thermodynamic properties of chemical species and reactions. These properties are necessary when performing chemical equilibrium and kinetics calculations.</p>
-<p>Examples of such thermodynamic properties for a species $i$ include:</p>
+<p>Examples of such thermodynamic properties for a species <span class="math notranslate nohighlight">\(i\)</span> include:</p>
 <ul class="simple">
-<li><p>standard molar Gibbs energy, $G_i^\circ$</p></li>
-<li><p>standard molar Helmholtz energy, $A_i^\circ$</p></li>
-<li><p>standard molar enthalpy, $H_i^\circ$</p></li>
-<li><p>standard molar internal energy, $U_i^\circ$</p></li>
-<li><p>standard molar entropy, $S_i^\circ$</p></li>
-<li><p>standard molar volume, $V_i^\circ$</p></li>
-<li><p>standard molar heat capacity (constant pressure), $C_{P,i}^\circ$</p></li>
-<li><p>standard molar heat capacity (constant volume), $C_{V,i}^\circ$</p></li>
+<li><p>standard molar Gibbs energy, <span class="math notranslate nohighlight">\(G_i^\circ\)</span></p></li>
+<li><p>standard molar Helmholtz energy, <span class="math notranslate nohighlight">\(A_i^\circ\)</span></p></li>
+<li><p>standard molar enthalpy, <span class="math notranslate nohighlight">\(H_i^\circ\)</span></p></li>
+<li><p>standard molar internal energy, <span class="math notranslate nohighlight">\(U_i^\circ\)</span></p></li>
+<li><p>standard molar entropy, <span class="math notranslate nohighlight">\(S_i^\circ\)</span></p></li>
+<li><p>standard molar volume, <span class="math notranslate nohighlight">\(V_i^\circ\)</span></p></li>
+<li><p>standard molar heat capacity (constant pressure), <span class="math notranslate nohighlight">\(C_{P,i}^\circ\)</span></p></li>
+<li><p>standard molar heat capacity (constant volume), <span class="math notranslate nohighlight">\(C_{V,i}^\circ\)</span></p></li>
 </ul>
-<p>The standard thermodynamic properties of the above species can be used to calculate reaction properties, such as the following for a reaction $m$:</p>
+<p>The standard thermodynamic properties of the above species can be used to calculate reaction properties, such as the following for a reaction <span class="math notranslate nohighlight">\(m\)</span>:</p>
 <ul class="simple">
-<li><p>equilibrium constant of reaction, $K_m$</p></li>
-<li><p>standard Gibbs energy of reaction, $\Delta G_m^\circ$</p></li>
-<li><p>standard enthalpy of reaction, $\Delta H_m^\circ$</p></li>
+<li><p>equilibrium constant of reaction, <span class="math notranslate nohighlight">\(K_m\)</span></p></li>
+<li><p>standard Gibbs energy of reaction, <span class="math notranslate nohighlight">\(\Delta G_m^\circ\)</span></p></li>
+<li><p>standard enthalpy of reaction, <span class="math notranslate nohighlight">\(\Delta H_m^\circ\)</span></p></li>
 </ul>
 <p>Reaktoro currently supports thermodynamic databases from the following providers:</p>
 <ul class="simple">
@@ -898,14 +903,14 @@ title="Print to PDF"
 </ul>
 <p>The following classes exist for loading thermodynamic databases:</p>
 <ul class="simple">
-<li><p>{{PhreeqcDatabase}}</p></li>
-<li><p>{{SupcrtDatabase}}</p></li>
-<li><p>{{ThermoFunDatabase}}</p></li>
-<li><p>{{NasaDatabase}}</p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1PhreeqcDatabase.html"><code class="docutils literal notranslate"><span class="pre">PhreeqcDatabase</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SupcrtDatabase.html"><code class="docutils literal notranslate"><span class="pre">SupcrtDatabase</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ThermoFunDatabase.html"><code class="docutils literal notranslate"><span class="pre">ThermoFunDatabase</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1NasaDatabase.html"><code class="docutils literal notranslate"><span class="pre">NasaDatabase</span></code></a></p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>All these classes derive from the {{Database}} class. They exist to provide you additional convenience and functionality.</p>
+<p>All these classes derive from the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> class. They exist to provide you additional convenience and functionality.</p>
 </div>
 <p>Read the next sections to learn how different thermodynamic databases from distinct providers can be loaded in Reaktoro.</p>
 <div class="section" id="phreeqc-databases">

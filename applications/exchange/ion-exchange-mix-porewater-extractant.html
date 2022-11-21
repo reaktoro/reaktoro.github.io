@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Ion exchange competition among NaX, KX, and CaX{{_2}}" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html" />
+    <link rel="next" title="Ion exchange competition among NaX, KX, and CaX2" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html" />
     <link rel="prev" title="Ion exchange in dune sand and groundwater" href="ion-exchange-dune-sand.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -420,7 +422,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -736,7 +741,7 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="extraction-of-exchangeable-cations-in-dune-sand">
 <h1>Extraction of exchangeable cations in dune sand<a class="headerlink" href="#extraction-of-exchangeable-cations-in-dune-sand" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Svetlana Kyas (ETH Zurich) on Mar 10th, 2022</p>
-<p>This tutorial models an extraction of exchangeable cations in dune sand discussed in the previous tutorial. The extractant is represented by the 1-molal NaCl brine. Usually, the extraction must be repeated more than once since not all CaX{{_2}} is displaced in the first step.</p>
+<p>This tutorial models an extraction of exchangeable cations in dune sand discussed in the previous tutorial. The extractant is represented by the 1-molal NaCl brine. Usually, the extraction must be repeated more than once since not all CaX<sub>2</sub> is displaced in the first step.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>According to <span id="id1">[<a class="reference internal" href="../../tutorials/bibliography.html#id501">Appelo and Postma, 2005</a>]</span>, due to the low CEC (cation exchange capacity) of the sample, the low concentrations can be analyzed only if pure NaCl is used in the extraction.</p>
@@ -818,7 +823,7 @@ END
 </div>
 </div>
 </div>
-<p>Instead of printing out a complete table of the aqueous and exchange properties, one can fetch only concrete properties, e.g., species amounts, equivalence fractions, etc. Below, we output ionic strength, the charge of the obtained solution, and its pH. Besides, we are also interested to track the amount of exchangeable cations CaX{{_2}} and MgX{{_2}} alongside NaX.</p>
+<p>Instead of printing out a complete table of the aqueous and exchange properties, one can fetch only concrete properties, e.g., species amounts, equivalence fractions, etc. Below, we output ionic strength, the charge of the obtained solution, and its pH. Besides, we are also interested to track the amount of exchangeable cations CaX<sub>2</sub> and MgX<sub>2</sub> alongside NaX.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Porewater in equilibrium with exchanger X:&quot;</span><span class="p">)</span>
@@ -861,12 +866,13 @@ END
 </pre></div>
 </div>
 <p>Here, we place 5 g of soil in a centrifuge tube and extract cations with 20 mL 1-molal NaCl-brine. This equilibration step is accompanied by the set of the following exchange reactions:</p>
-<p>$$
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{alignat}{2}
-{\rm Na}^+ + \tfrac{1}{2} {\rm CaX}_2 &amp; \rightleftharpoons \tfrac{1}{2} {\rm Ca^{+2}} + {\rm NaX}\
+{\rm Na}^+ + \tfrac{1}{2} {\rm CaX}_2 &amp; \rightleftharpoons \tfrac{1}{2} {\rm Ca^{+2}} + {\rm NaX}\\
 {\rm Na}^+ + \tfrac{1}{2} {\rm MgX}_2 &amp; \rightleftharpoons \tfrac{1}{2} {\rm Mg^{+2}} + {\rm NaX}
 \end{alignat}
-$$</p>
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span> <span class="o">=</span> <span class="mf">20e-3</span>
@@ -920,7 +926,7 @@ m(Na+)  = 0.0206827 molal
 </div>
 </div>
 </div>
-<p>Due to the presence of 1-molal brine, we obtain the one order of magnitude higher ionic strength after the second equilibration. The charge remains the same since the added extractant is neutral. We see that in comparison to the first equilibration, the amount of CaX{{_2}} and MgX{{_2}} species decrease due to the extensive presence of sodium ions (provided by the extractant), whereas the amount of NaX became one order of magnitude higher.</p>
+<p>Due to the presence of 1-molal brine, we obtain the one order of magnitude higher ionic strength after the second equilibration. The charge remains the same since the added extractant is neutral. We see that in comparison to the first equilibration, the amount of CaX<sub>2</sub> and MgX<sub>2</sub> species decrease due to the extensive presence of sodium ions (provided by the extractant), whereas the amount of NaX became one order of magnitude higher.</p>
 <p>As the third step, we try to replicate the PHREEQC script</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>USE exchange 1 # repeat extraction, 2nd time
 MIX # 20 g new extractant, 2.5 g of the old extractant
@@ -1016,7 +1022,7 @@ n(NaX)  = 3.62897e-06 mole
     <a class='right-next' id="next-link" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ion exchange competition among NaX, KX, and CaX{{_2}}</p>
+        <p class="prev-next-title">Ion exchange competition among NaX, KX, and CaX<sub>2</sub></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

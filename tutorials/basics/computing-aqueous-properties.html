@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -736,9 +739,9 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="computing-aqueous-properties">
 <h1>Computing aqueous properties<a class="headerlink" href="#computing-aqueous-properties" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
-<p>If you are interested in aqueous solutions of electrolytes, you are probably wondering why there are no methods in the {{ChemicalProps}} class to obtain pH, pE, Eh, ionic strength, molalities, and other aqueous properties.</p>
-<p>{{ChemicalProps}} is a class that stores general thermodynamic and chemical properties for systems, their phases and species. Reaktoro does not assume that you always have an aqueous phase in your chemical system. So it wouldn’t make sense to have specific aqueous properties on {{ChemicalProps}}.</p>
-<p>Reaktoro has what you want though: the {{AqueousProps}} class. We demonstrate its use below:</p>
+<p>If you are interested in aqueous solutions of electrolytes, you are probably wondering why there are no methods in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> class to obtain pH, pE, Eh, ionic strength, molalities, and other aqueous properties.</p>
+<p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> is a class that stores general thermodynamic and chemical properties for systems, their phases and species. Reaktoro does not assume that you always have an aqueous phase in your chemical system. So it wouldn’t make sense to have specific aqueous properties on <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>.</p>
+<p>Reaktoro has what you want though: the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> class. We demonstrate its use below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -830,7 +833,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s now use some methods from class {{AqueousProps}} to retrieve some specific aqueous properties:</p>
+<p>Let’s now use some methods from class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> to retrieve some specific aqueous properties:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pH                              :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">())</span>
@@ -861,7 +864,7 @@ MOLALITY OF AQUEOUS SPECIES Na+ : 0.997367 molal
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Access the link {{AqueousProps}} to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code> to get the exact data you need!</p>
+<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code> to get the exact data you need!</p>
 </div>
 </div>
 

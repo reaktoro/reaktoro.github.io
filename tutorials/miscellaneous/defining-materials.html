@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -788,10 +791,10 @@ title="Print to PDF"
 <li><p>immediately find a chemical equilibrium state that satisfies the desired constraints; or</p></li>
 <li><p>compute a sequence of states describing the evolution of the system as it reacts over a period of time.</p></li>
 </ol>
-<p>In most cases, you should be able to construct an initial state in terms of <em>given amounts of chemical species in the system</em> using the {{ChemicalState}} class. However, this may not always be convenient or possible for you. In this tutorial, we show an alternative way to define an initial chemical state using the {{Material}} class. First, however, we give you an example that shows some disadvantages of working only with the {{ChemicalState}} class as a motivation to use {{Material}}.</p>
+<p>In most cases, you should be able to construct an initial state in terms of <em>given amounts of chemical species in the system</em> using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class. However, this may not always be convenient or possible for you. In this tutorial, we show an alternative way to define an initial chemical state using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> class. First, however, we give you an example that shows some disadvantages of working only with the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class as a motivation to use <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a>.</p>
 <div class="section" id="an-initial-chemical-state-not-so-conveniently-defined">
 <h2>An initial chemical state not so conveniently defined<a class="headerlink" href="#an-initial-chemical-state-not-so-conveniently-defined" title="Permalink to this headline">#</a></h2>
-<p>Consider an aqueous solution with the following molal composition: 1 molal NaCl, 0.1 molal CaCl{{_2}}, 0.05 molal MgCl{{_2}} and 0.1 molal CO{{_2}}. Consider a rock with the following mass composition: 80%<sub>kg</sub> quartz (SiO{{_2}}) and 20%<sub>kg</sub> calcite (CaCO{{_3}}). Mix 1 kg of this aqueous solution with 10 g of rock and find the chemical equilibrium state of the system (i.e., solution and minerals) at 60°C and 15 bar.</p>
+<p>Consider an aqueous solution with the following molal composition: 1 molal NaCl, 0.1 molal CaCl<sub>2</sub>, 0.05 molal MgCl<sub>2</sub> and 0.1 molal CO<sub>2</sub>. Consider a rock with the following mass composition: 80%<sub>kg</sub> quartz (SiO<sub>2</sub>) and 20%<sub>kg</sub> calcite (CaCO<sub>3</sub>). Mix 1 kg of this aqueous solution with 10 g of rock and find the chemical equilibrium state of the system (i.e., solution and minerals) at 60°C and 15 bar.</p>
 <p>As usual, we will start with the definition of a suitable chemical system to model this problem, which is done next.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -843,7 +846,7 @@ title="Print to PDF"
 </div>
 <p>While defining this initial chemical state, note that:</p>
 <ul class="simple">
-<li><p>we needed to specify amounts for ions <code class="docutils literal notranslate"><span class="pre">Na+</span></code>, <code class="docutils literal notranslate"><span class="pre">Ca+2</span></code>, and <code class="docutils literal notranslate"><span class="pre">Mg+2</span></code> that reflect the desired molality of NaCl, CaCl{{_2}}, and MgCl{{_2}}.</p></li>
+<li><p>we needed to specify amounts for ions <code class="docutils literal notranslate"><span class="pre">Na+</span></code>, <code class="docutils literal notranslate"><span class="pre">Ca+2</span></code>, and <code class="docutils literal notranslate"><span class="pre">Mg+2</span></code> that reflect the desired molality of NaCl, CaCl<sub>2</sub>, and MgCl<sub>2</sub>.</p></li>
 <li><p>we needed to specify an amount for <code class="docutils literal notranslate"><span class="pre">Cl-</span></code> that produces zero electric charge in the solution.</p></li>
 <li><p>we needed to provide species names exactly how they exist in the database instead of chemical formulas (e.g., names <code class="docutils literal notranslate"><span class="pre">Quartz</span></code> and <code class="docutils literal notranslate"><span class="pre">Calcite</span></code> instead of formulas <code class="docutils literal notranslate"><span class="pre">SiO2</span></code> and <code class="docutils literal notranslate"><span class="pre">CaCO3</span></code>).</p></li>
 <li><p>we needed to scale the mass of fluid and solids in the chemical state.</p></li>
@@ -916,7 +919,7 @@ title="Print to PDF"
 </div>
 <div class="section" id="simplifying-with-class-material">
 <h2>Simplifying with class Material<a class="headerlink" href="#simplifying-with-class-material" title="Permalink to this headline">#</a></h2>
-<p>Let’s now use class {{Material}} to obtain the same result with more convenience:</p>
+<p>Let’s now use class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> to obtain the same result with more convenience:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">brine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -991,10 +994,10 @@ title="Print to PDF"
 </div>
 </div>
 <p>The code above should (hopefully!) be intuitive enough and self-explanatory. The table printed above should also be identical (or extremely close!) to the previous one.</p>
-<p>That’s it; you now have an extra Reaktoro component in your arsenal when performing your chemical modeling. The {{Material}} class should provide that extra level of convenience if things get a little more confusing if only the {{ChemicalState}} class is used.</p>
+<p>That’s it; you now have an extra Reaktoro component in your arsenal when performing your chemical modeling. The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> class should provide that extra level of convenience if things get a little more confusing if only the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class is used.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>You may have to use the {{Material}} class more carefully if chemical kinetics is considered. In this case, it is critical that species undergoing chemical reactions controlled by kinetic rates must have their initial amounts explicitly specified in the {{ChemicalState}} object, using their names instead of their formulas to avoid ambiguity. For example, suppose the minerals calcite and quartz are to react kinetically with the aqueous solution (and the aqueous species react instantaneously at equilibrium). In that case, the initial amounts of these minerals must be given in the {{ChemicalState}} object. The code below should give you an idea of how to proceed in this scenario:</p>
+<p>You may have to use the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Material.html"><code class="docutils literal notranslate"><span class="pre">Material</span></code></a> class more carefully if chemical kinetics is considered. In this case, it is critical that species undergoing chemical reactions controlled by kinetic rates must have their initial amounts explicitly specified in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object, using their names instead of their formulas to avoid ambiguity. For example, suppose the minerals calcite and quartz are to react kinetically with the aqueous solution (and the aqueous species react instantaneously at equilibrium). In that case, the initial amounts of these minerals must be given in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object. The code below should give you an idea of how to proceed in this scenario:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">brine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Material</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 <span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>  <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
 <span class="n">brine</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">&quot;NaCl&quot;</span> <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
@@ -1011,7 +1014,7 @@ title="Print to PDF"
 <span class="n">states</span> <span class="o">=</span> <span class="nf">react</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;minutes&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><em><strong>Note</strong>: chemical kinetics (available in Reaktoro v1) is still in development in Reaktoro v2 (a completely new kinetics solver with modeling capabilities as extensive as the new equilibrium solver in Reaktoro v2). Thus, the <code class="docutils literal notranslate"><span class="pre">react</span></code> function above is still not available! If kinetics is already available in v2 and we forgot to remove this note, please report to us in {{Gitter}}.</em></p>
+<p><em><strong>Note</strong>: chemical kinetics (available in Reaktoro v1) is still in development in Reaktoro v2 (a completely new kinetics solver with modeling capabilities as extensive as the new equilibrium solver in Reaktoro v2). Thus, the <code class="docutils literal notranslate"><span class="pre">react</span></code> function above is still not available! If kinetics is already available in v2 and we forgot to remove this note, please report to us in <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</em></p>
 </div>
 </div>
 </div>

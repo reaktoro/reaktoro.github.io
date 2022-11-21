@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -783,7 +786,7 @@ title="Print to PDF"
 </ul>
 <p>Reaktoro’s chemical equilibrium algorithm supports all these cases because it implements an algorithm to solve <em>parametric Gibbs energy minimization problems with general equilibrium constraints</em>. Thus, Reaktoro is not restricted to closed systems and prescribed temperature and pressure conditions, as we will see in the following sections and tutorials.</p>
 </div>
-<p>We give a simple example below in which we demonstrate the most basic form of performing chemical equilibrium calculations in Reaktoro. In this example, we want to model the combustion of 1 mol of CH{{_4}} and 0.5 mol of O{{_2}} at 1000 ºC and 100 bar. First, we define a chemical system consisting of only a gaseous phase:</p>
+<p>We give a simple example below in which we demonstrate the most basic form of performing chemical equilibrium calculations in Reaktoro. In this example, we want to model the combustion of 1 mol of CH<sub>4</sub> and 0.5 mol of O<sub>2</sub> at 1000 ºC and 100 bar. First, we define a chemical system consisting of only a gaseous phase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -835,7 +838,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>And we finally create an {{EquilibriumSolver}} object to perform the desired chemical equilibrium calculation:</p>
+<p>And we finally create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object to perform the desired chemical equilibrium calculation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -873,7 +876,7 @@ title="Print to PDF"
 <p>Note that the initial and final amounts of the elements H, C, and O are identical (the same applies to the electric charge of the system, even though there are no charged species in this specific problem).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you’ve read the previous guides, you’ve probably already encountered the use of <code class="docutils literal notranslate"><span class="pre">equilibrate(state)</span></code> to bring <code class="docutils literal notranslate"><span class="pre">state</span></code>, an object of class {{ChemicalState}}, to a state of chemical equilibrium. This method exists for convenience and performs a Gibbs energy minimization on the entire chemical system. It is equivalent to using {{EquilibriumSolver}} as follows:</p>
+<p>If you’ve read the previous guides, you’ve probably already encountered the use of <code class="docutils literal notranslate"><span class="pre">equilibrate(state)</span></code> to bring <code class="docutils literal notranslate"><span class="pre">state</span></code>, an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>, to a state of chemical equilibrium. This method exists for convenience and performs a Gibbs energy minimization on the entire chemical system. It is equivalent to using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> as follows:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -881,7 +884,7 @@ title="Print to PDF"
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you need many equilibrium calculations (e.g. in the context of reactive transport simulations), consider using the {{EquilibriumSolver}} class instead of the {{equilibrate}} method, as the latter creates an {{EquilibriumSolver}} object during each call without reuse afterwards, which can cause computation overhead.</p>
+<p>If you need many equilibrium calculations (e.g. in the context of reactive transport simulations), consider using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> class instead of the <a class="reference external" href="https://reaktoro.org/api/namespaceReaktoro.html#a286e2972325304934d631234abef9e87"><code class="docutils literal notranslate"><span class="pre">equilibrate</span></code></a> method, as the latter creates an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object during each call without reuse afterwards, which can cause computation overhead.</p>
 </div>
 <div class="section" id="checking-if-the-calculation-was-successful">
 <h2>Checking if the calculation was successful<a class="headerlink" href="#checking-if-the-calculation-was-successful" title="Permalink to this headline">#</a></h2>

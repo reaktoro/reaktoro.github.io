@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -420,7 +422,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -823,24 +828,24 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="specifying-activity-models">
 <h1>Specifying activity models<a class="headerlink" href="#specifying-activity-models" title="Permalink to this headline">#</a></h1>
 <p>Activity models are needed to accurately represent the non-ideal thermodynamic behavior of aqueous, liquid, gaseous, solid, and plasma phases. They are required when computing thermodynamic properties of phases and their species, such as molar enthalpies, molar heat capacities, molar volume, molar entropies, molar internal energies, species activities, species chemical potentials, etc.. These properties can only be accurate if proper activity models are assigned to the phases. For example, for an aqueous solution at extreme saline conditions, an activity model designed for low salinity conditions will not perform well.</p>
-<p>In Reaktoro, an activity model assigned to a phase $\pi$ is a function for which the following inputs are given:</p>
+<p>In Reaktoro, an activity model assigned to a phase <span class="math notranslate nohighlight">\(\pi\)</span> is a function for which the following inputs are given:</p>
 <ul class="simple">
-<li><p>temperature (in K), $T$</p></li>
-<li><p>pressure (in Pa), $P$</p></li>
-<li><p>mole fractions of the species in phase $\pi$, $x=(x_1,\ldots,x_\mathrm{N_{\pi}})$</p></li>
+<li><p>temperature (in K), <span class="math notranslate nohighlight">\(T\)</span></p></li>
+<li><p>pressure (in Pa), <span class="math notranslate nohighlight">\(P\)</span></p></li>
+<li><p>mole fractions of the species in phase <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(x=(x_1,\ldots,x_\mathrm{N_{\pi}})\)</span></p></li>
 </ul>
 <p>The evaluation of this activity model produces the following <em>primary excess/residual thermodynamic properties</em> for the corresponding phase and its species:</p>
 <ul class="simple">
-<li><p>the excess/residual molar Gibbs energy of the phase (in units of J/mol), $G_\mathrm{ex}$</p></li>
-<li><p>the excess/residual molar enthalpy of the phase (in units of J/mol), $H_\mathrm{ex}$</p></li>
-<li><p>the excess/residual molar volume of the phase (in m<sup>3</sup>/mol), $V_\mathrm{ex}$</p></li>
-<li><p>the temperature derivative of the excess/residual molar volume at constant pressure (in m<sup>3</sup>/(mol·K)), $(\partial V_\mathrm{ex}/\partial T)_P$</p></li>
-<li><p>the pressure derivative of the excess/residual molar volume at constant temperature (in m<sup>3</sup>/(mol·Pa)), $(\partial V_\mathrm{ex}/\partial P)_T$</p></li>
-<li><p>the excess/residual molar isobaric heat capacity of the phase (in units of J/(mol·K)), $C_{P,\mathrm{ex}}$</p></li>
-<li><p>the activity coefficient $\gamma_i$ of every species in the phase, for $i=1,\ldots,\mathrm{N_{\pi}}$</p></li>
-<li><p>the activity $a_i$ of every species in the phase, for $i=1,\ldots,\mathrm{N_{\pi}}$</p></li>
+<li><p>the excess/residual molar Gibbs energy of the phase (in units of J/mol), <span class="math notranslate nohighlight">\(G_\mathrm{ex}\)</span></p></li>
+<li><p>the excess/residual molar enthalpy of the phase (in units of J/mol), <span class="math notranslate nohighlight">\(H_\mathrm{ex}\)</span></p></li>
+<li><p>the excess/residual molar volume of the phase (in m<sup>3</sup>/mol), <span class="math notranslate nohighlight">\(V_\mathrm{ex}\)</span></p></li>
+<li><p>the temperature derivative of the excess/residual molar volume at constant pressure (in m<sup>3</sup>/(mol·K)), <span class="math notranslate nohighlight">\((\partial V_\mathrm{ex}/\partial T)_P\)</span></p></li>
+<li><p>the pressure derivative of the excess/residual molar volume at constant temperature (in m<sup>3</sup>/(mol·Pa)), <span class="math notranslate nohighlight">\((\partial V_\mathrm{ex}/\partial P)_T\)</span></p></li>
+<li><p>the excess/residual molar isobaric heat capacity of the phase (in units of J/(mol·K)), <span class="math notranslate nohighlight">\(C_{P,\mathrm{ex}}\)</span></p></li>
+<li><p>the activity coefficient <span class="math notranslate nohighlight">\(\gamma_i\)</span> of every species in the phase, for <span class="math notranslate nohighlight">\(i=1,\ldots,\mathrm{N_{\pi}}\)</span></p></li>
+<li><p>the activity <span class="math notranslate nohighlight">\(a_i\)</span> of every species in the phase, for <span class="math notranslate nohighlight">\(i=1,\ldots,\mathrm{N_{\pi}}\)</span></p></li>
 </ul>
-<p>Once we have computed these <em>primary excess/residual thermodynamic properties</em>, we can determine all others if needed (i.e., the <em>secondary excess/residual thermodynamic properties</em>). For example, the excess internal energy can be computed as $U_\mathrm{ex} = H_\mathrm{ex} - P V_\mathrm{ex}$.</p>
+<p>Once we have computed these <em>primary excess/residual thermodynamic properties</em>, we can determine all others if needed (i.e., the <em>secondary excess/residual thermodynamic properties</em>). For example, the excess internal energy can be computed as <span class="math notranslate nohighlight">\(U_\mathrm{ex} = H_\mathrm{ex} - P V_\mathrm{ex}\)</span>.</p>
 <p>By default, all phases in Reaktoro are created with <em>ideal activity models</em> if not explicitly specified. The ideal models produce zero excess/residual properties for the phase and unit activity coefficients (thus, no correction for the non-ideal thermodynamic behavior of phases).</p>
 <p>The code block that we present below:</p>
 <div class="cell docutils container">
@@ -910,7 +915,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s create a chemical state for this system (using {{ChemicalState}} class), and set it so that we have a 1 molal NaCl saline solution. We then compute its chemical properties (using class {{ChemicalProps}}) and print the activity coefficients, $\gamma_i$, of the species.</p>
+<p>Let’s create a chemical state for this system (using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class), and set it so that we have a 1 molal NaCl saline solution. We then compute its chemical properties (using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>) and print the activity coefficients, <span class="math notranslate nohighlight">\(\gamma_i\)</span>, of the species.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -941,10 +946,11 @@ O2                  1.25894
 </div>
 </div>
 </div>
-<p>Note above that the activity coefficients for neutral species other than H{{_2}}O are identical. This is because most aqueous activity models do not properly compute activity coefficients for these species (or their default variants do not contain model parameters for them).</p>
+<p>Note above that the activity coefficients for neutral species other than H<sub>2</sub>O are identical. This is because most aqueous activity models do not properly compute activity coefficients for these species (or their default variants do not contain model parameters for them).</p>
 <p>One way to overcome or improve this is to combine an aqueous activity model with <em>Setschenow model</em>, so that the following equation:</p>
-<p>$$\log_{10}\gamma_i = b_i I$$</p>
-<p>is used instead to compute the activity coefficient of a neutral species $i$, where $I$ is the ionic strength of the solution and $b_i$ is a <em>Setschenow constant</em>.</p>
+<div class="math notranslate nohighlight">
+\[\log_{10}\gamma_i = b_i I\]</div>
+<p>is used instead to compute the activity coefficient of a neutral species <span class="math notranslate nohighlight">\(i\)</span>, where <span class="math notranslate nohighlight">\(I\)</span> is the ionic strength of the solution and <span class="math notranslate nohighlight">\(b_i\)</span> is a <em>Setschenow constant</em>.</p>
 <p>We recreate the chemical system in the next code block in which a <em>chained activity model</em> is constructed so that the above Setschenow equation is applied for the activity coefficients of species <code class="docutils literal notranslate"><span class="pre">O2</span></code>, <code class="docutils literal notranslate"><span class="pre">H2</span></code>, and <code class="docutils literal notranslate"><span class="pre">NaOH</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1021,7 +1027,7 @@ O2                  1.32741
 </div>
 <div class="section" id="specifying-activity-models-for-gaseous-and-liquid-phases">
 <h2>Specifying activity models for gaseous and liquid phases<a class="headerlink" href="#specifying-activity-models-for-gaseous-and-liquid-phases" title="Permalink to this headline">#</a></h2>
-<p>Reaktoro implements a general form of the cubic equation of state as presented in <span id="id3">Smith <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id57">2005</a>]</span> from which classic models are derived. You can assign one of the following models to an {{GaseousPhase}} or {{LiquidPhase}} object:</p>
+<p>Reaktoro implements a general form of the cubic equation of state as presented in <span id="id3">Smith <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id57">2005</a>]</span> from which classic models are derived. You can assign one of the following models to an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a> or <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a> object:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelPengRobinson</span></code> (<span id="id4">Peng and Robinson [<a class="reference internal" href="../bibliography.html#id761">1976</a>]</span>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelRedlichKwong</span></code> (<span id="id5">Redlich and Kwong [<a class="reference internal" href="../bibliography.html#id888">1949</a>]</span>)</p></li>
@@ -1030,8 +1036,8 @@ O2                  1.32741
 </ul>
 <p>Reaktoro also implements some equations of state designed for specific gaseous phases:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherPruessEnnis</span></code> (for H{{_2}}O-CO{{_2}} gas mixtures, <span id="id8">Spycher <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id720">2003</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherReed</span></code> (for H{{_2}}O-CO{{_2}}-CH{{_4}} gas mixtures, <span id="id9">Spycher and Reed [<a class="reference internal" href="../bibliography.html#id778">1988</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherPruessEnnis</span></code> (for H<sub>2</sub>O-CO<sub>2</sub> gas mixtures, <span id="id8">Spycher <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id720">2003</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherReed</span></code> (for H<sub>2</sub>O-CO<sub>2</sub>-CH<sub>4</sub> gas mixtures, <span id="id9">Spycher and Reed [<a class="reference internal" href="../bibliography.html#id778">1988</a>]</span>)</p></li>
 </ul>
 <p>The example below demonstrates the use of <span id="id10">Peng and Robinson [<a class="reference internal" href="../bibliography.html#id761">1976</a>]</span> equation of state as the activity model for a gaseous phase:</p>
 <div class="cell docutils container">
@@ -1209,11 +1215,13 @@ H2(g)     1.02158
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelRedlichKister</span></code></p></li>
 </ul>
-<p>The Redlich-Kister model assumes a solution with two solid species, and their activity coefficients, $\gamma_1$ and $\gamma_2$, are calculated as follows:</p>
-<p>$$\ln\gamma_{1}=x_{2}^{2}[a_{0}+a_{1}(3x_{1}-x_{2})+a_{2}(x_{1}-x_{2})(5x_{1}-x_{2}),$$
-$$\ln\gamma_{2}=x_{1}^{2}[a_{0}-a_{1}(3x_{2}-x_{1})+a_{2}(x_{2}-x_{1})(5x_{2}-x_{1}),$$</p>
-<p>where $a_0$, $a_1$, $a_2$ are model parameters; $x_i$ is the mole fraction of the species $i$ in the solution.</p>
-<p>We show below how to create a chemical system with a single solid solution phase formed with minerals K-feldspar (KAlSi{{_3}}O{{_8}}) and albite (NaAlSi{{_3}}O{{_8}}) with assiged Redlich-Kister activity model:</p>
+<p>The Redlich-Kister model assumes a solution with two solid species, and their activity coefficients, <span class="math notranslate nohighlight">\(\gamma_1\)</span> and <span class="math notranslate nohighlight">\(\gamma_2\)</span>, are calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[\ln\gamma_{1}=x_{2}^{2}[a_{0}+a_{1}(3x_{1}-x_{2})+a_{2}(x_{1}-x_{2})(5x_{1}-x_{2}),\]</div>
+<div class="math notranslate nohighlight">
+\[\ln\gamma_{2}=x_{1}^{2}[a_{0}-a_{1}(3x_{2}-x_{1})+a_{2}(x_{2}-x_{1})(5x_{2}-x_{1}),\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span> are model parameters; <span class="math notranslate nohighlight">\(x_i\)</span> is the mole fraction of the species <span class="math notranslate nohighlight">\(i\)</span> in the solution.</p>
+<p>We show below how to create a chemical system with a single solid solution phase formed with minerals K-feldspar (KAlSi<sub>3</sub>O<sub>8</sub>) and albite (NaAlSi<sub>3</sub>O<sub>8</sub>) with assiged Redlich-Kister activity model:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span>  <span class="c1"># the Redlich-Kister parameters (demonstration values!)</span>
@@ -1310,9 +1318,10 @@ $$\ln\gamma_{2}=x_{1}^{2}[a_{0}-a_{1}(3x_{2}-x_{1})+a_{2}(x_{2}-x_{1})(5x_{2}-x_
 </div>
 <div class="section" id="specifying-activity-models-for-ion-exchange-phases">
 <h2>Specifying activity models for ion exchange phases<a class="headerlink" href="#specifying-activity-models-for-ion-exchange-phases" title="Permalink to this headline">#</a></h2>
-<p>By default, ion exchange phases are created in Reaktoro with an ideal activity model assigned to it. This ideal model computes the activity of the $i$-th exchange species (e.g., NaX, KX, CaX{{_2}}) according to:</p>
-<p>$$a_i = \dfrac{x_i z_{\mathrm{e},i}}{\sum_k x_k z_{\mathrm{e},k} } $$</p>
-<p>where $z_{\mathrm{e},i}$ is the <em>exchanger’s equivalent</em> (e.g., 1 for NaX, 2 for CaX{{_2}}) and $x_i$ is the mole fraction of the exchange species.</p>
+<p>By default, ion exchange phases are created in Reaktoro with an ideal activity model assigned to it. This ideal model computes the activity of the <span class="math notranslate nohighlight">\(i\)</span>-th exchange species (e.g., NaX, KX, CaX<sub>2</sub>) according to:</p>
+<div class="math notranslate nohighlight">
+\[a_i = \dfrac{x_i z_{\mathrm{e},i}}{\sum_k x_k z_{\mathrm{e},k} } \]</div>
+<p>where <span class="math notranslate nohighlight">\(z_{\mathrm{e},i}\)</span> is the <em>exchanger’s equivalent</em> (e.g., 1 for NaX, 2 for CaX<sub>2</sub>) and <span class="math notranslate nohighlight">\(x_i\)</span> is the mole fraction of the exchange species.</p>
 <p>For non-ideal activity models for ion exchange phases, the following is currently available in Reaktoro:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelIonExchangeGainesThomas</span></code></p></li>

@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -736,7 +739,7 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="computing-chemical-properties">
 <h1>Computing chemical properties<a class="headerlink" href="#computing-chemical-properties" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
-<p>You have now learned how to create a {{ChemicalSystem}} object and {{ChemicalState}} objects representing the chemical state of that system. We will now demonstrate how thermodynamic and chemical properties of the system, its phases, and constituting species can be calculated using class {{ChemicalProps}}.</p>
+<p>You have now learned how to create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object and <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects representing the chemical state of that system. We will now demonstrate how thermodynamic and chemical properties of the system, its phases, and constituting species can be calculated using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>.</p>
 <p>Let’s start with a simple chemical system containing a single aqueous phase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -751,7 +754,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s create a chemical state for this system representing a 1 molal NaCl solution with 0.7 molal dissolved CO{{_2}}:</p>
+<p>Let’s create a chemical state for this system representing a 1 molal NaCl solution with 0.7 molal dissolved CO<sub>2</sub>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -804,10 +807,10 @@ title="Print to PDF"
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We used the convenience method {{equilibrate}} above to quickly bring the {{ChemicalState}} object <code class="docutils literal notranslate"><span class="pre">state</span></code> into a state of chemical equilibrium. We will later learn how to use Reaktoro’s Gibbs energy minimization algorithm to perform a wide variety of chemical equilibrium calculations using class {{EquilibriumSolver}} together with class {{EquilibriumSpecs}}, which allows us to enforce different equilibrium constraints at equilibrium (e.g., fixed pH, pE, Eh, gas fugacity, enthalpy, internal energy, volume, etc.).</p>
+<p>We used the convenience method <a class="reference external" href="https://reaktoro.org/api/namespaceReaktoro.html#a286e2972325304934d631234abef9e87"><code class="docutils literal notranslate"><span class="pre">equilibrate</span></code></a> above to quickly bring the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object <code class="docutils literal notranslate"><span class="pre">state</span></code> into a state of chemical equilibrium. We will later learn how to use Reaktoro’s Gibbs energy minimization algorithm to perform a wide variety of chemical equilibrium calculations using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> together with class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a>, which allows us to enforce different equilibrium constraints at equilibrium (e.g., fixed pH, pE, Eh, gas fugacity, enthalpy, internal energy, volume, etc.).</p>
 </div>
-<p>We have seen that class {{ChemicalState}} is not responsible for computing thermodynamic and chemical properties of the system. It’s primary use is for preparing initial states for chemical equilibrium/kinetics calculations and also to store the result of these computations.</p>
-<p>Computing chemical properties of {{ChemicalSystem}} objects is a task for class {{ChemicalProps}}:</p>
+<p>We have seen that class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> is not responsible for computing thermodynamic and chemical properties of the system. It’s primary use is for preparing initial states for chemical equilibrium/kinetics calculations and also to store the result of these computations.</p>
+<p>Computing chemical properties of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> objects is a task for class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1079,9 +1082,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>By default, when defining a chemical system using {{AqueousPhase}}, {{GaseousPhase}}, {{LiquidPhase}}, {{SolidPhase}}, {{MineralPhase}}, {{CondensedPhase}}, {{IonExchangePhase}}, etc., these objects are created with <strong>ideal activity models</strong>. That’s why you should see unit activity coefficients above for all species.</p>
+<p>By default, when defining a chemical system using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousPhase.html"><code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SolidPhase.html"><code class="docutils literal notranslate"><span class="pre">SolidPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1MineralPhase.html"><code class="docutils literal notranslate"><span class="pre">MineralPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1CondensedPhase.html"><code class="docutils literal notranslate"><span class="pre">CondensedPhase</span></code></a>, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangePhase.html"><code class="docutils literal notranslate"><span class="pre">IonExchangePhase</span></code></a>, etc., these objects are created with <strong>ideal activity models</strong>. That’s why you should see unit activity coefficients above for all species.</p>
 <p>We will learn later how to specify more sophisticated and accurate activity models for each phase, but out of curiosity, we will define Pitzer’s activity model from <span id="id1">Harvie <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id994">1984</a>], Harvie and Weare [<a class="reference internal" href="../bibliography.html#id476">1980</a>]</span>. Let’s also consider a gaseous phase and some mineral phases. For the gaseous phase, we shall use Peng-Robinson’s equation of state <span id="id2">[<a class="reference internal" href="../bibliography.html#id761">Peng and Robinson, 1976</a>]</span> as its activity model.</p>
-<p>We will need to reconstruct the {{ChemicalSystem}} object, as well as the {{ChemicalState}} and {{ChemicalProps}} objects:</p>
+<p>We will need to reconstruct the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, as well as the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> and <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> objects:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca Si&quot;</span><span class="p">))</span>
@@ -1649,7 +1652,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>The results displayed above should now be a little more interesting.</p>
-<p>Now consider a scenario where your {{ChemicalState}} object <code class="docutils literal notranslate"><span class="pre">state</span></code> has changed, for example 1 mol of NaCl has been added to it and the temperature has increased by 10 °C. The chemical properties of the system must then be updated as shown below:</p>
+<p>Now consider a scenario where your <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> object <code class="docutils literal notranslate"><span class="pre">state</span></code> has changed, for example 1 mol of NaCl has been added to it and the temperature has increased by 10 °C. The chemical properties of the system must then be updated as shown below:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">70.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
@@ -2198,7 +2201,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The printed table above shows many different properties. Let’s now use some methods from class {{ChemicalProps}} to retrieve some specific properties for the system, its phases, and its species:</p>
+<p>The printed table above shows many different properties. Let’s now use some methods from class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> to retrieve some specific properties for the system, its phases, and its species:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SYSTEM&#39;S TEMPERATURE     :&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>                         <span class="p">,</span> <span class="s2">&quot;K&quot;</span>     <span class="p">)</span>
@@ -2247,7 +2250,7 @@ FUGACITY COEFF. O2(g)    : 1.0112
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Access the link {{ChemicalProps}} to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code> to get the exact data you need!</p>
+<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code> to get the exact data you need!</p>
 </div>
 </div>
 

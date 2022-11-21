@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -804,7 +807,7 @@ title="Print to PDF"
 <h1>Inspecting thermodynamic databases<a class="headerlink" href="#inspecting-thermodynamic-databases" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
 <p>This tutorial demonstrates how a thermodynamic database can be inspected programmatically using Reaktoro’s Python API. For this, we will consider the <a class="reference external" href="https://www.empa.ch/web/s308/cemdata">cemdata18</a> database supported in <a class="reference external" href="https://thermohub.org/thermofun/thermofun/">ThermoFun</a>.</p>
-<p>So, let’s get started by creating an object of class {{ThermoFunDatabase}}:</p>
+<p>So, let’s get started by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ThermoFunDatabase.html"><code class="docutils literal notranslate"><span class="pre">ThermoFunDatabase</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -814,7 +817,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We’ll use this <code class="docutils literal notranslate"><span class="pre">db</span></code> object throughout this tutorial to demonstrate all inspection capabilities available in class {{Database}} (yes, {{ThermoFunDatabase}} is a derived class from {{Database}})!</p>
+<p>We’ll use this <code class="docutils literal notranslate"><span class="pre">db</span></code> object throughout this tutorial to demonstrate all inspection capabilities available in class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> (yes, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ThermoFunDatabase.html"><code class="docutils literal notranslate"><span class="pre">ThermoFunDatabase</span></code></a> is a derived class from <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a>)!</p>
 <div class="section" id="inspecting-the-species-in-the-database">
 <h2>Inspecting the species in the database<a class="headerlink" href="#inspecting-the-species-in-the-database" title="Permalink to this headline">#</a></h2>
 <p>Let’s loop through all species in this database object and print its name, chemical formula, and molar mass:</p>
@@ -1181,13 +1184,13 @@ N         0.014007
 <p class="admonition-title">Tip</p>
 <p>You might want to check the API documentation of all Reaktoro components (classes and their methods) used in this tutorial:</p>
 <ul class="simple">
-<li><p>{{Database}}</p></li>
-<li><p>{{Element}}</p></li>
-<li><p>{{Species}}</p></li>
-<li><p>{{SpeciesList}}</p></li>
-<li><p>{{ElementList}}</p></li>
-<li><p>{{ChemicalFormula}}</p></li>
-<li><p>{{AggregateState}}</p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Element.html"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SpeciesList.html"><code class="docutils literal notranslate"><span class="pre">SpeciesList</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ElementList.html"><code class="docutils literal notranslate"><span class="pre">ElementList</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalFormula.html"><code class="docutils literal notranslate"><span class="pre">ChemicalFormula</span></code></a></p></li>
+<li><p><a class="reference external" href="https://reaktoro.org/api/namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd"><code class="docutils literal notranslate"><span class="pre">AggregateState</span></code></a></p></li>
 </ul>
 </div>
 </div>

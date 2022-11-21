@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -420,7 +422,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -736,7 +741,7 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-fixed-fugacity">
 <h1>Chemical equilibrium with fixed fugacity<a class="headerlink" href="#chemical-equilibrium-with-fixed-fugacity" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
-<p>This tutorial demonstrates the calculation of calcite (CaCO{{_3}}) solubility in a saline aqueous solution for given fugacity of CO{{_2}}.</p>
+<p>This tutorial demonstrates the calculation of calcite (CaCO<sub>3</sub>) solubility in a saline aqueous solution for given fugacity of CO<sub>2</sub>.</p>
 <p>The code block below produces a chemical system containing an aqueous phase (to model our saline aqueous solution) and a solid mineral phase (to model calcite mineral).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -758,9 +763,9 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>temperature,</p></li>
 <li><p>pressure, and</p></li>
-<li><p>fugacity of CO{{_2}}.</p></li>
+<li><p>fugacity of CO<sub>2</sub>.</p></li>
 </ul>
-<p>The next step is to create an object of class {{EquilibriumSpecs}} containing the above constraint specifications for the chemical equilibrium calculation we want to perform.</p>
+<p>The next step is to create an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> containing the above constraint specifications for the chemical equilibrium calculation we want to perform.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -773,7 +778,7 @@ title="Print to PDF"
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Because the fugacity of CO{{_2}} is constrained, the chemical equilibrium problem will presume that the system is open to CO{{_2}}. This means that during the calculation, enough CO{{_2}} is allowed to leave or enter the system so that the fugacity constraint is satisfied.</p>
+<p>Because the fugacity of CO<sub>2</sub> is constrained, the chemical equilibrium problem will presume that the system is open to CO<sub>2</sub>. This means that during the calculation, enough CO<sub>2</sub> is allowed to leave or enter the system so that the fugacity constraint is satisfied.</p>
 </div>
 <p>Once we have created this specifications object, we can now create our dedicated and optimized equilibrium solver to solve equilibrium problems with such constraints, which is done next:</p>
 <div class="cell docutils container">
@@ -783,7 +788,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s now create an initial chemical state for our chemical system, one that represents a 1 molal NaCl aqueous solution mixed with 10 g of calcite mineral. We do this next by creating an object of class {{ChemicalState}}:</p>
+<p>Let’s now create an initial chemical state for our chemical system, one that represents a 1 molal NaCl aqueous solution mixed with 10 g of calcite mineral. We do this next by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -801,7 +806,7 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>This initial chemical state is not yet in chemical equilibrium! The <code class="docutils literal notranslate"><span class="pre">state</span></code> object created above will be equilibrated later using <code class="docutils literal notranslate"><span class="pre">solver</span></code>.</p>
 </div>
-<p>Let’s now specify the temperature, pressure, and fugacity conditions (their actual values) we want to impose at equilibrium. We do this by using an object of class {{EquilibriumConditions}}:</p>
+<p>Let’s now specify the temperature, pressure, and fugacity conditions (their actual values) we want to impose at equilibrium. We do this by using an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fCO2g</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># 0.1 bar</span>
@@ -816,10 +821,10 @@ title="Print to PDF"
 </div>
 <p>We have everything we need now to perform the chemical equilibrium calculation:</p>
 <ul class="simple">
-<li><p>an equilibrium solver (the <code class="docutils literal notranslate"><span class="pre">solver</span></code> object of class {{EquilibriumSolver}});</p></li>
-<li><p>a chemical state to equilibrate (the <code class="docutils literal notranslate"><span class="pre">state</span></code> object of class {{ChemicalState}}); and</p></li>
+<li><p>an equilibrium solver (the <code class="docutils literal notranslate"><span class="pre">solver</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a>);</p></li>
+<li><p>a chemical state to equilibrate (the <code class="docutils literal notranslate"><span class="pre">state</span></code> object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>); and</p></li>
 <li><p>the conditions we are imposing for this equilibrium state (the <code class="docutils literal notranslate"><span class="pre">conditions</span></code>
-object of class {{EquilibriumConditions}}).</p></li>
+object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>).</p></li>
 </ul>
 <p>The code below will perform the equilibrium calculation and when it is finished, our <code class="docutils literal notranslate"><span class="pre">state</span></code> object will be in a chemical equilibrium state:</p>
 <div class="cell docutils container">
@@ -891,7 +896,7 @@ object of class {{EquilibriumConditions}}).</p></li>
 </div>
 <p>And this is it. The above table presents the computed chemical state at equilibrium for the entire chemical system (aqueous solution and mineral calcite). Note that calcite was not fully dissolved with the specified
 conditions, and the solution is thus saturated with it. If this was not the case, we should then have increased the initial amount of calcite (e.g., 100 g instead of 10 g), since we are interested in computing the solubility of calcite.</p>
-<p>Let’s now have a more in-depth look at the chemical state of the system by creating an object of class {{ChemicalProps}} and printing it:</p>
+<p>Let’s now have a more in-depth look at the chemical state of the system by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> and printing it:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1241,7 +1246,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 </div>
 <p>This table is long but gives you a complete picture of all the system’s important chemical and thermodynamic properties at the computed chemical equilibrium state. This table shows, for example, the activities of the
 species, their chemical potentials, and standard thermodynamic properties.</p>
-<p>For properties more pertinent to aqueous solutions, we can create an object of class {{AqueousProps}}:</p>
+<p>For properties more pertinent to aqueous solutions, we can create an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1300,15 +1305,17 @@ species, their chemical potentials, and standard thermodynamic properties.</p>
 </div>
 </div>
 <p>Let’s now find out if our computed chemical equilibrium state satisfies the imposed fugacity constraint. If this is the case, the following must be observed:</p>
-<p>$$\mu_{\mathrm{CO_{2}(aq)}}=\mu_{\mathrm{CO_{2}(g)}},$$</p>
+<div class="math notranslate nohighlight">
+\[\mu_{\mathrm{CO_{2}(aq)}}=\mu_{\mathrm{CO_{2}(g)}},\]</div>
 <p>where</p>
-<p>$$\mu_{\mathrm{CO_{2}(g)}}\equiv\mu_{\mathrm{CO_{2}(g)}}^{\circ}+RT\log f_{\mathrm{CO_{2}(g)}}.$$</p>
+<div class="math notranslate nohighlight">
+\[\mu_{\mathrm{CO_{2}(g)}}\equiv\mu_{\mathrm{CO_{2}(g)}}^{\circ}+RT\log f_{\mathrm{CO_{2}(g)}}.\]</div>
 <p>For the quantities above, note that:</p>
 <ul class="simple">
-<li><p>$\mu_{\mathrm{CO_{2}(aq)}}$, the chemical potential of aqueous species CO<sub>2</sub>, can be obtained from the {{ChemicalProps}} object;</p></li>
-<li><p>$\mu_{\mathrm{CO_{2}(g)}}^{\circ}$, the standard chemical potential of the gaseous species CO<sub>2</sub>(g), cannot be obtained from the {{ChemicalProps}} object because CO<sub>2</sub>(g) is not considered in the
+<li><p><span class="math notranslate nohighlight">\(\mu_{\mathrm{CO_{2}(aq)}}\)</span>, the chemical potential of aqueous species CO<sub>2</sub>, can be obtained from the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_{\mathrm{CO_{2}(g)}}^{\circ}\)</span>, the standard chemical potential of the gaseous species CO<sub>2</sub>(g), cannot be obtained from the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> object because CO<sub>2</sub>(g) is not considered in the
 chemical system. For this property, we can compute it at specified temperature and pressure conditions as shown next;</p></li>
-<li><p>$f_{\mathrm{CO_{2}(g)}}$ this is the imposed fugacity value for CO<sub>2</sub>(g).</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{\mathrm{CO_{2}(g)}}\)</span> this is the imposed fugacity value for CO<sub>2</sub>(g).</p></li>
 </ul>
 <p>The code below verifies the above identity:</p>
 <div class="cell docutils container">

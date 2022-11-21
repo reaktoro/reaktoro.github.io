@@ -419,7 +419,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -897,9 +900,9 @@ cmake ../../.. -DCMAKE_BUILD_TYPE=Debug
 <h2>Creating run and debug tasks for Reaktoro’s tests and examples<a class="headerlink" href="#creating-run-and-debug-tasks-for-reaktoro-s-tests-and-examples" title="Permalink to this headline">#</a></h2>
 <p>When doing Reaktoro development, you may want to debug:</p>
 <ul class="simple">
-<li><p>a C++ test <em>e.g., the C++ test for class {{ChemicalSystem }} implemented in <a class="reference external" href="https://github.com/reaktoro/reaktoro/blob/main/Reaktoro/Core/ChemicalSystem.test.cxx"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem.test.cxx</span></code></a></em></p></li>
+<li><p>a C++ test <em>e.g., the C++ test for class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> implemented in <a class="reference external" href="https://github.com/reaktoro/reaktoro/blob/main/Reaktoro/Core/ChemicalSystem.test.cxx"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem.test.cxx</span></code></a></em></p></li>
 <li><p>a C++ example <em>e.g., one of these <a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/examples/cpp">C++ examples</a></em></p></li>
-<li><p>a Python test <em>e.g., the Python test for class {{ChemicalSystem }} implemented in <a class="reference external" href="https://github.com/reaktoro/reaktoro/blob/main/Reaktoro/Core/ChemicalSystem.py"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem.py</span></code></a></em></p></li>
+<li><p>a Python test <em>e.g., the Python test for class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> implemented in <a class="reference external" href="https://github.com/reaktoro/reaktoro/blob/main/Reaktoro/Core/ChemicalSystem.py"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem.py</span></code></a></em></p></li>
 <li><p>a Python example <em>e.g., one of these <a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/examples/python">Python examples</a></em></p></li>
 </ul>
 <p>Pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+D</span></code> in Visual Studio Code allows you to execute and debug an application. You’ll need first to click on <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">a</span> <span class="pre">launch.json</span></code> and then select any shown option. Once the <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> file is created, replace its content by:</p>

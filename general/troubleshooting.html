@@ -420,7 +420,10 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX{{_2}}
+     Ion exchange competition among NaX, KX, and CaX
+     <sub>
+      2
+     </sub>
     </a>
    </li>
    <li class="toctree-l2">
@@ -773,7 +776,7 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h1>
-<p>Below are the most common issues our users encounter, for which we indicate the necessary action to resolve them potentially. If you cannot find your problem below or the solution provided is not working for you, don’t hesitate to get in touch with us at {{Gitter}}.</p>
+<p>Below are the most common issues our users encounter, for which we indicate the necessary action to resolve them potentially. If you cannot find your problem below or the solution provided is not working for you, don’t hesitate to get in touch with us at <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</p>
 <div class="section" id="modulenotfounderror-no-module-named-reaktoro">
 <h2>ModuleNotFoundError: No module named ‘reaktoro’<a class="headerlink" href="#modulenotfounderror-no-module-named-reaktoro" title="Permalink to this headline">#</a></h2>
 <p>The entire error message may be something like this:</p>
@@ -786,7 +789,7 @@ title="Print to PDF"
 </div>
 <div class="section" id="expecting-a-float-value-but-got-autodiff-real-instead">
 <h2>Expecting a float value but got autodiff.real instead<a class="headerlink" href="#expecting-a-float-value-but-got-autodiff-real-instead" title="Permalink to this headline">#</a></h2>
-<p>Reaktoro relies on number types defined in the {{autodiff}} library to enable automatic differentiation. It is because of {{autodiff}} that Reaktoro can have improved numerical algorithms and also compute derivatives of chemical/thermodynamic properties with respect to temperature, pressure, species amounts, and even the parameters used in the models.</p>
+<p>Reaktoro relies on number types defined in the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library to enable automatic differentiation. It is because of <a class="reference external" href="https://autodiff.github.io">autodiff</a> that Reaktoro can have improved numerical algorithms and also compute derivatives of chemical/thermodynamic properties with respect to temperature, pressure, species amounts, and even the parameters used in the models.</p>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">float</span></code> function to convert an <code class="docutils literal notranslate"><span class="pre">autodiff.real</span></code> number into a Python <code class="docutils literal notranslate"><span class="pre">float</span></code> number type. Below is an example using the method <code class="docutils literal notranslate"><span class="pre">ChemicalProps.activity</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert autodiff.real to float!</span>
 <span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">))</span>
@@ -802,7 +805,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">autodiff.VectorXreal1st</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">autodiff.VectorXreal1stConstRef</span></code></p></li>
 </ul>
-<p>These types are a combination of array/vector types from the C++ library <a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a> with the number types from the {{autodiff}} library, both C++ libraries.</p>
+<p>These types are a combination of array/vector types from the C++ library <a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a> with the number types from the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library, both C++ libraries.</p>
 <p>You can use the method <code class="docutils literal notranslate"><span class="pre">asarray</span></code> in these array/vector types to convert them to a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert from autodiff.ArrayXreal1stConstRef to numpy.array with float values</span>
 <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmounts</span><span class="p">()</span><span class="o">.</span><span class="nf">asarray</span><span class="p">()</span>

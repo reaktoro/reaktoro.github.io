@@ -1,0 +1,4 @@
+<map id="OptimumSolverActNewton" name="OptimumSolverActNewton">
+<area shape="rect" id="node1" title="The class that implements the ActNewton algorithm using an active&#45;set strategy." alt="" coords="5,80,200,107"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1OptimumSolverBase.html" title="The base class for all optimization algorithms." alt="" coords="25,5,181,32"/>
+</map>
