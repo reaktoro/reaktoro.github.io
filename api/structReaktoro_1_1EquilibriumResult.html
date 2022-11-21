@@ -140,15 +140,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
  <a href="structReaktoro_1_1EquilibriumResult.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="EquilibriumResult_8hpp_source.html">EquilibriumResult.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for EquilibriumResult:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structReaktoro_1_1EquilibriumResult__coll__graph.svg" width="187" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a8c436bf7c7a2af34896b3629b4d0020a"><td class="memItemLeft" align="right" valign="top"><a id="a8c436bf7c7a2af34896b3629b4d0020a"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumResult.html#a8c436bf7c7a2af34896b3629b4d0020a">succeeded</a> () const</td></tr>
+<tr class="memdesc:a8c436bf7c7a2af34896b3629b4d0020a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the calculation succeeded. <br /></td></tr>
+<tr class="separator:a8c436bf7c7a2af34896b3629b4d0020a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6de0b0dcf177ed828c9919fa2b87d1"><td class="memItemLeft" align="right" valign="top"><a id="a4b6de0b0dcf177ed828c9919fa2b87d1"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumResult.html#a4b6de0b0dcf177ed828c9919fa2b87d1">failed</a> () const</td></tr>
+<tr class="memdesc:a4b6de0b0dcf177ed828c9919fa2b87d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the calculation failed. <br /></td></tr>
+<tr class="separator:a4b6de0b0dcf177ed828c9919fa2b87d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4510e5933eb7b43c663940e5137ad9a8"><td class="memItemLeft" align="right" valign="top"><a id="a4510e5933eb7b43c663940e5137ad9a8"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumResult.html#a4510e5933eb7b43c663940e5137ad9a8">iterations</a> () const</td></tr>
+<tr class="memdesc:a4510e5933eb7b43c663940e5137ad9a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of iterations in the calculation. <br /></td></tr>
+<tr class="separator:a4510e5933eb7b43c663940e5137ad9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14e1875363dab74113e48e04bcdf2310"><td class="memItemLeft" align="right" valign="top"><a id="a14e1875363dab74113e48e04bcdf2310"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumResult.html#a14e1875363dab74113e48e04bcdf2310">operator+=</a> (const <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a> &amp;other) -&gt; <a class="el" href="structReaktoro_1_1EquilibriumResult.html">EquilibriumResult</a> &amp;</td></tr>
 <tr class="memdesc:a14e1875363dab74113e48e04bcdf2310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply an addition assignment to this instance. <br /></td></tr>
@@ -160,10 +166,6 @@ Public Attributes</h2></td></tr>
 Optima::Result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumResult.html#a39fce64e37d8a2493f4ff764708d958a">optima</a></td></tr>
 <tr class="memdesc:a39fce64e37d8a2493f4ff764708d958a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of the optimisation calculation using Optima. <br /></td></tr>
 <tr class="separator:a39fce64e37d8a2493f4ff764708d958a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16241287016a77178a56a93a657aa0f7"><td class="memItemLeft" align="right" valign="top"><a id="a16241287016a77178a56a93a657aa0f7"></a>
-<a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html">SmartEquilibriumResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1EquilibriumResult.html#a16241287016a77178a56a93a657aa0f7">smart</a></td></tr>
-<tr class="memdesc:a16241287016a77178a56a93a657aa0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The boolean flag that indicates if smart equilibrium calculation was used. <br /></td></tr>
-<tr class="separator:a16241287016a77178a56a93a657aa0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A type used to describe the result of an equilibrium calculation. </p>
@@ -180,7 +182,7 @@ Optima::Result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:04 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

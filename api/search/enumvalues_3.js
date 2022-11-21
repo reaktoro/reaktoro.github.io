@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fluid_2863',['Fluid',['../namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cdac2e7db5ac7ab74ea4bb9a7a89d251f3a',1,'Reaktoro::Fluid()'],['../namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4bac2e7db5ac7ab74ea4bb9a7a89d251f3a',1,'Reaktoro::Fluid()']]]
+  ['exact_3411',['Exact',['../namespaceReaktoro.html#a08a3b63249b9fa5180c3ded4c540ea8fa1649aed298f99d587e2eb30c1db5946b',1,'Reaktoro']]]
 ];

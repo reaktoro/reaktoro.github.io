@@ -1,15 +1,20 @@
 var searchData=
 [
-  ['thermofundatabase_1551',['ThermoFunDatabase',['../classReaktoro_1_1ThermoFunDatabase.html',1,'Reaktoro']]],
-  ['thermofunengine_1552',['ThermoFunEngine',['../classReaktoro_1_1ThermoFunEngine.html',1,'Reaktoro']]],
-  ['thermoprops_1553',['ThermoProps',['../classReaktoro_1_1ThermoProps.html',1,'Reaktoro']]],
-  ['thermopropsphasebase_1554',['ThermoPropsPhaseBase',['../classReaktoro_1_1ThermoPropsPhaseBase.html',1,'Reaktoro']]],
-  ['thermopropsphasebasedata_1555',['ThermoPropsPhaseBaseData',['../structReaktoro_1_1ThermoPropsPhaseBaseData.html',1,'Reaktoro']]],
-  ['typeopconstref_1556',['TypeOpConstRef',['../structReaktoro_1_1detail_1_1TypeOpConstRef.html',1,'Reaktoro::detail']]],
-  ['typeopconstref_3c_20eigen_3a_3aarray_3c_20scalar_2c_20rows_2c_20cols_2c_20options_2c_20maxrows_2c_20maxcols_20_3e_20_3e_1557',['TypeOpConstRef&lt; Eigen::Array&lt; Scalar, Rows, Cols, Options, MaxRows, MaxCols &gt; &gt;',['../structReaktoro_1_1detail_1_1TypeOpConstRef_3_01Eigen_1_1Array_3_01Scalar_00_01Rows_00_01Cols_00_5ef46693904238de9f31f602a9b4b5f7.html',1,'Reaktoro::detail']]],
-  ['typeopconstref_3c_20eigen_3a_3amatrix_3c_20scalar_2c_20rows_2c_20cols_2c_20options_2c_20maxrows_2c_20maxcols_20_3e_20_3e_1558',['TypeOpConstRef&lt; Eigen::Matrix&lt; Scalar, Rows, Cols, Options, MaxRows, MaxCols &gt; &gt;',['../structReaktoro_1_1detail_1_1TypeOpConstRef_3_01Eigen_1_1Matrix_3_01Scalar_00_01Rows_00_01Cols_00e5e075ffaa21c3301abc9b150dde482f.html',1,'Reaktoro::detail']]],
-  ['typeopidentity_1559',['TypeOpIdentity',['../structReaktoro_1_1detail_1_1TypeOpIdentity.html',1,'Reaktoro::detail']]],
-  ['typeopref_1560',['TypeOpRef',['../structReaktoro_1_1detail_1_1TypeOpRef.html',1,'Reaktoro::detail']]],
-  ['typeopref_3c_20eigen_3a_3aarray_3c_20scalar_2c_20rows_2c_20cols_2c_20options_2c_20maxrows_2c_20maxcols_20_3e_20_3e_1561',['TypeOpRef&lt; Eigen::Array&lt; Scalar, Rows, Cols, Options, MaxRows, MaxCols &gt; &gt;',['../structReaktoro_1_1detail_1_1TypeOpRef_3_01Eigen_1_1Array_3_01Scalar_00_01Rows_00_01Cols_00_01Opt95a885e11357472c6aa0cb81fbc40e0a.html',1,'Reaktoro::detail']]],
-  ['typeopref_3c_20eigen_3a_3amatrix_3c_20scalar_2c_20rows_2c_20cols_2c_20options_2c_20maxrows_2c_20maxcols_20_3e_20_3e_1562',['TypeOpRef&lt; Eigen::Matrix&lt; Scalar, Rows, Cols, Options, MaxRows, MaxCols &gt; &gt;',['../structReaktoro_1_1detail_1_1TypeOpRef_3_01Eigen_1_1Matrix_3_01Scalar_00_01Rows_00_01Cols_00_01Op92cc1a19e675a47441c43b65410f7235.html',1,'Reaktoro::detail']]]
+  ['reaction_1812',['Reaction',['../classReaktoro_1_1Reaction.html',1,'Reaktoro']]],
+  ['reactionequation_1813',['ReactionEquation',['../classReaktoro_1_1ReactionEquation.html',1,'Reaktoro']]],
+  ['reactionlist_1814',['ReactionList',['../classReaktoro_1_1ReactionList.html',1,'Reaktoro']]],
+  ['reactionrate_1815',['ReactionRate',['../classReaktoro_1_1ReactionRate.html',1,'Reaktoro']]],
+  ['reactionratemodelparamspalandrikharaka_1816',['ReactionRateModelParamsPalandriKharaka',['../structReaktoro_1_1ReactionRateModelParamsPalandriKharaka.html',1,'Reaktoro']]],
+  ['reactions_1817',['Reactions',['../classReaktoro_1_1Reactions.html',1,'Reaktoro']]],
+  ['reactionstandardthermomodelargs_1818',['ReactionStandardThermoModelArgs',['../structReaktoro_1_1ReactionStandardThermoModelArgs.html',1,'Reaktoro']]],
+  ['reactionstandardthermomodelparamsconstlgk_1819',['ReactionStandardThermoModelParamsConstLgK',['../structReaktoro_1_1ReactionStandardThermoModelParamsConstLgK.html',1,'Reaktoro']]],
+  ['reactionstandardthermomodelparamsgemslgk_1820',['ReactionStandardThermoModelParamsGemsLgK',['../structReaktoro_1_1ReactionStandardThermoModelParamsGemsLgK.html',1,'Reaktoro']]],
+  ['reactionstandardthermomodelparamsphreeqclgk_1821',['ReactionStandardThermoModelParamsPhreeqcLgK',['../structReaktoro_1_1ReactionStandardThermoModelParamsPhreeqcLgK.html',1,'Reaktoro']]],
+  ['reactionstandardthermomodelparamsvanthoff_1822',['ReactionStandardThermoModelParamsVantHoff',['../structReaktoro_1_1ReactionStandardThermoModelParamsVantHoff.html',1,'Reaktoro']]],
+  ['reactionstandardthermoprops_1823',['ReactionStandardThermoProps',['../structReaktoro_1_1ReactionStandardThermoProps.html',1,'Reaktoro']]],
+  ['reactionthermoprops_1824',['ReactionThermoProps',['../structReaktoro_1_1ReactionThermoProps.html',1,'Reaktoro']]],
+  ['reactivityconstraint_1825',['ReactivityConstraint',['../structReaktoro_1_1ReactivityConstraint.html',1,'Reaktoro']]],
+  ['reactivityconstraints_1826',['ReactivityConstraints',['../structReaktoro_1_1ReactivityConstraints.html',1,'Reaktoro']]],
+  ['record_1827',['Record',['../structReaktoro_1_1SmartEquilibriumSolver_1_1Record.html',1,'Reaktoro::SmartEquilibriumSolver']]],
+  ['ref_1828',['Ref',['../structReaktoro_1_1detail_1_1Ref.html',1,'Reaktoro::detail']]]
 ];

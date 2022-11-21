@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome</title>
+    <title>Reaktoro</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -41,6 +41,7 @@
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
@@ -73,7 +74,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -284,7 +285,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="tutorials/kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tutorials/machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials/machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -293,8 +311,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="tutorials/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -310,8 +328,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="tutorials/advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -339,8 +357,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -361,8 +379,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -383,8 +401,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -395,20 +413,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -418,8 +433,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -444,8 +459,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -475,33 +490,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="about/citing.html">
+  <a class="reference internal" href="general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="about/faq.html">
+  <a class="reference internal" href="general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="about/troubleshooting.html">
+  <a class="reference internal" href="general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="about/contributing.html">
+  <a class="reference internal" href="general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="about/license.html">
+  <a class="reference internal" href="general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -659,64 +679,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quick-links">
-   Quick Links!
-  </a>
-  <ul class="nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome</h1>
+                <h1>Reaktoro</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quick-links">
-   Quick Links!
-  </a>
-  <ul class="nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -725,27 +704,34 @@ title="Print to PDF"
               <div>
                 
   <p><img alt="" src="_images/reaktoro-for-python-and-cpp.svg" /></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">#</a></h1>
-<p>Welcome to the documentation of Reaktoro v2 for Python and C++, where we show
-how Reaktoro can be used for a wide variety of chemical reaction calculations.</p>
-<p>This website is still under-construction, but you should already find it
-useful enough to get started with this new version of Reaktoro!</p>
-<div class="admonition-looking-for-reaktoro-v1-website admonition">
-<p class="admonition-title">Looking for Reaktoro v1 website?</p>
-<p>If you need to access Reaktoro v1 website, here is the link: <a class="reference external" href="https://reaktoro.org/v1">https://reaktoro.org/v1</a></p>
-</div>
-<div class="attention admonition">
-<p class="admonition-title">Examples in the tutorials not working?</p>
-<p>This website is under active development, and many new features in Reaktoro are being developed in parallel and documented here straight away. If you installed Reaktoro before a new feature was introduced and documented here, your installed <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> package will not support that feature. Make sure you update the conda environment containing the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> package, using either Anaconda Navigator or the following conda command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate rkt
-conda update --all
-</pre></div>
-</div>
-<p>assuming above you named <code class="docutils literal notranslate"><span class="pre">rkt</span></code> as the conda environment containing <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code>. For installation instructions using conda, please check <a class="reference internal" href="installation/installation-using-conda.html"><span class="doc std std-doc">these instructions</span></a>.</p>
-</div>
-<div class="section" id="quick-links">
-<h2>Quick Links!<a class="headerlink" href="#quick-links" title="Permalink to this headline">#</a></h2>
+<div class="tex2jax_ignore mathjax_ignore section" id="reaktoro">
+<h1>Reaktoro<a class="headerlink" href="#reaktoro" title="Permalink to this headline">#</a></h1>
+<p>Welcome to the documentation for Reaktoro, an open source computational framework developed in C++ and Python to simulate chemically reactive processes.</p>
+<p>Reaktoro has been designed from the ground up to be a flexible and extensible computational modeling framework for simulating chemical reactions. Reaktoro’s algorithms for chemical equilibrium and chemical kinetics calculations can be applied in a wide variety of modeling applications, from geochemical modeling of water-gas-rock systems to modeling the combustion of energetic materials.</p>
+<p>Examples of specific and broad applications that Reaktoro can be useful for include, but are not limited to:</p>
+<ul class="simple">
+<li><p>speciation calculations in aqueous electrolyte solutions, seawater, groundwater</p></li>
+<li><p>dissolution of gas in aqueous solutions</p></li>
+<li><p>mineral dissolution and precipitation in aqueous solutions</p></li>
+<li><p>mixing of aqueous and/or gaseous solutions</p></li>
+<li><p>evaporation processes</p></li>
+<li><p>ion exchange processes</p></li>
+<li><p>kinetically controlled reactions (e.g., mineral, aqueous, gaseous reactions)</p></li>
+<li><p>adiabatic flame temperatures at constant pressure or volume</p></li>
+<li><p>thermodynamic modeling of cement hydration and corrosion in concrete</p></li>
+<li><p>ore formation processes</p></li>
+<li><p>hydrometallurgical process</p></li>
+<li><p>fluid-rock chemical reactions in geothermal energy systems</p></li>
+<li><p>scaling in wells due to mineral precipitation</p></li>
+<li><p>carbon storage in geological media via solubility and mineral trapping mechanisms</p></li>
+<li><p>geological disposal of radioactive waste</p></li>
+</ul>
+<p>Reaktoro can also be coupled with other software (e.g. reservoir simulators) to model even more complex processes such as:</p>
+<ul class="simple">
+<li><p>reactive transport in porous media at pore or reservoir scale</p></li>
+<li><p>reactive fluid flow for combustion modeling</p></li>
+</ul>
+<p>For large-scale modeling applications where millions to billions of chemical equilibrium and/or chemical kinetics calculations are required, Reaktoro offers accelerated <em><strong>on-demand machine learning</strong></em> (ODML) solvers that can speed up chemical reaction calculations by one to three orders of magnitude as demonstrated in <span id="id1">Leal <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id134">2017</a>]</span>, <span id="id2">Leal <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id211">2020</a>]</span> and <span id="id3">Kyas <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id2">2022</a>]</span>.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get Started</span></p>
 <ul>
@@ -782,7 +768,14 @@ conda update --all
 <li class="toctree-l2"><a class="reference internal" href="tutorials/equilibrium/equilibrium-with-given-component-amounts.html">Chemical equilibrium with given element and charge amounts</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/kinetics/index.html">Chemical Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/kinetics/index.html">Chemical Kinetics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/kinetics/kinetics-basics.html">Chemical kinetics: the basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/machine-learning/index.html">Machine Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/machine-learning/machine-learning-basics.html">Machine learning: the basics</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/miscellaneous/index.html">Miscellaneous</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/miscellaneous/defining-materials.html">Defining materials</a></li>
 </ul>
@@ -809,9 +802,9 @@ conda update --all
 </li>
 <li class="toctree-l1"><a class="reference internal" href="applications/exchange/index.html">Ion-exchange</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="applications/exchange/ion-exchange-dune-sand.html">Ion exchange in dune sand and groundwater</a></li>
-<li class="toctree-l2"><a class="reference internal" href="applications/exchange/ion-exchnage-mix-porewater-extractant.html">Extraction of exchangeable cations in dune sand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">Ion exchange competition among NaX, KX, and CaX<sub>2</sub></a></li>
-<li class="toctree-l2"><a class="reference internal" href="applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">Effect of calcite dissolution on exchangeable cations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications/exchange/ion-exchange-mix-porewater-extractant.html">Extraction of exchangeable cations in dune sand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">Ion exchange competition among NaX, KX, and CaX{{_2}}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications/exchange/ion-exchange-calcite-cax-vs-ph.html">Effect of calcite dissolution on exchangeable cations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="applications/thermofun/index.html">ThermoFun</a><ul>
@@ -829,16 +822,15 @@ conda update --all
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">About Reaktoro</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="about/citing.html">Citing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about/faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about/troubleshooting.html">Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about/troubleshooting.html#sigfpe-signals-and-fatal-arithmetic-errors">SIGFPE signals and fatal arithmetic errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about/contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/citing.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/development.html">Development</a></li>
 </ul>
-</div>
 </div>
 </div>
 

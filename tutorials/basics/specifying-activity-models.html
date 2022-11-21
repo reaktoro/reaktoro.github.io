@@ -41,6 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
@@ -50,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -76,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -287,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -296,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -313,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -342,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -364,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -386,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -398,20 +414,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -421,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -447,8 +460,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -478,33 +491,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/citing.html">
+  <a class="reference internal" href="../../general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/faq.html">
+  <a class="reference internal" href="../../general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/troubleshooting.html">
+  <a class="reference internal" href="../../general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/contributing.html">
+  <a class="reference internal" href="../../general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/license.html">
+  <a class="reference internal" href="../../general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -805,24 +823,24 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="specifying-activity-models">
 <h1>Specifying activity models<a class="headerlink" href="#specifying-activity-models" title="Permalink to this headline">#</a></h1>
 <p>Activity models are needed to accurately represent the non-ideal thermodynamic behavior of aqueous, liquid, gaseous, solid, and plasma phases. They are required when computing thermodynamic properties of phases and their species, such as molar enthalpies, molar heat capacities, molar volume, molar entropies, molar internal energies, species activities, species chemical potentials, etc.. These properties can only be accurate if proper activity models are assigned to the phases. For example, for an aqueous solution at extreme saline conditions, an activity model designed for low salinity conditions will not perform well.</p>
-<p>In Reaktoro, an activity model assigned to a phase <span class="math notranslate nohighlight">\(\pi\)</span> is a function for which the following inputs are given:</p>
+<p>In Reaktoro, an activity model assigned to a phase $\pi$ is a function for which the following inputs are given:</p>
 <ul class="simple">
-<li><p>temperature (in K), <span class="math notranslate nohighlight">\(T\)</span></p></li>
-<li><p>pressure (in Pa), <span class="math notranslate nohighlight">\(P\)</span></p></li>
-<li><p>mole fractions of the species in phase <span class="math notranslate nohighlight">\(\pi\)</span>, <span class="math notranslate nohighlight">\(x=(x_1,\ldots,x_\mathrm{N_{\pi}})\)</span></p></li>
+<li><p>temperature (in K), $T$</p></li>
+<li><p>pressure (in Pa), $P$</p></li>
+<li><p>mole fractions of the species in phase $\pi$, $x=(x_1,\ldots,x_\mathrm{N_{\pi}})$</p></li>
 </ul>
 <p>The evaluation of this activity model produces the following <em>primary excess/residual thermodynamic properties</em> for the corresponding phase and its species:</p>
 <ul class="simple">
-<li><p>the excess/residual molar Gibbs energy of the phase (in units of J/mol), <span class="math notranslate nohighlight">\(G_\mathrm{ex}\)</span></p></li>
-<li><p>the excess/residual molar enthalpy of the phase (in units of J/mol), <span class="math notranslate nohighlight">\(H_\mathrm{ex}\)</span></p></li>
-<li><p>the excess/residual molar volume of the phase (in m<sup>3</sup>/mol), <span class="math notranslate nohighlight">\(V_\mathrm{ex}\)</span></p></li>
-<li><p>the temperature derivative of the excess/residual molar volume at constant pressure (in m<sup>3</sup>/(mol·K)), <span class="math notranslate nohighlight">\((\partial V_\mathrm{ex}/\partial T)_P\)</span></p></li>
-<li><p>the pressure derivative of the excess/residual molar volume at constant temperature (in m<sup>3</sup>/(mol·Pa)), <span class="math notranslate nohighlight">\((\partial V_\mathrm{ex}/\partial P)_T\)</span></p></li>
-<li><p>the excess/residual molar isobaric heat capacity of the phase (in units of J/(mol·K)), <span class="math notranslate nohighlight">\(C_{P,\mathrm{ex}}\)</span></p></li>
-<li><p>the activity coefficient <span class="math notranslate nohighlight">\(\gamma_i\)</span> of every species in the phase, for <span class="math notranslate nohighlight">\(i=1,\ldots,\mathrm{N_{\pi}}\)</span></p></li>
-<li><p>the activity <span class="math notranslate nohighlight">\(a_i\)</span> of every species in the phase, for <span class="math notranslate nohighlight">\(i=1,\ldots,\mathrm{N_{\pi}}\)</span></p></li>
+<li><p>the excess/residual molar Gibbs energy of the phase (in units of J/mol), $G_\mathrm{ex}$</p></li>
+<li><p>the excess/residual molar enthalpy of the phase (in units of J/mol), $H_\mathrm{ex}$</p></li>
+<li><p>the excess/residual molar volume of the phase (in m<sup>3</sup>/mol), $V_\mathrm{ex}$</p></li>
+<li><p>the temperature derivative of the excess/residual molar volume at constant pressure (in m<sup>3</sup>/(mol·K)), $(\partial V_\mathrm{ex}/\partial T)_P$</p></li>
+<li><p>the pressure derivative of the excess/residual molar volume at constant temperature (in m<sup>3</sup>/(mol·Pa)), $(\partial V_\mathrm{ex}/\partial P)_T$</p></li>
+<li><p>the excess/residual molar isobaric heat capacity of the phase (in units of J/(mol·K)), $C_{P,\mathrm{ex}}$</p></li>
+<li><p>the activity coefficient $\gamma_i$ of every species in the phase, for $i=1,\ldots,\mathrm{N_{\pi}}$</p></li>
+<li><p>the activity $a_i$ of every species in the phase, for $i=1,\ldots,\mathrm{N_{\pi}}$</p></li>
 </ul>
-<p>Once we have computed these <em>primary excess/residual thermodynamic properties</em>, we can determine all others if needed (i.e., the <em>secondary excess/residual thermodynamic properties</em>). For example, the excess internal energy can be computed as <span class="math notranslate nohighlight">\(U_\mathrm{ex} = H_\mathrm{ex} - P V_\mathrm{ex}\)</span>.</p>
+<p>Once we have computed these <em>primary excess/residual thermodynamic properties</em>, we can determine all others if needed (i.e., the <em>secondary excess/residual thermodynamic properties</em>). For example, the excess internal energy can be computed as $U_\mathrm{ex} = H_\mathrm{ex} - P V_\mathrm{ex}$.</p>
 <p>By default, all phases in Reaktoro are created with <em>ideal activity models</em> if not explicitly specified. The ideal models produce zero excess/residual properties for the phase and unit activity coefficients (thus, no correction for the non-ideal thermodynamic behavior of phases).</p>
 <p>The code block that we present below:</p>
 <div class="cell docutils container">
@@ -881,7 +899,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelHKF</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelPitzerHMW</span></code></p></li>
 </ul>
-<p>For example, the code block below will construct a chemical system with an aqueous phase that uses the HKF activity model <span id="id1">[<a class="reference internal" href="../bibliography.html#id1036">Helgeson <em>et al.</em>, 1981</a>]</span>, which is fairly accurate for solutions up to 6 molal NaCl.</p>
+<p>For example, the code block below will construct a chemical system with an aqueous phase that uses the HKF activity model <span id="id1">[<a class="reference internal" href="../bibliography.html#id1037">Helgeson <em>et al.</em>, 1981</a>]</span>, which is fairly accurate for solutions up to 6 molal NaCl.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl&quot;</span><span class="p">))</span>
@@ -892,7 +910,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s create a chemical state for this system (using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> class), and set it so that we have a 1 molal NaCl saline solution. We then compute its chemical properties (using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>) and print the activity coefficients, <span class="math notranslate nohighlight">\(\gamma_i\)</span>, of the species.</p>
+<p>Let’s create a chemical state for this system (using {{ChemicalState}} class), and set it so that we have a 1 molal NaCl saline solution. We then compute its chemical properties (using class {{ChemicalProps}}) and print the activity coefficients, $\gamma_i$, of the species.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -923,11 +941,10 @@ O2                  1.25894
 </div>
 </div>
 </div>
-<p>Note above that the activity coefficients for neutral species other than H<sub>2</sub>O are identical. This is because most aqueous activity models do not properly compute activity coefficients for these species (or their default variants do not contain model parameters for them).</p>
+<p>Note above that the activity coefficients for neutral species other than H{{_2}}O are identical. This is because most aqueous activity models do not properly compute activity coefficients for these species (or their default variants do not contain model parameters for them).</p>
 <p>One way to overcome or improve this is to combine an aqueous activity model with <em>Setschenow model</em>, so that the following equation:</p>
-<div class="math notranslate nohighlight">
-\[\log_{10}\gamma_i = b_i I\]</div>
-<p>is used instead to compute the activity coefficient of a neutral species <span class="math notranslate nohighlight">\(i\)</span>, where <span class="math notranslate nohighlight">\(I\)</span> is the ionic strength of the solution and <span class="math notranslate nohighlight">\(b_i\)</span> is a <em>Setschenow constant</em>.</p>
+<p>$$\log_{10}\gamma_i = b_i I$$</p>
+<p>is used instead to compute the activity coefficient of a neutral species $i$, where $I$ is the ionic strength of the solution and $b_i$ is a <em>Setschenow constant</em>.</p>
 <p>We recreate the chemical system in the next code block in which a <em>chained activity model</em> is constructed so that the above Setschenow equation is applied for the activity coefficients of species <code class="docutils literal notranslate"><span class="pre">O2</span></code>, <code class="docutils literal notranslate"><span class="pre">H2</span></code>, and <code class="docutils literal notranslate"><span class="pre">NaOH</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -996,7 +1013,7 @@ O2                  1.32741
 </div>
 </div>
 </div>
-<p>With the change above, the Drummond model <span id="id2">[<a class="reference internal" href="../bibliography.html#id648">Drummond, 1981</a>]</span> will be used for the computation of the activity of CO<sub>2</sub> aqueous species (which can be named differently across the databases supported by Reaktoro, such as <code class="docutils literal notranslate"><span class="pre">CO2</span></code> in PHREEQC databases, <code class="docutils literal notranslate"><span class="pre">CO2(aq)</span></code> in SUPCRT/SUPCRTB databases, or <code class="docutils literal notranslate"><span class="pre">CO2&#64;</span></code> in ThermoFun databases).</p>
+<p>With the change above, the Drummond model <span id="id2">[<a class="reference internal" href="../bibliography.html#id649">Drummond, 1981</a>]</span> will be used for the computation of the activity of CO<sub>2</sub> aqueous species (which can be named differently across the databases supported by Reaktoro, such as <code class="docutils literal notranslate"><span class="pre">CO2</span></code> in PHREEQC databases, <code class="docutils literal notranslate"><span class="pre">CO2(aq)</span></code> in SUPCRT/SUPCRTB databases, or <code class="docutils literal notranslate"><span class="pre">CO2&#64;</span></code> in ThermoFun databases).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>When computing gas solubilities in aqueous saline solutions, it is important that the activity of the dissolved gas species (e.g., <code class="docutils literal notranslate"><span class="pre">CO2(aq)</span></code>) is adequately computed.</p>
@@ -1004,19 +1021,19 @@ O2                  1.32741
 </div>
 <div class="section" id="specifying-activity-models-for-gaseous-and-liquid-phases">
 <h2>Specifying activity models for gaseous and liquid phases<a class="headerlink" href="#specifying-activity-models-for-gaseous-and-liquid-phases" title="Permalink to this headline">#</a></h2>
-<p>Reaktoro implements a general form of the cubic equation of state as presented in <span id="id3">Smith <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id56">2005</a>]</span> from which classic models are derived. You can assign one of the following models to an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html"><code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code></a> or <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html"><code class="docutils literal notranslate"><span class="pre">LiquidPhase</span></code></a> object:</p>
+<p>Reaktoro implements a general form of the cubic equation of state as presented in <span id="id3">Smith <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id57">2005</a>]</span> from which classic models are derived. You can assign one of the following models to an {{GaseousPhase}} or {{LiquidPhase}} object:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelPengRobinson</span></code> (<span id="id4">Peng and Robinson [<a class="reference internal" href="../bibliography.html#id760">1976</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelRedlichKwong</span></code> (<span id="id5">Redlich and Kwong [<a class="reference internal" href="../bibliography.html#id887">1949</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSoaveRedlichKwong</span></code>  (<span id="id6">Soave [<a class="reference internal" href="../bibliography.html#id164">1972</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelVanDerWaals</span></code>  (<span id="id7">van der Waals [<a class="reference internal" href="../bibliography.html#id680">1873</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelPengRobinson</span></code> (<span id="id4">Peng and Robinson [<a class="reference internal" href="../bibliography.html#id761">1976</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelRedlichKwong</span></code> (<span id="id5">Redlich and Kwong [<a class="reference internal" href="../bibliography.html#id888">1949</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSoaveRedlichKwong</span></code>  (<span id="id6">Soave [<a class="reference internal" href="../bibliography.html#id165">1972</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelVanDerWaals</span></code>  (<span id="id7">van der Waals [<a class="reference internal" href="../bibliography.html#id681">1873</a>]</span>)</p></li>
 </ul>
 <p>Reaktoro also implements some equations of state designed for specific gaseous phases:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherPruessEnnis</span></code> (for H<sub>2</sub>O-CO<sub>2</sub> gas mixtures, <span id="id8">Spycher <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id719">2003</a>]</span>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherReed</span></code> (for H<sub>2</sub>O-CO<sub>2</sub>-CH<sub>4</sub> gas mixtures, <span id="id9">Spycher and Reed [<a class="reference internal" href="../bibliography.html#id777">1988</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherPruessEnnis</span></code> (for H{{_2}}O-CO{{_2}} gas mixtures, <span id="id8">Spycher <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id720">2003</a>]</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelSpycherReed</span></code> (for H{{_2}}O-CO{{_2}}-CH{{_4}} gas mixtures, <span id="id9">Spycher and Reed [<a class="reference internal" href="../bibliography.html#id778">1988</a>]</span>)</p></li>
 </ul>
-<p>The example below demonstrates the use of <span id="id10">Peng and Robinson [<a class="reference internal" href="../bibliography.html#id760">1976</a>]</span> equation of state as the activity model for a gaseous phase:</p>
+<p>The example below demonstrates the use of <span id="id10">Peng and Robinson [<a class="reference internal" href="../bibliography.html#id761">1976</a>]</span> equation of state as the activity model for a gaseous phase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g) CH4(g) H2O(g) O2(g) H2(g)&quot;</span><span class="p">)</span>
@@ -1063,7 +1080,7 @@ H2(g)     1.02158
 <p>Note above that the method <code class="docutils literal notranslate"><span class="pre">ChemicalProps.speciesActivityCoefficient</span></code> is used for retrieving the fugacity coefficients of the gases. The <em>activity coefficient of a gas is identical to its fugacity coefficient</em>, and the <em>fugacity of a gas has identical value to its activity</em> when reference pressure is 1 bar, which is the case adopted in Reaktoro.</p>
 </div>
 <p>We print below the full computed properties of the system (in this case containing only a gaseous phase):</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
 </pre></div>
@@ -1192,13 +1209,11 @@ H2(g)     1.02158
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelRedlichKister</span></code></p></li>
 </ul>
-<p>The Redlich-Kister model assumes a solution with two solid species, and their activity coefficients, <span class="math notranslate nohighlight">\(\gamma_1\)</span> and <span class="math notranslate nohighlight">\(\gamma_2\)</span>, are calculated as follows:</p>
-<div class="math notranslate nohighlight">
-\[\ln\gamma_{1}=x_{2}^{2}[a_{0}+a_{1}(3x_{1}-x_{2})+a_{2}(x_{1}-x_{2})(5x_{1}-x_{2}),\]</div>
-<div class="math notranslate nohighlight">
-\[\ln\gamma_{2}=x_{1}^{2}[a_{0}-a_{1}(3x_{2}-x_{1})+a_{2}(x_{2}-x_{1})(5x_{2}-x_{1}),\]</div>
-<p>where <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span> are model parameters; <span class="math notranslate nohighlight">\(x_i\)</span> is the mole fraction of the species <span class="math notranslate nohighlight">\(i\)</span> in the solution.</p>
-<p>We show below how to create a chemical system with a single solid solution phase formed with minerals K-feldspar (KAlSi<sub>3</sub>O<sub>8</sub>) and albite (NaAlSi<sub>3</sub>O<sub>8</sub>) with assiged Redlich-Kister activity model:</p>
+<p>The Redlich-Kister model assumes a solution with two solid species, and their activity coefficients, $\gamma_1$ and $\gamma_2$, are calculated as follows:</p>
+<p>$$\ln\gamma_{1}=x_{2}^{2}[a_{0}+a_{1}(3x_{1}-x_{2})+a_{2}(x_{1}-x_{2})(5x_{1}-x_{2}),$$
+$$\ln\gamma_{2}=x_{1}^{2}[a_{0}-a_{1}(3x_{2}-x_{1})+a_{2}(x_{2}-x_{1})(5x_{2}-x_{1}),$$</p>
+<p>where $a_0$, $a_1$, $a_2$ are model parameters; $x_i$ is the mole fraction of the species $i$ in the solution.</p>
+<p>We show below how to create a chemical system with a single solid solution phase formed with minerals K-feldspar (KAlSi{{_3}}O{{_8}}) and albite (NaAlSi{{_3}}O{{_8}}) with assiged Redlich-Kister activity model:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span>  <span class="c1"># the Redlich-Kister parameters (demonstration values!)</span>
@@ -1212,7 +1227,7 @@ H2(g)     1.02158
 </div>
 </div>
 <p>The following code block creates a chemical state for this system with a single solid solution phase and prints its chemical properties.</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 <span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;K-feldspar&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
@@ -1295,16 +1310,15 @@ H2(g)     1.02158
 </div>
 <div class="section" id="specifying-activity-models-for-ion-exchange-phases">
 <h2>Specifying activity models for ion exchange phases<a class="headerlink" href="#specifying-activity-models-for-ion-exchange-phases" title="Permalink to this headline">#</a></h2>
-<p>By default, ion exchange phases are created in Reaktoro with an ideal activity model assigned to it. This ideal model computes the activity of the <span class="math notranslate nohighlight">\(i\)</span>-th exchange species (e.g., NaX, KX, CaX<sub>2</sub>) according to:</p>
-<div class="math notranslate nohighlight">
-\[a_i = \dfrac{x_i z_{\mathrm{e},i}}{\sum_k x_k z_{\mathrm{e},k} } \]</div>
-<p>where <span class="math notranslate nohighlight">\(z_{\mathrm{e},i}\)</span> is the <em>exchanger’s equivalent</em> (e.g., 1 for NaX, 2 for CaX<sub>2</sub>) and <span class="math notranslate nohighlight">\(x_i\)</span> is the mole fraction of the exchange species.</p>
+<p>By default, ion exchange phases are created in Reaktoro with an ideal activity model assigned to it. This ideal model computes the activity of the $i$-th exchange species (e.g., NaX, KX, CaX{{_2}}) according to:</p>
+<p>$$a_i = \dfrac{x_i z_{\mathrm{e},i}}{\sum_k x_k z_{\mathrm{e},k} } $$</p>
+<p>where $z_{\mathrm{e},i}$ is the <em>exchanger’s equivalent</em> (e.g., 1 for NaX, 2 for CaX{{_2}}) and $x_i$ is the mole fraction of the exchange species.</p>
 <p>For non-ideal activity models for ion exchange phases, the following is currently available in Reaktoro:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ActivityModelIonExchangeGainesThomas</span></code></p></li>
 </ul>
-<p>The Gaines-Thomas model is implemented according to what is used PHREEQC <span id="id11">[<a class="reference internal" href="../bibliography.html#id846">Parkhurst and Appelo, 2013</a>]</span>. We show below a demonstration in which a chemical system with aqueous and ion exchange phases are created followed by the computation of the system’s chemical properties at a given chemical state:</p>
-<div class="cell tag_output_scroll docutils container">
+<p>The Gaines-Thomas model is implemented according to what is used PHREEQC <span id="id11">[<a class="reference internal" href="../bibliography.html#id847">Parkhurst and Appelo, 2013</a>]</span>. We show below a demonstration in which a chemical system with aqueous and ion exchange phases are created followed by the computation of the system’s chemical properties at a given chemical state:</p>
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 

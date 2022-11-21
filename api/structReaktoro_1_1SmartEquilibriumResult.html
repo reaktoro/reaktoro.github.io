@@ -128,6 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structReaktoro_1_1SmartEquilibriumResult-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -135,22 +136,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div><!--header-->
 <div class="contents">
 
-<p>A type used to describe the result of a smart equilibrium calculation.  
+<p>Used to describe the result of a smart chemical equilibrium calculation.  
  <a href="structReaktoro_1_1SmartEquilibriumResult.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="EquilibriumResult_8hpp_source.html">EquilibriumResult.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="SmartEquilibriumResult_8hpp_source.html">SmartEquilibriumResult.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for SmartEquilibriumResult:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="structReaktoro_1_1SmartEquilibriumResult__coll__graph.svg" width="100%" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a15ffbc8fce5f2d8f678ffdf53d0ba491"><td class="memItemLeft" align="right" valign="top"><a id="a15ffbc8fce5f2d8f678ffdf53d0ba491"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#a15ffbc8fce5f2d8f678ffdf53d0ba491">succeeded</a> ()</td></tr>
+<tr class="memdesc:a15ffbc8fce5f2d8f678ffdf53d0ba491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the calculation succeeded. <br /></td></tr>
+<tr class="separator:a15ffbc8fce5f2d8f678ffdf53d0ba491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c31ec7a6b405552187c6758033f0c0a"><td class="memItemLeft" align="right" valign="top"><a id="a2c31ec7a6b405552187c6758033f0c0a"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#a2c31ec7a6b405552187c6758033f0c0a">failed</a> ()</td></tr>
+<tr class="memdesc:a2c31ec7a6b405552187c6758033f0c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the calculation failed. <br /></td></tr>
+<tr class="separator:a2c31ec7a6b405552187c6758033f0c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a2e2bea8d36466477b55c83f5bff9c"><td class="memItemLeft" align="right" valign="top"><a id="a09a2e2bea8d36466477b55c83f5bff9c"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#a09a2e2bea8d36466477b55c83f5bff9c">predicted</a> ()</td></tr>
+<tr class="memdesc:a09a2e2bea8d36466477b55c83f5bff9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the calculation was performed using a fast first-order Taylor prediction. <br /></td></tr>
+<tr class="separator:a09a2e2bea8d36466477b55c83f5bff9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab86bb91dc48de4cbad564fb4edfdaab4"><td class="memItemLeft" align="right" valign="top"><a id="ab86bb91dc48de4cbad564fb4edfdaab4"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#ab86bb91dc48de4cbad564fb4edfdaab4">learned</a> ()</td></tr>
+<tr class="memdesc:ab86bb91dc48de4cbad564fb4edfdaab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the calculation was learned, not predicted, and performed using the conventional algorithm. <br /></td></tr>
+<tr class="separator:ab86bb91dc48de4cbad564fb4edfdaab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf265a9aee0ec797799b765d58e47ec3"><td class="memItemLeft" align="right" valign="top"><a id="adf265a9aee0ec797799b765d58e47ec3"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#adf265a9aee0ec797799b765d58e47ec3">iterations</a> ()</td></tr>
+<tr class="memdesc:adf265a9aee0ec797799b765d58e47ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of iterations in the calculation (zero if prediction was successful). <br /></td></tr>
+<tr class="separator:adf265a9aee0ec797799b765d58e47ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a523e09a29825c4af79055a9483cdacb7"><td class="memItemLeft" align="right" valign="top"><a id="a523e09a29825c4af79055a9483cdacb7"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#a523e09a29825c4af79055a9483cdacb7">operator+=</a> (const <a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html">SmartEquilibriumResult</a> &amp;other) -&gt; <a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html">SmartEquilibriumResult</a> &amp;</td></tr>
+<tr class="memdesc:a523e09a29825c4af79055a9483cdacb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self addition assignment to accumulate results. <br /></td></tr>
+<tr class="separator:a523e09a29825c4af79055a9483cdacb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:afb8e401313f9b4bc3a3775a569c8ec44"><td class="memItemLeft" align="right" valign="top"><a id="afb8e401313f9b4bc3a3775a569c8ec44"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#afb8e401313f9b4bc3a3775a569c8ec44">succeeded</a> = false</td></tr>
-<tr class="memdesc:afb8e401313f9b4bc3a3775a569c8ec44"><td class="mdescLeft">&#160;</td><td class="mdescRight">The boolean flag that indicates if smart equilibrium calculation was used. <br /></td></tr>
-<tr class="separator:afb8e401313f9b4bc3a3775a569c8ec44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c81cc1a482818614228a86f4ae23528"><td class="memItemLeft" align="right" valign="top"><a id="a4c81cc1a482818614228a86f4ae23528"></a>
+<a class="el" href="structReaktoro_1_1SmartEquilibriumResultDuringPrediction.html">SmartEquilibriumResultDuringPrediction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#a4c81cc1a482818614228a86f4ae23528">prediction</a></td></tr>
+<tr class="memdesc:a4c81cc1a482818614228a86f4ae23528"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of the smart approximation operation. <br /></td></tr>
+<tr class="separator:a4c81cc1a482818614228a86f4ae23528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a23ff8fc018f4129cd90ef560267af7"><td class="memItemLeft" align="right" valign="top"><a id="a3a23ff8fc018f4129cd90ef560267af7"></a>
+<a class="el" href="structReaktoro_1_1SmartEquilibriumResultDuringLearning.html">SmartEquilibriumResultDuringLearning</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#a3a23ff8fc018f4129cd90ef560267af7">learning</a></td></tr>
+<tr class="memdesc:a3a23ff8fc018f4129cd90ef560267af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of the learning operation (if there was learning). <br /></td></tr>
+<tr class="separator:a3a23ff8fc018f4129cd90ef560267af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a0418d30fe3e9aa06ab510b9f42ae66"><td class="memItemLeft" align="right" valign="top"><a id="a0a0418d30fe3e9aa06ab510b9f42ae66"></a>
+<a class="el" href="structReaktoro_1_1SmartEquilibriumTiming.html">SmartEquilibriumTiming</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html#a0a0418d30fe3e9aa06ab510b9f42ae66">timing</a></td></tr>
+<tr class="memdesc:a0a0418d30fe3e9aa06ab510b9f42ae66"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timing information of the operations during a smart chemical equilibrium calculation. <br /></td></tr>
+<tr class="separator:a0a0418d30fe3e9aa06ab510b9f42ae66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A type used to describe the result of a smart equilibrium calculation. </p>
+<div class="textblock"><p>Used to describe the result of a smart chemical equilibrium calculation. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>Reaktoro/Equilibrium/<a class="el" href="EquilibriumResult_8hpp_source.html">EquilibriumResult.hpp</a></li>
+<li>Reaktoro/Equilibrium/<a class="el" href="SmartEquilibriumResult_8hpp_source.html">SmartEquilibriumResult.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
@@ -161,7 +203,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stru
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:04 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

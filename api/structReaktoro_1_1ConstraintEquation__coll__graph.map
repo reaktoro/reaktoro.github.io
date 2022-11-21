@@ -1,5 +1,7 @@
 <map id="ConstraintEquation" name="ConstraintEquation">
-<area shape="rect" id="node1" title="Used to define equation constraints in a chemical equilibrium problem." alt="" coords="12,171,159,197"/>
-<area shape="rect" id="node2" title=" " alt="" coords="56,81,115,108"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node1" title="Used to define equation constraints in a chemical equilibrium problem." alt="" coords="59,247,205,273"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1EquationConstraint.html" title="Used to define equation constraints in a chemical equilibrium problem." alt="" coords="59,171,205,197"/>
+<area shape="rect" id="node3" href="$structReaktoro_1_1EquationConstraintFn.html" title="Used to define the function that evaluates the residual of an equation constraint in a chemical equil..." alt="" coords="5,81,168,108"/>
+<area shape="rect" id="node4" title=" " alt="" coords="192,81,251,108"/>
+<area shape="rect" id="node5" title=" " alt="" coords="141,5,301,32"/>
 </map>

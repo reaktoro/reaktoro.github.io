@@ -1,6 +1,22 @@
 var searchData=
 [
-  ['omega_2625',['omega',['../structReaktoro_1_1SubstanceCriticalPropsData.html#a1ffe17ca89f89c3abc8d9c1abc672ca4',1,'Reaktoro::SubstanceCriticalPropsData::omega()'],['../structReaktoro_1_1CubicEOS_1_1Args.html#abdac7bedaaef98090ad1063025b36cb1',1,'Reaktoro::CubicEOS::Args::omega()']]],
-  ['optima_2626',['optima',['../structReaktoro_1_1EquilibriumOptions.html#af0c8764888b88e9cbe99fc083610d34d',1,'Reaktoro::EquilibriumOptions::optima()'],['../structReaktoro_1_1EquilibriumResult.html#a39fce64e37d8a2493f4ff764708d958a',1,'Reaktoro::EquilibriumResult::optima()']]],
-  ['order_2627',['Order',['../structautodiff_1_1detail_1_1NumberTraits_3_01Reaktoro_1_1Param_01_4.html#a9b42296988099d9797e087a251c4faa6',1,'autodiff::detail::NumberTraits&lt; Reaktoro::Param &gt;']]]
+  ['n_3118',['n',['../structReaktoro_1_1ChemicalPropsPhaseBaseData.html#ab411bac777f4cf15f8d9bca4c14e593a',1,'Reaktoro::ChemicalPropsPhaseBaseData']]],
+  ['name_3119',['name',['../structReaktoro_1_1Element_1_1Attribs.html#a9a2326f35466e54c36c070829245c557',1,'Reaktoro::Element::Attribs::name()'],['../structReaktoro_1_1Species_1_1Attribs.html#a9a2326f35466e54c36c070829245c557',1,'Reaktoro::Species::Attribs::name()'],['../structReaktoro_1_1ControlVariableQ.html#a9a2326f35466e54c36c070829245c557',1,'Reaktoro::ControlVariableQ::name()'],['../structReaktoro_1_1ControlVariableP.html#a9a2326f35466e54c36c070829245c557',1,'Reaktoro::ControlVariableP::name()'],['../structReaktoro_1_1ReactionRateModelParamsPalandriKharaka_1_1Mechanism.html#a9a2326f35466e54c36c070829245c557',1,'Reaktoro::ReactionRateModelParamsPalandriKharaka::Mechanism::name()']]],
+  ['nan_3120',['NaN',['../namespaceReaktoro.html#a2875db9f5865d566c5df86775d94d0f3',1,'Reaktoro']]],
+  ['nb_3121',['Nb',['../structReaktoro_1_1EquilibriumDims.html#a6214bf20ee8d7aba09082c43ad4f47fe',1,'Reaktoro::EquilibriumDims']]],
+  ['nc_3122',['Nc',['../structReaktoro_1_1EquilibriumDims.html#a7d9c003fe4c7664e7ca800848216361c',1,'Reaktoro::EquilibriumDims']]],
+  ['ne_3123',['Ne',['../structReaktoro_1_1EquilibriumDims.html#abe27ebfe63294aca812484331598544f',1,'Reaktoro::EquilibriumDims']]],
+  ['nn_3124',['Nn',['../structReaktoro_1_1EquilibriumDims.html#a45d92d3c21f1a4a591982b58d9bf9e53',1,'Reaktoro::EquilibriumDims']]],
+  ['np_3125',['Np',['../structReaktoro_1_1EquilibriumDims.html#aa374c6e652abcc05a14adf4dbba9395e',1,'Reaktoro::EquilibriumDims']]],
+  ['nq_3126',['Nq',['../structReaktoro_1_1EquilibriumDims.html#a0fb4938c4bd7e5eec21307492bf4e74e',1,'Reaktoro::EquilibriumDims']]],
+  ['nr_3127',['Nr',['../structReaktoro_1_1EquilibriumDims.html#a9ccd0c6a03415c31ea2c44f290a73239',1,'Reaktoro::EquilibriumDims']]],
+  ['nspecies_3128',['nspecies',['../structReaktoro_1_1CubicEOS_1_1Args.html#ad8fa82d4a50ac2a029af184f5bf3ace3',1,'Reaktoro::CubicEOS::Args']]],
+  ['nsum_3129',['nsum',['../structReaktoro_1_1ChemicalPropsPhaseBaseData.html#a24caf6721d8bd8f0e15d80778616e858',1,'Reaktoro::ChemicalPropsPhaseBaseData']]],
+  ['nt_3130',['Nt',['../structReaktoro_1_1EquilibriumDims.html#a580a996cd53bf7502629ea6332ca8109',1,'Reaktoro::EquilibriumDims']]],
+  ['ntr_3131',['ntr',['../structReaktoro_1_1StandardThermoModelParamsMineralHKF.html#affd687b6436defea00a14619c2909461',1,'Reaktoro::StandardThermoModelParamsMineralHKF']]],
+  ['nu_3132',['Nu',['../structReaktoro_1_1EquilibriumDims.html#ad027d3fa7b85658dbcbafed97d668362',1,'Reaktoro::EquilibriumDims']]],
+  ['numatoms_3133',['numatoms',['../structReaktoro_1_1StandardThermoModelParamsHollandPowell.html#a8b7a0668a49f6cda644da1b6a3452fec',1,'Reaktoro::StandardThermoModelParamsHollandPowell']]],
+  ['nv_3134',['Nv',['../structReaktoro_1_1EquilibriumDims.html#a107787ce2c5ce34310880d8c2cb740e8',1,'Reaktoro::EquilibriumDims']]],
+  ['nw_3135',['Nw',['../structReaktoro_1_1EquilibriumDims.html#a7a50ed4ddde340567b04e642c46b46a2',1,'Reaktoro::EquilibriumDims']]],
+  ['nx_3136',['Nx',['../structReaktoro_1_1EquilibriumDims.html#ae8b7e689c462711133ae523a1d12211a',1,'Reaktoro::EquilibriumDims']]]
 ];

@@ -41,6 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
@@ -74,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -285,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -294,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -340,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -362,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -384,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -396,20 +414,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -419,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -445,8 +460,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -476,33 +491,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/citing.html">
+  <a class="reference internal" href="../../general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/faq.html">
+  <a class="reference internal" href="../../general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/troubleshooting.html">
+  <a class="reference internal" href="../../general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/contributing.html">
+  <a class="reference internal" href="../../general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/license.html">
+  <a class="reference internal" href="../../general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -716,9 +736,9 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="computing-aqueous-properties">
 <h1>Computing aqueous properties<a class="headerlink" href="#computing-aqueous-properties" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
-<p>If you are interested in aqueous solutions of electrolytes, you are probably wondering why there are no methods in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> class to obtain pH, pE, Eh, ionic strength, molalities, and other aqueous properties.</p>
-<p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> is a class that stores general thermodynamic and chemical properties for systems, their phases and species. Reaktoro does not assume that you always have an aqueous phase in your chemical system. So it wouldn’t make sense to have specific aqueous properties on <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>.</p>
-<p>Reaktoro has what you want though: the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> class. We demonstrate its use below:</p>
+<p>If you are interested in aqueous solutions of electrolytes, you are probably wondering why there are no methods in the {{ChemicalProps}} class to obtain pH, pE, Eh, ionic strength, molalities, and other aqueous properties.</p>
+<p>{{ChemicalProps}} is a class that stores general thermodynamic and chemical properties for systems, their phases and species. Reaktoro does not assume that you always have an aqueous phase in your chemical system. So it wouldn’t make sense to have specific aqueous properties on {{ChemicalProps}}.</p>
+<p>Reaktoro has what you want though: the {{AqueousProps}} class. We demonstrate its use below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -754,62 +774,63 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------------------------+------------+-------+
-| Property                          |      Value |  Unit |
-+-----------------------------------+------------+-------+
-| Temperature                       |   333.1500 |     K |
-| Pressure                          |    15.1988 |   bar |
-| Ionic Strength (Effective)        |     1.0263 | molal |
-| Ionic Strength (Stoichiometric)   |     1.0292 | molal |
-| pH                                |     4.9176 |       |
-| pE                                |    -0.5028 |       |
-| Eh                                |    -0.0332 |     V |
-| Element Molality:                 |            |       |
-| :: C                              | 2.1424e-01 | molal |
-| :: Na                             | 1.0004e+00 | molal |
-| :: Si                             | 2.8155e-04 | molal |
-| :: Cl                             | 1.0004e+00 | molal |
-| :: Ca                             | 9.9945e-03 | molal |
-| Species Molality:                 |            |       |
-| :: CO3-2                          | 6.4481e-07 | molal |
-| :: H+                             | 1.5051e-05 | molal |
-| :: CO2                            | 1.9424e-01 | molal |
-| :: (CO2)2                         | 1.0004e-16 | molal |
-| :: HCO3-                          | 1.6442e-02 | molal |
-| :: CH4                            | 1.0004e-16 | molal |
-| :: Ca+2                           | 9.4377e-03 | molal |
-| :: CaCO3                          | 3.9717e-07 | molal |
-| :: CaHCO3+                        | 5.5643e-04 | molal |
-| :: CaOH+                          | 4.6059e-11 | molal |
-| :: Cl-                            | 1.0004e+00 | molal |
-| :: H2                             | 1.0004e-16 | molal |
-| :: H4SiO4                         | 2.8153e-04 | molal |
-| :: H2SiO4-2                       | 1.1055e-14 | molal |
-| :: H3SiO4-                        | 2.0567e-08 | molal |
-| :: Na+                            | 9.9737e-01 | molal |
-| :: NaCO3-                         | 7.5617e-06 | molal |
-| :: NaHCO3                         | 2.9885e-03 | molal |
-| :: OH-                            | 1.3304e-08 | molal |
-| :: NaOH                           | 1.0004e-16 | molal |
-| :: O2                             | 1.0004e-16 | molal |
-| Saturation Indices (log base 10): |            |       |
-| :: CH4(g)                         |   -14.1826 |     - |
-| :: CO2(g)                         |     0.0000 |     - |
-| :: H2(g)                          |   -10.1580 |     - |
-| :: H2O(g)                         |     0.0000 |     - |
-| :: O2(g)                          |   -56.1834 |     - |
-| :: Aragonite :: CaCO3             |    -1.4245 |     - |
-| :: Calcite :: CaCO3               |    -1.3039 |     - |
-| :: Chalcedony :: SiO2             |    -0.3316 |     - |
-| :: Halite :: NaCl                 |    -1.9594 |     - |
-| :: Quartz :: SiO2                 |     0.0000 |     - |
-| :: SiO2(a)                        |    -1.0599 |     - |
-+-----------------------------------+------------+-------+
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------------------------+-------------+-------+
+| Property                          |       Value |  Unit |
++-----------------------------------+-------------+-------+
+| Temperature                       |    333.1500 |     K |
+| Pressure                          |     15.1988 |   bar |
+| Ionic Strength (Effective)        |      1.0263 | molal |
+| Ionic Strength (Stoichiometric)   |      1.0292 | molal |
+| pH                                |      4.9176 |       |
+| pE                                |     -0.5028 |       |
+| Eh                                |     -0.0332 |     V |
+| Charge Molality                   | -2.1584e-16 | molal |
+| Element Molality:                 |             |       |
+| :: C                              |  2.1424e-01 | molal |
+| :: Na                             |  1.0004e+00 | molal |
+| :: Si                             |  2.8155e-04 | molal |
+| :: Cl                             |  1.0004e+00 | molal |
+| :: Ca                             |  9.9945e-03 | molal |
+| Species Molality:                 |             |       |
+| :: CO3-2                          |  6.4481e-07 | molal |
+| :: H+                             |  1.5051e-05 | molal |
+| :: CO2                            |  1.9424e-01 | molal |
+| :: (CO2)2                         |  1.0004e-16 | molal |
+| :: HCO3-                          |  1.6442e-02 | molal |
+| :: CH4                            |  1.0004e-16 | molal |
+| :: Ca+2                           |  9.4377e-03 | molal |
+| :: CaCO3                          |  3.9717e-07 | molal |
+| :: CaHCO3+                        |  5.5643e-04 | molal |
+| :: CaOH+                          |  4.6059e-11 | molal |
+| :: Cl-                            |  1.0004e+00 | molal |
+| :: H2                             |  1.0004e-16 | molal |
+| :: H4SiO4                         |  2.8153e-04 | molal |
+| :: H2SiO4-2                       |  1.1055e-14 | molal |
+| :: H3SiO4-                        |  2.0567e-08 | molal |
+| :: Na+                            |  9.9737e-01 | molal |
+| :: NaCO3-                         |  7.5617e-06 | molal |
+| :: NaHCO3                         |  2.9885e-03 | molal |
+| :: OH-                            |  1.3304e-08 | molal |
+| :: NaOH                           |  1.0004e-16 | molal |
+| :: O2                             |  1.0004e-16 | molal |
+| Saturation Indices (log base 10): |             |       |
+| :: CH4(g)                         |    -14.1826 |     - |
+| :: CO2(g)                         |      0.0000 |     - |
+| :: H2(g)                          |    -10.1580 |     - |
+| :: H2O(g)                         |      0.0000 |     - |
+| :: O2(g)                          |    -56.1834 |     - |
+| :: Aragonite :: CaCO3             |     -1.4245 |     - |
+| :: Calcite :: CaCO3               |     -1.3039 |     - |
+| :: Chalcedony :: SiO2             |     -0.3316 |     - |
+| :: Halite :: NaCl                 |     -1.9594 |     - |
+| :: Quartz :: SiO2                 |      0.0000 |     - |
+| :: SiO2(a)                        |     -1.0599 |     - |
++-----------------------------------+-------------+-------+
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s now use some methods from class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> to retrieve some specific aqueous properties:</p>
+<p>Let’s now use some methods from class {{AqueousProps}} to retrieve some specific aqueous properties:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pH                              :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">())</span>
@@ -840,7 +861,7 @@ MOLALITY OF AQUEOUS SPECIES Na+ : 0.997367 molal
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code> to get the exact data you need!</p>
+<p>Access the link {{AqueousProps}} to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code> to get the exact data you need!</p>
 </div>
 </div>
 

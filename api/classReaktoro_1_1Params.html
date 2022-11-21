@@ -129,13 +129,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classReaktoro_1_1Params-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Params Class Reference<div class="ingroups"><a class="el" href="group__Core.html">Core</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The class used to store and retrieve thermodynamic parameters.  
+<p>Used to store and retrieve model parameters.  
  <a href="classReaktoro_1_1Params.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Params_8hpp_source.html">Params.hpp</a>&gt;</code></p>
@@ -144,35 +145,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7974597e9d3c848fd265d9445f7cf8cb"><td class="memItemLeft" align="right" valign="top"><a id="a7974597e9d3c848fd265d9445f7cf8cb"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Params</a> ()</td></tr>
-<tr class="memdesc:a7974597e9d3c848fd265d9445f7cf8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a default <a class="el" href="classReaktoro_1_1Params.html" title="The class used to store and retrieve thermodynamic parameters.">Params</a> instance. <br /></td></tr>
+<tr class="memdesc:a7974597e9d3c848fd265d9445f7cf8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a default <a class="el" href="classReaktoro_1_1Params.html" title="Used to store and retrieve model parameters.">Params</a> object. <br /></td></tr>
 <tr class="separator:a7974597e9d3c848fd265d9445f7cf8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeab953e5a10abaf960f8dd34fa9752d3"><td class="memItemLeft" align="right" valign="top"><a id="aeab953e5a10abaf960f8dd34fa9752d3"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#aeab953e5a10abaf960f8dd34fa9752d3">size</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a></td></tr>
-<tr class="memdesc:aeab953e5a10abaf960f8dd34fa9752d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of child parameters. <br /></td></tr>
-<tr class="separator:aeab953e5a10abaf960f8dd34fa9752d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad77f1d92ce06ddc081007fe37d6cb220"><td class="memItemLeft" align="right" valign="top"><a id="ad77f1d92ce06ddc081007fe37d6cb220"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#ad77f1d92ce06ddc081007fe37d6cb220">at</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;key) const -&gt; const <a class="el" href="classReaktoro_1_1Params.html">Params</a> &amp;</td></tr>
-<tr class="memdesc:ad77f1d92ce06ddc081007fe37d6cb220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the child block of parameters with given key. <br /></td></tr>
-<tr class="separator:ad77f1d92ce06ddc081007fe37d6cb220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae417a2ab0633d2f7c4f2a7b7f5c9e60"><td class="memItemLeft" align="right" valign="top"><a id="aae417a2ab0633d2f7c4f2a7b7f5c9e60"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#aae417a2ab0633d2f7c4f2a7b7f5c9e60">get</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;key) const -&gt; const <a class="el" href="classReaktoro_1_1Param.html">Param</a> &amp;</td></tr>
-<tr class="memdesc:aae417a2ab0633d2f7c4f2a7b7f5c9e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the child parameter with given key. <br /></td></tr>
-<tr class="separator:aae417a2ab0633d2f7c4f2a7b7f5c9e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf3b4e31349b0938b52ddce7e1604429"><td class="memItemLeft" align="right" valign="top"><a id="aaf3b4e31349b0938b52ddce7e1604429"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#aaf3b4e31349b0938b52ddce7e1604429">exists</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;key) const -&gt; bool</td></tr>
-<tr class="memdesc:aaf3b4e31349b0938b52ddce7e1604429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if a child parameter exists with given key. <br /></td></tr>
-<tr class="separator:aaf3b4e31349b0938b52ddce7e1604429"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab826c8d2c587d292cfec21dbd2a9ce53"><td class="memItemLeft" align="right" valign="top"><a id="ab826c8d2c587d292cfec21dbd2a9ce53"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#ab826c8d2c587d292cfec21dbd2a9ce53">set</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;key, const <a class="el" href="classReaktoro_1_1Params.html">Params</a> &amp;node) -&gt; void</td></tr>
-<tr class="memdesc:ab826c8d2c587d292cfec21dbd2a9ce53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the child block of parameters with given key to a given block of parameters. <br /></td></tr>
-<tr class="separator:ab826c8d2c587d292cfec21dbd2a9ce53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4583f2ec3cdbca1eb7831e54901ffec"><td class="memItemLeft" align="right" valign="top"><a id="aa4583f2ec3cdbca1eb7831e54901ffec"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#aa4583f2ec3cdbca1eb7831e54901ffec">set</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;key, const <a class="el" href="classReaktoro_1_1Param.html">Param</a> &amp;param) -&gt; void</td></tr>
-<tr class="memdesc:aa4583f2ec3cdbca1eb7831e54901ffec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the child parameter with given key to a given parameter value. <br /></td></tr>
-<tr class="separator:aa4583f2ec3cdbca1eb7831e54901ffec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48258e880df70810ef2c57f1ed175d91"><td class="memItemLeft" align="right" valign="top"><a id="a48258e880df70810ef2c57f1ed175d91"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#a48258e880df70810ef2c57f1ed175d91">Params</a> (<a class="el" href="classReaktoro_1_1Data.html">Data</a> const &amp;params)</td></tr>
+<tr class="memdesc:a48258e880df70810ef2c57f1ed175d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1Params.html" title="Used to store and retrieve model parameters.">Params</a> object with given parameters as <a class="el" href="classReaktoro_1_1Data.html" title="The class used to store and retrieve data for assemblying chemical systems.">Data</a> object. <br /></td></tr>
+<tr class="separator:a48258e880df70810ef2c57f1ed175d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9f10516018c412ab328514d3e9a06f"><td class="memItemLeft" align="right" valign="top"><a id="adc9f10516018c412ab328514d3e9a06f"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#adc9f10516018c412ab328514d3e9a06f">data</a> () const -&gt; <a class="el" href="classReaktoro_1_1Data.html">Data</a> const &amp;</td></tr>
+<tr class="memdesc:adc9f10516018c412ab328514d3e9a06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the underlying <a class="el" href="classReaktoro_1_1Data.html" title="The class used to store and retrieve data for assemblying chemical systems.">Data</a> object of this <a class="el" href="classReaktoro_1_1Params.html" title="Used to store and retrieve model parameters.">Params</a> object. <br /></td></tr>
+<tr class="separator:adc9f10516018c412ab328514d3e9a06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e1d34403ad020e682279270671ec46"><td class="memItemLeft" align="right" valign="top"><a id="a09e1d34403ad020e682279270671ec46"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">append</a> (<a class="el" href="classReaktoro_1_1Params.html">Params</a> const &amp;other) -&gt; <a class="el" href="classReaktoro_1_1Params.html">Params</a> &amp;</td></tr>
+<tr class="memdesc:a09e1d34403ad020e682279270671ec46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append another <a class="el" href="classReaktoro_1_1Params.html" title="Used to store and retrieve model parameters.">Params</a> object into this. <br /></td></tr>
+<tr class="separator:a09e1d34403ad020e682279270671ec46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89ffe78f3ea0d5390454db284b3586be"><td class="memItemLeft" align="right" valign="top"><a id="a89ffe78f3ea0d5390454db284b3586be"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#a89ffe78f3ea0d5390454db284b3586be">append</a> (<a class="el" href="classReaktoro_1_1Data.html">Data</a> const &amp;other) -&gt; <a class="el" href="classReaktoro_1_1Params.html">Params</a> &amp;</td></tr>
+<tr class="memdesc:a89ffe78f3ea0d5390454db284b3586be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a <a class="el" href="classReaktoro_1_1Data.html" title="The class used to store and retrieve data for assemblying chemical systems.">Data</a> object containing parameters into this <a class="el" href="classReaktoro_1_1Params.html" title="Used to store and retrieve model parameters.">Params</a> object. <br /></td></tr>
+<tr class="separator:a89ffe78f3ea0d5390454db284b3586be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae27491686e712735d5e28c93220615"><td class="memItemLeft" align="right" valign="top"><a id="a1ae27491686e712735d5e28c93220615"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#a1ae27491686e712735d5e28c93220615">operator+=</a> (<a class="el" href="classReaktoro_1_1Params.html">Params</a> const &amp;other) -&gt; <a class="el" href="classReaktoro_1_1Params.html">Params</a> &amp;</td></tr>
+<tr class="memdesc:a1ae27491686e712735d5e28c93220615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append another <a class="el" href="classReaktoro_1_1Params.html" title="Used to store and retrieve model parameters.">Params</a> object into this. <br /></td></tr>
+<tr class="separator:a1ae27491686e712735d5e28c93220615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9b47ed3e8927d84e6470493802d552"><td class="memItemLeft" align="right" valign="top"><a id="a5e9b47ed3e8927d84e6470493802d552"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#a5e9b47ed3e8927d84e6470493802d552">operator[]</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const &amp;name) const -&gt; <a class="el" href="classReaktoro_1_1Data.html">Data</a> const &amp;</td></tr>
+<tr class="memdesc:a5e9b47ed3e8927d84e6470493802d552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the set of parameters with given name. <br /></td></tr>
+<tr class="separator:a5e9b47ed3e8927d84e6470493802d552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a84d397447445a9295777f696fff0d4a6"><td class="memItemLeft" align="right" valign="top"><a id="a84d397447445a9295777f696fff0d4a6"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#a84d397447445a9295777f696fff0d4a6">embedded</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const &amp;path) -&gt; <a class="el" href="classReaktoro_1_1Params.html">Params</a></td></tr>
+<tr class="memdesc:a84d397447445a9295777f696fff0d4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return parameters with the given file path within the virtual directory of embedded resources. <br /></td></tr>
+<tr class="separator:a84d397447445a9295777f696fff0d4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73e29c0f64ae38115688485a39bdc25"><td class="memItemLeft" align="right" valign="top"><a id="ae73e29c0f64ae38115688485a39bdc25"></a>
+static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Params.html#ae73e29c0f64ae38115688485a39bdc25">local</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const &amp;path) -&gt; <a class="el" href="classReaktoro_1_1Params.html">Params</a></td></tr>
+<tr class="memdesc:ae73e29c0f64ae38115688485a39bdc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return parameters with the given local file path. <br /></td></tr>
+<tr class="separator:ae73e29c0f64ae38115688485a39bdc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The class used to store and retrieve thermodynamic parameters. </p>
+<div class="textblock"><p>Used to store and retrieve model parameters. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>Reaktoro/Core/<a class="el" href="Params_8hpp_source.html">Params.hpp</a></li>
 </ul>
@@ -185,7 +197,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:03 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

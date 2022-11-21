@@ -41,6 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
@@ -50,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -76,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -287,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -296,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -313,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -342,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -364,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -386,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -398,20 +414,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -421,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -447,8 +460,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -478,33 +491,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/citing.html">
+  <a class="reference internal" href="../../general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/faq.html">
+  <a class="reference internal" href="../../general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/troubleshooting.html">
+  <a class="reference internal" href="../../general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/contributing.html">
+  <a class="reference internal" href="../../general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/license.html">
+  <a class="reference internal" href="../../general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -796,8 +814,8 @@ title="Print to PDF"
 <li><p>a gaseous phase containing most of the gases relevant to the process; and</p></li>
 <li><p>one or more solid/liquid substances (condensed phases) that may appear during the combustion process.</p></li>
 </ul>
-<p>The concept of a chemical system is represented in Reaktoro using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class. You should expect to construct one object of this class for almost every chemical process you want to model.</p>
-<p>In a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object, you can find a list of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> objects representing the phases. The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> class is also an essential component of Reaktoro. It contains the list of chemical species composing the phase, as a list of <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a> objects. Additionally, each <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Phase.html"><code class="docutils literal notranslate"><span class="pre">Phase</span></code></a> object includes its activity model to account for its non-ideal thermodynamic behavior.</p>
+<p>The concept of a chemical system is represented in Reaktoro using the {{ChemicalSystem}} class. You should expect to construct one object of this class for almost every chemical process you want to model.</p>
+<p>In a {{ChemicalSystem}} object, you can find a list of {{Phase}} objects representing the phases. The {{Phase}} class is also an essential component of Reaktoro. It contains the list of chemical species composing the phase, as a list of {{Species}} objects. Additionally, each {{Phase}} object includes its activity model to account for its non-ideal thermodynamic behavior.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We’ll learn more about activity models in a subsequent section and how to specify them for our phases.</p>
@@ -805,7 +823,7 @@ title="Print to PDF"
 <p>Next, we will present how to construct a chemical system in Reaktoro for different applications.</p>
 <div class="section" id="chemical-system-definition-for-a-mineral-solubility-problem">
 <h2>Chemical system definition for a mineral solubility problem<a class="headerlink" href="#chemical-system-definition-for-a-mineral-solubility-problem" title="Permalink to this headline">#</a></h2>
-<p>Let’s consider the chemical equilibrium problem associated with calculating the solubility of halite (NaCl) in water. The code block below demonstrates how a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object is created with an aqueous and mineral phase.</p>
+<p>Let’s consider the chemical equilibrium problem associated with calculating the solubility of halite (NaCl) in water. The code block below demonstrates how a {{ChemicalSystem}} object is created with an aqueous and mineral phase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -825,7 +843,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>That’s it! With the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object created above, we can do some exciting things. For example, we can inspect the phases in the system and their composing chemical species:</p>
+<p>That’s it! With the {{ChemicalSystem}} object created above, we can do some exciting things. For example, we can inspect the phases in the system and their composing chemical species:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">():</span>
@@ -888,7 +906,7 @@ Cl
 </div>
 </div>
 </div>
-<p>The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class also contains the formula matrix <span class="math notranslate nohighlight">\(A\)</span> of the system, which is a matrix whose entry <span class="math notranslate nohighlight">\(A_{j,i}\)</span> contains the number of atoms of element with index <span class="math notranslate nohighlight">\(j\)</span> in species with index <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<p>The {{ChemicalSystem}} class also contains the formula matrix $A$ of the system, which is a matrix whose entry $A_{j,i}$ contains the number of atoms of element with index $j$ in species with index $i$:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="p">.</span><span class="nf">formulaMatrix</span><span class="p">())</span>
@@ -908,7 +926,7 @@ Cl
 <p>The last row in the formula matrix contains the electric charge of each species.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code>!</p>
+<p>Access the link {{ChemicalSystem}} to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code>!</p>
 </div>
 </div>
 <div class="section" id="chemical-system-definition-for-a-gas-solubility-problem">
@@ -918,8 +936,8 @@ Cl
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="c1"># Let&#39;s use the SUPCRTBL database this time</span>
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+<span class="c1"># Let&#39;s use the SUPCRTBL database this time (its complete version that includes organic species)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl-organics&quot;</span><span class="p">)</span>
 
 <span class="c1"># Define an aqueous solution with automatic species collection for given selected elements</span>
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca C&quot;</span><span class="p">))</span>
@@ -934,7 +952,7 @@ Cl
 </div>
 </div>
 <p>Let’s print the species in the system, their names, formula, and molar mass:</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;25}{:&lt;25}{:&lt;20}</span><span class="s2">&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Formula&quot;</span><span class="p">,</span> <span class="s2">&quot;Molar Mass (kg/mol)&quot;</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
@@ -1158,9 +1176,9 @@ Ethylene(g)              C2H4                     0.028054
 </div>
 <p>This chemical system contains many species. The SUPCRTBL database contains many
 organic species that should play an insignificant role in accurately computing
-CO<sub>2</sub> solubility. All organic species in SUPCRT and SUPCRTBL databases in
+CO{{_2}} solubility. All organic species in SUPCRT and SUPCRTBL databases in
 Reaktoro’s YAML format have an organic tag which we can use to filter out them.</p>
-<p>Let’s then redefine our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object <code class="docutils literal notranslate"><span class="pre">system</span></code> by excluding those
+<p>Let’s then redefine our {{ChemicalSystem}} object <code class="docutils literal notranslate"><span class="pre">system</span></code> by excluding those
 organic aqueous species and specifying exactly the gases we want:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1175,9 +1193,13 @@ organic aqueous species and specifying exactly the gases we want:</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Make sure you specify species names exactly how they exist in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a>
+<p>Make sure you specify species names exactly how they exist in the {{Database}}
 object you have created, such as in <code class="docutils literal notranslate"><span class="pre">GaseousPhase(&quot;CO2(g)&quot;)</span></code> above. Otherwise
 you will get a runtime exception!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">SupcrtDatabase(&quot;supcrtbl&quot;)</span></code> if you want the SUPCRTBL database version without organic species. In this case, the <code class="docutils literal notranslate"><span class="pre">exclude(&quot;organic&quot;)</span></code> filter is not needed and has no effect.</p>
 </div>
 <p>And here is the updated list of species (only their names this time):</p>
 <div class="cell docutils container">
@@ -1302,7 +1324,7 @@ ThermoFun, which is suitable for modeling cement chemistry.</p>
 </div>
 </div>
 <p>Let’s now print the phase names and their composing species:</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">phase</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
@@ -1377,6 +1399,7 @@ ThermoFun, which is suitable for modeling cement chemistry.</p>
 :: O2@
 :: OH-
 :: S2O3-2
+:: SO2@
 :: SO3-2
 :: SO4-2
 :: Si4O10-4
@@ -1472,6 +1495,8 @@ CSHQ-TobH
 :: CSHQ-TobH
 Cal
 :: Cal
+Corundum
+:: Corundum
 Dis-Dol
 :: Dis-Dol
 ECSH1-KSH
@@ -1506,6 +1531,8 @@ Fe-monosulph05
 :: Fe-monosulph05
 Fe-monosulphate
 :: Fe-monosulphate
+Fe2O3
+:: Fe2O3
 FeOOHmic
 :: FeOOHmic
 Femonocarbonate
@@ -1570,6 +1597,8 @@ NaSiOH
 :: NaSiOH
 Ord-Dol
 :: Ord-Dol
+Periclase
+:: Periclase
 Portlandite
 :: Portlandite
 Py
@@ -1735,7 +1764,7 @@ O2
 </div>
 </div>
 <p>We print below the gases and condensed phases constituting our chemical system:</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gases&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
@@ -2045,9 +2074,9 @@ Number of phases in the system: 67
 <p>This is an impressive number of species and phases to be able to model the combustion of black powder!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>By including as many gases and condensed phases as possible, Reaktoro will be able to determine those that may appear after burning black powder. For example, K<sub>2</sub>S(cd), K<sub>2</sub>SO<sub>4</sub>(cd) and CaS(cd) are typically formed in the combustion process. By including them in the definition of the chemical system, the chemical equilibrium solver will be able to find positive amounts for them (i.e., the solver will identify these condensed phases as stable in equilibrium).</p>
+<p>By including as many gases and condensed phases as possible, Reaktoro will be able to determine those that may appear after burning black powder. For example, K{{_2}}S(cd), K{{_2}}SO{{_4}}(cd) and CaS(cd) are typically formed in the combustion process. By including them in the definition of the chemical system, the chemical equilibrium solver will be able to find positive amounts for them (i.e., the solver will identify these condensed phases as stable in equilibrium).</p>
 </div>
-<p>Keep reading to learn more about how the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class plays an important role in Reaktoro!</p>
+<p>Keep reading to learn more about how the {{ChemicalSystem}} class plays an important role in Reaktoro!</p>
 </div>
 </div>
 

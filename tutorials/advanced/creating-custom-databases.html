@@ -41,6 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
@@ -50,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -76,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -287,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -296,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -313,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="index.html">
    Advanced
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -342,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -364,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -386,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -398,20 +414,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -421,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -447,8 +460,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -478,33 +491,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/citing.html">
+  <a class="reference internal" href="../../general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/faq.html">
+  <a class="reference internal" href="../../general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/troubleshooting.html">
+  <a class="reference internal" href="../../general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/contributing.html">
+  <a class="reference internal" href="../../general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/license.html">
+  <a class="reference internal" href="../../general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -776,16 +794,16 @@ title="Print to PDF"
 <h1>Creating thermodynamic databases<a class="headerlink" href="#creating-thermodynamic-databases" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 14th, 2022</p>
 <p>In this tutorial, we will demonstrate how you create your own thermodynamic databases in Reaktoro’s YAML format. In these databases, you will have blocks of data for each species (and possibly elements as well, if they are not standard chemical elements from the periodic table).</p>
-<p>It is important to understand that Reaktoro expects each chemical species to know how to calculate its own <em>standard thermodynamic properties</em> at a given temperature <span class="math notranslate nohighlight">\(T\)</span> and pressure <span class="math notranslate nohighlight">\(P\)</span>. The following standard thermodynamic properties of a species are expected as output in a standard thermodynamic model in Reaktoro:</p>
+<p>It is important to understand that Reaktoro expects each chemical species to know how to calculate its own <em>standard thermodynamic properties</em> at a given temperature $T$ and pressure $P$. The following standard thermodynamic properties of a species are expected as output in a standard thermodynamic model in Reaktoro:</p>
 <ul class="simple">
-<li><p>its standard molar Gibbs energy of formation <span class="math notranslate nohighlight">\(G^{\circ}\)</span> (in J/mol)</p></li>
-<li><p>its standard molar enthalpy of formation <span class="math notranslate nohighlight">\(H^{\circ}\)</span> (in J/mol)</p></li>
-<li><p>its standard molar volume <span class="math notranslate nohighlight">\(V^{\circ}\)</span> (in m³/mol)</p></li>
-<li><p>its standard molar isobaric heat capacity <span class="math notranslate nohighlight">\(C_{P}^{\circ}\)</span> (in J/(mol·K))</p></li>
-<li><p>the temperature derivative of <span class="math notranslate nohighlight">\(V^{\circ}\)</span> at constant pressure <span class="math notranslate nohighlight">\((\partial V^{\circ}/\partial T)_P\)</span> of the species (in m³/(mol·K))</p></li>
-<li><p>the pressure derivative of <span class="math notranslate nohighlight">\(V^{\circ}\)</span> at constant temperature <span class="math notranslate nohighlight">\((\partial V^{\circ}/\partial P)_T\)</span> (in m³/(mol·Pa))</p></li>
+<li><p>its standard molar Gibbs energy of formation $G^{\circ}$ (in J/mol)</p></li>
+<li><p>its standard molar enthalpy of formation $H^{\circ}$ (in J/mol)</p></li>
+<li><p>its standard molar volume $V^{\circ}$ (in m³/mol)</p></li>
+<li><p>its standard molar isobaric heat capacity $C_{P}^{\circ}$ (in J/(mol·K))</p></li>
+<li><p>the temperature derivative of $V^{\circ}$ at constant pressure $(\partial V^{\circ}/\partial T)_P$ of the species (in m³/(mol·K))</p></li>
+<li><p>the pressure derivative of $V^{\circ}$ at constant temperature $(\partial V^{\circ}/\partial P)_T$ (in m³/(mol·Pa))</p></li>
 </ul>
-<p>After computing these properties for a given <span class="math notranslate nohighlight">\((T,P)\)</span>, several others can be easily obtained using thermodynamic relationships (e.g. <span class="math notranslate nohighlight">\(U^{\circ} = H^{\circ} - PV^{\circ }\)</span>).</p>
+<p>After computing these properties for a given $(T,P)$, several others can be easily obtained using thermodynamic relationships (e.g. $U^{\circ} = H^{\circ} - PV^{\circ }$).</p>
 <p>Reaktoro already implements several standard thermodynamic models for you:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">StandardThermoModelConstant</span></code></p></li>
@@ -797,17 +815,17 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">StandardThermoModelHollandPowell</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">StandardThermoModelNasa</span></code></p></li>
 </ul>
-<p>We understand that thermodynamic data are not always formulated and organized in terms of standard thermodynamic properties of species. Many thermodynamic databases exist in which reaction properties are given (e.g., equilibrium constant of reaction, enthalpy of reaction, etc.). Reaktoro also implements several <em>thermodynamic reaction models</em> to meet this need:</p>
+<p>We understand that thermodynamic data are not always formulated and organized in terms of standard thermodynamic properties of species. Many thermodynamic databases exist in which reaction properties are given (e.g., equilibrium constant of reaction, enthalpy of reaction, etc.). Reaktoro also implements several <em>standard thermodynamic models for reactions</em> to meet this need:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ReactionThermoModelConstLgK</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ReactionThermoModelVantHoff</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ReactionThermoModelPhreeqcLgK</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ReactionThermoModelGemsLgK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelConstLgK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelVantHoff</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelPhreeqcLgK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelGemsLgK</span></code></p></li>
 </ul>
-<p>These models also expect temperature <span class="math notranslate nohighlight">\(T\)</span> and pressure <span class="math notranslate nohighlight">\(P\)</span> as inputs, and their output should be:</p>
+<p>These models also expect temperature $T$ and pressure $P$ as inputs, and their output should be:</p>
 <ul class="simple">
-<li><p>the standard molar Gibbs energy of the reaction <span class="math notranslate nohighlight">\(\Delta G^{\circ}\)</span> (in J/mol)</p></li>
-<li><p>the standard molar enthalpy of the reaction <span class="math notranslate nohighlight">\(\Delta H^{\circ}\)</span> (in J/mol)</p></li>
+<li><p>the standard molar Gibbs energy of the reaction $\Delta G^{\circ}$ (in J/mol)</p></li>
+<li><p>the standard molar enthalpy of the reaction $\Delta H^{\circ}$ (in J/mol)</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -816,14 +834,15 @@ title="Print to PDF"
 <div class="section" id="a-very-simple-custom-thermodynamic-database-in-yaml-format">
 <h2>A very simple custom thermodynamic database in YAML format<a class="headerlink" href="#a-very-simple-custom-thermodynamic-database-in-yaml-format" title="Permalink to this headline">#</a></h2>
 <p>Let’s consider fictitious gaseous species A<sup>+</sup>, B<sup>-</sup>, and AB. The elements constituting these species are A and B. We consider the following reaction among them:</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{A}^{+}+\mathrm{B}^{-}\rightleftharpoons\mathrm{AB}\qquad(\lg K_{\mathrm{AB}}=2)\]</div>
-<p>where <span class="math notranslate nohighlight">\(\lg\equiv\log_{10}\)</span>.</p>
+<p>$$\mathrm{A}^{+}+\mathrm{B}^{-}\rightleftharpoons\mathrm{AB}\qquad(\lg K_{\mathrm{AB}}=2)$$</p>
+<p>where $\lg\equiv\log_{10}$.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This example can be modified to work with species of other aggregate state as well, not just gaseous. And yes, gases can exist in charged stated: plasma!</p>
+<p>This example can be modified to work with species of other aggregate state as well, not just gaseous. And yes, gases can exist in charged state: plasma!</p>
 </div>
-<p>Let’s say we are interested in calculating the equilibrium state of these species at 25 °C and 1 atm starting from an initial state with the same temperature and pressure containing 1 mol of AB. The first step is to create a database file in Reaktoro’s YAML format containing the details and thermodynamic data of these species:</p>
+<p>Let’s say we are interested in calculating the equilibrium state of these species at 25 {{deg}}C and 1 atm starting from an initial state with the same temperature and pressure containing 1 mol of AB. The first step is to create a database file in Reaktoro’s YAML format containing the details and thermodynamic data of these species:</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Old Format</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Elements</span><span class="p">:</span>
 <span class="p p-Indicator">-</span> <span class="nt">Symbol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A</span>
   <span class="nt">MolarMass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.001</span>  <span class="c1"># in kg/mol</span>
@@ -853,44 +872,85 @@ title="Print to PDF"
   <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
   <span class="nt">FormationReaction</span><span class="p">:</span>
     <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A+ 1:B-</span>
-    <span class="nt">ReactionThermoModel</span><span class="p">:</span>
+    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
       <span class="nt">ConstLgK</span><span class="p">:</span>
         <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
 </pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">New Format</label><div class="tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Elements</span><span class="p">:</span>
+  <span class="nt">A</span><span class="p">:</span>
+    <span class="nt">Symbol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A</span>
+    <span class="nt">MolarMass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.001</span>  <span class="c1"># in kg/mol</span>
+  <span class="nt">B</span><span class="p">:</span>
+    <span class="nt">Symbol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B</span>
+    <span class="nt">MolarMass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.002</span>  <span class="c1"># in kg/mol</span>
+
+<span class="nt">Species</span><span class="p">:</span>
+  <span class="nt">A+</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A+</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A+</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A</span>
+    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
+    <span class="nt">StandardThermoModel</span><span class="p">:</span>
+      <span class="nt">Constant</span><span class="p">:</span>
+        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
+  <span class="nt">B-</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B-</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B-</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:B</span>
+    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
+    <span class="nt">StandardThermoModel</span><span class="p">:</span>
+      <span class="nt">Constant</span><span class="p">:</span>
+        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
+  <span class="nt">AB</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AB</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AB</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A 1:B</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
+    <span class="nt">FormationReaction</span><span class="p">:</span>
+      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A+ 1:B-</span>
+      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+        <span class="nt">ConstLgK</span><span class="p">:</span>
+          <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reaktoro now supports a new experimental database format (click the “New Format” tab above). In this new format, YAML dictionaries are used instead of YAML lists to store species and element data. You will notice that each new element and species is now preceded by its unique identifier (the element symbol and the species name). This format has some advantages when working with online graphical editors for YAML and JSON files, with elements and species being found more easily in the tree. Furthermore, this format will also have some advantages in future versions of Reaktoro when the user wants to access any parameter associated with a species and change its value to see how the calculated chemical states (via equilibrium or kinetics computations) are affected.</p>
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Reaktoro strictly adopts SI units! Thus, molar mass must be provided in kg/mol, energy in J, mass in kg, volume in m<sup>3</sup>, amount in mol, temperature in K, pressure in Pa, etc.</p>
 </div>
-<p>Notes on the above database:</p>
-<ol>
-<li><p>Elements A and B in this problem are not on the periodic table (element B here is not boron!). Thus, they need to be entered into the database. They are needed when building the chemical species. Note that their symbols are referred to in the <code class="docutils literal notranslate"><span class="pre">Elements</span></code> field of the species, eg <code class="docutils literal notranslate"><span class="pre">Elements:</span> <span class="pre">1:A</span> <span class="pre">1:B</span></code> for the <code class="docutils literal notranslate"><span class="pre">AB</span></code> species.</p></li>
-<li><p>Species <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> compute their standard thermodynamic properties with a <em>constant standard thermodynamic model</em> implemented in <code class="docutils literal notranslate"><span class="pre">StandardThermoModelConstant</span></code>. For any <span class="math notranslate nohighlight">\((T,P)\)</span>, its properties are constants. By setting <code class="docutils literal notranslate"><span class="pre">G0</span></code> to zero it means <span class="math notranslate nohighlight">\(G^{\circ}_i=0\)</span> for any temperature and pressure. We could have assigned values ​​to <code class="docutils literal notranslate"><span class="pre">H0</span></code>, <code class="docutils literal notranslate"><span class="pre">V0</span></code>, <code class="docutils literal notranslate"><span class="pre">VT0</span></code>, <code class="docutils literal notranslate"><span class="pre">VP0</span></code>, and <code class="docutils literal notranslate"><span class="pre">Cp0</span></code> as well. If not provided, they are zero.</p></li>
-<li><p>The thermodynamic data available for species <code class="docutils literal notranslate"><span class="pre">AB</span></code> is in the form of reaction properties (reaction equilibrium constant). So we used <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> above instead of <code class="docutils literal notranslate"><span class="pre">StandardThermoModel</span></code> for this. Reaktoro requires that a reaction that provides thermodynamic properties for a species be written as a <em>formation reaction</em>. In this example, the species <code class="docutils literal notranslate"><span class="pre">AB</span></code> should be considered as a product in the reaction and both <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> as reactants. The reaction is therefore expected to be <code class="docutils literal notranslate"><span class="pre">A+</span> <span class="pre">+</span> <span class="pre">B-</span> <span class="pre">=</span> <span class="pre">AB</span></code>, with <code class="docutils literal notranslate"><span class="pre">AB</span></code> on the right side. In the <code class="docutils literal notranslate"><span class="pre">Reactants</span></code> field of <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> for species <code class="docutils literal notranslate"><span class="pre">AB</span></code> we provide <code class="docutils literal notranslate"><span class="pre">1:A+</span> <span class="pre">1:B-</span></code>.</p></li>
-<li><p>If the reaction has more than one product, the other products are considered reactants with negative coefficients. For example, <code class="docutils literal notranslate"><span class="pre">H+</span> <span class="pre">+</span> <span class="pre">HCO3-</span> <span class="pre">=</span> <span class="pre">CO2</span> <span class="pre">+</span> <span class="pre">H2O</span></code>, a forming reaction for <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, also has <code class="docutils literal notranslate"><span class="pre">H2O</span></code> as a product. This reaction can be interpreted as <code class="docutils literal notranslate"><span class="pre">H+</span> <span class="pre">+</span> <span class="pre">HCO3-</span> <span class="pre">-</span> <span class="pre">H2O</span> <span class="pre">=</span> <span class="pre">CO2</span></code>, which would produce <code class="docutils literal notranslate"><span class="pre">Reagents:</span> <span class="pre">1:H+</span> <span class="pre">1:HCO3-</span> <span class="pre">-1:H2O</span></code> for the <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> of <code class="docutils literal notranslate"><span class="pre">CO2</span></code>. You’ll see this in the next section where we show another example of constructing a custom database.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">AB</span></code> species calculates its standard thermodynamic properties with a <em>constant lgK reaction model</em> implemented in <code class="docutils literal notranslate"><span class="pre">ReactionThermoModelConstLgK</span></code>. For each <span class="math notranslate nohighlight">\((T,P)\)</span> the equilibrium constant is the same. This equilibrium constant <span class="math notranslate nohighlight">\(K_{\mathrm{AB}}\)</span> is thus converted by the model to <span class="math notranslate nohighlight">\(\Delta G_{\mathrm{AB}}^{\circ}\)</span> as follows:</p>
-<div class="math notranslate nohighlight">
-\[\Delta G_{\mathrm{AB}}^{\circ}=-RT\ln K_{\mathrm{AB}}\]</div>
-<p>and from the definition of <span class="math notranslate nohighlight">\(\Delta G_{\mathrm{AB}}^{\circ}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\Delta G_{\mathrm{AB}}^{\circ}\equiv G_{\mathrm{AB}}^{\circ}-G_{\mathrm{A^{+}}}^{\circ} -G_{\mathrm{B^{-}}}^{\circ}\]</div>
-<p>Reaktoro will calculate <span class="math notranslate nohighlight">\(G_{\mathrm{AB}}^{\circ}\)</span> using:</p>
-<div class="math notranslate nohighlight">
-\[G_{\mathrm{AB}}^{\circ}=\Delta G_{\mathrm{AB}}^{\circ}+G_{\mathrm{A^{+}}}^{\circ}+ G_{\mathrm{B^{-}}}^{\circ}.\]</div>
+<p>Remarks on the above database:</p>
+<p><strong>Remark 1:</strong> Elements A and B in this problem are not on the periodic table (element B here is not boron!). Thus, they need to be entered into the database. They are needed when building the chemical species. Note that their symbols are referred to in the <code class="docutils literal notranslate"><span class="pre">Elements</span></code> field of the species, eg <code class="docutils literal notranslate"><span class="pre">Elements:</span> <span class="pre">1:A</span> <span class="pre">1:B</span></code> for the <code class="docutils literal notranslate"><span class="pre">AB</span></code> species.</p>
+<p><strong>Remark 2:</strong> Species <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> compute their standard thermodynamic properties with a <em>constant standard thermodynamic model</em> implemented in <code class="docutils literal notranslate"><span class="pre">StandardThermoModelConstant</span></code>. For any $(T,P)$, its properties are constants. By setting <code class="docutils literal notranslate"><span class="pre">G0</span></code> to zero it means $G^{\circ}_i=0$ for any temperature and pressure. We could have assigned values ​​to <code class="docutils literal notranslate"><span class="pre">H0</span></code>, <code class="docutils literal notranslate"><span class="pre">V0</span></code>, <code class="docutils literal notranslate"><span class="pre">VT0</span></code>, <code class="docutils literal notranslate"><span class="pre">VP0</span></code>, and <code class="docutils literal notranslate"><span class="pre">Cp0</span></code> as well. If not provided, they are zero.</p>
+<p><strong>Remark 3:</strong> The thermodynamic data available for species <code class="docutils literal notranslate"><span class="pre">AB</span></code> is in the form of reaction properties (reaction equilibrium constant). So we used <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> above instead of <code class="docutils literal notranslate"><span class="pre">StandardThermoModel</span></code> for this. Reaktoro requires that a reaction that provides thermodynamic properties for a species be written as a <em>formation reaction</em>. In this example, the species <code class="docutils literal notranslate"><span class="pre">AB</span></code> should be considered as a product in the reaction and both <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> as reactants. The reaction is therefore expected to be <code class="docutils literal notranslate"><span class="pre">A+</span> <span class="pre">+</span> <span class="pre">B-</span> <span class="pre">=</span> <span class="pre">AB</span></code>, with <code class="docutils literal notranslate"><span class="pre">AB</span></code> on the right side. In the <code class="docutils literal notranslate"><span class="pre">Reactants</span></code> field of <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> for species <code class="docutils literal notranslate"><span class="pre">AB</span></code> we provide <code class="docutils literal notranslate"><span class="pre">1:A+</span> <span class="pre">1:B-</span></code>.</p>
+<p><strong>Remark 4:</strong> If the reaction has more than one product, the other products are considered reactants with negative coefficients. For example, <code class="docutils literal notranslate"><span class="pre">H+</span> <span class="pre">+</span> <span class="pre">HCO3-</span> <span class="pre">=</span> <span class="pre">CO2</span> <span class="pre">+</span> <span class="pre">H2O</span></code>, a forming reaction for <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, also has <code class="docutils literal notranslate"><span class="pre">H2O</span></code> as a product. This reaction can be interpreted as <code class="docutils literal notranslate"><span class="pre">H+</span> <span class="pre">+</span> <span class="pre">HCO3-</span> <span class="pre">-</span> <span class="pre">H2O</span> <span class="pre">=</span> <span class="pre">CO2</span></code>, which would produce <code class="docutils literal notranslate"><span class="pre">Reagents:</span> <span class="pre">1:H+</span> <span class="pre">1:HCO3-</span> <span class="pre">-1:H2O</span></code> for the <code class="docutils literal notranslate"><span class="pre">FormationReaction</span></code> of <code class="docutils literal notranslate"><span class="pre">CO2</span></code>. You’ll see this in the next section where we show another example of constructing a custom database.</p>
+<p><strong>Remark 5:</strong> The <code class="docutils literal notranslate"><span class="pre">AB</span></code> species calculates its standard thermodynamic properties with a <em>constant lgK reaction model</em> implemented in <code class="docutils literal notranslate"><span class="pre">ReactionStandardThermoModelConstLgK</span></code>. For each $(T,P)$ the equilibrium constant is the same. This equilibrium constant $K_{\mathrm{AB}}$ is thus converted by the model to $\Delta G_{\mathrm{AB}}^{\circ}$ as follows:</p>
+<p>$$\Delta G_{\mathrm{AB}}^{\circ}=-RT\ln K_{\mathrm{AB}}$$</p>
+<p>and from the definition of $\Delta G_{\mathrm{AB}}^{\circ}$:</p>
+<p>$$\Delta G_{\mathrm{AB}}^{\circ}\equiv G_{\mathrm{AB}}^{\circ}-G_{\mathrm{A^{+}}}^{\circ} -G_{\mathrm{B^{-}}}^{\circ}$$</p>
+<p>Reaktoro will calculate $G_{\mathrm{AB}}^{\circ}$ using:</p>
+<p>$$G_{\mathrm{AB}}^{\circ}=\Delta G_{\mathrm{AB}}^{\circ}+G_{\mathrm{A^{+}}}^{\circ}+ G_{\mathrm{B^{-}}}^{\circ}.$$</p>
 <p>This is the principle behind Reaktoro’s automated transformation of a thermodynamic model for a reaction to a standard thermodynamic model for a species.</p>
-</li>
-<li><p>The above conversion technique can produce infinite recursion if all species are defined in terms of formation reactions. We leave the mathematical identification of this recursion for you to figure out. Just note that it would make no sense to define the formation reaction for <code class="docutils literal notranslate"><span class="pre">AB</span></code> in terms of <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> and also define formation reactions for <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> in terms of themselves and <code class="docutils literal notranslate"><span class="pre">AB</span></code> . Infinite recursion can be removed by assigning a standard thermodynamic model to some species, the basic/master species. For example, a constant model that sets <span class="math notranslate nohighlight">\(G_{\mathrm{A^{+}}}^{\circ}\)</span> and <span class="math notranslate nohighlight">\(G_{\mathrm{B^{-}}}^{\circ}\)</span> to zero for the basic species.</p></li>
-</ol>
+<p><strong>Remark 6:</strong> The above conversion technique can produce infinite recursion if all species are defined in terms of formation reactions. We leave the mathematical identification of this recursion for you to figure out. Just note that it would make no sense to define the formation reaction for <code class="docutils literal notranslate"><span class="pre">AB</span></code> in terms of <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> and also define formation reactions for <code class="docutils literal notranslate"><span class="pre">A+</span></code> and <code class="docutils literal notranslate"><span class="pre">B-</span></code> in terms of themselves and <code class="docutils literal notranslate"><span class="pre">AB</span></code> . Infinite recursion can be removed by assigning a standard thermodynamic model to some species, the basic/master species. For example, a constant model that sets $G_{\mathrm{A^{+}}}^{\circ}$ and $G_{\mathrm{B^{-}}}^{\circ}$ to zero for the basic species.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The above convention of formation reactions is only necessary when providing the means to calculate standard thermodynamic properties for a species. When modeling chemical kinetics, Reaktoro has no absolute imposition on how you define your reactions!</p>
 </div>
-<p>Let us now proceed with our chemical equilibrium calculation. We’ve saved this database file locally, with file name <code class="docutils literal notranslate"><span class="pre">db-fictious-simple.yml</span></code>, which is used next:</p>
+<p>Let us now proceed with our chemical equilibrium calculation. We’ve saved this database file locally, with file name <code class="docutils literal notranslate"><span class="pre">db-fictious-simple.yaml</span></code>, which is used next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;db-fictitious-simple.yml&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;db-fictitious-simple.yaml&quot;</span><span class="p">)</span>
 
 <span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;A+ B- AB&quot;</span><span class="p">)</span>
 
@@ -950,6 +1010,8 @@ FINAL STATE
 <div class="section" id="a-more-complicated-custom-thermodynamic-database-in-yaml-format">
 <h2>A more complicated custom thermodynamic database in YAML format<a class="headerlink" href="#a-more-complicated-custom-thermodynamic-database-in-yaml-format" title="Permalink to this headline">#</a></h2>
 <p>We now consider a more complicated database in which thermodynamic reaction properties available in the PHREEQC database <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> were collected and ported to Reaktoro’s YAML format. The database is shown below:</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Old Format</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Species</span><span class="p">:</span>
 <span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H+</span>
   <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H+</span>
@@ -975,40 +1037,6 @@ FINAL STATE
   <span class="nt">StandardThermoModel</span><span class="p">:</span>
     <span class="nt">Constant</span><span class="p">:</span>
       <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2:H 1:O</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">FormationReaction</span><span class="p">:</span>
-    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H+ 1:OH-</span>
-    <span class="nt">ReactionThermoModel</span><span class="p">:</span>
-      <span class="nt">ConstLgK</span><span class="p">:</span>
-        <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">14.0</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
-  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">FormationReaction</span><span class="p">:</span>
-    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:H+</span>
-    <span class="nt">ReactionThermoModel</span><span class="p">:</span>
-      <span class="nt">VantHoff</span><span class="p">:</span>
-        <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.329</span>
-        <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-14899.224</span>  <span class="c1"># in J/mol</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">FormationReaction</span><span class="p">:</span>
-    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 2:H+ -1:H2O</span>
-    <span class="nt">ReactionThermoModel</span><span class="p">:</span>
-      <span class="nt">PhreeqcLgK</span><span class="p">:</span>
-        <span class="nt">A1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">464.1965</span>
-        <span class="nt">A2</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.09344813</span>
-        <span class="nt">A3</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-26986.16</span>
-        <span class="nt">A4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-165.75951</span>
-        <span class="nt">A5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2248628.9</span>
-        <span class="nt">A6</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
 <span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
   <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
   <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:Ca</span>
@@ -1020,24 +1048,152 @@ FINAL STATE
       <span class="nt">Pressures</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">1.0e+5</span><span class="p p-Indicator">,</span> <span class="nv">10.0e+5</span><span class="p p-Indicator">]</span>          <span class="c1"># in Pa</span>
       <span class="nt">G0</span><span class="p">:</span> <span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">],</span> <span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]]</span>
       <span class="nt">H0</span><span class="p">:</span> <span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">],</span> <span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]]</span>
+<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
+  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
+  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2:H 1:O</span>
+  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+  <span class="nt">FormationReaction</span><span class="p">:</span>
+    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H+ 1:OH-</span>
+    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+      <span class="nt">PhreeqcLgK</span><span class="p">:</span>
+        <span class="nt">A1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-293.29227</span>
+        <span class="nt">A2</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-0.1360833</span>
+        <span class="nt">A3</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10576.913</span>
+        <span class="nt">A4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">123.73158</span>
+        <span class="nt">A5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
+        <span class="nt">A6</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6.996455e-5</span>
+<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
+  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
+  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
+  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+  <span class="nt">FormationReaction</span><span class="p">:</span>
+    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:H+</span>
+    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+      <span class="nt">VantHoff</span><span class="p">:</span>
+        <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.329</span>
+        <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-14899.224</span>  <span class="c1"># in J/mol</span>
+<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
+  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
+  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:C 2:O</span>
+  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+  <span class="nt">FormationReaction</span><span class="p">:</span>
+    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 2:H+ -1:H2O</span>
+    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+      <span class="nt">ConstLgK</span><span class="p">:</span>
+        <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16.681</span>
 <span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Calcite</span>
   <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CaCO3</span>
   <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:Ca 1:C 3:O</span>
   <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Solid</span>
   <span class="nt">FormationReaction</span><span class="p">:</span>
     <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:Ca+2</span>
-    <span class="nt">ReactionThermoModel</span><span class="p">:</span>
+    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
       <span class="nt">VantHoff</span><span class="p">:</span>
         <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8.48</span>
         <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10832.376</span>  <span class="c1"># in J/mol</span>
 </pre></div>
 </div>
-<p>We will now use this database, saved locally under the name <code class="docutils literal notranslate"><span class="pre">db-geo-complicated.yml</span></code>, to perform a chemical equilibrium calculation in an initial chemical state at 25 °C and 1 bar containing 1 kg of H<sub>2</sub>O, 0.1 mol of CO<sub>2</sub>, and 1 mol of mineral calcite (CaCO<sub>3</sub>):</p>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">New Format</label><div class="tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Species</span><span class="p">:</span>
+  <span class="nt">H+</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H+</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H+</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H</span>
+    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+    <span class="nt">StandardThermoModel</span><span class="p">:</span>
+      <span class="nt">Constant</span><span class="p">:</span>
+        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
+  <span class="nt">OH-</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">OH-</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">OH-</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:O 1:H</span>
+    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+    <span class="nt">StandardThermoModel</span><span class="p">:</span>
+      <span class="nt">Constant</span><span class="p">:</span>
+        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
+  <span class="nt">CO3-2</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:C 3:O</span>
+    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-2.0</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+    <span class="nt">StandardThermoModel</span><span class="p">:</span>
+      <span class="nt">Constant</span><span class="p">:</span>
+        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
+  <span class="nt">H2O</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2:H 1:O</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+    <span class="nt">FormationReaction</span><span class="p">:</span>
+      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H+ 1:OH-</span>
+      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+        <span class="nt">ConstLgK</span><span class="p">:</span>
+          <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">14.0</span>
+  <span class="nt">HCO3-</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
+    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+    <span class="nt">FormationReaction</span><span class="p">:</span>
+      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:H+</span>
+      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+        <span class="nt">VantHoff</span><span class="p">:</span>
+          <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.329</span>
+          <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-14899.224</span>  <span class="c1"># in J/mol</span>
+  <span class="nt">CO2</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+    <span class="nt">FormationReaction</span><span class="p">:</span>
+      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 2:H+ -1:H2O</span>
+      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+        <span class="nt">PhreeqcLgK</span><span class="p">:</span>
+          <span class="nt">A1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">464.1965</span>
+          <span class="nt">A2</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.09344813</span>
+          <span class="nt">A3</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-26986.16</span>
+          <span class="nt">A4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-165.75951</span>
+          <span class="nt">A5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2248628.9</span>
+          <span class="nt">A6</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
+  <span class="nt">Ca+2</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:Ca</span>
+    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+    <span class="nt">StandardThermoModel</span><span class="p">:</span>
+      <span class="nt">Interpolation</span><span class="p">:</span>
+        <span class="nt">Temperatures</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">298.15</span><span class="p p-Indicator">,</span> <span class="nv">350.0</span><span class="p p-Indicator">,</span> <span class="nv">400.0</span><span class="p p-Indicator">]</span>  <span class="c1"># in K</span>
+        <span class="nt">Pressures</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">1.0e+5</span><span class="p p-Indicator">,</span> <span class="nv">10.0e+5</span><span class="p p-Indicator">]</span>          <span class="c1"># in Pa</span>
+        <span class="nt">G0</span><span class="p">:</span> <span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">],</span> <span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]]</span>
+        <span class="nt">H0</span><span class="p">:</span> <span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">],</span> <span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]]</span>
+  <span class="nt">Calcite</span><span class="p">:</span>
+    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Calcite</span>
+    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CaCO3</span>
+    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:Ca 1:C 3:O</span>
+    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Solid</span>
+    <span class="nt">FormationReaction</span><span class="p">:</span>
+      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:Ca+2</span>
+      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+        <span class="nt">VantHoff</span><span class="p">:</span>
+          <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8.48</span>
+          <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10832.376</span>  <span class="c1"># in J/mol</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will now use this database, saved locally under the name <code class="docutils literal notranslate"><span class="pre">db-geo-complicated.yaml</span></code>, to perform a chemical equilibrium calculation in an initial chemical state at 25 {{deg}}C and 1 bar containing 1 kg of H{{_2}}O, 0.1 mol of CO{{_2}}, and 1 mol of mineral calcite (CaCO{{_3}}):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;db-geo-complicated.yml&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;db-geo-complicated.yaml&quot;</span><span class="p">)</span>
 
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
 <span class="n">mineral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
@@ -1065,7 +1221,7 @@ FINAL STATE
 +---------------------+-------------+------+
 | Temperature         |    298.1500 |    K |
 | Pressure            |      1.0000 |  bar |
-| Charge:             | -9.7145e-17 |  mol |
+| Charge:             | -1.0061e-16 |  mol |
 | Element Amount:     |             |      |
 | :: H                |  1.1102e+02 |  mol |
 | :: C                |  1.1000e+00 |  mol |
@@ -1118,7 +1274,7 @@ FINAL STATE
 +---------------------+-------------+------+
 | Temperature         |    298.1500 |    K |
 | Pressure            |      1.0000 |  bar |
-| Charge:             | -1.0408e-16 |  mol |
+| Charge:             | -9.7145e-17 |  mol |
 | Element Amount:     |             |      |
 | :: H                |  1.1101e+02 |  mol |
 | :: C                |  1.1000e+00 |  mol |
@@ -1126,7 +1282,7 @@ FINAL STATE
 | :: Ca               |  1.0000e+00 |  mol |
 | Species Amount:     |             |      |
 | :: H2O              |  5.5497e+01 |  mol |
-| :: H+               |  2.2611e-06 |  mol |
+| :: H+               |  2.2610e-06 |  mol |
 | :: OH-              |  4.4652e-09 |  mol |
 | :: HCO3-            |  1.7871e-02 |  mol |
 | :: CO2              |  9.1063e-02 |  mol |
@@ -1138,13 +1294,13 @@ FINAL STATE
 </div>
 </div>
 </div>
-<p>The amounts of species above should be comparable. Not identical, because for some species in our custom database, we are not using the same calculation mode for equilibrium constants (e.g. in our custom database we use a certain value for <span class="math notranslate nohighlight">\(\lg K\)</span> for <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, 16.681, while in <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> an analytic expression is used).</p>
+<p>The amounts of species above should be comparable. Not identical, because for some species in our custom database, we are not using the same calculation mode for equilibrium constants (e.g. in our custom database we use a certain value for $\lg K$ for <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, 16.681, while in <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> an analytic expression is used).</p>
 </div>
 <div class="section" id="a-very-simple-custom-thermodynamic-database-using-python-api">
 <h2>A very simple custom thermodynamic database using Python API<a class="headerlink" href="#a-very-simple-custom-thermodynamic-database-using-python-api" title="Permalink to this headline">#</a></h2>
-<p>We will now construct a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object using Reaktoro’s Python API only (no YAML files!). This is a more complicated way to construct a custom <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object, but maybe this guide can be helpful to you in ways we cannot foresee now.</p>
+<p>We will now construct a {{Database}} object using Reaktoro’s Python API only (no YAML files!). This is a more complicated way to construct a custom {{Database}} object, but maybe this guide can be helpful to you in ways we cannot foresee now.</p>
 <p>We want to construct a database to model the equilibrium of <code class="docutils literal notranslate"><span class="pre">H2O</span></code>, <code class="docutils literal notranslate"><span class="pre">H+</span></code>, and <code class="docutils literal notranslate"><span class="pre">OH-</span></code>. The elements composing these species are <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">O</span></code>.</p>
-<p>The code block below implements function <code class="docutils literal notranslate"><span class="pre">createElementList</span></code> that construct an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ElementList.html"><code class="docutils literal notranslate"><span class="pre">ElementList</span></code></a> object containing the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Element.html"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a> objects that constitute the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a> objects we will construct next:</p>
+<p>The code block below implements function <code class="docutils literal notranslate"><span class="pre">createElementList</span></code> that construct an {{ElementList}} object containing the {{Element}} objects that constitute the {{Species}} objects we will construct next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createElementList</span><span class="p">():</span>
@@ -1165,7 +1321,7 @@ FINAL STATE
 </div>
 </div>
 </div>
-<p>We now define a function <code class="docutils literal notranslate"><span class="pre">createSpeciesList</span></code> that construct the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a> objects that will populate our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object:</p>
+<p>We now define a function <code class="docutils literal notranslate"><span class="pre">createSpeciesList</span></code> that construct the {{Species}} objects that will populate our {{Database}} object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createSpeciesList</span><span class="p">(</span><span class="n">elements</span><span class="p">:</span> <span class="n">ElementList</span><span class="p">):</span>
@@ -1211,7 +1367,7 @@ FINAL STATE
 </div>
 </div>
 </div>
-<p>We now create our auxiliary <code class="docutils literal notranslate"><span class="pre">createCustomDatabase</span></code> function that creates our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object:</p>
+<p>We now create our auxiliary <code class="docutils literal notranslate"><span class="pre">createCustomDatabase</span></code> function that creates our {{Database}} object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createCustomDatabase</span><span class="p">():</span>

@@ -185,8 +185,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    For&lt;0, iend&gt;(std::forward&lt;Function&gt;(f));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Function&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#ac2276800315180efd92ea997b30a5980">   62</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#ac2276800315180efd92ea997b30a5980">ForEach</a>(Function <span class="keyword">const</span>&amp; f) -&gt; <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Function, <span class="keyword">typename</span> Arg, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#af72740e1f4ad1249f131558defe77280">   68</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#ac2276800315180efd92ea997b30a5980">ForEach</a>(Function <span class="keyword">const</span>&amp; f, Arg <span class="keyword">const</span>&amp; arg, Args <span class="keyword">const</span>&amp;... args) -&gt; <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    f(arg);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="namespaceReaktoro.html#ac2276800315180efd92ea997b30a5980">ForEach</a>(f, args...);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_ac2276800315180efd92ea997b30a5980"><div class="ttname"><a href="namespaceReaktoro.html#ac2276800315180efd92ea997b30a5980">Reaktoro::ForEach</a></div><div class="ttdeci">constexpr auto ForEach(Function const &amp;f) -&gt; void</div><div class="ttdoc">Generate evaluation statements f(arg0); f(arg1); ...; f(argn); at compile time.</div><div class="ttdef"><b>Definition:</b> Meta.hpp:62</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_ac37e739feabdfdd135688682767d98b3"><div class="ttname"><a href="namespaceReaktoro.html#ac37e739feabdfdd135688682767d98b3">Reaktoro::For</a></div><div class="ttdeci">constexpr auto For(Function &amp;&amp;f)</div><div class="ttdoc">Generate evaluation statements f(ibegin); f(ibegin + 1); ...; f(iend-1); at compile time.</div><div class="ttdef"><b>Definition:</b> Meta.hpp:48</div></div>
 <div class="ttc" id="astructReaktoro_1_1detail_1_1Counter_html"><div class="ttname"><a href="structReaktoro_1_1detail_1_1Counter.html">Reaktoro::detail::Counter</a></div><div class="ttdef"><b>Definition:</b> Meta.hpp:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -198,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:05 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:03 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

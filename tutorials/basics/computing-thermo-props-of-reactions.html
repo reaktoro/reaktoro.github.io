@@ -41,6 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
@@ -50,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -76,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -287,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -296,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -313,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -342,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -364,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -386,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -398,20 +414,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -421,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -447,8 +460,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -478,33 +491,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/citing.html">
+  <a class="reference internal" href="../../general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/faq.html">
+  <a class="reference internal" href="../../general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/troubleshooting.html">
+  <a class="reference internal" href="../../general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/contributing.html">
+  <a class="reference internal" href="../../general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/license.html">
+  <a class="reference internal" href="../../general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -720,27 +738,24 @@ title="Print to PDF"
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 21th, 2022</p>
 <p>This tutorial demonstrates the use of Reaktoro for the computation of standard thermodynamic properties of a chemical reaction such as:</p>
 <ul class="simple">
-<li><p>the equilibrium constant of reaction, <span class="math notranslate nohighlight">\(K_r\)</span></p></li>
-<li><p>the standard Gibbs energy of reaction, <span class="math notranslate nohighlight">\(\Delta G_r^\circ\)</span></p></li>
-<li><p>the standard Helmholtz energy of reaction, <span class="math notranslate nohighlight">\(\Delta A_r^\circ\)</span></p></li>
-<li><p>the standard enthalpy of reaction, <span class="math notranslate nohighlight">\(\Delta H_r^\circ\)</span></p></li>
-<li><p>the standard internal energy of reaction, <span class="math notranslate nohighlight">\(\Delta U_r^\circ\)</span></p></li>
-<li><p>the standard entropy of reaction, <span class="math notranslate nohighlight">\(\Delta S_r^\circ\)</span></p></li>
-<li><p>the standard volume of reaction, <span class="math notranslate nohighlight">\(\Delta V_r^\circ\)</span></p></li>
-<li><p>the standard heat capacity (constant pressure) of reaction, <span class="math notranslate nohighlight">\(\Delta C_{P,r}^\circ\)</span></p></li>
-<li><p>the standard heat capacity (constant volume) of reaction, <span class="math notranslate nohighlight">\(\Delta C_{V,r}^\circ\)</span></p></li>
+<li><p>the equilibrium constant of reaction, $K_r$</p></li>
+<li><p>the standard Gibbs energy of reaction, $\Delta G_r^\circ$</p></li>
+<li><p>the standard Helmholtz energy of reaction, $\Delta A_r^\circ$</p></li>
+<li><p>the standard enthalpy of reaction, $\Delta H_r^\circ$</p></li>
+<li><p>the standard internal energy of reaction, $\Delta U_r^\circ$</p></li>
+<li><p>the standard entropy of reaction, $\Delta S_r^\circ$</p></li>
+<li><p>the standard volume of reaction, $\Delta V_r^\circ$</p></li>
+<li><p>the standard heat capacity (constant pressure) of reaction, $\Delta C_{P,r}^\circ$</p></li>
+<li><p>the standard heat capacity (constant volume) of reaction, $\Delta C_{V,r}^\circ$</p></li>
 </ul>
 <p>Reaktoro computes these reaction properties using the standard thermodynamic properties of the reacting species at a given temperature and pressure. For example, consider the reaction</p>
-<div class="math notranslate nohighlight">
-\[2\mathrm{A}+3\mathrm{B}=\mathrm{C}.\]</div>
+<p>$$2\mathrm{A}+3\mathrm{B}=\mathrm{C}.$$</p>
 <p>The standard Gibbs energy of this reaction is computed using</p>
-<div class="math notranslate nohighlight">
-\[\Delta G_{r}^{\circ}=G_{\mathrm{C}}^{\circ}-2G_{\mathrm{A}}^{\circ}-3G_{\mathrm{B}}^{\circ}.\]</div>
-<p>This rationale (stoichiometric property contribution from product species minus the contribution of reactant species) can be applied to all other standard thermodynamic properties (e.g., <span class="math notranslate nohighlight">\(\Delta H_r^\circ\)</span>) and every reaction.</p>
+<p>$$\Delta G_{r}^{\circ}=G_{\mathrm{C}}^{\circ}-2G_{\mathrm{A}}^{\circ}-3G_{\mathrm{B}}^{\circ}.$$</p>
+<p>This rationale (stoichiometric property contribution from product species minus the contribution of reactant species) can be applied to all other standard thermodynamic properties (e.g., $\Delta H_r^\circ$) and every reaction.</p>
 <p>The equilibrium constant of the reaction is defined as:</p>
-<div class="math notranslate nohighlight">
-\[\ln K_r = -\dfrac{\Delta G^{\circ}_m}{RT}\]</div>
-<p>but it’s often handled in logarithm base 10, <span class="math notranslate nohighlight">\(\lg K_r = \ln K_r/\ln 10\)</span>.</p>
+<p>$$\ln K_r = -\dfrac{\Delta G^{\circ}_m}{RT}$$</p>
+<p>but it’s often handled in logarithm base 10, $\lg K_r = \ln K_r/\ln 10$.</p>
 <p>It’s very easy to compute these reaction properties in Reaktoro as shown next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

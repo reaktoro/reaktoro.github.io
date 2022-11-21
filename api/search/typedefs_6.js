@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['optional_2784',['Optional',['../namespaceReaktoro.html#aaf8f4d77efd311ec7818ab421294ef82',1,'Reaktoro']]]
+  ['nullptr_3324',['Nullptr',['../namespaceReaktoro.html#a19a4ddda1342eff1da964cc1ac2c31ac',1,'Reaktoro']]],
+  ['numerictype_3325',['NumericType',['../structautodiff_1_1detail_1_1NumberTraits_3_01Reaktoro_1_1Param_01_4.html#a14553a085b558f7ab8acb83e593290f8',1,'autodiff::detail::NumberTraits&lt; Reaktoro::Param &gt;']]]
 ];

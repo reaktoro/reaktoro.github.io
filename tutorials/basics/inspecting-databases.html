@@ -41,6 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
@@ -74,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -285,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -294,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -340,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -362,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -384,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -396,20 +414,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -419,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -445,8 +460,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -476,33 +491,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/citing.html">
+  <a class="reference internal" href="../../general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/faq.html">
+  <a class="reference internal" href="../../general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/troubleshooting.html">
+  <a class="reference internal" href="../../general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/contributing.html">
+  <a class="reference internal" href="../../general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/license.html">
+  <a class="reference internal" href="../../general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -784,7 +804,7 @@ title="Print to PDF"
 <h1>Inspecting thermodynamic databases<a class="headerlink" href="#inspecting-thermodynamic-databases" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
 <p>This tutorial demonstrates how a thermodynamic database can be inspected programmatically using Reaktoro’s Python API. For this, we will consider the <a class="reference external" href="https://www.empa.ch/web/s308/cemdata">cemdata18</a> database supported in <a class="reference external" href="https://thermohub.org/thermofun/thermofun/">ThermoFun</a>.</p>
-<p>So, let’s get started by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ThermoFunDatabase.html"><code class="docutils literal notranslate"><span class="pre">ThermoFunDatabase</span></code></a>:</p>
+<p>So, let’s get started by creating an object of class {{ThermoFunDatabase}}:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -794,11 +814,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We’ll use this <code class="docutils literal notranslate"><span class="pre">db</span></code> object throughout this tutorial to demonstrate all inspection capabilities available in class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> (yes, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ThermoFunDatabase.html"><code class="docutils literal notranslate"><span class="pre">ThermoFunDatabase</span></code></a> is a derived class from <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a>)!</p>
+<p>We’ll use this <code class="docutils literal notranslate"><span class="pre">db</span></code> object throughout this tutorial to demonstrate all inspection capabilities available in class {{Database}} (yes, {{ThermoFunDatabase}} is a derived class from {{Database}})!</p>
 <div class="section" id="inspecting-the-species-in-the-database">
 <h2>Inspecting the species in the database<a class="headerlink" href="#inspecting-the-species-in-the-database" title="Permalink to this headline">#</a></h2>
 <p>Let’s loop through all species in this database object and print its name, chemical formula, and molar mass:</p>
-<div class="cell tag_output_scroll docutils container">
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Species&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}{</span><span class="s1">&#39;Formula&#39;</span><span class="si">:</span><span class="s2">&lt;60</span><span class="si">}{</span><span class="s1">&#39;Molar Mass (kg/mol)&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
@@ -871,6 +891,7 @@ Cal                 CaCO3                                                       
 Cl-                 Cl-                                                         0.035454            
 ClO4-               Cl|7|O4-                                                    0.099451            
 Cls                 SrSO4                                                       0.183685            
+Corundum            Al2O3                                                       0.101961            
 Dis-Dol             CaMg(CO3)2                                                  0.184401            
 ECSH1-KSH           ((KOH)2.5SiO2H2O)0.2                                        0.043673            
 ECSH1-NaSH          ((NaOH)2.5SiO2H2O)0.2                                       0.035618            
@@ -900,6 +921,7 @@ Fe-ettringite05     Ca3Fe|3|(SO4)1.5(OH)6(H2O)13                                
 Fe-hemicarbonate    Ca3O3Fe|3|2O3(CaCO3)0.5(CaO2H2)0.5(H2O)9.5                  0.586156            
 Fe-monosulph05      Ca2Fe|3|S0.5O5(H2O)6                                        0.340123            
 Fe-monosulphate     Ca4Fe|3|2SO10(H2O)12                                        0.680247            
+Fe2O3               Fe|3|2O3                                                    0.159688            
 FeCl+               FeCl+                                                       0.091297            
 FeCl+2              Fe|3|Cl+2                                                   0.091297            
 FeCl2+              Fe|3|Cl2+                                                   0.126750            
@@ -976,11 +998,13 @@ O2                  O|0|2                                                       
 O2@                 O|0|2@                                                      0.031999            
 OH-                 OH-                                                         0.017008            
 Ord-Dol             CaMg(CO3)2                                                  0.184401            
+Periclase           MgO                                                         0.040304            
 Portlandite         Ca(OH)2                                                     0.074093            
 Py                  FeS|0|S|-2|                                                 0.119979            
 Qtz                 SiO2                                                        0.060084            
 S2O3-2              S|2|2O3-2                                                   0.112133            
 SCN-                S|0|C|0|N|-1|-                                              0.058085            
+SO2@                S|4|O2@                                                     0.064066            
 SO3-2               S|4|O3-2                                                    0.080066            
 SO4-2               S|6|O4-2                                                    0.096066            
 Sd                  FeCO3                                                       0.115854            
@@ -1157,13 +1181,13 @@ N         0.014007
 <p class="admonition-title">Tip</p>
 <p>You might want to check the API documentation of all Reaktoro components (classes and their methods) used in this tutorial:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a></p></li>
-<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Element.html"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a></p></li>
-<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Species.html"><code class="docutils literal notranslate"><span class="pre">Species</span></code></a></p></li>
-<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1SpeciesList.html"><code class="docutils literal notranslate"><span class="pre">SpeciesList</span></code></a></p></li>
-<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ElementList.html"><code class="docutils literal notranslate"><span class="pre">ElementList</span></code></a></p></li>
-<li><p><a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalFormula.html"><code class="docutils literal notranslate"><span class="pre">ChemicalFormula</span></code></a></p></li>
-<li><p><a class="reference external" href="https://reaktoro.org/api/namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd"><code class="docutils literal notranslate"><span class="pre">AggregateState</span></code></a></p></li>
+<li><p>{{Database}}</p></li>
+<li><p>{{Element}}</p></li>
+<li><p>{{Species}}</p></li>
+<li><p>{{SpeciesList}}</p></li>
+<li><p>{{ElementList}}</p></li>
+<li><p>{{ChemicalFormula}}</p></li>
+<li><p>{{AggregateState}}</p></li>
 </ul>
 </div>
 </div>

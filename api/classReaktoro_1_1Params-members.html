@@ -134,13 +134,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 
 <p>This is the complete list of members for <a class="el" href="classReaktoro_1_1Params.html">Params</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#ad77f1d92ce06ddc081007fe37d6cb220">at</a>(const String &amp;key) const -&gt; const Params &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#aaf3b4e31349b0938b52ddce7e1604429">exists</a>(const String &amp;key) const -&gt; bool</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#aae417a2ab0633d2f7c4f2a7b7f5c9e60">get</a>(const String &amp;key) const -&gt; const Param &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">append</a>(Params const &amp;other) -&gt; Params &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#a89ffe78f3ea0d5390454db284b3586be">append</a>(Data const &amp;other) -&gt; Params &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#adc9f10516018c412ab328514d3e9a06f">data</a>() const -&gt; Data const &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#a84d397447445a9295777f696fff0d4a6">embedded</a>(String const &amp;path) -&gt; Params</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#ae73e29c0f64ae38115688485a39bdc25">local</a>(String const &amp;path) -&gt; Params</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#a1ae27491686e712735d5e28c93220615">operator+=</a>(Params const &amp;other) -&gt; Params &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#a5e9b47ed3e8927d84e6470493802d552">operator[]</a>(String const &amp;name) const -&gt; Data const &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Params</a>()</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#ab826c8d2c587d292cfec21dbd2a9ce53">set</a>(const String &amp;key, const Params &amp;node) -&gt; void</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#aa4583f2ec3cdbca1eb7831e54901ffec">set</a>(const String &amp;key, const Param &amp;param) -&gt; void</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#aeab953e5a10abaf960f8dd34fa9752d3">size</a>() const -&gt; Index</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Params.html#a48258e880df70810ef2c57f1ed175d91">Params</a>(Data const &amp;params)</td><td class="entry"><a class="el" href="classReaktoro_1_1Params.html">Params</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -150,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:03 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

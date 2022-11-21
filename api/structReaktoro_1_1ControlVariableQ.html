@@ -149,9 +149,9 @@ Collaboration diagram for ControlVariableQ:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:af2ef62bedfb225553248295be6785e44"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ControlVariableQ.html#af2ef62bedfb225553248295be6785e44">ChemicalPotentialFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(const <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> &amp;props, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> w)&gt;</td></tr>
-<tr class="memdesc:af2ef62bedfb225553248295be6785e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">The signature of functions that evaluate the prescribed chemical potential of a substance.  <a href="structReaktoro_1_1ControlVariableQ.html#af2ef62bedfb225553248295be6785e44">More...</a><br /></td></tr>
-<tr class="separator:af2ef62bedfb225553248295be6785e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d55df8d641e5542ff8f497904ae5bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ControlVariableQ.html#a41d55df8d641e5542ff8f497904ae5bc">ChemicalPotentialFn</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> const  &amp;props, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> const  &amp;p, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> const  &amp;w)&gt;</td></tr>
+<tr class="memdesc:a41d55df8d641e5542ff8f497904ae5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The signature of functions that evaluate the prescribed chemical potential of a substance.  <a href="structReaktoro_1_1ControlVariableQ.html#a41d55df8d641e5542ff8f497904ae5bc">More...</a><br /></td></tr>
+<tr class="separator:a41d55df8d641e5542ff8f497904ae5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -168,7 +168,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a76010eef1edc0406cc2375c25d2a433d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unique identifier for the chemical potential constraint associated to this <em>q</em> control variable (required). <br /></td></tr>
 <tr class="separator:a76010eef1edc0406cc2375c25d2a433d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82e5dd06e05307da6d408941c9f11d6e"><td class="memItemLeft" align="right" valign="top"><a id="a82e5dd06e05307da6d408941c9f11d6e"></a>
-<a class="el" href="structReaktoro_1_1ControlVariableQ.html#af2ef62bedfb225553248295be6785e44">ChemicalPotentialFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ControlVariableQ.html#a82e5dd06e05307da6d408941c9f11d6e">fn</a></td></tr>
+<a class="el" href="structReaktoro_1_1ControlVariableQ.html#a41d55df8d641e5542ff8f497904ae5bc">ChemicalPotentialFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ControlVariableQ.html#a82e5dd06e05307da6d408941c9f11d6e">fn</a></td></tr>
 <tr class="memdesc:a82e5dd06e05307da6d408941c9f11d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The chemical potential function associated to this <em>q</em> control variable (required). <br /></td></tr>
 <tr class="separator:a82e5dd06e05307da6d408941c9f11d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -176,14 +176,14 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>Used to define a <em>q</em> control variable in a chemical equilibrium problem. </p>
 <p><em>q</em> control variables are used to specify the chemical potential of a species at equilibrium. Its introduction in a chemical equilibrium problem implies that the system is open to a titrant with <b>same</b> formula of the species whose chemical potential needs to be prescribed. A <em>q</em> control variable can also be used to specify the activity of a species. It can also be used to prescribe pH. This can be achieved by converting the given activity value (or pH value) to a chemical potential value of the species. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="af2ef62bedfb225553248295be6785e44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2ef62bedfb225553248295be6785e44">&#9670;&nbsp;</a></span>ChemicalPotentialFn</h2>
+<a id="a41d55df8d641e5542ff8f497904ae5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d55df8d641e5542ff8f497904ae5bc">&#9670;&nbsp;</a></span>ChemicalPotentialFn</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structReaktoro_1_1ControlVariableQ.html#af2ef62bedfb225553248295be6785e44">ChemicalPotentialFn</a> =  <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(const <a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a>&amp; props, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> w)&gt;</td>
+          <td class="memname">using <a class="el" href="structReaktoro_1_1ControlVariableQ.html#a41d55df8d641e5542ff8f497904ae5bc">ChemicalPotentialFn</a> =  <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> const&amp; props, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> const&amp; p, <a class="el" href="namespaceReaktoro.html#a2deedce87fa3d90aee8990db36156a74">VectorXrConstRef</a> const&amp; w)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -192,7 +192,8 @@ Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">props</td><td>The current chemical properties of the system in the equilibrium calculation. </td></tr>
-    <tr><td class="paramname">w</td><td>The input variables in the chemical equilibrium calculation. </td></tr>
+    <tr><td class="paramname">p</td><td>The control variables <em>p</em> in the chemical equilibrium calculation. </td></tr>
+    <tr><td class="paramname">w</td><td>The input variables <em>w</em> in the chemical equilibrium calculation. </td></tr>
   </table>
   </dd>
 </dl>
@@ -211,7 +212,7 @@ Public Attributes</h2></td></tr>
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:04 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

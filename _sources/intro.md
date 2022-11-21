@@ -1,30 +1,35 @@
 ![](images/reaktoro-for-python-and-cpp.svg)
 
-# Welcome
+# Reaktoro
 
-Welcome to the documentation of Reaktoro v2 for Python and C++, where we show
-how Reaktoro can be used for a wide variety of chemical reaction calculations.
+Welcome to the documentation for Reaktoro, an open source computational framework developed in C++ and Python to simulate chemically reactive processes.
 
-This website is still under-construction, but you should already find it
-useful enough to get started with this new version of Reaktoro!
+Reaktoro has been designed from the ground up to be a flexible and extensible computational modeling framework for simulating chemical reactions. Reaktoro's algorithms for chemical equilibrium and chemical kinetics calculations can be applied in a wide variety of modeling applications, from geochemical modeling of water-gas-rock systems to modeling the combustion of energetic materials.
 
-```{admonition} Looking for Reaktoro v1 website?
-If you need to access Reaktoro v1 website, here is the link: https://reaktoro.org/v1
-```
+Examples of specific and broad applications that Reaktoro can be useful for include, but are not limited to:
 
-```{admonition} Examples in the tutorials not working?
-:class: attention
-This website is under active development, and many new features in Reaktoro are being developed in parallel and documented here straight away. If you installed Reaktoro before a new feature was introduced and documented here, your installed `reaktoro` package will not support that feature. Make sure you update the conda environment containing the `reaktoro` package, using either Anaconda Navigator or the following conda command:
+* speciation calculations in aqueous electrolyte solutions, seawater, groundwater
+* dissolution of gas in aqueous solutions
+* mineral dissolution and precipitation in aqueous solutions
+* mixing of aqueous and/or gaseous solutions
+* evaporation processes
+* ion exchange processes
+* kinetically controlled reactions (e.g., mineral, aqueous, gaseous reactions)
+* adiabatic flame temperatures at constant pressure or volume
+* thermodynamic modeling of cement hydration and corrosion in concrete
+* ore formation processes
+* hydrometallurgical process
+* fluid-rock chemical reactions in geothermal energy systems
+* scaling in wells due to mineral precipitation
+* carbon storage in geological media via solubility and mineral trapping mechanisms
+* geological disposal of radioactive waste
 
-~~~bash
-conda activate rkt
-conda update --all
-~~~
+Reaktoro can also be coupled with other software (e.g. reservoir simulators) to model even more complex processes such as:
 
-assuming above you named `rkt` as the conda environment containing `reaktoro`. For installation instructions using conda, please check [these instructions](installation/installation-using-conda).
-```
+* reactive transport in porous media at pore or reservoir scale
+* reactive fluid flow for combustion modeling
 
-## Quick Links!
+For large-scale modeling applications where millions to billions of chemical equilibrium and/or chemical kinetics calculations are required, Reaktoro offers accelerated ***on-demand machine learning*** (ODML) solvers that can speed up chemical reaction calculations by one to three orders of magnitude as demonstrated in {cite:t}`Leal2017b`, {cite:t}`Leal2020` and {cite:t}`Kyas2022`.
 
 ```{tableofcontents}
 ```

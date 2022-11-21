@@ -158,14 +158,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a029f2be681c0e60a8770cbf29470bc74">   31</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a029f2be681c0e60a8770cbf29470bc74">time</a>() -&gt; Time;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a72fa19e23c48c72baeecdcaf182fd297">   37</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a72fa19e23c48c72baeecdcaf182fd297">elapsed</a>(<span class="keyword">const</span> Time&amp; end, <span class="keyword">const</span> Time&amp; begin) -&gt; double;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a5ea4e10c54d95413c84c8b4853e3eb8b">   37</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a5ea4e10c54d95413c84c8b4853e3eb8b">elapsed</a>(Time <span class="keyword">const</span>&amp; end, Time <span class="keyword">const</span>&amp; begin) -&gt; double;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a86ada7229c7721624219d89692806da9">   42</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a72fa19e23c48c72baeecdcaf182fd297">elapsed</a>(<span class="keyword">const</span> Time&amp; begin) -&gt; double;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#aca2ce2669175b50d69e7b2525a2dd06c">   42</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a5ea4e10c54d95413c84c8b4853e3eb8b">elapsed</a>(Time <span class="keyword">const</span>&amp; begin) -&gt; double;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Stopwatch.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classReaktoro_1_1Stopwatch.html">Stopwatch</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Stopwatch.html#a3b667144a70d38545d73dbcbcfe53a42">   49</a></span>&#160;    <a class="code" href="classReaktoro_1_1Stopwatch.html#a3b667144a70d38545d73dbcbcfe53a42">Stopwatch</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Stopwatch.html#afc9498f47d41e45ea179e7ce700e0e7a">   52</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Stopwatch.html#afc9498f47d41e45ea179e7ce700e0e7a">start</a>() -&gt; void;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Stopwatch.html#a05727703643ad729b965de75e4de25b2">   55</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Stopwatch.html#a05727703643ad729b965de75e4de25b2">pause</a>() -&gt; void;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Stopwatch.html#a9a295d596a65746415fb811f8df384f7">   58</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Stopwatch.html#a9a295d596a65746415fb811f8df384f7">reset</a>() -&gt; void;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Stopwatch.html#acdbfb88c0568a7506ca80e77852b334b">   61</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Stopwatch.html#acdbfb88c0568a7506ca80e77852b334b">time</a>() const -&gt; <span class="keywordtype">double</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;private:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Time mstart;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">double</span> melapsed = 0.0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="ttc" id="aclassReaktoro_1_1Stopwatch_html"><div class="ttname"><a href="classReaktoro_1_1Stopwatch.html">Reaktoro::Stopwatch</a></div><div class="ttdoc">Used for measuring elapsed time since object creation.</div><div class="ttdef"><b>Definition:</b> TimeUtils.hpp:46</div></div>
+<div class="ttc" id="aclassReaktoro_1_1Stopwatch_html_a05727703643ad729b965de75e4de25b2"><div class="ttname"><a href="classReaktoro_1_1Stopwatch.html#a05727703643ad729b965de75e4de25b2">Reaktoro::Stopwatch::pause</a></div><div class="ttdeci">auto pause() -&gt; void</div><div class="ttdoc">Pause measuring time.</div></div>
+<div class="ttc" id="aclassReaktoro_1_1Stopwatch_html_a3b667144a70d38545d73dbcbcfe53a42"><div class="ttname"><a href="classReaktoro_1_1Stopwatch.html#a3b667144a70d38545d73dbcbcfe53a42">Reaktoro::Stopwatch::Stopwatch</a></div><div class="ttdeci">Stopwatch()</div><div class="ttdoc">Construct a Stopwatch object and start measuring time.</div></div>
+<div class="ttc" id="aclassReaktoro_1_1Stopwatch_html_a9a295d596a65746415fb811f8df384f7"><div class="ttname"><a href="classReaktoro_1_1Stopwatch.html#a9a295d596a65746415fb811f8df384f7">Reaktoro::Stopwatch::reset</a></div><div class="ttdeci">auto reset() -&gt; void</div><div class="ttdoc">Reset the stopwatch.</div></div>
+<div class="ttc" id="aclassReaktoro_1_1Stopwatch_html_acdbfb88c0568a7506ca80e77852b334b"><div class="ttname"><a href="classReaktoro_1_1Stopwatch.html#acdbfb88c0568a7506ca80e77852b334b">Reaktoro::Stopwatch::time</a></div><div class="ttdeci">auto time() const -&gt; double</div><div class="ttdoc">Get the accumulated elapsed time (in seconds) between calls to methods start and pause.</div></div>
+<div class="ttc" id="aclassReaktoro_1_1Stopwatch_html_afc9498f47d41e45ea179e7ce700e0e7a"><div class="ttname"><a href="classReaktoro_1_1Stopwatch.html#afc9498f47d41e45ea179e7ce700e0e7a">Reaktoro::Stopwatch::start</a></div><div class="ttdeci">auto start() -&gt; void</div><div class="ttdoc">Start measuring time.</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a029f2be681c0e60a8770cbf29470bc74"><div class="ttname"><a href="namespaceReaktoro.html#a029f2be681c0e60a8770cbf29470bc74">Reaktoro::time</a></div><div class="ttdeci">auto time() -&gt; Time</div><div class="ttdoc">Return the time point now.</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a72fa19e23c48c72baeecdcaf182fd297"><div class="ttname"><a href="namespaceReaktoro.html#a72fa19e23c48c72baeecdcaf182fd297">Reaktoro::elapsed</a></div><div class="ttdeci">auto elapsed(const Time &amp;end, const Time &amp;begin) -&gt; double</div><div class="ttdoc">Return the elapsed time between two time points (in units of s)</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a5ea4e10c54d95413c84c8b4853e3eb8b"><div class="ttname"><a href="namespaceReaktoro.html#a5ea4e10c54d95413c84c8b4853e3eb8b">Reaktoro::elapsed</a></div><div class="ttdeci">auto elapsed(Time const &amp;end, Time const &amp;begin) -&gt; double</div><div class="ttdoc">Return the elapsed time between two time points (in units of s)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -175,7 +200,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:05 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:03 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

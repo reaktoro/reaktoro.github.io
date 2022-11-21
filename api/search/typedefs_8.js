@@ -1,22 +1,8 @@
 var searchData=
 [
-  ['reactionratefn_2790',['ReactionRateFn',['../group__Core.html#ga6717d43e55da830c56655d1b0d53e040',1,'Reaktoro']]],
-  ['reactionthermomodel_2791',['ReactionThermoModel',['../namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553',1,'Reaktoro']]],
-  ['real_2792',['real',['../namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983',1,'Reaktoro']]],
-  ['resultref_2793',['ResultRef',['../classReaktoro_1_1Model_3_01Result_07Args_8_8_8_08_4.html#a0bdad02beda5f0f79ea47d54dcee4308',1,'Reaktoro::Model&lt; Result(Args...)&gt;']]],
-  ['rowvectorxd_2794',['RowVectorXd',['../namespaceReaktoro.html#a2d2e56a3e8fa99f9ed76529b3d385a27',1,'Reaktoro']]],
-  ['rowvectorxdconstmap_2795',['RowVectorXdConstMap',['../namespaceReaktoro.html#ac260e54a1b6eb717288709ba1294bc51',1,'Reaktoro']]],
-  ['rowvectorxdconstref_2796',['RowVectorXdConstRef',['../namespaceReaktoro.html#ab316e04e555ec771448c9ab35283f51f',1,'Reaktoro']]],
-  ['rowvectorxdmap_2797',['RowVectorXdMap',['../namespaceReaktoro.html#aa1bc77913c520e082a7f95aa027376ed',1,'Reaktoro']]],
-  ['rowvectorxdref_2798',['RowVectorXdRef',['../namespaceReaktoro.html#af32814b6712bfdbdb31ca96a20166680',1,'Reaktoro']]],
-  ['rowvectorxl_2799',['RowVectorXl',['../namespaceReaktoro.html#a359c72d9d67b57aa360291b025d7b743',1,'Reaktoro']]],
-  ['rowvectorxlconstmap_2800',['RowVectorXlConstMap',['../namespaceReaktoro.html#aa9a5c00168874f351ffd282badca7ff2',1,'Reaktoro']]],
-  ['rowvectorxlconstref_2801',['RowVectorXlConstRef',['../namespaceReaktoro.html#a3024f189d204958506ffbc7fb3d82923',1,'Reaktoro']]],
-  ['rowvectorxlmap_2802',['RowVectorXlMap',['../namespaceReaktoro.html#a73991a24c967a98b878e7b34665ec923',1,'Reaktoro']]],
-  ['rowvectorxlref_2803',['RowVectorXlRef',['../namespaceReaktoro.html#a709a998b2b2f8e1e0dea2ab19807f716',1,'Reaktoro']]],
-  ['rowvectorxr_2804',['RowVectorXr',['../namespaceReaktoro.html#aa46d427c5e358122033a005719dbf87a',1,'Reaktoro']]],
-  ['rowvectorxrconstmap_2805',['RowVectorXrConstMap',['../namespaceReaktoro.html#aa1a48a3b4788fff243e5713161c82d63',1,'Reaktoro']]],
-  ['rowvectorxrconstref_2806',['RowVectorXrConstRef',['../namespaceReaktoro.html#ab152825a87fcb3a1c9bf836c240fd2d1',1,'Reaktoro']]],
-  ['rowvectorxrmap_2807',['RowVectorXrMap',['../namespaceReaktoro.html#a68341ffa0e023e9f777da659aa667725',1,'Reaktoro']]],
-  ['rowvectorxrref_2808',['RowVectorXrRef',['../namespaceReaktoro.html#ac705646302841c0f2d0cdd7aca5df1a7',1,'Reaktoro']]]
+  ['pair_3329',['Pair',['../namespaceReaktoro.html#a232b82d7d00c2eeaa2f835b0915a040e',1,'Reaktoro']]],
+  ['pairs_3330',['Pairs',['../namespaceReaktoro.html#a054d0c2ff55635088140dce324f30ccb',1,'Reaktoro']]],
+  ['permutationmatrix_3331',['PermutationMatrix',['../namespaceReaktoro.html#ab2fb4a3ca4e6713702d2082dd7f624eb',1,'Reaktoro']]],
+  ['propfn_3332',['PropFn',['../namespaceReaktoro.html#a82c28934d4fb8b5bfe086187969f2e6a',1,'Reaktoro']]],
+  ['ptr_3333',['Ptr',['../namespaceReaktoro.html#a6b46abcd7303a8f484bd03805eb49bbc',1,'Reaktoro']]]
 ];

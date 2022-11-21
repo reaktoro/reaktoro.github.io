@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
   <meta name="generator" content="Doxygen 1.9.1" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reaktoro: Reaktoro/Models/StandardThermoModelMineralHKF.hpp Source File</title>
+  <title>Reaktoro: Reaktoro/Models/StandardThermoModels/StandardThermoModelMineralHKF.hpp Source File</title>
   <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/>  --> <!-- REMOVED BY DOXYSTRAP -->
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -120,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_8e92d4b241d211e8bbb38ad86320f5f7.html">Reaktoro</a></li><li class="navelem"><a class="el" href="dir_b262c4b69f57fe79a08985848a5dbb2f.html">Models</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_8e92d4b241d211e8bbb38ad86320f5f7.html">Reaktoro</a></li><li class="navelem"><a class="el" href="dir_b262c4b69f57fe79a08985848a5dbb2f.html">Models</a></li><li class="navelem"><a class="el" href="dir_3b3f6e32b1902e1b677acdfde38c83cc.html">StandardThermoModels</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -148,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Reaktoro includes</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/StandardThermoProps.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/StandardThermoModel.hpp&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
@@ -186,10 +186,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="aclassReaktoro_1_1Param_html"><div class="ttname"><a href="classReaktoro_1_1Param.html">Reaktoro::Param</a></div><div class="ttdoc">A type used to represent the value of a parameter and its lower and upper bounds.</div><div class="ttdef"><b>Definition:</b> Param.hpp:32</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a1b01c504448c96cd2191a5184dd31acf"><div class="ttname"><a href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Reaktoro::Vec</a></div><div class="ttdeci">std::vector&lt; T &gt; Vec</div><div class="ttdoc">Convenient alias for std::vector&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:61</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a1b01c504448c96cd2191a5184dd31acf"><div class="ttname"><a href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Reaktoro::Vec</a></div><div class="ttdeci">std::vector&lt; T &gt; Vec</div><div class="ttdoc">Convenient alias for std::vector&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:66</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a5b922a65bf0c65e2baa04f3b78cbc564"><div class="ttname"><a href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Reaktoro::Index</a></div><div class="ttdeci">std::size_t Index</div><div class="ttdoc">Define a type that represents an index.</div><div class="ttdef"><b>Definition:</b> Index.hpp:26</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a60d9c89846499b1ea9c6cba13f462983"><div class="ttname"><a href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">Reaktoro::real</a></div><div class="ttdeci">autodiff::real real</div><div class="ttdoc">The number type used throughout the library.</div><div class="ttdef"><b>Definition:</b> Real.hpp:26</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a9933121318e42facfe6ccaebe69a5a2b"><div class="ttname"><a href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">Reaktoro::StandardThermoModel</a></div><div class="ttdeci">Model&lt; StandardThermoProps(real T, real P)&gt; StandardThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a species.</div><div class="ttdef"><b>Definition:</b> StandardThermoProps.hpp:52</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a9933121318e42facfe6ccaebe69a5a2b"><div class="ttname"><a href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">Reaktoro::StandardThermoModel</a></div><div class="ttdeci">Model&lt; StandardThermoProps(real T, real P)&gt; StandardThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a species.</div><div class="ttdef"><b>Definition:</b> StandardThermoModel.hpp:30</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_af3b4e86085228c988fcfcc51f93d80f3"><div class="ttname"><a href="namespaceReaktoro.html#af3b4e86085228c988fcfcc51f93d80f3">Reaktoro::StandardThermoModelMineralHKF</a></div><div class="ttdeci">auto StandardThermoModelMineralHKF(const StandardThermoModelParamsMineralHKF &amp;params) -&gt; StandardThermoModel</div><div class="ttdoc">Return a function that calculates thermodynamic properties of a species using the Maier-Kelley-HKF mo...</div></div>
 <div class="ttc" id="astructReaktoro_1_1StandardThermoModelParamsMineralHKF_html"><div class="ttname"><a href="structReaktoro_1_1StandardThermoModelParamsMineralHKF.html">Reaktoro::StandardThermoModelParamsMineralHKF</a></div><div class="ttdoc">The parameters in the Maier-Kelley-HKF model for calculating standard thermodynamic properties of min...</div><div class="ttdef"><b>Definition:</b> StandardThermoModelMineralHKF.hpp:27</div></div>
 <div class="ttc" id="astructReaktoro_1_1StandardThermoModelParamsMineralHKF_html_a03d48b1f8c39700b25d55415b86665a8"><div class="ttname"><a href="structReaktoro_1_1StandardThermoModelParamsMineralHKF.html#a03d48b1f8c39700b25d55415b86665a8">Reaktoro::StandardThermoModelParamsMineralHKF::a</a></div><div class="ttdeci">Vec&lt; Param &gt; a</div><div class="ttdoc">The coefficients a(i) of the Maier-Kelley-HKF mineral thermodynamic model for each phase region (in J...</div><div class="ttdef"><b>Definition:</b> StandardThermoModelMineralHKF.hpp:44</div></div>
@@ -214,7 +214,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:03 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -41,6 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
@@ -50,12 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Extraction of exchangeable cations in dune sand" href="ion-exchnage-mix-porewater-extractant.html" />
+    <link rel="next" title="Extraction of exchangeable cations in dune sand" href="ion-exchange-mix-porewater-extractant.html" />
     <link rel="prev" title="Ion-exchange" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -76,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -287,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../tutorials/kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../tutorials/machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -296,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../tutorials/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -313,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../tutorials/advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -342,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -364,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -386,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="index.html">
    Ion-exchange
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -398,20 +414,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -421,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -447,8 +460,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -478,33 +491,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/citing.html">
+  <a class="reference internal" href="../../general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/faq.html">
+  <a class="reference internal" href="../../general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/troubleshooting.html">
+  <a class="reference internal" href="../../general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/contributing.html">
+  <a class="reference internal" href="../../general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/license.html">
+  <a class="reference internal" href="../../general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -751,7 +769,7 @@ X 0.06	#moles
 </div>
 </div>
 </div>
-<p>The ion exchange phase is modelled by the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangePhase.html"><code class="docutils literal notranslate"><span class="pre">IonExchangePhase</span></code></a> class. We select only three ion exchange species: NaX, CaX<sub>2</sub>, and MgX<sub>2</sub>, which can be formed from major ions Na<sup>+</sup>, Ca<sup>2+</sup>, and Mg<sup>2+</sup> in the dunewater. We use the Gaines-Thomas activity model.</p>
+<p>The ion exchange phase is modelled by the {{IonExchangePhase}} class. We select only three ion exchange species: NaX, CaX{{_2}}, and MgX{{_2}}, which can be formed from major ions Na<sup>+</sup>, Ca<sup>2+</sup>, and Mg<sup>2+</sup> in the dunewater. We use the Gaines-Thomas activity model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangePhase</span><span class="p">(</span><span class="s2">&quot;NaX CaX2 MgX2&quot;</span><span class="p">)</span>
@@ -768,7 +786,7 @@ X 0.06	#moles
 <p>Below, we define the initial chemical state for the ion exchange calculation involving dune sand and dunewater at 25 °C and 1 bar.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We deliberately consider a very small initial amount of NaX, 0.06 μmol (and therefore there is 0.06 μmol of X<sup>-</sup> ion exchanger available for further formation of CaX<sub>2</sub> and MgX<sub>2</sub> during the equilibrium calculation). The rationale for this is to approximate the condition where there is an abundance of brine solution compared to the available ion exchanger, so that changes in fluid composition are negligible. This is necessary to compare our results with those produced by the PHREEQC script above, which ignores compositional changes in the aqueous solution when determining the distribution of NaX, CaX<sub>2</sub> and MgX<sub>2</sub> . Reaktoro, on the other hand, calculates not only this distribution, but also its effects on the brine composition, which we want to limit in this example.</p>
+<p>We deliberately consider a very small initial amount of NaX, 0.06 μmol (and therefore there is 0.06 μmol of X<sup>-</sup> ion exchanger available for further formation of CaX{{_2}} and MgX{{_2}} during the equilibrium calculation). The rationale for this is to approximate the condition where there is an abundance of brine solution compared to the available ion exchanger, so that changes in fluid composition are negligible. This is necessary to compare our results with those produced by the PHREEQC script above, which ignores compositional changes in the aqueous solution when determining the distribution of NaX, CaX{{_2}} and MgX{{_2}} . Reaktoro, on the other hand, calculates not only this distribution, but also its effects on the brine composition, which we want to limit in this example.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -792,13 +810,12 @@ X 0.06	#moles
 </div>
 </div>
 <p>We expect the following set of ion exchange reactions happening between dunewater and exchanger site X<sup>-</sup> (initially fully occupied with sodium ion):</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>$$
 \begin{alignat}{4}
-\tfrac{1}{2} {\rm Ca^{+2}} + {\rm NaX} &amp; \rightleftharpoons {\rm Na}^+ + \tfrac{1}{2} {\rm CaX}_2\\
-\tfrac{1}{2} {\rm Mg^{+2}} + {\rm NaX} &amp; \rightleftharpoons {\rm Na}^+ + \tfrac{1}{2} {\rm MgX}_2\\
+\tfrac{1}{2} {\rm Ca^{+2}} + {\rm NaX} &amp; \rightleftharpoons {\rm Na}^+ + \tfrac{1}{2} {\rm CaX}_2\
+\tfrac{1}{2} {\rm Mg^{+2}} + {\rm NaX} &amp; \rightleftharpoons {\rm Na}^+ + \tfrac{1}{2} {\rm MgX}_2\
 \end{alignat}
-\end{split}\]</div>
+$$</p>
 <p>After the initial chemical state is defined, we can create the equilibrium solver that will perform a Gibbs energy minimization calculation to find the equilibrium state:</p>
 <div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
@@ -863,7 +880,7 @@ X 0.06	#moles
 </div>
 </div>
 </div>
-<p>We can now compute the properties of the brine solution after the ion exchange has been carried out. For this purpose, the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> class is used.</p>
+<p>We can now compute the properties of the brine solution after the ion exchange has been carried out. For this purpose, the {{AqueousProps}} class is used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aqprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -881,7 +898,7 @@ pE = -3.99932
 </div>
 </div>
 </div>
-<p>To inspect the ion exchange properties of species NaX, CaX<sub>2</sub>, and MgX<sub>2</sub>, the class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangeProps.html"><code class="docutils literal notranslate"><span class="pre">IonExchangeProps</span></code></a> can be used, which is done next:</p>
+<p>To inspect the ion exchange properties of species NaX, CaX{{_2}}, and MgX{{_2}}, the class {{IonExchangeProps}} can be used, which is done next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangeProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -919,7 +936,7 @@ pE = -3.99932
 </div>
 </div>
 </div>
-<p>We see that CaX<sub>2</sub> has highest equivalent fraction of all ion exchange species, which causes its highest mole amounts. The table also includes the information on activity coefficient in logarithmic format with teh base 10. Such a detailed summary on the ion exchange properties was designed to compare PHREEQC outputs with those produced by Reaktoro.</p>
+<p>We see that CaX{{_2}} has highest equivalent fraction of all ion exchange species, which causes its highest mole amounts. The table also includes the information on activity coefficient in logarithmic format with teh base 10. Such a detailed summary on the ion exchange properties was designed to compare PHREEQC outputs with those produced by Reaktoro.</p>
 <p>To finalise, we have learned in this tutorial how to calculate the cation exchange complex in equilibrium with groundwater using the Gaines-Thomas framework. Similar studies can be conducted for different types of soil and alternative brines (such as seawater). The next tutorial, considers  or particular a NaCl extractant to calculate the exchangeable cations in dune sand.</p>
 </div>
 
@@ -957,7 +974,7 @@ pE = -3.99932
             <p class="prev-next-title">Ion-exchange</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ion-exchnage-mix-porewater-extractant.html" title="next page">
+    <a class='right-next' id="next-link" href="ion-exchange-mix-porewater-extractant.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Extraction of exchangeable cations in dune sand</p>

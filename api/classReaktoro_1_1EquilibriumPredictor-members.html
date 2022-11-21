@@ -134,11 +134,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 
 <p>This is the complete list of members for <a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#ac32475e8b5f7f5ac4cea36fe67e9ea9c">EquilibriumPredictor</a>(const ChemicalState &amp;state0, const EquilibriumSensitivity &amp;sensitivity0)</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#a244dc32082f953bc95f29f770ee2b2f4">EquilibriumPredictor</a>(const EquilibriumPredictor &amp;other)</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#a428a426a831c86a598f6cbae0ae73d5c">EquilibriumPredictor</a>(ChemicalState const &amp;state0, EquilibriumSensitivity const &amp;sensitivity0)</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#ababd27f9485580211c2d92b88a24ee73">EquilibriumPredictor</a>(EquilibriumPredictor const &amp;other)</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#aecf2d781fc26ee50f536c53ab565f166">operator=</a>(EquilibriumPredictor other) -&gt; EquilibriumPredictor &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#a58334cd5ff2192d2bdc8de6e564ef34d">predict</a>(ChemicalState &amp;state, const EquilibriumConditions &amp;conditions) -&gt; void</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#a3f1e29f06a948eb1d0d7c425e88c1eaa">predict</a>(ChemicalState &amp;state, const EquilibriumConditions &amp;conditions, VectorXrConstRef b) -&gt; void</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#aa74d2e5c1c5587c49c31826cf3de7ef7">predict</a>(ChemicalState &amp;state, EquilibriumConditions const &amp;conditions) const -&gt; void</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#a4fee2f247dc1e3ef1933a15ba486950e">predict</a>(ChemicalState &amp;state, VectorXdConstRef const &amp;dw, VectorXdConstRef const &amp;dc) const -&gt; void</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#aff1bc2e55d86411c51b7bcb842c6aee0">speciesChemicalPotentialPredicted</a>(Index ispecies, VectorXdConstRef const &amp;dw, VectorXdConstRef const &amp;dc) const -&gt; double</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#a6d822327f1f0f1cc2ee748034151699f">speciesChemicalPotentialReference</a>(Index ispecies) const -&gt; double</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html#a678162aa0b2df930472cfa7be8b6f57f">~EquilibriumPredictor</a>()</td><td class="entry"><a class="el" href="classReaktoro_1_1EquilibriumPredictor.html">EquilibriumPredictor</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
@@ -149,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:04 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -149,30 +149,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Reaktoro includes</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Common/Real.hpp&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/ReactionThermoProps.hpp&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Extensions/Phreeqc/PhreeqcLegacy.hpp&gt;</span> <span class="comment">// ***BECAUSE PhreeqcLegacy.hpp IS INCLUDED HERE, MAKE SURE THIS HEADER FILE IS NOT EXPORTED!***</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Extensions/Phreeqc/PhreeqcWater.hpp&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>PhreeqcUtils {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">auto</span> standardVolume(<span class="keyword">const</span> PhreeqcSpecies* species, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P, <span class="keyword">const</span> PhreeqcWaterProps&amp; wprops) -&gt; <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">auto</span> standardVolume(<span class="keyword">const</span> PhreeqcPhase* phase, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) -&gt; <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">auto</span> reactionThermoModel(<span class="keyword">const</span> PhreeqcSpecies* species) -&gt; <a class="code" href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">ReactionThermoModel</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">auto</span> reactionThermoModel(<span class="keyword">const</span> PhreeqcPhase* phase) -&gt; <a class="code" href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">ReactionThermoModel</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">auto</span> standardVolumeModel(<span class="keyword">const</span> PhreeqcSpecies* species) -&gt; Model&lt;<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>,<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>)&gt;;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">auto</span> standardVolumeModel(<span class="keyword">const</span> PhreeqcPhase* phase) -&gt; Model&lt;<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>,<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>)&gt;;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <span class="comment">// namespace PhreeqcUtils</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/Model.hpp&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/ReactionStandardThermoModel.hpp&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Extensions/Phreeqc/PhreeqcLegacy.hpp&gt;</span> <span class="comment">// ***BECAUSE PhreeqcLegacy.hpp IS INCLUDED HERE, MAKE SURE THIS HEADER FILE IS NOT EXPORTED!***</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Extensions/Phreeqc/PhreeqcWater.hpp&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>PhreeqcUtils {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">auto</span> standardVolume(<span class="keyword">const</span> PhreeqcSpecies* species, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P, <span class="keyword">const</span> PhreeqcWaterProps&amp; wprops) -&gt; <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">auto</span> standardVolume(<span class="keyword">const</span> PhreeqcPhase* phase, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) -&gt; <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">auto</span> reactionThermoModel(<span class="keyword">const</span> PhreeqcSpecies* species) -&gt; <a class="code" href="namespaceReaktoro.html#aad19f03cbf78f8a987c42b4a943a628a">ReactionStandardThermoModel</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">auto</span> reactionThermoModel(<span class="keyword">const</span> PhreeqcPhase* phase) -&gt; <a class="code" href="namespaceReaktoro.html#aad19f03cbf78f8a987c42b4a943a628a">ReactionStandardThermoModel</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">auto</span> standardVolumeModel(<span class="keyword">const</span> PhreeqcSpecies* species) -&gt; Model&lt;<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>,<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>)&gt;;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">auto</span> standardVolumeModel(<span class="keyword">const</span> PhreeqcPhase* phase) -&gt; Model&lt;<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>,<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>)&gt;;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace PhreeqcUtils</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a60d9c89846499b1ea9c6cba13f462983"><div class="ttname"><a href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">Reaktoro::real</a></div><div class="ttdeci">autodiff::real real</div><div class="ttdoc">The number type used throughout the library.</div><div class="ttdef"><b>Definition:</b> Real.hpp:26</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a8282c3fdf9650aea30f7c22894c6d553"><div class="ttname"><a href="namespaceReaktoro.html#a8282c3fdf9650aea30f7c22894c6d553">Reaktoro::ReactionThermoModel</a></div><div class="ttdeci">Model&lt; ReactionThermoProps(ReactionThermoArgs)&gt; ReactionThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a reaction.</div><div class="ttdef"><b>Definition:</b> ReactionThermoProps.hpp:59</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_aad19f03cbf78f8a987c42b4a943a628a"><div class="ttname"><a href="namespaceReaktoro.html#aad19f03cbf78f8a987c42b4a943a628a">Reaktoro::ReactionStandardThermoModel</a></div><div class="ttdeci">Model&lt; ReactionStandardThermoProps(ReactionStandardThermoModelArgs)&gt; ReactionStandardThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a reaction.</div><div class="ttdef"><b>Definition:</b> ReactionStandardThermoModel.hpp:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -182,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:03 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

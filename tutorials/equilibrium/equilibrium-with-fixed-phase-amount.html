@@ -41,6 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
@@ -74,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -285,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -294,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -340,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -362,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -384,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -396,20 +414,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Ion exchange competition among NaX, KX, and CaX{{_2}}
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="../../applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -419,8 +434,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -445,8 +460,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -476,33 +491,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  About Reaktoro
+  General
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/citing.html">
+  <a class="reference internal" href="../../general/citing.html">
    Citing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/faq.html">
+  <a class="reference internal" href="../../general/faq.html">
    FAQ
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/troubleshooting.html">
+  <a class="reference internal" href="../../general/troubleshooting.html">
    Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/contributing.html">
+  <a class="reference internal" href="../../general/contributing.html">
    Contributing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../about/license.html">
+  <a class="reference internal" href="../../general/license.html">
    License
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../general/development.html">
+   Development
   </a>
  </li>
 </ul>
@@ -716,9 +736,9 @@ title="Print to PDF"
   <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-fixed-phase-amount">
 <h1>Chemical equilibrium with fixed phase amount<a class="headerlink" href="#chemical-equilibrium-with-fixed-phase-amount" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
-<p>Consider an aqueous solution at 60 °C obtained by mixing 1 kg of H<sub>2</sub>O, 1 mol of NaCl and 1 mol of CO<sub>2</sub>. What must the pressure of this aqueous solution be so that it is saturated with CO<sub>2</sub>? In other words, what is the pressure that causes a bubble of CO<sub>2</sub> to form (the bubble pressure)?</p>
-<p>In this tutorial, we formulate a chemical equilibrium problem to calculate the CO<sub>2</sub> bubble/saturation pressure of this aqueous saline solution. In this problem, we consider a chemical system with aqueous and gaseous phases. Our equilibrium problem will consider <strong>a constraint that imposes the amount of the gas phase to be a minuscule value</strong> (to model the limit condition in which a bubble is formed).</p>
-<p>Let’s create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object with these phases:</p>
+<p>Consider an aqueous solution at 60 °C obtained by mixing 1 kg of H{{_2}}O, 1 mol of NaCl and 1 mol of CO{{_2}}. What must the pressure of this aqueous solution be so that it is saturated with CO{{_2}}? In other words, what is the pressure that causes a bubble of CO{{_2}} to form (the bubble pressure)?</p>
+<p>In this tutorial, we formulate a chemical equilibrium problem to calculate the CO{{_2}} bubble/saturation pressure of this aqueous saline solution. In this problem, we consider a chemical system with aqueous and gaseous phases. Our equilibrium problem will consider <strong>a constraint that imposes the amount of the gas phase to be a minuscule value</strong> (to model the limit condition in which a bubble is formed).</p>
+<p>Let’s create our {{ChemicalSystem}} object with these phases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -736,7 +756,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Next, we create an initial chemical state for this system representing our aqueous solution at 60 °C (with composition 1 molal NaCl and 1 molal CO<sub>2</sub>):</p>
+<p>Next, we create an initial chemical state for this system representing our aqueous solution at 60 °C (with composition 1 molal NaCl and 1 molal CO{{_2}}):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -781,12 +801,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We need now to create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> that can solve equilibrium problems with the following constrained properties:</p>
+<p>We need now to create an {{EquilibriumSolver}} that can solve equilibrium problems with the following constrained properties:</p>
 <ul class="simple">
 <li><p>temperature and</p></li>
 <li><p>amount of gaseous phase.</p></li>
 </ul>
-<p>These constraint specifications are provided to the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object below, which is then used to construct our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object:</p>
+<p>These constraint specifications are provided to the {{EquilibriumSpecs}} object below, which is then used to construct our {{EquilibriumSolver}} object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
@@ -798,7 +818,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The next step is to create an object <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> in which we specify the values of <strong>temperature</strong> and <strong>amount of gas phase</strong> (which should be a small amount). We do this in the next code block, which also defines the lower and upper limits for pressure (to avoid negative and unrealistic large pressure values during the equilibrium calculation!):</p>
+<p>The next step is to create an object {{EquilibriumConditions}} in which we specify the values of <strong>temperature</strong> and <strong>amount of gas phase</strong> (which should be a small amount). We do this in the next code block, which also defines the lower and upper limits for pressure (to avoid negative and unrealistic large pressure values during the equilibrium calculation!):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
@@ -822,35 +842,35 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FINAL STATE
-+-----------------+-------------+------+
-| Property        |       Value | Unit |
-+-----------------+-------------+------+
-| Temperature     |    333.1500 |    K |
-| Pressure        |    259.7338 |  bar |
-| Charge:         | -1.4299e-17 |  mol |
-| Element Amount: |             |      |
-| :: H            |  1.1101e+02 |  mol |
-| :: C            |  1.0000e+00 |  mol |
-| :: O            |  5.7506e+01 |  mol |
-| :: Na           |  1.0000e+00 |  mol |
-| :: Cl           |  1.0000e+00 |  mol |
-| Species Amount: |             |      |
-| :: H+           |  1.2704e-03 |  mol |
-| :: H2O          |  5.5505e+01 |  mol |
-| :: CO3-2        |  6.6145e-10 |  mol |
-| :: CO2          |  9.9873e-01 |  mol |
-| :: Cl-          |  1.0000e+00 |  mol |
-| :: HCO3-        |  1.2704e-03 |  mol |
-| :: Na+          |  1.0000e+00 |  mol |
-| :: OH-          |  1.8094e-10 |  mol |
-| :: CO2(g)       |  9.7193e-07 |  mol |
-| :: H2O(g)       |  2.8071e-08 |  mol |
-+-----------------+-------------+------+
++-----------------+------------+------+
+| Property        |      Value | Unit |
++-----------------+------------+------+
+| Temperature     |   333.1500 |    K |
+| Pressure        |   259.7338 |  bar |
+| Charge:         | 9.6723e-17 |  mol |
+| Element Amount: |            |      |
+| :: H            | 1.1101e+02 |  mol |
+| :: C            | 1.0000e+00 |  mol |
+| :: O            | 5.7506e+01 |  mol |
+| :: Na           | 1.0000e+00 |  mol |
+| :: Cl           | 1.0000e+00 |  mol |
+| Species Amount: |            |      |
+| :: H+           | 1.2704e-03 |  mol |
+| :: H2O          | 5.5505e+01 |  mol |
+| :: CO3-2        | 6.6145e-10 |  mol |
+| :: CO2          | 9.9873e-01 |  mol |
+| :: Cl-          | 1.0000e+00 |  mol |
+| :: HCO3-        | 1.2704e-03 |  mol |
+| :: Na+          | 1.0000e+00 |  mol |
+| :: OH-          | 1.8094e-10 |  mol |
+| :: CO2(g)       | 9.7193e-07 |  mol |
+| :: H2O(g)       | 2.8071e-08 |  mol |
++-----------------+------------+------+
 </pre></div>
 </div>
 </div>
 </div>
-<p>The CO<sub>2</sub> saturation pressure for our aqueous solution is printed next:</p>
+<p>The CO{{_2}} saturation pressure for our aqueous solution is printed next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1e-5</span>  <span class="c1"># convert pressure from Pa to bar</span>
@@ -864,7 +884,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>And with that, we conclude this tutorial, which demonstrates how Reaktoro can perform chemical equilibrium calculations with given <strong>temperature</strong> and <strong>phase amounts</strong> to calculate the CO<sub>2</sub> saturation/bubble pressure of an aqueous electrolyte solution.</p>
+<p>And with that, we conclude this tutorial, which demonstrates how Reaktoro can perform chemical equilibrium calculations with given <strong>temperature</strong> and <strong>phase amounts</strong> to calculate the CO{{_2}} saturation/bubble pressure of an aqueous electrolyte solution.</p>
 </div>
 
     <script type="text/x-thebe-config">

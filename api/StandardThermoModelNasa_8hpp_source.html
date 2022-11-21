@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
   <meta name="generator" content="Doxygen 1.9.1" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reaktoro: Reaktoro/Models/StandardThermoModelNasa.hpp Source File</title>
+  <title>Reaktoro: Reaktoro/Models/StandardThermoModels/StandardThermoModelNasa.hpp Source File</title>
   <!-- <link href="tabs.css" rel="stylesheet" type="text/css"/>  --> <!-- REMOVED BY DOXYSTRAP -->
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -120,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_8e92d4b241d211e8bbb38ad86320f5f7.html">Reaktoro</a></li><li class="navelem"><a class="el" href="dir_b262c4b69f57fe79a08985848a5dbb2f.html">Models</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_8e92d4b241d211e8bbb38ad86320f5f7.html">Reaktoro</a></li><li class="navelem"><a class="el" href="dir_b262c4b69f57fe79a08985848a5dbb2f.html">Models</a></li><li class="navelem"><a class="el" href="dir_3b3f6e32b1902e1b677acdfde38c83cc.html">StandardThermoModels</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -149,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Reaktoro includes</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/AggregateState.hpp&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/StandardThermoProps.hpp&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/StandardThermoModel.hpp&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
@@ -204,12 +204,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="ttc" id="aclassReaktoro_1_1Param_html"><div class="ttname"><a href="classReaktoro_1_1Param.html">Reaktoro::Param</a></div><div class="ttdoc">A type used to represent the value of a parameter and its lower and upper bounds.</div><div class="ttdef"><b>Definition:</b> Param.hpp:32</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a02ae90aadc24dbff1702399a9c3ca1cd"><div class="ttname"><a href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd">Reaktoro::AggregateState</a></div><div class="ttdeci">AggregateState</div><div class="ttdoc">The aggregate states of substances according to IUPAC.</div><div class="ttdef"><b>Definition:</b> AggregateState.hpp:32</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a1b01c504448c96cd2191a5184dd31acf"><div class="ttname"><a href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Reaktoro::Vec</a></div><div class="ttdeci">std::vector&lt; T &gt; Vec</div><div class="ttdoc">Convenient alias for std::vector&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:61</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a5573b97b9e5129f61d289e037d7e806c"><div class="ttname"><a href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">Reaktoro::String</a></div><div class="ttdeci">std::string String</div><div class="ttdoc">Convenient alias for std::string.</div><div class="ttdef"><b>Definition:</b> Types.hpp:47</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a1b01c504448c96cd2191a5184dd31acf"><div class="ttname"><a href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Reaktoro::Vec</a></div><div class="ttdeci">std::vector&lt; T &gt; Vec</div><div class="ttdoc">Convenient alias for std::vector&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:66</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a5573b97b9e5129f61d289e037d7e806c"><div class="ttname"><a href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">Reaktoro::String</a></div><div class="ttdeci">std::string String</div><div class="ttdoc">Convenient alias for std::string.</div><div class="ttdef"><b>Definition:</b> Types.hpp:52</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a5b922a65bf0c65e2baa04f3b78cbc564"><div class="ttname"><a href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Reaktoro::Index</a></div><div class="ttdeci">std::size_t Index</div><div class="ttdoc">Define a type that represents an index.</div><div class="ttdef"><b>Definition:</b> Index.hpp:26</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a60d9c89846499b1ea9c6cba13f462983"><div class="ttname"><a href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">Reaktoro::real</a></div><div class="ttdeci">autodiff::real real</div><div class="ttdoc">The number type used throughout the library.</div><div class="ttdef"><b>Definition:</b> Real.hpp:26</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a6bd270e6cc78dd5c17d043831b083f55"><div class="ttname"><a href="namespaceReaktoro.html#a6bd270e6cc78dd5c17d043831b083f55">Reaktoro::StandardThermoModelNasa</a></div><div class="ttdeci">auto StandardThermoModelNasa(const StandardThermoModelParamsNasa &amp;params) -&gt; StandardThermoModel</div><div class="ttdoc">Return a function that calculates thermodynamic properties of a species using the Maier-Kelley model.</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_a9933121318e42facfe6ccaebe69a5a2b"><div class="ttname"><a href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">Reaktoro::StandardThermoModel</a></div><div class="ttdeci">Model&lt; StandardThermoProps(real T, real P)&gt; StandardThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a species.</div><div class="ttdef"><b>Definition:</b> StandardThermoProps.hpp:52</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a9933121318e42facfe6ccaebe69a5a2b"><div class="ttname"><a href="namespaceReaktoro.html#a9933121318e42facfe6ccaebe69a5a2b">Reaktoro::StandardThermoModel</a></div><div class="ttdeci">Model&lt; StandardThermoProps(real T, real P)&gt; StandardThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a species.</div><div class="ttdef"><b>Definition:</b> StandardThermoModel.hpp:30</div></div>
 <div class="ttc" id="astructReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial_html"><div class="ttname"><a href="structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html">Reaktoro::StandardThermoModelParamsNasa::Polynomial</a></div><div class="ttdoc">Used to store Nasa polynomial coefficients valid for a certain temperature interval.</div><div class="ttdef"><b>Definition:</b> StandardThermoModelNasa.hpp:31</div></div>
 <div class="ttc" id="astructReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial_html_a018163171a5470122e414796af4fe166"><div class="ttname"><a href="structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html#a018163171a5470122e414796af4fe166">Reaktoro::StandardThermoModelParamsNasa::Polynomial::Tmax</a></div><div class="ttdeci">double Tmax</div><div class="ttdoc">The maximum temperature (in K) for which the NASA polynomial coefficients below are valid.</div><div class="ttdef"><b>Definition:</b> StandardThermoModelNasa.hpp:33</div></div>
 <div class="ttc" id="astructReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial_html_a0b64836821f1d0aa033c6f849231ccca"><div class="ttname"><a href="structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html#a0b64836821f1d0aa033c6f849231ccca">Reaktoro::StandardThermoModelParamsNasa::Polynomial::a7</a></div><div class="ttdeci">Param a7</div><div class="ttdoc">The least-square coefficient  in the regression model for .</div><div class="ttdef"><b>Definition:</b> StandardThermoModelNasa.hpp:44</div></div>
@@ -229,7 +229,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="ttc" id="astructReaktoro_1_1StandardThermoModelParamsNasa_html_a72bfc2a8c4fb4b72c5627c709b827c48"><div class="ttname"><a href="structReaktoro_1_1StandardThermoModelParamsNasa.html#a72bfc2a8c4fb4b72c5627c709b827c48">Reaktoro::StandardThermoModelParamsNasa::H0</a></div><div class="ttdeci">real H0</div><div class="ttdoc">The assigned enthalpy (in J/mol) of the species when there are no temperature intervals.</div><div class="ttdef"><b>Definition:</b> StandardThermoModelNasa.hpp:56</div></div>
 <div class="ttc" id="astructReaktoro_1_1StandardThermoModelParamsNasa_html_a88d94feb173baa502f4c47e7123c377b"><div class="ttname"><a href="structReaktoro_1_1StandardThermoModelParamsNasa.html#a88d94feb173baa502f4c47e7123c377b">Reaktoro::StandardThermoModelParamsNasa::dH0</a></div><div class="ttdeci">real dH0</div><div class="ttdoc">The value of  (in J/mol).</div><div class="ttdef"><b>Definition:</b> StandardThermoModelNasa.hpp:53</div></div>
 <div class="ttc" id="astructReaktoro_1_1StandardThermoModelParamsNasa_html_aba4220058003f271df0152d8662d3a6d"><div class="ttname"><a href="structReaktoro_1_1StandardThermoModelParamsNasa.html#aba4220058003f271df0152d8662d3a6d">Reaktoro::StandardThermoModelParamsNasa::T0</a></div><div class="ttdeci">double T0</div><div class="ttdoc">The temperature (in K) corresponding to the assigned enthalpy when there are no temperature intervals...</div><div class="ttdef"><b>Definition:</b> StandardThermoModelNasa.hpp:59</div></div>
-<div class="ttc" id="astructReaktoro_1_1StandardThermoProps_html"><div class="ttname"><a href="structReaktoro_1_1StandardThermoProps.html">Reaktoro::StandardThermoProps</a></div><div class="ttdoc">The primary standard thermodynamic properties of a chemical species.</div><div class="ttdef"><b>Definition:</b> StandardThermoProps.hpp:28</div></div>
+<div class="ttc" id="astructReaktoro_1_1StandardThermoProps_html"><div class="ttname"><a href="structReaktoro_1_1StandardThermoProps.html">Reaktoro::StandardThermoProps</a></div><div class="ttdoc">The primary standard thermodynamic properties of a chemical species.</div><div class="ttdef"><b>Definition:</b> StandardThermoProps.hpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -239,7 +239,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:03 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

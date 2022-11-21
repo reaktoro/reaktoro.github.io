@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['l_2593',['L',['../structReaktoro_1_1LU.html#a2913877890361a28ee108aafe462ee93',1,'Reaktoro::LU']]],
-  ['label_2594',['label',['../structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html#aec69fbfab86b7473c3e6ccea79368f0f',1,'Reaktoro::StandardThermoModelParamsNasa::Polynomial']]],
-  ['lgk_2595',['lgK',['../structReaktoro_1_1ReactionProps.html#a260caf40046a498df9ae3993c7cd560e',1,'Reaktoro::ReactionProps']]],
-  ['lgkr_2596',['lgKr',['../structReaktoro_1_1ReactionThermoModelParamsConstLgK.html#afbd850cff847e10521e23a5e9f12dfc8',1,'Reaktoro::ReactionThermoModelParamsConstLgK::lgKr()'],['../structReaktoro_1_1ReactionThermoModelParamsVantHoff.html#afbd850cff847e10521e23a5e9f12dfc8',1,'Reaktoro::ReactionThermoModelParamsVantHoff::lgKr()']]],
-  ['ln10_2597',['ln10',['../namespaceReaktoro.html#a4c69c92f4150225a90e72afcfc5b849e',1,'Reaktoro']]],
-  ['ln_5fa_2598',['ln_a',['../structReaktoro_1_1ActivityPropsBase.html#a31502864f19b4b5911ec32a9912bb3ad',1,'Reaktoro::ActivityPropsBase::ln_a()'],['../structReaktoro_1_1ChemicalPropsPhaseBaseData.html#a31502864f19b4b5911ec32a9912bb3ad',1,'Reaktoro::ChemicalPropsPhaseBaseData::ln_a()']]],
-  ['ln_5fg_2599',['ln_g',['../structReaktoro_1_1ActivityPropsBase.html#a8083aa5b7ea6f7edd55c1a9f2f6b156c',1,'Reaktoro::ActivityPropsBase::ln_g()'],['../structReaktoro_1_1ChemicalPropsPhaseBaseData.html#a8083aa5b7ea6f7edd55c1a9f2f6b156c',1,'Reaktoro::ChemicalPropsPhaseBaseData::ln_g()']]],
-  ['ln_5fphi_2600',['ln_phi',['../structReaktoro_1_1CubicEOSProps.html#a7f664f5bb5ab03313498915546e076c7',1,'Reaktoro::CubicEOSProps']]],
-  ['lng_2601',['lng',['../structReaktoro_1_1IonExchangeSurfaceState.html#ae8d09af82d486742b60c31a0855ce7df',1,'Reaktoro::IonExchangeSurfaceState']]],
-  ['logarithm_5fbarrier_5ffactor_2602',['logarithm_barrier_factor',['../structReaktoro_1_1EquilibriumOptions.html#add34c942c88d5f13e9c66a07d7f09961',1,'Reaktoro::EquilibriumOptions']]]
+  ['kappa0_3087',['kappa0',['../structReaktoro_1_1StandardThermoModelParamsHollandPowell.html#afcb93fb81adb421759ca528b241c9fd6',1,'Reaktoro::StandardThermoModelParamsHollandPowell']]],
+  ['kappa0p_3088',['kappa0p',['../structReaktoro_1_1StandardThermoModelParamsHollandPowell.html#a1b9e95f3c55c9d1150e3a78d327b8ba6',1,'Reaktoro::StandardThermoModelParamsHollandPowell']]],
+  ['kappa0pp_3089',['kappa0pp',['../structReaktoro_1_1StandardThermoModelParamsHollandPowell.html#a91ee562eb4beb76b366b9517c69affa4',1,'Reaktoro::StandardThermoModelParamsHollandPowell']]],
+  ['kappa_5f0_3090',['kappa_0',['../structReaktoro_1_1PhreeqcUtils_1_1PhreeqcWaterThermoProps.html#aeb7433ab94804480be3b35eb632ba6e9',1,'Reaktoro::PhreeqcUtils::PhreeqcWaterThermoProps']]],
+  ['kn_3091',['Kn',['../structReaktoro_1_1ReactivityConstraint.html#a6fad12cb19c56f51f13539495a5d1635',1,'Reaktoro::ReactivityConstraint::Kn()'],['../structReaktoro_1_1ReactivityConstraints.html#a636cab1cb57a64f12deebed77c312010',1,'Reaktoro::ReactivityConstraints::Kn()']]],
+  ['kp_3092',['Kp',['../structReaktoro_1_1ReactivityConstraint.html#ac6be984d9e60f7ea53db3634b923e531',1,'Reaktoro::ReactivityConstraint::Kp()'],['../structReaktoro_1_1ReactivityConstraints.html#a50bb069d0897c39e5ccec748d1a56902',1,'Reaktoro::ReactivityConstraints::Kp()']]]
 ];

@@ -106,6 +106,16 @@ executing (assuming you are at the root of the reaktoro directory!):
 cmake -S . -B build
 ~~~
 
+```{admonition} Speed up linking time in Linux and macOS
+The created conda environment `reaktoro` on Linux and macOS should contain the [LLVM linker `lld`](https://lld.llvm.org/) which has been shown to be significantly faster than the [GNU linker `ld`](https://linux.die.net/man/1/ld) when linking Reaktoro's C++ library, tests, examples and Python module.
+
+To enable it, execute the following cmake configure command instead of the previous one:
+
+~~~bash
+cmake -S . -B build -DCMAKE_CXX_FLAGS="-fuse-ld=lld"
+~~~
+```
+
 which specifies that Reaktoro will be built in the directory `build`. The actual build operation happens when you execute the command:
 
 
@@ -275,13 +285,7 @@ and the Python package `reaktoro` in the specified installation path.
 
 # Please help me installing Reaktoro!
 
-If you are having a hard time installing Reaktoro via `cmake`, please get in
-touch via [Gitter][Gitter]. Please make sure you
-have already tried investigating the issue before contacting us there, as it
-may be just a common `cmake` issue for which a solution already exists!
-
-Also, please make sure this is a new issue before reporting it to us via
-[Reaktoro's GitHub Issues](https://github.com/reaktoro/reaktoro/issues/new).
-We can chat first about this in [Gitter][Gitter].
-
-[Gitter]: https://gitter.im/reaktoro/community
+If you have problems with the instructions above and after investigating the
+problem even more, you couldn't find a solution (for example, it might just be a
+common `cmake` problem for which there is already a solution on the internet),
+[please contact us](mailto:allan.leal@erdw.ethz.ch).

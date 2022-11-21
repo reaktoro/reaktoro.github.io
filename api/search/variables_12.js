@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['s0_2648',['S0',['../structReaktoro_1_1SpeciesThermoProps.html#a2d061036e3a535ff7366ca9a59f409c5',1,'Reaktoro::SpeciesThermoProps']]],
-  ['smart_2649',['smart',['../structReaktoro_1_1EquilibriumOptions.html#a3c92c30c0fd09f186e837ba7da4a6010',1,'Reaktoro::EquilibriumOptions::smart()'],['../structReaktoro_1_1EquilibriumResult.html#a16241287016a77178a56a93a657aa0f7',1,'Reaktoro::EquilibriumResult::smart()']]],
-  ['som_2650',['som',['../structReaktoro_1_1ActivityPropsBase.html#ad2cf06daa407e36069c9e2d91b1f28a0',1,'Reaktoro::ActivityPropsBase::som()'],['../structReaktoro_1_1ChemicalPropsPhaseBaseData.html#ad2cf06daa407e36069c9e2d91b1f28a0',1,'Reaktoro::ChemicalPropsPhaseBaseData::som()'],['../structReaktoro_1_1CubicEOSProps.html#a21d976afd052d3b0a063deb69b31e651',1,'Reaktoro::CubicEOSProps::som()']]],
-  ['sr_2651',['Sr',['../structReaktoro_1_1StandardThermoModelParamsMineralHKF.html#a575d69f0917283bfbcf5bef0f36f1a40',1,'Reaktoro::StandardThermoModelParamsMineralHKF::Sr()'],['../structReaktoro_1_1StandardThermoModelParamsMaierKelley.html#a575d69f0917283bfbcf5bef0f36f1a40',1,'Reaktoro::StandardThermoModelParamsMaierKelley::Sr()'],['../structReaktoro_1_1StandardThermoModelParamsHollandPowell.html#a575d69f0917283bfbcf5bef0f36f1a40',1,'Reaktoro::StandardThermoModelParamsHollandPowell::Sr()'],['../structReaktoro_1_1StandardThermoModelParamsHKF.html#a575d69f0917283bfbcf5bef0f36f1a40',1,'Reaktoro::StandardThermoModelParamsHKF::Sr()']]],
-  ['state_2652',['state',['../structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html#aff1fa4cdd2a7c64d0149180372959611',1,'Reaktoro::StandardThermoModelParamsNasa::Polynomial']]],
-  ['std_5fthermo_5fmodel_2653',['std_thermo_model',['../structReaktoro_1_1Species_1_1Attribs.html#a8f4e4e97b0b4427325ca790f479a3192',1,'Reaktoro::Species::Attribs']]],
-  ['str_2654',['Str',['../structReaktoro_1_1StandardThermoModelParamsWaterHKF.html#a8cabe43e5b1dd0a509e5c05646c4ffca',1,'Reaktoro::StandardThermoModelParamsWaterHKF']]],
-  ['substance_2655',['substance',['../structReaktoro_1_1Species_1_1Attribs.html#a8f6db11490751b4ac3dac845064a6cff',1,'Reaktoro::Species::Attribs::substance()'],['../structReaktoro_1_1ControlVariableQ.html#a504950ab8297d03d0cb84e38b3e38830',1,'Reaktoro::ControlVariableQ::substance()'],['../structReaktoro_1_1ControlVariableP.html#a504950ab8297d03d0cb84e38b3e38830',1,'Reaktoro::ControlVariableP::substance()']]],
-  ['succeeded_2656',['succeeded',['../structReaktoro_1_1SmartEquilibriumResult.html#afb8e401313f9b4bc3a3775a569c8ec44',1,'Reaktoro::SmartEquilibriumResult']]],
-  ['symbol_2657',['symbol',['../structReaktoro_1_1Element_1_1Attribs.html#a0ab1008aadf0f015e201c3c5d066f6f3',1,'Reaktoro::Element::Attribs']]],
-  ['symbols_2658',['symbols',['../structReaktoro_1_1Speciate.html#addcd9dbdb61f5ef7afd6fc2cbb41ee0b',1,'Reaktoro::Speciate']]]
+  ['rank_3171',['rank',['../structReaktoro_1_1LU.html#a0594e9f341a41ec7622edddb13e52dfb',1,'Reaktoro::LU']]],
+  ['re_3172',['re',['../structReaktoro_1_1SpeciesElectroProps.html#ad0a3347e563921a83fef5edf164abcb3',1,'Reaktoro::SpeciesElectroProps']]],
+  ['reason_3173',['reason',['../structReaktoro_1_1Exception.html#a3916dfe1ab42d423a9eb8b19e9d7c977',1,'Reaktoro::Exception']]],
+  ['records_3174',['records',['../structReaktoro_1_1SmartEquilibriumSolver_1_1Cluster.html#ab0711d9c6ac4f6c97092768966edb259',1,'Reaktoro::SmartEquilibriumSolver::Cluster']]],
+  ['reltol_3175',['reltol',['../structReaktoro_1_1SmartEquilibriumOptions.html#a9353f07d1f3242ced97d3554fdbd248f',1,'Reaktoro::SmartEquilibriumOptions']]],
+  ['reltol_5fnegative_5famounts_3176',['reltol_negative_amounts',['../structReaktoro_1_1SmartEquilibriumOptions.html#aba216a33b32f5104a66c267c9c8a0fcb',1,'Reaktoro::SmartEquilibriumOptions']]],
+  ['reref_3177',['reref',['../structReaktoro_1_1SpeciesElectroProps.html#a6b8bb84939989d7ec3647d1cfdc81df6',1,'Reaktoro::SpeciesElectroProps']]],
+  ['rho_3178',['rho',['../structReaktoro_1_1AqueousMixtureState.html#a0d8ddef79153215ad447086177e9cbed',1,'Reaktoro::AqueousMixtureState']]],
+  ['rho_5f0_3179',['rho_0',['../structReaktoro_1_1PhreeqcUtils_1_1PhreeqcWaterThermoProps.html#aa9467b62bd9b8184c6ed5d33dd265140',1,'Reaktoro::PhreeqcUtils::PhreeqcWaterThermoProps']]]
 ];

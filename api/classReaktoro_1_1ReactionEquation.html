@@ -150,13 +150,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionEquation.html#aee7f34638f805dafee07c56bb505e436">ReactionEquation</a> (<a class="el" href="namespaceReaktoro.html#a054d0c2ff55635088140dce324f30ccb">Pairs</a>&lt; <a class="el" href="classReaktoro_1_1Species.html">Species</a>, double &gt; const &amp;<a class="el" href="classReaktoro_1_1ReactionEquation.html#a99cd4a1c39f7708b85961787bb1de766">species</a>)</td></tr>
 <tr class="memdesc:aee7f34638f805dafee07c56bb505e436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object with given species and respective stoichiometric coefficients. <br /></td></tr>
 <tr class="separator:aee7f34638f805dafee07c56bb505e436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75a135d507d55c355bab35b9a70335e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionEquation.html#a75a135d507d55c355bab35b9a70335e3">ReactionEquation</a> (const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;equation)</td></tr>
-<tr class="memdesc:a75a135d507d55c355bab35b9a70335e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object by parsing a string.  <a href="classReaktoro_1_1ReactionEquation.html#a75a135d507d55c355bab35b9a70335e3">More...</a><br /></td></tr>
-<tr class="separator:a75a135d507d55c355bab35b9a70335e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17d00970b0f3c62018c576f8aa217c18"><td class="memItemLeft" align="right" valign="top"><a id="a17d00970b0f3c62018c576f8aa217c18"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionEquation.html#a17d00970b0f3c62018c576f8aa217c18">ReactionEquation</a> (const char *equation)</td></tr>
-<tr class="memdesc:a17d00970b0f3c62018c576f8aa217c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object by parsing a string. <br /></td></tr>
-<tr class="separator:a17d00970b0f3c62018c576f8aa217c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c7323e661df6538042117034325ec4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionEquation.html#ab0c7323e661df6538042117034325ec4">ReactionEquation</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const &amp;equation, <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> const &amp;<a class="el" href="classReaktoro_1_1ReactionEquation.html#a99cd4a1c39f7708b85961787bb1de766">species</a>)</td></tr>
+<tr class="memdesc:ab0c7323e661df6538042117034325ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object by parsing a formatted string.  <a href="classReaktoro_1_1ReactionEquation.html#ab0c7323e661df6538042117034325ec4">More...</a><br /></td></tr>
+<tr class="separator:ab0c7323e661df6538042117034325ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d8f4631a086063c4cd580662208c047"><td class="memItemLeft" align="right" valign="top"><a id="a4d8f4631a086063c4cd580662208c047"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionEquation.html#a4d8f4631a086063c4cd580662208c047">empty</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:a4d8f4631a086063c4cd580662208c047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the rection equation is empty. <br /></td></tr>
@@ -197,6 +193,13 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionEquation.html#a7727305d5e1ec66a181e22c43af9a581">end</a> ()</td></tr>
 <tr class="memdesc:a7727305d5e1ec66a181e22c43af9a581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return end iterator of this <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object (for STL compatibility reasons). <br /></td></tr>
 <tr class="separator:a7727305d5e1ec66a181e22c43af9a581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a3d4652b9a94d4f80b0fc264007175fe5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionEquation.html#a3d4652b9a94d4f80b0fc264007175fe5">ReactionEquation</a> (<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const &amp;equation)</td></tr>
+<tr class="memdesc:a3d4652b9a94d4f80b0fc264007175fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object by parsing a formatted string.  <a href="classReaktoro_1_1ReactionEquation.html#a3d4652b9a94d4f80b0fc264007175fe5">More...</a><br /></td></tr>
+<tr class="separator:a3d4652b9a94d4f80b0fc264007175fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab4885edb4dc9a98ae963f7a5ce4fb0d"><td class="memItemLeft" align="right" valign="top"><a id="aab4885edb4dc9a98ae963f7a5ce4fb0d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ReactionEquation</b> (<a class="el" href="namespaceReaktoro.html#a9af1f47dbafff136588f3b92f543c892">Chars</a> equation)</td></tr>
+<tr class="separator:aab4885edb4dc9a98ae963f7a5ce4fb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A type used to represent the equation of a reaction. </p>
@@ -204,8 +207,8 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="line"><a class="code" href="classReaktoro_1_1ReactionEquation.html#a870e9e1583141ab6fcfaffc0273f999b">ReactionEquation</a> equation2 = <span class="stringliteral">&quot;CO2(g) + H2O(l) = H+ + HCO3-&quot;</span>;</div>
 <div class="ttc" id="aclassReaktoro_1_1ReactionEquation_html_a870e9e1583141ab6fcfaffc0273f999b"><div class="ttname"><a href="classReaktoro_1_1ReactionEquation.html#a870e9e1583141ab6fcfaffc0273f999b">Reaktoro::ReactionEquation::ReactionEquation</a></div><div class="ttdeci">ReactionEquation()</div><div class="ttdoc">Construct a default ReactionEquation object.</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a75a135d507d55c355bab35b9a70335e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75a135d507d55c355bab35b9a70335e3">&#9670;&nbsp;</a></span>ReactionEquation()</h2>
+<a id="a3d4652b9a94d4f80b0fc264007175fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d4652b9a94d4f80b0fc264007175fe5">&#9670;&nbsp;</a></span>ReactionEquation() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,18 +216,49 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname"><a class="el" href="classReaktoro_1_1ReactionEquation.html">ReactionEquation</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const &amp;&#160;</td>
           <td class="paramname"><em>equation</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object by parsing a string. </p>
+<p>Construct a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object by parsing a formatted string. </p>
 <p>Below are examples of how to create a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object via a formatted string. </p><div class="fragment"><div class="line"><a class="code" href="classReaktoro_1_1ReactionEquation.html#a870e9e1583141ab6fcfaffc0273f999b">ReactionEquation</a> equation1(<span class="stringliteral">&quot;Calcite + H+ = Ca++ + HCO3-&quot;</span>);</div>
 <div class="line"><a class="code" href="classReaktoro_1_1ReactionEquation.html#a870e9e1583141ab6fcfaffc0273f999b">ReactionEquation</a> equation2(<span class="stringliteral">&quot;CO2(g) + H2O(l) = H+ + HCO3-&quot;</span>);</div>
 <div class="line"><a class="code" href="classReaktoro_1_1ReactionEquation.html#a870e9e1583141ab6fcfaffc0273f999b">ReactionEquation</a> equation3(<span class="stringliteral">&quot;Dolomite + 2*H+ = Ca++ + Mg++ + 2*HCO3-&quot;</span>);</div>
 </div><!-- fragment --><p> Note that unity stoichiometric coefficients can be ommited from the equation. The operator <code>*</code> must be used when this is not the case. </p>
+
+</div>
+</div>
+<a id="ab0c7323e661df6538042117034325ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c7323e661df6538042117034325ec4">&#9670;&nbsp;</a></span>ReactionEquation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classReaktoro_1_1ReactionEquation.html">ReactionEquation</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const &amp;&#160;</td>
+          <td class="paramname"><em>equation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> const &amp;&#160;</td>
+          <td class="paramname"><em>species</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object by parsing a formatted string. </p>
+<p>This method is similar to <a class="el" href="classReaktoro_1_1ReactionEquation.html#a3d4652b9a94d4f80b0fc264007175fe5" title="Construct a ReactionEquation object by parsing a formatted string.">ReactionEquation(String const&amp;)</a>, but the <a class="el" href="classReaktoro_1_1Species.html" title="A type used to represent a chemical species and its attributes.">Species</a> objects in the constructed <a class="el" href="classReaktoro_1_1ReactionEquation.html" title="A type used to represent the equation of a reaction.">ReactionEquation</a> object are fetched from a given list of species. </p>
 
 </div>
 </div>
@@ -240,7 +274,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 16 2022 12:08:06 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Nov 21 2022 10:29:04 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

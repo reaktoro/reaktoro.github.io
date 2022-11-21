@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['c_2498',['c',['../structReaktoro_1_1StandardThermoModelParamsMaierKelley.html#aa2a5ecd8230f45cf79ccad0eb57ffbf8',1,'Reaktoro::StandardThermoModelParamsMaierKelley::c()'],['../structReaktoro_1_1StandardThermoModelParamsMineralHKF.html#a1d34d4cf56b2359677d6acacd57f4ac6',1,'Reaktoro::StandardThermoModelParamsMineralHKF::c()'],['../structReaktoro_1_1StandardThermoModelParamsHollandPowell.html#aa2a5ecd8230f45cf79ccad0eb57ffbf8',1,'Reaktoro::StandardThermoModelParamsHollandPowell::c()']]],
-  ['c1_2499',['c1',['../structReaktoro_1_1StandardThermoModelParamsHKF.html#a95fcf0d0f89a81bf42287f51b4d20938',1,'Reaktoro::StandardThermoModelParamsHKF']]],
-  ['c2_2500',['c2',['../structReaktoro_1_1StandardThermoModelParamsHKF.html#aed45a751bab8c7a5ba620e6a870b1888',1,'Reaktoro::StandardThermoModelParamsHKF']]],
-  ['calorietojoule_2501',['calorieToJoule',['../namespaceReaktoro.html#a76c836ba90b486a5eef88282821969bc',1,'Reaktoro']]],
-  ['charge_2502',['charge',['../structReaktoro_1_1Species_1_1Attribs.html#ab3eb30b2f3f9c5ff812ea037220be570',1,'Reaktoro::Species::Attribs::charge()'],['../structReaktoro_1_1StandardThermoModelParamsHKF.html#a1c8c5fe3daa2fca76f89e0df826764d9',1,'Reaktoro::StandardThermoModelParamsHKF::charge()']]],
-  ['complex_2503',['complex',['../structReaktoro_1_1DissociationReaction.html#ae59f1eddd82abf7c538ee60b28bbfc43',1,'Reaktoro::DissociationReaction']]],
-  ['cp_2504',['cp',['../structReaktoro_1_1WaterThermoProps.html#a040b8722f381a93d355dc120df62a406',1,'Reaktoro::WaterThermoProps']]],
-  ['cp0_2505',['Cp0',['../structReaktoro_1_1ThermoPropsPhaseBaseData.html#a9a9fb83d4f857e265f5b6f0469c2f8a3',1,'Reaktoro::ThermoPropsPhaseBaseData::Cp0()'],['../structReaktoro_1_1StandardThermoModelParamsInterpolation.html#a0a31eeeeab7b8dde6922f754c348dacb',1,'Reaktoro::StandardThermoModelParamsInterpolation::Cp0()'],['../structReaktoro_1_1StandardThermoModelParamsConstant.html#a72451d8008dc2382c9d62b987b636ed6',1,'Reaktoro::StandardThermoModelParamsConstant::Cp0()'],['../structReaktoro_1_1StandardThermoProps.html#ae134d68bde929c106d17aff1b653004c',1,'Reaktoro::StandardThermoProps::Cp0()'],['../structReaktoro_1_1SpeciesThermoProps.html#ae134d68bde929c106d17aff1b653004c',1,'Reaktoro::SpeciesThermoProps::Cp0()'],['../structReaktoro_1_1ChemicalPropsPhaseBaseData.html#a9a9fb83d4f857e265f5b6f0469c2f8a3',1,'Reaktoro::ChemicalPropsPhaseBaseData::Cp0()']]],
-  ['cpres_2506',['Cpres',['../structReaktoro_1_1CubicEOSProps.html#a6a7213d1107dfb40f19cb205a3dc39e9',1,'Reaktoro::CubicEOSProps']]],
-  ['cpx_2507',['Cpx',['../structReaktoro_1_1ActivityPropsBase.html#a7f91b142e98cde28c1be9d16b1101788',1,'Reaktoro::ActivityPropsBase::Cpx()'],['../structReaktoro_1_1ChemicalPropsPhaseBaseData.html#a7f91b142e98cde28c1be9d16b1101788',1,'Reaktoro::ChemicalPropsPhaseBaseData::Cpx()']]],
-  ['cubiccentimetertocubicmeter_2508',['cubicCentimeterToCubicMeter',['../namespaceReaktoro.html#a70677af017a7f18eb5288f819ac06f4b',1,'Reaktoro']]],
-  ['cubicmetertocubiccentimeter_2509',['cubicMeterToCubicCentimeter',['../namespaceReaktoro.html#abeee82042097c780ad984b30fc709f2e',1,'Reaktoro']]],
-  ['cv_2510',['cv',['../structReaktoro_1_1WaterThermoProps.html#a9f787904e635078b75042455a886ac1e',1,'Reaktoro::WaterThermoProps']]],
-  ['cv0_2511',['Cv0',['../structReaktoro_1_1SpeciesThermoProps.html#a5d1842d9cec56d313e90f59b1fa577b4',1,'Reaktoro::SpeciesThermoProps']]],
-  ['cvres_2512',['Cvres',['../structReaktoro_1_1CubicEOSProps.html#ab52a4904929a63ba9e1e14e7f36da46e',1,'Reaktoro::CubicEOSProps']]]
+  ['b_2968',['b',['../structReaktoro_1_1StandardThermoModelParamsMaierKelley.html#ac59f8f590c99f0cc6a8fa1af173dbcd1',1,'Reaktoro::StandardThermoModelParamsMaierKelley::b()'],['../structReaktoro_1_1StandardThermoModelParamsMineralHKF.html#ae240c314612426aa4bcfe30c7d88d821',1,'Reaktoro::StandardThermoModelParamsMineralHKF::b()'],['../structReaktoro_1_1StandardThermoModelParamsHollandPowell.html#ac59f8f590c99f0cc6a8fa1af173dbcd1',1,'Reaktoro::StandardThermoModelParamsHollandPowell::b()']]],
+  ['b1_2969',['b1',['../structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html#a5f06da6d70200d5b4f687015e92cc8ae',1,'Reaktoro::StandardThermoModelParamsNasa::Polynomial']]],
+  ['b2_2970',['b2',['../structReaktoro_1_1StandardThermoModelParamsNasa_1_1Polynomial.html#a1dad1639589684be2c5e927263734eae',1,'Reaktoro::StandardThermoModelParamsNasa::Polynomial']]],
+  ['bartopascal_2971',['barToPascal',['../namespaceReaktoro.html#a4f19985c36114674b385ba7e6a860e04',1,'Reaktoro']]],
+  ['beta_2972',['beta',['../structReaktoro_1_1IonExchangeSurfaceState.html#a01cab161489ca22cd97e7b41eb440db6',1,'Reaktoro::IonExchangeSurfaceState']]],
+  ['biondefault_2973',['biondefault',['../structReaktoro_1_1ActivityModelDebyeHuckelParams.html#af3c088b1fb5bb6dc61bd834a7cafecd1',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
+  ['bions_2974',['bions',['../structReaktoro_1_1ActivityModelDaviesParams.html#afad6ebe543b27b0f5b9d9d8a917b879a',1,'Reaktoro::ActivityModelDaviesParams::bions()'],['../structReaktoro_1_1ActivityModelDebyeHuckelParams.html#a7c1c49ae02881d363dfd9838f149f4b4',1,'Reaktoro::ActivityModelDebyeHuckelParams::bions()']]],
+  ['bneutraldefault_2975',['bneutraldefault',['../structReaktoro_1_1ActivityModelDebyeHuckelParams.html#afd9935f1bd3f050119d8e3eeb9deb03f',1,'Reaktoro::ActivityModelDebyeHuckelParams']]],
+  ['bneutrals_2976',['bneutrals',['../structReaktoro_1_1ActivityModelDaviesParams.html#a88242eb216889274d17ed13ec57548e8',1,'Reaktoro::ActivityModelDaviesParams::bneutrals()'],['../structReaktoro_1_1ActivityModelDebyeHuckelParams.html#a659432334374fbaf93e6025f8feb6aa7',1,'Reaktoro::ActivityModelDebyeHuckelParams::bneutrals()']]],
+  ['bornn_2977',['bornN',['../structReaktoro_1_1WaterElectroProps.html#ad0173cbabe90e6a0e4c8f809f26254dd',1,'Reaktoro::WaterElectroProps']]],
+  ['bornq_2978',['bornQ',['../structReaktoro_1_1WaterElectroProps.html#a28caa232295ff8cb31e17708c8a7528f',1,'Reaktoro::WaterElectroProps']]],
+  ['bornu_2979',['bornU',['../structReaktoro_1_1WaterElectroProps.html#a9d9681b9decfabb38a2fba217536c30a',1,'Reaktoro::WaterElectroProps']]],
+  ['bornx_2980',['bornX',['../structReaktoro_1_1WaterElectroProps.html#a3b1126cf2fbf644bacd5d79c7ae52e59',1,'Reaktoro::WaterElectroProps']]],
+  ['borny_2981',['bornY',['../structReaktoro_1_1WaterElectroProps.html#a1d4a3bcaeb99f6639aac66ce88246180',1,'Reaktoro::WaterElectroProps']]],
+  ['bornz_2982',['bornZ',['../structReaktoro_1_1WaterElectroProps.html#a5d8f0290b959eb8a422f1d5d8dae3713',1,'Reaktoro::WaterElectroProps']]]
 ];

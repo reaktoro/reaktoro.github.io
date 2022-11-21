@@ -41,6 +41,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
@@ -74,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
+<div class="announcement header-item noprint">🚀 Reaktoro v2.0 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!</div>
 <div class="header header-item noprint"></div>
 
     
@@ -285,7 +286,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../tutorials/kinetics/kinetics-basics.html">
-     How to perform chemical kinetics calculations
+     Chemical kinetics: the basics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/machine-learning/index.html">
+   Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/machine-learning/machine-learning-basics.html">
+     Machine learning: the basics
     </a>
    </li>
   </ul>
@@ -294,8 +312,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../tutorials/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -311,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../tutorials/advanced/index.html">
    Advanced
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -340,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../applications/solubility/index.html">
    Solubility
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -362,8 +380,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../applications/geobiology/index.html">
    Geobiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -384,8 +402,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../applications/exchange/index.html">
    Ion-exchange
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -396,7 +414,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../applications/exchange/ion-exchnage-mix-porewater-extractant.html">
+    <a class="reference internal" href="../applications/exchange/ion-exchange-mix-porewater-extractant.html">
      Extraction of exchangeable cations in dune sand
     </a>
    </li>
@@ -409,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../applications/exchange/ion-exhcange-calcite-cax-vs-ph.html">
+    <a class="reference internal" href="../applications/exchange/ion-exchange-calcite-cax-vs-ph.html">
      Effect of calcite dissolution on exchangeable cations
     </a>
    </li>
@@ -419,8 +437,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../applications/thermofun/index.html">
    ThermoFun
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -445,8 +463,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../applications/miscellaneous/index.html">
    Miscellaneous
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -682,29 +700,22 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Troubleshooting
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-reaktoro">
+   ModuleNotFoundError: No module named ‘reaktoro’
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-reaktoro">
-     ModuleNotFoundError: No module named ‘reaktoro’
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expecting-a-float-value-but-got-autodiff-real-instead">
-     Expecting a float value but got autodiff.real instead
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
-     Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expecting-a-float-value-but-got-autodiff-real-instead">
+   Expecting a float value but got autodiff.real instead
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
+   Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sigfpe-signals-and-fatal-arithmetic-errors">
    SIGFPE signals and fatal arithmetic errors
   </a>
@@ -728,29 +739,22 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Troubleshooting
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-reaktoro">
+   ModuleNotFoundError: No module named ‘reaktoro’
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-reaktoro">
-     ModuleNotFoundError: No module named ‘reaktoro’
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expecting-a-float-value-but-got-autodiff-real-instead">
-     Expecting a float value but got autodiff.real instead
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
-     Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expecting-a-float-value-but-got-autodiff-real-instead">
+   Expecting a float value but got autodiff.real instead
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
+   Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sigfpe-signals-and-fatal-arithmetic-errors">
    SIGFPE signals and fatal arithmetic errors
   </a>
@@ -803,9 +807,8 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="sigfpe-signals-and-fatal-arithmetic-errors">
-<h1>SIGFPE signals and fatal arithmetic errors<a class="headerlink" href="#sigfpe-signals-and-fatal-arithmetic-errors" title="Permalink to this headline">#</a></h1>
+<div class="section" id="sigfpe-signals-and-fatal-arithmetic-errors">
+<h2>SIGFPE signals and fatal arithmetic errors<a class="headerlink" href="#sigfpe-signals-and-fatal-arithmetic-errors" title="Permalink to this headline">#</a></h2>
 <p>Users that couple Reaktoro’s C++ library and <a class="reference external" href="https://www.openfoam.com/">OpenFOAM</a> for reactive transport simulations often report problems related to <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv">SIGFPE signals</a> that are thrown following arithmetic exceptions (e.g., division by zero, logarithm of zero, etc.). Usually these errors happen in Reaktoro because some species in the chemical state have zero values (always try to set a very small amount instead of zero!), and during a chemical equilibrium or kinetic calculation the logarithm of zero may be evaluated. These arithmetic errors, however, do not compromise the calculation results and are ignored in Reaktoro when they occur.</p>
 <p>So you can safely disable these SIGFPE signals. Below is a demonstration using <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv/feclearexcept"><code class="docutils literal notranslate"><span class="pre">std::feclearexcept</span></code></a>:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cfenv&gt;</span><span class="cp"></span>
@@ -843,6 +846,7 @@ title="Print to PDF"
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
+</div>
 </div>
 </div>
 
