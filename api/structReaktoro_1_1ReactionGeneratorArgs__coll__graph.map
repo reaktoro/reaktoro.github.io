@@ -1,0 +1,7 @@
+<map id="ReactionGeneratorArgs" name="ReactionGeneratorArgs">
+<area shape="rect" id="node1" title="The data provided to a ReactionGenerator to construct a Reaction object." alt="" coords="133,95,306,121"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Database.html" title="The class used to store and retrieve data of chemical species." alt="" coords="5,5,89,32"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1SurfaceList.html" title="A type used as a collection of surfaces." alt="" coords="113,5,208,32"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1SpeciesList.html" title="A type used as a collection of species." alt="" coords="232,5,327,32"/>
+<area shape="rect" id="node5" href="$classReaktoro_1_1PhaseList.html" title="A type used as a collection of phases." alt="" coords="351,5,435,32"/>
+</map>

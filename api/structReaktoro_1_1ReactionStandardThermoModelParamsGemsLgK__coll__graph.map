@@ -1,0 +1,4 @@
+<map id="ReactionStandardThermoModelParamsGemsLgK" name="ReactionStandardThermoModelParamsGemsLgK">
+<area shape="rect" id="node1" title="The parameters in the thermodynamic model for a formation reaction based on GEM&#45;Selektor&#39;s expression..." alt="" coords="5,183,232,224"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds." alt="" coords="87,5,150,32"/>
+</map>
