@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.0.0</span>
+                    &#160;<span id="projectnumber">v2.1.1</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -187,30 +187,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">auto</span> resolvePhaseIndex(ChemicalSystem <span class="keyword">const</span>&amp; system, <a class="code" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> phase) -&gt; <a class="code" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">auto</span> resolveSurfaceIndex(SurfaceList <span class="keyword">const</span>&amp; surfacelist, <a class="code" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> surface) -&gt; <a class="code" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">auto</span> resolveReactionIndex(ReactionList <span class="keyword">const</span>&amp; reactionlist, <a class="code" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> reaction) -&gt; <a class="code" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">auto</span> resolveSurfaceIndex(ChemicalSystem <span class="keyword">const</span>&amp; system, <a class="code" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> surface) -&gt; <a class="code" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">auto</span> resolveReactionIndex(ChemicalSystem <span class="keyword">const</span>&amp; system, <a class="code" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> reaction) -&gt; <a class="code" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a>;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">auto</span> assembleFormulaVector(ChemicalFormula <span class="keyword">const</span>&amp; susbtance, ElementList <span class="keyword">const</span>&amp; elements) -&gt; <a class="code" href="namespaceReaktoro.html#a73c1535cdfdd552cd04f7676926858b6">VectorXd</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">auto</span> resolveSurfaceIndex(SurfaceList <span class="keyword">const</span>&amp; surfacelist, <a class="code" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> surface) -&gt; <a class="code" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">auto</span> assembleFormulaMatrix(SpeciesList <span class="keyword">const</span>&amp; species, ElementList <span class="keyword">const</span>&amp; elements) -&gt; <a class="code" href="namespaceReaktoro.html#a4e53847462ee658f66d8d9f1a727b5f8">MatrixXd</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">auto</span> resolveSurfaceIndex(ChemicalSystem <span class="keyword">const</span>&amp; system, <a class="code" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> surface) -&gt; <a class="code" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">auto</span> assembleStoichiometricMatrix(ReactionList <span class="keyword">const</span>&amp; reactions, SpeciesList <span class="keyword">const</span>&amp; species) -&gt; <a class="code" href="namespaceReaktoro.html#a4e53847462ee658f66d8d9f1a727b5f8">MatrixXd</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">auto</span> assembleFormulaVector(ChemicalFormula <span class="keyword">const</span>&amp; susbtance, ElementList <span class="keyword">const</span>&amp; elements) -&gt; <a class="code" href="namespaceReaktoro.html#a73c1535cdfdd552cd04f7676926858b6">VectorXd</a>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">auto</span> extractNames(SpeciesList <span class="keyword">const</span>&amp; list) -&gt; <a class="code" href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Strings</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">auto</span> assembleFormulaMatrix(SpeciesList <span class="keyword">const</span>&amp; species, ElementList <span class="keyword">const</span>&amp; elements) -&gt; <a class="code" href="namespaceReaktoro.html#a4e53847462ee658f66d8d9f1a727b5f8">MatrixXd</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">auto</span> extractNames(ElementList <span class="keyword">const</span>&amp; list) -&gt; <a class="code" href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Strings</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">auto</span> assembleStoichiometricMatrix(ReactionList <span class="keyword">const</span>&amp; reactions, SpeciesList <span class="keyword">const</span>&amp; species) -&gt; <a class="code" href="namespaceReaktoro.html#a4e53847462ee658f66d8d9f1a727b5f8">MatrixXd</a>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">auto</span> extractNames(PhaseList <span class="keyword">const</span>&amp; list) -&gt; <a class="code" href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Strings</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">auto</span> extractNames(SpeciesList <span class="keyword">const</span>&amp; list) -&gt; <a class="code" href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Strings</a>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">auto</span> determineReactingPhaseInterfacesInReaction(Reaction <span class="keyword">const</span>&amp; reaction, PhaseList <span class="keyword">const</span>&amp; phases) -&gt; Pairs&lt;Index, Index&gt;;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">auto</span> determineReactingPhaseInterfacesInReactions(Vec&lt;Reaction&gt; <span class="keyword">const</span>&amp; reactions, PhaseList <span class="keyword">const</span>&amp; phases) -&gt; Pairs&lt;Index, Index&gt;;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">auto</span> createSurfacesForReactingPhaseInterfacesInReactions(Vec&lt;Reaction&gt; <span class="keyword">const</span>&amp; reactions, PhaseList <span class="keyword">const</span>&amp; phases) -&gt; Vec&lt;Surface&gt;;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">auto</span> extractNames(ElementList <span class="keyword">const</span>&amp; list) -&gt; <a class="code" href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Strings</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">auto</span> extractNames(PhaseList <span class="keyword">const</span>&amp; list) -&gt; <a class="code" href="namespaceReaktoro.html#a632090884b4aa0585e747446a2683963">Strings</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">auto</span> determineReactingPhaseInterfacesInReaction(Reaction <span class="keyword">const</span>&amp; reaction, PhaseList <span class="keyword">const</span>&amp; phases) -&gt; Pairs&lt;Index, Index&gt;;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;} <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">auto</span> determineReactingPhaseInterfacesInReactions(Vec&lt;Reaction&gt; <span class="keyword">const</span>&amp; reactions, PhaseList <span class="keyword">const</span>&amp; phases) -&gt; Pairs&lt;Index, Index&gt;;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">auto</span> createSurfacesForReactingPhaseInterfacesInReactions(Vec&lt;Reaction&gt; <span class="keyword">const</span>&amp; reactions, PhaseList <span class="keyword">const</span>&amp; phases) -&gt; Vec&lt;Surface&gt;;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;} <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a3cbbdcbe6dfc82cabd6b529e5381f251"><div class="ttname"><a href="namespaceReaktoro.html#a3cbbdcbe6dfc82cabd6b529e5381f251">Reaktoro::unit</a></div><div class="ttdeci">auto unit(Index rows, Index i) -&gt; decltype(VectorXd::Unit(rows, i))</div><div class="ttdoc">Return an expression of a unit vector.</div><div class="ttdef"><b>Definition:</b> Matrix.hpp:546</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a4e53847462ee658f66d8d9f1a727b5f8"><div class="ttname"><a href="namespaceReaktoro.html#a4e53847462ee658f66d8d9f1a727b5f8">Reaktoro::MatrixXd</a></div><div class="ttdeci">Eigen::MatrixXd MatrixXd</div><div class="ttdoc">Convenient alias to Eigen type.</div><div class="ttdef"><b>Definition:</b> Matrix.hpp:137</div></div>
@@ -230,7 +234,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 21 2022 12:12:05 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Nov 30 2022 20:51:23 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

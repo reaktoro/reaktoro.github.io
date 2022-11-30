@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.0.0</span>
+                    &#160;<span id="projectnumber">v2.1.1</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -184,13 +184,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae01a5ebdf7d0e92efa711ee445e33ff7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ae01a5ebdf7d0e92efa711ee445e33ff7">deserialize</a> (const <a class="el" href="classReaktoro_1_1ArrayStream.html">ArrayStream</a>&lt; double &gt; &amp;stream) -&gt; void</td></tr>
 <tr class="memdesc:ae01a5ebdf7d0e92efa711ee445e33ff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the chemical properties of the system using the array stream <code>stream</code>.  <a href="classReaktoro_1_1ChemicalProps.html#ae01a5ebdf7d0e92efa711ee445e33ff7">More...</a><br /></td></tr>
 <tr class="separator:ae01a5ebdf7d0e92efa711ee445e33ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8acac5712c2015139271b796f0fab0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a3b8acac5712c2015139271b796f0fab0">stateid</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a></td></tr>
+<tr class="memdesc:a3b8acac5712c2015139271b796f0fab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the state identification number of this <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> object.  <a href="classReaktoro_1_1ChemicalProps.html#a3b8acac5712c2015139271b796f0fab0">More...</a><br /></td></tr>
+<tr class="separator:a3b8acac5712c2015139271b796f0fab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f469620497db2b2a53e6589676e036"><td class="memItemLeft" align="right" valign="top"><a id="aa2f469620497db2b2a53e6589676e036"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aa2f469620497db2b2a53e6589676e036">system</a> () const -&gt; <a class="el" href="classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> const &amp;</td></tr>
 <tr class="memdesc:aa2f469620497db2b2a53e6589676e036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical system associated with these chemical properties. <br /></td></tr>
 <tr class="separator:aa2f469620497db2b2a53e6589676e036"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac66df1f39c420776fb03151572334c8b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#ac66df1f39c420776fb03151572334c8b">phaseProps</a> (<a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> phase) -&gt; <a class="el" href="namespaceReaktoro.html#af8c118fca284b69fc8d77385113edfaf">ChemicalPropsPhaseRef</a></td></tr>
-<tr class="memdesc:ac66df1f39c420776fb03151572334c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical properties of a phase with given index.  <a href="classReaktoro_1_1ChemicalProps.html#ac66df1f39c420776fb03151572334c8b">More...</a><br /></td></tr>
-<tr class="separator:ac66df1f39c420776fb03151572334c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cab512e025a5afb45cc52b54825676d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a0cab512e025a5afb45cc52b54825676d">phaseProps</a> (<a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> phase) const -&gt; <a class="el" href="namespaceReaktoro.html#a72e5781af64ed20689d57bdf8fd4cd94">ChemicalPropsPhaseConstRef</a></td></tr>
 <tr class="memdesc:a0cab512e025a5afb45cc52b54825676d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the chemical properties of a phase with given index.  <a href="classReaktoro_1_1ChemicalProps.html#a0cab512e025a5afb45cc52b54825676d">More...</a><br /></td></tr>
 <tr class="separator:a0cab512e025a5afb45cc52b54825676d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -530,6 +530,9 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#accf853fc444b85cdfe17ff7df58c463f">heatCapacityConstV</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
 <tr class="memdesc:accf853fc444b85cdfe17ff7df58c463f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the isochoric heat capacity of the system (in J/K). <br /></td></tr>
 <tr class="separator:accf853fc444b85cdfe17ff7df58c463f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee00497eb4bf027e12a9a9e8ea39ba77"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#aee00497eb4bf027e12a9a9e8ea39ba77">reactionRate</a> (<a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a> reaction) const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td></tr>
+<tr class="memdesc:aee00497eb4bf027e12a9a9e8ea39ba77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the rate of a kinetic reaction in the system (in mol/s).  <a href="classReaktoro_1_1ChemicalProps.html#aee00497eb4bf027e12a9a9e8ea39ba77">More...</a><br /></td></tr>
+<tr class="separator:aee00497eb4bf027e12a9a9e8ea39ba77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dd78e62545828d3e2849a944036b471"><td class="memItemLeft" align="right" valign="top"><a id="a9dd78e62545828d3e2849a944036b471"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ChemicalProps.html#a9dd78e62545828d3e2849a944036b471">reactionRates</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#aef47516c855b98077630d185386df828">ArrayXr</a></td></tr>
 <tr class="memdesc:a9dd78e62545828d3e2849a944036b471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reaction rates of the kinetic reactions in the system (in mol/s). <br /></td></tr>
@@ -882,34 +885,28 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
-<a id="ac66df1f39c420776fb03151572334c8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac66df1f39c420776fb03151572334c8b">&#9670;&nbsp;</a></span>phaseProps() <span class="overload">[1/2]</span></h2>
+<a id="a3b8acac5712c2015139271b796f0fab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b8acac5712c2015139271b796f0fab0">&#9670;&nbsp;</a></span>stateid()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto phaseProps </td>
+          <td class="memname">auto stateid </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a>&#160;</td>
-          <td class="paramname"><em>phase</em></td><td>)</td>
-          <td> -&gt;  <a class="el" href="namespaceReaktoro.html#af8c118fca284b69fc8d77385113edfaf">ChemicalPropsPhaseRef</a></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#a5b922a65bf0c65e2baa04f3b78cbc564">Index</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the chemical properties of a phase with given index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">phase</td><td>The name or index of the phase in the system. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Return the state identification number of this <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> object. </p>
+<p>Each time this <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> object is updated, its state identification number (<code>stateid</code>) is incremented. This is useful for memorizing expensive functions that require a <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> object as an argument for their evaluation. Checking whether two <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> objects are identical therefore requires only a comparison of two integer values, rather than all the properties stored in them. Note that it is not enough to compare just temperature, pressure and species amounts, as the chemical properties of the system can be recalculated using ideal activity models and will therefore differ between the two <a class="el" href="classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system.">ChemicalProps</a> objects. </p>
 
 </div>
 </div>
 <a id="a0cab512e025a5afb45cc52b54825676d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cab512e025a5afb45cc52b54825676d">&#9670;&nbsp;</a></span>phaseProps() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cab512e025a5afb45cc52b54825676d">&#9670;&nbsp;</a></span>phaseProps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1915,6 +1912,32 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a id="aee00497eb4bf027e12a9a9e8ea39ba77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee00497eb4bf027e12a9a9e8ea39ba77">&#9670;&nbsp;</a></span>reactionRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto reactionRate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceReaktoro.html#a7d0d7a342f2f09db1c4001560cb92ca2">StringOrIndex</a>&#160;</td>
+          <td class="paramname"><em>reaction</em></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the rate of a kinetic reaction in the system (in mol/s). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reaction</td><td>The name or index of the reaction in the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Reaktoro/Core/<a class="el" href="ChemicalProps_8hpp_source.html">ChemicalProps.hpp</a></li>
 </ul>
@@ -1927,7 +1950,7 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 21 2022 12:12:05 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Nov 30 2022 20:51:23 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

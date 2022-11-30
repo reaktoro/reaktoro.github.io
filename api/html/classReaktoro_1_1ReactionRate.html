@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.0.0</span>
+                    &#160;<span id="projectnumber">v2.1.1</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -147,26 +147,44 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#a9bd241b284ce7e57eb7635610ced0712">ReactionRate</a> ()</td></tr>
 <tr class="memdesc:a9bd241b284ce7e57eb7635610ced0712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a default <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object. <br /></td></tr>
 <tr class="separator:a9bd241b284ce7e57eb7635610ced0712"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d04ba3c5f0c6e097b0ebb794ce592c4"><td class="memItemLeft" align="right" valign="top"><a id="a0d04ba3c5f0c6e097b0ebb794ce592c4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#a0d04ba3c5f0c6e097b0ebb794ce592c4">ReactionRate</a> (double <a class="el" href="classReaktoro_1_1ReactionRate.html#aa9f56bb8b97ba2588696f3416a20fe5e">value</a>)</td></tr>
-<tr class="memdesc:a0d04ba3c5f0c6e097b0ebb794ce592c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object with given rate value. <br /></td></tr>
-<tr class="separator:a0d04ba3c5f0c6e097b0ebb794ce592c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a737bbd900e14c5556a620bf42ecaa57c"><td class="memItemLeft" align="right" valign="top"><a id="a737bbd900e14c5556a620bf42ecaa57c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#a737bbd900e14c5556a620bf42ecaa57c">ReactionRate</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> const &amp;<a class="el" href="classReaktoro_1_1ReactionRate.html#aa9f56bb8b97ba2588696f3416a20fe5e">value</a>)</td></tr>
-<tr class="memdesc:a737bbd900e14c5556a620bf42ecaa57c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object with given rate value. <br /></td></tr>
-<tr class="separator:a737bbd900e14c5556a620bf42ecaa57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43cdc5378442c7cbf50808acec9dc896"><td class="memTemplParams" colspan="2"><a id="a43cdc5378442c7cbf50808acec9dc896"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a43cdc5378442c7cbf50808acec9dc896"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#a43cdc5378442c7cbf50808acec9dc896">ReactionRate</a> (T const &amp;<a class="el" href="classReaktoro_1_1ReactionRate.html#aa9f56bb8b97ba2588696f3416a20fe5e">value</a>)</td></tr>
+<tr class="memdesc:a43cdc5378442c7cbf50808acec9dc896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object with given rate value. <br /></td></tr>
+<tr class="separator:a43cdc5378442c7cbf50808acec9dc896"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9f56bb8b97ba2588696f3416a20fe5e"><td class="memItemLeft" align="right" valign="top"><a id="aa9f56bb8b97ba2588696f3416a20fe5e"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#aa9f56bb8b97ba2588696f3416a20fe5e">value</a> () const -&gt; <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> const &amp;</td></tr>
-<tr class="memdesc:aa9f56bb8b97ba2588696f3416a20fe5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying real object in the <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object. <br /></td></tr>
+<tr class="memdesc:aa9f56bb8b97ba2588696f3416a20fe5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the underlying real object in the <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object. <br /></td></tr>
 <tr class="separator:aa9f56bb8b97ba2588696f3416a20fe5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9188971c634ba79ff0e6c814c43934b8"><td class="memItemLeft" align="right" valign="top"><a id="a9188971c634ba79ff0e6c814c43934b8"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#a9188971c634ba79ff0e6c814c43934b8">onEquationMode</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a9188971c634ba79ff0e6c814c43934b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if this <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object is in equation mode enabled by <a class="el" href="classReaktoro_1_1ReactionRate.html#a7d3954754a53f5bed55e1749be15e477">enforce</a>. <br /></td></tr>
+<tr class="separator:a9188971c634ba79ff0e6c814c43934b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dc6380df0cdfe335ff37fd4d806c97a"><td class="memItemLeft" align="right" valign="top"><a id="a3dc6380df0cdfe335ff37fd4d806c97a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#a3dc6380df0cdfe335ff37fd4d806c97a">operator real const &amp;</a> () const</td></tr>
 <tr class="memdesc:a3dc6380df0cdfe335ff37fd4d806c97a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert this <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object into a real object. <br /></td></tr>
 <tr class="separator:a3dc6380df0cdfe335ff37fd4d806c97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea81a3078c37415a73c74bab1a30751b"><td class="memItemLeft" align="right" valign="top"><a id="aea81a3078c37415a73c74bab1a30751b"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#aea81a3078c37415a73c74bab1a30751b">operator=</a> (<a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> const &amp;<a class="el" href="classReaktoro_1_1ReactionRate.html#aa9f56bb8b97ba2588696f3416a20fe5e">value</a>) -&gt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> &amp;</td></tr>
-<tr class="memdesc:aea81a3078c37415a73c74bab1a30751b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a real value to this <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object. <br /></td></tr>
-<tr class="separator:aea81a3078c37415a73c74bab1a30751b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60967e966ff38581d88854b66f33dae1"><td class="memTemplParams" colspan="2"><a id="a60967e966ff38581d88854b66f33dae1"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a60967e966ff38581d88854b66f33dae1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html#a60967e966ff38581d88854b66f33dae1">operator=</a> (T const &amp;<a class="el" href="classReaktoro_1_1ReactionRate.html#aa9f56bb8b97ba2588696f3416a20fe5e">value</a>) -&gt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> &amp;</td></tr>
+<tr class="memdesc:a60967e966ff38581d88854b66f33dae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign a value to this <a class="el" href="classReaktoro_1_1ReactionRate.html" title="The result of a reaction rate model evaluation.">ReactionRate</a> object. <br /></td></tr>
+<tr class="separator:a60967e966ff38581d88854b66f33dae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b3036e423eedb9186636e67d64fe46"><td class="memTemplParams" colspan="2"><a id="a89b3036e423eedb9186636e67d64fe46"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a89b3036e423eedb9186636e67d64fe46"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator+=</b> (T const &amp;scalar) -&gt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> &amp;</td></tr>
+<tr class="separator:a89b3036e423eedb9186636e67d64fe46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e948da4608a23ce5b709ee36f095b0e"><td class="memTemplParams" colspan="2"><a id="a3e948da4608a23ce5b709ee36f095b0e"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a3e948da4608a23ce5b709ee36f095b0e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator-=</b> (T const &amp;scalar) -&gt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> &amp;</td></tr>
+<tr class="separator:a3e948da4608a23ce5b709ee36f095b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56847f6ee6acabeac6352b5124f51048"><td class="memTemplParams" colspan="2"><a id="a56847f6ee6acabeac6352b5124f51048"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a56847f6ee6acabeac6352b5124f51048"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*=</b> (T const &amp;scalar) -&gt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> &amp;</td></tr>
+<tr class="separator:a56847f6ee6acabeac6352b5124f51048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db1f9b6b412ab73fe4024ae5a3d22d7"><td class="memTemplParams" colspan="2"><a id="a8db1f9b6b412ab73fe4024ae5a3d22d7"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a8db1f9b6b412ab73fe4024ae5a3d22d7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator/=</b> (T const &amp;scalar) -&gt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> &amp;</td></tr>
+<tr class="separator:a8db1f9b6b412ab73fe4024ae5a3d22d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -189,7 +207,7 @@ static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 21 2022 12:12:05 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Nov 30 2022 20:51:23 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.0.0</span>
+                    &#160;<span id="projectnumber">v2.1.1</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -301,6 +301,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of a reaction rate model evaluation.  <a href="classReaktoro_1_1ReactionRate.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ReactionRateModelGeneratorArgs.html">ReactionRateModelGeneratorArgs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data provided to a ReactionRateModelGenerator to construct the ReactionRateModel of a reaction.  <a href="structReaktoro_1_1ReactionRateModelGeneratorArgs.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ReactionGeneratorArgs.html">ReactionGeneratorArgs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data provided to a ReactionGenerator to construct a <a class="el" href="classReaktoro_1_1Reaction.html" title="A class to represent a reaction and its attributes.">Reaction</a> object.  <a href="structReaktoro_1_1ReactionGeneratorArgs.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1GeneralReaction.html">GeneralReaction</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to define a general reaction.  <a href="classReaktoro_1_1GeneralReaction.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -525,12 +531,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ReactionRateModelParamsPalandriKharaka.html">ReactionRateModelParamsPalandriKharaka</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameters in the reaction rate model of <b>[for]</b> dissolution/precipitation kinetics of minerals.  <a href="structReaktoro_1_1ReactionRateModelParamsPalandriKharaka.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1MineralReactionRateModelArgs.html">MineralReactionRateModelArgs</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data available for the evaluation of a mineral reaction rate.  <a href="structReaktoro_1_1MineralReactionRateModelArgs.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1MineralReactions.html">MineralReactions</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class used to configure mineral dissolution/precipitation reactions.  <a href="classReaktoro_1_1MineralReactions.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1ReactionStandardThermoModelParamsConstLgK.html">ReactionStandardThermoModelParamsConstLgK</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The parameters in a thermodynamic model for a formation reaction based on constant \(\lg K(T)\).  <a href="structReaktoro_1_1ReactionStandardThermoModelParamsConstLgK.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -606,6 +606,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Material.html">Material</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type used to represent a material composed of one or more substances.  <a href="classReaktoro_1_1Material.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1MineralReaction.html">MineralReaction</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The class used to configure mineral dissolution/precipitation reactions.  <a href="classReaktoro_1_1MineralReaction.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structReaktoro_1_1MineralReactionRateModelArgs.html">MineralReactionRateModelArgs</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data provided to a MineralReactionRateModel to evaluate the rate of a mineral reaction.  <a href="structReaktoro_1_1MineralReactionRateModelArgs.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1MineralSurface.html">MineralSurface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to define mineral surfaces that react with aqueous phases.  <a href="classReaktoro_1_1MineralSurface.html#details">More...</a><br /></td></tr>
@@ -1191,9 +1197,12 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 <tr class="memitem:ga960a51088ff6a4dbb409ad77cea7beeb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Core.html#ga960a51088ff6a4dbb409ad77cea7beeb">ReactionRateModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a>(<a class="el" href="classReaktoro_1_1ChemicalProps.html">ChemicalProps</a> const  &amp;props)&gt;</td></tr>
 <tr class="memdesc:ga960a51088ff6a4dbb409ad77cea7beeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of functions for calculation of reaction rates (in mol/s).  <a href="group__Core.html#ga960a51088ff6a4dbb409ad77cea7beeb">More...</a><br /></td></tr>
 <tr class="separator:ga960a51088ff6a4dbb409ad77cea7beeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d042bb100bda044d954198a5b5ee572"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a9d042bb100bda044d954198a5b5ee572">ReactionGenerator</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Reaction.html">Reaction</a> &gt;(<a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> const  &amp;species)&gt;</td></tr>
-<tr class="memdesc:a9d042bb100bda044d954198a5b5ee572"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for the generation of reactions with given species in the chemical system.  <a href="namespaceReaktoro.html#a9d042bb100bda044d954198a5b5ee572">More...</a><br /></td></tr>
-<tr class="separator:a9d042bb100bda044d954198a5b5ee572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16fc4a7dff54d8c6486b39c2e8320657"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a16fc4a7dff54d8c6486b39c2e8320657">ReactionRateModelGenerator</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="group__Core.html#ga960a51088ff6a4dbb409ad77cea7beeb">ReactionRateModel</a>(<a class="el" href="structReaktoro_1_1ReactionRateModelGeneratorArgs.html">ReactionRateModelGeneratorArgs</a> args)&gt;</td></tr>
+<tr class="memdesc:a16fc4a7dff54d8c6486b39c2e8320657"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function signature for functions that generates a ReactionRateModel for a reaction.  <a href="namespaceReaktoro.html#a16fc4a7dff54d8c6486b39c2e8320657">More...</a><br /></td></tr>
+<tr class="separator:a16fc4a7dff54d8c6486b39c2e8320657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16cc25589c3073bed01dea2b5c87e784"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a16cc25589c3073bed01dea2b5c87e784">ReactionGenerator</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Reaction.html">Reaction</a> &gt;(<a class="el" href="structReaktoro_1_1ReactionGeneratorArgs.html">ReactionGeneratorArgs</a> args)&gt;</td></tr>
+<tr class="memdesc:a16cc25589c3073bed01dea2b5c87e784"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for the generation of reactions with given species in the chemical system.  <a href="namespaceReaktoro.html#a16cc25589c3073bed01dea2b5c87e784">More...</a><br /></td></tr>
+<tr class="separator:a16cc25589c3073bed01dea2b5c87e784"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad19f03cbf78f8a987c42b4a943a628a"><td class="memItemLeft" align="right" valign="top"><a id="aad19f03cbf78f8a987c42b4a943a628a"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aad19f03cbf78f8a987c42b4a943a628a">ReactionStandardThermoModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="structReaktoro_1_1ReactionStandardThermoProps.html">ReactionStandardThermoProps</a>(<a class="el" href="structReaktoro_1_1ReactionStandardThermoModelArgs.html">ReactionStandardThermoModelArgs</a>)&gt;</td></tr>
 <tr class="memdesc:aad19f03cbf78f8a987c42b4a943a628a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function type for calculation of standard thermodynamic properties of a reaction. <br /></td></tr>
@@ -1255,13 +1264,12 @@ template&lt;typename T &gt; </td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a592c822c42577d0ad50be21f9ebbf99c">CubicEOSInteractionParamsFn</a> = std::function&lt; <a class="el" href="structReaktoro_1_1CubicEOSInteractionParams.html">CubicEOSInteractionParams</a>(const <a class="el" href="structReaktoro_1_1CubicEOSInteractionParamsArgs.html">CubicEOSInteractionParamsArgs</a> &amp;)&gt;</td></tr>
 <tr class="memdesc:a592c822c42577d0ad50be21f9ebbf99c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function that evaluates interaction parameters for the cubic equation of state model. <br /></td></tr>
 <tr class="separator:a592c822c42577d0ad50be21f9ebbf99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20bef6cf185ac78e7f006f2941cd3cc9"><td class="memItemLeft" align="right" valign="top"><a id="a20bef6cf185ac78e7f006f2941cd3cc9"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a20bef6cf185ac78e7f006f2941cd3cc9">MineralReactionRateModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a>(<a class="el" href="structReaktoro_1_1MineralReactionRateModelArgs.html">MineralReactionRateModelArgs</a>)&gt;</td></tr>
-<tr class="memdesc:a20bef6cf185ac78e7f006f2941cd3cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of functions that calculate rates for mineral dissolution/precipitation reactions. <br /></td></tr>
-<tr class="separator:a20bef6cf185ac78e7f006f2941cd3cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a002808b5fb88f1248357a0bd027d626b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a002808b5fb88f1248357a0bd027d626b">MineralReactionRateModelGenerator</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#a20bef6cf185ac78e7f006f2941cd3cc9">MineralReactionRateModel</a>(<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const  &amp;mineral, <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> const  &amp;species)&gt;</td></tr>
-<tr class="memdesc:a002808b5fb88f1248357a0bd027d626b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of functions that construct a MineralReactionRateModel for a mineral reaction.  <a href="namespaceReaktoro.html#a002808b5fb88f1248357a0bd027d626b">More...</a><br /></td></tr>
-<tr class="separator:a002808b5fb88f1248357a0bd027d626b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa45c783721136dd6c6383a8d5c34bbf4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aa45c783721136dd6c6383a8d5c34bbf4">MineralReactionRateModel</a> = <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt; <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a>(<a class="el" href="structReaktoro_1_1MineralReactionRateModelArgs.html">MineralReactionRateModelArgs</a> args)&gt;</td></tr>
+<tr class="memdesc:aa45c783721136dd6c6383a8d5c34bbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of functions that calculate rates for mineral dissolution/precipitation reactions.  <a href="namespaceReaktoro.html#aa45c783721136dd6c6383a8d5c34bbf4">More...</a><br /></td></tr>
+<tr class="separator:aa45c783721136dd6c6383a8d5c34bbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af22c4dcb98d543be8ccb34953bc6a639"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#af22c4dcb98d543be8ccb34953bc6a639">MineralReactionRateModelGenerator</a> = <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt; <a class="el" href="namespaceReaktoro.html#aa45c783721136dd6c6383a8d5c34bbf4">MineralReactionRateModel</a>(<a class="el" href="structReaktoro_1_1ReactionRateModelGeneratorArgs.html">ReactionRateModelGeneratorArgs</a> args)&gt;</td></tr>
+<tr class="memdesc:af22c4dcb98d543be8ccb34953bc6a639"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of functions that construct a MineralReactionRateModel for a mineral reaction.  <a href="namespaceReaktoro.html#af22c4dcb98d543be8ccb34953bc6a639">More...</a><br /></td></tr>
+<tr class="separator:af22c4dcb98d543be8ccb34953bc6a639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -2432,6 +2440,44 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1db0907279fc32d961d1d26e58ea7401">operator+</a> (const <a class="el" href="classReaktoro_1_1ReactionList.html">ReactionList</a> &amp;a, const <a class="el" href="classReaktoro_1_1ReactionList.html">ReactionList</a> &amp;b) -&gt; <a class="el" href="classReaktoro_1_1ReactionList.html">ReactionList</a></td></tr>
 <tr class="memdesc:a1db0907279fc32d961d1d26e58ea7401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the concatenation of two <a class="el" href="classReaktoro_1_1ReactionList.html" title="A type used as a collection of reactions.">ReactionList</a> objects. <br /></td></tr>
 <tr class="separator:a1db0907279fc32d961d1d26e58ea7401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741e5fa189f982d1b5540ab6b1e80f94"><td class="memItemLeft" align="right" valign="top"><a id="a741e5fa189f982d1b5540ab6b1e80f94"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (<a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> const &amp;rate)</td></tr>
+<tr class="separator:a741e5fa189f982d1b5540ab6b1e80f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af964f84ecdfeec0086f019bc6bf12e81"><td class="memItemLeft" align="right" valign="top"><a id="af964f84ecdfeec0086f019bc6bf12e81"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (<a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate)</td></tr>
+<tr class="separator:af964f84ecdfeec0086f019bc6bf12e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9512d8e542cc34c50246a9f27da42be"><td class="memTemplParams" colspan="2"><a id="ae9512d8e542cc34c50246a9f27da42be"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:ae9512d8e542cc34c50246a9f27da42be"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator+</b> (<a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate, T const &amp;scalar)</td></tr>
+<tr class="separator:ae9512d8e542cc34c50246a9f27da42be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841827defceb2a0bcb748c7361a9bcaa"><td class="memTemplParams" colspan="2"><a id="a841827defceb2a0bcb748c7361a9bcaa"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a841827defceb2a0bcb748c7361a9bcaa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator-</b> (<a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate, T const &amp;scalar)</td></tr>
+<tr class="separator:a841827defceb2a0bcb748c7361a9bcaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a516705a889a88c18d8d2c7250b1c0376"><td class="memTemplParams" colspan="2"><a id="a516705a889a88c18d8d2c7250b1c0376"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a516705a889a88c18d8d2c7250b1c0376"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (<a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate, T const &amp;scalar)</td></tr>
+<tr class="separator:a516705a889a88c18d8d2c7250b1c0376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156948edf10912f1bfb17228d33b29ff"><td class="memTemplParams" colspan="2"><a id="a156948edf10912f1bfb17228d33b29ff"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a156948edf10912f1bfb17228d33b29ff"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator/</b> (<a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate, T const &amp;scalar)</td></tr>
+<tr class="separator:a156948edf10912f1bfb17228d33b29ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a349d7c9b3d3745fd51cdb0f7c126e8ff"><td class="memTemplParams" colspan="2"><a id="a349d7c9b3d3745fd51cdb0f7c126e8ff"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a349d7c9b3d3745fd51cdb0f7c126e8ff"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator+</b> (T const &amp;scalar, <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate)</td></tr>
+<tr class="separator:a349d7c9b3d3745fd51cdb0f7c126e8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625757f01368f58ef904b17f41df4842"><td class="memTemplParams" colspan="2"><a id="a625757f01368f58ef904b17f41df4842"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a625757f01368f58ef904b17f41df4842"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator-</b> (T const &amp;scalar, <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate)</td></tr>
+<tr class="separator:a625757f01368f58ef904b17f41df4842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1843aeec2f89f098d1ce7c4e66d4f313"><td class="memTemplParams" colspan="2"><a id="a1843aeec2f89f098d1ce7c4e66d4f313"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a1843aeec2f89f098d1ce7c4e66d4f313"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator*</b> (T const &amp;scalar, <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate)</td></tr>
+<tr class="separator:a1843aeec2f89f098d1ce7c4e66d4f313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b0487d1861e0f7aa1ee628817241b8c"><td class="memTemplParams" colspan="2"><a id="a5b0487d1861e0f7aa1ee628817241b8c"></a>
+template&lt;typename T , Requires&lt; isNumeric&lt; T &gt;&gt;  = true&gt; </td></tr>
+<tr class="memitem:a5b0487d1861e0f7aa1ee628817241b8c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator/</b> (T const &amp;scalar, <a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a> rate)</td></tr>
+<tr class="separator:a5b0487d1861e0f7aa1ee628817241b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a383a1a586c841ade8e8bafb7692aee89"><td class="memItemLeft" align="right" valign="top"><a id="a383a1a586c841ade8e8bafb7692aee89"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a383a1a586c841ade8e8bafb7692aee89">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="structReaktoro_1_1ReactionThermoProps.html">ReactionThermoProps</a> &amp;props) -&gt; std::ostream &amp;</td></tr>
 <tr class="memdesc:a383a1a586c841ade8e8bafb7692aee89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output a <a class="el" href="structReaktoro_1_1ReactionThermoProps.html" title="The complete set of standard thermodynamic properties of a chemical reaction.">ReactionThermoProps</a> object to an output stream. <br /></td></tr>
@@ -2642,17 +2688,17 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:ab9861a77917bae6e019267d3873932a3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ab9861a77917bae6e019267d3873932a3">ActivityModelSpycherReed</a> () -&gt; <a class="el" href="namespaceReaktoro.html#a0e34aaf2cff4f730177ff969c97024d3">ActivityModelGenerator</a></td></tr>
 <tr class="memdesc:ab9861a77917bae6e019267d3873932a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the activity model for gaseous phases formulated in Spycher and Reed (1988).  <a href="namespaceReaktoro.html#ab9861a77917bae6e019267d3873932a3">More...</a><br /></td></tr>
 <tr class="separator:ab9861a77917bae6e019267d3873932a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98bc44066a1c2ebe29adcd761622bf81"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a98bc44066a1c2ebe29adcd761622bf81">ReactionRateModelPalandriKharaka</a> (<a class="el" href="classReaktoro_1_1Params.html">Params</a> const &amp;params) -&gt; <a class="el" href="namespaceReaktoro.html#a002808b5fb88f1248357a0bd027d626b">MineralReactionRateModelGenerator</a></td></tr>
-<tr class="memdesc:a98bc44066a1c2ebe29adcd761622bf81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reaction rate model of <b>[for]</b> dissolution/precipitation kinetics of minerals.  <a href="namespaceReaktoro.html#a98bc44066a1c2ebe29adcd761622bf81">More...</a><br /></td></tr>
-<tr class="separator:a98bc44066a1c2ebe29adcd761622bf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36160ecd147cbabf489feb83911e97c6"><td class="memItemLeft" align="right" valign="top"><a id="a36160ecd147cbabf489feb83911e97c6"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a36160ecd147cbabf489feb83911e97c6">ReactionRateModelPalandriKharaka</a> (<a class="el" href="structReaktoro_1_1ReactionRateModelParamsPalandriKharaka.html">ReactionRateModelParamsPalandriKharaka</a> const &amp;params) -&gt; <a class="el" href="namespaceReaktoro.html#a002808b5fb88f1248357a0bd027d626b">MineralReactionRateModelGenerator</a></td></tr>
-<tr class="memdesc:a36160ecd147cbabf489feb83911e97c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reaction rate model of <b>[for]</b> dissolution/precipitation kinetics of minerals. <br /></td></tr>
-<tr class="separator:a36160ecd147cbabf489feb83911e97c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1717aff253d39ecd30e18417e542a60d"><td class="memItemLeft" align="right" valign="top"><a id="a1717aff253d39ecd30e18417e542a60d"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a1717aff253d39ecd30e18417e542a60d">ReactionRateModelPalandriKharaka</a> (<a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="structReaktoro_1_1ReactionRateModelParamsPalandriKharaka.html">ReactionRateModelParamsPalandriKharaka</a> &gt; const &amp;paramsvec) -&gt; <a class="el" href="namespaceReaktoro.html#a002808b5fb88f1248357a0bd027d626b">MineralReactionRateModelGenerator</a></td></tr>
-<tr class="memdesc:a1717aff253d39ecd30e18417e542a60d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reaction rate model of <b>[for]</b> dissolution/precipitation kinetics of minerals. <br /></td></tr>
-<tr class="separator:a1717aff253d39ecd30e18417e542a60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a676d8c32766418628ce601d5db721c1d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a676d8c32766418628ce601d5db721c1d">ReactionRateModelPalandriKharaka</a> (<a class="el" href="classReaktoro_1_1Params.html">Params</a> const &amp;params) -&gt; <a class="el" href="namespaceReaktoro.html#a16fc4a7dff54d8c6486b39c2e8320657">ReactionRateModelGenerator</a></td></tr>
+<tr class="memdesc:a676d8c32766418628ce601d5db721c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reaction rate model of <b>[for]</b> dissolution/precipitation kinetics of minerals.  <a href="namespaceReaktoro.html#a676d8c32766418628ce601d5db721c1d">More...</a><br /></td></tr>
+<tr class="separator:a676d8c32766418628ce601d5db721c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19981730f5c6bafc19a0d85f99f528b1"><td class="memItemLeft" align="right" valign="top"><a id="a19981730f5c6bafc19a0d85f99f528b1"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a19981730f5c6bafc19a0d85f99f528b1">ReactionRateModelPalandriKharaka</a> (<a class="el" href="structReaktoro_1_1ReactionRateModelParamsPalandriKharaka.html">ReactionRateModelParamsPalandriKharaka</a> const &amp;params) -&gt; <a class="el" href="namespaceReaktoro.html#a16fc4a7dff54d8c6486b39c2e8320657">ReactionRateModelGenerator</a></td></tr>
+<tr class="memdesc:a19981730f5c6bafc19a0d85f99f528b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reaction rate model of <b>[for]</b> dissolution/precipitation kinetics of minerals. <br /></td></tr>
+<tr class="separator:a19981730f5c6bafc19a0d85f99f528b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c7c9a18c8088b587cfce65795bb271e"><td class="memItemLeft" align="right" valign="top"><a id="a0c7c9a18c8088b587cfce65795bb271e"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a0c7c9a18c8088b587cfce65795bb271e">ReactionRateModelPalandriKharaka</a> (<a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="structReaktoro_1_1ReactionRateModelParamsPalandriKharaka.html">ReactionRateModelParamsPalandriKharaka</a> &gt; const &amp;paramsvec) -&gt; <a class="el" href="namespaceReaktoro.html#a16fc4a7dff54d8c6486b39c2e8320657">ReactionRateModelGenerator</a></td></tr>
+<tr class="memdesc:a0c7c9a18c8088b587cfce65795bb271e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the reaction rate model of <b>[for]</b> dissolution/precipitation kinetics of minerals. <br /></td></tr>
+<tr class="separator:a0c7c9a18c8088b587cfce65795bb271e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a226485985403d9a927d920b93d268bd0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a226485985403d9a927d920b93d268bd0">ReactionStandardThermoModelConstLgK</a> (const <a class="el" href="structReaktoro_1_1ReactionStandardThermoModelParamsConstLgK.html">ReactionStandardThermoModelParamsConstLgK</a> &amp;params) -&gt; <a class="el" href="namespaceReaktoro.html#aad19f03cbf78f8a987c42b4a943a628a">ReactionStandardThermoModel</a></td></tr>
 <tr class="memdesc:a226485985403d9a927d920b93d268bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a function that calculates thermodynamic properties of a reaction using a constant model for \(\lg K(T)\).  <a href="namespaceReaktoro.html#a226485985403d9a927d920b93d268bd0">More...</a><br /></td></tr>
 <tr class="separator:a226485985403d9a927d920b93d268bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2914,10 +2960,10 @@ auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <tr class="memitem:ac9a5762d2261b1191dcf050425d23970"><td class="memItemLeft" align="right" valign="top"><a id="ac9a5762d2261b1191dcf050425d23970"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>REAKTORO_DATA_DECODE_DECLARE</b> (<a class="el" href="structReaktoro_1_1StandardVolumeModelParamsConstant.html">StandardVolumeModelParamsConstant</a>)</td></tr>
 <tr class="separator:ac9a5762d2261b1191dcf050425d23970"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae906dbad80d85f896d870fa8d5f753c2"><td class="memItemLeft" align="right" valign="top"><a id="ae906dbad80d85f896d870fa8d5f753c2"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ae906dbad80d85f896d870fa8d5f753c2">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classReaktoro_1_1AqueousProps.html">AqueousProps</a> &amp;state) -&gt; std::ostream &amp;</td></tr>
-<tr class="memdesc:ae906dbad80d85f896d870fa8d5f753c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output an <a class="el" href="classReaktoro_1_1AqueousProps.html" title="The chemical properties of an aqueous phase.">AqueousProps</a> object to an output stream. <br /></td></tr>
-<tr class="separator:ae906dbad80d85f896d870fa8d5f753c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaabe5ebd1f08c55c881a5bb6f532e32"><td class="memItemLeft" align="right" valign="top"><a id="aaaabe5ebd1f08c55c881a5bb6f532e32"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aaaabe5ebd1f08c55c881a5bb6f532e32">operator&lt;&lt;</a> (std::ostream &amp;out, <a class="el" href="classReaktoro_1_1AqueousProps.html">AqueousProps</a> const &amp;state) -&gt; std::ostream &amp;</td></tr>
+<tr class="memdesc:aaaabe5ebd1f08c55c881a5bb6f532e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output an <a class="el" href="classReaktoro_1_1AqueousProps.html" title="The chemical properties of an aqueous phase.">AqueousProps</a> object to an output stream. <br /></td></tr>
+<tr class="separator:aaaabe5ebd1f08c55c881a5bb6f532e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3fd35158537fd2a43b9d57c60388231"><td class="memItemLeft" align="right" valign="top"><a id="ac3fd35158537fd2a43b9d57c60388231"></a>
 auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#ac3fd35158537fd2a43b9d57c60388231">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classReaktoro_1_1IonExchangeProps.html">IonExchangeProps</a> &amp;state) -&gt; std::ostream &amp;</td></tr>
 <tr class="memdesc:ac3fd35158537fd2a43b9d57c60388231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output an <a class="el" href="classReaktoro_1_1IonExchangeProps.html" title="The chemical properties of an aqueous phase.">IonExchangeProps</a> object to an output stream. <br /></td></tr>
@@ -3082,6 +3128,10 @@ constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#aa069b82474761553548da6051312c490">epsilon</a> = std::numeric_limits&lt;double&gt;::epsilon()</td></tr>
 <tr class="memdesc:aa069b82474761553548da6051312c490"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of machine precision epsilon. <br /></td></tr>
 <tr class="separator:aa069b82474761553548da6051312c490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2149c287ac0ce9a5933a865d41a3507b"><td class="memTemplParams" colspan="2"><a id="a2149c287ac0ce9a5933a865d41a3507b"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2149c287ac0ce9a5933a865d41a3507b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>isNumeric</b> = (isArithmetic&lt;T&gt; || isSame&lt;T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&gt;) &amp;&amp; !isSame&lt;T, bool&gt;</td></tr>
+<tr class="separator:a2149c287ac0ce9a5933a865d41a3507b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65ae3ea8e3e913cf8498d0fdf9e664fc"><td class="memTemplParams" colspan="2"><a id="a65ae3ea8e3e913cf8498d0fdf9e664fc"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a65ae3ea8e3e913cf8498d0fdf9e664fc"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>isArithmetic</b> = std::is_arithmetic_v&lt;T&gt;</td></tr>
@@ -3119,10 +3169,6 @@ template&lt;typename T , typename... Ts&gt; </td></tr>
 <tr class="memitem:a9e07aa3d61866f15073f45a194281425"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a9e07aa3d61866f15073f45a194281425">arePhaseReactionOrSurfaceConvertible</a> = _arePhaseReactionOrSurfaceConvertible&lt;T, Ts...&gt;()</td></tr>
 <tr class="memdesc:a9e07aa3d61866f15073f45a194281425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to determine if <code>T</code> and all types in <code>Ts</code> are either <a class="el" href="classReaktoro_1_1GeneralPhase.html" title="The base type for all other classes defining more specific phases.">GeneralPhase</a> or GeneralPhaseGenerator. <br /></td></tr>
 <tr class="separator:a9e07aa3d61866f15073f45a194281425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2149c287ac0ce9a5933a865d41a3507b"><td class="memTemplParams" colspan="2"><a id="a2149c287ac0ce9a5933a865d41a3507b"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2149c287ac0ce9a5933a865d41a3507b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>isNumeric</b> = (isArithmetic&lt;T&gt; || isSame&lt;T, <a class="el" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>&gt;) &amp;&amp; !isSame&lt;T, bool&gt;</td></tr>
-<tr class="separator:a2149c287ac0ce9a5933a865d41a3507b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f6019bd45ba49bf0086444771d735fb"><td class="memTemplParams" colspan="2"><a id="a0f6019bd45ba49bf0086444771d735fb"></a>
 template&lt;typename T , typename... Ts&gt; </td></tr>
 <tr class="memitem:a0f6019bd45ba49bf0086444771d735fb"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceReaktoro.html#a0f6019bd45ba49bf0086444771d735fb">areGeneralPhases</a> = _areGeneralPhasesImpl&lt;T, Ts...&gt;()</td></tr>
@@ -3243,14 +3289,36 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a id="a9d042bb100bda044d954198a5b5ee572"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d042bb100bda044d954198a5b5ee572">&#9670;&nbsp;</a></span>ReactionGenerator</h2>
+<a id="a16fc4a7dff54d8c6486b39c2e8320657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16fc4a7dff54d8c6486b39c2e8320657">&#9670;&nbsp;</a></span>ReactionRateModelGenerator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceReaktoro.html#a9d042bb100bda044d954198a5b5ee572">ReactionGenerator</a> =  <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;<a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt;<a class="el" href="classReaktoro_1_1Reaction.html">Reaction</a>&gt;(<a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> const&amp; species)&gt;</td>
+          <td class="memname">using <a class="el" href="namespaceReaktoro.html#a16fc4a7dff54d8c6486b39c2e8320657">ReactionRateModelGenerator</a> =  <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;<a class="el" href="group__Core.html#ga960a51088ff6a4dbb409ad77cea7beeb">ReactionRateModel</a>(<a class="el" href="structReaktoro_1_1ReactionRateModelGeneratorArgs.html">ReactionRateModelGeneratorArgs</a> args)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function signature for functions that generates a ReactionRateModel for a reaction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>The data provided to construct a ReactionRateModel object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a16cc25589c3073bed01dea2b5c87e784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16cc25589c3073bed01dea2b5c87e784">&#9670;&nbsp;</a></span>ReactionGenerator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceReaktoro.html#a16cc25589c3073bed01dea2b5c87e784">ReactionGenerator</a> =  <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;<a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt;<a class="el" href="classReaktoro_1_1Reaction.html">Reaction</a>&gt;(<a class="el" href="structReaktoro_1_1ReactionGeneratorArgs.html">ReactionGeneratorArgs</a> args)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3258,7 +3326,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>The function type for the generation of reactions with given species in the chemical system. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">species</td><td>The species composing the chemical system where the reactions will take place. </td></tr>
+    <tr><td class="paramname">args</td><td>The data provided to a ReactionGenerator to construct a <a class="el" href="classReaktoro_1_1Reaction.html" title="A class to represent a reaction and its attributes.">Reaction</a> object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3335,14 +3403,36 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a id="a002808b5fb88f1248357a0bd027d626b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a002808b5fb88f1248357a0bd027d626b">&#9670;&nbsp;</a></span>MineralReactionRateModelGenerator</h2>
+<a id="aa45c783721136dd6c6383a8d5c34bbf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45c783721136dd6c6383a8d5c34bbf4">&#9670;&nbsp;</a></span>MineralReactionRateModel</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceReaktoro.html#a002808b5fb88f1248357a0bd027d626b">MineralReactionRateModelGenerator</a> =  <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;<a class="el" href="namespaceReaktoro.html#a20bef6cf185ac78e7f006f2941cd3cc9">MineralReactionRateModel</a>(<a class="el" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const&amp; mineral, <a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> const&amp; species)&gt;</td>
+          <td class="memname">using <a class="el" href="namespaceReaktoro.html#aa45c783721136dd6c6383a8d5c34bbf4">MineralReactionRateModel</a> =  <a class="el" href="classReaktoro_1_1Model.html">Model</a>&lt;<a class="el" href="classReaktoro_1_1ReactionRate.html">ReactionRate</a>(<a class="el" href="structReaktoro_1_1MineralReactionRateModelArgs.html">MineralReactionRateModelArgs</a> args)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type of functions that calculate rates for mineral dissolution/precipitation reactions. </p>
+<p>The sign convention for a mineral reaction rate is negative if dissolving, positive if precipitating. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>The data provided to evaluate the mineral reaction rate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af22c4dcb98d543be8ccb34953bc6a639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af22c4dcb98d543be8ccb34953bc6a639">&#9670;&nbsp;</a></span>MineralReactionRateModelGenerator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceReaktoro.html#af22c4dcb98d543be8ccb34953bc6a639">MineralReactionRateModelGenerator</a> =  <a class="el" href="namespaceReaktoro.html#ab8ffaf0eb22e755b5e157a01d9b84521">Fn</a>&lt;<a class="el" href="namespaceReaktoro.html#aa45c783721136dd6c6383a8d5c34bbf4">MineralReactionRateModel</a>(<a class="el" href="structReaktoro_1_1ReactionRateModelGeneratorArgs.html">ReactionRateModelGeneratorArgs</a> args)&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3350,12 +3440,11 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>The type of functions that construct a MineralReactionRateModel for a mineral reaction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mineral</td><td>The name of the mineral in the system. </td></tr>
-    <tr><td class="paramname">species</td><td>The species composing the chemical system where the reactions will take place. </td></tr>
+    <tr><td class="paramname">args</td><td>The data provided to construct a MineralReactionRateModel object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classReaktoro_1_1MineralReactions.html" title="The class used to configure mineral dissolution/precipitation reactions.">MineralReactions</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classReaktoro_1_1MineralReaction.html" title="The class used to configure mineral dissolution/precipitation reactions.">MineralReaction</a> </dd></dl>
 
 </div>
 </div>
@@ -7327,8 +7416,8 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a id="a98bc44066a1c2ebe29adcd761622bf81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98bc44066a1c2ebe29adcd761622bf81">&#9670;&nbsp;</a></span>ReactionRateModelPalandriKharaka()</h2>
+<a id="a676d8c32766418628ce601d5db721c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676d8c32766418628ce601d5db721c1d">&#9670;&nbsp;</a></span>ReactionRateModelPalandriKharaka()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7338,7 +7427,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
           <td>(</td>
           <td class="paramtype"><a class="el" href="classReaktoro_1_1Params.html">Params</a> const &amp;&#160;</td>
           <td class="paramname"><em>params</em></td><td>)</td>
-          <td> -&gt;  <a class="el" href="namespaceReaktoro.html#a002808b5fb88f1248357a0bd027d626b">MineralReactionRateModelGenerator</a></td>
+          <td> -&gt;  <a class="el" href="namespaceReaktoro.html#a16fc4a7dff54d8c6486b39c2e8320657">ReactionRateModelGenerator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -8415,7 +8504,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 21 2022 12:12:05 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Nov 30 2022 20:51:23 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

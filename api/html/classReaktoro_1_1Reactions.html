@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.0.0</span>
+                    &#160;<span id="projectnumber">v2.1.1</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -155,9 +155,9 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abf84613fc189da967b0ce9a2f027c156"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Reactions.html#abf84613fc189da967b0ce9a2f027c156">add</a> (T const &amp;item) -&gt; void</td></tr>
 <tr class="memdesc:abf84613fc189da967b0ce9a2f027c156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a reaction generator into the <a class="el" href="classReaktoro_1_1Reactions.html" title="Used to represent a collection of reactions controlled kinetically.">Reactions</a> container. <br /></td></tr>
 <tr class="separator:abf84613fc189da967b0ce9a2f027c156"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97ac15dbd569e73ad0516225b87afdb2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Reactions.html#a97ac15dbd569e73ad0516225b87afdb2">convert</a> (<a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> const &amp;species) const -&gt; <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Reaction.html">Reaction</a> &gt;</td></tr>
-<tr class="memdesc:a97ac15dbd569e73ad0516225b87afdb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert this <a class="el" href="classReaktoro_1_1Reactions.html" title="Used to represent a collection of reactions controlled kinetically.">Reactions</a> object into a vector of <a class="el" href="classReaktoro_1_1Reaction.html" title="A class to represent a reaction and its attributes.">Reaction</a> objects.  <a href="classReaktoro_1_1Reactions.html#a97ac15dbd569e73ad0516225b87afdb2">More...</a><br /></td></tr>
-<tr class="separator:a97ac15dbd569e73ad0516225b87afdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac070f9bd71f1d681e1d9d2c3e7f99fae"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classReaktoro_1_1Reactions.html#ac070f9bd71f1d681e1d9d2c3e7f99fae">convert</a> (<a class="el" href="structReaktoro_1_1ReactionGeneratorArgs.html">ReactionGeneratorArgs</a> args) const -&gt; <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Reaction.html">Reaction</a> &gt;</td></tr>
+<tr class="memdesc:ac070f9bd71f1d681e1d9d2c3e7f99fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert this <a class="el" href="classReaktoro_1_1Reactions.html" title="Used to represent a collection of reactions controlled kinetically.">Reactions</a> object into a vector of <a class="el" href="classReaktoro_1_1Reaction.html" title="A class to represent a reaction and its attributes.">Reaction</a> objects.  <a href="classReaktoro_1_1Reactions.html#ac070f9bd71f1d681e1d9d2c3e7f99fae">More...</a><br /></td></tr>
+<tr class="separator:ac070f9bd71f1d681e1d9d2c3e7f99fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Used to represent a collection of reactions controlled kinetically. </p>
@@ -197,8 +197,8 @@ template&lt;typename T &gt; </td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a97ac15dbd569e73ad0516225b87afdb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97ac15dbd569e73ad0516225b87afdb2">&#9670;&nbsp;</a></span>convert()</h2>
+<a id="ac070f9bd71f1d681e1d9d2c3e7f99fae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac070f9bd71f1d681e1d9d2c3e7f99fae">&#9670;&nbsp;</a></span>convert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,8 +206,8 @@ template&lt;typename T &gt; </td></tr>
         <tr>
           <td class="memname">auto convert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classReaktoro_1_1SpeciesList.html">SpeciesList</a> const &amp;&#160;</td>
-          <td class="paramname"><em>species</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structReaktoro_1_1ReactionGeneratorArgs.html">ReactionGeneratorArgs</a>&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
           <td> const -&gt;  <a class="el" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt; <a class="el" href="classReaktoro_1_1Reaction.html">Reaction</a> &gt;</td>
         </tr>
       </table>
@@ -216,7 +216,7 @@ template&lt;typename T &gt; </td></tr>
 <p>Convert this <a class="el" href="classReaktoro_1_1Reactions.html" title="Used to represent a collection of reactions controlled kinetically.">Reactions</a> object into a vector of <a class="el" href="classReaktoro_1_1Reaction.html" title="A class to represent a reaction and its attributes.">Reaction</a> objects. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">species</td><td>The species composing the chemical system where the reactions will take place. </td></tr>
+    <tr><td class="paramname">args</td><td>The data provided to each ReactionGenerator to construct the <a class="el" href="classReaktoro_1_1Reaction.html" title="A class to represent a reaction and its attributes.">Reaction</a> objects. </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,7 +235,7 @@ template&lt;typename T &gt; </td></tr>
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 21 2022 12:12:05 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Nov 30 2022 20:51:23 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

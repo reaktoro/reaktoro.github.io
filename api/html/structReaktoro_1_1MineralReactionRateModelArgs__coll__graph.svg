@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="The data available for the evaluation of a mineral reaction rate.">
+<g id="a_node1"><a xlink:title="The data provided to a MineralReactionRateModel to evaluate the rate of a mineral reaction.">
 <polygon fill="#bfbfbf" stroke="black" points="11,-0.5 11,-19.5 181,-19.5 181,-0.5 11,-0.5"/>
 <text text-anchor="middle" x="96" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MineralReactionRateModelArgs</text>
 </a>

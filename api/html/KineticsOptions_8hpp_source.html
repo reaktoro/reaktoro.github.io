@@ -53,7 +53,7 @@
                 <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.0.0</span>
+                    &#160;<span id="projectnumber">v2.1.1</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -154,18 +154,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structReaktoro_1_1KineticsOptions.html">   26</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structReaktoro_1_1KineticsOptions.html">KineticsOptions</a> : <a class="code" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structReaktoro_1_1KineticsOptions.html#a694759b981efb311c54e63a3de6062bc">   29</a></span>&#160;    <a class="code" href="structReaktoro_1_1KineticsOptions.html#a694759b981efb311c54e63a3de6062bc">KineticsOptions</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structReaktoro_1_1KineticsOptions.html#ad8b24b380cbaa9ea75764dc036190388">   32</a></span>&#160;    <a class="code" href="structReaktoro_1_1KineticsOptions.html#ad8b24b380cbaa9ea75764dc036190388">KineticsOptions</a>(<a class="code" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a> <span class="keyword">const</span>&amp; other)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    : <a class="code" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a>(other) {}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structReaktoro_1_1KineticsOptions.html#a7d5e6c06da0ba5b96cd5beff43ab3e99">   29</a></span>&#160;    <a class="code" href="structReaktoro_1_1KineticsOptions.html#a7d5e6c06da0ba5b96cd5beff43ab3e99">KineticsOptions</a>()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// For kinetics, it is crucial that every calculation performs at least</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">// one Newton step, even if the 0th iteration already shows sactisfatory</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// residuals that pass the convergence test. Without this, we see</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// simulations in which, for example, a mineral initially absent (with</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// amount 1e-16) that should precipitate ends up not precipitating</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// because the calculation already exists at the 0th iteration, without</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// a Newton step applied.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="structReaktoro_1_1EquilibriumOptions.html#af0c8764888b88e9cbe99fc083610d34d">EquilibriumOptions::optima</a>.convergence.requires_at_least_one_iteration = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// TODO: Requiring at least one Newton step in EquilibriumSolver should</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// be default. This needs Optima to be adjusted, however, so that it</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// always pick the same set of basic variables that resulted from the</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// last calculation. Currently, this does not happen, and some</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// EquilibriumSolver tests fail because it was expecting just an extra</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// iteration for convergence, but becasue of the change in basic</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// variables, 3 or 4 iterations become needed instead.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structReaktoro_1_1KineticsOptions.html#ad8b24b380cbaa9ea75764dc036190388">   50</a></span>&#160;    <a class="code" href="structReaktoro_1_1KineticsOptions.html#ad8b24b380cbaa9ea75764dc036190388">KineticsOptions</a>(<a class="code" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a> <span class="keyword">const</span>&amp; other)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    : <a class="code" href="structReaktoro_1_1EquilibriumOptions.html">EquilibriumOptions</a>(other)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// Check reasons above.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="structReaktoro_1_1EquilibriumOptions.html#af0c8764888b88e9cbe99fc083610d34d">EquilibriumOptions::optima</a>.convergence.requires_at_least_one_iteration = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structReaktoro_1_1KineticsOptions.html#ae81be2b66d8a13a48a12efad1627be56">   58</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structReaktoro_1_1KineticsOptions.html#ae81be2b66d8a13a48a12efad1627be56">dt0</a> = 1e-6;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
 <div class="ttc" id="astructReaktoro_1_1EquilibriumOptions_html"><div class="ttname"><a href="structReaktoro_1_1EquilibriumOptions.html">Reaktoro::EquilibriumOptions</a></div><div class="ttdoc">The options for the equilibrium calculations.</div><div class="ttdef"><b>Definition:</b> EquilibriumOptions.hpp:43</div></div>
+<div class="ttc" id="astructReaktoro_1_1EquilibriumOptions_html_af0c8764888b88e9cbe99fc083610d34d"><div class="ttname"><a href="structReaktoro_1_1EquilibriumOptions.html#af0c8764888b88e9cbe99fc083610d34d">Reaktoro::EquilibriumOptions::optima</a></div><div class="ttdeci">Optima::Options optima</div><div class="ttdoc">The options for the optimisation solver.</div><div class="ttdef"><b>Definition:</b> EquilibriumOptions.hpp:45</div></div>
 <div class="ttc" id="astructReaktoro_1_1KineticsOptions_html"><div class="ttname"><a href="structReaktoro_1_1KineticsOptions.html">Reaktoro::KineticsOptions</a></div><div class="ttdoc">The options for chemical kinetics calculation.</div><div class="ttdef"><b>Definition:</b> KineticsOptions.hpp:27</div></div>
-<div class="ttc" id="astructReaktoro_1_1KineticsOptions_html_a694759b981efb311c54e63a3de6062bc"><div class="ttname"><a href="structReaktoro_1_1KineticsOptions.html#a694759b981efb311c54e63a3de6062bc">Reaktoro::KineticsOptions::KineticsOptions</a></div><div class="ttdeci">KineticsOptions()=default</div><div class="ttdoc">Construct a default KineticsOptions object.</div></div>
-<div class="ttc" id="astructReaktoro_1_1KineticsOptions_html_ad8b24b380cbaa9ea75764dc036190388"><div class="ttname"><a href="structReaktoro_1_1KineticsOptions.html#ad8b24b380cbaa9ea75764dc036190388">Reaktoro::KineticsOptions::KineticsOptions</a></div><div class="ttdeci">KineticsOptions(EquilibriumOptions const &amp;other)</div><div class="ttdoc">Construct a KineticsOptions object from a EquilibriumOptions one.</div><div class="ttdef"><b>Definition:</b> KineticsOptions.hpp:32</div></div>
+<div class="ttc" id="astructReaktoro_1_1KineticsOptions_html_a7d5e6c06da0ba5b96cd5beff43ab3e99"><div class="ttname"><a href="structReaktoro_1_1KineticsOptions.html#a7d5e6c06da0ba5b96cd5beff43ab3e99">Reaktoro::KineticsOptions::KineticsOptions</a></div><div class="ttdeci">KineticsOptions()</div><div class="ttdoc">Construct a default KineticsOptions object.</div><div class="ttdef"><b>Definition:</b> KineticsOptions.hpp:29</div></div>
+<div class="ttc" id="astructReaktoro_1_1KineticsOptions_html_ad8b24b380cbaa9ea75764dc036190388"><div class="ttname"><a href="structReaktoro_1_1KineticsOptions.html#ad8b24b380cbaa9ea75764dc036190388">Reaktoro::KineticsOptions::KineticsOptions</a></div><div class="ttdeci">KineticsOptions(EquilibriumOptions const &amp;other)</div><div class="ttdoc">Construct a KineticsOptions object from a EquilibriumOptions one.</div><div class="ttdef"><b>Definition:</b> KineticsOptions.hpp:50</div></div>
+<div class="ttc" id="astructReaktoro_1_1KineticsOptions_html_ae81be2b66d8a13a48a12efad1627be56"><div class="ttname"><a href="structReaktoro_1_1KineticsOptions.html#ae81be2b66d8a13a48a12efad1627be56">Reaktoro::KineticsOptions::dt0</a></div><div class="ttdeci">double dt0</div><div class="ttdoc">The time step used for preconditioning the chemical state when performing the very first chemical kin...</div><div class="ttdef"><b>Definition:</b> KineticsOptions.hpp:58</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -175,7 +201,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 21 2022 12:12:05 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Nov 30 2022 20:51:23 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
