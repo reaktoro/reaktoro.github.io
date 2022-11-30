@@ -1,4 +1,0 @@
-<map id="KineticsResult" name="KineticsResult">
-<area shape="rect" id="node1" title="Used to describe the result of a chemical kinetics calculation." alt="" coords="17,80,131,107"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1EquilibriumResult.html" title="A type used to describe the result of an equilibrium calculation." alt="" coords="5,5,143,32"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="SmartEquilibriumSolver::Cell" name="SmartEquilibriumSolver::Cell">
-<area shape="rect" id="node1" title="The collection of clusters containing learned input&#45;output data associated to a temperature&#45;pressure ..." alt="" coords="70,95,246,136"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1ClusterConnectivity.html" title=" " alt="" coords="5,5,156,32"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1PriorityQueue.html" title=" " alt="" coords="180,5,291,32"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="MineralReaction" name="MineralReaction">
-<area shape="rect" id="node1" title="The class used to configure mineral dissolution/precipitation reactions." alt="" coords="7,80,135,107"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1GeneralReaction.html" title="Used to define a general reaction." alt="" coords="5,5,136,32"/>
-</map>
