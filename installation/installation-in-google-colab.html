@@ -769,9 +769,9 @@ title="Print to PDF"
 <p>You can run Reaktoro in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Create a new Jupyter notebook and paste this in the first cell:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install -q condacolab
 import condacolab
-condacolab.install()
+condacolab.install_from_url(&quot;https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64.sh&quot;)
 !conda config --add channels conda-forge
-!conda install -y reaktoro
+!conda install reaktoro -y
 </pre></div>
 </div>
 <p>Execute this first cell, and then the code below in a new cell:</p>
@@ -794,7 +794,7 @@ condacolab.install()
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Below is a screenshot showing the expected result of this guide when following the previous instructions:</p>
+<p>Here is a <a class="reference external" href="https://colab.research.google.com/drive/13UsI3Tj0ZRX6ea8_xoezry6mO0Ghq-vV?usp=sharing">shared link to a Google Colab notebook</a> demonstrating this guide. We also show below a screenshot showing the expected result of this guide when following the previous instructions (with cleared output for the first cell because it’s too long):</p>
 <p><img alt="" src="../_images/reaktoro-in-google-colab.png" /></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="please-help-me-installing-reaktoro">
