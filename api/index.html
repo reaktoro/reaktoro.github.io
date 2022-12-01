@@ -26,6 +26,7 @@
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
   <!-- <link href="doxygen.css" rel="stylesheet" type="text/css" /> --> <!-- REMOVED BY DOXYSTRAP -->
+  <link rel="shortcut icon" href="reaktoro.svg" type="image/x-icon" /> <!-- FAVICON - ADD THIS IN DOXYSTRAP -->
   <link href="css/doxystrap.css" rel="stylesheet" type="text/css" />
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -50,7 +51,7 @@
           <table cellspacing="0" cellpadding="0">
             <tbody>
               <tr style="height: 56px;">
-                <td id="projectlogo"><a href="../index.html"><img alt="Logo" src="reaktoro.svg" /></a></td>
+                <td id="projectlogo"><a href="https://www.reaktoro.org"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
                     &#160;<span id="projectnumber">v2.1.1</span>
@@ -136,10 +137,16 @@ Chemical system constituents</h1>
 <li><a class="el" href="classReaktoro_1_1Element.html">Reaktoro::Element</a></li>
 <li><a class="el" href="classReaktoro_1_1Species.html">Reaktoro::Species</a></li>
 <li><a class="el" href="classReaktoro_1_1Phase.html">Reaktoro::Phase</a></li>
+<li><a class="el" href="classReaktoro_1_1Reaction.html">Reaktoro::Reaction</a></li>
+<li><a class="el" href="classReaktoro_1_1Surface.html">Reaktoro::Surface</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Chemical system definition</h1>
 <ul>
+<li><a class="el" href="classReaktoro_1_1ChemicalSystem.html">Reaktoro::ChemicalSystem</a></li>
+<li><a class="el" href="classReaktoro_1_1Phases.html">Reaktoro::Phases</a></li>
+<li><a class="el" href="classReaktoro_1_1Reactions.html">Reaktoro::Reactions</a></li>
+<li><a class="el" href="classReaktoro_1_1Surfaces.html">Reaktoro::Surfaces</a></li>
 <li><a class="el" href="classReaktoro_1_1AqueousPhase.html">Reaktoro::AqueousPhase</a></li>
 <li><a class="el" href="classReaktoro_1_1CondensedPhase.html">Reaktoro::CondensedPhase</a></li>
 <li><a class="el" href="classReaktoro_1_1CondensedPhases.html">Reaktoro::CondensedPhases</a></li>
@@ -149,8 +156,10 @@ Chemical system definition</h1>
 <li><a class="el" href="classReaktoro_1_1MineralPhase.html">Reaktoro::MineralPhase</a></li>
 <li><a class="el" href="classReaktoro_1_1MineralPhases.html">Reaktoro::MineralPhases</a></li>
 <li><a class="el" href="classReaktoro_1_1SolidPhase.html">Reaktoro::SolidPhase</a></li>
-<li><a class="el" href="classReaktoro_1_1Phases.html">Reaktoro::Phases</a></li>
-<li><a class="el" href="classReaktoro_1_1ChemicalSystem.html">Reaktoro::ChemicalSystem</a></li>
+<li><a class="el" href="classReaktoro_1_1GeneralReaction.html">Reaktoro::GeneralReaction</a></li>
+<li><a class="el" href="classReaktoro_1_1MineralReaction.html">Reaktoro::MineralReaction</a></li>
+<li><a class="el" href="classReaktoro_1_1GeneralSurface.html">Reaktoro::GeneralSurface</a></li>
+<li><a class="el" href="classReaktoro_1_1MineralSurface.html">Reaktoro::MineralSurface</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Chemical state and thermochemical properties of a chemical system</h1>
@@ -183,6 +192,20 @@ Chemical kinetics problem definition and calculations</h1>
 <li><a class="el" href="classReaktoro_1_1KineticsSensitivity.html">Reaktoro::KineticsSensitivity</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md9"></a>
+Machine learning accelerated chemical equilibrium calculations</h1>
+<ul>
+<li><a class="el" href="classReaktoro_1_1SmartEquilibriumSolver.html">Reaktoro::SmartEquilibriumSolver</a></li>
+<li><a class="el" href="structReaktoro_1_1SmartEquilibriumOptions.html">Reaktoro::SmartEquilibriumOptions</a></li>
+<li><a class="el" href="structReaktoro_1_1SmartEquilibriumResult.html">Reaktoro::SmartEquilibriumResult</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Machine learning accelerated chemical kinetics calculations</h1>
+<ul>
+<li><a class="el" href="classReaktoro_1_1SmartKineticsSolver.html">Reaktoro::SmartKineticsSolver</a></li>
+<li><a class="el" href="structReaktoro_1_1SmartKineticsOptions.html">Reaktoro::SmartKineticsOptions</a></li>
+<li><a class="el" href="structReaktoro_1_1SmartKineticsResult.html">Reaktoro::SmartKineticsResult</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Activity models for aqueous phases</h1>
 <ul>
 <li><a class="el" href="namespaceReaktoro.html#ae431d4c8a1f283910ae1cf35024091b8">Reaktoro::ActivityModelIdealAqueous</a></li>
@@ -195,7 +218,7 @@ Activity models for aqueous phases</h1>
 <li><a class="el" href="namespaceReaktoro.html#a863f4bc99ed49e7313a2d9686893fb4b">Reaktoro::ActivityModelRumpf</a></li>
 <li><a class="el" href="namespaceReaktoro.html#a405dcfd84065f1e7cf154b6e2694a0b9">Reaktoro::ActivityModelSetschenow</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Activity models for fluid phases (gaseous or liquid)</h1>
 <ul>
 <li><a class="el" href="namespaceReaktoro.html#a7a0788a5a863d987a88b81303d80b427">Reaktoro::ActivityModelIdealGas</a></li>
@@ -207,14 +230,14 @@ Activity models for fluid phases (gaseous or liquid)</h1>
 <li><a class="el" href="namespaceReaktoro.html#ab9eda4c62bb6c01ce47f0e19664247e3">Reaktoro::ActivityModelSpycherPruessEnnis</a></li>
 <li><a class="el" href="namespaceReaktoro.html#ab9861a77917bae6e019267d3873932a3">Reaktoro::ActivityModelSpycherReed</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Activity models for solid solutions</h1>
 <ul>
 <li><a class="el" href="namespaceReaktoro.html#a6581d5c0cde36cae6d9c46dbc32d56f8">Reaktoro::ActivityModelIdealSolution</a></li>
 <li><a class="el" href="namespaceReaktoro.html#a6e56f2d17a5385c196cc06ff93ecc714">Reaktoro::ActivityModelRedlichKister</a></li>
 <li>Reaktoro::ActivityModelVanLaar (<em>needs adaptation to v2.0</em>)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Standard thermodynamic properties and models</h1>
 <ul>
 <li><a class="el" href="structReaktoro_1_1StandardThermoProps.html">Reaktoro::StandardThermoProps</a></li>
@@ -227,7 +250,7 @@ Standard thermodynamic properties and models</h1>
 <li><a class="el" href="namespaceReaktoro.html#a6e5946d89012e491957d90304bb842f7">Reaktoro::StandardVolumeModel</a></li>
 <li><a class="el" href="namespaceReaktoro.html#a581b83f2e6e1e2377721961b2e9d4f16">Reaktoro::StandardVolumeModelConstant</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Reaction thermodynamic properties and models</h1>
 <ul>
 <li><a class="el" href="structReaktoro_1_1ReactionStandardThermoProps.html">Reaktoro::ReactionStandardThermoProps</a></li>
@@ -237,7 +260,7 @@ Reaction thermodynamic properties and models</h1>
 <li><a class="el" href="namespaceReaktoro.html#ae004783b7b14fd74db483e34a0c8cbe0">Reaktoro::ReactionStandardThermoModelPressureCorrection</a></li>
 <li><a class="el" href="namespaceReaktoro.html#ab133f2036af944c320cd021f5d2a8b7e">Reaktoro::ReactionStandardThermoModelVantHoff</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Water thermodynamic and electrostatic properties</h1>
 <ul>
 <li><a class="el" href="structReaktoro_1_1WaterElectroProps.html">Reaktoro::WaterElectroProps</a></li>
@@ -260,10 +283,14 @@ Water thermodynamic and electrostatic properties</h1>
 <li><a class="el" href="namespaceReaktoro.html#a5b50370e53502144f3e067b806779247">Reaktoro::waterHelmholtzPropsHGK</a></li>
 <li><a class="el" href="namespaceReaktoro.html#a4b1375bf035c78cef77590f6837a18ab">Reaktoro::waterHelmholtzPropsWagnerPruss</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Worth checking classes and methods</h1>
 <ul>
 <li><a class="el" href="classReaktoro_1_1Material.html">Reaktoro::Material</a></li>
+<li><a class="el" href="classReaktoro_1_1Param.html">Reaktoro::Param</a></li>
+<li><a class="el" href="classReaktoro_1_1Params.html">Reaktoro::Params</a></li>
+<li><a class="el" href="classReaktoro_1_1Table.html">Reaktoro::Table</a></li>
+<li><a class="el" href="classReaktoro_1_1Data.html">Reaktoro::Data</a></li>
 <li><a class="el" href="classReaktoro_1_1ElementList.html">Reaktoro::ElementList</a></li>
 <li><a class="el" href="classReaktoro_1_1PhaseList.html">Reaktoro::PhaseList</a></li>
 <li><a class="el" href="classReaktoro_1_1SpeciesList.html">Reaktoro::SpeciesList</a></li>
@@ -275,10 +302,9 @@ Worth checking classes and methods</h1>
 <li><a class="el" href="classReaktoro_1_1ReactionEquation.html">Reaktoro::ReactionEquation</a></li>
 <li><a class="el" href="namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd">Reaktoro::AggregateState</a></li>
 <li><a class="el" href="classReaktoro_1_1ElementalComposition.html">Reaktoro::ElementalComposition</a></li>
-<li><a class="el" href="classReaktoro_1_1Reaction.html">Reaktoro::Reaction</a></li>
 <li><a class="el" href="namespaceReaktoro.html#ad4adf93979f02687344ed5923c51ec4b">Reaktoro::StateOfMatter</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md18"></a>
 For all other needs</h1>
 <p>Check the namespace <a class="el" href="namespaceReaktoro.html" title="The namespace containing all components of the Reaktoro library.">Reaktoro</a> for all available classes and methods. </p>
 </div></div><!-- PageDoc -->
@@ -291,7 +317,7 @@ For all other needs</h1>
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 30 2022 21:04:33 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Dec 1 2022 13:43:40 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
