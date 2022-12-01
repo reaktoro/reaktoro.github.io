@@ -800,15 +800,18 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="installation-in-google-colab">
 <h1>Installation in Google Colab<a class="headerlink" href="#installation-in-google-colab" title="Permalink to this headline">#</a></h1>
-<p>You can run Reaktoro in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>. Create a new Jupyter notebook and paste this in the first cell:</p>
+<p>You can run Reaktoro on <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>! You can launch Google Colab from one of the tutorials by clicking the <em>rocket launcher button</em> on the top bar of the page as shown below for this <a class="reference internal" href="../tutorials/kinetics/kinetics-minerals-using-palandri-kharaka-model.html"><span class="doc std std-doc">chemical kinetics tutorial</span></a>:</p>
+<p><img alt="" src="../_images/reaktoro-in-google-colab-launcher-button.png" /></p>
+<p>However, it is imperative that a new code cell is added at the top of the notebook containing the following code to install Reaktoro:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install -q condacolab
 import condacolab
 condacolab.install_from_url(&quot;https://repo.anaconda.com/miniconda/Miniconda3-py38_4.12.0-Linux-x86_64.sh&quot;)
+!conda config --remove channels defaults
 !conda config --add channels conda-forge
 !conda install reaktoro -y
 </pre></div>
 </div>
-<p>Execute this first cell, and then the code below in a new cell:</p>
+<p>Alternatively, you can also create a new Jupyter notebook in Google Colab and try executing the installation code above. Once it is finished, execute the following in a new code cell:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
@@ -828,12 +831,12 @@ condacolab.install_from_url(&quot;https://repo.anaconda.com/miniconda/Miniconda3
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here is a <a class="reference external" href="https://colab.research.google.com/drive/13UsI3Tj0ZRX6ea8_xoezry6mO0Ghq-vV?usp=sharing">shared link to a Google Colab notebook</a> demonstrating this guide. We also show below a screenshot showing the expected result of this guide when following the previous instructions (with cleared output for the first cell because it’s too long):</p>
+<p>Here is a <a class="reference external" href="https://colab.research.google.com/drive/13UsI3Tj0ZRX6ea8_xoezry6mO0Ghq-vV?usp=sharing">shared link to a Google Colab notebook</a> demonstrating the above instructions. Below is a screenshot showing the expected result of this guide when following the previous instructions (with cleared installation output for the first cell because it is too long!):</p>
 <p><img alt="" src="../_images/reaktoro-in-google-colab.png" /></p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="please-help-me-installing-reaktoro">
 <h1>Please help me installing Reaktoro!<a class="headerlink" href="#please-help-me-installing-reaktoro" title="Permalink to this headline">#</a></h1>
-<p>If you had any problems with the instructions above, <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">please contact us</a>.</p>
+<p>If you had any problems with the instructions above (or for some reason this is not working at the moment), <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">please contact us</a>.</p>
 </div>
 
     <script type="text/x-thebe-config">
