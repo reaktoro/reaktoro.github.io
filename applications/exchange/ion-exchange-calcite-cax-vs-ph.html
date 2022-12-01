@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="canonical" href="https://reaktoro.org/applications/exchange/ion-exchange-calcite-cax-vs-ph.html" />
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -64,6 +65,14 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PK3LGVLSKH"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-PK3LGVLSKH');
+                </script>
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
 <!-- Checkboxes to toggle the left sidebar -->
@@ -107,6 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Reaktoro
+                </a>
+            </li>
+        </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Get Started
@@ -599,7 +616,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/reaktoro/reaktoro/main?urlpath=tree/applications/exchange/ion-exchange-calcite-cax-vs-ph.ipynb"
+        <a href="https://mybinder.org/v2/gh/reaktoro/reaktoro-jupyter-book/main/v2/gh/reaktoro/reaktoro-jupyter-book/main?urlpath=lab/tree/applications/exchange/ion-exchange-calcite-cax-vs-ph.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -642,7 +659,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/reaktoro/reaktoro"
+        <a href="https://github.com/reaktoro/reaktoro-jupyter-book"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -659,7 +676,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/reaktoro/reaktoro/issues/new?title=Issue%20on%20page%20%2Fapplications/exchange/ion-exchange-calcite-cax-vs-ph.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/reaktoro/reaktoro-jupyter-book/issues/new?title=Issue%20on%20page%20%2Fapplications/exchange/ion-exchange-calcite-cax-vs-ph.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -671,6 +688,23 @@ title="Open an issue"
   <i class="fas fa-lightbulb"></i>
   </span>
 <span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/reaktoro/reaktoro-jupyter-book/edit/main/applications/exchange/ion-exchange-calcite-cax-vs-ph.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
 </a>
 
       </li>
@@ -827,8 +861,8 @@ chemical state. We also collect the parameters and arrays of the data we are try
 </ul>
 <p>During each equilibrium calculation, the following two major equilbrium calculations will be defining the solubility of calcite and to formation of CaX<sub>2</sub>:
 $$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-affd1cd0-0d63-4e9e-a426-b1843dc4f75d">
-<span class="eqno">(5)<a class="headerlink" href="#equation-affd1cd0-0d63-4e9e-a426-b1843dc4f75d" title="Permalink to this equation">#</a></span>\[\begin{alignat}{4}
+<div class="amsmath math notranslate nohighlight" id="equation-6bfab183-3369-49e8-90a2-0f50a2e97dd5">
+<span class="eqno">(5)<a class="headerlink" href="#equation-6bfab183-3369-49e8-90a2-0f50a2e97dd5" title="Permalink to this equation">#</a></span>\[\begin{alignat}{4}
 {\rm CaCO{_3}} + {\rm H_2O} &amp; \rightleftharpoons {\rm Ca}^{+2} + {\rm HCO}_3^- + {\rm OH}^- \\
 \tfrac{1}{2} {\rm Ca^{+2}} + {\rm NaX} &amp; \rightleftharpoons {\rm Na}^+ + \tfrac{1}{2} {\rm CaX}_2\\
 \end{alignat}\]</div>
