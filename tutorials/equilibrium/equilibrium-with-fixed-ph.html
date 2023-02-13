@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Chemical equilibrium with fixed pH</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -798,7 +802,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-fixed-ph">
+  <section class="tex2jax_ignore mathjax_ignore" id="chemical-equilibrium-with-fixed-ph">
 <h1>Chemical equilibrium with fixed pH<a class="headerlink" href="#chemical-equilibrium-with-fixed-ph" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
 <p>Fixing the pH of an aqueous solution is a common procedure in biogeochemical modeling. This requires, however, the introduction of a new <em>degree of freedom</em> in the problem. This is because we cannot, in general, obtain a desired pH without titrating a substance in the solution. Thus, in the example given below, the system will be open to H<sup>+</sup>. The unknown amount of H<sup>+</sup> necessary to enter or leave the system to attain the requested pH is the new degree of freedom, and is calculated along with the amounts of species in equilibrium.</p>
@@ -811,12 +815,12 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;pitzer.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;pitzer.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- Na+ Cl- HCO3- CO2 CO3-2&quot;</span><span class="p">)</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- Na+ Cl- HCO3- CO2 CO3-2&quot;</span><span class="p">)</span>
+<span class="n">solution</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -830,12 +834,12 @@ title="Print to PDF"
 <p>The code below will first create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object in which the above properties are marked as inputs and then use that to create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">pH</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">pH</span><span class="p">()</span>
 
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -843,13 +847,13 @@ title="Print to PDF"
 <p>We create now an initial chemical state for our system (using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>), which will represent a 1 molal NaCl solution with 0.4 molal dissolved CO<sub>2</sub>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">30.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">30.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -887,10 +891,10 @@ title="Print to PDF"
 <p>We need now to specify the desired values for temperature, pressure, and pH in the equilibrium state we want to compute. This is done next using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">pH</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span> <span class="o">=</span> <span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">pH</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -898,7 +902,7 @@ title="Print to PDF"
 <p>We are now ready for our chemical equilibrium calculation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -936,7 +940,7 @@ title="Print to PDF"
 <p>The printed state above does not show pH. We can obtain aqueous properties from a chemical state using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span> <span class="o">=</span> <span class="n">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AQUEOUS PROPERTIES AT EQUILIBRIUM&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">aprops</span><span class="p">)</span>
@@ -984,7 +988,7 @@ title="Print to PDF"
 <p>As a result of enforcing pH via <code class="docutils literal notranslate"><span class="pre">specs.pH()</span></code>, this executed equilibrium calculation considered the system to be open to H<sup>+</sup>. Let’s find out below how much H<sup>+</sup> entered/leaved the system so that the desired pH could be reached:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amount of H+ that entered the system:&quot;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">equilibrium</span><span class="p">()</span><span class="o">.</span><span class="nf">titrantAmount</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">),</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Amount of H+ that entered the system:&quot;</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">equilibrium</span><span class="p">()</span><span class="o">.</span><span class="n">titrantAmount</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">),</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -997,7 +1001,7 @@ title="Print to PDF"
 <p>Since H<sup>+</sup> is a charged species, our final chemical state does not have zero charge as the initial state:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Charge at equilibrium state:&quot;</span><span class="p">,</span> <span class="n">state</span><span class="p">.</span><span class="nf">charge</span><span class="p">(),</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Charge at equilibrium state:&quot;</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">charge</span><span class="p">(),</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1008,7 +1012,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>We’ll learn in the next tutorial how a pH constraint can be combined with a charge constraint so that the system has zero charge at equilibrium (or whatever other value you may want to impose).</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1022,7 +1026,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/equilibrium"
         },
         predefinedOutput: true

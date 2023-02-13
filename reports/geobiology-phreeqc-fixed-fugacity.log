@@ -17,39 +17,80 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from bokeh.plotting import figure, show
-from bokeh.palettes import brewer
+from bokeh.plotting import figure, show, gridplot
+from bokeh.models import HoverTool
 from bokeh.io import output_notebook
-
+from bokeh.models import ColumnDataSource
 output_notebook()
 
-p = figure(
-    title="EFFECT OF LIMESTONE ON CALCITE ADDITION",
-    x_axis_label='CaCO3 [%]',
-    y_axis_label='PHASE VOLUME [cm3]',
+# ----------------------------------- #
+# Plot P amount
+# ----------------------------------- #
+hovertool1 = HoverTool()
+hovertool1.tooltips = [("pH", "@pH"), 
+                       ("T", "@T °C"),
+                       ("ppCO2", "@ppCO2")]
+
+p1 = figure(
+    title="DEPENDENCE PH ON TEMPERATURE",
+    x_axis_label=r'PARTIAL PRESSURE CO2 [-]',
+    y_axis_label='PH [-]',
     sizing_mode="scale_width",
     plot_height=300)
 
-volume_names = ["Cal", "hydrotalcite", "Portlandite", "ss_CSHQ", "ss_C3AFS084H", "ss_Ettrignite", "monocarbonate"]
-p.varea_stack(stackers=volume_names, x='CaCO3', color=brewer['Spectral'][len(volume_names)], legend_label=volume_names, source=df)
-p.legend[0].items.reverse()
+p1.add_tools(hovertool1)
 
-show(p)
+colors = ['teal', 'darkred', 'indigo']
+for T, color in zip(temperatures, colors):
+    df_T = ColumnDataSource(data[data['T'] == T])
+    p1.line("ppCO2", "pH", legend_label=f'{T} °C', line_width=2, line_cap="round", line_color=color, source=df_T)
+
+p1.legend.location = 'top_right'
+
+# ----------------------------------- #
+# Plot Ca amount
+# ----------------------------------- #
+hovertool2 = HoverTool()
+hovertool2.tooltips = [("amount(P)", "@amount_P mol"), 
+                       ("T", "@T °C"),
+                      ("ppCO2", "@ppCO2")]
+
+p2 = figure(
+    title="DEPENDENCE PHOSPHATE AMOUNT ON TEMPERATURE",
+    x_axis_label=r'PARTIAL PRESSURE CO2 [-]',
+    y_axis_label='AMOUNT OF P IN SOLUTION [MOL]',
+    sizing_mode="scale_width",
+    plot_height=300)
+
+p2.add_tools(hovertool2)
+
+colors = ['teal', 'darkred', 'indigo']
+for T, color in zip(temperatures, colors):
+    df_T = ColumnDataSource(data[data['T'] == T])
+    p2.line("ppCO2", "amount_P", legend_label=f'{T} °C', line_width=2, line_cap="round", line_color=color, source=df_T)
+
+p2.legend.location = 'top_left'
+
+grid = gridplot([[p1], [p2]])
+
+show(grid)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [0;32mIn[8], line 7[0m
-[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbokeh[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m [38;5;28;01mimport[39;00m output_notebook
-[1;32m      5[0m output_notebook()
-[0;32m----> 7[0m p [38;5;241m=[39m [43mfigure[49m[43m([49m
-[1;32m      8[0m [43m    [49m[43mtitle[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mEFFECT OF LIMESTONE ON CALCITE ADDITION[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[1;32m      9[0m [43m    [49m[43mx_axis_label[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mCaCO3 [[39;49m[38;5;124;43m%[39;49m[38;5;124;43m][39;49m[38;5;124;43m'[39;49m[43m,[49m
-[1;32m     10[0m [43m    [49m[43my_axis_label[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mPHASE VOLUME [cm3][39;49m[38;5;124;43m'[39;49m[43m,[49m
-[1;32m     11[0m [43m    [49m[43msizing_mode[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mscale_width[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[1;32m     12[0m [43m    [49m[43mplot_height[49m[38;5;241;43m=[39;49m[38;5;241;43m300[39;49m[43m)[49m
-[1;32m     14[0m volume_names [38;5;241m=[39m [[38;5;124m"[39m[38;5;124mCal[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mhydrotalcite[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mPortlandite[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mss_CSHQ[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mss_C3AFS084H[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mss_Ettrignite[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmonocarbonate[39m[38;5;124m"[39m]
-[1;32m     15[0m p[38;5;241m.[39mvarea_stack(stackers[38;5;241m=[39mvolume_names, x[38;5;241m=[39m[38;5;124m'[39m[38;5;124mCaCO3[39m[38;5;124m'[39m, color[38;5;241m=[39mbrewer[[38;5;124m'[39m[38;5;124mSpectral[39m[38;5;124m'[39m][[38;5;28mlen[39m(volume_names)], legend_label[38;5;241m=[39mvolume_names, source[38;5;241m=[39mdf)
+Cell [0;32mIn[5], line 15[0m
+[1;32m     10[0m hovertool1 [38;5;241m=[39m HoverTool()
+[1;32m     11[0m hovertool1[38;5;241m.[39mtooltips [38;5;241m=[39m [([38;5;124m"[39m[38;5;124mpH[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m@pH[39m[38;5;124m"[39m), 
+[1;32m     12[0m                        ([38;5;124m"[39m[38;5;124mT[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m@T °C[39m[38;5;124m"[39m),
+[1;32m     13[0m                        ([38;5;124m"[39m[38;5;124mppCO2[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m@ppCO2[39m[38;5;124m"[39m)]
+[0;32m---> 15[0m p1 [38;5;241m=[39m [43mfigure[49m[43m([49m
+[1;32m     16[0m [43m    [49m[43mtitle[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mDEPENDENCE PH ON TEMPERATURE[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m     17[0m [43m    [49m[43mx_axis_label[49m[38;5;241;43m=[39;49m[38;5;124;43mr[39;49m[38;5;124;43m'[39;49m[38;5;124;43mPARTIAL PRESSURE CO2 [-][39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m     18[0m [43m    [49m[43my_axis_label[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mPH [-][39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m     19[0m [43m    [49m[43msizing_mode[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mscale_width[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m     20[0m [43m    [49m[43mplot_height[49m[38;5;241;43m=[39;49m[38;5;241;43m300[39;49m[43m)[49m
+[1;32m     22[0m p1[38;5;241m.[39madd_tools(hovertool1)
+[1;32m     24[0m colors [38;5;241m=[39m [[38;5;124m'[39m[38;5;124mteal[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mdarkred[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mindigo[39m[38;5;124m'[39m]
 
 File [0;32m~/miniconda3/envs/reaktoro-jupyter-book/lib/python3.10/site-packages/bokeh/plotting/_figure.py:190[0m, in [0;36mfigure.__init__[0;34m(self, *arg, **kw)[0m
 [1;32m    188[0m [38;5;28;01mfor[39;00m name [38;5;129;01min[39;00m kw[38;5;241m.[39mkeys():

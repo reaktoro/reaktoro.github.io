@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>FAQ</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -751,7 +755,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="faq">
+  <section class="tex2jax_ignore mathjax_ignore" id="faq">
 <h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">#</a></h1>
 <p>Find below some frequently asked questions. If you don’t find what you are looking
 for, don’t hesitate to <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">get in touch with us</a>.</p>
@@ -819,8 +823,8 @@ An example in the website is not working. What should I do?<div class="sd-summar
 modeling capability and you are using an older version of Reaktoro. Try updating
 the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> package in the conda environment it is installed, using either
 Anaconda Navigator or the following conda command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate rkt
-conda update --all
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>rkt
+conda<span class="w"> </span>update<span class="w"> </span>--all
 </pre></div>
 </div>
 <p class="sd-card-text">Assuming above you named <code class="docutils literal notranslate"><span class="pre">rkt</span></code> as the conda environment containing <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code>.
@@ -839,7 +843,7 @@ which is more attractive to non-programmers. If you are reading this and happen
 to have skills in developing graphical user interfaces or want to finantially
 support this project, <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">please get in touch</a>.</p>
 </div>
-</details></div>
+</details></section>
 
     <script type="text/x-thebe-config">
     {
@@ -853,7 +857,7 @@ support this project, <a class="reference external" href="mailto:allan&#46;leal&
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./general"
         },
         predefinedOutput: true

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Chemical equilibrium with given element and charge amounts</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -798,7 +802,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-given-element-and-charge-amounts">
+  <section class="tex2jax_ignore mathjax_ignore" id="chemical-equilibrium-with-given-element-and-charge-amounts">
 <h1>Chemical equilibrium with given element and charge amounts<a class="headerlink" href="#chemical-equilibrium-with-given-element-and-charge-amounts" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
 <p>So far, you most likely have only seen Reaktoro performing chemical equilibrium calculations with a given initial chemical state in disequilibrium such as the one below:</p>
@@ -806,21 +810,21 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create a chemical system with only a gas phase</span>
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">))</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">))</span>
 
 <span class="c1"># Create an initial state for this chemical system</span>
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create an equilibrium solver and equilibrates `state`</span>
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -860,28 +864,28 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 
-<span class="n">Ne</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">size</span><span class="p">()</span>      <span class="c1"># the number of elements in the system</span>
+<span class="n">Ne</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>      <span class="c1"># the number of elements in the system</span>
 
-<span class="n">iC</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>  <span class="c1"># the index of component C</span>
-<span class="n">iH</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>  <span class="c1"># the index of component H</span>
-<span class="n">iO</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>  <span class="c1"># the index of component O</span>
-<span class="n">iZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Ne</span>                            <span class="c1"># the index of component charge</span>
+<span class="n">iC</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>  <span class="c1"># the index of component C</span>
+<span class="n">iH</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>  <span class="c1"># the index of component H</span>
+<span class="n">iO</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>  <span class="c1"># the index of component O</span>
+<span class="n">iZ</span> <span class="o">=</span> <span class="n">Ne</span>                            <span class="c1"># the index of component charge</span>
 
-<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">Ne</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># the array with explicit amounts of elements and charge</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Ne</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># the array with explicit amounts of elements and charge</span>
 
 <span class="n">b</span><span class="p">[</span><span class="n">iC</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 1 mol of C</span>
 <span class="n">b</span><span class="p">[</span><span class="n">iH</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span>  <span class="c1"># 4 moles of H</span>
 <span class="n">b</span><span class="p">[</span><span class="n">iO</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 1 mol of O</span>
 <span class="n">b</span><span class="p">[</span><span class="n">iZ</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># 0 mol of charge</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 
-<span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">setInitialComponentAmounts</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">setInitialComponentAmounts</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -915,7 +919,7 @@ title="Print to PDF"
 <p class="admonition-title">Tip</p>
 <p>If you are handling reactive transport simulations in which the mass conservation equations are formulated in terms of chemical elements and electrical charge, the above procedure should be what you are looking for. At each mesh cell/node (or degree of freedom), you would have a vector <code class="docutils literal notranslate"><span class="pre">b</span></code> representing the concentrations of elements and charges at that specific point in space. The equilibrium calculation would provide the amounts of species distributed among all phases (e.g., aqueous, liquid, gaseous, mineral, etc.). The associated chemical properties at equilibrium could be used to compute densities, enthalpies, and other properties of the phases.</p>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -929,7 +933,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/equilibrium"
         },
         predefinedOutput: true

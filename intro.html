@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Reaktoro</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -751,7 +755,7 @@ title="Print to PDF"
               <div>
                 
   <p><img alt="" src="_images/reaktoro-for-python-and-cpp.svg" /></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="reaktoro">
+<section class="tex2jax_ignore mathjax_ignore" id="reaktoro">
 <h1>Reaktoro<a class="headerlink" href="#reaktoro" title="Permalink to this headline">#</a></h1>
 <p>Welcome to the documentation for Reaktoro, an open source computational framework developed in C++ and Python to simulate chemically reactive processes.</p>
 <p>Reaktoro has been designed from the ground up to be a flexible and extensible computational modeling framework for simulating chemical reactions. Reaktoro’s algorithms for chemical equilibrium and chemical kinetics calculations can be applied in a wide variety of modeling applications, from geochemical modeling of water-gas-rock systems to modeling the combustion of energetic materials.</p>
@@ -778,7 +782,7 @@ title="Print to PDF"
 <li><p>reactive transport in porous media at pore or reservoir scale</p></li>
 <li><p>reactive fluid flow for combustion modeling</p></li>
 </ul>
-<p>For large-scale modeling applications where millions to billions of chemical equilibrium and/or chemical kinetics calculations are required, Reaktoro offers accelerated <em><strong>on-demand machine learning</strong></em> (ODML) solvers that can speed up chemical reaction calculations by one to three orders of magnitude as demonstrated in <span id="id1">Leal <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id134">2017</a>]</span>, <span id="id2">Leal <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id211">2020</a>]</span> and <span id="id3">Kyas <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id2">2022</a>]</span>.</p>
+<p>For large-scale modeling applications where millions to billions of chemical equilibrium and/or chemical kinetics calculations are required, Reaktoro offers accelerated <em><strong>on-demand machine learning</strong></em> (ODML) solvers that can speed up chemical reaction calculations by one to three orders of magnitude as demonstrated in <span id="id1">Leal <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id134" title="Allan M. M. Leal, Dmitrii A. Kulik, and Martin O. Saar. Ultra-Fast Reactive Transport Simulations When Chemical Reactions Meet Machine Learning: Chemical Equilibrium. arXiv, pages 1–25, aug 2017. URL: http://arxiv.org/abs/1708.04825, arXiv:1708.04825, doi:http://arxiv.org/abs/1708.04825.">2017</a>]</span>, <span id="id2">Leal <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id211" title="Allan M M Leal, Svetlana Kyas, Dmitrii A. Kulik, and Martin O. Saar. Accelerating Reactive Transport Modeling: On-Demand Machine Learning Algorithm for Chemical Equilibrium Calculations. Transport in Porous Media, 133(2):161–204, jun 2020. URL: http://link.springer.com/10.1007/s11242-020-01412-1, doi:10.1007/s11242-020-01412-1.">2020</a>]</span> and <span id="id3">Kyas <em>et al.</em> [<a class="reference internal" href="tutorials/bibliography.html#id2" title="Svetlana Kyas, Diego Volpatto, Martin O. Saar, and Allan M. M. Leal. Accelerated reactive transport simulations in heterogeneous porous media using Reaktoro and Firedrake. Computational Geosciences, 26(2):295–327, apr 2022. URL: http://arxiv.org/abs/2009.01194 https://link.springer.com/10.1007/s10596-021-10126-2, arXiv:2009.01194, doi:10.1007/s10596-021-10126-2.">2022</a>]</span>.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get Started</span></p>
 <ul>
@@ -881,7 +885,7 @@ title="Print to PDF"
 <li class="toctree-l1"><a class="reference internal" href="general/development.html">Development</a></li>
 </ul>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -895,7 +899,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true

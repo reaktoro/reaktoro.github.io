@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Computing standard thermodynamic properties of reactions</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -51,8 +55,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://reaktoro.org/tutorials/basics/computing-thermo-props-of-reactions.html" />
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -119,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -800,7 +804,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="computing-standard-thermodynamic-properties-of-reactions">
+  <section class="tex2jax_ignore mathjax_ignore" id="computing-standard-thermodynamic-properties-of-reactions">
 <h1>Computing standard thermodynamic properties of reactions<a class="headerlink" href="#computing-standard-thermodynamic-properties-of-reactions" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 21th, 2022</p>
 <p>This tutorial demonstrates the use of Reaktoro for the computation of standard thermodynamic properties of a chemical reaction such as:</p>
@@ -831,11 +835,11 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">reaction</span><span class="p">(</span><span class="s2">&quot;H+ + OH- = H2O&quot;</span><span class="p">)</span>
+<span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reaction</span><span class="p">(</span><span class="s2">&quot;H+ + OH- = H2O&quot;</span><span class="p">)</span>
 
-<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -865,9 +869,9 @@ title="Print to PDF"
 <p>Another more complicated example (mineral dissolution reaction):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">reaction</span><span class="p">(</span><span class="s2">&quot;Kaolinite + 6*H+ = H2O + 2*H4SiO4 + 2*Al+3&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reaction</span><span class="p">(</span><span class="s2">&quot;Kaolinite + 6*H+ = H2O + 2*H4SiO4 + 2*Al+3&quot;</span><span class="p">)</span>
 
-<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -895,7 +899,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>That’s it! As long as you specify species names that exists in the database, you are free to define your reaction as you wish.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -909,7 +913,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/basics"
         },
         predefinedOutput: true

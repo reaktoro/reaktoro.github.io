@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Installation in Google Colab</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -798,7 +802,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="installation-in-google-colab">
+  <section class="tex2jax_ignore mathjax_ignore" id="installation-in-google-colab">
 <h1>Installation in Google Colab<a class="headerlink" href="#installation-in-google-colab" title="Permalink to this headline">#</a></h1>
 <p>You can run Reaktoro on <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>! You can launch Google Colab from one of the tutorials by clicking the <em>rocket launcher button</em> on the top bar of the page as shown below for this <a class="reference internal" href="../tutorials/kinetics/kinetics-minerals-using-palandri-kharaka-model.html"><span class="doc std std-doc">chemical kinetics tutorial</span></a>:</p>
 <p><img alt="" src="../_images/reaktoro-in-google-colab-launcher-button.png" /></p>
@@ -814,30 +818,30 @@ condacolab.install_from_url(&quot;https://repo.anaconda.com/miniconda/Miniconda3
 <p>Alternatively, you can also create a new Jupyter notebook in Google Colab and try executing the installation code above. Once it is finished, execute the following in a new code cell:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 
-<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">)</span>
+<span class="n">gases</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Here is a <a class="reference external" href="https://colab.research.google.com/drive/13UsI3Tj0ZRX6ea8_xoezry6mO0Ghq-vV?usp=sharing">shared link to a Google Colab notebook</a> demonstrating the above instructions. Below is a screenshot showing the expected result of this guide when following the previous instructions (with cleared installation output for the first cell because it is too long!):</p>
 <p><img alt="" src="../_images/reaktoro-in-google-colab.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="please-help-me-installing-reaktoro">
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="please-help-me-installing-reaktoro">
 <h1>Please help me installing Reaktoro!<a class="headerlink" href="#please-help-me-installing-reaktoro" title="Permalink to this headline">#</a></h1>
 <p>If you had any problems with the instructions above (or for some reason this is not working at the moment), <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">please contact us</a>.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -851,7 +855,7 @@ condacolab.install_from_url(&quot;https://repo.anaconda.com/miniconda/Miniconda3
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./installation"
         },
         predefinedOutput: true

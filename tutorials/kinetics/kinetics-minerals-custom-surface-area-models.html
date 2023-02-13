@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Chemical kinetics for mineral reactions using custom surface area models</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -798,25 +802,25 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="chemical-kinetics-for-mineral-reactions-using-custom-surface-area-models">
+  <section class="tex2jax_ignore mathjax_ignore" id="chemical-kinetics-for-mineral-reactions-using-custom-surface-area-models">
 <h1>Chemical kinetics for mineral reactions using custom surface area models<a class="headerlink" href="#chemical-kinetics-for-mineral-reactions-using-custom-surface-area-models" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Nov 30th, 2022</p>
-<p>This tutorial is unfinished. We will show you here how to define your own surface area model to be used together with heterogeneous reactions (such as mineral dissolution/precipitation reactions). For example, we’ll show how to define the following surface area model below commonly used by geochemical modeling software (e.g., PHREEQC <span id="id1">[<a class="reference internal" href="../bibliography.html#id847">Parkhurst and Appelo, 2013</a>]</span>):</p>
+<p>This tutorial is unfinished. We will show you here how to define your own surface area model to be used together with heterogeneous reactions (such as mineral dissolution/precipitation reactions). For example, we’ll show how to define the following surface area model below commonly used by geochemical modeling software (e.g., PHREEQC <span id="id1">[<a class="reference internal" href="../bibliography.html#id847" title="D.L. Parkhurst and C.A.J. Appelo. Description of input and examples for PHREEQC version 3—A computer program for speciation, batch-reaction, one-dimensional transport, and inverse geochemical calculations. In Groundwater Book 6, Modeling Techniques, chapter A43, pages 497. U.S. Geological Survey Techniques and Methods, 2013. URL: http://pubs.usgs.gov/tm/06/a43.">Parkhurst and Appelo, 2013</a>]</span>):</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">areafn</span><span class="p">(</span><span class="n">props</span><span class="p">:</span> <span class="n">ChemicalProps</span><span class="p">):</span>
     <span class="n">q0</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># the initial amount of calcite (in mol)</span>
     <span class="n">A0</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># the initial surface area of calcite (in m2)</span>
-    <span class="n">q</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>  <span class="c1"># current amount of calcite during the simulation</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>  <span class="c1"># current amount of calcite during the simulation</span>
     <span class="k">return</span> <span class="n">A0</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">q</span> <span class="o">/</span> <span class="n">q0</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> 
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> 
     <span class="o">...</span>
-    <span class="n">MineralSurface</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">setAreaModel</span><span class="p">(</span><span class="n">areafn</span><span class="p">)</span>
+    <span class="n">MineralSurface</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setAreaModel</span><span class="p">(</span><span class="n">areafn</span><span class="p">)</span>
     <span class="o">...</span>
 <span class="p">)</span> 
 </pre></div>
 </div>
 <p>Stay tuned!</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -830,7 +834,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/kinetics"
         },
         predefinedOutput: true

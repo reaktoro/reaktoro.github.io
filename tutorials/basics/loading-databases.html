@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Loading thermodynamic databases</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -51,8 +55,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://reaktoro.org/tutorials/basics/loading-databases.html" />
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -119,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -916,7 +920,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="loading-thermodynamic-databases">
+  <section class="tex2jax_ignore mathjax_ignore" id="loading-thermodynamic-databases">
 <h1>Loading thermodynamic databases<a class="headerlink" href="#loading-thermodynamic-databases" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 5th, 2022
 <p>Reaktoro requires thermodynamic databases to calculate the thermodynamic properties of chemical species and reactions. These properties are necessary when performing chemical equilibrium and kinetics calculations.</p>
@@ -957,9 +961,9 @@ title="Print to PDF"
 <p>All these classes derive from the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> class. They exist to provide you additional convenience and functionality.</p>
 </div>
 <p>Read the next sections to learn how different thermodynamic databases from distinct providers can be loaded in Reaktoro.</p>
-<div class="section" id="phreeqc-databases">
+<section id="phreeqc-databases">
 <h2>PHREEQC Databases<a class="headerlink" href="#phreeqc-databases" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://www.usgs.gov/software/phreeqc-version-3">PHREEQC</a> <span id="id1">[<a class="reference internal" href="../bibliography.html#id847">Parkhurst and Appelo, 2013</a>]</span> is a well-known scientific software used for geochemical and biogeochemical modeling, and many thermodynamic databases have been compiled for it in the last decades. If you’d like to use Reaktoro with PHREEQC databases, we’ve got you covered. You can do this using a database file available on your computer or one of the following database files embedded into Reaktoro (those provided with PHREEQC v3):</p>
+<p><a class="reference external" href="https://www.usgs.gov/software/phreeqc-version-3">PHREEQC</a> <span id="id1">[<a class="reference internal" href="../bibliography.html#id847" title="D.L. Parkhurst and C.A.J. Appelo. Description of input and examples for PHREEQC version 3—A computer program for speciation, batch-reaction, one-dimensional transport, and inverse geochemical calculations. In Groundwater Book 6, Modeling Techniques, chapter A43, pages 497. U.S. Geological Survey Techniques and Methods, 2013. URL: http://pubs.usgs.gov/tm/06/a43.">Parkhurst and Appelo, 2013</a>]</span> is a well-known scientific software used for geochemical and biogeochemical modeling, and many thermodynamic databases have been compiled for it in the last decades. If you’d like to use Reaktoro with PHREEQC databases, we’ve got you covered. You can do this using a database file available on your computer or one of the following database files embedded into Reaktoro (those provided with PHREEQC v3):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/embedded/databases/phreeqc/Amm.dat">Amm.dat</a></p></li>
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/embedded/databases/phreeqc/ColdChem.dat">ColdChem.dat</a></p></li>
@@ -975,39 +979,39 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/embedded/databases/phreeqc/Tipping_Hurley.dat">Tipping_Hurley.dat</a></p></li>
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/embedded/databases/phreeqc/wateq4f.dat">wateq4f.dat</a></p></li>
 </ul>
-<div class="section" id="loading-embedded-phreeqc-database-files">
+<section id="loading-embedded-phreeqc-database-files">
 <h3>Loading embedded PHREEQC database files<a class="headerlink" href="#loading-embedded-phreeqc-database-files" title="Permalink to this headline">#</a></h3>
 <p>The following are equivalent ways to load embedded PHREEEQC database files:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="loading-locally-available-phreeqc-database-files">
+</section>
+<section id="loading-locally-available-phreeqc-database-files">
 <h3>Loading locally available PHREEQC database files<a class="headerlink" href="#loading-locally-available-phreeqc-database-files" title="Permalink to this headline">#</a></h3>
 <p>The following are equivalent ways to load the same PHREEQC database file from
 your computer:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Linux and macOS</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Windows</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="thermofun-databases">
+</section>
+</section>
+<section id="thermofun-databases">
 <h2>ThermoFun Databases<a class="headerlink" href="#thermofun-databases" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://thermohub.org/thermofun/thermofun/">ThermoFun</a> is an open-source C++/Python library for the computation of thermodynamic properties of species and reactions. It supports many databases for a wide variety of applications. The following are the currently supported database files:</p>
 <ul class="simple">
@@ -1019,7 +1023,7 @@ your computer:</p>
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/embedded/databases/thermofun/slop98-organic-thermofun.json">slop98-organic-thermofun.json</a></p></li>
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/embedded/databases/thermofun/slop98-thermofun.json">slop98-thermofun.json</a></p></li>
 </ul>
-<div class="section" id="loading-embedded-thermofun-database-files">
+<section id="loading-embedded-thermofun-database-files">
 <h3>Loading embedded ThermoFun database files<a class="headerlink" href="#loading-embedded-thermofun-database-files" title="Permalink to this headline">#</a></h3>
 <p>ThermoFun databases are also available in embedded form in Reaktoro for convenience. You need to use one of the following database names:</p>
 <ul class="simple">
@@ -1032,39 +1036,39 @@ your computer:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">slop98</span></code></p></li>
 </ul>
 <p>The following are equivalent ways to load the same embedded ThermoFun database file:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="loading-locally-available-thermofun-database-files">
+</section>
+<section id="loading-locally-available-thermofun-database-files">
 <h3>Loading locally available ThermoFun database files<a class="headerlink" href="#loading-locally-available-thermofun-database-files" title="Permalink to this headline">#</a></h3>
 <p>The following are equivalent ways to load the same ThermoFun database file from
 your computer:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Linux and macOS</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Windows</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="supcrt-and-supcrtbl-databases">
+</section>
+</section>
+<section id="supcrt-and-supcrtbl-databases">
 <h2>SUPCRT and SUPCRTBL Databases<a class="headerlink" href="#supcrt-and-supcrtbl-databases" title="Permalink to this headline">#</a></h2>
-<p>SUPCRT <span id="id2">[<a class="reference internal" href="../bibliography.html#id517">Johnson <em>et al.</em>, 1992</a>]</span> and SUPCRTBL <span id="id3">[<a class="reference internal" href="../bibliography.html#id21">Zimmer <em>et al.</em>, 2016</a>]</span> databases contain thousands of chemical species (aqueous species, gases, minerals) and are commonly used for biogeochemical modeling applications. These thermodynamic databases contain parameters for equations of state to permit the computation of standard molal thermodynamic properties of minerals, gases, aqueous species, and reactions from 1 to 5000 bar and 0 to 1000°C. The theory behind these equations and their derivation can be found across the following publications: <span id="id4">Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id529">1974</a>], Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id772">1976</a>], Helgeson <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id1037">1981</a>], Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id669">1974</a>], Shock <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id593">1992</a>], Tanger and Helgeson [<a class="reference internal" href="../bibliography.html#id784">1988</a>]</span>.</p>
-<div class="section" id="loading-embedded-supcrt-and-supcrtbl-database-files">
+<p>SUPCRT <span id="id2">[<a class="reference internal" href="../bibliography.html#id517" title="James W. Johnson, Eric H. Oelkers, and Harold C. Helgeson. SUPCRT92: A software package for calculating the standard molal thermodynamic properties of minerals, gases, aqueous species, and reactions from 1 to 5000 bar and 0 to 1000 C. Computers &amp; Geosciences, 18(7):899–947, 1992. URL: http://linkinghub.elsevier.com/retrieve/pii/009830049290029Q, doi:10.1016/0098-3004(92)90029-Q.">Johnson <em>et al.</em>, 1992</a>]</span> and SUPCRTBL <span id="id3">[<a class="reference internal" href="../bibliography.html#id21" title="Kurt Zimmer, Yilun Zhang, Peng Lu, Yanyan Chen, Guanru Zhang, Mehmet Dalkilic, and Chen Zhu. SUPCRTBL: A revised and extended thermodynamic dataset and software package of SUPCRT92. Computers and Geosciences, 90:97–111, 2016. URL: http://dx.doi.org/10.1016/j.cageo.2016.02.013, doi:10.1016/j.cageo.2016.02.013.">Zimmer <em>et al.</em>, 2016</a>]</span> databases contain thousands of chemical species (aqueous species, gases, minerals) and are commonly used for biogeochemical modeling applications. These thermodynamic databases contain parameters for equations of state to permit the computation of standard molal thermodynamic properties of minerals, gases, aqueous species, and reactions from 1 to 5000 bar and 0 to 1000°C. The theory behind these equations and their derivation can be found across the following publications: <span id="id4">Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id529" title="Harold C. Helgeson and David H. Kirkham. Theoretical prediction of the thermodynamic behavior of aqueous electrolytes at high pressures and temperatures: II. Debye-Huckel parameters for activity coefficients and relative partial molal properties. American Journal of Science, 274(10):1199–1261, dec 1974. URL: http://www.ajsonline.org/cgi/doi/10.2475/ajs.274.10.1199, doi:10.2475/ajs.274.10.1199.">1974</a>], Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id772" title="Harold C. Helgeson and David H. Kirkham. Theoretical prediction of the thermodynamic properties of aqueous electrolytes at high pressures and temperatures: III. Equation of state for aqueous species at infinite dilution. American Journal of Science, 276(2):97–240, feb 1976. URL: http://www.ajsonline.org/cgi/doi/10.2475/ajs.276.2.97, doi:10.2475/ajs.276.2.97.">1976</a>], Helgeson <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id1037" title="Harold C. Helgeson, David H. Kirkham, and George C. Flowers. Theoretical prediction of the thermodynamic behavior of aqueous electrolytes at high pressures and temperatures: IV. Calculation of activity coefficients, osmotic coefficients, and apparent molal and standard and relative partial molal properties to 600 C. American Journal of Science, 281(10):1249–1516, dec 1981. URL: http://www.ajsonline.org/cgi/doi/10.2475/ajs.281.10.1249, doi:10.2475/ajs.281.10.1249.">1981</a>], Helgeson and Kirkham [<a class="reference internal" href="../bibliography.html#id669" title="Harold C. Helgeson and David. H. Kirkham. Theoretical prediction of the thermodynamic behavior of aqueous electrolytes at high pressures and temperatures: I. Summary of the thermodynamic/electrostatic properties of the solvent. American Journal of Science, 274(10):1089–1198, dec 1974. URL: http://www.ajsonline.org/cgi/doi/10.2475/ajs.274.10.1089, doi:10.2475/ajs.274.10.1089.">1974</a>], Shock <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id593" title="Everett L. Shock, Eric H. Oelkers, James W. Johnson, Dimitri A. Sverjensky, and Harold C. Helgeson. Calculation of the thermodynamic properties of aqueous species at high pressures and temperatures. Effective electrostatic radii, dissociation constants and standard partial molal properties to 1000 °C and 5 kbar. Journal of the Chemical Society, Faraday Transactions, 88(6):803, 1992. URL: http://xlink.rsc.org/?DOI=ft9928800803, doi:10.1039/ft9928800803.">1992</a>], Tanger and Helgeson [<a class="reference internal" href="../bibliography.html#id784" title="J. C. Tanger and Harold C. Helgeson. Calculation of the thermodynamic and transport properties of aqueous species at high pressures and temperatures; revised equations of state for the standard partial molal properties of ions and electrolytes. American Journal of Science, 288(1):19–98, jan 1988. URL: http://www.ajsonline.org/cgi/doi/10.2475/ajs.288.1.19, doi:10.2475/ajs.288.1.19.">1988</a>]</span>.</p>
+<section id="loading-embedded-supcrt-and-supcrtbl-database-files">
 <h3>Loading embedded SUPCRT and SUPCRTBL database files<a class="headerlink" href="#loading-embedded-supcrt-and-supcrtbl-database-files" title="Permalink to this headline">#</a></h3>
 <p>SUPCRT and SUPCRTBL databases are supported in Reaktoro’s database format using
 <a class="reference external" href="https://yaml.org/">YAML</a>. The currently available embedded database files are listed below:</p>
@@ -1090,38 +1094,38 @@ list of chemical elements, a large number of aqueous organic species are selecte
 cases, these species do not play any important role in the modeling.</p>
 </div>
 <p>The following are equivalent ways to load the same embedded SUPCRT/SUPCRTBL database file:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="loading-locally-available-supcrt-and-supcrtbl-database-files">
+</section>
+<section id="loading-locally-available-supcrt-and-supcrtbl-database-files">
 <h3>Loading locally available SUPCRT and SUPCRTBL database files<a class="headerlink" href="#loading-locally-available-supcrt-and-supcrtbl-database-files" title="Permalink to this headline">#</a></h3>
 <p>The following are equivalent ways to load the same SUPCRT or SUPCRTBL database file from
 your computer:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Linux and macOS</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Windows</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="nasa-databases">
+</section>
+</section>
+<section id="nasa-databases">
 <h2>NASA Databases<a class="headerlink" href="#nasa-databases" title="Permalink to this headline">#</a></h2>
-<p>Reaktoro also supports the NASA-CEA thermochemical database <span id="id5">[<a class="reference internal" href="../bibliography.html#id442">Gordon and McBride, 1996</a>, <a class="reference internal" href="../bibliography.html#id800">Gordon and McBride, 1994</a>]</span>. These contain coefficients for NASA-CEA polynomials used to calculate the standard thermodynamic properties of gases and condensed phases. The NASA-CEA database is commonly used for modeling combustion processes in various applications, from rocket propellant combustion to explosives detonation.</p>
+<p>Reaktoro also supports the NASA-CEA thermochemical database <span id="id5">[<a class="reference internal" href="../bibliography.html#id442" title="Sanford Gordon and Bonnie J McBride. Computer Program for Calculation of Complex Chemical Equilibrium Compositions and Applications: Part II - User Manual and Description. Technical Report, NASA, 1996. URL: http://www.grc.nasa.gov/WWW/CEAWeb/RP-1311-P2.pdf.">Gordon and McBride, 1996</a>, <a class="reference internal" href="../bibliography.html#id800" title="Sanford Gordon and Bonnie J. McBride. Computer Program for Calculation of Complex Chemical Equilibrium Compositions and Applications I. Analysis. Technical Report, NASA, 1994. doi:NASA RP-1311.">Gordon and McBride, 1994</a>]</span>. These contain coefficients for NASA-CEA polynomials used to calculate the standard thermodynamic properties of gases and condensed phases. The NASA-CEA database is commonly used for modeling combustion processes in various applications, from rocket propellant combustion to explosives detonation.</p>
 <p>The NASA-CEA database supported in Reaktoro has been converted to Reaktoro’s YAML database format:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/reaktoro/reaktoro/tree/main/embedded/databases/reaktoro/nasa-cea.yaml">nasa-cea.yaml</a>.</p></li>
@@ -1131,39 +1135,39 @@ your computer:</p>
 <p class="admonition-title">Attention</p>
 <p>NASA-CEA database is organized differently in Reaktoro’s YAML database format. In the original NASA-CEA database, identical substances in different physical states and crystal structures (e.g., <code class="docutils literal notranslate"><span class="pre">Mg(L)</span></code> and <code class="docutils literal notranslate"><span class="pre">Mg(cr)</span></code>; <code class="docutils literal notranslate"><span class="pre">MgSO4(II)</span></code>, <code class="docutils literal notranslate"><span class="pre">MgSO4(I)</span></code> and <code class="docutils literal notranslate"><span class="pre">MgSO4(L)</span></code>) are considered distinct chemical species. In Reaktoro’s YAML format, these chemical species are combined into one (e.g., <code class="docutils literal notranslate"><span class="pre">Mg(cd)</span></code>, <code class="docutils literal notranslate"><span class="pre">MgSO4(cd)</span></code>). This was done after observing improved performance and behavior in Reaktoro’s chemical equilibrium algorithm, while still producing identical results. More specifically, this improved the determination of stable phases at equilibrium, which Reaktoro determines during the calculation (not at the end with individual stability tests for currently unstable phases).</p>
 </div>
-<div class="section" id="loading-embedded-nasa-database-files">
+<section id="loading-embedded-nasa-database-files">
 <h3>Loading embedded NASA database files<a class="headerlink" href="#loading-embedded-nasa-database-files" title="Permalink to this headline">#</a></h3>
 <p>The following are equivalent ways to load the same embedded NASA database file:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="loading-locally-available-nasa-database-files">
+</section>
+<section id="loading-locally-available-nasa-database-files">
 <h3>Loading locally available NASA database files<a class="headerlink" href="#loading-locally-available-nasa-database-files" title="Permalink to this headline">#</a></h3>
 <p>The following are equivalent ways to load the same NASA database file from your
 computer:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Linux and macOS</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Windows</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1177,7 +1181,7 @@ computer:</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/basics"
         },
         predefinedOutput: true

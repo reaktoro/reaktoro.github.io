@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Troubleshooting</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -818,10 +822,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="troubleshooting">
+  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h1>
 <p>Below are the most common issues our users encounter, for which we indicate the necessary action to resolve them potentially. If you cannot find your problem below or the solution provided is not working for you, don’t hesitate to get in touch with us at <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</p>
-<div class="section" id="modulenotfounderror-no-module-named-reaktoro">
+<section id="modulenotfounderror-no-module-named-reaktoro">
 <h2>ModuleNotFoundError: No module named ‘reaktoro’<a class="headerlink" href="#modulenotfounderror-no-module-named-reaktoro" title="Permalink to this headline">#</a></h2>
 <p>The entire error message may be something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
@@ -830,17 +834,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>This error is happening because the Python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> cannot be found, most likely because the environment variable <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> has not been set correctly. Ensure the path where <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is located is specified in <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.</p>
-</div>
-<div class="section" id="expecting-a-float-value-but-got-autodiff-real-instead">
+</section>
+<section id="expecting-a-float-value-but-got-autodiff-real-instead">
 <h2>Expecting a float value but got autodiff.real instead<a class="headerlink" href="#expecting-a-float-value-but-got-autodiff-real-instead" title="Permalink to this headline">#</a></h2>
 <p>Reaktoro relies on number types defined in the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library to enable automatic differentiation. It is because of <a class="reference external" href="https://autodiff.github.io">autodiff</a> that Reaktoro can have improved numerical algorithms and also compute derivatives of chemical/thermodynamic properties with respect to temperature, pressure, species amounts, and even the parameters used in the models.</p>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">float</span></code> function to convert an <code class="docutils literal notranslate"><span class="pre">autodiff.real</span></code> number into a Python <code class="docutils literal notranslate"><span class="pre">float</span></code> number type. Below is an example using the method <code class="docutils literal notranslate"><span class="pre">ChemicalProps.activity</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert autodiff.real to float!</span>
-<span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">))</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
+</section>
+<section id="expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
 <h2>Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead<a class="headerlink" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead" title="Permalink to this headline">#</a></h2>
 <p>This is a similar issue to the previous one. You may encounter the following array/vector types while using Reaktoro:</p>
 <ul class="simple">
@@ -852,52 +856,52 @@ title="Print to PDF"
 <p>These types are a combination of array/vector types from the C++ library <a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a> with the number types from the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library, both C++ libraries.</p>
 <p>You can use the method <code class="docutils literal notranslate"><span class="pre">asarray</span></code> in these array/vector types to convert them to a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert from autodiff.ArrayXreal1stConstRef to numpy.array with float values</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">speciesAmounts</span><span class="p">()</span><span class="o">.</span><span class="nf">asarray</span><span class="p">()</span>
+<span class="n">state</span><span class="o">.</span><span class="n">speciesAmounts</span><span class="p">()</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="sigfpe-signals-and-fatal-arithmetic-errors">
+</section>
+<section id="sigfpe-signals-and-fatal-arithmetic-errors">
 <h2>SIGFPE signals and fatal arithmetic errors<a class="headerlink" href="#sigfpe-signals-and-fatal-arithmetic-errors" title="Permalink to this headline">#</a></h2>
 <p>Users that couple Reaktoro’s C++ library and <a class="reference external" href="https://www.openfoam.com/">OpenFOAM</a> for reactive transport simulations often report problems related to <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv">SIGFPE signals</a> that are thrown following arithmetic exceptions (e.g., division by zero, logarithm of zero, etc.). Usually these errors happen in Reaktoro because some species in the chemical state have zero values (always try to set a very small amount instead of zero!), and during a chemical equilibrium or kinetic calculation the logarithm of zero may be evaluated. These arithmetic errors, however, do not compromise the calculation results and are ignored in Reaktoro when they occur.</p>
 <p>So you can safely disable these SIGFPE signals. Below is a demonstration using <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv/feclearexcept"><code class="docutils literal notranslate"><span class="pre">std::feclearexcept</span></code></a>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cfenv&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cfenv&gt;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Reaktoro/Reaktoro.hpp&gt;</span><span class="cp"></span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Reaktoro</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Reaktoro/Reaktoro.hpp&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Reaktoro</span><span class="p">;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="nf">feclearexcept</span><span class="p">(</span><span class="n">FE_ALL_EXCEPT</span><span class="p">);</span><span class="w"> </span><span class="c1">// disable all SIGFPE exceptions</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">feclearexcept</span><span class="p">(</span><span class="n">FE_ALL_EXCEPT</span><span class="p">);</span><span class="w"> </span><span class="c1">// disable all SIGFPE exceptions</span>
 
-<span class="w">    </span><span class="nc">PhreeqcDatabase</span><span class="w"> </span><span class="n">db</span><span class="p">(</span><span class="s">&quot;phreeqc.dat&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">PhreeqcDatabase</span><span class="w"> </span><span class="n">db</span><span class="p">(</span><span class="s">&quot;phreeqc.dat&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="nc">AqueousPhase</span><span class="w"> </span><span class="n">aqueousphase</span><span class="o">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s">&quot;H O C Na Cl&quot;</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="n">aqueousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">AqueousPhase</span><span class="w"> </span><span class="n">aqueousphase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s">&quot;H O C Na Cl&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">aqueousphase</span><span class="p">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">());</span>
 
-<span class="w">    </span><span class="nc">GaseousPhase</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">gaseousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">GaseousPhase</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gaseousphase</span><span class="p">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">());</span>
 
-<span class="w">    </span><span class="nc">ChemicalSystem</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">aqueousphase</span><span class="p">,</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ChemicalSystem</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">aqueousphase</span><span class="p">,</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">);</span>
 
-<span class="w">    </span><span class="nc">ChemicalState</span><span class="w"> </span><span class="n">state</span><span class="p">(</span><span class="n">system</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;celsius&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s">&quot;H2O&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;kg&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s">&quot;Na+&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">4.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s">&quot;Cl-&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">4.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ChemicalState</span><span class="w"> </span><span class="n">state</span><span class="p">(</span><span class="n">system</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">setTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;celsius&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;H2O&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;kg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;Na+&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">4.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;Cl-&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">4.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="nc">EquilibriumSolver</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">system</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">EquilibriumSolver</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">system</span><span class="p">);</span>
+<span class="w">    </span><span class="n">solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">output</span><span class="p">(</span><span class="s">&quot;state.txt&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">output</span><span class="p">(</span><span class="s">&quot;state.txt&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -911,7 +915,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./general"
         },
         predefinedOutput: true

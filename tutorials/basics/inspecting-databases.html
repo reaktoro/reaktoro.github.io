@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Inspecting thermodynamic databases</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -865,7 +869,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="inspecting-thermodynamic-databases">
+  <section class="tex2jax_ignore mathjax_ignore" id="inspecting-thermodynamic-databases">
 <h1>Inspecting thermodynamic databases<a class="headerlink" href="#inspecting-thermodynamic-databases" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
 <p>This tutorial demonstrates how a thermodynamic database can be inspected programmatically using Reaktoro’s Python API. For this, we will consider the <a class="reference external" href="https://www.empa.ch/web/s308/cemdata">cemdata18</a> database supported in <a class="reference external" href="https://thermohub.org/thermofun/thermofun/">ThermoFun</a>.</p>
@@ -874,20 +878,20 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>We’ll use this <code class="docutils literal notranslate"><span class="pre">db</span></code> object throughout this tutorial to demonstrate all inspection capabilities available in class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> (yes, <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ThermoFunDatabase.html"><code class="docutils literal notranslate"><span class="pre">ThermoFunDatabase</span></code></a> is a derived class from <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a>)!</p>
-<div class="section" id="inspecting-the-species-in-the-database">
+<section id="inspecting-the-species-in-the-database">
 <h2>Inspecting the species in the database<a class="headerlink" href="#inspecting-the-species-in-the-database" title="Permalink to this headline">#</a></h2>
 <p>Let’s loop through all species in this database object and print its name, chemical formula, and molar mass:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Species&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}{</span><span class="s1">&#39;Formula&#39;</span><span class="si">:</span><span class="s2">&lt;60</span><span class="si">}{</span><span class="s1">&#39;Molar Mass (kg/mol)&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}{</span><span class="n">species</span><span class="p">.</span><span class="nf">formula</span><span class="p">()</span><span class="o">.</span><span class="nf">str</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;60</span><span class="si">}{</span><span class="n">species</span><span class="p">.</span><span class="nf">molarMass</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;20.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}{</span><span class="n">species</span><span class="o">.</span><span class="n">formula</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;60</span><span class="si">}{</span><span class="n">species</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;20.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1129,14 +1133,14 @@ zeoliteY            Na2(Al2Si4)O12(H2O)8                                        
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="inspecting-the-species-in-the-database-with-given-chemical-elements">
+</section>
+<section id="inspecting-the-species-in-the-database-with-given-chemical-elements">
 <h2>Inspecting the species in the database with given chemical elements<a class="headerlink" href="#inspecting-the-species-in-the-database-with-given-chemical-elements" title="Permalink to this headline">#</a></h2>
 <p>Often, we are not interested in all species in a database, but only in those that contain some chemical elements. We show below how the species that can be formed from the elements H, O, C, and Ca can be collected and printed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">()</span><span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="s2">&quot;H O C Ca&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">()</span><span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="s2">&quot;H O C Ca&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1168,14 +1172,14 @@ Portlandite
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="inspecting-the-species-in-the-database-with-given-aggregate-state">
+</section>
+<section id="inspecting-the-species-in-the-database-with-given-aggregate-state">
 <h2>Inspecting the species in the database with given aggregate state<a class="headerlink" href="#inspecting-the-species-in-the-database-with-given-aggregate-state" title="Permalink to this headline">#</a></h2>
 <p>What if we want to collect only gaseous species from a database? Check next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">speciesWithAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">speciesWithAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1194,8 +1198,8 @@ O2
 <p>And what if only gases with C, H, O elements?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">speciesWithAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">)</span><span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="s2">&quot;C H O&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">speciesWithAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">)</span><span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="s2">&quot;C H O&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1209,15 +1213,15 @@ O2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="inspecting-the-elements-in-the-database">
+</section>
+<section id="inspecting-the-elements-in-the-database">
 <h2>Inspecting the elements in the database<a class="headerlink" href="#inspecting-the-elements-in-the-database" title="Permalink to this headline">#</a></h2>
 <p>We can also check all the chemical elements available in the database:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Symbol&#39;</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}{</span><span class="s1">&#39;Molar Mass (kg/mol)&#39;</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">elements</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element</span><span class="p">.</span><span class="nf">symbol</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}{</span><span class="n">element</span><span class="p">.</span><span class="nf">molarMass</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;10.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">elements</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element</span><span class="o">.</span><span class="n">symbol</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}{</span><span class="n">element</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;10.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1255,8 +1259,8 @@ N         0.014007
 <li><p><a class="reference external" href="https://reaktoro.org/api/namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd"><code class="docutils literal notranslate"><span class="pre">AggregateState</span></code></a></p></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1270,7 +1274,7 @@ N         0.014007
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/basics"
         },
         predefinedOutput: true

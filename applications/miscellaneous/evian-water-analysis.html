@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Analysis of the Evian water</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -798,7 +802,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="analysis-of-the-evian-water">
+  <section class="tex2jax_ignore mathjax_ignore" id="analysis-of-the-evian-water">
 <h1>Analysis of the Evian water<a class="headerlink" href="#analysis-of-the-evian-water" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Svetlana Kyas (ETH Zurich) on Mar 31th, 2022</p>
 <p>This tutorial addresses the problem of checking the quality of Evian water using Reaktoro with a custom chemical composition.</p>
@@ -818,39 +822,39 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create an aqueous phase automatically selecting all species with provided elements</span>
-<span class="n">aqueousphase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;C Ca Cl H K Mg N Na O S Si&quot;</span><span class="p">))</span>
-<span class="n">aqueousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="nf">chain</span><span class="p">(</span>
+<span class="n">aqueousphase</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;C Ca Cl H K Mg N Na O S Si&quot;</span><span class="p">))</span>
+<span class="n">aqueousphase</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span>
     <span class="n">ActivityModelHKF</span><span class="p">(),</span>
     <span class="n">ActivityModelDrummond</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">),</span>
 <span class="p">))</span>
 
 <span class="c1"># Create a gaseous phase</span>
-<span class="n">gaseousphase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
-<span class="n">gaseousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
+<span class="n">gaseousphase</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
+<span class="n">gaseousphase</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
 
 <span class="c1"># Create mineral phases</span>
-<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
+<span class="n">minerals</span> <span class="o">=</span> <span class="n">MineralPhases</span><span class="p">()</span>
 
 <span class="c1"># Create the chemical system</span>
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">aqueousphase</span><span class="p">,</span> <span class="n">gaseousphase</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">aqueousphase</span><span class="p">,</span> <span class="n">gaseousphase</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
 
 <span class="c1"># Create constraints on temperature, pressure, and pH on the equilibrium chemical state </span>
-<span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">pH</span><span class="p">()</span>
+<span class="n">specs</span> <span class="o">=</span> <span class="n">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">pH</span><span class="p">()</span>
 
 <span class="c1"># Initialize the equilibrium solver</span>
-<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
 
 <span class="c1"># Define conditions to be satisfied at the chemical equilibrium state</span>
-<span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">pH</span><span class="p">(</span><span class="mf">7.2</span><span class="p">)</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">pH</span><span class="p">(</span><span class="mf">7.2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -859,20 +863,20 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize chemical state</span>
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span>   <span class="p">,</span> <span class="mi">80</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 80 * 1e-6 kg / (MW(Ca++) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>    <span class="p">,</span> <span class="mf">6.8</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>    <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 6.8 * 1e-6 kg / (MW(Cl-) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span>  <span class="p">,</span> <span class="mi">350</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 350 * 1e-6 kg / (MW(HCO3-) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span>   <span class="p">,</span> <span class="mi">26</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 26 * 1e-6 kg / (MW(Mg++) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;NO3-&quot;</span>   <span class="p">,</span> <span class="mf">3.7</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;NO3-&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 3.7 * 1e-6 kg / (MW(NO3-) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;K+&quot;</span>     <span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">1e-6</span>    <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;K+&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 1 * 1e-6 kg / (MW(K+) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>    <span class="p">,</span> <span class="mf">6.5</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>    <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 6.5 * 1e-6 kg / (MW(Na+) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;SO4-2&quot;</span>  <span class="p">,</span> <span class="mf">12.6</span> <span class="o">*</span> <span class="mf">1e-6</span> <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;SO4-2&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 12.6 * 1e-6 kg / (MW(SO4--) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;SiO2(a)&quot;</span><span class="p">,</span> <span class="mi">15</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;SiO2(a)&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">(),</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 15 * 1e-6 kg / (MW(SiO2) kg/ mol</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span>   <span class="p">,</span> <span class="mi">80</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 80 * 1e-6 kg / (MW(Ca++) kg / mol)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>    <span class="p">,</span> <span class="mf">6.8</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span>    <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 6.8 * 1e-6 kg / (MW(Cl-) kg / mol)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span>  <span class="p">,</span> <span class="mi">350</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 350 * 1e-6 kg / (MW(HCO3-) kg / mol)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span>   <span class="p">,</span> <span class="mi">26</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 26 * 1e-6 kg / (MW(Mg++) kg / mol)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;NO3-&quot;</span>   <span class="p">,</span> <span class="mf">3.7</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;NO3-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 3.7 * 1e-6 kg / (MW(NO3-) kg / mol)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;K+&quot;</span>     <span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">1e-6</span>    <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;K+&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 1 * 1e-6 kg / (MW(K+) kg / mol)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>    <span class="p">,</span> <span class="mf">6.5</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span>    <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 6.5 * 1e-6 kg / (MW(Na+) kg / mol)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;SO4-2&quot;</span>  <span class="p">,</span> <span class="mf">12.6</span> <span class="o">*</span> <span class="mf">1e-6</span> <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;SO4-2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 12.6 * 1e-6 kg / (MW(SO4--) kg / mol)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;SiO2(a)&quot;</span><span class="p">,</span> <span class="mi">15</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">(</span><span class="s2">&quot;SiO2(a)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">molarMass</span><span class="p">(),</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 15 * 1e-6 kg / (MW(SiO2) kg/ mol</span>
 
 <span class="c1"># Equilibrate the solution with the given initial chemical state and desired conditions at equilibrium</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -886,19 +890,19 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate saturation indices of selected minerals</span>
-<span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Calcite, CaCO3)       = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Aragonite, CaCO3)     = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Aragonite&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Dolomite, CaMg(CO3)2) = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Quartz, SiO2)         = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Chalcedony, SiO2)     = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Chalcedony&#39;</span><span class="p">))</span>
+<span class="n">props</span> <span class="o">=</span> <span class="n">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Calcite, CaCO3)       = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Aragonite, CaCO3)     = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Aragonite&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Dolomite, CaMg(CO3)2) = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Quartz, SiO2)         = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Chalcedony, SiO2)     = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Chalcedony&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SI (Calcite, CaCO3)       =  2.6947e-12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SI (Calcite, CaCO3)       =  2.65391e-12
 SI (Aragonite, CaCO3)     =  -0.14377
-SI (Dolomite, CaMg(CO3)2) =  -0.0480374
+SI (Dolomite, CaMg(CO3)2) =  -0.0480382
 SI (Quartz, SiO2)         =  -3.16124e-13
 SI (Chalcedony, SiO2)     =  -0.429063
 </pre></div>
@@ -924,7 +928,7 @@ SI (Chalcedony, SiO2)     =  -0.429063
 </div>
 </div>
 <p>Based on the results above, the water is <em>saturated with dolomite</em>, whereas calcite and quartz are <em>undersaturated</em>.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -938,7 +942,7 @@ SI (Chalcedony, SiO2)     =  -0.429063
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./applications/miscellaneous"
         },
         predefinedOutput: true

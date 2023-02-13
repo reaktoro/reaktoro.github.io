@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Creating thermodynamic databases</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -51,8 +55,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://reaktoro.org/tutorials/advanced/creating-custom-databases.html" />
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -119,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -857,7 +861,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="creating-thermodynamic-databases">
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-thermodynamic-databases">
 <h1>Creating thermodynamic databases<a class="headerlink" href="#creating-thermodynamic-databases" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 14th, 2022</p>
 <p>In this tutorial, we will demonstrate how you create your own thermodynamic databases in Reaktoro’s YAML format. In these databases, you will have blocks of data for each species (and possibly elements as well, if they are not standard chemical elements from the periodic table).</p>
@@ -898,7 +902,7 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>In the background, Reaktoro will convert your <em>thermodynamic reaction model</em> assigned to a species into a <em>standard thermodynamic model</em> for the same species.</p>
 </div>
-<div class="section" id="a-very-simple-custom-thermodynamic-database-in-yaml-format">
+<section id="a-very-simple-custom-thermodynamic-database-in-yaml-format">
 <h2>A very simple custom thermodynamic database in YAML format<a class="headerlink" href="#a-very-simple-custom-thermodynamic-database-in-yaml-format" title="Permalink to this headline">#</a></h2>
 <p>Let’s consider fictitious gaseous species A<sup>+</sup>, B<sup>-</sup>, and AB. The elements constituting these species are A and B. We consider the following reaction among them:</p>
 <div class="math notranslate nohighlight">
@@ -912,78 +916,78 @@ title="Print to PDF"
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Old Format</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Elements</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">Symbol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A</span>
-  <span class="nt">MolarMass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.001</span>  <span class="c1"># in kg/mol</span>
-<span class="p p-Indicator">-</span> <span class="nt">Symbol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B</span>
-  <span class="nt">MolarMass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.002</span>  <span class="c1"># in kg/mol</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Symbol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">  </span><span class="nt">MolarMass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.001</span><span class="w">  </span><span class="c1"># in kg/mol</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Symbol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B</span>
+<span class="w">  </span><span class="nt">MolarMass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.002</span><span class="w">  </span><span class="c1"># in kg/mol</span>
 
 <span class="nt">Species</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A+</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A+</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A</span>
-  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
-  <span class="nt">StandardThermoModel</span><span class="p">:</span>
-    <span class="nt">Constant</span><span class="p">:</span>
-      <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B-</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B-</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:B</span>
-  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
-  <span class="nt">StandardThermoModel</span><span class="p">:</span>
-    <span class="nt">Constant</span><span class="p">:</span>
-      <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AB</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AB</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A 1:B</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
-  <span class="nt">FormationReaction</span><span class="p">:</span>
-    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A+ 1:B-</span>
-    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-      <span class="nt">ConstLgK</span><span class="p">:</span>
-        <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A+</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A+</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:A</span>
+<span class="w">  </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gas</span>
+<span class="w">  </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B-</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B-</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:B</span>
+<span class="w">  </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gas</span>
+<span class="w">  </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AB</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AB</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:A 1:B</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gas</span>
+<span class="w">  </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:A+ 1:B-</span>
+<span class="w">    </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">ConstLgK</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">lgKr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">New Format</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Elements</span><span class="p">:</span>
-  <span class="nt">A</span><span class="p">:</span>
-    <span class="nt">Symbol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A</span>
-    <span class="nt">MolarMass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.001</span>  <span class="c1"># in kg/mol</span>
-  <span class="nt">B</span><span class="p">:</span>
-    <span class="nt">Symbol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B</span>
-    <span class="nt">MolarMass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.002</span>  <span class="c1"># in kg/mol</span>
+<span class="w">  </span><span class="nt">A</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Symbol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="w">    </span><span class="nt">MolarMass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.001</span><span class="w">  </span><span class="c1"># in kg/mol</span>
+<span class="w">  </span><span class="nt">B</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Symbol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B</span>
+<span class="w">    </span><span class="nt">MolarMass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.002</span><span class="w">  </span><span class="c1"># in kg/mol</span>
 
 <span class="nt">Species</span><span class="p">:</span>
-  <span class="nt">A+</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A+</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A+</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A</span>
-    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
-    <span class="nt">StandardThermoModel</span><span class="p">:</span>
-      <span class="nt">Constant</span><span class="p">:</span>
-        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
-  <span class="nt">B-</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B-</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">B-</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:B</span>
-    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
-    <span class="nt">StandardThermoModel</span><span class="p">:</span>
-      <span class="nt">Constant</span><span class="p">:</span>
-        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
-  <span class="nt">AB</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AB</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AB</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A 1:B</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Gas</span>
-    <span class="nt">FormationReaction</span><span class="p">:</span>
-      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:A+ 1:B-</span>
-      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-        <span class="nt">ConstLgK</span><span class="p">:</span>
-          <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+<span class="w">  </span><span class="nt">A+</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A+</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A+</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:A</span>
+<span class="w">    </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gas</span>
+<span class="w">    </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="w">  </span><span class="nt">B-</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B-</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">B-</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:B</span>
+<span class="w">    </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gas</span>
+<span class="w">    </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="w">  </span><span class="nt">AB</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AB</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AB</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:A 1:B</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gas</span>
+<span class="w">    </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:A+ 1:B-</span>
+<span class="w">      </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ConstLgK</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">lgKr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0</span>
 </pre></div>
 </div>
 </div>
@@ -1021,21 +1025,21 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;db-fictitious-simple.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;db-fictitious-simple.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;A+ B- AB&quot;</span><span class="p">)</span>
+<span class="n">gases</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;A+ B- AB&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1077,184 +1081,184 @@ FINAL STATE
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-more-complicated-custom-thermodynamic-database-in-yaml-format">
+</section>
+<section id="a-more-complicated-custom-thermodynamic-database-in-yaml-format">
 <h2>A more complicated custom thermodynamic database in YAML format<a class="headerlink" href="#a-more-complicated-custom-thermodynamic-database-in-yaml-format" title="Permalink to this headline">#</a></h2>
 <p>We now consider a more complicated database in which thermodynamic reaction properties available in the PHREEQC database <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> were collected and ported to Reaktoro’s YAML format. The database is shown below:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Old Format</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Species</span><span class="p">:</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H+</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H+</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H</span>
-  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">StandardThermoModel</span><span class="p">:</span>
-    <span class="nt">Constant</span><span class="p">:</span>
-      <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">OH-</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">OH-</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:O 1:H</span>
-  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">StandardThermoModel</span><span class="p">:</span>
-    <span class="nt">Constant</span><span class="p">:</span>
-      <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:C 3:O</span>
-  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-2.0</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">StandardThermoModel</span><span class="p">:</span>
-    <span class="nt">Constant</span><span class="p">:</span>
-      <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:Ca</span>
-  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">StandardThermoModel</span><span class="p">:</span>
-    <span class="nt">Interpolation</span><span class="p">:</span>
-      <span class="nt">Temperatures</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">298.15</span><span class="p p-Indicator">,</span> <span class="nv">350.0</span><span class="p p-Indicator">,</span> <span class="nv">400.0</span><span class="p p-Indicator">]</span>  <span class="c1"># in K</span>
-      <span class="nt">Pressures</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">1.0e+5</span><span class="p p-Indicator">,</span> <span class="nv">10.0e+5</span><span class="p p-Indicator">]</span>          <span class="c1"># in Pa</span>
-      <span class="nt">G0</span><span class="p">:</span> <span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">],</span> <span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]]</span>
-      <span class="nt">H0</span><span class="p">:</span> <span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">],</span> <span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]]</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2:H 1:O</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">FormationReaction</span><span class="p">:</span>
-    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H+ 1:OH-</span>
-    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-      <span class="nt">PhreeqcLgK</span><span class="p">:</span>
-        <span class="nt">A1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-293.29227</span>
-        <span class="nt">A2</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-0.1360833</span>
-        <span class="nt">A3</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10576.913</span>
-        <span class="nt">A4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">123.73158</span>
-        <span class="nt">A5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
-        <span class="nt">A6</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6.996455e-5</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
-  <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">FormationReaction</span><span class="p">:</span>
-    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:H+</span>
-    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-      <span class="nt">VantHoff</span><span class="p">:</span>
-        <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.329</span>
-        <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-14899.224</span>  <span class="c1"># in J/mol</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:C 2:O</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-  <span class="nt">FormationReaction</span><span class="p">:</span>
-    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 2:H+ -1:H2O</span>
-    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-      <span class="nt">ConstLgK</span><span class="p">:</span>
-        <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16.681</span>
-<span class="p p-Indicator">-</span> <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Calcite</span>
-  <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CaCO3</span>
-  <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:Ca 1:C 3:O</span>
-  <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Solid</span>
-  <span class="nt">FormationReaction</span><span class="p">:</span>
-    <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:Ca+2</span>
-    <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-      <span class="nt">VantHoff</span><span class="p">:</span>
-        <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8.48</span>
-        <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10832.376</span>  <span class="c1"># in J/mol</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H+</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H+</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:H</span>
+<span class="w">  </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">  </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OH-</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OH-</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:O 1:H</span>
+<span class="w">  </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">  </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:C 3:O</span>
+<span class="w">  </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-2.0</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">  </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:Ca</span>
+<span class="w">  </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">  </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Interpolation</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Temperatures</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">298.15</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">350.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">400.0</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># in K</span>
+<span class="w">      </span><span class="nt">Pressures</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.0e+5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10.0e+5</span><span class="p p-Indicator">]</span><span class="w">          </span><span class="c1"># in Pa</span>
+<span class="w">      </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">]]</span>
+<span class="w">      </span><span class="nt">H0</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">]]</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H2O</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H2O</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2:H 1:O</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">  </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:H+ 1:OH-</span>
+<span class="w">    </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">PhreeqcLgK</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">A1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-293.29227</span>
+<span class="w">        </span><span class="nt">A2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-0.1360833</span>
+<span class="w">        </span><span class="nt">A3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10576.913</span>
+<span class="w">        </span><span class="nt">A4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123.73158</span>
+<span class="w">        </span><span class="nt">A5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="w">        </span><span class="nt">A6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.996455e-5</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
+<span class="w">  </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">  </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:H+</span>
+<span class="w">    </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">VantHoff</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">lgKr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.329</span>
+<span class="w">        </span><span class="nt">dHr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-14899.224</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO2</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO2</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:C 2:O</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">  </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:CO3-2 2:H+ -1:H2O</span>
+<span class="w">    </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">ConstLgK</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">lgKr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16.681</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Calcite</span>
+<span class="w">  </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CaCO3</span>
+<span class="w">  </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:Ca 1:C 3:O</span>
+<span class="w">  </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Solid</span>
+<span class="w">  </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:Ca+2</span>
+<span class="w">    </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">VantHoff</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">lgKr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.48</span>
+<span class="w">        </span><span class="nt">dHr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10832.376</span><span class="w">  </span><span class="c1"># in J/mol</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">New Format</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Species</span><span class="p">:</span>
-  <span class="nt">H+</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H+</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H+</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H</span>
-    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-    <span class="nt">StandardThermoModel</span><span class="p">:</span>
-      <span class="nt">Constant</span><span class="p">:</span>
-        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
-  <span class="nt">OH-</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">OH-</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">OH-</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:O 1:H</span>
-    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-    <span class="nt">StandardThermoModel</span><span class="p">:</span>
-      <span class="nt">Constant</span><span class="p">:</span>
-        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>  <span class="c1"># in J/mol</span>
-  <span class="nt">CO3-2</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:C 3:O</span>
-    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-2.0</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-    <span class="nt">StandardThermoModel</span><span class="p">:</span>
-      <span class="nt">Constant</span><span class="p">:</span>
-        <span class="nt">G0</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
-  <span class="nt">H2O</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">H2O</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2:H 1:O</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-    <span class="nt">FormationReaction</span><span class="p">:</span>
-      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H+ 1:OH-</span>
-      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-        <span class="nt">ConstLgK</span><span class="p">:</span>
-          <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">14.0</span>
-  <span class="nt">HCO3-</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
-    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-1.0</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-    <span class="nt">FormationReaction</span><span class="p">:</span>
-      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:H+</span>
-      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-        <span class="nt">VantHoff</span><span class="p">:</span>
-          <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.329</span>
-          <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-14899.224</span>  <span class="c1"># in J/mol</span>
-  <span class="nt">CO2</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CO2</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-    <span class="nt">FormationReaction</span><span class="p">:</span>
-      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 2:H+ -1:H2O</span>
-      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-        <span class="nt">PhreeqcLgK</span><span class="p">:</span>
-          <span class="nt">A1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">464.1965</span>
-          <span class="nt">A2</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.09344813</span>
-          <span class="nt">A3</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-26986.16</span>
-          <span class="nt">A4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-165.75951</span>
-          <span class="nt">A5</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2248628.9</span>
-          <span class="nt">A6</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0</span>
-  <span class="nt">Ca+2</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:Ca</span>
-    <span class="nt">Charge</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
-    <span class="nt">StandardThermoModel</span><span class="p">:</span>
-      <span class="nt">Interpolation</span><span class="p">:</span>
-        <span class="nt">Temperatures</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">298.15</span><span class="p p-Indicator">,</span> <span class="nv">350.0</span><span class="p p-Indicator">,</span> <span class="nv">400.0</span><span class="p p-Indicator">]</span>  <span class="c1"># in K</span>
-        <span class="nt">Pressures</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">1.0e+5</span><span class="p p-Indicator">,</span> <span class="nv">10.0e+5</span><span class="p p-Indicator">]</span>          <span class="c1"># in Pa</span>
-        <span class="nt">G0</span><span class="p">:</span> <span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">],</span> <span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]]</span>
-        <span class="nt">H0</span><span class="p">:</span> <span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">],</span> <span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">,</span> <span class="nv">0.0</span><span class="p p-Indicator">]]</span>
-  <span class="nt">Calcite</span><span class="p">:</span>
-    <span class="nt">Name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Calcite</span>
-    <span class="nt">Formula</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CaCO3</span>
-    <span class="nt">Elements</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:Ca 1:C 3:O</span>
-    <span class="nt">AggregateState</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Solid</span>
-    <span class="nt">FormationReaction</span><span class="p">:</span>
-      <span class="nt">Reactants</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:Ca+2</span>
-      <span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
-        <span class="nt">VantHoff</span><span class="p">:</span>
-          <span class="nt">lgKr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8.48</span>
-          <span class="nt">dHr</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10832.376</span>  <span class="c1"># in J/mol</span>
+<span class="w">  </span><span class="nt">H+</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H+</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H+</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:H</span>
+<span class="w">    </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">    </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="w">  </span><span class="nt">OH-</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OH-</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OH-</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:O 1:H</span>
+<span class="w">    </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">    </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="w">  </span><span class="nt">CO3-2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO3-2</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:C 3:O</span>
+<span class="w">    </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-2.0</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">    </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Constant</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="w">  </span><span class="nt">H2O</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H2O</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">H2O</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2:H 1:O</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">    </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:H+ 1:OH-</span>
+<span class="w">      </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ConstLgK</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">lgKr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14.0</span>
+<span class="w">  </span><span class="nt">HCO3-</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HCO3-</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
+<span class="w">    </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1.0</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">    </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:H+</span>
+<span class="w">      </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">VantHoff</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">lgKr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.329</span>
+<span class="w">          </span><span class="nt">dHr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-14899.224</span><span class="w">  </span><span class="c1"># in J/mol</span>
+<span class="w">  </span><span class="nt">CO2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO2</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CO2</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:H 1:C 3:O</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">    </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:CO3-2 2:H+ -1:H2O</span>
+<span class="w">      </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">PhreeqcLgK</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">A1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">464.1965</span>
+<span class="w">          </span><span class="nt">A2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.09344813</span>
+<span class="w">          </span><span class="nt">A3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-26986.16</span>
+<span class="w">          </span><span class="nt">A4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-165.75951</span>
+<span class="w">          </span><span class="nt">A5</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2248628.9</span>
+<span class="w">          </span><span class="nt">A6</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="w">  </span><span class="nt">Ca+2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ca+2</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:Ca</span>
+<span class="w">    </span><span class="nt">Charge</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aqueous</span>
+<span class="w">    </span><span class="nt">StandardThermoModel</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Interpolation</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">Temperatures</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">298.15</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">350.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">400.0</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># in K</span>
+<span class="w">        </span><span class="nt">Pressures</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.0e+5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10.0e+5</span><span class="p p-Indicator">]</span><span class="w">          </span><span class="c1"># in Pa</span>
+<span class="w">        </span><span class="nt">G0</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">]]</span>
+<span class="w">        </span><span class="nt">H0</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">]]</span>
+<span class="w">  </span><span class="nt">Calcite</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Calcite</span>
+<span class="w">    </span><span class="nt">Formula</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CaCO3</span>
+<span class="w">    </span><span class="nt">Elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:Ca 1:C 3:O</span>
+<span class="w">    </span><span class="nt">AggregateState</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Solid</span>
+<span class="w">    </span><span class="nt">FormationReaction</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Reactants</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1:CO3-2 1:Ca+2</span>
+<span class="w">      </span><span class="nt">ReactionStandardThermoModel</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">VantHoff</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">lgKr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.48</span>
+<span class="w">          </span><span class="nt">dHr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10832.376</span><span class="w">  </span><span class="c1"># in J/mol</span>
 </pre></div>
 </div>
 </div>
@@ -1264,21 +1268,21 @@ FINAL STATE
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;db-geo-complicated.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;db-geo-complicated.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
-<span class="n">mineral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
+<span class="n">mineral</span> <span class="o">=</span> <span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">mineral</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">mineral</span><span class="p">)</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE USING CUSTOM DATABASE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1317,21 +1321,21 @@ FINAL STATE
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
-<span class="n">mineral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
+<span class="n">mineral</span> <span class="o">=</span> <span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">mineral</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">mineral</span><span class="p">)</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE USING PHREEQC.DAT&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1366,8 +1370,8 @@ FINAL STATE
 </div>
 </div>
 <p>The amounts of species above should be comparable. Not identical, because for some species in our custom database, we are not using the same calculation mode for equilibrium constants (e.g. in our custom database we use a certain value for <span class="math notranslate nohighlight">\(\lg K\)</span> for <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, 16.681, while in <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> an analytic expression is used).</p>
-</div>
-<div class="section" id="a-very-simple-custom-thermodynamic-database-using-python-api">
+</section>
+<section id="a-very-simple-custom-thermodynamic-database-using-python-api">
 <h2>A very simple custom thermodynamic database using Python API<a class="headerlink" href="#a-very-simple-custom-thermodynamic-database-using-python-api" title="Permalink to this headline">#</a></h2>
 <p>We will now construct a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object using Reaktoro’s Python API only (no YAML files!). This is a more complicated way to construct a custom <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1Database.html"><code class="docutils literal notranslate"><span class="pre">Database</span></code></a> object, but maybe this guide can be helpful to you in ways we cannot foresee now.</p>
 <p>We want to construct a database to model the equilibrium of <code class="docutils literal notranslate"><span class="pre">H2O</span></code>, <code class="docutils literal notranslate"><span class="pre">H+</span></code>, and <code class="docutils literal notranslate"><span class="pre">OH-</span></code>. The elements composing these species are <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">O</span></code>.</p>
@@ -1375,17 +1379,17 @@ FINAL STATE
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createElementList</span><span class="p">():</span>
-    <span class="n">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ElementList</span><span class="p">()</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="n">ElementList</span><span class="p">()</span>
 
-    <span class="n">elements</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Element</span><span class="p">()</span>
-        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;Hydrogen&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withSymbol</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withMolarMass</span><span class="p">(</span><span class="mf">1.0e-3</span><span class="p">))</span>
+    <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Element</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;Hydrogen&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withSymbol</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withMolarMass</span><span class="p">(</span><span class="mf">1.0e-3</span><span class="p">))</span>
 
-    <span class="n">elements</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Element</span><span class="p">()</span>
-        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;Oxygen&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withSymbol</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withMolarMass</span><span class="p">(</span><span class="mf">16.0e-3</span><span class="p">))</span>
+    <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Element</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;Oxygen&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withSymbol</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withMolarMass</span><span class="p">(</span><span class="mf">16.0e-3</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">elements</span>
 </pre></div>
@@ -1399,39 +1403,39 @@ FINAL STATE
     
     <span class="c1"># Create the primary species (used to define the secondary species)</span>
 
-    <span class="n">primaryspecies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SpeciesList</span><span class="p">()</span>
+    <span class="n">primaryspecies</span> <span class="o">=</span> <span class="n">SpeciesList</span><span class="p">()</span>
 
-    <span class="n">primaryspecies</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
-        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withFormula</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withCharge</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span>  <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
-        <span class="o">.</span><span class="nf">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withStandardGibbsEnergy</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">primaryspecies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withFormula</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withCharge</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span>  <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
+        <span class="o">.</span><span class="n">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withStandardGibbsEnergy</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
 
-    <span class="n">primaryspecies</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
-        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withFormula</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withCharge</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
-        <span class="o">.</span><span class="nf">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withStandardGibbsEnergy</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">primaryspecies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withFormula</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withCharge</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
+        <span class="o">.</span><span class="n">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withStandardGibbsEnergy</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
 
     <span class="c1"># Create the secondary species (using formation reactions from primary species)</span>
 
     <span class="n">secondaryspecies</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="n">secondaryspecies</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
-        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withFormula</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
-        <span class="o">.</span><span class="nf">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">withFormationReaction</span><span class="p">(</span>
+    <span class="n">secondaryspecies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withFormula</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
+        <span class="o">.</span><span class="n">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">withFormationReaction</span><span class="p">(</span>
             <span class="n">FormationReaction</span><span class="p">()</span>
-                <span class="o">.</span><span class="nf">withReactants</span><span class="p">([</span>
-                    <span class="p">(</span><span class="n">primaryspecies</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
-                    <span class="p">(</span><span class="n">primaryspecies</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">])</span>
-                <span class="o">.</span><span class="nf">withEquilibriumConstant</span><span class="p">(</span><span class="mf">14.0</span><span class="p">)))</span>
+                <span class="o">.</span><span class="n">withReactants</span><span class="p">([</span>
+                    <span class="p">(</span><span class="n">primaryspecies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+                    <span class="p">(</span><span class="n">primaryspecies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">])</span>
+                <span class="o">.</span><span class="n">withEquilibriumConstant</span><span class="p">(</span><span class="mf">14.0</span><span class="p">)))</span>
 
     <span class="k">return</span> <span class="n">primaryspecies</span> <span class="o">+</span> <span class="n">secondaryspecies</span>  <span class="c1"># concatenate both species lists</span>
 </pre></div>
@@ -1442,9 +1446,9 @@ FINAL STATE
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createCustomDatabase</span><span class="p">():</span>
-    <span class="n">elements</span> <span class="o">=</span> <span class="nf">createElementList</span><span class="p">()</span>
-    <span class="n">species</span> <span class="o">=</span> <span class="nf">createSpeciesList</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">Database</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">data</span><span class="p">())</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="n">createElementList</span><span class="p">()</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="n">createSpeciesList</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Database</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">data</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1452,16 +1456,16 @@ FINAL STATE
 <p>We are now ready for our chemical equilibrium calculation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="nf">createCustomDatabase</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">createCustomDatabase</span><span class="p">()</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">()</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">()</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -1487,8 +1491,8 @@ FINAL STATE
 </div>
 </div>
 <p>That’s it! We managed to create a Reaktoro script entirely from scratch. From database creation to an equilibrium calculation.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1502,7 +1506,7 @@ FINAL STATE
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/advanced"
         },
         predefinedOutput: true

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Installation using CMake</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -882,7 +886,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="installation-using-cmake">
+  <section class="tex2jax_ignore mathjax_ignore" id="installation-using-cmake">
 <h1>Installation using CMake<a class="headerlink" href="#installation-using-cmake" title="Permalink to this headline">#</a></h1>
 <p>Reaktoro has several external software and library dependencies that need to be
 pre-installed for its successful compilation and installation using
@@ -897,7 +901,7 @@ proceeding with the instructions below.</p>
 Reaktoro from source, you’ll need to manually install all dependencies listed
 in the file <a class="reference external" href="https://github.com/reaktoro/reaktoro/blob/main/environment.devenv.yml"><code class="docutils literal notranslate"><span class="pre">environment.devenv.yml</span></code></a>.</p>
 </div>
-<div class="section" id="installing-conda-devenv">
+<section id="installing-conda-devenv">
 <h2>Installing conda-devenv<a class="headerlink" href="#installing-conda-devenv" title="Permalink to this headline">#</a></h2>
 <p>Reaktoro relies on <a class="reference external" href="https://github.com/ESSS/conda-devenv">conda-devenv</a>, a tool
 that conveniently allows us to manage different software dependencies across
@@ -909,8 +913,8 @@ for each system.</p>
 </pre></div>
 </div>
 <p>to install conda-devenv in the <code class="docutils literal notranslate"><span class="pre">base</span></code> conda environment.</p>
-</div>
-<div class="section" id="downloading-reaktoro-from-github">
+</section>
+<section id="downloading-reaktoro-from-github">
 <h2>Downloading Reaktoro from GitHub<a class="headerlink" href="#downloading-reaktoro-from-github" title="Permalink to this headline">#</a></h2>
 <p>We need now to download the source code of Reaktoro, which is hosted on
 <a class="reference external" href="https://github.com/reaktoro/reaktoro">GitHub</a>. This can be done by either
@@ -929,8 +933,8 @@ in a directory of your choice. We assume the unzipped folder is named
 <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> for the next installation steps, and not <code class="docutils literal notranslate"><span class="pre">reaktoro-main</span></code>! If you
 are deloping Reaktoro, make sure you use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> instead.</p>
 </div>
-</div>
-<div class="section" id="installing-reaktoro-s-software-dependencies">
+</section>
+<section id="installing-reaktoro-s-software-dependencies">
 <h2>Installing Reaktoro’s software dependencies<a class="headerlink" href="#installing-reaktoro-s-software-dependencies" title="Permalink to this headline">#</a></h2>
 <p>Before building Reaktoro, we need to install all software dependencies needed
 during the build process. We do not want, however, all these dependencies polluting our system and possibly causing conflicts and/or corrupting existing software.</p>
@@ -948,8 +952,8 @@ during the build process. We do not want, however, all these dependencies pollut
 dependencies changes or some configuration in the conda environment <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code>
 is altered.</p>
 </div>
-</div>
-<div class="section" id="building-and-installing-reaktoro-with-cmake">
+</section>
+<section id="building-and-installing-reaktoro-with-cmake">
 <h2>Building and installing Reaktoro with CMake<a class="headerlink" href="#building-and-installing-reaktoro-with-cmake" title="Permalink to this headline">#</a></h2>
 <p>Before using <code class="docutils literal notranslate"><span class="pre">cmake</span></code> to configure, build, and install Reaktoro, you need to
 <strong>activate the conda environment</strong> <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> that the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">devenv</span></code> command
@@ -975,7 +979,7 @@ executing (assuming you are at the root of the reaktoro directory!):</p>
 <p class="admonition-title">Speed up linking time in Linux and macOS</p>
 <p>The created conda environment <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> on Linux and macOS should contain the <a class="reference external" href="https://lld.llvm.org/">LLVM linker <code class="docutils literal notranslate"><span class="pre">lld</span></code></a> which has been shown to be significantly faster than the <a class="reference external" href="https://linux.die.net/man/1/ld">GNU linker <code class="docutils literal notranslate"><span class="pre">ld</span></code></a> when linking Reaktoro’s C++ library, tests, examples and Python module.</p>
 <p>To enable it, execute the following cmake configure command instead of the previous one:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake -S . -B build -DCMAKE_CXX_FLAGS<span class="o">=</span><span class="s2">&quot;-fuse-ld=lld&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-DCMAKE_CXX_FLAGS<span class="o">=</span><span class="s2">&quot;-fuse-ld=lld&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1005,8 +1009,8 @@ executing (assuming you are at the root of the reaktoro directory!):</p>
 <p>In Windows, if you are using Microsoft Visual Studio, you’ll need to ensure a <strong>Release</strong> build because some library dependencies in Reaktoro do not interact well with Reaktoro built in Debug mode (e.g., <code class="docutils literal notranslate"><span class="pre">yaml-cpp</span></code>).</p>
 <p><strong>This is not an issue for Linux and macOS systems.</strong></p>
 </div>
-</div>
-<div class="section" id="running-reaktoro-s-tests">
+</section>
+<section id="running-reaktoro-s-tests">
 <h2>Running Reaktoro’s tests<a class="headerlink" href="#running-reaktoro-s-tests" title="Permalink to this headline">#</a></h2>
 <p>Reaktoro contains hundreds of tests and thousands of assertions to ensure that
 everything has been implemented correctly. There are tests implemented in both
@@ -1046,8 +1050,8 @@ tests fail, there is a chance this is a result of an accidental Debug build in
 Windows instead of Release when using Microsoft Visual Studio. See previous
 section.</p>
 </div>
-</div>
-<div class="section" id="building-and-running-reaktoro-s-c-examples">
+</section>
+<section id="building-and-running-reaktoro-s-c-examples">
 <h2>Building and running Reaktoro’s C++ examples<a class="headerlink" href="#building-and-running-reaktoro-s-c-examples" title="Permalink to this headline">#</a></h2>
 <p>Reaktoro contains many examples in C++ demonstrating its usage for various
 applications. These examples live in the directory
@@ -1067,8 +1071,8 @@ generated by CMake in the build directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">build</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">cpp</span><span class="o">/</span><span class="n">ex</span><span class="o">-</span><span class="n">equilibrium</span><span class="o">-</span><span class="n">fixed</span><span class="o">-</span><span class="n">ph</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-reaktoro-s-python-examples">
+</section>
+<section id="running-reaktoro-s-python-examples">
 <h2>Running Reaktoro’s Python examples<a class="headerlink" href="#running-reaktoro-s-python-examples" title="Permalink to this headline">#</a></h2>
 <p>Reaktoro also contains many examples written in Python that can be found in the
 directory
@@ -1106,8 +1110,8 @@ follows (ensure you are in the root directory of Reaktoro’s source code!):</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="installing-reaktoro-after-it-has-been-built">
+</section>
+<section id="installing-reaktoro-after-it-has-been-built">
 <h2>Installing Reaktoro after it has been built<a class="headerlink" href="#installing-reaktoro-after-it-has-been-built" title="Permalink to this headline">#</a></h2>
 <p>You may want to install Reaktoro in a directory of your choice after building
 it with <code class="docutils literal notranslate"><span class="pre">cmake</span></code>. You can do so by first specifying where to install:</p>
@@ -1138,15 +1142,15 @@ it with <code class="docutils literal notranslate"><span class="pre">cmake</span
 </div>
 <p>This step will install Reaktoro’s C++ header files, libraries, executables,
 and the Python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> in the specified installation path.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="please-help-me-installing-reaktoro">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="please-help-me-installing-reaktoro">
 <h1>Please help me installing Reaktoro!<a class="headerlink" href="#please-help-me-installing-reaktoro" title="Permalink to this headline">#</a></h1>
 <p>If you have problems with the instructions above and after investigating the
 problem even more, you couldn’t find a solution (for example, it might just be a
 common <code class="docutils literal notranslate"><span class="pre">cmake</span></code> problem for which there is already a solution on the internet),
 <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">please contact us</a>.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1160,7 +1164,7 @@ common <code class="docutils literal notranslate"><span class="pre">cmake</span>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./installation"
         },
         predefinedOutput: true

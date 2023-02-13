@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Chemical equilibrium with fixed fugacity</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -51,8 +55,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://reaktoro.org/tutorials/equilibrium/equilibrium-with-fixed-fugacity.html" />
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -119,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -800,7 +804,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="chemical-equilibrium-with-fixed-fugacity">
+  <section class="tex2jax_ignore mathjax_ignore" id="chemical-equilibrium-with-fixed-fugacity">
 <h1>Chemical equilibrium with fixed fugacity<a class="headerlink" href="#chemical-equilibrium-with-fixed-fugacity" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022</p>
 <p>This tutorial demonstrates the calculation of calcite (CaCO<sub>3</sub>) solubility in a saline aqueous solution for given fugacity of CO<sub>2</sub>.</p>
@@ -809,14 +813,14 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">reaktoro</span> <span class="k">as</span> <span class="nn">rkt</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">AqueousPhase</span><span class="p">(</span><span class="n">rkt</span><span class="p">.</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca&quot;</span><span class="p">))</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">rkt</span><span class="p">.</span><span class="nf">ActivityModelHKF</span><span class="p">())</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">AqueousPhase</span><span class="p">(</span><span class="n">rkt</span><span class="o">.</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca&quot;</span><span class="p">))</span>
+<span class="n">solution</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">rkt</span><span class="o">.</span><span class="n">ActivityModelHKF</span><span class="p">())</span>
 
-<span class="n">calcite</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
+<span class="n">calcite</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
 
-<span class="n">system</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">calcite</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">calcite</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -830,10 +834,10 @@ title="Print to PDF"
 <p>The next step is to create an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> containing the above constraint specifications for the chemical equilibrium calculation we want to perform.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
-<span class="n">specs</span><span class="p">.</span><span class="nf">fugacity</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
+<span class="n">specs</span><span class="o">.</span><span class="n">fugacity</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -845,7 +849,7 @@ title="Print to PDF"
 <p>Once we have created this specifications object, we can now create our dedicated and optimized equilibrium solver to solve equilibrium problems with such constraints, which is done next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -853,13 +857,13 @@ title="Print to PDF"
 <p>Let’s now create an initial chemical state for our chemical system, one that represents a 1 molal NaCl aqueous solution mixed with 10 g of calcite mineral. We do this next by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -873,10 +877,10 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fCO2g</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># 0.1 bar</span>
 
-<span class="n">conditions</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="p">.</span><span class="nf">fugacity</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">,</span> <span class="n">fCO2g</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="o">.</span><span class="n">fugacity</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">,</span> <span class="n">fCO2g</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -891,7 +895,7 @@ object of class <a class="reference external" href="https://reaktoro.org/api/cla
 <p>The code below will perform the equilibrium calculation and when it is finished, our <code class="docutils literal notranslate"><span class="pre">state</span></code> object will be in a chemical equilibrium state:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -922,7 +926,7 @@ object of class <a class="reference external" href="https://reaktoro.org/api/cla
 +---------------------+-------------+------+
 | Temperature         |    323.1500 |    K |
 | Pressure            |     10.0000 |  bar |
-| Charge:             | -3.1319e-17 |  mol |
+| Charge:             | -1.0429e-16 |  mol |
 | Element Amount:     |             |      |
 | :: H                |  1.1101e+02 |  mol |
 | :: C                |  1.0692e-01 |  mol |
@@ -935,7 +939,7 @@ object of class <a class="reference external" href="https://reaktoro.org/api/cla
 | :: H+               |  2.5243e-07 |  mol |
 | :: H2O              |  5.5501e+01 |  mol |
 | :: CO2              |  1.5215e-03 |  mol |
-| :: (CO2)2           |  1.0000e-16 |  mol |
+| :: (CO2)2           |  1.0984e-07 |  mol |
 | :: HCO3-            |  9.2960e-03 |  mol |
 | :: CH4              |  1.0000e-16 |  mol |
 | :: Ca+2             |  5.5259e-03 |  mol |
@@ -961,7 +965,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 <p>Let’s now have a more in-depth look at the chemical state of the system by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> and printing it:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -973,12 +977,12 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | Temperature                            |     323.1500 |         K |
 | Pressure                               |      10.0000 |       bar |
 | Volume                                 |   1.0330e-03 |        m3 |
-| Gibbs Energy                           |   -5891.6218 |         J |
-| Enthalpy                               |    1596.7091 |         J |
-| Entropy                                |      23.1729 |       J/K |
-| Internal Energy                        |     563.7590 |         J |
-| Helmholtz Energy                       |   -6924.5719 |         J |
-| Charge                                 |  -3.1319e-17 |       mol |
+| Gibbs Energy                           |   -5891.6432 |         J |
+| Enthalpy                               |    1596.7097 |         J |
+| Entropy                                |      23.1730 |       J/K |
+| Internal Energy                        |     563.7595 |         J |
+| Helmholtz Energy                       |   -6924.5933 |         J |
+| Charge                                 |  -1.0429e-16 |       mol |
 | Element Amount:                        |              |           |
 | :: H                                   |   1.1101e+02 |       mol |
 | :: C                                   |   1.0692e-01 |       mol |
@@ -991,7 +995,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |   2.5243e-07 |       mol |
 | :: H2O                                 |   5.5501e+01 |       mol |
 | :: CO2                                 |   1.5215e-03 |       mol |
-| :: (CO2)2                              |   1.0000e-16 |       mol |
+| :: (CO2)2                              |   1.0984e-07 |       mol |
 | :: HCO3-                               |   9.2960e-03 |       mol |
 | :: CH4                                 |   1.0000e-16 |       mol |
 | :: Ca+2                                |   5.5259e-03 |       mol |
@@ -1012,7 +1016,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |   4.3888e-09 |   mol/mol |
 | :: H2O                                 |   9.6494e-01 |   mol/mol |
 | :: CO2                                 |   2.6452e-05 |   mol/mol |
-| :: (CO2)2                              |   1.7386e-18 |   mol/mol |
+| :: (CO2)2                              |   1.9097e-09 |   mol/mol |
 | :: HCO3-                               |   1.6162e-04 |   mol/mol |
 | :: CH4                                 |   1.7386e-18 |   mol/mol |
 | :: Ca+2                                |   9.6074e-05 |   mol/mol |
@@ -1054,7 +1058,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |   1.6027e-07 |         - |
 | :: H2O                                 |   9.6605e-01 |         - |
 | :: CO2                                 |   1.9231e-03 |         - |
-| :: (CO2)2                              |   1.2640e-16 |         - |
+| :: (CO2)2                              |   1.3884e-07 |         - |
 | :: HCO3-                               |   6.0597e-03 |         - |
 | :: CH4                                 |   1.2640e-16 |         - |
 | :: Ca+2                                |   8.6759e-04 |         - |
@@ -1075,7 +1079,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |      -6.7952 |         - |
 | :: H2O                                 |      -0.0150 |         - |
 | :: CO2                                 |      -2.7160 |         - |
-| :: (CO2)2                              |     -15.8983 |         - |
+| :: (CO2)2                              |      -6.8575 |         - |
 | :: HCO3-                               |      -2.2176 |         - |
 | :: CH4                                 |     -15.8983 |         - |
 | :: Ca+2                                |      -3.0617 |         - |
@@ -1096,7 +1100,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |     -15.6464 |         - |
 | :: H2O                                 |      -0.0345 |         - |
 | :: CO2                                 |      -6.2538 |         - |
-| :: (CO2)2                              |     -36.6071 |         - |
+| :: (CO2)2                              |     -15.7900 |         - |
 | :: HCO3-                               |      -5.1061 |         - |
 | :: CH4                                 |     -36.6071 |         - |
 | :: Ca+2                                |      -7.0498 |         - |
@@ -1117,7 +1121,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |  -4.2039e+04 |     J/mol |
 | :: H2O                                 |  -9.2799e+01 |     J/mol |
 | :: CO2                                 |  -1.1858e+05 |     J/mol |
-| :: (CO2)2                              |  -8.9464e+04 |     J/mol |
+| :: (CO2)2                              |  -2.3717e+05 |     J/mol |
 | :: HCO3-                               |  -7.6637e+04 |     J/mol |
 | :: CH4                                 |  -3.3095e+05 |     J/mol |
 | :: Ca+2                                |  -1.8942e+04 |     J/mol |
@@ -1159,7 +1163,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |       0.0000 |     J/mol |
 | :: H2O                                 |       0.0000 |     J/mol |
 | :: CO2                                 | -101779.9097 |     J/mol |
-| :: (CO2)2                              |    8892.6532 |     J/mol |
+| :: (CO2)2                              | -194740.8830 |     J/mol |
 | :: HCO3-                               |  -62917.3432 |     J/mol |
 | :: CH4                                 | -232589.1677 |     J/mol |
 | :: Ca+2                                |       0.0000 |     J/mol |
@@ -1180,7 +1184,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |       0.0000 |     J/mol |
 | :: H2O                                 |       0.0000 |     J/mol |
 | :: CO2                                 |   -8283.0231 |     J/mol |
-| :: (CO2)2                              |   21408.8823 |     J/mol |
+| :: (CO2)2                              |    4769.1192 |     J/mol |
 | :: HCO3-                               |   -7690.6772 |     J/mol |
 | :: CH4                                 | -255299.6623 |     J/mol |
 | :: Ca+2                                |       0.0000 |     J/mol |
@@ -1201,7 +1205,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
 | :: CO2                                 |     289.3297 | J/(mol*K) |
-| :: (CO2)2                              |      38.7319 | J/(mol*K) |
+| :: (CO2)2                              |     617.3913 | J/(mol*K) |
 | :: HCO3-                               |     170.9010 | J/(mol*K) |
 | :: CH4                                 |     -70.2785 | J/(mol*K) |
 | :: Ca+2                                |       0.0000 | J/(mol*K) |
@@ -1222,7 +1226,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |       0.0000 |     J/mol |
 | :: H2O                                 |     -18.2272 |     J/mol |
 | :: CO2                                 |   -8318.6737 |     J/mol |
-| :: (CO2)2                              |   21337.5812 |     J/mol |
+| :: (CO2)2                              |    4697.8181 |     J/mol |
 | :: HCO3-                               |   -7716.3518 |     J/mol |
 | :: CH4                                 | -255336.9980 |     J/mol |
 | :: Ca+2                                |      18.2893 |     J/mol |
@@ -1243,7 +1247,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |       0.0000 |     J/mol |
 | :: H2O                                 |     -18.2272 |     J/mol |
 | :: CO2                                 | -101815.5602 |     J/mol |
-| :: (CO2)2                              |    8821.3521 |     J/mol |
+| :: (CO2)2                              | -194812.1840 |     J/mol |
 | :: HCO3-                               |  -62943.0177 |     J/mol |
 | :: CH4                                 | -232626.5034 |     J/mol |
 | :: Ca+2                                |      18.2893 |     J/mol |
@@ -1264,7 +1268,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
 | :: CO2                                 |     602.5539 | J/(mol*K) |
-| :: (CO2)2                              |    -127.4445 | J/(mol*K) |
+| :: (CO2)2                              |    1077.6633 | J/(mol*K) |
 | :: HCO3-                               |     285.5330 | J/(mol*K) |
 | :: CH4                                 |       0.0000 | J/(mol*K) |
 | :: Ca+2                                |       0.0000 | J/(mol*K) |
@@ -1285,7 +1289,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: H+                                  |       0.0000 | J/(mol*K) |
 | :: H2O                                 |       0.0000 | J/(mol*K) |
 | :: CO2                                 |     602.5539 | J/(mol*K) |
-| :: (CO2)2                              |    -127.4445 | J/(mol*K) |
+| :: (CO2)2                              |    1077.6633 | J/(mol*K) |
 | :: HCO3-                               |     285.5330 | J/(mol*K) |
 | :: CH4                                 |       0.0000 | J/(mol*K) |
 | :: Ca+2                                |       0.0000 | J/(mol*K) |
@@ -1311,7 +1315,7 @@ species, their chemical potentials, and standard thermodynamic properties.</p>
 <p>For properties more pertinent to aqueous solutions, we can create an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">aprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1327,7 +1331,7 @@ species, their chemical potentials, and standard thermodynamic properties.</p>
 | pH                                |      6.7952 |       |
 | pE                                |     -2.5006 |       |
 | Eh                                |     -0.1603 |     V |
-| Charge Molality                   | -3.1322e-17 | molal |
+| Charge Molality                   | -1.0430e-16 | molal |
 | Element Molality:                 |             |       |
 | :: C                              |  1.2680e-02 | molal |
 | :: Na                             |  1.0001e+00 | molal |
@@ -1337,7 +1341,7 @@ species, their chemical potentials, and standard thermodynamic properties.</p>
 | :: CO3-2                          |  1.5612e-05 | molal |
 | :: H+                             |  2.5247e-07 | molal |
 | :: CO2                            |  1.5217e-03 | molal |
-| :: (CO2)2                         |  1.0001e-16 | molal |
+| :: (CO2)2                         |  1.0986e-07 | molal |
 | :: HCO3-                          |  9.2973e-03 | molal |
 | :: CH4                            |  1.0001e-16 | molal |
 | :: Ca+2                           |  5.5267e-03 | molal |
@@ -1385,12 +1389,12 @@ chemical system. For this property, we can compute it at specified temperature a
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
 
 <span class="n">R</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">universalGasConstant</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
-<span class="n">P</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
 
-<span class="n">uCO2aq</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesChemicalPotential</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>
-<span class="n">u0CO2g</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">()</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">props</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span><span class="o">.</span><span class="n">G0</span>
-<span class="n">uCO2g</span>  <span class="o">=</span> <span class="n">u0CO2g</span> <span class="o">+</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="nf">log</span><span class="p">(</span><span class="n">fCO2g</span><span class="p">)</span>
+<span class="n">uCO2aq</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesChemicalPotential</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>
+<span class="n">u0CO2g</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span><span class="o">.</span><span class="n">G0</span>
+<span class="n">uCO2g</span>  <span class="o">=</span> <span class="n">u0CO2g</span> <span class="o">+</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">fCO2g</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;μCO2(aq) = </span><span class="si">{</span><span class="n">uCO2aq</span><span class="si">}</span><span class="s2"> J/mol&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;μCO2(g)  = </span><span class="si">{</span><span class="n">uCO2g</span><span class="si">}</span><span class="s2"> J/mol&quot;</span><span class="p">)</span>
@@ -1406,7 +1410,7 @@ chemical system. For this property, we can compute it at specified temperature a
 </div>
 <p>Note that both chemical potential values above are identical, meaning that the fugacity constraint was satisfied.</p>
 <p>With this, we conclude this tutorial, which demonstrates how Reaktoro can be used to solve chemical equilibrium problems with constrained gas fugacity, followed by a presentation of how to verify if the computed equilibrium state reflects the desired fugacity value.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1420,7 +1424,7 @@ chemical system. For this property, we can compute it at specified temperature a
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/equilibrium"
         },
         predefinedOutput: true

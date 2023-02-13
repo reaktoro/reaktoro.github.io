@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Installation using Conda</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -832,7 +836,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="installation-using-conda">
+  <section class="tex2jax_ignore mathjax_ignore" id="installation-using-conda">
 <h1>Installation using Conda<a class="headerlink" href="#installation-using-conda" title="Permalink to this headline">#</a></h1>
 <p>Reaktoro can be easily installed using <a class="reference external" href="https://conda.io/docs/">Conda</a>, a
 powerful package manager used to simplify Reaktoro’s installation and the
@@ -843,7 +847,7 @@ executing the following command in your terminal:</p>
 </pre></div>
 </div>
 <p>Follow the Conda installation steps shown next before you execute this command!</p>
-<div class="section" id="installing-conda">
+<section id="installing-conda">
 <span id="id1"></span><h2>Installing Conda<a class="headerlink" href="#installing-conda" title="Permalink to this headline">#</a></h2>
 <p>Conda can be installed by installing either
 <a class="reference external" href="https://www.anaconda.com/download">Anaconda</a> or
@@ -857,8 +861,8 @@ Installer</a> for your system.
 You’ll be able to choose installers for Windows, macOS, and Linux (32-bit or
 64-bit). We recommend the <strong>latest 64-bit Miniconda installer</strong> for your
 operating system.</p>
-</div>
-<div class="section" id="adding-conda-forge-channel">
+</section>
+<section id="adding-conda-forge-channel">
 <h2>Adding conda-forge channel<a class="headerlink" href="#adding-conda-forge-channel" title="Permalink to this headline">#</a></h2>
 <p>The Reaktoro pre-built package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is hosted on
 <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">conda-forge</a>. After installing
@@ -874,8 +878,8 @@ Miniconda, go to a terminal and execute:</p>
 </div>
 <p>but you may want to follow the recommendation in the next section to install
 Reaktoro in a new conda environment instead of the default <code class="docutils literal notranslate"><span class="pre">base</span></code> environment.</p>
-</div>
-<div class="section" id="install-reaktoro-in-a-new-conda-environment-optional">
+</section>
+<section id="install-reaktoro-in-a-new-conda-environment-optional">
 <h2>Install Reaktoro in a new conda environment (optional)<a class="headerlink" href="#install-reaktoro-in-a-new-conda-environment-optional" title="Permalink to this headline">#</a></h2>
 <p>Now that you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, either via Anaconda or Miniconda, you may
 want to create a <em>conda environment</em> in which the Python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is
@@ -974,13 +978,13 @@ Executing transaction: done
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="please-help-me-installing-reaktoro">
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="please-help-me-installing-reaktoro">
 <h1>Please help me installing Reaktoro!<a class="headerlink" href="#please-help-me-installing-reaktoro" title="Permalink to this headline">#</a></h1>
 <p>If you are having a hard time installing Reaktoro via <code class="docutils literal notranslate"><span class="pre">conda</span></code>,
 <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">please contact us</a></p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -994,7 +998,7 @@ Executing transaction: done
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./installation"
         },
         predefinedOutput: true

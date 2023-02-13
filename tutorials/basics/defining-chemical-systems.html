@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Defining chemical systems</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -51,8 +55,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://reaktoro.org/tutorials/basics/defining-chemical-systems.html" />
     <link rel="shortcut icon" href="../../_static/reaktoro-logo.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -119,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -867,7 +871,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="defining-chemical-systems">
+  <section class="tex2jax_ignore mathjax_ignore" id="defining-chemical-systems">
 <h1>Defining chemical systems<a class="headerlink" href="#defining-chemical-systems" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
 <p>Before performing chemical reaction calculations, such as chemical equilibrium and kinetics, we need to determine the phases that must be considered in the calculation and the chemical species that constitute these phases.</p>
@@ -888,7 +892,7 @@ title="Print to PDF"
 <p>We’ll learn more about activity models in a subsequent section and how to specify them for our phases.</p>
 </div>
 <p>Next, we will present how to construct a chemical system in Reaktoro for different applications.</p>
-<div class="section" id="chemical-system-definition-for-a-mineral-solubility-problem">
+<section id="chemical-system-definition-for-a-mineral-solubility-problem">
 <h2>Chemical system definition for a mineral solubility problem<a class="headerlink" href="#chemical-system-definition-for-a-mineral-solubility-problem" title="Permalink to this headline">#</a></h2>
 <p>Let’s consider the chemical equilibrium problem associated with calculating the solubility of halite (NaCl) in water. The code block below demonstrates how a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object is created with an aqueous and mineral phase.</p>
 <div class="cell docutils container">
@@ -896,16 +900,16 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Let&#39;s use one of PHREEQC&#39;s database</span>
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
 <span class="c1"># Define an aqueous solution with species that are pertinent to the problem</span>
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- Na+ Cl-&quot;</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- Na+ Cl-&quot;</span><span class="p">)</span>
 
 <span class="c1"># Because we want to compute the solubility of halite, a mineral phase is needed</span>
-<span class="n">halite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Halite&quot;</span><span class="p">)</span>
+<span class="n">halite</span> <span class="o">=</span> <span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Halite&quot;</span><span class="p">)</span>
 
 <span class="c1"># We can now create our ChemicalSystem object with the above phase specifications</span>
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">halite</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">halite</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -913,10 +917,10 @@ title="Print to PDF"
 <p>That’s it! With the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object created above, we can do some exciting things. For example, we can inspect the phases in the system and their composing chemical species:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">phase</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
-    <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">phase</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">phases</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">phase</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">phase</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -940,8 +944,8 @@ Halite
 <p>We can also inspect how the chemical species are ordered in the system:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -959,8 +963,8 @@ Halite
 <p>And inspect the chemical elements in the system:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">.</span><span class="nf">symbol</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">symbol</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -976,7 +980,7 @@ Cl
 <p>The <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class also contains the formula matrix <span class="math notranslate nohighlight">\(A\)</span> of the system, which is a matrix whose entry <span class="math notranslate nohighlight">\(A_{j,i}\)</span> contains the number of atoms of element with index <span class="math notranslate nohighlight">\(j\)</span> in species with index <span class="math notranslate nohighlight">\(i\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="p">.</span><span class="nf">formulaMatrix</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">formulaMatrix</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -995,8 +999,8 @@ Cl
 <p class="admonition-title">Tip</p>
 <p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code>!</p>
 </div>
-</div>
-<div class="section" id="chemical-system-definition-for-a-gas-solubility-problem">
+</section>
+<section id="chemical-system-definition-for-a-gas-solubility-problem">
 <h2>Chemical system definition for a gas solubility problem<a class="headerlink" href="#chemical-system-definition-for-a-gas-solubility-problem" title="Permalink to this headline">#</a></h2>
 <p>We now consider a chemical system of interest for the computation of CO<sub>2</sub> solubility in saline solutions. For this case, we will need an aqueous and gaseous phase:</p>
 <div class="cell docutils container">
@@ -1004,16 +1008,16 @@ Cl
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Let&#39;s use the SUPCRTBL database this time (its complete version that includes organic species)</span>
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl-organics&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl-organics&quot;</span><span class="p">)</span>
 
 <span class="c1"># Define an aqueous solution with automatic species collection for given selected elements</span>
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca C&quot;</span><span class="p">))</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca C&quot;</span><span class="p">))</span>
 
 <span class="c1"># Let Reaktoro automatically identify the gases by specifying an empty list of species below</span>
-<span class="n">gas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>
+<span class="n">gas</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">()</span>
 
 <span class="c1"># We can now create our ChemicalSystem object with the above phase specifications</span>
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1021,9 +1025,9 @@ Cl
 <p>Let’s print the species in the system, their names, formula, and molar mass:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;25}{:&lt;25}{:&lt;20}</span><span class="s2">&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Formula&quot;</span><span class="p">,</span> <span class="s2">&quot;Molar Mass (kg/mol)&quot;</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;25}{:&lt;25}{:&lt;20.6f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="nf">format</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">(),</span> <span class="n">species</span><span class="p">.</span><span class="nf">formula</span><span class="p">()</span><span class="o">.</span><span class="nf">str</span><span class="p">(),</span> <span class="n">species</span><span class="p">.</span><span class="nf">molarMass</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;25}{:&lt;25}{:&lt;20}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Formula&quot;</span><span class="p">,</span> <span class="s2">&quot;Molar Mass (kg/mol)&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;25}{:&lt;25}{:&lt;20.6f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <span class="n">species</span><span class="o">.</span><span class="n">formula</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="p">(),</span> <span class="n">species</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()))</span>
 </pre></div>
 </div>
 </div>
@@ -1249,11 +1253,11 @@ Reaktoro’s YAML format have an organic tag which we can use to filter out them
 organic aqueous species and specifying exactly the gases we want:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca C&quot;</span><span class="p">),</span> <span class="nf">exclude</span><span class="p">(</span><span class="s2">&quot;organic&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca C&quot;</span><span class="p">),</span> <span class="n">exclude</span><span class="p">(</span><span class="s2">&quot;organic&quot;</span><span class="p">))</span>
 
-<span class="n">gas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
+<span class="n">gas</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1271,8 +1275,8 @@ you will get a runtime exception!</p>
 <p>And here is the updated list of species (only their names this time):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1329,17 +1333,17 @@ CO2(g)
     <span class="s2">&quot;OH-&quot;</span>
 <span class="p">]</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="n">aqueous_species</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">aqueous_species</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1362,8 +1366,8 @@ CO2(g)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="chemical-system-definition-with-many-phases">
+</section>
+<section id="chemical-system-definition-with-many-phases">
 <h2>Chemical system definition with many phases<a class="headerlink" href="#chemical-system-definition-with-many-phases" title="Permalink to this headline">#</a></h2>
 <p>Now, let’s overcomplicate and define a chemical system with many phases and
 species. We have an aqueous solution for which we know the chemical elements of
@@ -1378,14 +1382,14 @@ code block below. Note the use of the <code class="docutils literal notranslate"
 ThermoFun, which is suitable for modeling cement chemistry.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca Mg C Si Fe Al K S&quot;</span><span class="p">))</span>
-<span class="n">gas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>
-<span class="n">pureminerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
-<span class="n">solidsolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;ettringite Fe-ettringite&quot;</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl Ca Mg C Si Fe Al K S&quot;</span><span class="p">))</span>
+<span class="n">gas</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">()</span>
+<span class="n">pureminerals</span> <span class="o">=</span> <span class="n">MineralPhases</span><span class="p">()</span>
+<span class="n">solidsolution</span> <span class="o">=</span> <span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;ettringite Fe-ettringite&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">,</span> <span class="n">pureminerals</span><span class="p">,</span> <span class="n">solidsolution</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gas</span><span class="p">,</span> <span class="n">pureminerals</span><span class="p">,</span> <span class="n">solidsolution</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1393,10 +1397,10 @@ ThermoFun, which is suitable for modeling cement chemistry.</p>
 <p>Let’s now print the phase names and their composing species:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">phase</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
-    <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">phase</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">phases</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">phase</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">phase</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1767,13 +1771,13 @@ want to specify the chemical elements in the definition of the aqueous phase.
 This is what you can do:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">()</span>
-<span class="n">albite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Albite&quot;</span><span class="p">)</span>
-<span class="n">kaolinite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Kaolinite&quot;</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">()</span>
+<span class="n">albite</span> <span class="o">=</span> <span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Albite&quot;</span><span class="p">)</span>
+<span class="n">kaolinite</span> <span class="o">=</span> <span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Kaolinite&quot;</span><span class="p">)</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">albite</span><span class="p">,</span> <span class="n">kaolinite</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">albite</span><span class="p">,</span> <span class="n">kaolinite</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1782,9 +1786,9 @@ This is what you can do:</p>
 aqueous phase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aqueousphase</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">()</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">aqueousphase</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aqueousphase</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">phases</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AqueousPhase&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">aqueousphase</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1808,24 +1812,24 @@ O2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="chemical-system-definition-for-a-combustion-problem">
+</section>
+<section id="chemical-system-definition-for-a-combustion-problem">
 <h2>Chemical system definition for a combustion problem<a class="headerlink" href="#chemical-system-definition-for-a-combustion-problem" title="Permalink to this headline">#</a></h2>
 <p>Forget about water now and let’s construct a chemical system suitable for modeling the combustion of black powder. Black powder is composed of potassium nitrate (KNO<sub>3</sub>), charcoal (C<sub>10</sub>Ca<sub>0.026</sub>H<sub>4.774</sub>N<sub>0.039</sub>O<sub>1.234</sub>), and sulfur (S<sub>8</sub>).</p>
 <p>In the code block below we construct a chemical system using the chemical elements above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s use the NASA-CEA database for this example</span>
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 
 <span class="c1"># Consider all possible condensed phases (solid or liquid substances) with given elements</span>
-<span class="n">condensed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">CondensedPhases</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;K N O C Ca H S&quot;</span><span class="p">))</span>
+<span class="n">condensed</span> <span class="o">=</span> <span class="n">CondensedPhases</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;K N O C Ca H S&quot;</span><span class="p">))</span>
 
 <span class="c1"># Automatically select the gases based on the elements above</span>
-<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">()</span>  
+<span class="n">gases</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">()</span>  
 
 <span class="c1"># Create a chemical system suitable for modeling combustion of black powder!</span>
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">,</span> <span class="n">condensed</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">,</span> <span class="n">condensed</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1834,13 +1838,13 @@ O2
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gases&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">species</span><span class="p">.</span><span class="nf">aggregateState</span><span class="p">()</span> <span class="o">==</span> <span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">species</span><span class="o">.</span><span class="n">aggregateState</span><span class="p">()</span> <span class="o">==</span> <span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condensed Phases&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">species</span><span class="p">.</span><span class="nf">aggregateState</span><span class="p">()</span> <span class="o">==</span> <span class="n">AggregateState</span><span class="o">.</span><span class="n">CondensedPhase</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">system</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">species</span><span class="o">.</span><span class="n">aggregateState</span><span class="p">()</span> <span class="o">==</span> <span class="n">AggregateState</span><span class="o">.</span><span class="n">CondensedPhase</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;:: &quot;</span> <span class="o">+</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -2126,8 +2130,8 @@ Condensed Phases
 <p>Let’s check how many phases and species were collected in our system:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of species in the system:&quot;</span><span class="p">,</span> <span class="n">system</span><span class="p">.</span><span class="nf">species</span><span class="p">()</span><span class="o">.</span><span class="nf">size</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of phases in the system:&quot;</span><span class="p">,</span> <span class="n">system</span><span class="p">.</span><span class="nf">phases</span><span class="p">()</span><span class="o">.</span><span class="nf">size</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of species in the system:&quot;</span><span class="p">,</span> <span class="n">system</span><span class="o">.</span><span class="n">species</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of phases in the system:&quot;</span><span class="p">,</span> <span class="n">system</span><span class="o">.</span><span class="n">phases</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -2144,8 +2148,8 @@ Number of phases in the system: 67
 <p>By including as many gases and condensed phases as possible, Reaktoro will be able to determine those that may appear after burning black powder. For example, K<sub>2</sub>S(cd), K<sub>2</sub>SO<sub>4</sub>(cd) and CaS(cd) are typically formed in the combustion process. By including them in the definition of the chemical system, the chemical equilibrium solver will be able to find positive amounts for them (i.e., the solver will identify these condensed phases as stable in equilibrium).</p>
 </div>
 <p>Keep reading to learn more about how the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> class plays an important role in Reaktoro!</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2159,7 +2163,7 @@ Number of phases in the system: 67
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/basics"
         },
         predefinedOutput: true

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Computing aqueous properties</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
+                <a class="reference internal" href="../../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -798,7 +802,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="computing-aqueous-properties">
+  <section class="tex2jax_ignore mathjax_ignore" id="computing-aqueous-properties">
 <h1>Computing aqueous properties<a class="headerlink" href="#computing-aqueous-properties" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
 <p>If you are interested in aqueous solutions of electrolytes, you are probably wondering why there are no methods in the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> class to obtain pH, pE, Eh, ionic strength, molalities, and other aqueous properties.</p>
@@ -808,31 +812,31 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca Si&quot;</span><span class="p">))</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca Si&quot;</span><span class="p">))</span>
+<span class="n">solution</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">())</span>
 
-<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g) H2O(g)&quot;</span><span class="p">)</span>
-<span class="n">gases</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
+<span class="n">gases</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g) H2O(g)&quot;</span><span class="p">)</span>
+<span class="n">gases</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
 
-<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
+<span class="n">minerals</span> <span class="o">=</span> <span class="n">MineralPhases</span><span class="p">()</span>
 
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gases</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gases</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
 
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>    <span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">60.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span>    <span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Quartz&quot;</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 
-<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
-<span class="n">aprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">aprops</span> <span class="o">=</span> <span class="n">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">aprops</span><span class="p">)</span>
 </pre></div>
@@ -849,31 +853,31 @@ title="Print to PDF"
 | pH                                |      4.9176 |       |
 | pE                                |     -0.5028 |       |
 | Eh                                |     -0.0332 |     V |
-| Charge Molality                   | -2.1584e-16 | molal |
+| Charge Molality                   | -1.4481e-16 | molal |
 | Element Molality:                 |             |       |
-| :: C                              |  2.1424e-01 | molal |
+| :: C                              |  2.1915e-01 | molal |
 | :: Na                             |  1.0004e+00 | molal |
-| :: Si                             |  2.8155e-04 | molal |
+| :: Si                             |  2.8153e-04 | molal |
 | :: Cl                             |  1.0004e+00 | molal |
 | :: Ca                             |  9.9945e-03 | molal |
 | Species Molality:                 |             |       |
-| :: CO3-2                          |  6.4481e-07 | molal |
+| :: CO3-2                          |  6.4483e-07 | molal |
 | :: H+                             |  1.5051e-05 | molal |
 | :: CO2                            |  1.9424e-01 | molal |
-| :: (CO2)2                         |  1.0004e-16 | molal |
+| :: (CO2)2                         |  2.4559e-03 | molal |
 | :: HCO3-                          |  1.6442e-02 | molal |
 | :: CH4                            |  1.0004e-16 | molal |
 | :: Ca+2                           |  9.4377e-03 | molal |
-| :: CaCO3                          |  3.9717e-07 | molal |
+| :: CaCO3                          |  3.9718e-07 | molal |
 | :: CaHCO3+                        |  5.5643e-04 | molal |
 | :: CaOH+                          |  4.6059e-11 | molal |
 | :: Cl-                            |  1.0004e+00 | molal |
 | :: H2                             |  1.0004e-16 | molal |
-| :: H4SiO4                         |  2.8153e-04 | molal |
+| :: H4SiO4                         |  2.8151e-04 | molal |
 | :: H2SiO4-2                       |  1.1055e-14 | molal |
-| :: H3SiO4-                        |  2.0567e-08 | molal |
+| :: H3SiO4-                        |  2.0566e-08 | molal |
 | :: Na+                            |  9.9737e-01 | molal |
-| :: NaCO3-                         |  7.5617e-06 | molal |
+| :: NaCO3-                         |  7.5620e-06 | molal |
 | :: NaHCO3                         |  2.9885e-03 | molal |
 | :: OH-                            |  1.3304e-08 | molal |
 | :: NaOH                           |  1.0004e-16 | molal |
@@ -898,28 +902,28 @@ title="Print to PDF"
 <p>Let’s now use some methods from class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> to retrieve some specific aqueous properties:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pH                              :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pE                              :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">pE</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eh                              :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">Eh</span><span class="p">()</span>                         <span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IONIC STRENGTH (EFFECTIVE)      :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">ionicStrengthEffective</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IONIC STRENGTH (STOICHIOMETRIC) :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">ionicStrengthStoichiometric</span><span class="p">(),</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOLALITY OF ELEMENT C           :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">elementMolality</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>         <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOLALITY OF ELEMENT Ca          :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">elementMolality</span><span class="p">(</span><span class="s2">&quot;Ca&quot;</span><span class="p">)</span>        <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOLALITY OF AQUEOUS SPECIES CO2 :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">speciesMolality</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>       <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOLALITY OF AQUEOUS SPECIES Na+ :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">speciesMolality</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">)</span>       <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pH                              :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">pH</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pE                              :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">pE</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eh                              :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">Eh</span><span class="p">()</span>                         <span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IONIC STRENGTH (EFFECTIVE)      :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">ionicStrengthEffective</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IONIC STRENGTH (STOICHIOMETRIC) :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">ionicStrengthStoichiometric</span><span class="p">(),</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOLALITY OF ELEMENT C           :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">elementMolality</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>         <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOLALITY OF ELEMENT Ca          :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">elementMolality</span><span class="p">(</span><span class="s2">&quot;Ca&quot;</span><span class="p">)</span>        <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOLALITY OF AQUEOUS SPECIES CO2 :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">speciesMolality</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>       <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MOLALITY OF AQUEOUS SPECIES Na+ :&quot;</span><span class="p">,</span> <span class="n">aprops</span><span class="o">.</span><span class="n">speciesMolality</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">)</span>       <span class="p">,</span> <span class="s2">&quot;molal&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pH                              : 4.91762
-pE                              : -0.502784
-Eh                              : -0.0332361 V
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pH                              : 4.91764
+pE                              : -0.502798
+Eh                              : -0.033237 V
 IONIC STRENGTH (EFFECTIVE)      : 1.02625 molal
 IONIC STRENGTH (STOICHIOMETRIC) : 1.02924 molal
-MOLALITY OF ELEMENT C           : 0.21424 molal
-MOLALITY OF ELEMENT Ca          : 0.00999453 molal
+MOLALITY OF ELEMENT C           : 0.219152 molal
+MOLALITY OF ELEMENT Ca          : 0.00999452 molal
 MOLALITY OF AQUEOUS SPECIES CO2 : 0.194244 molal
-MOLALITY OF AQUEOUS SPECIES Na+ : 0.997367 molal
+MOLALITY OF AQUEOUS SPECIES Na+ : 0.997366 molal
 </pre></div>
 </div>
 </div>
@@ -928,7 +932,7 @@ MOLALITY OF AQUEOUS SPECIES Na+ : 0.997367 molal
 <p class="admonition-title">Tip</p>
 <p>Access the link <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> to find out all methods available in class <code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code> to get the exact data you need!</p>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -942,7 +946,7 @@ MOLALITY OF AQUEOUS SPECIES Na+ : 0.997367 molal
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./tutorials/basics"
         },
         predefinedOutput: true

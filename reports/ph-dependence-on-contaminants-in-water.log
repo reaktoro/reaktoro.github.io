@@ -17,39 +17,77 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from bokeh.plotting import figure, show
-from bokeh.palettes import brewer
+from bokeh.plotting import gridplot, figure, show
+from bokeh.models import HoverTool, Legend
 from bokeh.io import output_notebook
-
 output_notebook()
 
-p = figure(
-    title="EFFECT OF LIMESTONE ON CALCITE ADDITION",
-    x_axis_label='CaCO3 [%]',
-    y_axis_label='PHASE VOLUME [cm3]',
+# ----------------------------------- #
+# Plot dependence of pH on added HCl
+# ----------------------------------- #
+hovertool1 = HoverTool()
+hovertool1.tooltips = [("pH", "@pH"), ("amount(HCl)", "@amount_HCl mol")]
+
+p1 = figure(
+    title="DEPENDENCE OF PH ON HCL AMOUNT",
+    x_axis_label=r'HCL [MOL]',
+    y_axis_label='PH [-]',
     sizing_mode="scale_width",
     plot_height=300)
 
-volume_names = ["Cal", "hydrotalcite", "Portlandite", "ss_CSHQ", "ss_C3AFS084H", "ss_Ettrignite", "monocarbonate"]
-p.varea_stack(stackers=volume_names, x='CaCO3', color=brewer['Spectral'][len(volume_names)], legend_label=volume_names, source=df)
-p.legend[0].items.reverse()
+p1.add_tools(hovertool1)
 
-show(p)
+r11 = p1.line("amount_HCl", "pH", line_width=3, line_cap="round", line_color='darkred', source=pd1)
+r21 = p1.circle("amount_HCl", "pH", line_width=2, size=6, line_color='darkred', fill_color='darkred', source=pd1)
+
+legend = Legend(items=[
+    ("pH"  , [r11, r21]),
+], location="top_right")
+
+p1.add_layout(legend, 'right')
+
+# ----------------------------------- #
+# Plot dependence of pH on added NH3+
+# ----------------------------------- #
+hovertool2 = HoverTool()
+hovertool2.tooltips = [("pH", "@pH"), ("amount(NH3)", "@amount_NH3 mol")]
+
+p2 = figure(
+    title="DEPENDENCE OF PH ON NH3(aq) AMOUNT",
+    x_axis_label=r'NH3 [MOL]',
+    y_axis_label='PH [-]',
+    sizing_mode="scale_width",
+    plot_height=300)
+
+p2.add_tools(hovertool2)
+
+r21 = p2.line("amount_NH3", "pH", line_width=3, line_cap="round", line_color='teal', source=pd2)
+r22 = p2.x("amount_NH3", "pH", line_width=2, size=8, line_color="teal", source=pd2)
+
+legend = Legend(items=[
+    ("pH"  , [r21, r22]),
+], location="top_right")
+
+p2.add_layout(legend, 'right')
+
+grid = gridplot([[p1], [p2]])
+
+show(grid)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [0;32mIn[8], line 7[0m
-[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbokeh[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m [38;5;28;01mimport[39;00m output_notebook
-[1;32m      5[0m output_notebook()
-[0;32m----> 7[0m p [38;5;241m=[39m [43mfigure[49m[43m([49m
-[1;32m      8[0m [43m    [49m[43mtitle[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mEFFECT OF LIMESTONE ON CALCITE ADDITION[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[1;32m      9[0m [43m    [49m[43mx_axis_label[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mCaCO3 [[39;49m[38;5;124;43m%[39;49m[38;5;124;43m][39;49m[38;5;124;43m'[39;49m[43m,[49m
-[1;32m     10[0m [43m    [49m[43my_axis_label[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mPHASE VOLUME [cm3][39;49m[38;5;124;43m'[39;49m[43m,[49m
-[1;32m     11[0m [43m    [49m[43msizing_mode[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mscale_width[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[1;32m     12[0m [43m    [49m[43mplot_height[49m[38;5;241;43m=[39;49m[38;5;241;43m300[39;49m[43m)[49m
-[1;32m     14[0m volume_names [38;5;241m=[39m [[38;5;124m"[39m[38;5;124mCal[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mhydrotalcite[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mPortlandite[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mss_CSHQ[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mss_C3AFS084H[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mss_Ettrignite[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmonocarbonate[39m[38;5;124m"[39m]
-[1;32m     15[0m p[38;5;241m.[39mvarea_stack(stackers[38;5;241m=[39mvolume_names, x[38;5;241m=[39m[38;5;124m'[39m[38;5;124mCaCO3[39m[38;5;124m'[39m, color[38;5;241m=[39mbrewer[[38;5;124m'[39m[38;5;124mSpectral[39m[38;5;124m'[39m][[38;5;28mlen[39m(volume_names)], legend_label[38;5;241m=[39mvolume_names, source[38;5;241m=[39mdf)
+Cell [0;32mIn[4], line 12[0m
+[1;32m      9[0m hovertool1 [38;5;241m=[39m HoverTool()
+[1;32m     10[0m hovertool1[38;5;241m.[39mtooltips [38;5;241m=[39m [([38;5;124m"[39m[38;5;124mpH[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m@pH[39m[38;5;124m"[39m), ([38;5;124m"[39m[38;5;124mamount(HCl)[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m@amount_HCl mol[39m[38;5;124m"[39m)]
+[0;32m---> 12[0m p1 [38;5;241m=[39m [43mfigure[49m[43m([49m
+[1;32m     13[0m [43m    [49m[43mtitle[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mDEPENDENCE OF PH ON HCL AMOUNT[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m     14[0m [43m    [49m[43mx_axis_label[49m[38;5;241;43m=[39;49m[38;5;124;43mr[39;49m[38;5;124;43m'[39;49m[38;5;124;43mHCL [MOL][39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m     15[0m [43m    [49m[43my_axis_label[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mPH [-][39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m     16[0m [43m    [49m[43msizing_mode[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mscale_width[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m     17[0m [43m    [49m[43mplot_height[49m[38;5;241;43m=[39;49m[38;5;241;43m300[39;49m[43m)[49m
+[1;32m     19[0m p1[38;5;241m.[39madd_tools(hovertool1)
+[1;32m     21[0m r11 [38;5;241m=[39m p1[38;5;241m.[39mline([38;5;124m"[39m[38;5;124mamount_HCl[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mpH[39m[38;5;124m"[39m, line_width[38;5;241m=[39m[38;5;241m3[39m, line_cap[38;5;241m=[39m[38;5;124m"[39m[38;5;124mround[39m[38;5;124m"[39m, line_color[38;5;241m=[39m[38;5;124m'[39m[38;5;124mdarkred[39m[38;5;124m'[39m, source[38;5;241m=[39mpd1)
 
 File [0;32m~/miniconda3/envs/reaktoro-jupyter-book/lib/python3.10/site-packages/bokeh/plotting/_figure.py:190[0m, in [0;36mfigure.__init__[0;34m(self, *arg, **kw)[0m
 [1;32m    188[0m [38;5;28;01mfor[39;00m name [38;5;129;01min[39;00m kw[38;5;241m.[39mkeys():

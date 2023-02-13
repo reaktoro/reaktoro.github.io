@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Contributing</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -117,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -848,40 +852,40 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="contributing">
+  <section class="tex2jax_ignore mathjax_ignore" id="contributing">
 <h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h1>
 <p>Reaktoro is an open-source project, and <strong>we need your help</strong> to make it even more successful. You can contribute to the project in many ways, as shown next.</p>
-<div class="section" id="supporting-us-financially">
+<section id="supporting-us-financially">
 <h2>Supporting us financially<a class="headerlink" href="#supporting-us-financially" title="Permalink to this headline">#</a></h2>
 <p>The development of Reaktoro is very costly. We rely on academic and industry funding to deliver you a state-of-the-art chemical modeling package with fast, robust, and modern numerical algorithms, containing support to a wide range of thermodynamic databases and modeling capabilities. Please consider helping us financially if you can, either via sponsorship or funded research in which we’ll develop what you need!</p>
 <p>Reaktoro was designed from the ground up to be completely extensible. <strong>So whatever you need, we will be able to deliver you!</strong></p>
-</div>
-<div class="section" id="sharing-what-you-ve-got">
+</section>
+<section id="sharing-what-you-ve-got">
 <h2>Sharing what you’ve got<a class="headerlink" href="#sharing-what-you-ve-got" title="Permalink to this headline">#</a></h2>
 <p>If you have done some interesting calculations with Reaktoro to produce exciting figures, please share with us in <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a> or in <a class="reference external" href="https://github.com/reaktoro/reaktoro/discussions/categories/show-and-tell">Reaktoro’s Show and Tell Discussions</a>. Consider partnering with us to write a tutorial or some other content on this website, and let everyone know about your fantastic work.</p>
-</div>
-<div class="section" id="reporting-bugs">
+</section>
+<section id="reporting-bugs">
 <h2>Reporting bugs<a class="headerlink" href="#reporting-bugs" title="Permalink to this headline">#</a></h2>
 <p>Please let us know if something did not work as expected. We’ll be happy to investigate the issue and work on a fix. To report a bug, please go to <a class="reference external" href="https://github.com/reaktoro/reaktoro/issues/new">Reaktoro’s Issues</a> and enter a <em>descriptive title</em> and <em>write your issue with enough details</em>.</p>
 <p>Please provide a <em>minimum reproducible example</em> to be more efficient in identifying the bug and fixing it for you. Have you heard about <a class="reference external" href="https://guides.github.com/features/mastering-markdown/">Markdown</a>? Please use Markdown syntax when writing your issues.</p>
-</div>
-<div class="section" id="proposing-new-features">
+</section>
+<section id="proposing-new-features">
 <h2>Proposing new features<a class="headerlink" href="#proposing-new-features" title="Permalink to this headline">#</a></h2>
 <p>You have a wish list for new features (e.g., certain modeling capabilities, supporting some specific thermodynamic databases, etc.), and you want to propose that to us. You can create a new discussion in <a class="reference external" href="https://github.com/reaktoro/reaktoro/discussions/categories/ideas">Reaktoro’s Ideas Discussions</a>.</p>
 <p>We’ll do our best to get your proposed new features implemented. Understand, however, that we have limited resources and a tight schedule for ongoing projects, so your requested additions could take some time to materialize depending on their complexity.</p>
 <p>If you foresee Reaktoro becoming an essential software component for your company’s scientific and engineering investigations or academic group, please consider <strong>financially supporting its development</strong>!</p>
-</div>
-<div class="section" id="performing-benchmark-calculations">
+</section>
+<section id="performing-benchmark-calculations">
 <h2>Performing benchmark calculations<a class="headerlink" href="#performing-benchmark-calculations" title="Permalink to this headline">#</a></h2>
 <p>You have used Reaktoro to perform some calculations for which you have experimental data (or performed similar analyses using other codes). <strong>We would be very excited if you could share with us your results!</strong> And if the results you obtained with Reaktoro are not great, please <strong>make sure we know about this</strong>, and we’ll be pleased to help you make your calculations more accurate.</p>
 <p>Get in touch with us by going to <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a> and telling us what you want to share.</p>
-</div>
-<div class="section" id="contributing-with-documentation-and-examples">
+</section>
+<section id="contributing-with-documentation-and-examples">
 <h2>Contributing with documentation and examples<a class="headerlink" href="#contributing-with-documentation-and-examples" title="Permalink to this headline">#</a></h2>
 <p>You want to contribute with some examples of using Reaktoro to solve some specific problems. We appreciate your effort and willingness to contribute.</p>
 <p>Please go to <a class="reference external" href="https://github.com/reaktoro/reaktoro/discussions/categories/ideas">Reaktoro’s Ideas Discussions</a> and write a new discussion there, detailing what you want to do. Alternatively, chat with us in <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</p>
-</div>
-<div class="section" id="contributing-with-development">
+</section>
+<section id="contributing-with-development">
 <h2>Contributing with development<a class="headerlink" href="#contributing-with-development" title="Permalink to this headline">#</a></h2>
 <p>We’ll be happy to have you onboard to develop Reaktoro further. Please let us know what you want to do by going to <a class="reference external" href="https://github.com/reaktoro/reaktoro/discussions/categories/ideas">Reaktoro’s Ideas Discussions</a> and detailing there your intended development contribution. You can also chat with us in <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</p>
 <p>We use the <a class="reference external" href="https://gist.github.com/Chaser324/ce0505fbed06b947d962">Fork &amp; Pull Request Workflow</a> to ensure everything works smoothly. Below is a summary of the necessary steps you need to take:</p>
@@ -891,8 +895,8 @@ title="Print to PDF"
 <li><p>Add your changes in a branch named after what’s being done (<code class="docutils literal notranslate"><span class="pre">lower-case-with-hyphens</span></code>)</p></li>
 <li><p>Make a pull request to <code class="docutils literal notranslate"><span class="pre">reaktoro/reaktoro</span></code>, targeting the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -906,7 +910,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./general"
         },
         predefinedOutput: true

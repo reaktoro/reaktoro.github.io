@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Development</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -36,11 +37,14 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/customize.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
@@ -116,7 +120,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../index.html">
                     Reaktoro
                 </a>
             </li>
@@ -827,12 +831,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="development">
+  <section class="tex2jax_ignore mathjax_ignore" id="development">
 <h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Nov 18th, 2022</p>
 <p>Here we provide tips in case you want to help with Reaktoro development.
 Reaktoro is primarily developed using <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a> on Linux. If you are on Windows, consider using the <em>Windows Subsystem for Linux (WSL) with Ubuntu</em> by following these <a class="reference external" href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview">installation instructions</a> provided by Canonical<sup>®</sup>.</p>
-<div class="section" id="installing-recommended-extensions-for-visual-studio-code">
+<section id="installing-recommended-extensions-for-visual-studio-code">
 <h2>Installing recommended extensions for Visual Studio Code<a class="headerlink" href="#installing-recommended-extensions-for-visual-studio-code" title="Permalink to this headline">#</a></h2>
 <p>After installing Visual Studio Code, make sure you also install some important extensions:</p>
 <ul class="simple">
@@ -842,8 +846,8 @@ Reaktoro is primarily developed using <a class="reference external" href="https:
 <li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph</a></p></li>
 </ul>
 <p>Try to discover more interesting extensions and get to know the ones above!</p>
-</div>
-<div class="section" id="launching-visual-studio-code">
+</section>
+<section id="launching-visual-studio-code">
 <h2>Launching Visual Studio Code<a class="headerlink" href="#launching-visual-studio-code" title="Permalink to this headline">#</a></h2>
 <p>If you are developing Reaktoro, you should use <a class="reference external" href="https://docs.conda.io/en/latest/">conda</a> as a package and dependency manager. The entire process of installing conda and creating a conda environment called <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> containing all Reaktoro dependencies can be found in the <a class="reference internal" href="../installation/installation-using-cmake.html"><span class="doc std std-doc">Installation using CMake</span></a> instructions.</p>
 <p>To ensure that Visual Studio Code works correctly with the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> conda environment, it is recommended to launch it from the terminal with the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> environment activated. In a terminal, go to the directory where the Reaktoro source code was git cloned, activate the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> conda environment and launch Visual Studio Code using <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code>. See the complete sequence of commands below:</p>
@@ -856,32 +860,32 @@ code .
 <p class="admonition-title">Note</p>
 <p>By launching Visual Studio Code in this way, it will be aware of the environment variables present when the conda environemt <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is activated, and this will help with both IntelliSense, debugging, and executing Python scripts using Reaktoro.</p>
 </div>
-</div>
-<div class="section" id="ensuring-intellisense-works-correctly">
+</section>
+<section id="ensuring-intellisense-works-correctly">
 <h2>Ensuring IntelliSense works correctly<a class="headerlink" href="#ensuring-intellisense-works-correctly" title="Permalink to this headline">#</a></h2>
 <p>Unfortunately, Visual Studio Code doesn’t automatically detect where all of Reaktoro’s C++ dependencies are located, and you might get error squiggles all over the place because it can’t find header files for those dependencies. To fix this, you should press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> and select <code class="docutils literal notranslate"><span class="pre">C/C++:</span> <span class="pre">Edit</span> <span class="pre">Configurations</span> <span class="pre">(JSON)</span></code>. In the created C/C++ configuration file, consider:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;configurations&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Linux&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;includePath&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">&quot;${workspaceFolder}/&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;${env:CONDA_PREFIX}/**&quot;</span>
-            <span class="p">],</span>
-            <span class="nt">&quot;defines&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">&quot;AUTODIFF_ENABLE_IMPLICIT_CONVERSION_REAL=1&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;REAKTORO_EMBEDDED_DIR=${workspaceFolder}/embedded&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;REAKTORO_DATABASES_DIR=${workspaceFolder}/embedded/databases&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;REAKTORO_PARAMS_DIR=${workspaceFolder}/embedded/params&quot;</span>
-            <span class="p">],</span>
-            <span class="nt">&quot;compilerPath&quot;</span><span class="p">:</span> <span class="s2">&quot;${env:CXX}&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;cStandard&quot;</span><span class="p">:</span> <span class="s2">&quot;c17&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;cppStandard&quot;</span><span class="p">:</span> <span class="s2">&quot;c++17&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;intelliSenseMode&quot;</span><span class="p">:</span> <span class="s2">&quot;linux-gcc-x64&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;compileCommands&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}/compile_commands.json&quot;</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;includePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;${workspaceFolder}/&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;${env:CONDA_PREFIX}/**&quot;</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;defines&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;AUTODIFF_ENABLE_IMPLICIT_CONVERSION_REAL=1&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;REAKTORO_EMBEDDED_DIR=${workspaceFolder}/embedded&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;REAKTORO_DATABASES_DIR=${workspaceFolder}/embedded/databases&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;REAKTORO_PARAMS_DIR=${workspaceFolder}/embedded/params&quot;</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;compilerPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${env:CXX}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cStandard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c17&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cppStandard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c++17&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;intelliSenseMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linux-gcc-x64&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;compileCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/compile_commands.json&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -890,40 +894,40 @@ code .
 <p class="admonition-title">Note</p>
 <p>This is one of the reasons why it’s important to launch Visual Studio Code from the terminal with the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> environment enabled. By doing so, it knows the <code class="docutils literal notranslate"><span class="pre">CONDA_PREFIX</span></code> and <code class="docutils literal notranslate"><span class="pre">CXX</span></code> environment variables used in the above configuration.</p>
 </div>
-</div>
-<div class="section" id="creating-compilation-tasks-for-reaktoro">
+</section>
+<section id="creating-compilation-tasks-for-reaktoro">
 <h2>Creating compilation tasks for Reaktoro<a class="headerlink" href="#creating-compilation-tasks-for-reaktoro" title="Permalink to this headline">#</a></h2>
 <p>If you are looking for <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+B</span></code> to trigger a Reaktoro build from within Visual Studio Code, then you need a <em>build task</em>. Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> and select <code class="docutils literal notranslate"><span class="pre">Tasks:</span> <span class="pre">Configure</span> <span class="pre">Default</span> <span class="pre">Build</span> <span class="pre">Tasks</span></code>, then select <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">tasks.json</span> <span class="pre">file</span> <span class="pre">from</span> <span class="pre">template</span></code> and select <code class="docutils literal notranslate"><span class="pre">Others</span></code>. Replace the contents of the created <code class="docutils literal notranslate"><span class="pre">tasks.json</span></code> file with:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;tasks&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Build&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;shell&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;clear &amp;&amp; make -j&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;cwd&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}/build/debug/gcc&quot;</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;group&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;build&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;isDefault&quot;</span><span class="p">:</span> <span class="kc">true</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;problemMatcher&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">&quot;$gcc&quot;</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Build &amp; Test&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;shell&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;clear &amp;&amp; make -j tests&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;cwd&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}/build/debug/gcc&quot;</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;problemMatcher&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">&quot;$gcc&quot;</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Build&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shell&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;clear &amp;&amp; make -j&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/debug/gcc&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;build&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;isDefault&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;problemMatcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;$gcc&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Build &amp; Test&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shell&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;clear &amp;&amp; make -j tests&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/debug/gcc&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;problemMatcher&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;$gcc&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -935,12 +939,12 @@ cmake ../../.. -DCMAKE_BUILD_TYPE=Debug
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Consider using the <a class="reference external" href="https://lld.llvm.org/">LLVM linker <code class="docutils literal notranslate"><span class="pre">lld</span></code></a>, which is faster than the default <a class="reference external" href="https://linux.die.net/man/1/ld">GNU linker <code class="docutils literal notranslate"><span class="pre">ld</span></code></a>, when configuring the build of Reaktoro (for either debug or release modes):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake ../../.. -DCMAKE_BUILD_TYPE<span class="o">=</span>Debug -DCMAKE_CXX_FLAGS<span class="o">=</span><span class="s2">&quot;-fuse-ld=lld&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>../../..<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Debug<span class="w"> </span>-DCMAKE_CXX_FLAGS<span class="o">=</span><span class="s2">&quot;-fuse-ld=lld&quot;</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-run-and-debug-tasks-for-reaktoro-s-tests-and-examples">
+</section>
+<section id="creating-run-and-debug-tasks-for-reaktoro-s-tests-and-examples">
 <h2>Creating run and debug tasks for Reaktoro’s tests and examples<a class="headerlink" href="#creating-run-and-debug-tasks-for-reaktoro-s-tests-and-examples" title="Permalink to this headline">#</a></h2>
 <p>When doing Reaktoro development, you may want to debug:</p>
 <ul class="simple">
@@ -951,94 +955,94 @@ cmake ../../.. -DCMAKE_BUILD_TYPE=Debug
 </ul>
 <p>Pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+D</span></code> in Visual Studio Code allows you to execute and debug an application. You’ll need first to click on <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">a</span> <span class="pre">launch.json</span></code> and then select any shown option. Once the <code class="docutils literal notranslate"><span class="pre">launch.json</span></code> file is created, replace its content by:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;configurations&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Debug C++ Tests&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;program&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}/build/debug/gcc/Reaktoro/reaktoro-cpptests&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;[ChemicalSystem]&quot;</span><span class="p">],</span>
-            <span class="nt">&quot;preLaunchTask&quot;</span><span class="p">:</span> <span class="s2">&quot;Build&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;stopAtEntry&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;cwd&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;environment&quot;</span><span class="p">:</span> <span class="p">[],</span>
-            <span class="nt">&quot;MIMode&quot;</span><span class="p">:</span> <span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Enable pretty-printing for gdb&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;-enable-pretty-printing&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;ignoreFailures&quot;</span><span class="p">:</span> <span class="kc">true</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Debug C++ Example&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;program&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}/build/debug/gcc/examples/cpp/${fileBasenameNoExtension}&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;preLaunchTask&quot;</span><span class="p">:</span> <span class="s2">&quot;Build&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;stopAtEntry&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;cwd&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;environment&quot;</span><span class="p">:</span> <span class="p">[],</span>
-            <span class="nt">&quot;MIMode&quot;</span><span class="p">:</span> <span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Enable pretty-printing for gdb&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;-enable-pretty-printing&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;ignoreFailures&quot;</span><span class="p">:</span> <span class="kc">true</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Debug Python Tests&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;program&quot;</span><span class="p">:</span> <span class="s2">&quot;${env:CONDA_PREFIX}/bin/python&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-m&quot;</span><span class="p">,</span> <span class="s2">&quot;pytest&quot;</span><span class="p">,</span> <span class="s2">&quot;Reaktoro/Core/ChemicalSystem.py&quot;</span><span class="p">],</span>
-            <span class="nt">&quot;preLaunchTask&quot;</span><span class="p">:</span> <span class="s2">&quot;Build&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;stopAtEntry&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;cwd&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;environment&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PYTHONPATH&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}/build/debug/gcc/python/package/build/lib:${env:PYTHONPATH}&quot;</span>
-                <span class="p">}</span>
-            <span class="p">],</span>
-            <span class="nt">&quot;MIMode&quot;</span><span class="p">:</span> <span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Enable pretty-printing for gdb&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;-enable-pretty-printing&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;ignoreFailures&quot;</span><span class="p">:</span> <span class="kc">true</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Debug Python/C++ Script&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;request&quot;</span><span class="p">:</span> <span class="s2">&quot;launch&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;program&quot;</span><span class="p">:</span> <span class="s2">&quot;${env:CONDA_PREFIX}/bin/python&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;${file}&quot;</span><span class="p">],</span>
-            <span class="nt">&quot;preLaunchTask&quot;</span><span class="p">:</span> <span class="s2">&quot;Build&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;stopAtEntry&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;cwd&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;environment&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PYTHONPATH&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;${workspaceFolder}/build/debug/gcc/python/package/build/lib:${env:PYTHONPATH}&quot;</span>
-                <span class="p">}</span>
-            <span class="p">],</span>
-            <span class="nt">&quot;MIMode&quot;</span><span class="p">:</span> <span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Enable pretty-printing for gdb&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;-enable-pretty-printing&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;ignoreFailures&quot;</span><span class="p">:</span> <span class="kc">true</span>
-                <span class="p">}</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Debug C++ Tests&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/debug/gcc/Reaktoro/reaktoro-cpptests&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;[ChemicalSystem]&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;preLaunchTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Build&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stopAtEntry&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;MIMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable pretty-printing for gdb&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-enable-pretty-printing&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;ignoreFailures&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Debug C++ Example&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/debug/gcc/examples/cpp/${fileBasenameNoExtension}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;preLaunchTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Build&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stopAtEntry&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;MIMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable pretty-printing for gdb&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-enable-pretty-printing&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;ignoreFailures&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Debug Python Tests&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${env:CONDA_PREFIX}/bin/python&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Reaktoro/Core/ChemicalSystem.py&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;preLaunchTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Build&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stopAtEntry&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PYTHONPATH&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/debug/gcc/python/package/build/lib:${env:PYTHONPATH}&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;MIMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable pretty-printing for gdb&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-enable-pretty-printing&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;ignoreFailures&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Debug Python/C++ Script&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cppdbg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;program&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${env:CONDA_PREFIX}/bin/python&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;${file}&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;preLaunchTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Build&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;stopAtEntry&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;cwd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PYTHONPATH&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/debug/gcc/python/package/build/lib:${env:PYTHONPATH}&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;MIMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gdb&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;setupCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Enable pretty-printing for gdb&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;-enable-pretty-printing&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;ignoreFailures&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1060,8 +1064,8 @@ cmake ../../.. -DCMAKE_BUILD_TYPE=Debug
 </dd>
 </dl>
 <p>And that’s it for now. More development recommendations will be added in the futur as needed. If you are encountering issues with the tips above, <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">please get in touch</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1075,7 +1079,7 @@ cmake ../../.. -DCMAKE_BUILD_TYPE=Debug
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./general"
         },
         predefinedOutput: true
