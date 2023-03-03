@@ -1025,21 +1025,21 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;db-fictitious-simple.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;db-fictitious-simple.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">gases</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;A+ B- AB&quot;</span><span class="p">)</span>
+<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;A+ B- AB&quot;</span><span class="p">)</span>
 
-<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
 
-<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
-<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1268,21 +1268,21 @@ FINAL STATE
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;db-geo-complicated.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Database</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;db-geo-complicated.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
-<span class="n">mineral</span> <span class="o">=</span> <span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
+<span class="n">mineral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
 
-<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">mineral</span><span class="p">)</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">mineral</span><span class="p">)</span>
 
-<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE USING CUSTOM DATABASE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1321,21 +1321,21 @@ FINAL STATE
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
-<span class="n">mineral</span> <span class="o">=</span> <span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- HCO3- CO2 CO3-2 Ca+2&quot;</span><span class="p">)</span>
+<span class="n">mineral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
 
-<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">mineral</span><span class="p">)</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">mineral</span><span class="p">)</span>
 
-<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
-<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE USING PHREEQC.DAT&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -1349,7 +1349,7 @@ FINAL STATE
 +---------------------+-------------+------+
 | Temperature         |    298.1500 |    K |
 | Pressure            |      1.0000 |  bar |
-| Charge:             | -9.7145e-17 |  mol |
+| Charge:             | -1.0061e-16 |  mol |
 | Element Amount:     |             |      |
 | :: H                |  1.1101e+02 |  mol |
 | :: C                |  1.1000e+00 |  mol |
@@ -1357,12 +1357,12 @@ FINAL STATE
 | :: Ca               |  1.0000e+00 |  mol |
 | Species Amount:     |             |      |
 | :: H2O              |  5.5497e+01 |  mol |
-| :: H+               |  2.2610e-06 |  mol |
-| :: OH-              |  4.4652e-09 |  mol |
-| :: HCO3-            |  1.7871e-02 |  mol |
-| :: CO2              |  9.1063e-02 |  mol |
-| :: CO3-2            |  3.7059e-07 |  mol |
-| :: Ca+2             |  8.9348e-03 |  mol |
+| :: H+               |  2.2613e-06 |  mol |
+| :: OH-              |  4.4647e-09 |  mol |
+| :: HCO3-            |  1.7869e-02 |  mol |
+| :: CO2              |  9.1064e-02 |  mol |
+| :: CO3-2            |  3.7051e-07 |  mol |
+| :: Ca+2             |  8.9339e-03 |  mol |
 | :: Calcite :: CaCO3 |  9.9107e-01 |  mol |
 +---------------------+-------------+------+
 </pre></div>
@@ -1379,17 +1379,17 @@ FINAL STATE
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createElementList</span><span class="p">():</span>
-    <span class="n">elements</span> <span class="o">=</span> <span class="n">ElementList</span><span class="p">()</span>
+    <span class="n">elements</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ElementList</span><span class="p">()</span>
 
-    <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Element</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;Hydrogen&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withSymbol</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withMolarMass</span><span class="p">(</span><span class="mf">1.0e-3</span><span class="p">))</span>
+    <span class="n">elements</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Element</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;Hydrogen&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withSymbol</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withMolarMass</span><span class="p">(</span><span class="mf">1.0e-3</span><span class="p">))</span>
 
-    <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Element</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;Oxygen&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withSymbol</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withMolarMass</span><span class="p">(</span><span class="mf">16.0e-3</span><span class="p">))</span>
+    <span class="n">elements</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Element</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;Oxygen&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withSymbol</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withMolarMass</span><span class="p">(</span><span class="mf">16.0e-3</span><span class="p">))</span>
 
     <span class="k">return</span> <span class="n">elements</span>
 </pre></div>
@@ -1403,39 +1403,39 @@ FINAL STATE
     
     <span class="c1"># Create the primary species (used to define the secondary species)</span>
 
-    <span class="n">primaryspecies</span> <span class="o">=</span> <span class="n">SpeciesList</span><span class="p">()</span>
+    <span class="n">primaryspecies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SpeciesList</span><span class="p">()</span>
 
-    <span class="n">primaryspecies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withFormula</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withCharge</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span>  <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
-        <span class="o">.</span><span class="n">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withStandardGibbsEnergy</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">primaryspecies</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withFormula</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withCharge</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span>  <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
+        <span class="o">.</span><span class="nf">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withStandardGibbsEnergy</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
 
-    <span class="n">primaryspecies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withFormula</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withCharge</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
-        <span class="o">.</span><span class="n">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withStandardGibbsEnergy</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
+    <span class="n">primaryspecies</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withFormula</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withCharge</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
+        <span class="o">.</span><span class="nf">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withStandardGibbsEnergy</span><span class="p">(</span><span class="mf">0.0</span><span class="p">))</span>
 
     <span class="c1"># Create the secondary species (using formation reactions from primary species)</span>
 
     <span class="n">secondaryspecies</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="n">secondaryspecies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withFormula</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="n">elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
-        <span class="o">.</span><span class="n">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">withFormationReaction</span><span class="p">(</span>
+    <span class="n">secondaryspecies</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">Species</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withFormula</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="n">ElementalComposition</span><span class="p">([</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">),</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="n">elements</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">]))</span>
+        <span class="o">.</span><span class="nf">withAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Aqueous</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">withFormationReaction</span><span class="p">(</span>
             <span class="n">FormationReaction</span><span class="p">()</span>
-                <span class="o">.</span><span class="n">withReactants</span><span class="p">([</span>
-                    <span class="p">(</span><span class="n">primaryspecies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
-                    <span class="p">(</span><span class="n">primaryspecies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">])</span>
-                <span class="o">.</span><span class="n">withEquilibriumConstant</span><span class="p">(</span><span class="mf">14.0</span><span class="p">)))</span>
+                <span class="o">.</span><span class="nf">withReactants</span><span class="p">([</span>
+                    <span class="p">(</span><span class="n">primaryspecies</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;H+&quot;</span><span class="p">)</span> <span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+                    <span class="p">(</span><span class="n">primaryspecies</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;OH-&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">])</span>
+                <span class="o">.</span><span class="nf">withEquilibriumConstant</span><span class="p">(</span><span class="mf">14.0</span><span class="p">)))</span>
 
     <span class="k">return</span> <span class="n">primaryspecies</span> <span class="o">+</span> <span class="n">secondaryspecies</span>  <span class="c1"># concatenate both species lists</span>
 </pre></div>
@@ -1446,9 +1446,9 @@ FINAL STATE
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">createCustomDatabase</span><span class="p">():</span>
-    <span class="n">elements</span> <span class="o">=</span> <span class="n">createElementList</span><span class="p">()</span>
-    <span class="n">species</span> <span class="o">=</span> <span class="n">createSpeciesList</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">Database</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">data</span><span class="p">())</span>
+    <span class="n">elements</span> <span class="o">=</span> <span class="nf">createElementList</span><span class="p">()</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="nf">createSpeciesList</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Database</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">data</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1456,16 +1456,16 @@ FINAL STATE
 <p>We are now ready for our chemical equilibrium calculation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">createCustomDatabase</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="nf">createCustomDatabase</span><span class="p">()</span>
 
-<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">()</span>
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">()</span>
 
-<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
 
-<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
 
-<span class="n">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nf">equilibrate</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -1542,7 +1542,7 @@ FINAL STATE
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

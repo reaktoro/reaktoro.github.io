@@ -829,10 +829,10 @@ X 0.06	#moles
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span> <span class="o">=</span> <span class="n">AqueousPhase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O C Ca Na Mg Cl&quot;</span><span class="p">))</span>
-<span class="n">solution</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span>
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O C Ca Na Mg Cl&quot;</span><span class="p">))</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="nf">chain</span><span class="p">(</span>
     <span class="n">ActivityModelHKF</span><span class="p">(),</span>
     <span class="n">ActivityModelDrummond</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>
 <span class="p">))</span>
@@ -843,13 +843,13 @@ X 0.06	#moles
 <p>The ion exchange phase is modelled by the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangePhase.html"><code class="docutils literal notranslate"><span class="pre">IonExchangePhase</span></code></a> class. We select only three ion exchange species: NaX, CaX<sub>2</sub>, and MgX<sub>2</sub>, which can be formed from major ions Na<sup>+</sup>, Ca<sup>2+</sup>, and Mg<sup>2+</sup> in the dunewater. We use the Gaines-Thomas activity model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exchange</span> <span class="o">=</span> <span class="n">IonExchangePhase</span><span class="p">(</span><span class="s2">&quot;NaX CaX2 MgX2&quot;</span><span class="p">)</span>
-<span class="n">exchange</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIonExchangeGainesThomas</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangePhase</span><span class="p">(</span><span class="s2">&quot;NaX CaX2 MgX2&quot;</span><span class="p">)</span>
+<span class="n">exchange</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIonExchangeGainesThomas</span><span class="p">())</span>
 
-<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">exchange</span><span class="p">)</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">exchange</span><span class="p">)</span>
 
 <span class="c1"># Define the equilibrium solver</span>
-<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -866,16 +866,16 @@ X 0.06	#moles
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define initial equilibrium state</span>
-<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">setTemperature</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
 <span class="c1"># Scale solution recipe to match the values of the PHREEQC examples</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>   <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span> <span class="p">,</span> <span class="mf">1.10</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="mf">1.90</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>   <span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span> <span class="p">,</span> <span class="mf">1.10</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="mf">1.90</span><span class="p">,</span> <span class="s2">&quot;mmol&quot;</span><span class="p">)</span>
 <span class="c1"># Set the number of exchange assuming that it is completely occupied by sodium</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;NaX&quot;</span> <span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="s2">&quot;umol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;NaX&quot;</span> <span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="s2">&quot;umol&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -891,8 +891,8 @@ X 0.06	#moles
 <p>After the initial chemical state is defined, we can create the equilibrium solver that will perform a Gibbs energy minimization calculation to find the equilibrium state:</p>
 <div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -955,10 +955,10 @@ X 0.06	#moles
 <p>We can now compute the properties of the brine solution after the ion exchange has been carried out. For this purpose, the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a> class is used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aqprops</span> <span class="o">=</span> <span class="n">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I  = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">ionicStrength</span><span class="p">()</span><span class="si">}</span><span class="s2"> mol/kgw&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pH = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">pH</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pE = </span><span class="si">{</span><span class="n">aqprops</span><span class="o">.</span><span class="n">pE</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aqprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I  = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">ionicStrength</span><span class="p">()</span><span class="si">}</span><span class="s2"> mol/kgw&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pH = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pE = </span><span class="si">{</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">pE</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -973,7 +973,7 @@ pE = -3.99932
 <p>To inspect the ion exchange properties of species NaX, CaX<sub>2</sub>, and MgX<sub>2</sub>, the class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1IonExchangeProps.html"><code class="docutils literal notranslate"><span class="pre">IonExchangeProps</span></code></a> can be used, which is done next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exprops</span> <span class="o">=</span> <span class="n">IonExchangeProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangeProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">exprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1060,7 +1060,7 @@ pE = -3.99932
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

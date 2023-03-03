@@ -813,14 +813,14 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">reaktoro</span> <span class="k">as</span> <span class="nn">rkt</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">solution</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">AqueousPhase</span><span class="p">(</span><span class="n">rkt</span><span class="o">.</span><span class="n">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca&quot;</span><span class="p">))</span>
-<span class="n">solution</span><span class="o">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">rkt</span><span class="o">.</span><span class="n">ActivityModelHKF</span><span class="p">())</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">AqueousPhase</span><span class="p">(</span><span class="n">rkt</span><span class="p">.</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca&quot;</span><span class="p">))</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">rkt</span><span class="p">.</span><span class="nf">ActivityModelHKF</span><span class="p">())</span>
 
-<span class="n">calcite</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
+<span class="n">calcite</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
 
-<span class="n">system</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">calcite</span><span class="p">)</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">calcite</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -834,10 +834,10 @@ title="Print to PDF"
 <p>The next step is to create an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> containing the above constraint specifications for the chemical equilibrium calculation we want to perform.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">specs</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
-<span class="n">specs</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
-<span class="n">specs</span><span class="o">.</span><span class="n">fugacity</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
+<span class="n">specs</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
+<span class="n">specs</span><span class="p">.</span><span class="nf">fugacity</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -849,7 +849,7 @@ title="Print to PDF"
 <p>Once we have created this specifications object, we can now create our dedicated and optimized equilibrium solver to solve equilibrium problems with such constraints, which is done next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -857,13 +857,13 @@ title="Print to PDF"
 <p>Let’s now create an initial chemical state for our chemical system, one that represents a 1 molal NaCl aqueous solution mixed with 10 g of calcite mineral. We do this next by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -877,10 +877,10 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fCO2g</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># 0.1 bar</span>
 
-<span class="n">conditions</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">fugacity</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">,</span> <span class="n">fCO2g</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">fugacity</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">,</span> <span class="n">fCO2g</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -895,7 +895,7 @@ object of class <a class="reference external" href="https://reaktoro.org/api/cla
 <p>The code below will perform the equilibrium calculation and when it is finished, our <code class="docutils literal notranslate"><span class="pre">state</span></code> object will be in a chemical equilibrium state:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -926,35 +926,35 @@ object of class <a class="reference external" href="https://reaktoro.org/api/cla
 +---------------------+-------------+------+
 | Temperature         |    323.1500 |    K |
 | Pressure            |     10.0000 |  bar |
-| Charge:             | -1.0429e-16 |  mol |
+| Charge:             | -9.0967e-17 |  mol |
 | Element Amount:     |             |      |
 | :: H                |  1.1101e+02 |  mol |
-| :: C                |  1.0692e-01 |  mol |
-| :: O                |  5.5820e+01 |  mol |
+| :: C                |  1.0662e-01 |  mol |
+| :: O                |  5.5819e+01 |  mol |
 | :: Na               |  1.0000e+00 |  mol |
 | :: Cl               |  1.0000e+00 |  mol |
 | :: Ca               |  9.9909e-02 |  mol |
 | Species Amount:     |             |      |
-| :: CO3-2            |  1.5610e-05 |  mol |
-| :: H+               |  2.5243e-07 |  mol |
+| :: CO3-2            |  1.3954e-05 |  mol |
+| :: H+               |  2.6696e-07 |  mol |
 | :: H2O              |  5.5501e+01 |  mol |
-| :: CO2              |  1.5215e-03 |  mol |
-| :: (CO2)2           |  1.0984e-07 |  mol |
-| :: HCO3-            |  9.2960e-03 |  mol |
+| :: CO2              |  1.5218e-03 |  mol |
+| :: (CO2)2           |  1.0987e-07 |  mol |
+| :: HCO3-            |  8.7900e-03 |  mol |
 | :: CH4              |  1.0000e-16 |  mol |
-| :: Ca+2             |  5.5259e-03 |  mol |
-| :: CaCO3            |  5.7042e-06 |  mol |
-| :: CaHCO3+          |  1.3202e-04 |  mol |
-| :: CaOH+            |  1.3532e-09 |  mol |
+| :: Ca+2             |  5.2203e-03 |  mol |
+| :: CaCO3            |  4.8198e-06 |  mol |
+| :: CaHCO3+          |  1.1795e-04 |  mol |
+| :: CaOH+            |  1.2090e-09 |  mol |
 | :: Cl-              |  1.0000e+00 |  mol |
 | :: H2               |  1.0000e-16 |  mol |
-| :: Na+              |  9.9829e-01 |  mol |
-| :: NaCO3-           |  1.4938e-04 |  mol |
-| :: NaHCO3           |  1.5577e-03 |  mol |
-| :: OH-              |  4.7277e-07 |  mol |
+| :: Na+              |  9.9839e-01 |  mol |
+| :: NaCO3-           |  1.3357e-04 |  mol |
+| :: NaHCO3           |  1.4733e-03 |  mol |
+| :: OH-              |  4.4708e-07 |  mol |
 | :: NaOH             |  1.0000e-16 |  mol |
 | :: O2               |  1.0000e-16 |  mol |
-| :: Calcite :: CaCO3 |  9.4245e-02 |  mol |
+| :: Calcite :: CaCO3 |  9.4566e-02 |  mol |
 +---------------------+-------------+------+
 </pre></div>
 </div>
@@ -965,7 +965,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 <p>Let’s now have a more in-depth look at the chemical state of the system by creating an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a> and printing it:</p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">ChemicalProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -977,58 +977,58 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | Temperature                            |     323.1500 |         K |
 | Pressure                               |      10.0000 |       bar |
 | Volume                                 |   1.0330e-03 |        m3 |
-| Gibbs Energy                           |   -5891.6432 |         J |
-| Enthalpy                               |    1596.7097 |         J |
-| Entropy                                |      23.1730 |       J/K |
-| Internal Energy                        |     563.7595 |         J |
-| Helmholtz Energy                       |   -6924.5933 |         J |
-| Charge                                 |  -1.0429e-16 |       mol |
+| Gibbs Energy                           |   -5913.5347 |         J |
+| Enthalpy                               |    2379.3493 |         J |
+| Entropy                                |      25.6626 |       J/K |
+| Internal Energy                        |    1346.3896 |         J |
+| Helmholtz Energy                       |   -6946.4945 |         J |
+| Charge                                 |  -9.0967e-17 |       mol |
 | Element Amount:                        |              |           |
 | :: H                                   |   1.1101e+02 |       mol |
-| :: C                                   |   1.0692e-01 |       mol |
-| :: O                                   |   5.5820e+01 |       mol |
+| :: C                                   |   1.0662e-01 |       mol |
+| :: O                                   |   5.5819e+01 |       mol |
 | :: Na                                  |   1.0000e+00 |       mol |
 | :: Cl                                  |   1.0000e+00 |       mol |
 | :: Ca                                  |   9.9909e-02 |       mol |
 | Species Amount:                        |              |           |
-| :: CO3-2                               |   1.5610e-05 |       mol |
-| :: H+                                  |   2.5243e-07 |       mol |
+| :: CO3-2                               |   1.3954e-05 |       mol |
+| :: H+                                  |   2.6696e-07 |       mol |
 | :: H2O                                 |   5.5501e+01 |       mol |
-| :: CO2                                 |   1.5215e-03 |       mol |
-| :: (CO2)2                              |   1.0984e-07 |       mol |
-| :: HCO3-                               |   9.2960e-03 |       mol |
+| :: CO2                                 |   1.5218e-03 |       mol |
+| :: (CO2)2                              |   1.0987e-07 |       mol |
+| :: HCO3-                               |   8.7900e-03 |       mol |
 | :: CH4                                 |   1.0000e-16 |       mol |
-| :: Ca+2                                |   5.5259e-03 |       mol |
-| :: CaCO3                               |   5.7042e-06 |       mol |
-| :: CaHCO3+                             |   1.3202e-04 |       mol |
-| :: CaOH+                               |   1.3532e-09 |       mol |
+| :: Ca+2                                |   5.2203e-03 |       mol |
+| :: CaCO3                               |   4.8198e-06 |       mol |
+| :: CaHCO3+                             |   1.1795e-04 |       mol |
+| :: CaOH+                               |   1.2090e-09 |       mol |
 | :: Cl-                                 |   1.0000e+00 |       mol |
 | :: H2                                  |   1.0000e-16 |       mol |
-| :: Na+                                 |   9.9829e-01 |       mol |
-| :: NaCO3-                              |   1.4938e-04 |       mol |
-| :: NaHCO3                              |   1.5577e-03 |       mol |
-| :: OH-                                 |   4.7277e-07 |       mol |
+| :: Na+                                 |   9.9839e-01 |       mol |
+| :: NaCO3-                              |   1.3357e-04 |       mol |
+| :: NaHCO3                              |   1.4733e-03 |       mol |
+| :: OH-                                 |   4.4708e-07 |       mol |
 | :: NaOH                                |   1.0000e-16 |       mol |
 | :: O2                                  |   1.0000e-16 |       mol |
-| :: Calcite :: CaCO3                    |   9.4245e-02 |       mol |
+| :: Calcite :: CaCO3                    |   9.4566e-02 |       mol |
 | Mole Fraction:                         |              |           |
-| :: CO3-2                               |   2.7140e-07 |   mol/mol |
-| :: H+                                  |   4.3888e-09 |   mol/mol |
-| :: H2O                                 |   9.6494e-01 |   mol/mol |
-| :: CO2                                 |   2.6452e-05 |   mol/mol |
-| :: (CO2)2                              |   1.9097e-09 |   mol/mol |
-| :: HCO3-                               |   1.6162e-04 |   mol/mol |
+| :: CO3-2                               |   2.4261e-07 |   mol/mol |
+| :: H+                                  |   4.6415e-09 |   mol/mol |
+| :: H2O                                 |   9.6496e-01 |   mol/mol |
+| :: CO2                                 |   2.6458e-05 |   mol/mol |
+| :: (CO2)2                              |   1.9102e-09 |   mol/mol |
+| :: HCO3-                               |   1.5282e-04 |   mol/mol |
 | :: CH4                                 |   1.7386e-18 |   mol/mol |
-| :: Ca+2                                |   9.6074e-05 |   mol/mol |
-| :: CaCO3                               |   9.9174e-08 |   mol/mol |
-| :: CaHCO3+                             |   2.2953e-06 |   mol/mol |
-| :: CaOH+                               |   2.3527e-11 |   mol/mol |
+| :: Ca+2                                |   9.0761e-05 |   mol/mol |
+| :: CaCO3                               |   8.3798e-08 |   mol/mol |
+| :: CaHCO3+                             |   2.0507e-06 |   mol/mol |
+| :: CaOH+                               |   2.1020e-11 |   mol/mol |
 | :: Cl-                                 |   1.7386e-02 |   mol/mol |
 | :: H2                                  |   1.7386e-18 |   mol/mol |
-| :: Na+                                 |   1.7356e-02 |   mol/mol |
-| :: NaCO3-                              |   2.5971e-06 |   mol/mol |
-| :: NaHCO3                              |   2.7082e-05 |   mol/mol |
-| :: OH-                                 |   8.2196e-09 |   mol/mol |
+| :: Na+                                 |   1.7358e-02 |   mol/mol |
+| :: NaCO3-                              |   2.3222e-06 |   mol/mol |
+| :: NaHCO3                              |   2.5615e-05 |   mol/mol |
+| :: OH-                                 |   7.7731e-09 |   mol/mol |
 | :: NaOH                                |   1.7386e-18 |   mol/mol |
 | :: O2                                  |   1.7386e-18 |   mol/mol |
 | :: Calcite :: CaCO3                    |   1.0000e+00 |   mol/mol |
@@ -1036,107 +1036,107 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: CO3-2                               |       0.1638 |         - |
 | :: H+                                  |       0.6348 |         - |
 | :: H2O                                 |       1.0012 |         - |
-| :: CO2                                 |       1.2638 |         - |
-| :: (CO2)2                              |       1.2638 |         - |
+| :: CO2                                 |       1.2635 |         - |
+| :: (CO2)2                              |       1.2635 |         - |
 | :: HCO3-                               |       0.6518 |         - |
-| :: CH4                                 |       1.2638 |         - |
+| :: CH4                                 |       1.2635 |         - |
 | :: Ca+2                                |       0.1570 |         - |
-| :: CaCO3                               |       1.2638 |         - |
+| :: CaCO3                               |       1.2635 |         - |
 | :: CaHCO3+                             |       0.6413 |         - |
 | :: CaOH+                               |       0.6413 |         - |
-| :: Cl-                                 |       0.6651 |         - |
-| :: H2                                  |       1.2638 |         - |
+| :: Cl-                                 |       0.6650 |         - |
+| :: H2                                  |       1.2635 |         - |
 | :: Na+                                 |       0.6543 |         - |
-| :: NaCO3-                              |       0.6651 |         - |
-| :: NaHCO3                              |       1.2638 |         - |
-| :: OH-                                 |       0.7030 |         - |
-| :: NaOH                                |       1.2638 |         - |
-| :: O2                                  |       1.2638 |         - |
+| :: NaCO3-                              |       0.6650 |         - |
+| :: NaHCO3                              |       1.2635 |         - |
+| :: OH-                                 |       0.7029 |         - |
+| :: NaOH                                |       1.2635 |         - |
+| :: O2                                  |       1.2635 |         - |
 | :: Calcite :: CaCO3                    |       1.0000 |         - |
 | Activity:                              |              |           |
-| :: CO3-2                               |   2.5569e-06 |         - |
-| :: H+                                  |   1.6027e-07 |         - |
-| :: H2O                                 |   9.6605e-01 |         - |
+| :: CO3-2                               |   2.2860e-06 |         - |
+| :: H+                                  |   1.6950e-07 |         - |
+| :: H2O                                 |   9.6607e-01 |         - |
 | :: CO2                                 |   1.9231e-03 |         - |
 | :: (CO2)2                              |   1.3884e-07 |         - |
-| :: HCO3-                               |   6.0597e-03 |         - |
-| :: CH4                                 |   1.2640e-16 |         - |
-| :: Ca+2                                |   8.6759e-04 |         - |
-| :: CaCO3                               |   7.2099e-06 |         - |
-| :: CaHCO3+                             |   8.4670e-05 |         - |
-| :: CaOH+                               |   8.6789e-10 |         - |
-| :: Cl-                                 |   6.6515e-01 |         - |
-| :: H2                                  |   1.2640e-16 |         - |
-| :: Na+                                 |   6.5325e-01 |         - |
-| :: NaCO3-                              |   9.9358e-05 |         - |
-| :: NaHCO3                              |   1.9688e-03 |         - |
-| :: OH-                                 |   3.3238e-07 |         - |
-| :: NaOH                                |   1.2640e-16 |         - |
-| :: O2                                  |   1.2640e-16 |         - |
+| :: HCO3-                               |   5.7298e-03 |         - |
+| :: CH4                                 |   1.2637e-16 |         - |
+| :: Ca+2                                |   8.1976e-04 |         - |
+| :: CaCO3                               |   6.0907e-06 |         - |
+| :: CaHCO3+                             |   7.5647e-05 |         - |
+| :: CaOH+                               |   7.7539e-10 |         - |
+| :: Cl-                                 |   6.6513e-01 |         - |
+| :: H2                                  |   1.2637e-16 |         - |
+| :: Na+                                 |   6.5330e-01 |         - |
+| :: NaCO3-                              |   8.8838e-05 |         - |
+| :: NaHCO3                              |   1.8618e-03 |         - |
+| :: OH-                                 |   3.1429e-07 |         - |
+| :: NaOH                                |   1.2637e-16 |         - |
+| :: O2                                  |   1.2637e-16 |         - |
 | :: Calcite :: CaCO3                    |   1.0000e+00 |         - |
 | lg(Activity):                          |              |           |
-| :: CO3-2                               |      -5.5923 |         - |
-| :: H+                                  |      -6.7952 |         - |
+| :: CO3-2                               |      -5.6409 |         - |
+| :: H+                                  |      -6.7708 |         - |
 | :: H2O                                 |      -0.0150 |         - |
 | :: CO2                                 |      -2.7160 |         - |
 | :: (CO2)2                              |      -6.8575 |         - |
-| :: HCO3-                               |      -2.2176 |         - |
-| :: CH4                                 |     -15.8983 |         - |
-| :: Ca+2                                |      -3.0617 |         - |
-| :: CaCO3                               |      -5.1421 |         - |
-| :: CaHCO3+                             |      -4.0723 |         - |
-| :: CaOH+                               |      -9.0615 |         - |
+| :: HCO3-                               |      -2.2419 |         - |
+| :: CH4                                 |     -15.8984 |         - |
+| :: Ca+2                                |      -3.0863 |         - |
+| :: CaCO3                               |      -5.2153 |         - |
+| :: CaHCO3+                             |      -4.1212 |         - |
+| :: CaOH+                               |      -9.1105 |         - |
 | :: Cl-                                 |      -0.1771 |         - |
-| :: H2                                  |     -15.8983 |         - |
+| :: H2                                  |     -15.8984 |         - |
 | :: Na+                                 |      -0.1849 |         - |
-| :: NaCO3-                              |      -4.0028 |         - |
-| :: NaHCO3                              |      -2.7058 |         - |
-| :: OH-                                 |      -6.4784 |         - |
-| :: NaOH                                |     -15.8983 |         - |
-| :: O2                                  |     -15.8983 |         - |
+| :: NaCO3-                              |      -4.0514 |         - |
+| :: NaHCO3                              |      -2.7301 |         - |
+| :: OH-                                 |      -6.5027 |         - |
+| :: NaOH                                |     -15.8984 |         - |
+| :: O2                                  |     -15.8984 |         - |
 | :: Calcite :: CaCO3                    |       0.0000 |         - |
 | ln(Activity):                          |              |           |
-| :: CO3-2                               |     -12.8767 |         - |
-| :: H+                                  |     -15.6464 |         - |
+| :: CO3-2                               |     -12.9887 |         - |
+| :: H+                                  |     -15.5904 |         - |
 | :: H2O                                 |      -0.0345 |         - |
 | :: CO2                                 |      -6.2538 |         - |
 | :: (CO2)2                              |     -15.7900 |         - |
-| :: HCO3-                               |      -5.1061 |         - |
-| :: CH4                                 |     -36.6071 |         - |
-| :: Ca+2                                |      -7.0498 |         - |
-| :: CaCO3                               |     -11.8401 |         - |
-| :: CaHCO3+                             |      -9.3767 |         - |
-| :: CaOH+                               |     -20.8650 |         - |
-| :: Cl-                                 |      -0.4077 |         - |
-| :: H2                                  |     -36.6071 |         - |
-| :: Na+                                 |      -0.4258 |         - |
-| :: NaCO3-                              |      -9.2168 |         - |
-| :: NaHCO3                              |      -6.2303 |         - |
-| :: OH-                                 |     -14.9170 |         - |
-| :: NaOH                                |     -36.6071 |         - |
-| :: O2                                  |     -36.6071 |         - |
+| :: HCO3-                               |      -5.1621 |         - |
+| :: CH4                                 |     -36.6073 |         - |
+| :: Ca+2                                |      -7.1065 |         - |
+| :: CaCO3                               |     -12.0087 |         - |
+| :: CaHCO3+                             |      -9.4894 |         - |
+| :: CaOH+                               |     -20.9776 |         - |
+| :: Cl-                                 |      -0.4078 |         - |
+| :: H2                                  |     -36.6073 |         - |
+| :: Na+                                 |      -0.4257 |         - |
+| :: NaCO3-                              |      -9.3287 |         - |
+| :: NaHCO3                              |      -6.2862 |         - |
+| :: OH-                                 |     -14.9730 |         - |
+| :: NaOH                                |     -36.6073 |         - |
+| :: O2                                  |     -36.6073 |         - |
 | :: Calcite :: CaCO3                    |       0.0000 |         - |
 | Chemical Potential:                    |              |           |
-| :: CO3-2                               |  -3.4597e+04 |     J/mol |
-| :: H+                                  |  -4.2039e+04 |     J/mol |
-| :: H2O                                 |  -9.2799e+01 |     J/mol |
+| :: CO3-2                               |  -3.4898e+04 |     J/mol |
+| :: H+                                  |  -4.1889e+04 |     J/mol |
+| :: H2O                                 |  -9.2754e+01 |     J/mol |
 | :: CO2                                 |  -1.1858e+05 |     J/mol |
 | :: (CO2)2                              |  -2.3717e+05 |     J/mol |
-| :: HCO3-                               |  -7.6637e+04 |     J/mol |
+| :: HCO3-                               |  -7.6787e+04 |     J/mol |
 | :: CH4                                 |  -3.3095e+05 |     J/mol |
-| :: Ca+2                                |  -1.8942e+04 |     J/mol |
-| :: CaCO3                               |  -5.3539e+04 |     J/mol |
-| :: CaHCO3+                             |  -9.5578e+04 |     J/mol |
-| :: CaOH+                               |   2.3005e+04 |     J/mol |
-| :: Cl-                                 |  -1.0955e+03 |     J/mol |
-| :: H2                                  |  -7.8226e+04 |     J/mol |
-| :: Na+                                 |  -1.1440e+03 |     J/mol |
-| :: NaCO3-                              |  -3.5741e+04 |     J/mol |
-| :: NaHCO3                              |  -7.7781e+04 |     J/mol |
-| :: OH-                                 |   4.1946e+04 |     J/mol |
+| :: Ca+2                                |  -1.9094e+04 |     J/mol |
+| :: CaCO3                               |  -5.3992e+04 |     J/mol |
+| :: CaHCO3+                             |  -9.5881e+04 |     J/mol |
+| :: CaOH+                               |   2.2702e+04 |     J/mol |
+| :: Cl-                                 |  -1.0956e+03 |     J/mol |
+| :: H2                                  |  -7.8227e+04 |     J/mol |
+| :: Na+                                 |  -1.1438e+03 |     J/mol |
+| :: NaCO3-                              |  -3.6042e+04 |     J/mol |
+| :: NaHCO3                              |  -7.7931e+04 |     J/mol |
+| :: OH-                                 |   4.1796e+04 |     J/mol |
 | :: NaOH                                |   4.5539e+04 |     J/mol |
 | :: O2                                  |   3.8690e+05 |     J/mol |
-| :: Calcite :: CaCO3                    |  -5.3539e+04 |     J/mol |
+| :: Calcite :: CaCO3                    |  -5.3992e+04 |     J/mol |
 | Standard Volume:                       |              |           |
 | :: CO3-2                               |  -5.3636e-06 |    m3/mol |
 | :: H+                                  |   0.0000e+00 |    m3/mol |
@@ -1178,7 +1178,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: OH-                                 |   82025.5329 |     J/mol |
 | :: NaOH                                |  143895.7590 |     J/mol |
 | :: O2                                  |  485252.4620 |     J/mol |
-| :: Calcite :: CaCO3                    |  -53538.8948 |     J/mol |
+| :: Calcite :: CaCO3                    |  -53992.1419 |     J/mol |
 | Standard Enthalpy (formation):         |              |           |
 | :: CO3-2                               |       0.0000 |     J/mol |
 | :: H+                                  |       0.0000 |     J/mol |
@@ -1199,7 +1199,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: OH-                                 |   51686.8330 |     J/mol |
 | :: NaOH                                |   51690.7786 |     J/mol |
 | :: O2                                  |  563957.2704 |     J/mol |
-| :: Calcite :: CaCO3                    |   17974.0193 |     J/mol |
+| :: Calcite :: CaCO3                    |   26143.5384 |     J/mol |
 | Standard Entropy (formation):          |              |           |
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
@@ -1220,7 +1220,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: OH-                                 |     -93.8843 | J/(mol*K) |
 | :: NaOH                                |    -285.3318 | J/(mol*K) |
 | :: O2                                  |     243.5550 | J/(mol*K) |
-| :: Calcite :: CaCO3                    |     221.2994 | J/(mol*K) |
+| :: Calcite :: CaCO3                    |     247.9829 | J/(mol*K) |
 | Standard Internal Energy (formation):  |              |           |
 | :: CO3-2                               |       5.3636 |     J/mol |
 | :: H+                                  |       0.0000 |     J/mol |
@@ -1241,7 +1241,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: OH-                                 |   51690.6793 |     J/mol |
 | :: NaOH                                |   51690.7786 |     J/mol |
 | :: O2                                  |  563925.3668 |     J/mol |
-| :: Calcite :: CaCO3                    |   17937.1193 |     J/mol |
+| :: Calcite :: CaCO3                    |   26106.6384 |     J/mol |
 | Standard Helmholtz Energy (formation): |              |           |
 | :: CO3-2                               |       5.3636 |     J/mol |
 | :: H+                                  |       0.0000 |     J/mol |
@@ -1262,7 +1262,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: OH-                                 |   82029.3792 |     J/mol |
 | :: NaOH                                |  143895.7590 |     J/mol |
 | :: O2                                  |  485220.5584 |     J/mol |
-| :: Calcite :: CaCO3                    |  -53575.7948 |     J/mol |
+| :: Calcite :: CaCO3                    |  -54029.0419 |     J/mol |
 | Standard Heat Capacity (constant P):   |              |           |
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
@@ -1283,7 +1283,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: OH-                                 |    -184.2105 | J/(mol*K) |
 | :: NaOH                                |    -184.2105 | J/(mol*K) |
 | :: O2                                  |       0.0000 | J/(mol*K) |
-| :: Calcite :: CaCO3                    |     369.7535 | J/(mol*K) |
+| :: Calcite :: CaCO3                    |     575.7029 | J/(mol*K) |
 | Standard Heat Capacity (constant V):   |              |           |
 | :: CO3-2                               |       0.0000 | J/(mol*K) |
 | :: H+                                  |       0.0000 | J/(mol*K) |
@@ -1304,7 +1304,7 @@ conditions, and the solution is thus saturated with it. If this was not the case
 | :: OH-                                 |    -184.2105 | J/(mol*K) |
 | :: NaOH                                |    -184.2105 | J/(mol*K) |
 | :: O2                                  |       0.0000 | J/(mol*K) |
-| :: Calcite :: CaCO3                    |     369.7535 | J/(mol*K) |
+| :: Calcite :: CaCO3                    |     575.7029 | J/(mol*K) |
 +----------------------------------------+--------------+-----------+
 </pre></div>
 </div>
@@ -1315,7 +1315,7 @@ species, their chemical potentials, and standard thermodynamic properties.</p>
 <p>For properties more pertinent to aqueous solutions, we can create an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html"><code class="docutils literal notranslate"><span class="pre">AqueousProps</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span> <span class="o">=</span> <span class="n">rkt</span><span class="p">.</span><span class="nf">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">aprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1326,43 +1326,43 @@ species, their chemical potentials, and standard thermodynamic properties.</p>
 +-----------------------------------+-------------+-------+
 | Temperature                       |    323.1500 |     K |
 | Pressure                          |     10.0000 |   bar |
-| Ionic Strength (Effective)        |      1.0152 | molal |
-| Ionic Strength (Stoichiometric)   |      1.0167 | molal |
-| pH                                |      6.7952 |       |
-| pE                                |     -2.5006 |       |
-| Eh                                |     -0.1603 |     V |
-| Charge Molality                   | -1.0430e-16 | molal |
+| Ionic Strength (Effective)        |      1.0143 | molal |
+| Ionic Strength (Stoichiometric)   |      1.0158 | molal |
+| pH                                |      6.7708 |       |
+| pE                                |     -2.4763 |       |
+| Eh                                |     -0.1588 |     V |
+| Charge Molality                   | -9.0975e-17 | molal |
 | Element Molality:                 |             |       |
-| :: C                              |  1.2680e-02 | molal |
+| :: C                              |  1.2057e-02 | molal |
 | :: Na                             |  1.0001e+00 | molal |
 | :: Cl                             |  1.0001e+00 | molal |
-| :: Ca                             |  5.6644e-03 | molal |
+| :: Ca                             |  5.3437e-03 | molal |
 | Species Molality:                 |             |       |
-| :: CO3-2                          |  1.5612e-05 | molal |
-| :: H+                             |  2.5247e-07 | molal |
-| :: CO2                            |  1.5217e-03 | molal |
-| :: (CO2)2                         |  1.0986e-07 | molal |
-| :: HCO3-                          |  9.2973e-03 | molal |
+| :: CO3-2                          |  1.3956e-05 | molal |
+| :: H+                             |  2.6700e-07 | molal |
+| :: CO2                            |  1.5220e-03 | molal |
+| :: (CO2)2                         |  1.0988e-07 | molal |
+| :: HCO3-                          |  8.7911e-03 | molal |
 | :: CH4                            |  1.0001e-16 | molal |
-| :: Ca+2                           |  5.5267e-03 | molal |
-| :: CaCO3                          |  5.7050e-06 | molal |
-| :: CaHCO3+                        |  1.3204e-04 | molal |
-| :: CaOH+                          |  1.3534e-09 | molal |
+| :: Ca+2                           |  5.2210e-03 | molal |
+| :: CaCO3                          |  4.8204e-06 | molal |
+| :: CaHCO3+                        |  1.1796e-04 | molal |
+| :: CaOH+                          |  1.2092e-09 | molal |
 | :: Cl-                            |  1.0001e+00 | molal |
 | :: H2                             |  1.0001e-16 | molal |
-| :: Na+                            |  9.9843e-01 | molal |
-| :: NaCO3-                         |  1.4940e-04 | molal |
-| :: NaHCO3                         |  1.5579e-03 | molal |
-| :: OH-                            |  4.7284e-07 | molal |
+| :: Na+                            |  9.9853e-01 | molal |
+| :: NaCO3-                         |  1.3358e-04 | molal |
+| :: NaHCO3                         |  1.4735e-03 | molal |
+| :: OH-                            |  4.4714e-07 | molal |
 | :: NaOH                           |  1.0001e-16 | molal |
 | :: O2                             |  1.0001e-16 | molal |
 | Saturation Indices (log base 10): |             |       |
-| :: CH4(g)                         |    -13.9335 |     - |
+| :: CH4(g)                         |    -13.9336 |     - |
 | :: CO2(g)                         |     -2.0000 |     - |
 | :: H2(g)                          |     -9.7024 |     - |
 | :: H2O(g)                         |     -1.9282 |     - |
-| :: O2(g)                          |    -59.2530 |     - |
-| :: Aragonite :: CaCO3             |     -0.1268 |     - |
+| :: O2(g)                          |    -59.2529 |     - |
+| :: Aragonite :: CaCO3             |     -0.2000 |     - |
 | :: Calcite :: CaCO3               |     -0.0000 |     - |
 | :: Halite :: NaCl                 |     -1.9519 |     - |
 +-----------------------------------+-------------+-------+
@@ -1389,12 +1389,12 @@ chemical system. For this property, we can compute it at specified temperature a
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
 
 <span class="n">R</span> <span class="o">=</span> <span class="n">rkt</span><span class="o">.</span><span class="n">universalGasConstant</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">temperature</span><span class="p">()</span>
-<span class="n">P</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">pressure</span><span class="p">()</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
 
-<span class="n">uCO2aq</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">speciesChemicalPotential</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>
-<span class="n">u0CO2g</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span><span class="o">.</span><span class="n">G0</span>
-<span class="n">uCO2g</span>  <span class="o">=</span> <span class="n">u0CO2g</span> <span class="o">+</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">fCO2g</span><span class="p">)</span>
+<span class="n">uCO2aq</span> <span class="o">=</span> <span class="n">props</span><span class="p">.</span><span class="nf">speciesChemicalPotential</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>
+<span class="n">u0CO2g</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">()</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">props</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span><span class="o">.</span><span class="n">G0</span>
+<span class="n">uCO2g</span>  <span class="o">=</span> <span class="n">u0CO2g</span> <span class="o">+</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="nf">log</span><span class="p">(</span><span class="n">fCO2g</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;μCO2(aq) = </span><span class="si">{</span><span class="n">uCO2aq</span><span class="si">}</span><span class="s2"> J/mol&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;μCO2(g)  = </span><span class="si">{</span><span class="n">uCO2g</span><span class="si">}</span><span class="s2"> J/mol&quot;</span><span class="p">)</span>
@@ -1460,7 +1460,7 @@ chemical system. For this property, we can compute it at specified temperature a
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

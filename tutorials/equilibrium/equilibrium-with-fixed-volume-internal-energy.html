@@ -813,11 +813,11 @@ Written by Allan Leal (ETH Zurich) on Jan 7th, 2022 (last revised on Jan 21th, 2
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 
-<span class="n">gases</span> <span class="o">=</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">)</span>
+<span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">)</span>
 
-<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -825,12 +825,12 @@ Written by Allan Leal (ETH Zurich) on Jan 7th, 2022 (last revised on Jan 21th, 2
 <p>Next, we create an initial chemical state for this system in which CH<sub>4</sub> and O<sub>2</sub> exist in a 10 cm<sup>3</sup> volume with mole fractions 0.75 and 0.25 respectively. You’ll notice that we accomplish this by setting the amounts of CH<sub>4</sub> and O<sub>2</sub> to 0.75 and 0.25 moles, respectively, followed by <strong>scaling the volume of the chemical state</strong> to the desired 10 cm<sup>3</sup>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state0</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state0</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state0</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state0</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state0</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.25</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state0</span><span class="o">.</span><span class="n">scaleVolume</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.25</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state0</span><span class="p">.</span><span class="nf">scaleVolume</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;INITIAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state0</span><span class="p">)</span>
@@ -864,10 +864,10 @@ Written by Allan Leal (ETH Zurich) on Jan 7th, 2022 (last revised on Jan 21th, 2
 <p>Let’s check the volume and internal energy in this initial chemical state. The next code block computes the chemical properties of the system in this initial state (using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>). It also stores the value of volume and internal energy in the variables <code class="docutils literal notranslate"><span class="pre">V0</span></code> and <code class="docutils literal notranslate"><span class="pre">U0</span></code> respectively, which we will use later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props0</span> <span class="o">=</span> <span class="n">ChemicalProps</span><span class="p">(</span><span class="n">state0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalProps</span><span class="p">(</span><span class="n">state0</span><span class="p">)</span>
 
-<span class="n">V0</span> <span class="o">=</span> <span class="n">props0</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>          <span class="c1"># the initial volume of the gases</span>
-<span class="n">U0</span> <span class="o">=</span> <span class="n">props0</span><span class="o">.</span><span class="n">internalEnergy</span><span class="p">()</span>  <span class="c1"># the initial internal energy of the gases</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="n">props0</span><span class="p">.</span><span class="nf">volume</span><span class="p">()</span>          <span class="c1"># the initial volume of the gases</span>
+<span class="n">U0</span> <span class="o">=</span> <span class="n">props0</span><span class="p">.</span><span class="nf">internalEnergy</span><span class="p">()</span>  <span class="c1"># the initial internal energy of the gases</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial volume of the gases is&quot;</span><span class="p">,</span> <span class="n">V0</span><span class="p">,</span> <span class="s2">&quot;m3&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial internal energy of the gases is&quot;</span><span class="p">,</span> <span class="n">U0</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="p">)</span>
@@ -889,11 +889,11 @@ Initial internal energy of the gases is -23.5698 J
 <p>The code below creates an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSpecs</span></code></a> object to reflect these specifications for the equilibrium constraints, which is then used to create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span> <span class="o">=</span> <span class="n">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">specs</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>
-<span class="n">specs</span><span class="o">.</span><span class="n">internalEnergy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">specs</span><span class="p">.</span><span class="nf">volume</span><span class="p">()</span>
+<span class="n">specs</span><span class="p">.</span><span class="nf">internalEnergy</span><span class="p">()</span>
 
-<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -901,15 +901,15 @@ Initial internal energy of the gases is -23.5698 J
 <p>The next step is to create an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumConditions</span></code></a> object in which we specify the values of volume and internal energy at equilibrium (which should be those values at the initial state, and that’s why we created variables <code class="docutils literal notranslate"><span class="pre">V0</span></code> and <code class="docutils literal notranslate"><span class="pre">U0</span></code> before!). We do this in the following code block, which also sets lower and upper bounds for temperature and pressure (to avoid negative or extremely large values for these properties during the equilibrium calculation!):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span> <span class="o">=</span> <span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">volume</span><span class="p">(</span><span class="n">V0</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">internalEnergy</span><span class="p">(</span><span class="n">U0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">volume</span><span class="p">(</span><span class="n">V0</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">internalEnergy</span><span class="p">(</span><span class="n">U0</span><span class="p">)</span>
 
-<span class="n">conditions</span><span class="o">.</span><span class="n">setLowerBoundTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">setUpperBoundTemperature</span><span class="p">(</span><span class="mf">2000.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">setLowerBoundTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">setUpperBoundTemperature</span><span class="p">(</span><span class="mf">2000.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
 
-<span class="n">conditions</span><span class="o">.</span><span class="n">setLowerBoundPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">setUpperBoundPressure</span><span class="p">(</span><span class="mf">1000.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">setLowerBoundPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">setUpperBoundPressure</span><span class="p">(</span><span class="mf">1000.0</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -921,9 +921,9 @@ Initial internal energy of the gases is -23.5698 J
 <p>We have everything we need now to perform the equilibrium calculation, which is done next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">state0</span><span class="p">)</span>  <span class="c1"># let&#39;s create a copy of the initial state</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">state0</span><span class="p">)</span>  <span class="c1"># let&#39;s create a copy of the initial state</span>
 
-<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FINAL STATE&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -958,19 +958,19 @@ Initial internal energy of the gases is -23.5698 J
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can use <a class="reference external" href="https://reaktoro.org/api/structReaktoro_1_1EquilibriumOptions.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumOptions</span></code></a> to change this default lower bound for species amounts:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">options</span> <span class="o">=</span> <span class="n">EquilibriumOptions</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumOptions</span><span class="p">()</span>
 <span class="n">options</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1e-30</span>
 
-<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">setOptions</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">setOptions</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>The previously printed state does not show volume and internal energy. To verify our equilibrium state stored in <code class="docutils literal notranslate"><span class="pre">state</span></code> has volume and internal energy equal to <code class="docutils literal notranslate"><span class="pre">V0</span></code> and <code class="docutils literal notranslate"><span class="pre">U0</span></code> respectively, we do the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">props</span><span class="p">()</span><span class="o">.</span><span class="n">volume</span><span class="p">()</span>
-<span class="n">U</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">props</span><span class="p">()</span><span class="o">.</span><span class="n">internalEnergy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">props</span><span class="p">()</span><span class="o">.</span><span class="nf">volume</span><span class="p">()</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">props</span><span class="p">()</span><span class="o">.</span><span class="nf">internalEnergy</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volume at initial state:&quot;</span><span class="p">,</span> <span class="n">V0</span><span class="p">,</span> <span class="s2">&quot;m3&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volume at final state:&quot;</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="s2">&quot;m3&quot;</span><span class="p">)</span>
@@ -993,8 +993,8 @@ Internal energy at final state: -23.5698 J
 <p>Let’s now check what is the final temperature and pressure when burning CH<sub>4</sub> in that rigid and adiabatic chamber with our given initial conditions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(),</span> <span class="s2">&quot;K&quot;</span><span class="p">,</span> <span class="s2">&quot;degC&quot;</span><span class="p">)</span>  <span class="c1"># convert from K to °C</span>
-<span class="n">P</span> <span class="o">=</span> <span class="n">units</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(),</span> <span class="s2">&quot;Pa&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>  <span class="c1"># convert from Pa to bar</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">units</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(),</span> <span class="s2">&quot;K&quot;</span><span class="p">,</span> <span class="s2">&quot;degC&quot;</span><span class="p">)</span>  <span class="c1"># convert from K to °C</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">units</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(),</span> <span class="s2">&quot;Pa&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>  <span class="c1"># convert from Pa to bar</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature at final state:&quot;</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pressure at final state:&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
@@ -1060,7 +1060,7 @@ Pressure at final state: 5.83621 bar
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

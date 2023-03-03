@@ -731,51 +731,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-reaktoro">
-   ModuleNotFoundError: No module named ‘reaktoro’
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#expecting-a-float-value-but-got-autodiff-real-instead">
-   Expecting a float value but got autodiff.real instead
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
-   Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sigfpe-signals-and-fatal-arithmetic-errors">
-   SIGFPE signals and fatal arithmetic errors
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -787,34 +748,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modulenotfounderror-no-module-named-reaktoro">
-   ModuleNotFoundError: No module named ‘reaktoro’
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#expecting-a-float-value-but-got-autodiff-real-instead">
-   Expecting a float value but got autodiff.real instead
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
-   Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sigfpe-signals-and-fatal-arithmetic-errors">
-   SIGFPE signals and fatal arithmetic errors
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -825,45 +758,65 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h1>
 <p>Below are the most common issues our users encounter, for which we indicate the necessary action to resolve them potentially. If you cannot find your problem below or the solution provided is not working for you, don’t hesitate to get in touch with us at <a class="reference external" href="https://gitter.im/reaktoro/community">Gitter</a>.</p>
-<section id="modulenotfounderror-no-module-named-reaktoro">
-<h2>ModuleNotFoundError: No module named ‘reaktoro’<a class="headerlink" href="#modulenotfounderror-no-module-named-reaktoro" title="Permalink to this headline">#</a></h2>
-<p>The entire error message may be something like this:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+ModuleNotFoundError: No module named ‘reaktoro’<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The entire error message may be something like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
     <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;reaktoro&#39;</span>
 </pre></div>
 </div>
-<p>This error is happening because the Python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> cannot be found, most likely because the environment variable <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> has not been set correctly. Ensure the path where <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is located is specified in <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.</p>
-</section>
-<section id="expecting-a-float-value-but-got-autodiff-real-instead">
-<h2>Expecting a float value but got autodiff.real instead<a class="headerlink" href="#expecting-a-float-value-but-got-autodiff-real-instead" title="Permalink to this headline">#</a></h2>
-<p>Reaktoro relies on number types defined in the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library to enable automatic differentiation. It is because of <a class="reference external" href="https://autodiff.github.io">autodiff</a> that Reaktoro can have improved numerical algorithms and also compute derivatives of chemical/thermodynamic properties with respect to temperature, pressure, species amounts, and even the parameters used in the models.</p>
-<p>You can use the <code class="docutils literal notranslate"><span class="pre">float</span></code> function to convert an <code class="docutils literal notranslate"><span class="pre">autodiff.real</span></code> number into a Python <code class="docutils literal notranslate"><span class="pre">float</span></code> number type. Below is an example using the method <code class="docutils literal notranslate"><span class="pre">ChemicalProps.activity</span></code>:</p>
+<p class="sd-card-text">This error is happening because the Python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> cannot be found, most likely because the environment variable <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> has not been set correctly. Ensure the path where <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is located is specified in <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Expecting a float value but got autodiff.real instead<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Reaktoro relies on number types defined in the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library to enable automatic differentiation. It is because of <a class="reference external" href="https://autodiff.github.io">autodiff</a> that Reaktoro can have improved numerical algorithms and also compute derivatives of chemical/thermodynamic properties with respect to temperature, pressure, species amounts, and even the parameters used in the models.</p>
+<p class="sd-card-text">You can use the <code class="docutils literal notranslate"><span class="pre">float</span></code> function to convert an <code class="docutils literal notranslate"><span class="pre">autodiff.real</span></code> number into a Python <code class="docutils literal notranslate"><span class="pre">float</span></code> number type. Below is an example using the method <code class="docutils literal notranslate"><span class="pre">ChemicalProps.activity</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert autodiff.real to float!</span>
-<span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">speciesAmount</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">))</span>
+<span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-</section>
-<section id="expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead">
-<h2>Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead<a class="headerlink" href="#expecting-a-numpy-array-but-got-autodiff-arrayxreal-or-autodiff-vectorxreal-instead" title="Permalink to this headline">#</a></h2>
-<p>This is a similar issue to the previous one. You may encounter the following array/vector types while using Reaktoro:</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Expecting a numpy.array but got autodiff.ArrayXreal or autodiff.VectorXreal instead<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This is a similar issue to the previous one. You may encounter the following array/vector types while using Reaktoro:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">autodiff.ArrayXreal1st</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">autodiff.ArrayXreal1stConstRef</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">autodiff.VectorXreal1st</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">autodiff.VectorXreal1stConstRef</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">autodiff.ArrayXreal1st</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">autodiff.ArrayXreal1stConstRef</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">autodiff.VectorXreal1st</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">autodiff.VectorXreal1stConstRef</span></code></p></li>
 </ul>
-<p>These types are a combination of array/vector types from the C++ library <a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a> with the number types from the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library, both C++ libraries.</p>
-<p>You can use the method <code class="docutils literal notranslate"><span class="pre">asarray</span></code> in these array/vector types to convert them to a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>:</p>
+<p class="sd-card-text">These types are a combination of array/vector types from the C++ library <a class="reference external" href="https://eigen.tuxfamily.org/">Eigen</a> with the number types from the <a class="reference external" href="https://autodiff.github.io">autodiff</a> library, both C++ libraries.</p>
+<p class="sd-card-text">You can use the method <code class="docutils literal notranslate"><span class="pre">asarray</span></code> in these array/vector types to convert them to a <code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert from autodiff.ArrayXreal1stConstRef to numpy.array with float values</span>
-<span class="n">state</span><span class="o">.</span><span class="n">speciesAmounts</span><span class="p">()</span><span class="o">.</span><span class="n">asarray</span><span class="p">()</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">speciesAmounts</span><span class="p">()</span><span class="o">.</span><span class="nf">asarray</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="sigfpe-signals-and-fatal-arithmetic-errors">
-<h2>SIGFPE signals and fatal arithmetic errors<a class="headerlink" href="#sigfpe-signals-and-fatal-arithmetic-errors" title="Permalink to this headline">#</a></h2>
-<p>Users that couple Reaktoro’s C++ library and <a class="reference external" href="https://www.openfoam.com/">OpenFOAM</a> for reactive transport simulations often report problems related to <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv">SIGFPE signals</a> that are thrown following arithmetic exceptions (e.g., division by zero, logarithm of zero, etc.). Usually these errors happen in Reaktoro because some species in the chemical state have zero values (always try to set a very small amount instead of zero!), and during a chemical equilibrium or kinetic calculation the logarithm of zero may be evaluated. These arithmetic errors, however, do not compromise the calculation results and are ignored in Reaktoro when they occur.</p>
-<p>So you can safely disable these SIGFPE signals. Below is a demonstration using <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv/feclearexcept"><code class="docutils literal notranslate"><span class="pre">std::feclearexcept</span></code></a>:</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+SIGFPE signals and fatal arithmetic errors<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Users that couple Reaktoro’s C++ library and <a class="reference external" href="https://www.openfoam.com/">OpenFOAM</a> for reactive transport simulations often report problems related to <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv">SIGFPE signals</a> that are thrown following arithmetic exceptions (e.g., division by zero, logarithm of zero, etc.). Usually these errors happen in Reaktoro because some species in the chemical state have zero values (always try to set a very small amount instead of zero!), and during a chemical equilibrium or kinetic calculation the logarithm of zero may be evaluated. These arithmetic errors, however, do not compromise the calculation results and are ignored in Reaktoro when they occur.</p>
+<p class="sd-card-text">So you can safely disable these SIGFPE signals. Below is a demonstration using <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/fenv/feclearexcept"><code class="docutils literal notranslate"><span class="pre">std::feclearexcept</span></code></a>:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cfenv&gt;</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Reaktoro/Reaktoro.hpp&gt;</span>
@@ -871,37 +824,37 @@ title="Print to PDF"
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">feclearexcept</span><span class="p">(</span><span class="n">FE_ALL_EXCEPT</span><span class="p">);</span><span class="w"> </span><span class="c1">// disable all SIGFPE exceptions</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="nf">feclearexcept</span><span class="p">(</span><span class="n">FE_ALL_EXCEPT</span><span class="p">);</span><span class="w"> </span><span class="c1">// disable all SIGFPE exceptions</span>
 
-<span class="w">    </span><span class="n">PhreeqcDatabase</span><span class="w"> </span><span class="n">db</span><span class="p">(</span><span class="s">&quot;phreeqc.dat&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nc">PhreeqcDatabase</span><span class="w"> </span><span class="n">db</span><span class="p">(</span><span class="s">&quot;phreeqc.dat&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">AqueousPhase</span><span class="w"> </span><span class="n">aqueousphase</span><span class="p">(</span><span class="n">speciate</span><span class="p">(</span><span class="s">&quot;H O C Na Cl&quot;</span><span class="p">));</span>
-<span class="w">    </span><span class="n">aqueousphase</span><span class="p">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzerHMW</span><span class="p">());</span>
+<span class="w">    </span><span class="nc">AqueousPhase</span><span class="w"> </span><span class="n">aqueousphase</span><span class="o">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s">&quot;H O C Na Cl&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">aqueousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">());</span>
 
-<span class="w">    </span><span class="n">GaseousPhase</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">gaseousphase</span><span class="p">.</span><span class="n">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">());</span>
+<span class="w">    </span><span class="nc">GaseousPhase</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">gaseousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">());</span>
 
-<span class="w">    </span><span class="n">ChemicalSystem</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">aqueousphase</span><span class="p">,</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">);</span>
+<span class="w">    </span><span class="nc">ChemicalSystem</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">aqueousphase</span><span class="p">,</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">ChemicalState</span><span class="w"> </span><span class="n">state</span><span class="p">(</span><span class="n">system</span><span class="p">);</span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">setTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;celsius&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;H2O&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;kg&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;Na+&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">4.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;Cl-&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">4.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nc">ChemicalState</span><span class="w"> </span><span class="n">state</span><span class="p">(</span><span class="n">system</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;celsius&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s">&quot;H2O&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;kg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s">&quot;Na+&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">4.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s">&quot;Cl-&quot;</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mf">4.00</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mol&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">EquilibriumSolver</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">system</span><span class="p">);</span>
-<span class="w">    </span><span class="n">solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+<span class="w">    </span><span class="nc">EquilibriumSolver</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">system</span><span class="p">);</span>
+<span class="w">    </span><span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="n">output</span><span class="p">(</span><span class="s">&quot;state.txt&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">state</span><span class="p">.</span><span class="nf">output</span><span class="p">(</span><span class="s">&quot;state.txt&quot;</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</details></section>
 
     <script type="text/x-thebe-config">
     {
@@ -951,7 +904,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

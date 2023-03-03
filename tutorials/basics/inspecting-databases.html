@@ -878,7 +878,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -890,8 +890,8 @@ title="Print to PDF"
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Species&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}{</span><span class="s1">&#39;Formula&#39;</span><span class="si">:</span><span class="s2">&lt;60</span><span class="si">}{</span><span class="s1">&#39;Molar Mass (kg/mol)&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}{</span><span class="n">species</span><span class="o">.</span><span class="n">formula</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;60</span><span class="si">}{</span><span class="n">species</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;20.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}{</span><span class="n">species</span><span class="p">.</span><span class="nf">formula</span><span class="p">()</span><span class="o">.</span><span class="nf">str</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;60</span><span class="si">}{</span><span class="n">species</span><span class="p">.</span><span class="nf">molarMass</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;20.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1139,8 +1139,8 @@ zeoliteY            Na2(Al2Si4)O12(H2O)8                                        
 <p>Often, we are not interested in all species in a database, but only in those that contain some chemical elements. We show below how the species that can be formed from the elements H, O, C, and Ca can be collected and printed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">species</span><span class="p">()</span><span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="s2">&quot;H O C Ca&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">()</span><span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="s2">&quot;H O C Ca&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1178,8 +1178,8 @@ Portlandite
 <p>What if we want to collect only gaseous species from a database? Check next:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">speciesWithAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">speciesWithAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1198,8 +1198,8 @@ O2
 <p>And what if only gases with C, H, O elements?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">speciesWithAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">)</span><span class="o">.</span><span class="n">withElements</span><span class="p">(</span><span class="s2">&quot;C H O&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">speciesWithAggregateState</span><span class="p">(</span><span class="n">AggregateState</span><span class="o">.</span><span class="n">Gas</span><span class="p">)</span><span class="o">.</span><span class="nf">withElements</span><span class="p">(</span><span class="s2">&quot;C H O&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1220,8 +1220,8 @@ O2
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Symbol&#39;</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}{</span><span class="s1">&#39;Molar Mass (kg/mol)&#39;</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">elements</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element</span><span class="o">.</span><span class="n">symbol</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}{</span><span class="n">element</span><span class="o">.</span><span class="n">molarMass</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;10.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">db</span><span class="p">.</span><span class="nf">elements</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">element</span><span class="p">.</span><span class="nf">symbol</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}{</span><span class="n">element</span><span class="p">.</span><span class="nf">molarMass</span><span class="p">()</span><span class="si">:</span><span class="s2">&lt;10.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1310,7 +1310,7 @@ N         0.014007
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

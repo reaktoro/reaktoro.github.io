@@ -982,8 +982,8 @@ title="Print to PDF"
 <section id="loading-embedded-phreeqc-database-files">
 <h3>Loading embedded PHREEQC database files<a class="headerlink" href="#loading-embedded-phreeqc-database-files" title="Permalink to this headline">#</a></h3>
 <p>The following are equivalent ways to load embedded PHREEEQC database files:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -993,18 +993,18 @@ title="Print to PDF"
 your computer:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Linux and macOS</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/phreeqc.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Windows</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">phreeqc.dat&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1036,8 +1036,8 @@ your computer:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">slop98</span></code></p></li>
 </ul>
 <p>The following are equivalent ways to load the same embedded ThermoFun database file:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;cemdata18&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1047,18 +1047,18 @@ your computer:</p>
 your computer:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Linux and macOS</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/mines16-thermofun.json&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Windows</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">ThermoFunDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ThermoFunDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">mines16-thermofun.json&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1094,8 +1094,8 @@ list of chemical elements, a large number of aqueous organic species are selecte
 cases, these species do not play any important role in the modeling.</p>
 </div>
 <p>The following are equivalent ways to load the same embedded SUPCRT/SUPCRTBL database file:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;supcrtbl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1105,18 +1105,18 @@ cases, these species do not play any important role in the modeling.</p>
 your computer:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Linux and macOS</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/supcrt98.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Windows</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">SupcrtDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SupcrtDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">supcrt98.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1138,8 +1138,8 @@ your computer:</p>
 <section id="loading-embedded-nasa-database-files">
 <h3>Loading embedded NASA database files<a class="headerlink" href="#loading-embedded-nasa-database-files" title="Permalink to this headline">#</a></h3>
 <p>The following are equivalent ways to load the same embedded NASA database file:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="o">.</span><span class="n">withName</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">withName</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1149,18 +1149,18 @@ your computer:</p>
 computer:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Linux and macOS</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;/home/username/databases/nasa-cea.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Windows</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">()</span>
-<span class="n">db</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">()</span>
+<span class="n">db</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="o">.</span><span class="n">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="o">.</span><span class="nf">fromFile</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Users</span><span class="se">\\</span><span class="s2">Username</span><span class="se">\\</span><span class="s2">databases</span><span class="se">\\</span><span class="s2">nasa-cea.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1217,7 +1217,7 @@ computer:</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

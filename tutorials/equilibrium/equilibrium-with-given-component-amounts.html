@@ -810,21 +810,21 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NasaDatabase</span><span class="p">(</span><span class="s2">&quot;nasa-cea&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create a chemical system with only a gas phase</span>
-<span class="n">system</span> <span class="o">=</span> <span class="n">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">))</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CH4 O2 CO2 CO H2O H2&quot;</span><span class="p">))</span>
 
 <span class="c1"># Create an initial state for this chemical system</span>
-<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;CH4&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create an equilibrium solver and equilibrates `state`</span>
-<span class="n">solver</span> <span class="o">=</span> <span class="n">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -864,28 +864,28 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 
-<span class="n">Ne</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>      <span class="c1"># the number of elements in the system</span>
+<span class="n">Ne</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">size</span><span class="p">()</span>      <span class="c1"># the number of elements in the system</span>
 
-<span class="n">iC</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>  <span class="c1"># the index of component C</span>
-<span class="n">iH</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>  <span class="c1"># the index of component H</span>
-<span class="n">iO</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">elements</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>  <span class="c1"># the index of component O</span>
-<span class="n">iZ</span> <span class="o">=</span> <span class="n">Ne</span>                            <span class="c1"># the index of component charge</span>
+<span class="n">iC</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>  <span class="c1"># the index of component C</span>
+<span class="n">iH</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>  <span class="c1"># the index of component H</span>
+<span class="n">iO</span> <span class="o">=</span> <span class="n">system</span><span class="p">.</span><span class="nf">elements</span><span class="p">()</span><span class="o">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">&quot;O&quot;</span><span class="p">)</span>  <span class="c1"># the index of component O</span>
+<span class="n">iZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Ne</span>                            <span class="c1"># the index of component charge</span>
 
-<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Ne</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># the array with explicit amounts of elements and charge</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">Ne</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># the array with explicit amounts of elements and charge</span>
 
 <span class="n">b</span><span class="p">[</span><span class="n">iC</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 1 mol of C</span>
 <span class="n">b</span><span class="p">[</span><span class="n">iH</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span>  <span class="c1"># 4 moles of H</span>
 <span class="n">b</span><span class="p">[</span><span class="n">iO</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 1 mol of O</span>
 <span class="n">b</span><span class="p">[</span><span class="n">iZ</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># 0 mol of charge</span>
 
-<span class="n">state</span> <span class="o">=</span> <span class="n">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 
-<span class="n">conditions</span> <span class="o">=</span> <span class="n">EquilibriumConditions</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
-<span class="n">conditions</span><span class="o">.</span><span class="n">setInitialComponentAmounts</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">conditions</span><span class="p">.</span><span class="nf">setInitialComponentAmounts</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-<span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -969,7 +969,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

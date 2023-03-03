@@ -1,0 +1,10 @@
+<map id="AqueousMixtureState" name="AqueousMixtureState">
+<area shape="rect" id="node1" title="A type used to describe the state of an aqueous mixture." alt="" coords="727,175,889,201"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1MixtureState.html" title="A type used to describe the state of a mixture." alt="" coords="464,65,571,92"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1Temperature.html" title="A type that describes temperature in units of K." alt="" coords="205,5,309,32"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1ThermoScalarBase.html" title=" " alt="" coords="5,32,117,59"/>
+<area shape="rect" id="node5" href="$classReaktoro_1_1Pressure.html" title="A type that describes pressure in units of Pa." alt="" coords="217,56,296,83"/>
+<area shape="rect" id="node6" href="$classReaktoro_1_1ChemicalVectorBase.html" title=" " alt="" coords="167,116,347,172"/>
+<area shape="rect" id="node7" href="$classReaktoro_1_1ThermoScalarBase.html" title=" " alt="" coords="408,205,627,232"/>
+<area shape="rect" id="node8" href="$classReaktoro_1_1ChemicalScalarBase.html" title=" " alt="" coords="431,257,604,298"/>
+</map>

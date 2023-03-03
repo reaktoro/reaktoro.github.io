@@ -835,11 +835,11 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">db</span> <span class="o">=</span> <span class="n">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
-<span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reaction</span><span class="p">(</span><span class="s2">&quot;H+ + OH- = H2O&quot;</span><span class="p">)</span>
+<span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">reaction</span><span class="p">(</span><span class="s2">&quot;H+ + OH- = H2O&quot;</span><span class="p">)</span>
 
-<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -869,9 +869,9 @@ title="Print to PDF"
 <p>Another more complicated example (mineral dissolution reaction):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reaction</span><span class="p">(</span><span class="s2">&quot;Kaolinite + 6*H+ = H2O + 2*H4SiO4 + 2*Al+3&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rxn</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">reaction</span><span class="p">(</span><span class="s2">&quot;Kaolinite + 6*H+ = H2O + 2*H4SiO4 + 2*Al+3&quot;</span><span class="p">)</span>
 
-<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="o">.</span><span class="n">props</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
+<span class="n">rprops</span> <span class="o">=</span> <span class="n">rxn</span><span class="p">.</span><span class="nf">props</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rprops</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -949,7 +949,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>
