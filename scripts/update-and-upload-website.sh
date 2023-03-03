@@ -13,10 +13,18 @@ cd $root_dir/_workspace_
 wget https://github.com/reaktoro/reaktoro-jupyter-book/archive/refs/heads/main.zip -O main.zip
 unzip -o -qq main.zip
 
-cd reaktoro-jupyter-book
+cd reaktoro-jupyter-book-main
 utils/scripts/build-website.sh
 
 rsync -av _build/html/ $root_dir/
+
+cd $root_dir
+
+git add --all
+git commit -a -m "Automatic website update"
+git push origin
+
+
 
 # rsync -av _build/html /home/oracle/target
 
