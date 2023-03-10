@@ -818,7 +818,7 @@ title="Print to PDF"
 <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;pitzer.dat&quot;</span><span class="p">)</span>
 
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O H+ OH- Na+ Cl- HCO3- CO2 CO3-2&quot;</span><span class="p">)</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">())</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">())</span>
 
 <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
 </pre></div>

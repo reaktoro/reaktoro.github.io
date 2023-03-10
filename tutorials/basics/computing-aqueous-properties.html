@@ -815,10 +815,10 @@ title="Print to PDF"
 <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca Si&quot;</span><span class="p">))</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">())</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">())</span>
 
 <span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g) H2O(g)&quot;</span><span class="p">)</span>
-<span class="n">gases</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
+<span class="n">gases</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPengRobinsonSoreideWhitson</span><span class="p">())</span>
 
 <span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
 
@@ -850,36 +850,36 @@ title="Print to PDF"
 | Pressure                          |     15.1988 |   bar |
 | Ionic Strength (Effective)        |      1.0260 | molal |
 | Ionic Strength (Stoichiometric)   |      1.0289 | molal |
-| pH                                |      4.9065 |       |
-| pE                                |     -0.4916 |       |
+| pH                                |      4.9062 |       |
+| pE                                |     -0.4913 |       |
 | Eh                                |     -0.0325 |     V |
-| Charge Molality                   | -2.2447e-16 | molal |
+| Charge Molality                   | -2.5863e-16 | molal |
 | Element Molality:                 |             |       |
-| :: C                              |  2.2211e-01 | molal |
+| :: C                              |  2.2225e-01 | molal |
 | :: Na                             |  1.0004e+00 | molal |
 | :: Si                             |  2.5730e-04 | molal |
 | :: Cl                             |  1.0004e+00 | molal |
-| :: Ca                             |  9.9945e-03 | molal |
+| :: Ca                             |  9.9944e-03 | molal |
 | Species Molality:                 |             |       |
-| :: CO3-2                          |  6.4179e-07 | molal |
-| :: H+                             |  1.5451e-05 | molal |
-| :: CO2                            |  1.9720e-01 | molal |
-| :: (CO2)2                         |  2.4560e-03 | molal |
+| :: CO3-2                          |  6.4135e-07 | molal |
+| :: H+                             |  1.5462e-05 | molal |
+| :: CO2                            |  1.9733e-01 | molal |
+| :: (CO2)2                         |  2.4592e-03 | molal |
 | :: HCO3-                          |  1.6336e-02 | molal |
 | :: CH4                            |  1.0004e-16 | molal |
-| :: Ca+2                           |  9.2693e-03 | molal |
-| :: CaCO3                          |  5.0307e-07 | molal |
-| :: CaHCO3+                        |  7.2468e-04 | molal |
-| :: CaOH+                          |  5.9986e-11 | molal |
+| :: Ca+2                           |  9.2692e-03 | molal |
+| :: CaCO3                          |  5.0275e-07 | molal |
+| :: CaHCO3+                        |  7.2470e-04 | molal |
+| :: CaOH+                          |  5.9948e-11 | molal |
 | :: Cl-                            |  1.0004e+00 | molal |
 | :: H2                             |  1.0004e-16 | molal |
 | :: H4SiO4                         |  2.5728e-04 | molal |
-| :: H2SiO4-2                       |  1.0649e-14 | molal |
-| :: H3SiO4-                        |  2.0083e-08 | molal |
-| :: Na+                            |  9.9743e-01 | molal |
-| :: NaCO3-                         |  7.2320e-06 | molal |
+| :: H2SiO4-2                       |  1.0634e-14 | molal |
+| :: H3SiO4-                        |  2.0070e-08 | molal |
+| :: Na+                            |  9.9742e-01 | molal |
+| :: NaCO3-                         |  7.2272e-06 | molal |
 | :: NaHCO3                         |  2.9265e-03 | molal |
-| :: OH-                            |  1.2995e-08 | molal |
+| :: OH-                            |  1.2986e-08 | molal |
 | :: NaOH                           |  1.0004e-16 | molal |
 | :: O2                             |  1.0004e-16 | molal |
 | Saturation Indices (log base 10): |             |       |
@@ -887,9 +887,9 @@ title="Print to PDF"
 | :: CO2(g)                         |     -0.0000 |     - |
 | :: H2(g)                          |    -10.1581 |     - |
 | :: H2O(g)                         |      0.0000 |     - |
-| :: O2(g)                          |    -56.1834 |     - |
-| :: Aragonite :: CaCO3             |     -1.3218 |     - |
-| :: Calcite :: CaCO3               |     -1.0835 |     - |
+| :: O2(g)                          |    -56.1833 |     - |
+| :: Aragonite :: CaCO3             |     -1.3221 |     - |
+| :: Calcite :: CaCO3               |     -1.0838 |     - |
 | :: Chalcedony :: SiO2             |     -0.3316 |     - |
 | :: Halite :: NaCl                 |     -1.9560 |     - |
 | :: Quartz :: SiO2                 |      0.0000 |     - |
@@ -915,15 +915,15 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pH                              : 4.90645
-pE                              : -0.491606
-Eh                              : -0.0324971 V
-IONIC STRENGTH (EFFECTIVE)      : 1.02598 molal
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pH                              : 4.90616
+pE                              : -0.49128
+Eh                              : -0.0324756 V
+IONIC STRENGTH (EFFECTIVE)      : 1.02597 molal
 IONIC STRENGTH (STOICHIOMETRIC) : 1.0289 molal
-MOLALITY OF ELEMENT C           : 0.222106 molal
-MOLALITY OF ELEMENT Ca          : 0.0099945 molal
-MOLALITY OF AQUEOUS SPECIES CO2 : 0.197198 molal
-MOLALITY OF AQUEOUS SPECIES Na+ : 0.997427 molal
+MOLALITY OF ELEMENT C           : 0.222246 molal
+MOLALITY OF ELEMENT Ca          : 0.00999444 molal
+MOLALITY OF AQUEOUS SPECIES CO2 : 0.197332 molal
+MOLALITY OF AQUEOUS SPECIES Na+ : 0.997421 molal
 </pre></div>
 </div>
 </div>

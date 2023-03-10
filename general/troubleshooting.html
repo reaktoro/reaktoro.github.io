@@ -829,10 +829,10 @@ SIGFPE signals and fatal arithmetic errors<div class="sd-summary-down docutils">
 <span class="w">    </span><span class="nc">PhreeqcDatabase</span><span class="w"> </span><span class="n">db</span><span class="p">(</span><span class="s">&quot;phreeqc.dat&quot;</span><span class="p">);</span>
 
 <span class="w">    </span><span class="nc">AqueousPhase</span><span class="w"> </span><span class="n">aqueousphase</span><span class="o">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s">&quot;H O C Na Cl&quot;</span><span class="p">));</span>
-<span class="w">    </span><span class="n">aqueousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">());</span>
+<span class="w">    </span><span class="n">aqueousphase</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">());</span>
 
 <span class="w">    </span><span class="nc">GaseousPhase</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">(</span><span class="s">&quot;CO2(g)&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">gaseousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">());</span>
+<span class="w">    </span><span class="n">gaseousphase</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPengRobinsonPhreeqc</span><span class="p">());</span>
 
 <span class="w">    </span><span class="nc">ChemicalSystem</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">aqueousphase</span><span class="p">,</span><span class="w"> </span><span class="n">gaseousphase</span><span class="p">);</span>
 

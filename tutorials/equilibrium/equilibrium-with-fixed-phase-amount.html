@@ -815,10 +815,10 @@ title="Print to PDF"
 <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;pitzer.dat&quot;</span><span class="p">)</span>
 
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C&quot;</span><span class="p">))</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">())</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">())</span>
 
 <span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g) H2O(g)&quot;</span><span class="p">)</span>
-<span class="n">gases</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
+<span class="n">gases</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPengRobinsonPhreeqc</span><span class="p">())</span>
 
 <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">gases</span><span class="p">)</span>
 </pre></div>
@@ -911,30 +911,30 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FINAL STATE
-+-----------------+-------------+------+
-| Property        |       Value | Unit |
-+-----------------+-------------+------+
-| Temperature     |    333.1500 |    K |
-| Pressure        |    156.2034 |  bar |
-| Charge:         | -2.5627e-17 |  mol |
-| Element Amount: |             |      |
-| :: H            |  1.1101e+02 |  mol |
-| :: C            |  1.0000e+00 |  mol |
-| :: O            |  5.7506e+01 |  mol |
-| :: Na           |  1.0000e+00 |  mol |
-| :: Cl           |  1.0000e+00 |  mol |
-| Species Amount: |             |      |
-| :: H+           |  1.2695e-03 |  mol |
-| :: H2O          |  5.5505e+01 |  mol |
-| :: CO3-2        |  5.2396e-10 |  mol |
-| :: CO2          |  9.9873e-01 |  mol |
-| :: Cl-          |  1.0000e+00 |  mol |
-| :: HCO3-        |  1.2695e-03 |  mol |
-| :: Na+          |  1.0000e+00 |  mol |
-| :: OH-          |  1.6808e-10 |  mol |
-| :: CO2(g)       |  9.8168e-07 |  mol |
-| :: H2O(g)       |  1.8324e-08 |  mol |
-+-----------------+-------------+------+
++-----------------+------------+------+
+| Property        |      Value | Unit |
++-----------------+------------+------+
+| Temperature     |   333.1500 |    K |
+| Pressure        |   149.2771 |  bar |
+| Charge:         | 2.1897e-17 |  mol |
+| Element Amount: |            |      |
+| :: H            | 1.1101e+02 |  mol |
+| :: C            | 1.0000e+00 |  mol |
+| :: O            | 5.7506e+01 |  mol |
+| :: Na           | 1.0000e+00 |  mol |
+| :: Cl           | 1.0000e+00 |  mol |
+| Species Amount: |            |      |
+| :: H+           | 1.2655e-03 |  mol |
+| :: H2O          | 5.5505e+01 |  mol |
+| :: CO3-2        | 5.2102e-10 |  mol |
+| :: CO2          | 9.9873e-01 |  mol |
+| :: Cl-          | 1.0000e+00 |  mol |
+| :: HCO3-        | 1.2655e-03 |  mol |
+| :: Na+          | 1.0000e+00 |  mol |
+| :: OH-          | 1.6775e-10 |  mol |
+| :: CO2(g)       | 9.9293e-07 |  mol |
+| :: H2O(g)       | 7.0677e-09 |  mol |
++-----------------+------------+------+
 </pre></div>
 </div>
 </div>
@@ -948,7 +948,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Computed saturation pressure is 156.203 bar
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Computed saturation pressure is 149.277 bar
 </pre></div>
 </div>
 </div>

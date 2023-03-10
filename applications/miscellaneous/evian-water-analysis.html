@@ -826,14 +826,14 @@ title="Print to PDF"
 
 <span class="c1"># Create an aqueous phase automatically selecting all species with provided elements</span>
 <span class="n">aqueousphase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;C Ca Cl H K Mg N Na O S Si&quot;</span><span class="p">))</span>
-<span class="n">aqueousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="nf">chain</span><span class="p">(</span>
+<span class="n">aqueousphase</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nf">chain</span><span class="p">(</span>
     <span class="n">ActivityModelHKF</span><span class="p">(),</span>
     <span class="n">ActivityModelDrummond</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">),</span>
 <span class="p">))</span>
 
 <span class="c1"># Create a gaseous phase</span>
 <span class="n">gaseousphase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
-<span class="n">gaseousphase</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
+<span class="n">gaseousphase</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPengRobinsonPhreeqc</span><span class="p">())</span>
 
 <span class="c1"># Create mineral phases</span>
 <span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>

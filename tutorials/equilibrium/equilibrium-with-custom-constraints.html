@@ -1035,13 +1035,10 @@ title="Print to PDF"
 <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;H O Na Cl C Ca&quot;</span><span class="p">))</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="nf">chain</span><span class="p">(</span>
-    <span class="n">ActivityModelHKF</span><span class="p">(),</span>
-    <span class="n">ActivityModelDrummond</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">)</span>
-<span class="p">))</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPitzer</span><span class="p">())</span>
 
 <span class="n">gases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g) H2O(g)&quot;</span><span class="p">)</span>
-<span class="n">gases</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelPengRobinson</span><span class="p">())</span>
+<span class="n">gases</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPengRobinsonSoreideWhitson</span><span class="p">())</span>
 
 <span class="n">calcite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhase</span><span class="p">(</span><span class="s2">&quot;Calcite&quot;</span><span class="p">)</span>
 
@@ -1132,45 +1129,45 @@ title="Print to PDF"
 +-----------------------------------+-------------+-------+
 | Temperature                       |    303.1500 |     K |
 | Pressure                          |      5.0663 |   bar |
-| Ionic Strength (Effective)        |      1.0150 | molal |
-| Ionic Strength (Stoichiometric)   |      1.0167 | molal |
+| Ionic Strength (Effective)        |      1.0138 | molal |
+| Ionic Strength (Stoichiometric)   |      1.0156 | molal |
 | pH                                |      7.0000 |       |
-| pE                                |     -2.4051 |       |
-| Eh                                |     -0.1447 |     V |
-| Charge Molality                   | -1.2422e-16 | molal |
+| pE                                |     -2.4010 |       |
+| Eh                                |     -0.1444 |     V |
+| Charge Molality                   | -1.2931e-16 | molal |
 | Element Molality:                 |             |       |
-| :: C                              |  1.2190e-02 | molal |
+| :: C                              |  1.1406e-02 | molal |
 | :: Na                             |  1.0001e+00 | molal |
 | :: Cl                             |  1.0001e+00 | molal |
-| :: Ca                             |  5.6195e-03 | molal |
+| :: Ca                             |  5.2884e-03 | molal |
 | Species Molality:                 |             |       |
-| :: CO3-2                          |  1.6409e-05 | molal |
-| :: H+                             |  1.6190e-07 | molal |
-| :: CO2                            |  1.0444e-03 | molal |
-| :: (CO2)2                         |  2.9221e-08 | molal |
-| :: HCO3-                          |  9.2367e-03 | molal |
+| :: CO3-2                          |  2.8781e-05 | molal |
+| :: H+                             |  1.1653e-07 | molal |
+| :: CO2                            |  9.5035e-04 | molal |
+| :: (CO2)2                         |  2.6883e-08 | molal |
+| :: HCO3-                          |  8.3331e-03 | molal |
 | :: CH4                            |  1.0001e-16 | molal |
-| :: Ca+2                           |  5.4876e-03 | molal |
-| :: CaCO3                          |  4.5207e-06 | molal |
-| :: CaHCO3+                        |  1.2736e-04 | molal |
-| :: CaOH+                          |  2.5056e-09 | molal |
+| :: Ca+2                           |  5.1124e-03 | molal |
+| :: CaCO3                          |  5.7131e-06 | molal |
+| :: CaHCO3+                        |  1.7036e-04 | molal |
+| :: CaOH+                          |  3.9282e-09 | molal |
 | :: Cl-                            |  1.0001e+00 | molal |
 | :: H2                             |  1.0001e-16 | molal |
-| :: Na+                            |  9.9838e-01 | molal |
-| :: NaCO3-                         |  7.2146e-05 | molal |
-| :: NaHCO3                         |  1.6887e-03 | molal |
-| :: OH-                            |  1.9857e-07 | molal |
+| :: Na+                            |  9.9822e-01 | molal |
+| :: NaCO3-                         |  8.6950e-05 | molal |
+| :: NaHCO3                         |  1.8304e-03 | molal |
+| :: OH-                            |  2.4044e-07 | molal |
 | :: NaOH                           |  1.0001e-16 | molal |
 | :: O2                             |  1.0001e-16 | molal |
 | Saturation Indices (log base 10): |             |       |
-| :: CH4(g)                         |    -13.7561 |     - |
-| :: CO2(g)                         |     -3.1585 |     - |
-| :: H2(g)                          |     -9.9539 |     - |
-| :: H2O(g)                         |     -0.2394 |     - |
-| :: O2(g)                          |    -63.8761 |     - |
+| :: CH4(g)                         |    -13.8578 |     - |
+| :: CO2(g)                         |     -1.8204 |     - |
+| :: H2(g)                          |     -9.9620 |     - |
+| :: H2O(g)                         |     -1.7642 |     - |
+| :: O2(g)                          |    -63.8596 |     - |
 | :: Aragonite :: CaCO3             |     -0.1495 |     - |
-| :: Calcite :: CaCO3               |      0.0000 |     - |
-| :: Halite :: NaCl                 |     -1.9376 |     - |
+| :: Calcite :: CaCO3               |     -0.0000 |     - |
+| :: Halite :: NaCl                 |     -1.9387 |     - |
 +-----------------------------------+-------------+-------+
 </pre></div>
 </div>
@@ -1186,7 +1183,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount of CO2 titrated into the system was 6.56993 mmol
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount of CO2 titrated into the system was 6.11645 mmol
 </pre></div>
 </div>
 </div>

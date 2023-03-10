@@ -810,7 +810,7 @@ title="Print to PDF"
 <p>This tutorial models an extraction of exchangeable cations in dune sand discussed in the previous tutorial. The extractant is represented by the 1-molal NaCl brine. Usually, the extraction must be repeated more than once since not all CaX<sub>2</sub> is displaced in the first step.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>According to <span id="id1">[<a class="reference internal" href="../../tutorials/bibliography.html#id501" title="C.A.J. Appelo and Dieke Postma. Geochemistry, Groundwater and Pollution. CRC Press, 2nd edition, 2005. ISBN 9780415364218.">Appelo and Postma, 2005</a>]</span>, due to the low CEC (cation exchange capacity) of the sample, the low concentrations can be analyzed only if pure NaCl is used in the extraction.</p>
+<p>According to <span id="id1">[<a class="reference internal" href="../../tutorials/bibliography.html#id503" title="C.A.J. Appelo and Dieke Postma. Geochemistry, Groundwater and Pollution. CRC Press, 2nd edition, 2005. ISBN 9780415364218.">Appelo and Postma, 2005</a>]</span>, due to the low CEC (cation exchange capacity) of the sample, the low concentrations can be analyzed only if pure NaCl is used in the extraction.</p>
 </div>
 <p>Below, we set up the chemical system based on the PHREEQC database phreeqc.dat.</p>
 <div class="cell docutils container">
@@ -827,7 +827,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define an aqueous phase</span>
 <span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="s2">&quot;H2O Na+ Cl- H+ OH- K+ Ca+2 Mg+2&quot;</span><span class="p">)</span>
-<span class="n">solution</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelHKF</span><span class="p">())</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelHKF</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -837,7 +837,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define an ion exchange phase</span>
 <span class="n">exchange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">IonExchangePhase</span><span class="p">(</span><span class="s2">&quot;CaX2 MgX2 NaX&quot;</span><span class="p">)</span>
-<span class="n">exchange</span><span class="p">.</span><span class="nf">setActivityModel</span><span class="p">(</span><span class="n">ActivityModelIonExchangeVanselow</span><span class="p">())</span>
+<span class="n">exchange</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelIonExchangeVanselow</span><span class="p">())</span>
 
 <span class="c1"># Create the chemical system</span>
 <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">exchange</span><span class="p">)</span>
