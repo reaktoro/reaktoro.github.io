@@ -805,6 +805,10 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="computing-chemical-properties">
 <h1>Computing chemical properties<a class="headerlink" href="#computing-chemical-properties" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Always make sure you are using the <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">latest version of Reaktoro</a>. Otherwise, some new features documented on this website will not work on your machine and you may receive unintuitive errors. Follow these <a class="reference internal" href="../../installation/installation-using-conda.html#updating-reaktoro-via-conda"><span class="std std-ref">update instructions</span></a> to get the latest version of Reaktoro!</p>
+</div>
 <p>You have now learned how to create a <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object and <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a> objects representing the chemical state of that system. We will now demonstrate how thermodynamic and chemical properties of the system, its phases, and constituting species can be calculated using class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html"><code class="docutils literal notranslate"><span class="pre">ChemicalProps</span></code></a>.</p>
 <p>Let’s start with a simple chemical system containing a single aqueous phase:</p>
 <div class="cell docutils container">

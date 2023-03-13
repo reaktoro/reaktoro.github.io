@@ -753,31 +753,29 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Installation using Conda
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-conda">
+   Installing Conda
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-conda">
-     Installing Conda
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-conda-forge-channel">
-     Adding conda-forge channel
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-reaktoro-in-a-new-conda-environment-optional">
-     Install Reaktoro in a new conda environment (optional)
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#please-help-me-installing-reaktoro">
-   Please help me installing Reaktoro!
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-conda-forge-channel">
+   Adding conda-forge channel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-reaktoro-in-a-new-conda-environment-recommended">
+   Installing Reaktoro in a new conda environment (recommended)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-reaktoro-using-conda">
+   Updating Reaktoro using Conda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#please-help-me-install-reaktoro">
+   Please help me install Reaktoro!
   </a>
  </li>
 </ul>
@@ -799,31 +797,29 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Installation using Conda
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-conda">
+   Installing Conda
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-conda">
-     Installing Conda
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-conda-forge-channel">
-     Adding conda-forge channel
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-reaktoro-in-a-new-conda-environment-optional">
-     Install Reaktoro in a new conda environment (optional)
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#please-help-me-installing-reaktoro">
-   Please help me installing Reaktoro!
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-conda-forge-channel">
+   Adding conda-forge channel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-reaktoro-in-a-new-conda-environment-recommended">
+   Installing Reaktoro in a new conda environment (recommended)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-reaktoro-using-conda">
+   Updating Reaktoro using Conda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#please-help-me-install-reaktoro">
+   Please help me install Reaktoro!
   </a>
  </li>
 </ul>
@@ -854,7 +850,7 @@ executing the following command in your terminal:</p>
 <a class="reference external" href="https://conda.io/miniconda.html">Miniconda</a>. We recommend the installation of
 Miniconda, unless you already have Anaconda installed or you think you need
 thousands of software packages that ship with it! Miniconda is just a tiny
-subset of Anaconda containing only our needed <code class="docutils literal notranslate"><span class="pre">conda</span></code> application and its
+a subset of Anaconda containing only our needed <code class="docutils literal notranslate"><span class="pre">conda</span></code> application and its
 dependencies.</p>
 <p>Download the appropriate <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda
 Installer</a> for your system.
@@ -876,11 +872,10 @@ Miniconda, go to a terminal and execute:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">reaktoro</span>
 </pre></div>
 </div>
-<p>but you may want to follow the recommendation in the next section to install
-Reaktoro in a new conda environment instead of the default <code class="docutils literal notranslate"><span class="pre">base</span></code> environment.</p>
+<p>but you may want to follow the recommendation in the next section to install Reaktoro in a new conda environment instead of the default <code class="docutils literal notranslate"><span class="pre">base</span></code> environment.</p>
 </section>
-<section id="install-reaktoro-in-a-new-conda-environment-optional">
-<h2>Install Reaktoro in a new conda environment (optional)<a class="headerlink" href="#install-reaktoro-in-a-new-conda-environment-optional" title="Permalink to this headline">#</a></h2>
+<section id="installing-reaktoro-in-a-new-conda-environment-recommended">
+<span id="installing-reaktoro-new-conda-env"></span><h2>Installing Reaktoro in a new conda environment (recommended)<a class="headerlink" href="#installing-reaktoro-in-a-new-conda-environment-recommended" title="Permalink to this headline">#</a></h2>
 <p>Now that you have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed, either via Anaconda or Miniconda, you may
 want to create a <em>conda environment</em> in which the Python package <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> is
 installed together with its dependencies.</p>
@@ -979,11 +974,35 @@ Executing transaction: done
 </div>
 </div>
 </section>
+<section id="updating-reaktoro-using-conda">
+<span id="updating-reaktoro-via-conda"></span><h2>Updating Reaktoro using Conda<a class="headerlink" href="#updating-reaktoro-using-conda" title="Permalink to this headline">#</a></h2>
+<p>You should update Reaktoro frequently to take advantage of new features and improvements as they are released. It’s also important to consider that the errors you experience may be the result of using an older version that doesn’t contain a capability that you recently learned about on this website.</p>
+<p>Assuming you’ve installed the <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> package in the recommended <code class="docutils literal notranslate"><span class="pre">rkt</span></code> conda environment, please execute the following commands in the terminal to update it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">rkt</span>
+<span class="n">conda</span> <span class="n">update</span> <span class="n">reaktoro</span>
+</pre></div>
+</div>
+<p>Double-check that the updated version is the <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">latest available version of Reaktoro</a>. If not, you might want to run the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">reaktoro</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">Z</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">X.Y.Z</span></code> is the latest version.</p>
+<p>It may happen that conda refuses to update <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code> to its latest version. This refusal can happen if you have installed additional packages in the <code class="docutils literal notranslate"><span class="pre">rkt</span></code> environment that potentially conflict with the latest version of <code class="docutils literal notranslate"><span class="pre">reaktoro</span></code>. In this case, you might want to remove the <code class="docutils literal notranslate"><span class="pre">rkt</span></code> environment and create it from scratch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">rkt</span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">rkt</span> <span class="n">reaktoro</span>
+</pre></div>
+</div>
+<p>Alternatively, you can create a new conda environment (e.g. <code class="docutils literal notranslate"><span class="pre">rkt-latest</span></code>) with the latest version of Reaktoro installed by default:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">rkt</span><span class="o">-</span><span class="n">latest</span> <span class="n">reaktoro</span>
+</pre></div>
+</div>
+<p>In this case, remember to activate the <code class="docutils literal notranslate"><span class="pre">rkt-latest</span></code> conda environment when using Reaktoro and not <code class="docutils literal notranslate"><span class="pre">rkt</span></code>!</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="please-help-me-installing-reaktoro">
-<h1>Please help me installing Reaktoro!<a class="headerlink" href="#please-help-me-installing-reaktoro" title="Permalink to this headline">#</a></h1>
-<p>If you are having a hard time installing Reaktoro via <code class="docutils literal notranslate"><span class="pre">conda</span></code>,
-<a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">please contact us</a></p>
+<section id="please-help-me-install-reaktoro">
+<h2>Please help me install Reaktoro!<a class="headerlink" href="#please-help-me-install-reaktoro" title="Permalink to this headline">#</a></h2>
+<p>If you are having difficulties installing Reaktoro via <code class="docutils literal notranslate"><span class="pre">conda</span></code>, <a class="reference external" href="mailto:allan&#46;leal&#37;&#52;&#48;erdw&#46;ethz&#46;ch">contact
+us</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

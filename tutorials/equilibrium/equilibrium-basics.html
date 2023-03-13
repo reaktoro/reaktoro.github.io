@@ -842,6 +842,10 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="chemical-equilibrium-the-basics">
 <h1>Chemical equilibrium: the basics<a class="headerlink" href="#chemical-equilibrium-the-basics" title="Permalink to this headline">#</a></h1>
 <p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 4th, 2022</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Always make sure you are using the <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">latest version of Reaktoro</a>. Otherwise, some new features documented on this website will not work on your machine and you may receive unintuitive errors. Follow these <a class="reference internal" href="../../installation/installation-using-conda.html#updating-reaktoro-via-conda"><span class="std std-ref">update instructions</span></a> to get the latest version of Reaktoro!</p>
+</div>
 <p>Reaktoro performs chemical equilibrium calculations by <em>minimizing the Gibbs energy of the system</em> <span id="id1">[<a class="reference internal" href="../bibliography.html#id670" title="Allan M. M. Leal, Dmitrii A. Kulik, William R. Smith, and Martin O. Saar. An overview of computational methods for chemical equilibrium and kinetic calculations for geochemical and reactive transport modeling. Pure and Applied Chemistry, 89(5):597–643, may 2017. URL: http://www.degruyter.com/view/j/pac.2017.89.issue-5/pac-2016-1107/pac-2016-1107.xml https://www.degruyter.com/view/journals/pac/89/5/article-p597.xml, doi:10.1515/pac-2016-1107.">Leal <em>et al.</em>, 2017</a>]</span>. In a Gibbs energy minimization problem, <strong>temperature and pressure are prescribed</strong> and <strong>the chemical system is closed</strong>. Thus, without mass transfer in or out of the system, the initial amounts of chemical elements and electric charge are conserved in the reactive process.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

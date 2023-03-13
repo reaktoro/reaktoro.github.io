@@ -804,8 +804,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="chemical-equilibrium-with-fixed-volume-and-internal-energy">
 <h1>Chemical equilibrium with fixed volume and internal energy<a class="headerlink" href="#chemical-equilibrium-with-fixed-volume-and-internal-energy" title="Permalink to this headline">#</a></h1>
-<p class="acknowledgement">
-Written by Allan Leal (ETH Zurich) on Jan 7th, 2022 (last revised on Jan 21th, 2022)</p>
+<p class="acknowledgement">Written by Allan Leal (ETH Zurich) on Jan 7th, 2022 (last revised on Jan 21th, 2022)</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Always make sure you are using the <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">latest version of Reaktoro</a>. Otherwise, some new features documented on this website will not work on your machine and you may receive unintuitive errors. Follow these <a class="reference internal" href="../../installation/installation-using-conda.html#updating-reaktoro-via-conda"><span class="std std-ref">update instructions</span></a> to get the latest version of Reaktoro!</p>
+</div>
 <p>Let’s consider the combustion of CH<sub>4</sub> again. However, this time, the combustion process happens in a rigid and adiabatic chamber of 10 cm<sup>3</sup>. Therefore, we will solve a chemical equilibrium problem in which we specify <strong>volume</strong> and <strong>internal energy</strong> as known properties at the equilibrium state (since these properties must be preserved within the chamber!).</p>
 <p>In this problem, both temperature and pressure are unknown and will be calculated together with the amounts of species that bring the system to a state of chemical equilibrium.</p>
 <p>Let’s create our <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html"><code class="docutils literal notranslate"><span class="pre">ChemicalSystem</span></code></a> object (one with a single gaseous phase):</p>
