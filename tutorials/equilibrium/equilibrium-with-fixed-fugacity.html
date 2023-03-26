@@ -453,10 +453,18 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Cation exchange competition among Na
+     <sup>
+      +
+     </sup>
+     , K
+     <sup>
+      +
+     </sup>
+     and Ca
+     <sup>
+      2+
+     </sup>
     </a>
    </li>
    <li class="toctree-l2">
@@ -907,7 +915,7 @@ object of class <a class="reference external" href="https://reaktoro.org/api/cla
 <p>It’s always advisable to verify if the calculation succeeded:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successful computation!&quot;</span> <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">optima</span><span class="o">.</span><span class="n">succeeded</span> <span class="k">else</span> <span class="s2">&quot;Computation has failed!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successful computation!&quot;</span> <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">succeeded</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;Computation has failed!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1325,51 +1333,60 @@ species, their chemical potentials, and standard thermodynamic properties.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+-----------------------------------+-------------+-------+
-| Property                          |       Value |  Unit |
-+-----------------------------------+-------------+-------+
-| Temperature                       |    323.1500 |     K |
-| Pressure                          |     10.0000 |   bar |
-| Ionic Strength (Effective)        |      1.0143 | molal |
-| Ionic Strength (Stoichiometric)   |      1.0158 | molal |
-| pH                                |      6.7708 |       |
-| pE                                |     -2.4763 |       |
-| Eh                                |     -0.1588 |     V |
-| Charge Molality                   | -9.0975e-17 | molal |
-| Element Molality:                 |             |       |
-| :: C                              |  1.2057e-02 | molal |
-| :: Na                             |  1.0001e+00 | molal |
-| :: Cl                             |  1.0001e+00 | molal |
-| :: Ca                             |  5.3437e-03 | molal |
-| Species Molality:                 |             |       |
-| :: CO3-2                          |  1.3956e-05 | molal |
-| :: H+                             |  2.6700e-07 | molal |
-| :: CO2                            |  1.5220e-03 | molal |
-| :: (CO2)2                         |  1.0988e-07 | molal |
-| :: HCO3-                          |  8.7911e-03 | molal |
-| :: CH4                            |  1.0001e-16 | molal |
-| :: Ca+2                           |  5.2210e-03 | molal |
-| :: CaCO3                          |  4.8204e-06 | molal |
-| :: CaHCO3+                        |  1.1796e-04 | molal |
-| :: CaOH+                          |  1.2092e-09 | molal |
-| :: Cl-                            |  1.0001e+00 | molal |
-| :: H2                             |  1.0001e-16 | molal |
-| :: Na+                            |  9.9853e-01 | molal |
-| :: NaCO3-                         |  1.3358e-04 | molal |
-| :: NaHCO3                         |  1.4735e-03 | molal |
-| :: OH-                            |  4.4714e-07 | molal |
-| :: NaOH                           |  1.0001e-16 | molal |
-| :: O2                             |  1.0001e-16 | molal |
-| Saturation Indices (log base 10): |             |       |
-| :: CH4(g)                         |    -13.9336 |     - |
-| :: CO2(g)                         |     -2.0000 |     - |
-| :: H2(g)                          |     -9.7024 |     - |
-| :: H2O(g)                         |     -1.9282 |     - |
-| :: O2(g)                          |    -59.2529 |     - |
-| :: Aragonite :: CaCO3             |     -0.2000 |     - |
-| :: Calcite :: CaCO3               |     -0.0000 |     - |
-| :: Halite :: NaCl                 |     -1.9519 |     - |
-+-----------------------------------+-------------+-------+
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---------------------------------+-------------+-------+
+| Property                        |       Value |  Unit |
++---------------------------------+-------------+-------+
+| Temperature                     |    323.1500 |     K |
+| Pressure                        |     10.0000 |   bar |
+| Ionic Strength (Effective)      |      1.0143 | molal |
+| Ionic Strength (Stoichiometric) |      1.0158 | molal |
+| pH                              |      6.7708 |       |
+| pE                              |     -2.4763 |       |
+| Eh                              |     -0.1588 |     V |
+| Charge Molality                 | -9.0975e-17 | molal |
+| Element Molality:               |             |       |
+| :: C                            |  1.2057e-02 | molal |
+| :: Na                           |  1.0001e+00 | molal |
+| :: Cl                           |  1.0001e+00 | molal |
+| :: Ca                           |  5.3437e-03 | molal |
+| Species Molality:               |             |       |
+| :: CO3-2                        |  1.3956e-05 | molal |
+| :: H+                           |  2.6700e-07 | molal |
+| :: CO2                          |  1.5220e-03 | molal |
+| :: (CO2)2                       |  1.0988e-07 | molal |
+| :: HCO3-                        |  8.7911e-03 | molal |
+| :: CH4                          |  1.0001e-16 | molal |
+| :: Ca+2                         |  5.2210e-03 | molal |
+| :: CaCO3                        |  4.8204e-06 | molal |
+| :: CaHCO3+                      |  1.1796e-04 | molal |
+| :: CaOH+                        |  1.2092e-09 | molal |
+| :: Cl-                          |  1.0001e+00 | molal |
+| :: H2                           |  1.0001e-16 | molal |
+| :: Na+                          |  9.9853e-01 | molal |
+| :: NaCO3-                       |  1.3358e-04 | molal |
+| :: NaHCO3                       |  1.4735e-03 | molal |
+| :: OH-                          |  4.4714e-07 | molal |
+| :: NaOH                         |  1.0001e-16 | molal |
+| :: O2                           |  1.0001e-16 | molal |
+| Saturation Indices:             |             |       |
+| :: CH4(g)                       |    -13.9336 |     - |
+| :: CO2(g)                       |     -2.0000 |     - |
+| :: H2(g)                        |     -9.7024 |     - |
+| :: H2O(g)                       |     -1.9282 |     - |
+| :: O2(g)                        |    -59.2529 |     - |
+| :: Aragonite :: CaCO3           |     -0.2000 |     - |
+| :: Calcite :: CaCO3             |     -0.0000 |     - |
+| :: Halite :: NaCl               |     -1.9519 |     - |
+| Saturation Ratios:              |             |       |
+| :: CH4(g)                       |  1.1652e-14 |     - |
+| :: CO2(g)                       |  1.0000e-02 |     - |
+| :: H2(g)                        |  1.9841e-10 |     - |
+| :: H2O(g)                       |  1.1798e-02 |     - |
+| :: O2(g)                        |  5.5856e-60 |     - |
+| :: Aragonite :: CaCO3           |  6.3093e-01 |     - |
+| :: Calcite :: CaCO3             |  1.0000e+00 |     - |
+| :: Halite :: NaCl               |  1.1171e-02 |     - |
++---------------------------------+-------------+-------+
 </pre></div>
 </div>
 </div>
@@ -1406,8 +1423,8 @@ chemical system. For this property, we can compute it at specified temperature a
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>μCO2(aq) = -118583 J/mol
-μCO2(g)  = -118583 J/mol
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>μCO2(aq) = -118582.834726603 J/mol
+μCO2(g)  = -118582.8347311335 J/mol
 </pre></div>
 </div>
 </div>

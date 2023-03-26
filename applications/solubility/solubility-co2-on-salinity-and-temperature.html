@@ -451,10 +451,18 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Cation exchange competition among Na
+     <sup>
+      +
+     </sup>
+     , K
+     <sup>
+      +
+     </sup>
+     and Ca
+     <sup>
+      2+
+     </sup>
     </a>
    </li>
    <li class="toctree-l2">
@@ -884,7 +892,7 @@ title="Print to PDF"
         <span class="c1"># Calculate equilibrium state</span>
         <span class="n">res</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
         <span class="c1"># Stop if the equilibration did not converge or failed</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="o">.</span><span class="n">optima</span><span class="o">.</span><span class="n">succeeded</span><span class="p">:</span> <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">.</span><span class="nf">succeeded</span><span class="p">():</span> <span class="k">continue</span>
 
         <span class="c1"># Fetch resulting aqueous properties of the chemical state</span>
         <span class="n">aqprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
@@ -934,9 +942,9 @@ title="Print to PDF"
         });
         }
         </script>
-</div><div class="output text_html"><div>                            <div id="42298966-3018-4348-bc7d-7732e76ab5db" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("42298966-3018-4348-bc7d-7732e76ab5db")) {                    Plotly.newPlot(                        "42298966-3018-4348-bc7d-7732e76ab5db",                        [{"mode":"lines+markers","name":"1.0 mol of NaCl","x":[25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0],"y":[1.166975959759397,1.1099350876347625,1.0589439635093862,1.0118462337926795,0.9663890596283308,0.921748636941675,0.8795380905424406,0.8409492698076976,0.8062523413218202,0.7753197635981757,0.7478840397092555,0.72364272166034,0.7022934878308427],"type":"scatter"},{"mode":"lines+markers","name":"2.0 mol of NaCl","x":[25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0],"y":[0.9412176741850186,0.9006053835749582,0.8639774919555903,0.8297220272233263,0.7961015601401421,0.7625181480465015,0.7303786206909367,0.700743981028432,0.6739149396856235,0.6498535604142933,0.6283952932957678,0.6093387085258296,0.5924701212549942],"type":"scatter"},{"mode":"lines+markers","name":"4.0 mol of NaCl","x":[25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0],"y":[0.616412489671366,0.5978425259705233,0.5807572378948517,0.5642336034544896,0.5472055391564418,0.5293411359420991,0.5116918660437709,0.49508057355375257,0.4798148069007055,0.46595798111182274,0.45347318081521915,0.44228895539540586,0.43230809679495275],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"SOLUBILITY OF CO2 IN NACL BRINES"},"xaxis":{"title":{"text":"TEMPERATURE [\u00b0C]"}},"yaxis":{"title":{"text":"AMOUNT OF DISSOLVED CO2 [mol/kgw]"}}},                        {"responsive": true}                    ).then(function(){
+</div><div class="output text_html"><div>                            <div id="33041dd9-6a8c-4d34-9fb3-6c48e39e5fc7" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("33041dd9-6a8c-4d34-9fb3-6c48e39e5fc7")) {                    Plotly.newPlot(                        "33041dd9-6a8c-4d34-9fb3-6c48e39e5fc7",                        [{"mode":"lines+markers","name":"1.0 mol of NaCl","x":[25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0],"y":[1.166975959759397,1.1099350876347625,1.0589439635093862,1.0118462337926795,0.9663890596283308,0.921748636941675,0.8795380905424406,0.8409492698076976,0.8062523413218202,0.7753197635981757,0.7478840397092555,0.72364272166034,0.7022934878308427],"type":"scatter"},{"mode":"lines+markers","name":"2.0 mol of NaCl","x":[25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0],"y":[0.9412176741850186,0.9006053835749582,0.8639774919555903,0.8297220272233263,0.7961015601401421,0.7625181480465015,0.7303786206909367,0.700743981028432,0.6739149396856235,0.6498535604142933,0.6283952932957678,0.6093387085258296,0.5924701212549942],"type":"scatter"},{"mode":"lines+markers","name":"4.0 mol of NaCl","x":[25.0,30.0,35.0,40.0,45.0,50.0,55.0,60.0,65.0,70.0,75.0,80.0,85.0],"y":[0.616412489671366,0.5978425259705233,0.5807572378948517,0.5642336034544896,0.5472055391564418,0.5293411359420991,0.5116918660437709,0.49508057355375257,0.4798148069007055,0.46595798111182274,0.45347318081521915,0.44228895539540586,0.43230809679495275],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"SOLUBILITY OF CO2 IN NACL BRINES"},"xaxis":{"title":{"text":"TEMPERATURE [\u00b0C]"}},"yaxis":{"title":{"text":"AMOUNT OF DISSOLVED CO2 [mol/kgw]"}}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('42298966-3018-4348-bc7d-7732e76ab5db');
+var gd = document.getElementById('33041dd9-6a8c-4d34-9fb3-6c48e39e5fc7');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{

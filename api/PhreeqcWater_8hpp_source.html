@@ -62,7 +62,7 @@
                 <td id="projectlogo"><a href="https://www.reaktoro.org"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.5.0</span>
+                    &#160;<span id="projectnumber">v2.6.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -198,12 +198,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">auto</span> waterProps(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) -&gt; <a class="code" href="structReaktoro_1_1PhreeqcUtils_1_1PhreeqcWaterProps.html">PhreeqcWaterProps</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">auto</span> waterDensityPhreeqc(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) -&gt; <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">auto</span> waterDielectricConstantPhreeqc(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) -&gt; <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;} <span class="comment">// namespace PhreeqcUtils</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">auto</span> waterPropsMemoized(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) -&gt; <a class="code" href="structReaktoro_1_1PhreeqcUtils_1_1PhreeqcWaterProps.html">PhreeqcWaterProps</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">auto</span> waterDensityPhreeqc(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) -&gt; <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">auto</span> waterDielectricConstantPhreeqc(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> T, <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> P) -&gt; <a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;} <span class="comment">// namespace PhreeqcUtils</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:28</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a20f012888bba8b8bd0682d04e809ad6f"><div class="ttname"><a href="namespaceReaktoro.html#a20f012888bba8b8bd0682d04e809ad6f">Reaktoro::waterThermoProps</a></div><div class="ttdeci">auto waterThermoProps(real const &amp;T, real const &amp;P, WaterHelmholtzProps const &amp;whp) -&gt; WaterThermoProps</div><div class="ttdoc">Calculate the thermodynamic properties of water.</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a60d9c89846499b1ea9c6cba13f462983"><div class="ttname"><a href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">Reaktoro::real</a></div><div class="ttdeci">autodiff::real real</div><div class="ttdoc">The number type used throughout the library.</div><div class="ttdef"><b>Definition:</b> Real.hpp:26</div></div>
@@ -228,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 13 2023 11:34:15 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Sun Mar 26 2023 11:20:54 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -451,10 +451,18 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Cation exchange competition among Na
+     <sup>
+      +
+     </sup>
+     , K
+     <sup>
+      +
+     </sup>
+     and Ca
+     <sup>
+      2+
+     </sup>
     </a>
    </li>
    <li class="toctree-l2">
@@ -846,17 +854,13 @@ title="Print to PDF"
 <p class="admonition-title">Attention</p>
 <p>Always make sure you are using the <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">latest version of Reaktoro</a>. Otherwise, some new features documented on this website will not work on your machine and you may receive unintuitive errors. Follow these <a class="reference internal" href="../../installation/installation-using-conda.html#updating-reaktoro-via-conda"><span class="std std-ref">update instructions</span></a> to get the latest version of Reaktoro!</p>
 </div>
-<p>Reaktoro performs chemical equilibrium calculations by <em>minimizing the Gibbs energy of the system</em> <span id="id1">[<a class="reference internal" href="../bibliography.html#id670" title="Allan M. M. Leal, Dmitrii A. Kulik, William R. Smith, and Martin O. Saar. An overview of computational methods for chemical equilibrium and kinetic calculations for geochemical and reactive transport modeling. Pure and Applied Chemistry, 89(5):597–643, may 2017. URL: http://www.degruyter.com/view/j/pac.2017.89.issue-5/pac-2016-1107/pac-2016-1107.xml https://www.degruyter.com/view/journals/pac/89/5/article-p597.xml, doi:10.1515/pac-2016-1107.">Leal <em>et al.</em>, 2017</a>]</span>. In a Gibbs energy minimization problem, <strong>temperature and pressure are prescribed</strong> and <strong>the chemical system is closed</strong>. Thus, without mass transfer in or out of the system, the initial amounts of chemical elements and electric charge are conserved in the reactive process.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There are many different classes of equilibrium problems where:</p>
+<p>Reaktoro performs chemical equilibrium calculations by <em>minimizing the Gibbs energy of the system</em> <span id="id1">[<a class="reference internal" href="../bibliography.html#id670" title="Allan M. M. Leal, Dmitrii A. Kulik, William R. Smith, and Martin O. Saar. An overview of computational methods for chemical equilibrium and kinetic calculations for geochemical and reactive transport modeling. Pure and Applied Chemistry, 89(5):597–643, may 2017. URL: http://www.degruyter.com/view/j/pac.2017.89.issue-5/pac-2016-1107/pac-2016-1107.xml https://www.degruyter.com/view/journals/pac/89/5/article-p597.xml, doi:10.1515/pac-2016-1107.">Leal <em>et al.</em>, 2017</a>]</span>. In a Gibbs energy minimization problem, <strong>temperature and pressure are prescribed</strong> and <strong>the chemical system is closed</strong>. Thus, without mass transfer in or out of the system, the initial amounts of chemical elements and electric charge are conserved in the reactive process. However, there are many different classes of equilibrium problems where:</p>
 <ul class="simple">
 <li><p><strong>temperature and/or pressure may be unknown</strong> (e.g., combustion in a rigid and adiabatic chamber where volume and internal energy are specified and temperature and pressure are calculated);</p></li>
 <li><p><strong>the chemical system is open to certain substances</strong> (e.g., aqueous solution in equilibrium with a mixture of gases with known partial pressures or fugacities, such as the atmosphere).</p></li>
 </ul>
 <p>Reaktoro’s chemical equilibrium algorithm supports all these cases because it implements an algorithm to solve <em>parametric Gibbs energy minimization problems with general equilibrium constraints</em>. Thus, Reaktoro is not restricted to closed systems and prescribed temperature and pressure conditions, as we will see in the following sections and tutorials.</p>
-</div>
-<p>We give a simple example below in which we demonstrate the most basic form of performing chemical equilibrium calculations in Reaktoro. In this example, we want to model the combustion of 1 mol of CH<sub>4</sub> and 0.5 mol of O<sub>2</sub> at 1000 ºC and 100 bar. First, we define a chemical system consisting of only a gaseous phase:</p>
+<p>We give a simple example below in which we demonstrate the most basic form of performing chemical equilibrium calculations in Reaktoro. In this example, we want to model the combustion of 1 mol of CH<sub>4</sub> and 0.5 mol of O<sub>2</sub> at 1000 ºC and 100 bar . First, we define a chemical system consisting of only a gaseous phase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -946,7 +950,7 @@ title="Print to PDF"
 <p>Note that the initial and final amounts of the elements H, C, and O are identical (the same applies to the electric charge of the system, even though there are no charged species in this specific problem).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you’ve read the previous guides, you’ve probably already encountered the use of <code class="docutils literal notranslate"><span class="pre">equilibrate(state)</span></code> to bring <code class="docutils literal notranslate"><span class="pre">state</span></code>, an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>, to a state of chemical equilibrium. This method exists for convenience and performs a Gibbs energy minimization on the entire chemical system. It is equivalent to using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> as follows:</p>
+<p>If you’ve read the previous guides, you’ve probably already encountered the use of <code class="docutils literal notranslate"><span class="pre">equilibrate(state)</span></code> to bring <code class="docutils literal notranslate"><span class="pre">state</span></code>, an object of class <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html"><code class="docutils literal notranslate"><span class="pre">ChemicalState</span></code></a>, to a state of chemical equilibrium. This method exists for convenience and performs a Gibbs energy minimization on the entire chemical system. It is similar to using <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> as follows:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 </pre></div>
@@ -954,13 +958,13 @@ title="Print to PDF"
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you need many equilibrium calculations (e.g. in the context of reactive transport simulations), consider using the <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> class instead of the <a class="reference external" href="https://reaktoro.org/api/namespaceReaktoro.html#a286e2972325304934d631234abef9e87"><code class="docutils literal notranslate"><span class="pre">equilibrate</span></code></a> method, as the latter creates an <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object during each call without reuse afterwards, which can cause computation overhead.</p>
+<p>If you require many equilibrium calculations, particularly in the context of reactive transport simulations, it’s worth considering the use of a persistent <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object instead of making repeated <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code> calls, each creating a new <a class="reference external" href="https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html"><code class="docutils literal notranslate"><span class="pre">EquilibriumSolver</span></code></a> object, which may lead to unnecessary computation overhead.</p>
 </div>
 <section id="checking-if-the-calculation-was-successful">
 <h2>Checking if the calculation was successful<a class="headerlink" href="#checking-if-the-calculation-was-successful" title="Permalink to this headline">#</a></h2>
 <p>Performing chemical equilibrium calculations is not a trivial task. It involves highly complicated algorithms to solve different mathematical problems (e.g., non-linear equations, matrix equations). Therefore, it is possible that a calculation could fail. This can happen due to many factors. However, the most common are:</p>
 <ul class="simple">
-<li><p>the formulation of the equilibrium problem is ill-formed (e.g. specifying a set of conflicting equilibrium constraints that cannot be achieved chemically/thermodynamically)</p></li>
+<li><p>the formulation of the equilibrium problem is ill-formed (e.g. specifying a set of conflicting equilibrium constraints that cannot be achieved chemically and/or thermodynamically)</p></li>
 <li><p>the use of poor initial guesses.</p></li>
 </ul>
 <p>So you might want to check at the end of each equilibrium calculation if it was successful:</p>
@@ -975,7 +979,7 @@ title="Print to PDF"
 <span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Succeesful?&quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">optima</span><span class="o">.</span><span class="n">succeeded</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Succeesful?&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="nf">succeeded</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>

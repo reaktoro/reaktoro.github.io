@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Ion exchange competition among NaX, KX, and CaX2</title>
+    <title>Cation exchange competition among Na+, K+ and Ca2+</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -451,10 +451,18 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Cation exchange competition among Na
+     <sup>
+      +
+     </sup>
+     , K
+     <sup>
+      +
+     </sup>
+     and Ca
+     <sup>
+      2+
+     </sup>
     </a>
    </li>
    <li class="toctree-l2">
@@ -790,7 +798,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Ion exchange competition among NaX, KX, and CaX<sub>2</sub></h1>
+                <h1>Cation exchange competition among Na<sup>+</sup>, K<sup>+</sup> and Ca<sup>2+</sup></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -802,15 +810,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ion-exchange-competition-among-nax-kx-and-cax-sub-2-sub">
-<h1>Ion exchange competition among NaX, KX, and CaX<sub>2</sub><a class="headerlink" href="#ion-exchange-competition-among-nax-kx-and-cax-sub-2-sub" title="Permalink to this headline">#</a></h1>
-<p class="acknowledgement">Written by Svetlana Kyas (ETH Zurich) on Mar 10th, 2022</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="cation-exchange-competition-among-na-sup-sup-k-sup-sup-and-ca-sup-2-sup">
+<h1>Cation exchange competition among Na<sup>+</sup>, K<sup>+</sup> and Ca<sup>2+</sup><a class="headerlink" href="#cation-exchange-competition-among-na-sup-sup-k-sup-sup-and-ca-sup-2-sup" title="Permalink to this headline">#</a></h1>
+<p class="acknowledgement">Written by Svetlana Kyas (ETH Zurich) on Mar 10th, 2022.<br>Last revised on Mar 16, 2023 by Allan Leal.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Always make sure you are using the <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">latest version of Reaktoro</a>. Otherwise, some new features documented on this website will not work on your machine and you may receive unintuitive errors. Follow these <a class="reference internal" href="../../installation/installation-using-conda.html#updating-reaktoro-via-conda"><span class="std std-ref">update instructions</span></a> to get the latest version of Reaktoro!</p>
 </div>
-<p>In this tutorial, we study the dependence of ion exchange species distribution on the initial amounts of K<sup>+</sup> and Ca<sup>2+</sup>.</p>
-<p>First, we set up the chemical system, chemical state, and other means of modeling ion exchange using Reaktoro.</p>
+<p>In this tutorial, we show how Reaktoro can be used to model ion exchange processes. We use the PHREEQC database <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> for this purpose. We assume that there is an ion exchanger X<sup>-</sup> on which the aqueous cations Na<sup>+</sup>, K<sup>+</sup> and Ca<sup>2+</sup> can bind and form the exchange phases NaX, KX and CaX<sub>2</sub> respectively. We are interested in calculating the amounts of these phases as the concentrations of K<sup>+</sup> and Ca<sup>2+</sup> vary in the aqueous solution.</p>
+<p>First, we define a chemical system representative of the process we want to model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -855,15 +863,23 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Output dataframe</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;amount_K&quot;</span><span class="p">,</span> <span class="s2">&quot;amount_Ca&quot;</span><span class="p">,</span>
-                           <span class="s2">&quot;amount_K_ion&quot;</span><span class="p">,</span> <span class="s2">&quot;amount_Na_ion&quot;</span><span class="p">,</span> <span class="s2">&quot;amount_Ca_ion&quot;</span><span class="p">,</span>
-                           <span class="s2">&quot;amount_KX&quot;</span><span class="p">,</span> <span class="s2">&quot;amount_NaX&quot;</span><span class="p">,</span> <span class="s2">&quot;amount_CaX2&quot;</span><span class="p">,</span>
-                           <span class="s2">&quot;pH&quot;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+    <span class="s2">&quot;amount_K&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;amount_Ca&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;amount_K_ion&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;amount_Na_ion&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;amount_Ca_ion&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;amount_KX&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;amount_NaX&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;amount_CaX2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pH&quot;</span>
+<span class="p">])</span>
 
 <span class="c1"># Sampling arrays storing the amounts of ions</span>
 <span class="n">steps</span> <span class="o">=</span> <span class="mi">21</span>
-<span class="n">mols_K</span>  <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">flip</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">steps</span><span class="p">))</span>
-<span class="n">mols_Ca</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">steps</span><span class="p">)</span>
+
+<span class="n">mols_K</span>  <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">steps</span><span class="p">)</span>
+<span class="n">mols_Ca</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">steps</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -889,53 +905,346 @@ title="Print to PDF"
     <span class="n">state</span><span class="p">.</span><span class="nf">setTemperature</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
     <span class="n">state</span><span class="p">.</span><span class="nf">setPressure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
     <span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span> <span class="p">,</span> <span class="mf">1.0</span>   <span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-    <span class="c1"># Exchanger site</span>
     <span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;NaX&quot;</span> <span class="p">,</span> <span class="mf">0.4</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
-    <span class="c1"># Changing Ca+2 and K+</span>
     <span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;K+&quot;</span>  <span class="p">,</span> <span class="n">mol_K</span> <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
     <span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">,</span> <span class="n">mol_Ca</span><span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>
 
     <span class="c1"># Equilibrate the chemical state</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    
     <span class="c1"># Stop if the equilibration did not converge or failed</span>
-    <span class="k">assert</span> <span class="n">res</span><span class="o">.</span><span class="n">optima</span><span class="o">.</span><span class="n">succeeded</span>
+    <span class="k">assert</span> <span class="n">res</span><span class="p">.</span><span class="nf">succeeded</span><span class="p">()</span>
 
     <span class="c1"># Update exchange and aqueous properties</span>
-    <span class="n">exprops</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-    <span class="n">aqprops</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
     <span class="n">chemprops</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="nf">props</span><span class="p">()</span>
 
+    <span class="n">exprops</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">chemprops</span><span class="p">)</span>
+    <span class="n">aqprops</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">chemprops</span><span class="p">)</span>
+
     <span class="c1"># Update output arrays:</span>
-    <span class="c1"># &quot;amount_K&quot;, &quot;amount_Ca&quot;, &quot;amount_K+&quot;, &quot;amount_Na+&quot;, &quot;amount_Ca+2&quot;,</span>
-    <span class="c1"># &quot;amount_KX&quot;, &quot;amount_NaX&quot;, &quot;amount_CaX2&quot;, &quot;pH&quot;</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">chemprops</span><span class="p">.</span><span class="nf">elementAmount</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">)),</span>
-                       <span class="nb">float</span><span class="p">(</span><span class="n">chemprops</span><span class="p">.</span><span class="nf">elementAmount</span><span class="p">(</span><span class="s1">&#39;Ca&#39;</span><span class="p">)),</span>
-                       <span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;K+&#39;</span><span class="p">)),</span>
-                       <span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;Na+&#39;</span><span class="p">)),</span>
-                       <span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;Ca+2&#39;</span><span class="p">)),</span>
-                       <span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;KX&#39;</span><span class="p">)),</span>
-                       <span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;NaX&#39;</span><span class="p">)),</span>
-                       <span class="nb">float</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CaX2&#39;</span><span class="p">)),</span>
-                       <span class="nb">float</span><span class="p">(</span><span class="n">aqprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">())]</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">chemprops</span><span class="p">.</span><span class="nf">elementAmount</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">),</span>   <span class="c1"># amount_K</span>
+        <span class="n">chemprops</span><span class="p">.</span><span class="nf">elementAmount</span><span class="p">(</span><span class="s1">&#39;Ca&#39;</span><span class="p">),</span>  <span class="c1"># amount_Ca</span>
+        <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;K+&#39;</span><span class="p">),</span>      <span class="c1"># amount_K+</span>
+        <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;Na+&#39;</span><span class="p">),</span>     <span class="c1"># amount_Na+</span>
+        <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;Ca+2&#39;</span><span class="p">),</span>    <span class="c1"># amount_Ca+2</span>
+        <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;KX&#39;</span><span class="p">),</span>      <span class="c1"># amount_KX</span>
+        <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;NaX&#39;</span><span class="p">),</span>     <span class="c1"># amount_NaX</span>
+        <span class="n">state</span><span class="p">.</span><span class="nf">speciesAmount</span><span class="p">(</span><span class="s1">&#39;CaX2&#39;</span><span class="p">),</span>    <span class="c1"># amount_CaX2</span>
+        <span class="n">aqprops</span><span class="p">.</span><span class="nf">pH</span><span class="p">()</span>                    <span class="c1"># pH</span>
+    <span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We’ll use the <a class="reference external" href="https://bokeh.org/">bokeh</a> plotting library next. First, we need to import it and initialize it to work with Jupyter Notebooks:</p>
+<p>The data collected in the previous calculations can be inspected by printing the <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object <code class="docutils literal notranslate"><span class="pre">df</span></code>:</p>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>amount_K</th>
+      <th>amount_Ca</th>
+      <th>amount_K_ion</th>
+      <th>amount_Na_ion</th>
+      <th>amount_Ca_ion</th>
+      <th>amount_KX</th>
+      <th>amount_NaX</th>
+      <th>amount_CaX2</th>
+      <th>pH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.1</td>
+      <td>2e-16</td>
+      <td>0.00571081</td>
+      <td>0.0942892</td>
+      <td>1e-16</td>
+      <td>0.0942892</td>
+      <td>0.305711</td>
+      <td>1e-16</td>
+      <td>6.99674</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.095</td>
+      <td>0.025</td>
+      <td>0.00857519</td>
+      <td>0.134804</td>
+      <td>0.000810585</td>
+      <td>0.0864248</td>
+      <td>0.265196</td>
+      <td>0.0241894</td>
+      <td>6.99694</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.09</td>
+      <td>0.05</td>
+      <td>0.0114588</td>
+      <td>0.17168</td>
+      <td>0.0034304</td>
+      <td>0.0785412</td>
+      <td>0.22832</td>
+      <td>0.0465696</td>
+      <td>6.99732</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.085</td>
+      <td>0.075</td>
+      <td>0.014057</td>
+      <td>0.20273</td>
+      <td>0.00910655</td>
+      <td>0.070943</td>
+      <td>0.19727</td>
+      <td>0.0658934</td>
+      <td>6.99787</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.08</td>
+      <td>0.1</td>
+      <td>0.0160688</td>
+      <td>0.227017</td>
+      <td>0.0184573</td>
+      <td>0.0639312</td>
+      <td>0.172983</td>
+      <td>0.0815427</td>
+      <td>6.9986</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.075</td>
+      <td>0.125</td>
+      <td>0.0173796</td>
+      <td>0.245317</td>
+      <td>0.0311517</td>
+      <td>0.0576204</td>
+      <td>0.154683</td>
+      <td>0.0938483</td>
+      <td>6.99952</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.07</td>
+      <td>0.15</td>
+      <td>0.0180442</td>
+      <td>0.259116</td>
+      <td>0.04642</td>
+      <td>0.0519558</td>
+      <td>0.140884</td>
+      <td>0.10358</td>
+      <td>7.00062</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.065</td>
+      <td>0.175</td>
+      <td>0.0181777</td>
+      <td>0.269738</td>
+      <td>0.063542</td>
+      <td>0.0468223</td>
+      <td>0.130262</td>
+      <td>0.111458</td>
+      <td>7.00187</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.06</td>
+      <td>0.2</td>
+      <td>0.0178905</td>
+      <td>0.278134</td>
+      <td>0.0819878</td>
+      <td>0.0421095</td>
+      <td>0.121866</td>
+      <td>0.118012</td>
+      <td>7.00326</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.055</td>
+      <td>0.225</td>
+      <td>0.0172712</td>
+      <td>0.28494</td>
+      <td>0.101394</td>
+      <td>0.0377288</td>
+      <td>0.11506</td>
+      <td>0.123606</td>
+      <td>7.00477</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.05</td>
+      <td>0.25</td>
+      <td>0.016387</td>
+      <td>0.290582</td>
+      <td>0.121516</td>
+      <td>0.033613</td>
+      <td>0.109418</td>
+      <td>0.128484</td>
+      <td>7.00637</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.045</td>
+      <td>0.275</td>
+      <td>0.0152885</td>
+      <td>0.295349</td>
+      <td>0.142181</td>
+      <td>0.0297115</td>
+      <td>0.104651</td>
+      <td>0.132819</td>
+      <td>7.00806</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.04</td>
+      <td>0.3</td>
+      <td>0.0140141</td>
+      <td>0.299441</td>
+      <td>0.163273</td>
+      <td>0.0259859</td>
+      <td>0.100559</td>
+      <td>0.136727</td>
+      <td>7.00982</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.035</td>
+      <td>0.325</td>
+      <td>0.0125931</td>
+      <td>0.303002</td>
+      <td>0.184702</td>
+      <td>0.0224069</td>
+      <td>0.0969978</td>
+      <td>0.140298</td>
+      <td>7.01164</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.03</td>
+      <td>0.35</td>
+      <td>0.0110485</td>
+      <td>0.306137</td>
+      <td>0.206407</td>
+      <td>0.0189515</td>
+      <td>0.0938626</td>
+      <td>0.143593</td>
+      <td>7.01353</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.025</td>
+      <td>0.375</td>
+      <td>0.00939862</td>
+      <td>0.308925</td>
+      <td>0.228338</td>
+      <td>0.0156014</td>
+      <td>0.0910751</td>
+      <td>0.146662</td>
+      <td>7.01546</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0.02</td>
+      <td>0.4</td>
+      <td>0.00765805</td>
+      <td>0.311425</td>
+      <td>0.250459</td>
+      <td>0.0123419</td>
+      <td>0.0885754</td>
+      <td>0.149541</td>
+      <td>7.01744</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.015</td>
+      <td>0.425</td>
+      <td>0.00583879</td>
+      <td>0.313683</td>
+      <td>0.272739</td>
+      <td>0.00916121</td>
+      <td>0.0863171</td>
+      <td>0.152261</td>
+      <td>7.01945</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.01</td>
+      <td>0.45</td>
+      <td>0.00395073</td>
+      <td>0.315736</td>
+      <td>0.295156</td>
+      <td>0.00604927</td>
+      <td>0.0842636</td>
+      <td>0.154844</td>
+      <td>7.02151</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.005</td>
+      <td>0.475</td>
+      <td>0.00200214</td>
+      <td>0.317615</td>
+      <td>0.317692</td>
+      <td>0.00299786</td>
+      <td>0.0823854</td>
+      <td>0.157308</td>
+      <td>7.02359</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2e-16</td>
+      <td>0.5</td>
+      <td>1e-16</td>
+      <td>0.319341</td>
+      <td>0.340329</td>
+      <td>1e-16</td>
+      <td>0.0806589</td>
+      <td>0.159671</td>
+      <td>7.02571</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can now construct an interactive plot from this data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktplot</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">fig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="s2">&quot;DEPENDENCE OF ION EXCHANGE SPECIES&lt;br&gt;CONCENTRATIONS ON ADDED CA+2&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">xaxisTitle</span><span class="p">(</span><span class="s1">&#39;Ca+2 [mol]&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="s2">&quot;AMOUNTS OF EXCHANGE SPECIES KX, CaX&lt;sub&gt;2&lt;/sub&gt;, NaX&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">xaxisTitle</span><span class="p">(</span><span class="s1">&#39;Ca&lt;sup&gt;2+&lt;/sup&gt; [molal]&#39;</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">.</span><span class="nf">yaxisTitle</span><span class="p">(</span><span class="s1">&#39;Amount [mol]&#39;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_KX&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;KX&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_CaX2&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CaX2&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_CaX2&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CaX&lt;sub&gt;2&lt;/sub&gt;&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_NaX&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NaX&quot;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="p">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -961,9 +1270,9 @@ title="Print to PDF"
         });
         }
         </script>
-</div><div class="output text_html"><div>                            <div id="aae6c6c3-bcd4-4f47-b553-2feba0b25d00" class="plotly-graph-div" style="height:800px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("aae6c6c3-bcd4-4f47-b553-2feba0b25d00")) {                    Plotly.newPlot(                        "aae6c6c3-bcd4-4f47-b553-2feba0b25d00",                        [{"mode":"lines+markers","name":"KX","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[0.0942891907599077,0.08642480979191905,0.07854119755910259,0.07094295048829433,0.06393117952622078,0.05762042953233461,0.05195575187475899,0.046822291995077245,0.04210952081597849,0.037728846015855286,0.033613021514147946,0.029711487025104566,0.02598593400652613,0.02240692646390264,0.01895148425573399,0.015601382043144846,0.01234194862761556,0.009161210528088796,0.00604927271905252,0.0029978642532490175,1e-16],"type":"scatter"},{"mode":"lines+markers","name":"CaX2","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[1e-16,0.02418941453853374,0.04656960269502349,0.06589344913196482,0.08154267014777286,0.09384834288490614,0.10358003185252734,0.11145795156787815,0.11801216031977817,0.1236055740803268,0.12848448478673546,0.13281857625413962,0.13672747645905942,0.14029761796814622,0.14359293485361174,0.14666175168083345,0.149541313579004,0.15226083228439266,0.15484357962734915,0.15730835662697346,0.15967054390830931],"type":"scatter"},{"mode":"lines+markers","name":"NaX","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[0.30571080924009264,0.2651963611310138,0.2283195970508508,0.19727015124777642,0.1729834801782339,0.15468288469785352,0.1408841844201867,0.1302618048691668,0.1218661585444655,0.11506000582349145,0.10941800891238147,0.10465136046661652,0.10055911307535541,0.0969978375998053,0.0938626460370429,0.0910751145951886,0.0885754242143768,0.0863171249031262,0.08426356802624949,0.08238542249280444,0.0806589121833816],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"DEPENDENCE OF ION EXCHANGE SPECIES<br>CONCENTRATIONS ON ADDED CA+2"},"height":800,"xaxis":{"title":{"text":"Ca+2 [mol]"}},"yaxis":{"title":{"text":"Amount [mol]"}}},                        {"responsive": true}                    ).then(function(){
+</div><div class="output text_html"><div>                            <div id="12957d91-c41b-435a-9acf-6215b91e603b" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("12957d91-c41b-435a-9acf-6215b91e603b")) {                    Plotly.newPlot(                        "12957d91-c41b-435a-9acf-6215b91e603b",                        [{"mode":"lines+markers","name":"KX","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.4750000000000001,0.5000000000000001],"y":[0.0942891907599077,0.08642480979191905,0.0785411975591026,0.07094295048829433,0.06393117952622078,0.05762042953233461,0.05195575187475899,0.046822291995077245,0.04210952081597851,0.037728846015855286,0.033613021514147946,0.029711487025104566,0.02598593400652614,0.02240692646390264,0.01895148425573399,0.015601382043144856,0.012341948627615562,0.009161210528088796,0.006049272719052523,0.0029978642532490197,1e-16],"type":"scatter"},{"mode":"lines+markers","name":"CaX<sub>2</sub>","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.4750000000000001,0.5000000000000001],"y":[1e-16,0.02418941453853374,0.046569602695023485,0.06589344913196482,0.08154267014777286,0.09384834288490612,0.10358003185252734,0.11145795156787815,0.11801216031977817,0.12360557408032681,0.12848448478673546,0.13281857625413962,0.13672747645905942,0.14029761796814622,0.14359293485361174,0.14666175168083342,0.149541313579004,0.15226083228439266,0.15484357962734915,0.15730835662697343,0.15967054390830931],"type":"scatter"},{"mode":"lines+markers","name":"NaX","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.4750000000000001,0.5000000000000001],"y":[0.30571080924009264,0.2651963611310138,0.2283195970508508,0.19727015124777642,0.1729834801782339,0.1546828846978535,0.1408841844201867,0.1302618048691668,0.1218661585444655,0.11506000582349146,0.10941800891238147,0.10465136046661655,0.10055911307535541,0.0969978375998053,0.0938626460370429,0.0910751145951886,0.0885754242143768,0.0863171249031262,0.08426356802624949,0.08238542249280445,0.0806589121833816],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"AMOUNTS OF EXCHANGE SPECIES KX, CaX<sub>2</sub>, NaX"},"xaxis":{"title":{"text":"Ca<sup>2+</sup> [molal]"}},"yaxis":{"title":{"text":"Amount [mol]"}}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('aae6c6c3-bcd4-4f47-b553-2feba0b25d00');
+var gd = document.getElementById('12957d91-c41b-435a-9acf-6215b91e603b');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -987,27 +1296,27 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-<p>We can now construct an interactive plot of ion exchange species dependence on the growing initial amount of Ca<sup>2+</sup>. We see below that, as expected, the amount of KX is decreasing and the amount of CaX<sub>2</sub> increasing as the amount of Ca<sup>2+</sup> grows.</p>
+<p>This figure shows that as the concentration of Ca<sup>2+</sup> increases from 0.0 to 0.5 molal, while the concentration of K<sup>+</sup> decreases from 0.1 to 0.0 molal, there is a tendency for the cations Na<sup>+</sup> and K<sup>+</sup> to unbind from their respective NaX and KX exchange phases. In the process, the cations Ca<sup>2+</sup> tend to bind to the available ion exchange species X<sup>-</sup>, with the exchange phase CaX<sub>2</sub> becoming predominant among the others.</p>
+<p>The next figure shows how the concentrations of Na<sup>+</sup>, K<sup>+</sup> and Ca<sup>2+</sup> behave in the process.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="s2">&quot;DEPENDENCE OF ION EXCHANGE SPECIES&lt;br&gt;CONCENTRATIONS ON ADDED CA+2&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">xaxisTitle</span><span class="p">(</span><span class="s1">&#39;Ca+2 [mol]&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">yaxisTitle</span><span class="p">(</span><span class="s1">&#39;Amount [mol]&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="s2">&quot;CONCENTRATIONS OF IONS K&lt;sup&gt;+&lt;/sup&gt;, Ca&lt;sup&gt;2+&lt;/sup&gt;, Na&lt;sup&gt;+&lt;/sup&gt;&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">xaxisTitle</span><span class="p">(</span><span class="s1">&#39;Ca&lt;sup&gt;2+&lt;/sup&gt; [molal]&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">yaxisTitle</span><span class="p">(</span><span class="s1">&#39;Concentration [molal]&#39;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_KX&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;KX&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_CaX2&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CaX2&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_NaX&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NaX&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_K_ion&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;K&lt;sup&gt;+&lt;/sup&gt;&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca_ion&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Ca&lt;sup&gt;2+&lt;/sup&gt;&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Na_ion&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Na&lt;sup&gt;+&lt;/sup&gt;&quot;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="p">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="2c4f3f84-7ae2-42a4-a738-89aa498533d5" class="plotly-graph-div" style="height:800px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("2c4f3f84-7ae2-42a4-a738-89aa498533d5")) {                    Plotly.newPlot(                        "2c4f3f84-7ae2-42a4-a738-89aa498533d5",                        [{"mode":"lines+markers","name":"KX","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[0.0942891907599077,0.08642480979191905,0.07854119755910259,0.07094295048829433,0.06393117952622078,0.05762042953233461,0.05195575187475899,0.046822291995077245,0.04210952081597849,0.037728846015855286,0.033613021514147946,0.029711487025104566,0.02598593400652613,0.02240692646390264,0.01895148425573399,0.015601382043144846,0.01234194862761556,0.009161210528088796,0.00604927271905252,0.0029978642532490175,1e-16],"type":"scatter"},{"mode":"lines+markers","name":"CaX2","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[1e-16,0.02418941453853374,0.04656960269502349,0.06589344913196482,0.08154267014777286,0.09384834288490614,0.10358003185252734,0.11145795156787815,0.11801216031977817,0.1236055740803268,0.12848448478673546,0.13281857625413962,0.13672747645905942,0.14029761796814622,0.14359293485361174,0.14666175168083345,0.149541313579004,0.15226083228439266,0.15484357962734915,0.15730835662697346,0.15967054390830931],"type":"scatter"},{"mode":"lines+markers","name":"NaX","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[0.30571080924009264,0.2651963611310138,0.2283195970508508,0.19727015124777642,0.1729834801782339,0.15468288469785352,0.1408841844201867,0.1302618048691668,0.1218661585444655,0.11506000582349145,0.10941800891238147,0.10465136046661652,0.10055911307535541,0.0969978375998053,0.0938626460370429,0.0910751145951886,0.0885754242143768,0.0863171249031262,0.08426356802624949,0.08238542249280444,0.0806589121833816],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"DEPENDENCE OF ION EXCHANGE SPECIES<br>CONCENTRATIONS ON ADDED CA+2"},"height":800,"xaxis":{"title":{"text":"Ca+2 [mol]"}},"yaxis":{"title":{"text":"Amount [mol]"}}},                        {"responsive": true}                    ).then(function(){
+<div class="output text_html"><div>                            <div id="805031e8-a210-45b2-b4e3-b4968d239a31" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("805031e8-a210-45b2-b4e3-b4968d239a31")) {                    Plotly.newPlot(                        "805031e8-a210-45b2-b4e3-b4968d239a31",                        [{"mode":"lines+markers","name":"K<sup>+</sup>","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.4750000000000001,0.5000000000000001],"y":[0.005710809240092396,0.008575190208081049,0.011458802440897507,0.014057049511705772,0.01606882047377932,0.017379570467665504,0.01804424812524111,0.018177708004922858,0.01789047918402159,0.01727115398414482,0.016386978485852154,0.015288512974895536,0.014014065993473964,0.012593073536097461,0.011048515744266109,0.009398617956855253,0.007658051372384542,0.005838789471911304,0.003950727280947587,0.0020021357467510845,1e-16],"type":"scatter"},{"mode":"lines+markers","name":"Ca<sup>2+</sup>","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.4750000000000001,0.5000000000000001],"y":[1e-16,0.0008105854614663591,0.0034303973049766155,0.009106550868035291,0.01845732985222724,0.03115165711509399,0.0464199681474728,0.06354204843212198,0.08198783968022196,0.1013944259196733,0.12151551521326465,0.1421814237458605,0.16327252354094074,0.1847023820318539,0.2064070651463884,0.2283382483191667,0.25045868642099617,0.27273916771560747,0.29515642037265094,0.3176916433730267,0.3403294560916908],"type":"scatter"},{"mode":"lines+markers","name":"Na<sup>+</sup>","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.4750000000000001,0.5000000000000001],"y":[0.09428919075990748,0.1348036388689863,0.17168040294914935,0.20272984875222375,0.22701651982176627,0.24531711530214664,0.25911581557981345,0.2697381951308333,0.27813384145553466,0.28493999417650867,0.2905819910876187,0.2953486395333836,0.2994408869246447,0.30300216240019484,0.3061373539629572,0.3089248854048115,0.3114245757856233,0.3136828750968739,0.3157364319737506,0.3176145775071957,0.3193410878166185],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"CONCENTRATIONS OF IONS K<sup>+</sup>, Ca<sup>2+</sup>, Na<sup>+</sup>"},"xaxis":{"title":{"text":"Ca<sup>2+</sup> [molal]"}},"yaxis":{"title":{"text":"Concentration [molal]"}}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('2c4f3f84-7ae2-42a4-a738-89aa498533d5');
+var gd = document.getElementById('805031e8-a210-45b2-b4e3-b4968d239a31');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1031,69 +1340,24 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-<p>We also show the dependence of aqueous ions amounts increasing amounts of Ca<sup>2+</sup>.</p>
+<p>Finally, we present how the pH of the solution changes in the process, whose changes are not significant.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="s2">&quot;DEPENDENCE OF SOLUTE IONS&lt;br&gt;CONCENTRATIONS ON ADDED CA+2&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">xaxisTitle</span><span class="p">(</span><span class="s1">&#39;Ca+2 [mol]&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">yaxisTitle</span><span class="p">(</span><span class="s1">&#39;Amount [mol]&#39;</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_K_ion&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;K+&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca_ion&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Na_ion&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Na+&quot;</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="p">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="002d44b0-1a5e-43ef-a389-b63f000b6bb8" class="plotly-graph-div" style="height:800px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("002d44b0-1a5e-43ef-a389-b63f000b6bb8")) {                    Plotly.newPlot(                        "002d44b0-1a5e-43ef-a389-b63f000b6bb8",                        [{"mode":"lines+markers","name":"K+","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[0.005710809240092396,0.008575190208081049,0.011458802440897508,0.014057049511705772,0.01606882047377932,0.017379570467665487,0.01804424812524111,0.018177708004922858,0.017890479184021604,0.01727115398414481,0.016386978485852154,0.015288512974895531,0.014014065993473969,0.012593073536097461,0.011048515744266109,0.009398617956855256,0.0076580513723845415,0.005838789471911304,0.0039507272809475805,0.0020021357467510823,1e-16],"type":"scatter"},{"mode":"lines+markers","name":"Ca+2","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[1e-16,0.0008105854614663591,0.0034303973049766103,0.009106550868035291,0.01845732985222724,0.03115165711509398,0.0464199681474728,0.06354204843212198,0.08198783968022196,0.10139442591967332,0.12151551521326465,0.1421814237458605,0.16327252354094074,0.1847023820318539,0.2064070651463884,0.22833824831916666,0.25045868642099617,0.27273916771560747,0.29515642037265094,0.3176916433730267,0.3403294560916908],"type":"scatter"},{"mode":"lines+markers","name":"Na+","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[0.09428919075990748,0.1348036388689863,0.17168040294914932,0.20272984875222375,0.22701651982176627,0.24531711530214662,0.25911581557981345,0.2697381951308333,0.27813384145553466,0.28493999417650867,0.2905819910876187,0.2953486395333836,0.2994408869246447,0.30300216240019484,0.3061373539629572,0.3089248854048115,0.3114245757856233,0.3136828750968739,0.3157364319737506,0.3176145775071957,0.3193410878166185],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"DEPENDENCE OF SOLUTE IONS<br>CONCENTRATIONS ON ADDED CA+2"},"height":800,"xaxis":{"title":{"text":"Ca+2 [mol]"}},"yaxis":{"title":{"text":"Amount [mol]"}}},                        {"responsive": true}                    ).then(function(){
-
-var gd = document.getElementById('002d44b0-1a5e-43ef-a389-b63f000b6bb8');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
-
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })                };                });            </script>        </div></div></div>
-</div>
-<p>Finally, we present the dependence of pH levels on changing values of Ca<sup>2+</sup> amount.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Figure</span><span class="p">()</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="s2">&quot;DEPENDENCE OF PH ON ADDED CA+2&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">.</span><span class="nf">xaxisTitle</span><span class="p">(</span><span class="s1">&#39;Ca+2 [mol]&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="s2">&quot;AQUEOUS SOLUTION pH&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">xaxisTitle</span><span class="p">(</span><span class="s1">&#39;Ca&lt;sup&gt;2+&lt;/sup&gt; [molal]&#39;</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">.</span><span class="nf">yaxisTitle</span><span class="p">(</span><span class="s1">&#39;pH&#39;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">.</span><span class="nf">drawLineWithMarkers</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;amount_Ca&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;pH&quot;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="p">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="9cf2ac48-146d-40b4-9f4b-e958f9e2a09a" class="plotly-graph-div" style="height:800px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("9cf2ac48-146d-40b4-9f4b-e958f9e2a09a")) {                    Plotly.newPlot(                        "9cf2ac48-146d-40b4-9f4b-e958f9e2a09a",                        [{"mode":"lines+markers","name":"","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.47500000000000014,0.5000000000000001],"y":[6.996736738179069,6.996944617693211,6.997321026258025,6.997866226948209,6.998597062355108,6.999518563938173,7.000617959492438,7.001873816997958,7.003263949849195,7.00476868062959,7.006371522104882,7.008058911259963,7.009819722579127,7.011644788275413,7.0135264990785275,7.015458486812465,7.017435376966072,7.0194525965863965,7.021506224705334,7.0235928751705305,7.025709604180525],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"DEPENDENCE OF PH ON ADDED CA+2"},"height":800,"xaxis":{"title":{"text":"Ca+2 [mol]"}},"yaxis":{"title":{"text":"pH"}}},                        {"responsive": true}                    ).then(function(){
+<div class="output text_html"><div>                            <div id="88ee5bed-63ab-4aef-ac90-700173d7e31a" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("88ee5bed-63ab-4aef-ac90-700173d7e31a")) {                    Plotly.newPlot(                        "88ee5bed-63ab-4aef-ac90-700173d7e31a",                        [{"mode":"lines+markers","name":"","x":[2e-16,0.025000000000000102,0.0500000000000001,0.07500000000000011,0.1000000000000001,0.1250000000000001,0.15000000000000013,0.17500000000000013,0.20000000000000012,0.22500000000000012,0.2500000000000001,0.27500000000000013,0.30000000000000016,0.3250000000000001,0.35000000000000014,0.3750000000000001,0.40000000000000013,0.42500000000000016,0.45000000000000007,0.4750000000000001,0.5000000000000001],"y":[6.996736738179069,6.996944617693211,6.997321026258027,6.997866226948209,6.998597062355108,6.999518563938173,7.000617959492438,7.001873816997958,7.0032639498491935,7.00476868062959,7.006371522104882,7.008058911259963,7.009819722579127,7.011644788275413,7.0135264990785275,7.015458486812465,7.017435376966072,7.0194525965863965,7.021506224705334,7.0235928751705305,7.025709604180525],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"line":{"width":4},"marker":{"size":10,"symbol":"circle"},"type":"scatter"}]},"layout":{"colorway":["#4C78A8","#F58518","#E45756","#72B7B2","#54A24B","#EECA3B","#B279A2","#FF9DA6","#9D755D","#BAB0AC"],"font":{"color":"#2e2e2e","family":"Arial","size":16},"legend":{"title":{"text":""}},"margin":{"b":100,"l":100,"pad":5,"r":100,"t":100},"paper_bgcolor":"#f7f7f7","plot_bgcolor":"#f7f7f7","title":{"font":{"color":"#636363","size":24},"x":0.0,"xref":"paper","yanchor":"middle","yref":"paper"},"xaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0},"yaxis":{"title":{"font":{"size":20}},"zerolinecolor":"#2e2e2e","zerolinewidth":0}}},"title":{"text":"AQUEOUS SOLUTION pH"},"xaxis":{"title":{"text":"Ca<sup>2+</sup> [molal]"}},"yaxis":{"title":{"text":"pH"}}},                        {"responsive": true}                    ).then(function(){
 
-var gd = document.getElementById('9cf2ac48-146d-40b4-9f4b-e958f9e2a09a');
+var gd = document.getElementById('88ee5bed-63ab-4aef-ac90-700173d7e31a');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1117,7 +1381,6 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-<p>In this tutorial, we tried to vary the initial composition of the solution in contact with the exchanger to see how it reacts in terms of ion exchange distribution. The obtained numerical results have confirmed that an increase in Ca<sup>2+</sup> amounts causes the growth of the ion exchange site CaX<sub>2</sub> and the decrease of NaX while sodium ions are replaced by calcium ions.</p>
 </section>
 
     <script type="text/x-thebe-config">

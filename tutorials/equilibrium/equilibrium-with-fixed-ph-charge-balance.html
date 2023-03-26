@@ -451,10 +451,18 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applications/exchange/ion-exchange-cax2-nax-kx-vs-changing-ca-k.html">
-     Ion exchange competition among NaX, KX, and CaX
-     <sub>
-      2
-     </sub>
+     Cation exchange competition among Na
+     <sup>
+      +
+     </sup>
+     , K
+     <sup>
+      +
+     </sup>
+     and Ca
+     <sup>
+      2+
+     </sup>
     </a>
    </li>
    <li class="toctree-l2">
@@ -952,7 +960,7 @@ title="Print to PDF"
 <p>It’s always advisable to verify if the calculation succeeded:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successful computation!&quot;</span> <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">optima</span><span class="o">.</span><span class="n">succeeded</span> <span class="k">else</span> <span class="s2">&quot;Computation has failed!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successful computation!&quot;</span> <span class="k">if</span> <span class="n">result</span><span class="p">.</span><span class="nf">succeeded</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;Computation has failed!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -975,45 +983,60 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AQUEOUS PROPERTIES AT EQUILIBRIUM
-+-----------------------------------+-------------+-------+
-| Property                          |       Value |  Unit |
-+-----------------------------------+-------------+-------+
-| Temperature                       |    323.1500 |     K |
-| Pressure                          |     10.0000 |   bar |
-| Ionic Strength (Effective)        |      0.0211 | molal |
-| Ionic Strength (Stoichiometric)   |      0.0211 | molal |
-| pH                                |      2.0000 |       |
-| pE                                |      1.3421 |       |
-| Eh                                |      0.0861 |     V |
-| Charge Molality                   | -8.5366e-19 | molal |
-| Element Molality:                 |             |       |
-| :: C                              |  1.0000e-01 | molal |
-| :: Na                             |  1.0000e-02 | molal |
-| :: Cl                             |  2.1127e-02 | molal |
-| Species Molality:                 |             |       |
-| :: H+                             |  1.1133e-02 | molal |
-| :: OH-                            |  6.1358e-12 | molal |
-| :: Na+                            |  1.0000e-02 | molal |
-| :: Cl-                            |  2.1127e-02 | molal |
-| :: HCO3-                          |  6.1508e-06 | molal |
-| :: CO2(aq)                        |  9.9994e-02 | molal |
-| :: CO3-2                          |  6.0703e-14 | molal |
-| Saturation Indices (log base 10): |             |       |
-| :: CH4(g)                         |     -5.4132 |     - |
-| :: CO(g)                          |     -9.9715 |     - |
-| :: CO2(g)                         |     -0.2822 |     - |
-| :: H2(g)                          |     -7.1497 |     - |
-| :: O2(g)                          |    -64.0586 |     - |
-| :: H2O(g)                         |     -1.9187 |     - |
-| :: Phenol(g) :: C6H5OH            |    -46.3912 |     - |
-| :: o-Cresol(g) :: CH3C6H4(OH)     |    -52.2246 |     - |
-| :: m-Cresol(g) :: CH3C6H4(OH)     |    -51.6682 |     - |
-| :: p-Cresol(g) :: CH3C6H4(OH)     |    -53.2650 |     - |
-| :: Ethylene(g) :: C2H4            |    -24.4885 |     - |
-| :: Halite :: NaCl                 |     -5.3824 |     - |
-| :: Diamond :: C                   |     -0.4748 |     - |
-| :: Graphite :: C                  |      0.0238 |     - |
-+-----------------------------------+-------------+-------+
++---------------------------------+-------------+-------+
+| Property                        |       Value |  Unit |
++---------------------------------+-------------+-------+
+| Temperature                     |    323.1500 |     K |
+| Pressure                        |     10.0000 |   bar |
+| Ionic Strength (Effective)      |      0.0211 | molal |
+| Ionic Strength (Stoichiometric) |      0.0211 | molal |
+| pH                              |      2.0000 |       |
+| pE                              |      1.3421 |       |
+| Eh                              |      0.0861 |     V |
+| Charge Molality                 | -8.5366e-19 | molal |
+| Element Molality:               |             |       |
+| :: C                            |  1.0000e-01 | molal |
+| :: Na                           |  1.0000e-02 | molal |
+| :: Cl                           |  2.1127e-02 | molal |
+| Species Molality:               |             |       |
+| :: H+                           |  1.1133e-02 | molal |
+| :: OH-                          |  6.1358e-12 | molal |
+| :: Na+                          |  1.0000e-02 | molal |
+| :: Cl-                          |  2.1127e-02 | molal |
+| :: HCO3-                        |  6.1508e-06 | molal |
+| :: CO2(aq)                      |  9.9994e-02 | molal |
+| :: CO3-2                        |  6.0703e-14 | molal |
+| Saturation Indices:             |             |       |
+| :: CH4(g)                       |     -5.4132 |     - |
+| :: CO(g)                        |     -9.9715 |     - |
+| :: CO2(g)                       |     -0.2822 |     - |
+| :: H2(g)                        |     -7.1497 |     - |
+| :: O2(g)                        |    -64.0586 |     - |
+| :: H2O(g)                       |     -1.9187 |     - |
+| :: Phenol(g) :: C6H5OH          |    -46.3912 |     - |
+| :: o-Cresol(g) :: CH3C6H4(OH)   |    -52.2246 |     - |
+| :: m-Cresol(g) :: CH3C6H4(OH)   |    -51.6682 |     - |
+| :: p-Cresol(g) :: CH3C6H4(OH)   |    -53.2650 |     - |
+| :: Ethylene(g) :: C2H4          |    -24.4885 |     - |
+| :: Halite :: NaCl               |     -5.3824 |     - |
+| :: Diamond :: C                 |     -0.4748 |     - |
+| :: Graphite :: C                |      0.0238 |     - |
+| Saturation Ratios:              |             |       |
+| :: CH4(g)                       |  3.8617e-06 |     - |
+| :: CO(g)                        |  1.0677e-10 |     - |
+| :: CO2(g)                       |  5.2215e-01 |     - |
+| :: H2(g)                        |  7.0845e-08 |     - |
+| :: O2(g)                        |  8.7381e-65 |     - |
+| :: H2O(g)                       |  1.2058e-02 |     - |
+| :: Phenol(g) :: C6H5OH          |  4.0622e-47 |     - |
+| :: o-Cresol(g) :: CH3C6H4(OH)   |  5.9621e-53 |     - |
+| :: m-Cresol(g) :: CH3C6H4(OH)   |  2.1470e-52 |     - |
+| :: p-Cresol(g) :: CH3C6H4(OH)   |  5.4329e-54 |     - |
+| :: Ethylene(g) :: C2H4          |  3.2474e-25 |     - |
+| :: Halite :: NaCl               |  4.1454e-06 |     - |
+| :: Diamond :: C                 |  3.3514e-01 |     - |
+| :: Graphite :: C                |  1.0563e+00 |     - |
++---------------------------------+-------------+-------+
 </pre></div>
 </div>
 </div>
@@ -1030,8 +1053,8 @@ pressure are 50 °C and 10 bar (but displayed in the table as 323.15 K and
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount of H+ that entered the system: 0.011127 mol
-Amount of Cl- that entered the system: 0.011127 mol
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount of H+ that entered the system: 0.011127035386385216 mol
+Amount of Cl- that entered the system: 0.011127035386384918 mol
 </pre></div>
 </div>
 </div>
@@ -1045,8 +1068,8 @@ Amount of Cl- that entered the system: 0.011127 mol
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount of H+ that entered the system: 0.011127 mol
-Amount of Cl- that entered the system: 0.011127 mol
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Amount of H+ that entered the system: 0.011127035386385216 mol
+Amount of Cl- that entered the system: 0.011127035386384918 mol
 </pre></div>
 </div>
 </div>
