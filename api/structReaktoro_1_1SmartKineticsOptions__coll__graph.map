@@ -1,5 +1,0 @@
-<map id="SmartKineticsOptions" name="SmartKineticsOptions">
-<area shape="rect" id="node1" title="The options for smart chemical kinetics calculation." alt="" coords="16,178,179,207"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1SmartEquilibriumOptions.html" title="The options for the smart equilibrium calculations." alt="" coords="5,99,190,128"/>
-<area shape="rect" id="node3" href="$structReaktoro_1_1EquilibriumOptions.html" title="The options for the equilibrium calculations." alt="" coords="25,5,170,34"/>
-</map>
