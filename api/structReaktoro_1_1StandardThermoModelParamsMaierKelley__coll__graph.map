@@ -1,4 +1,4 @@
 <map id="StandardThermoModelParamsMaierKelley" name="StandardThermoModelParamsMaierKelley">
-<area shape="rect" id="node1" title="The parameters in the Maier&#45;Kelley model for calculating standard thermodynamic properties of fluid a..." alt="" coords="5,183,224,224"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds." alt="" coords="83,5,146,32"/>
+<area shape="rect" id="node1" title="The parameters in the Maier&#45;Kelley model for calculating standard thermodynamic properties of fluid a..." alt="" coords="5,201,223,247"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds." alt="" coords="83,5,145,34"/>
 </map>

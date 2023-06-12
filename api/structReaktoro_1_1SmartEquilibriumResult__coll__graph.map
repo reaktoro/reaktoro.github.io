@@ -1,9 +1,9 @@
 <map id="SmartEquilibriumResult" name="SmartEquilibriumResult">
-<area shape="rect" id="node1" title="Used to describe the result of a smart chemical equilibrium calculation." alt="" coords="869,78,1045,105"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1SmartEquilibriumResultDuringPrediction.html" title="Used to represent the result of a prediction operation in a smart chemical equilibrium calculation." alt="" coords="533,5,752,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="254,13,313,39"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,13,165,39"/>
-<area shape="rect" id="node5" href="$structReaktoro_1_1SmartEquilibriumResultDuringLearning.html" title="Used to represent the result of a learning operation in a smart chemical equilibrium calculation." alt="" coords="533,71,752,112"/>
-<area shape="rect" id="node6" href="$structReaktoro_1_1EquilibriumResult.html" title="A type used to describe the result of an equilibrium calculation." alt="" coords="215,78,352,105"/>
-<area shape="rect" id="node7" href="$structReaktoro_1_1SmartEquilibriumTiming.html" title="Used to provide timing information of the operations during a smart chemical equilibrium calculation." alt="" coords="553,137,733,163"/>
+<area shape="rect" id="node1" title="Used to describe the result of a smart chemical equilibrium calculation." alt="" coords="866,85,1041,114"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1SmartEquilibriumResultDuringPrediction.html" title="Used to represent the result of a prediction operation in a smart chemical equilibrium calculation." alt="" coords="530,5,749,51"/>
+<area shape="rect" id="node3" title=" " alt="" coords="253,14,311,43"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,14,165,43"/>
+<area shape="rect" id="node5" href="$structReaktoro_1_1SmartEquilibriumResultDuringLearning.html" title="Used to represent the result of a learning operation in a smart chemical equilibrium calculation." alt="" coords="530,76,749,122"/>
+<area shape="rect" id="node6" href="$structReaktoro_1_1EquilibriumResult.html" title="A type used to describe the result of an equilibrium calculation." alt="" coords="214,85,350,114"/>
+<area shape="rect" id="node7" href="$structReaktoro_1_1SmartEquilibriumTiming.html" title="Used to provide timing information of the operations during a smart chemical equilibrium calculation." alt="" coords="550,146,729,175"/>
 </map>

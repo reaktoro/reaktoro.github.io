@@ -2,7 +2,7 @@ var searchData=
 [
   ['name_2519',['name',['../classReaktoro_1_1Phase.html#ac1242ca6ada242c9726ef226a42009bd',1,'Reaktoro::Phase::name()'],['../classReaktoro_1_1Element.html#ac1242ca6ada242c9726ef226a42009bd',1,'Reaktoro::Element::name()'],['../classReaktoro_1_1GeneralSurface.html#acc10ac749446ae3dc3c230d384279f59',1,'Reaktoro::GeneralSurface::name()'],['../classReaktoro_1_1Surface.html#acc10ac749446ae3dc3c230d384279f59',1,'Reaktoro::Surface::name()'],['../classReaktoro_1_1Species.html#ac1242ca6ada242c9726ef226a42009bd',1,'Reaktoro::Species::name()'],['../classReaktoro_1_1Reaction.html#ac1242ca6ada242c9726ef226a42009bd',1,'Reaktoro::Reaction::name()'],['../classReaktoro_1_1GeneralPhase.html#ac1242ca6ada242c9726ef226a42009bd',1,'Reaktoro::GeneralPhase::name()'],['../classReaktoro_1_1GeneralReaction.html#acc10ac749446ae3dc3c230d384279f59',1,'Reaktoro::GeneralReaction::name()']]],
   ['named_2520',['named',['../classReaktoro_1_1GeneralPhase.html#a2bfa57f01d3beca65569764ae0b82843',1,'Reaktoro::GeneralPhase']]],
-  ['names_2521',['names',['../classReaktoro_1_1SubstanceCriticalProps.html#a17444c5b5fbaa1fe692a1aa76dbb6b07',1,'Reaktoro::SubstanceCriticalProps']]],
+  ['names_2521',['names',['../classReaktoro_1_1SubstanceCriticalProps.html#a801ae2ceefd08d13a6a09f6e02454a50',1,'Reaktoro::SubstanceCriticalProps']]],
   ['namesconservativecomponents_2522',['namesConservativeComponents',['../classReaktoro_1_1EquilibriumSpecs.html#adc59c850fa0f45c11d591fcdf986a4e8',1,'Reaktoro::EquilibriumSpecs']]],
   ['namesconstraints_2523',['namesConstraints',['../classReaktoro_1_1EquilibriumSpecs.html#a10f9b16e73db398aba25a4a0166673d7',1,'Reaktoro::EquilibriumSpecs']]],
   ['namescontrolvariables_2524',['namesControlVariables',['../classReaktoro_1_1EquilibriumSpecs.html#a8ff1f9557c6190f4e6163823ee3d2f78',1,'Reaktoro::EquilibriumSpecs']]],
@@ -16,7 +16,7 @@ var searchData=
   ['namestitrantsexplicit_2532',['namesTitrantsExplicit',['../classReaktoro_1_1EquilibriumSpecs.html#a850e5f4014f8ba464d0ccc93a5ba100b',1,'Reaktoro::EquilibriumSpecs']]],
   ['namestitrantsimplicit_2533',['namesTitrantsImplicit',['../classReaktoro_1_1EquilibriumSpecs.html#a8177fafa047dd1a9e90f7592510d54b6',1,'Reaktoro::EquilibriumSpecs']]],
   ['nasadatabase_2534',['NasaDatabase',['../classReaktoro_1_1NasaDatabase.html#a12d9043302a60eb09e25bfb8a72d0bad',1,'Reaktoro::NasaDatabase::NasaDatabase(String name)'],['../classReaktoro_1_1NasaDatabase.html#aa509b032eaa07e2f1a337076c7746e86',1,'Reaktoro::NasaDatabase::NasaDatabase(Database database)']]],
-  ['neutral_2535',['neutral',['../classReaktoro_1_1AqueousMixture.html#a46a0f120d76cc6d3c23fbe87d5134d33',1,'Reaktoro::AqueousMixture']]],
+  ['neutral_2535',['neutral',['../classReaktoro_1_1AqueousMixture.html#ab5ad3e6c32fa5d14ba6497874a531eee',1,'Reaktoro::AqueousMixture']]],
   ['newton_2536',['newton',['../namespaceReaktoro.html#adb8f30c802dda37b9f12dfc8bfd16c8d',1,'Reaktoro']]],
   ['norm_2537',['norm',['../namespaceReaktoro.html#adb207924cc16bf101ce6a8129081dd25',1,'Reaktoro::norm(const Eigen::MatrixBase&lt; Derived &gt; &amp;mat) -&gt; double'],['../namespaceReaktoro.html#a963df7525b3f2468980f028c7209af38',1,'Reaktoro::norm(const Eigen::MatrixBase&lt; Derived &gt; &amp;mat) -&gt; double']]],
   ['norminf_2538',['norminf',['../namespaceReaktoro.html#a0a0280529c9a03d7eafb894a5a9af25d',1,'Reaktoro']]],

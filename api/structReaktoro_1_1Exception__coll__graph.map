@@ -1,10 +1,10 @@
 <map id="Exception" name="Exception">
-<area shape="rect" id="node1" title="Provides a convenient way to initialized an exception with helpful error messages." alt="" coords="147,504,234,531"/>
-<area shape="rect" id="node2" title=" " alt="" coords="138,400,243,427"/>
-<area shape="rect" id="node3" title=" " alt="" coords="117,309,264,351"/>
-<area shape="rect" id="node4" title=" " alt="" coords="100,233,281,260"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,157,179,184"/>
-<area shape="rect" id="node6" title=" " alt="" coords="119,81,262,108"/>
-<area shape="rect" id="node8" title=" " alt="" coords="203,157,381,184"/>
-<area shape="rect" id="node7" title=" " alt="" coords="151,5,230,32"/>
+<area shape="rect" id="node1" title="Provides a convenient way to initialized an exception with helpful error messages." alt="" coords="148,525,233,554"/>
+<area shape="rect" id="node2" title=" " alt="" coords="138,414,242,443"/>
+<area shape="rect" id="node3" title=" " alt="" coords="118,319,263,365"/>
+<area shape="rect" id="node4" title=" " alt="" coords="100,240,280,269"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,162,178,191"/>
+<area shape="rect" id="node6" title=" " alt="" coords="120,84,261,113"/>
+<area shape="rect" id="node8" title=" " alt="" coords="202,162,378,191"/>
+<area shape="rect" id="node7" title=" " alt="" coords="151,5,229,34"/>
 </map>

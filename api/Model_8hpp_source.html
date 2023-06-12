@@ -62,7 +62,7 @@
                 <td id="projectlogo"><a href="https://www.reaktoro.org"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.6.0</span>
+                    &#160;<span id="projectnumber">v2.7.2</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -309,44 +309,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">using</span> ResultRef = Ref&lt;Result&gt;;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> evalfns = <a class="code" href="namespaceReaktoro.html#a6fac7fd0fe9ac8ca3baf24fa9743b8db">vectorize</a>(models, RKT_LAMBDA(model, model.evaluatorFn()));</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> serializerfns = <a class="code" href="namespaceReaktoro.html#a6fac7fd0fe9ac8ca3baf24fa9743b8db">vectorize</a>(models, RKT_LAMBDA(model, model.serializerFn()));</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">auto</span> evalfn = [=](ResultRef res, <span class="keyword">const</span> Args&amp;... args)</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; i &lt; evalfns.size(); ++i)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            evalfns[i](res, args...);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    };</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keyword">auto</span> serializerfn = [serializerfns]() -&gt; <a class="code" href="classReaktoro_1_1Data.html">Data</a></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <a class="code" href="classReaktoro_1_1Data.html">Data</a> result;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; i &lt; serializerfns.size(); ++i)</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            result.<a class="code" href="classReaktoro_1_1Data.html#ac40d4b3d022d6e6ef05e9192afcf44cf">add</a>(serializerfns[i]());</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    };</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <a class="code" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec&lt;Param&gt;</a> params;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; model : models)</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; param : model.params())</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            params.push_back(param);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;(evalfn, params);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Signature&gt;</div>
-<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#ac53d02995ba8ff1fc2cc70e372aa8d18">  264</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a51a06c5eb4d8950a2540283920494768">chain</a>(<span class="keyword">const</span> <a class="code" href="classReaktoro_1_1Model.html">Model&lt;Signature&gt;</a>&amp; model) -&gt; <a class="code" href="classReaktoro_1_1Model.html">Model&lt;Signature&gt;</a></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;{</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">return</span> model;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args, <span class="keyword">typename</span>... Models&gt;</div>
-<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a2eb441f8d9783fccb761ba4adab87223">  271</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a51a06c5eb4d8950a2540283920494768">chain</a>(<span class="keyword">const</span> <a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;&amp; model, <span class="keyword">const</span> Models&amp;... models) -&gt; <a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;{</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt;<a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;&gt; vec = {model, models...};</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceReaktoro.html#a51a06c5eb4d8950a2540283920494768">chain</a>(vec);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> paramsvec = <a class="code" href="namespaceReaktoro.html#a6fac7fd0fe9ac8ca3baf24fa9743b8db">vectorize</a>(models, RKT_LAMBDA(model, model.params()));</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> serializerfns = <a class="code" href="namespaceReaktoro.html#a6fac7fd0fe9ac8ca3baf24fa9743b8db">vectorize</a>(models, RKT_LAMBDA(model, model.serializerFn()));</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keyword">auto</span> evalfn = [=](ResultRef res, <span class="keyword">const</span> Args&amp;... args)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; i &lt; evalfns.size(); ++i)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            evalfns[i](res, args..., paramsvec[i]);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    };</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">auto</span> serializerfn = [serializerfns]() -&gt; <a class="code" href="classReaktoro_1_1Data.html">Data</a></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <a class="code" href="classReaktoro_1_1Data.html">Data</a> result;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> i = 0; i &lt; serializerfns.size(); ++i)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            result.<a class="code" href="classReaktoro_1_1Data.html#ac40d4b3d022d6e6ef05e9192afcf44cf">add</a>(serializerfns[i]());</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    };</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec&lt;Param&gt;</a> params;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; model : models)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; param : model.params())</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            params.push_back(param);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;(evalfn, params);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Signature&gt;</div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#ac53d02995ba8ff1fc2cc70e372aa8d18">  265</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a51a06c5eb4d8950a2540283920494768">chain</a>(<span class="keyword">const</span> <a class="code" href="classReaktoro_1_1Model.html">Model&lt;Signature&gt;</a>&amp; model) -&gt; <a class="code" href="classReaktoro_1_1Model.html">Model&lt;Signature&gt;</a></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> model;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Result, <span class="keyword">typename</span>... Args, <span class="keyword">typename</span>... Models&gt;</div>
+<div class="line"><a name="l00272"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a2eb441f8d9783fccb761ba4adab87223">  272</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a51a06c5eb4d8950a2540283920494768">chain</a>(<span class="keyword">const</span> <a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;&amp; model, <span class="keyword">const</span> Models&amp;... models) -&gt; <a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <a class="code" href="namespaceReaktoro.html#a1b01c504448c96cd2191a5184dd31acf">Vec</a>&lt;<a class="code" href="classReaktoro_1_1Model.html">Model</a>&lt;Result(Args...)&gt;&gt; vec = {model, models...};</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceReaktoro.html#a51a06c5eb4d8950a2540283920494768">chain</a>(vec);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
 <div class="ttc" id="aclassReaktoro_1_1Data_html"><div class="ttname"><a href="classReaktoro_1_1Data.html">Reaktoro::Data</a></div><div class="ttdoc">The class used to store and retrieve data for assemblying chemical systems.</div><div class="ttdef"><b>Definition:</b> Data.hpp:41</div></div>
 <div class="ttc" id="aclassReaktoro_1_1Data_html_ac40d4b3d022d6e6ef05e9192afcf44cf"><div class="ttname"><a href="classReaktoro_1_1Data.html#ac40d4b3d022d6e6ef05e9192afcf44cf">Reaktoro::Data::add</a></div><div class="ttdeci">auto add(Data data) -&gt; void</div><div class="ttdoc">Add a Data object to this Data object, which becomes a list if not already.</div></div>
 <div class="ttc" id="aclassReaktoro_1_1Model_3_01Result_07Args_8_8_8_08_4_html_a01d378637aac541d099de3a8ba21a908"><div class="ttname"><a href="classReaktoro_1_1Model_3_01Result_07Args_8_8_8_08_4.html#a01d378637aac541d099de3a8ba21a908">Reaktoro::Model&lt; Result(Args...)&gt;::Model</a></div><div class="ttdeci">Model(const Fun &amp;f)</div><div class="ttdoc">Construct a Model function object with either a model evaluator or a model calculator function.</div><div class="ttdef"><b>Definition:</b> Model.hpp:110</div></div>
@@ -385,7 +386,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 31 2023 19:45:43 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Jun 12 2023 22:44:12 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

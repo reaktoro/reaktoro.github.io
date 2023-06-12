@@ -1,6 +1,6 @@
 <map id="Speciate" name="Speciate">
-<area shape="rect" id="node1" title="The auxiliary type used to specify phase species to be determined from element symbols." alt="" coords="46,260,125,287"/>
-<area shape="rect" id="node2" title=" " alt="" coords="6,171,165,197"/>
-<area shape="rect" id="node3" title=" " alt="" coords="56,81,115,108"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node1" title="The auxiliary type used to specify phase species to be determined from element symbols." alt="" coords="46,272,124,301"/>
+<area shape="rect" id="node2" title=" " alt="" coords="6,178,164,207"/>
+<area shape="rect" id="node3" title=" " alt="" coords="56,84,114,113"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,5,165,34"/>
 </map>

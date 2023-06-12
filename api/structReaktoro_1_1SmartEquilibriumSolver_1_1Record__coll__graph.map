@@ -1,7 +1,7 @@
 <map id="SmartEquilibriumSolver::Record" name="SmartEquilibriumSolver::Record">
-<area shape="rect" id="node1" title="The record of the knowledge database containing input, output, and derivatives data." alt="" coords="261,95,437,136"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1EquilibriumPredictor.html" title="Used to predict a chemical equilibrium state at given conditions using first&#45;order Taylor approximati..." alt="" coords="5,5,160,32"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1EquilibriumConditions.html" title="The class used to define conditions to be satisfied at chemical equilibrium." alt="" coords="184,5,349,32"/>
-<area shape="rect" id="node4" href="$classReaktoro_1_1ChemicalState.html" title="The chemical state of a chemical system." alt="" coords="373,5,491,32"/>
-<area shape="rect" id="node5" href="$classReaktoro_1_1EquilibriumSensitivity.html" title="The sensitivity derivatives of a chemical equilibrium state." alt="" coords="515,5,680,32"/>
+<area shape="rect" id="node1" title="The record of the knowledge database containing input, output, and derivatives data." alt="" coords="258,99,434,145"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1EquilibriumPredictor.html" title="Used to predict a chemical equilibrium state at given conditions using first&#45;order Taylor approximati..." alt="" coords="5,5,159,34"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1EquilibriumConditions.html" title="The class used to define conditions to be satisfied at chemical equilibrium." alt="" coords="183,5,347,34"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1ChemicalState.html" title="The chemical state of a chemical system." alt="" coords="371,5,487,34"/>
+<area shape="rect" id="node5" href="$classReaktoro_1_1EquilibriumSensitivity.html" title="The sensitivity derivatives of a chemical equilibrium state." alt="" coords="511,5,675,34"/>
 </map>

@@ -793,12 +793,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="analysis-of-the-evian-water">
 <h1>Analysis of the Evian water<a class="headerlink" href="#analysis-of-the-evian-water" title="Permalink to this headline">#</a></h1>
-<p class="acknowledgement">Written by Svetlana Kyas (ETH Zurich) on Mar 31th, 2022</p>
+<p class="acknowledgement">Written by Svetlana Kyas (ETH Zurich) on March 31th, 2022.<br>Last revised on June 12th, 2023 by Allan Leal.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Always make sure you are using the <a class="reference external" href="https://anaconda.org/conda-forge/reaktoro">latest version of Reaktoro</a>. Otherwise, some new features documented on this website will not work on your machine and you may receive unintuitive errors. Follow these <a class="reference internal" href="../../installation/installation-using-conda.html#updating-reaktoro-via-conda"><span class="std std-ref">update instructions</span></a> to get the latest version of Reaktoro!</p>
 </div>
-<p>This tutorial addresses the problem of checking the quality of Evian water using Reaktoro with a custom chemical composition.</p>
+<p>This tutorial demonstrates the use of Reaktoro to calculate the saturation indices of minerals for a water sample with composition and pH shown below:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p><img alt="Evian water label" src="../../_images/evian-chemical-water-composition.png" /></p></th>
@@ -809,7 +809,7 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<p>We start by defining the chemical system with aqueous, gaseous and mineral phases, temperature, pressure and pH restrictions and their values:</p>
+<p>We start by defining the chemical system with just an aqueous phase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
@@ -818,93 +818,214 @@ title="Print to PDF"
 <span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">PhreeqcDatabase</span><span class="p">(</span><span class="s2">&quot;phreeqc.dat&quot;</span><span class="p">)</span>
 
 <span class="c1"># Create an aqueous phase automatically selecting all species with provided elements</span>
-<span class="n">aqueousphase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;C Ca Cl H K Mg N Na O S Si&quot;</span><span class="p">))</span>
-<span class="n">aqueousphase</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nf">chain</span><span class="p">(</span>
-    <span class="n">ActivityModelHKF</span><span class="p">(),</span>
-    <span class="n">ActivityModelDrummond</span><span class="p">(</span><span class="s2">&quot;CO2&quot;</span><span class="p">),</span>
-<span class="p">))</span>
+<span class="n">solution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousPhase</span><span class="p">(</span><span class="nf">speciate</span><span class="p">(</span><span class="s2">&quot;C Ca Cl K Mg N Na S Si&quot;</span><span class="p">))</span>
+<span class="n">solution</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelDavies</span><span class="p">())</span>
 
-<span class="c1"># Create a gaseous phase</span>
-<span class="n">gaseousphase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">GaseousPhase</span><span class="p">(</span><span class="s2">&quot;CO2(g)&quot;</span><span class="p">)</span>
-<span class="n">gaseousphase</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">ActivityModelPengRobinsonPhreeqc</span><span class="p">())</span>
-
-<span class="c1"># Create mineral phases</span>
-<span class="n">minerals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">MineralPhases</span><span class="p">()</span>
-
-<span class="c1"># Create the chemical system</span>
-<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">aqueousphase</span><span class="p">,</span> <span class="n">gaseousphase</span><span class="p">,</span> <span class="n">minerals</span><span class="p">)</span>
-
-<span class="c1"># Create constraints on temperature, pressure, and pH on the equilibrium chemical state </span>
+<span class="c1"># Create the chemical system with only the aqueous phase</span>
+<span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we create an initial chemical state (in disequilibrium) representative of the water sample we are analysing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>   <span class="p">,</span> <span class="mf">1.000</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span>  <span class="p">,</span> <span class="mf">80.00</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>   <span class="p">,</span> <span class="mf">6.800</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span> <span class="p">,</span> <span class="mf">350.0</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span>  <span class="p">,</span> <span class="mf">26.00</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;NO3-&quot;</span>  <span class="p">,</span> <span class="mf">3.700</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;K+&quot;</span>    <span class="p">,</span> <span class="mf">1.000</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>   <span class="p">,</span> <span class="mf">6.500</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;SO4-2&quot;</span> <span class="p">,</span> <span class="mf">12.60</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H4SiO4&quot;</span><span class="p">,</span> <span class="mf">24.00</span><span class="p">,</span> <span class="s2">&quot;mg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the PHREEQC database <code class="docutils literal notranslate"><span class="pre">phreeqc.dat</span></code> does not have any aqueous species with formula <code class="docutils literal notranslate"><span class="pre">SiO2</span></code>. Therefore, we had to convert 15 mg of <code class="docutils literal notranslate"><span class="pre">SiO2</span></code>, with molar mass of 60.0843 g/mol, to the mass of <code class="docutils literal notranslate"><span class="pre">H4SiO4</span></code>, which has a molar mass of 96.1163 g/mol, in order to obtain the same molar amount of Si as in 15 mg of <code class="docutils literal notranslate"><span class="pre">SiO2</span></code>.</p>
+<p>For our speciation calculation, we require an equilibrium solver that allow us to specify not only temperature and pressure but also the pH of the solution, which is done next:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the constraints we want to impose for the equilibrium calculation</span>
 <span class="n">specs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSpecs</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
 <span class="n">specs</span><span class="p">.</span><span class="nf">temperature</span><span class="p">()</span>
 <span class="n">specs</span><span class="p">.</span><span class="nf">pressure</span><span class="p">()</span>
 <span class="n">specs</span><span class="p">.</span><span class="nf">pH</span><span class="p">()</span>
 
-<span class="c1"># Initialize the equilibrium solver</span>
+<span class="c1"># Create our equilibrium solver with the specifications above</span>
 <span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumSolver</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-
-<span class="c1"># Define conditions to be satisfied at the chemical equilibrium state</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now equilibrate our initial state and determine its full composition:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The conditions to be satisfied at the chemical equilibrium state</span>
 <span class="n">conditions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">EquilibriumConditions</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
 <span class="n">conditions</span><span class="p">.</span><span class="nf">temperature</span><span class="p">(</span><span class="mf">25.0</span><span class="p">,</span> <span class="s2">&quot;celsius&quot;</span><span class="p">)</span>
 <span class="n">conditions</span><span class="p">.</span><span class="nf">pressure</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;atm&quot;</span><span class="p">)</span>
 <span class="n">conditions</span><span class="p">.</span><span class="nf">pH</span><span class="p">(</span><span class="mf">7.2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The composition of the initial chemical state is taken from the plot with  Evian water label above. However, since the concentrations of the species in Evian water are defined as milligrams per liter (mg/L), we must convert these values to moles using the molar masses of the species. The latter can be determined with the function <code class="docutils literal notranslate"><span class="pre">db.species(&quot;SpeicesName&quot;).molarMass()</span></code>. To convert <code class="docutils literal notranslate"><span class="pre">mg</span></code> to <code class="docutils literal notranslate"><span class="pre">kg</span></code>, we multiply the values by 1e-6. We also equilibrate the chemical state with the given conditions.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize chemical state</span>
-<span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalState</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;H2O&quot;</span>    <span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span>   <span class="p">,</span> <span class="mi">80</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Ca+2&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 80 * 1e-6 kg / (MW(Ca++) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span>    <span class="p">,</span> <span class="mf">6.8</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Cl-&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>    <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 6.8 * 1e-6 kg / (MW(Cl-) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span>  <span class="p">,</span> <span class="mi">350</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;HCO3-&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 350 * 1e-6 kg / (MW(HCO3-) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span>   <span class="p">,</span> <span class="mi">26</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Mg+2&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 26 * 1e-6 kg / (MW(Mg++) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;NO3-&quot;</span>   <span class="p">,</span> <span class="mf">3.7</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;NO3-&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>   <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 3.7 * 1e-6 kg / (MW(NO3-) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;K+&quot;</span>     <span class="p">,</span> <span class="mi">1</span> <span class="o">*</span> <span class="mf">1e-6</span>    <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;K+&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>     <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 1 * 1e-6 kg / (MW(K+) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span>    <span class="p">,</span> <span class="mf">6.5</span> <span class="o">*</span> <span class="mf">1e-6</span>  <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;Na+&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>    <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 6.5 * 1e-6 kg / (MW(Na+) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;SO4-2&quot;</span>  <span class="p">,</span> <span class="mf">12.6</span> <span class="o">*</span> <span class="mf">1e-6</span> <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;SO4-2&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">()</span>  <span class="p">,</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 12.6 * 1e-6 kg / (MW(SO4--) kg / mol)</span>
-<span class="n">state</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="s2">&quot;SiO2(a)&quot;</span><span class="p">,</span> <span class="mi">15</span> <span class="o">*</span> <span class="mf">1e-6</span>   <span class="o">/</span> <span class="n">db</span><span class="p">.</span><span class="nf">species</span><span class="p">(</span><span class="s2">&quot;SiO2(a)&quot;</span><span class="p">)</span><span class="o">.</span><span class="nf">molarMass</span><span class="p">(),</span> <span class="s2">&quot;mol&quot;</span><span class="p">)</span>  <span class="c1"># 15 * 1e-6 kg / (MW(SiO2) kg/ mol</span>
 
 <span class="c1"># Equilibrate the solution with the given initial chemical state and desired conditions at equilibrium</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="p">.</span><span class="nf">solve</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">conditions</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">result</span><span class="p">.</span><span class="nf">succeeded</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We then perform an analysis of the chemical equilibrium state of Evian water,i.e.,</p>
-<ul class="simple">
-<li><p>evaluation of the saturation indices of all the minerals contained in the database, which can be formed by chemical reactions and</p></li>
-<li><p>analysis of the composition of the solution.</p></li>
-</ul>
-<p>To obtain saturation indices of minerals, we need to access the aqueous properties of the calculated chemical state. The <strong>saturation index</strong> is defined as log10 of the ratio of equilibrium constant and reaction quotient. It is 0 for minerals that are <em>saturated</em> or, in other words, <em>precipitated and remain in equilibrium with the solution</em>, SI &gt; 0 for <em>supersaturated minerals</em> and SI &lt; 0 for <em>unsaturated minerals</em>.</p>
-<div class="cell tag_remove-input tag_remove-output docutils container">
-</div>
-<div class="cell docutils container">
+<p>We can now evaluate the aqueous properties of the solution and determine the saturation indices of the minerals and gases:</p>
+<div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate saturation indices of selected minerals</span>
-<span class="n">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Calcite, CaCO3)       = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Calcite&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Aragonite, CaCO3)     = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Aragonite&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Dolomite, CaMg(CO3)2) = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Dolomite&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Quartz, SiO2)         = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Quartz&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SI (Chalcedony, SiO2)     = &quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="s1">&#39;Chalcedony&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aprops</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">AqueousProps</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aprops</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SI (Calcite, CaCO3)       =  2.56341e-12
-SI (Aragonite, CaCO3)     =  -0.143905
-SI (Dolomite, CaMg(CO3)2) =  -0.0541668
-SI (Quartz, SiO2)         =  -4.07902e-13
-SI (Chalcedony, SiO2)     =  -0.429063
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+--------------------------------------+-------------+-------+
+| Property                             |       Value |  Unit |
++--------------------------------------+-------------+-------+
+| Temperature                          |    298.1500 |     K |
+| Pressure                             |      1.0132 |   bar |
+| Ionic Strength (Effective)           |      0.0089 | molal |
+| Ionic Strength (Stoichiometric)      |      0.0090 | molal |
+| pH                                   |      7.2000 |       |
+| pE                                   |     12.1304 |       |
+| Eh                                   |      0.7176 |     V |
+| Charge Molality                      |  8.1165e-04 | molal |
+| Element Molality:                    |             |       |
+| :: C                                 |  5.7358e-03 | molal |
+| :: N                                 |  5.9670e-05 | molal |
+| :: Na                                |  2.8274e-04 | molal |
+| :: Mg                                |  1.0695e-03 | molal |
+| :: Si                                |  2.4969e-04 | molal |
+| :: S                                 |  1.3116e-04 | molal |
+| :: Cl                                |  1.9180e-04 | molal |
+| :: K                                 |  2.5574e-05 | molal |
+| :: Ca                                |  1.9960e-03 | molal |
+| Species Molality:                    |             |       |
+| :: CO3-2                             |  4.9629e-06 | molal |
+| :: H+                                |  6.9652e-08 | molal |
+| :: CO2                               |  6.3698e-04 | molal |
+| :: (CO2)2                            |  7.4630e-09 | molal |
+| :: SO4-2                             |  1.0400e-04 | molal |
+| :: HS-                               |  9.9999e-17 | molal |
+| :: H2S                               |  9.9999e-17 | molal |
+| :: (H2S)2                            |  9.9999e-17 | molal |
+| :: HSO4-                             |  4.7424e-10 | molal |
+| :: HCO3-                             |  4.9634e-03 | molal |
+| :: CH4                               |  9.9999e-17 | molal |
+| :: Ca+2                              |  1.8924e-03 | molal |
+| :: CaCO3                             |  7.1389e-06 | molal |
+| :: CaHCO3+                           |  8.0694e-05 | molal |
+| :: CaHSO4+                           |  7.2654e-12 | molal |
+| :: CaOH+                             |  3.6972e-09 | molal |
+| :: CaSO4                             |  1.5836e-05 | molal |
+| :: Cl-                               |  1.9180e-04 | molal |
+| :: NO3-                              |  5.9668e-05 | molal |
+| :: H2                                |  9.9999e-17 | molal |
+| :: H4SiO4                            |  2.4905e-04 | molal |
+| :: H2SiO4-2                          |  9.3376e-13 | molal |
+| :: H3SiO4-                           |  6.4383e-07 | molal |
+| :: Mg+2                              |  1.0163e-03 | molal |
+| :: K+                                |  2.5562e-05 | molal |
+| :: KSO4-                             |  1.2578e-08 | molal |
+| :: MgCO3                             |  2.1778e-06 | molal |
+| :: MgHCO3+                           |  3.9744e-05 | molal |
+| :: MgOH+                             |  4.3440e-08 | molal |
+| :: MgSO4                             |  1.1211e-05 | molal |
+| :: N2                                |  6.9545e-10 | molal |
+| :: NH4+                              |  9.9999e-17 | molal |
+| :: NH3                               |  9.9999e-17 | molal |
+| :: NH4SO4-                           |  9.9999e-17 | molal |
+| :: NO2-                              |  4.8438e-15 | molal |
+| :: Na+                               |  2.8198e-04 | molal |
+| :: NaCO3-                            |  1.7547e-08 | molal |
+| :: NaHCO3                            |  6.4450e-07 | molal |
+| :: OH-                               |  1.7696e-07 | molal |
+| :: NaOH                              |  9.9999e-17 | molal |
+| :: NaSO4-                            |  9.8970e-08 | molal |
+| :: O2                                |  1.7386e-09 | molal |
+| :: S-2                               |  9.9999e-17 | molal |
+| Saturation Indices:                  |             |       |
+| :: CH4(g)                            |   -130.6514 |     - |
+| :: CO2(g)                            |     -1.7325 |     - |
+| :: H2(g)                             |    -38.7155 |     - |
+| :: H2O(g)                            |     -1.5089 |     - |
+| :: H2S(g)                            |   -131.6165 |     - |
+| :: N2(g)                             |     -5.9868 |     - |
+| :: NH3(g)                            |    -58.0789 |     - |
+| :: O2(g)                             |     -5.8723 |     - |
+| :: Talc :: Mg3Si4O10(OH)2            |     -2.1031 |     - |
+| :: Anhydrite :: CaSO4                |     -2.7719 |     - |
+| :: Sylvite :: KCl                    |     -9.2954 |     - |
+| :: Sulfur                            |    -98.8264 |     - |
+| :: SiO2(a)                           |     -0.8904 |     - |
+| :: Sepiolite(d) :: Mg2Si3O7.5OH:3H2O |     -6.9977 |     - |
+| :: Sepiolite :: Mg2Si3O7.5OH:3H2O    |     -4.0977 |     - |
+| :: Quartz :: SiO2                    |      0.3782 |     - |
+| :: Halite :: NaCl                    |     -8.9228 |     - |
+| :: Gypsum :: CaSO4:2H2O              |     -2.4677 |     - |
+| :: Dolomite :: CaMg(CO3)2            |      0.0725 |     - |
+| :: Chrysotile :: Mg3Si2O5(OH)4       |     -5.7012 |     - |
+| :: Chalcedony :: SiO2                |     -0.0508 |     - |
+| :: Calcite :: CaCO3                  |      0.1092 |     - |
+| :: Aragonite :: CaCO3                |     -0.0347 |     - |
+| Saturation Ratios:                   |             |       |
+| :: CH4(g)                            | 2.2315e-131 |     - |
+| :: CO2(g)                            |  1.8513e-02 |     - |
+| :: H2(g)                             |  1.9252e-39 |     - |
+| :: H2O(g)                            |  3.0984e-02 |     - |
+| :: H2S(g)                            | 2.4183e-132 |     - |
+| :: N2(g)                             |  1.0308e-06 |     - |
+| :: NH3(g)                            |  8.3390e-59 |     - |
+| :: O2(g)                             |  1.3420e-06 |     - |
+| :: Talc :: Mg3Si4O10(OH)2            |  7.8859e-03 |     - |
+| :: Anhydrite :: CaSO4                |  1.6907e-03 |     - |
+| :: Sylvite :: KCl                    |  5.0648e-10 |     - |
+| :: Sulfur                            |  1.4915e-99 |     - |
+| :: SiO2(a)                           |  1.2871e-01 |     - |
+| :: Sepiolite(d) :: Mg2Si3O7.5OH:3H2O |  1.0052e-07 |     - |
+| :: Sepiolite :: Mg2Si3O7.5OH:3H2O    |  7.9849e-05 |     - |
+| :: Quartz :: SiO2                    |  2.3891e+00 |     - |
+| :: Halite :: NaCl                    |  1.1945e-09 |     - |
+| :: Gypsum :: CaSO4:2H2O              |  3.4064e-03 |     - |
+| :: Dolomite :: CaMg(CO3)2            |  1.1818e+00 |     - |
+| :: Chrysotile :: Mg3Si2O5(OH)4       |  1.9899e-06 |     - |
+| :: Chalcedony :: SiO2                |  8.8956e-01 |     - |
+| :: Calcite :: CaCO3                  |  1.2859e+00 |     - |
+| :: Aragonite :: CaCO3                |  9.2323e-01 |     - |
++--------------------------------------+-------------+-------+
 </pre></div>
 </div>
 </div>
 </div>
-<p>Based on the results above, the water is <em>saturated with dolomite</em>, whereas calcite and quartz are <em>undersaturated</em>.</p>
+<p>The code below determines which minerals have a <em>super-saturated</em> state in the water sample (i.e., SI &gt; 0):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minerals for which the water is super-saturated:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">saturationSpecies</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">species</span><span class="p">.</span><span class="nf">name</span><span class="p">()</span>
+    <span class="n">SI</span> <span class="o">=</span> <span class="n">aprops</span><span class="p">.</span><span class="nf">saturationIndex</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">SI</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minerals for which the water is super-saturated:
+ - Quartz
+ - Dolomite
+ - Calcite
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

@@ -1,4 +1,4 @@
 <map id="SolidPhase" name="SolidPhase">
-<area shape="rect" id="node1" title="The class used to configure a solid solution phase." alt="" coords="15,80,108,107"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1GeneralPhase.html" title="The base type for all other classes defining more specific phases." alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node1" title="The class used to configure a solid solution phase." alt="" coords="15,82,107,111"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1GeneralPhase.html" title="The base type for all other classes defining more specific phases." alt="" coords="5,5,117,34"/>
 </map>
