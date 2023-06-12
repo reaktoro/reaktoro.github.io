@@ -6,6 +6,8 @@ script_path=$(realpath "$0")
 script_dir=$(dirname $script_path)
 root_dir=$script_dir/../
 
+git checkout main
+git reset --hard base
 
 mkdir -p $root_dir/_workspace_
 cd $root_dir/_workspace_
