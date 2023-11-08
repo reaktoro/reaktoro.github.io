@@ -1,0 +1,4 @@
+<map id="StandardThermoModelParamsHKF" name="StandardThermoModelParamsHKF">
+<area shape="rect" id="node1" title="The parameters in the HKF model for calculating standard thermodynamic properties of aqueous solutes." alt="" coords="5,269,250,298"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds." alt="" coords="96,5,159,34"/>
+</map>

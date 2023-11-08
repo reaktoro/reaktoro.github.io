@@ -1,0 +1,6 @@
+<map id="ControlVariableP" name="ControlVariableP">
+<area shape="rect" id="node1" title="Used to define a p control variable in a chemical equilibrium problem." alt="" coords="82,178,211,207"/>
+<area shape="rect" id="node2" title=" " alt="" coords="56,84,114,113"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,165,34"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1ChemicalFormula.html" title="A type used to represent the chemical formula of a chemical species." alt="" coords="139,84,274,113"/>
+</map>

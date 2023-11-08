@@ -1,0 +1,7 @@
+<map id="EquationSpecs" name="EquationSpecs">
+<area shape="rect" id="node1" title="The specifications for configuting a cubic equation of state." alt="" coords="152,278,268,307"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1CubicEOS_1_1EquationModel.html" title="The necessary constants , , , &#160;and function &#160;that uniquely define a cubic equation of state." alt="" coords="61,176,180,205"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds." alt="" coords="5,14,68,43"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1Model.html" title=" " alt="" coords="92,5,317,51"/>
+<area shape="rect" id="node5" href="$classReaktoro_1_1Model.html" title=" " alt="" coords="204,167,397,213"/>
+</map>

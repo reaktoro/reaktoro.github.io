@@ -1,0 +1,6 @@
+<map id="Substance" name="Substance">
+<area shape="rect" id="node1" title="The attributes of a substance in a fluid phase required by a cubic equation of state." alt="" coords="30,212,118,241"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds." alt="" coords="5,84,68,113"/>
+<area shape="rect" id="node3" title=" " alt="" coords="91,84,150,113"/>
+<area shape="rect" id="node4" title=" " alt="" coords="41,5,200,34"/>
+</map>

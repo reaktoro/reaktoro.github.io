@@ -1,0 +1,4 @@
+<map id="KineticsOptions" name="KineticsOptions">
+<area shape="rect" id="node1" title="The options for chemical kinetics calculation." alt="" coords="16,82,140,111"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1EquilibriumOptions.html" title="The options for the equilibrium calculations." alt="" coords="5,5,151,34"/>
+</map>

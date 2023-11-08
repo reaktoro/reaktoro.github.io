@@ -1,0 +1,55 @@
+Traceback (most recent call last):
+  File "/home/allan/miniconda3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/allan/miniconda3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/allan/miniconda3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/allan/miniconda3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/allan/miniconda3/envs/reaktoro-jupyter-book/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/allan/miniconda3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/allan/miniconda3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/allan/miniconda3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from reaktoro import *
+
+# Initialize a thermodynamic database
+db = PhreeqcDatabase("phreeqc.dat")
+
+# Create an aqueous phase automatically selecting all species with provided elements
+aqueousphase = AqueousPhase(speciate("H O C Na Cl"))
+solution.set(ActivityModelPhreeqc(db))
+
+# Create a gaseous phase with CO2(g)
+gaseousphase = GaseousPhase("CO2(g)")
+gaseousphase.set(ActivityModelPengRobinsonPhreeqc())
+
+# Create the chemical system
+system = ChemicalSystem(db, aqueousphase, gaseousphase)
+
+# Create the equilibrium solver
+solver = EquilibriumSolver(system)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[1], line 8[0m
+[1;32m      6[0m [38;5;66;03m# Create an aqueous phase automatically selecting all species with provided elements[39;00m
+[1;32m      7[0m aqueousphase[38;5;250m [39m[38;5;241m=[39m[38;5;250m [39m[38;5;21;01mAqueousPhase[39;00m([38;5;21mspeciate[39m([38;5;124m"[39m[38;5;124mH O C Na Cl[39m[38;5;124m"[39m))
+[0;32m----> 8[0m [43msolution[49m.[38;5;21mset[39m(ActivityModelPhreeqc(db))
+[1;32m     10[0m [38;5;66;03m# Create a gaseous phase with CO2(g)[39;00m
+[1;32m     11[0m gaseousphase[38;5;250m [39m[38;5;241m=[39m[38;5;250m [39m[38;5;21;01mGaseousPhase[39;00m([38;5;124m"[39m[38;5;124mCO2(g)[39m[38;5;124m"[39m)
+
+[0;31mNameError[0m: name 'solution' is not defined
+NameError: name 'solution' is not defined
+

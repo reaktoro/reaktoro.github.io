@@ -1,0 +1,5 @@
+<map id="PhreeqcWaterProps" name="PhreeqcWaterProps">
+<area shape="rect" id="node1" title="The thermodynamic and electrostatic properties of water computed in PHREEQC." alt="" coords="137,99,285,128"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1PhreeqcUtils_1_1PhreeqcWaterElectroProps.html" title="The electrostatic properties of water computed in PHREEQC." alt="" coords="5,5,198,34"/>
+<area shape="rect" id="node3" href="$structReaktoro_1_1PhreeqcUtils_1_1PhreeqcWaterThermoProps.html" title="The thermodynamic properties of water computed in PHREEQC." alt="" coords="222,5,419,34"/>
+</map>

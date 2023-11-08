@@ -1,0 +1,192 @@
+#==================================================================================================
+# Book settings (https://jupyterbook.org/customize/config.html)
+#==================================================================================================
+title: ""  # leave this empty - only logo Reaktoro for Python and C++ to be used
+author: ""  # leave this empty for now too
+copyright: "2023"
+logo: images/reaktoro-for-python-and-cpp.svg
+
+exclude_patterns: [_build, .history]  # exclude the following directories from search for markdown files
+
+#==================================================================================================
+# Execution settings (https://jupyterbook.org/content/execute.html)
+#==================================================================================================
+execute:
+  execute_notebooks: cache
+  timeout: 100
+
+#==================================================================================================
+# HTML-specific settings
+#==================================================================================================
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  announcement              : 🚀 Reaktoro v2 is finally out, after so many release candidates! This is the result of intense work over the last three years. Please let us know how to improve Reaktoro!
+  baseurl                   : "https://reaktoro.org/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  comments:
+    hypothesis              : false
+    utterances              : false
+  extra_footer              : ""  # Will be displayed underneath the footer.
+  favicon                   : images/reaktoro-logo.svg
+  google_analytics_id       : "G-PK3LGVLSKH"  # A GA id that can be used to track book views.
+  home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
+  use_edit_page_button      : true  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_issues_button         : true  # Whether to add an "open an issue" button
+  use_multitoc_numbering    : false   # Continuous numbering across parts/chapters
+  use_repository_button     : true  # Whether to add a link to your repository button
+
+# Launch button settings
+launch_buttons:
+  notebook_interface        : jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url             : https://mybinder.org  # The URL of the BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+  thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
+  colab_url                 : https://colab.research.google.com # The URL of Google Colab (https://colab.research.google.com)
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/reaktoro/reaktoro-jupyter-book  # Online location of your book
+  path_to_book: ""  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+#==================================================================================================
+# Latex-specific settings (https://jupyterbook.org/customize/config.html)
+#==================================================================================================
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+#==================================================================================================
+# Sphinx configurations
+#==================================================================================================
+
+sphinx:
+  extra_extensions:
+  - sphinx_inline_tabs
+  config:
+    pygments_style: material
+    bibtex_reference_style: author_year
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    html_js_files:
+    - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js  # needed to get plotly plots rendered (https://jupyterbook.org/en/stable/interactive/interactive.html#plotly)
+
+parse:
+  myst_enable_extensions:  # Optional MyST extensions https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
+    - amsmath
+    # - colon_fence
+    - deflist
+    - dollarmath
+    # - fieldlist
+    - html_admonition
+    - html_image
+    # - linkify
+    # - replacements
+    # - smartquotes
+    # - strikethrough
+    - substitution
+    - tasklist
+
+  myst_substitutions:
+      Gitter: "[Gitter](https://gitter.im/reaktoro/community)"
+      autodiff: "[autodiff](https://autodiff.github.io)"
+      deg: °
+      _0: <sub>0</sub>
+      _1: <sub>1</sub>
+      _2: <sub>2</sub>
+      _3: <sub>3</sub>
+      _4: <sub>4</sub>
+      _5: <sub>5</sub>
+      _6: <sub>6</sub>
+      _7: <sub>7</sub>
+      _8: <sub>8</sub>
+      _9: <sub>9</sub>
+      cdot: ·
+      bibliography: |
+        ```{bibliography}
+        :style: unsrt
+        :filter: docname in docnames
+        ```
+      Database:                "[`Database`](https://reaktoro.org/api/classReaktoro_1_1Database.html)"
+      PhreeqcDatabase:         "[`PhreeqcDatabase`](https://reaktoro.org/api/classReaktoro_1_1PhreeqcDatabase.html)"
+      ThermoFunDatabase:       "[`ThermoFunDatabase`](https://reaktoro.org/api/classReaktoro_1_1ThermoFunDatabase.html)"
+      SupcrtDatabase:          "[`SupcrtDatabase`](https://reaktoro.org/api/classReaktoro_1_1SupcrtDatabase.html)"
+      NasaDatabase:            "[`NasaDatabase`](https://reaktoro.org/api/classReaktoro_1_1NasaDatabase.html)"
+
+      Element:                 "[`Element`](https://reaktoro.org/api/classReaktoro_1_1Element.html)"
+      Species:                 "[`Species`](https://reaktoro.org/api/classReaktoro_1_1Species.html)"
+      Phase:                   "[`Phase`](https://reaktoro.org/api/classReaktoro_1_1Phase.html)"
+      Reaction:                "[`Reaction`](https://reaktoro.org/api/classReaktoro_1_1Reaction.html)"
+
+      AqueousPhase:            "[`AqueousPhase`](https://reaktoro.org/api/classReaktoro_1_1AqueousPhase.html)"
+      CondensedPhase:          "[`CondensedPhase`](https://reaktoro.org/api/classReaktoro_1_1CondensedPhase.html)"
+      CondensedPhases:         "[`CondensedPhases`](https://reaktoro.org/api/classReaktoro_1_1CondensedPhases.html)"
+      GaseousPhase:            "[`GaseousPhase`](https://reaktoro.org/api/classReaktoro_1_1GaseousPhase.html)"
+      IonExchangePhase:        "[`IonExchangePhase`](https://reaktoro.org/api/classReaktoro_1_1IonExchangePhase.html)"
+      LiquidPhase:             "[`LiquidPhase`](https://reaktoro.org/api/classReaktoro_1_1LiquidPhase.html)"
+      MineralPhase:            "[`MineralPhase`](https://reaktoro.org/api/classReaktoro_1_1MineralPhase.html)"
+      MineralPhases:           "[`MineralPhases`](https://reaktoro.org/api/classReaktoro_1_1MineralPhases.html)"
+      SolidPhase:              "[`SolidPhase`](https://reaktoro.org/api/classReaktoro_1_1SolidPhase.html)"
+      Phases:                  "[`Phases`](https://reaktoro.org/api/classReaktoro_1_1Phases.html)"
+
+      ChemicalSystem:          "[`ChemicalSystem`](https://reaktoro.org/api/classReaktoro_1_1ChemicalSystem.html)"
+      ChemicalState:           "[`ChemicalState`](https://reaktoro.org/api/classReaktoro_1_1ChemicalState.html)"
+      ChemicalProps:           "[`ChemicalProps`](https://reaktoro.org/api/classReaktoro_1_1ChemicalProps.html)"
+      ThermoProps:             "[`ThermoProps`](https://reaktoro.org/api/classReaktoro_1_1ThermoProps.html)"
+      AqueousProps:            "[`AqueousProps`](https://reaktoro.org/api/classReaktoro_1_1AqueousProps.html)"
+      IonExchangeProps:        "[`IonExchangeProps`](https://reaktoro.org/api/classReaktoro_1_1IonExchangeProps.html)"
+
+      StandardThermoProps:     "[`StandardThermoProps`](https://reaktoro.org/api/structReaktoro_1_1StandardThermoProps.html)"
+      ReactionThermoProps:     "[`ReactionThermoProps`](https://reaktoro.org/api/structReaktoro_1_1ReactionThermoProps.html)"
+
+      EquilibriumSpecs:        "[`EquilibriumSpecs`](https://reaktoro.org/api/classReaktoro_1_1EquilibriumSpecs.html)"
+      EquilibriumRestrictions: "[`EquilibriumRestrictions`](https://reaktoro.org/api/classReaktoro_1_1EquilibriumRestrictions.html)"
+      EquilibriumConditions:   "[`EquilibriumConditions`](https://reaktoro.org/api/classReaktoro_1_1EquilibriumConditions.html)"
+      EquilibriumSolver:       "[`EquilibriumSolver`](https://reaktoro.org/api/classReaktoro_1_1EquilibriumSolver.html)"
+      EquilibriumSensitivity:  "[`EquilibriumSensitivity`](https://reaktoro.org/api/classReaktoro_1_1EquilibriumSensitivity.html)"
+      EquilibriumPredictor:    "[`EquilibriumPredictor`](https://reaktoro.org/api/classReaktoro_1_1EquilibriumPredictor.html)"
+      EquilibriumOptions:      "[`EquilibriumOptions`](https://reaktoro.org/api/structReaktoro_1_1EquilibriumOptions.html)"
+      EquilibriumResult:       "[`EquilibriumResult`](https://reaktoro.org/api/structReaktoro_1_1EquilibriumResult.html)"
+
+      KineticsResult:          "[`KineticsResult`](https://reaktoro.org/api/structReaktoro_1_1KineticsResult.html)"
+      KineticsSensitivity:     "[`KineticsSensitivity`](https://reaktoro.org/api/structReaktoro_1_1KineticsSensitivity.html)"
+      KineticsSolver:          "[`KineticsSolver`](https://reaktoro.org/api/structReaktoro_1_1KineticsSolver.html)"
+
+      SmartEquilibriumOptions: "[`SmartEquilibriumOptions`](https://reaktoro.org/api/structReaktoro_1_1SmartEquilibriumOptions.html)"
+      SmartEquilibriumResult:  "[`SmartEquilibriumResult`](https://reaktoro.org/api/structReaktoro_1_1SmartEquilibriumResult.html)"
+      SmartEquilibriumSolver:  "[`SmartEquilibriumSolver`](https://reaktoro.org/api/structReaktoro_1_1SmartEquilibriumSolver.html)"
+
+      SmartKineticsOptions:    "[`SmartKineticsOptions`](https://reaktoro.org/api/structReaktoro_1_1SmartKineticsOptions.html)"
+      SmartKineticsResult:     "[`SmartKineticsResult`](https://reaktoro.org/api/structReaktoro_1_1SmartKineticsResult.html)"
+      SmartKineticsSolver:     "[`SmartKineticsSolver`](https://reaktoro.org/api/structReaktoro_1_1SmartKineticsSolver.html)"
+
+      ElementList:             "[`ElementList`](https://reaktoro.org/api/classReaktoro_1_1ElementList.html)"
+      PhaseList:               "[`PhaseList`](https://reaktoro.org/api/classReaktoro_1_1PhaseList.html)"
+      SpeciesList:             "[`SpeciesList`](https://reaktoro.org/api/classReaktoro_1_1SpeciesList.html)"
+
+      FormationReaction:       "[`FormationReaction`](https://reaktoro.org/api/classReaktoro_1_1FormationReaction.html)"
+      ChemicalFormula:         "[`ChemicalFormula`](https://reaktoro.org/api/classReaktoro_1_1ChemicalFormula.html)"
+      AggregateState:          "[`AggregateState`](https://reaktoro.org/api/namespaceReaktoro.html#a02ae90aadc24dbff1702399a9c3ca1cd)"
+      Elements:                "[`Elements`](https://reaktoro.org/api/classReaktoro_1_1Elements.html)"
+      CriticalProps:           "[`CriticalProps`](https://reaktoro.org/api/classReaktoro_1_1CriticalProps.html)"
+      DissociationReactions:   "[`DissociationReactions`](https://reaktoro.org/api/classReaktoro_1_1DissociationReactions.html)"
+      ReactionEquation:        "[`ReactionEquation`](https://reaktoro.org/api/classReaktoro_1_1ReactionEquation.html)"
+      ElementalComposition:    "[`ElementalComposition`](https://reaktoro.org/api/classReaktoro_1_1ElementalComposition.html)"
+
+      WaterElectroProps:       "[`WaterElectroProps`](https://reaktoro.org/api/structReaktoro_1_1WaterElectroProps.html)"
+      WaterThermoProps:        "[`WaterThermoProps`](https://reaktoro.org/api/structReaktoro_1_1WaterThermoProps.html)"
+      WaterHelmholtzProps:     "[`WaterHelmholtzProps`](https://reaktoro.org/api/structReaktoro_1_1WaterHelmholtzProps.html)"
+
+      equilibrate:             "[`equilibrate`](https://reaktoro.org/api/namespaceReaktoro.html#a286e2972325304934d631234abef9e87)"
+
+      Table:                   "[`Table`](https://reaktoro.org/api/classReaktoro_1_1Table.html)"
+      Params:                  "[`Params`](https://reaktoro.org/api/classReaktoro_1_1Params.html)"
+
+      MineralSurface:          "[`MineralSurface`](https://reaktoro.org/api/classReaktoro_1_1MineralSurface.html)"
+      MineralReactions:        "[`MineralReactions`](https://reaktoro.org/api/classReaktoro_1_1MineralReactions.html)"
+
+      Material:                "[`Material`](https://reaktoro.org/api/classReaktoro_1_1Material.html)"

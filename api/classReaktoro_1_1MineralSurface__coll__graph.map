@@ -1,0 +1,4 @@
+<map id="MineralSurface" name="MineralSurface">
+<area shape="rect" id="node1" title="Used to define mineral surfaces that react with aqueous phases." alt="" coords="6,82,126,111"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1GeneralSurface.html" title="Used to define a general surface." alt="" coords="5,5,127,34"/>
+</map>

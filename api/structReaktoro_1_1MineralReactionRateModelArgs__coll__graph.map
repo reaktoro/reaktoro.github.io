@@ -1,0 +1,5 @@
+<map id="MineralReactionRateModelArgs" name="MineralReactionRateModelArgs">
+<area shape="rect" id="node1" title="The data provided to a MineralReactionRateModel to evaluate the rate of a mineral reaction." alt="" coords="18,99,245,128"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1AqueousProps.html" title="The chemical properties of an aqueous phase." alt="" coords="5,5,119,34"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1ChemicalProps.html" title="The class that computes chemical properties of a chemical system." alt="" coords="143,5,261,34"/>
+</map>

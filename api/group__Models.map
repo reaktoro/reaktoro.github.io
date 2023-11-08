@@ -1,0 +1,7 @@
+<map id="Models" name="Models">
+<area shape="rect" id="node1" href="$group__ActivityModels.html" title="The module in Reaktoro in which activity models for phases are implemented." alt="" coords="155,5,278,33"/>
+<area shape="rect" id="node2" href="$group__ReactionRateModels.html" title="The module in Reaktoro in which kinetic rate models for reactions are implemented." alt="" coords="132,57,301,102"/>
+<area shape="rect" id="node3" title="The module in Reaktoro in which various thermodynamic and reaction models are implemented." alt="" coords="5,100,74,128"/>
+<area shape="rect" id="node4" href="$group__StandardThermoModels.html" title="The module in Reaktoro in which standard thermodynamic models for species and reactions are implement..." alt="" coords="122,126,311,171"/>
+<area shape="rect" id="node5" href="$group__SurfaceAreaModels.html" title="The module in Reaktoro in which surface area models are implemented." alt="" coords="139,195,294,222"/>
+</map>

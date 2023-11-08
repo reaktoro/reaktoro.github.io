@@ -1,0 +1,4 @@
+<map id="BipModelParamsPhreeqc" name="BipModelParamsPhreeqc">
+<area shape="rect" id="node1" title="The parameters in the binary interaction parameter model of PHREEQC for Peng&#45;Robinson EOS." alt="" coords="5,184,188,213"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds." alt="" coords="65,5,128,34"/>
+</map>

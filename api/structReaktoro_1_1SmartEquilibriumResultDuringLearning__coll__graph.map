@@ -1,0 +1,4 @@
+<map id="SmartEquilibriumResultDuringLearning" name="SmartEquilibriumResultDuringLearning">
+<area shape="rect" id="node1" title="Used to represent the result of a learning operation in a smart chemical equilibrium calculation." alt="" coords="5,99,224,145"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1EquilibriumResult.html" title="A type used to describe the result of an equilibrium calculation." alt="" coords="46,5,183,34"/>
+</map>

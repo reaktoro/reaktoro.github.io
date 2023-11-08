@@ -1,0 +1,96 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - caption: Get Started
+    chapters:
+    - file: installation/index
+      sections:
+
+      - file: installation/installation-using-conda
+
+      - file: installation/installation-using-cmake
+
+      - file: installation/installation-in-google-colab
+    - url: https://reaktoro.org/api
+      title: API Reference
+    - url: https://reaktoro.org/v1
+      title: Reaktoro v1
+  - caption: Tutorials
+    chapters:
+      - file: tutorials/basics/index
+        sections:
+        - file: tutorials/basics/importing-reaktoro
+        - file: tutorials/basics/loading-databases
+        - file: tutorials/basics/inspecting-databases
+        - file: tutorials/basics/defining-chemical-systems
+        - file: tutorials/basics/creating-chemical-states
+        - file: tutorials/basics/computing-chemical-properties
+        - file: tutorials/basics/computing-aqueous-properties
+        - file: tutorials/basics/computing-thermo-props-of-species
+        - file: tutorials/basics/computing-thermo-props-of-reactions
+        - file: tutorials/basics/specifying-activity-models
+        - file: tutorials/basics/defining-materials
+
+      - file: tutorials/equilibrium/index
+        sections:
+        - file: tutorials/equilibrium/equilibrium-basics.ipynb
+        - file: tutorials/equilibrium/equilibrium-specifying-constraints.ipynb
+        - file: tutorials/equilibrium/equilibrium-with-fixed-ph.ipynb
+        - file: tutorials/equilibrium/equilibrium-with-fixed-ph-charge-balance.ipynb
+        - file: tutorials/equilibrium/equilibrium-with-fixed-phase-amount.ipynb
+        - file: tutorials/equilibrium/equilibrium-with-fixed-fugacity.ipynb
+        - file: tutorials/equilibrium/equilibrium-with-fixed-volume-internal-energy.ipynb
+        - file: tutorials/equilibrium/equilibrium-with-custom-constraints.ipynb
+        - file: tutorials/equilibrium/equilibrium-with-given-component-amounts.ipynb
+
+      - file: tutorials/kinetics/index
+        sections:
+        - file: tutorials/kinetics/kinetics-basics.ipynb
+        - file: tutorials/kinetics/kinetics-minerals-using-palandri-kharaka-model.ipynb
+        - file: tutorials/kinetics/kinetics-minerals-custom-surface-area-models.ipynb
+
+      - file: tutorials/machine-learning/index
+        sections:
+        - file: tutorials/machine-learning/machine-learning-basics.ipynb
+
+      - file: tutorials/advanced/index
+        sections:
+        - file: tutorials/advanced/creating-custom-databases
+
+      - file: tutorials/bibliography
+  - caption: Applications
+    chapters:
+    - file: applications/solubility/index
+      sections:
+        - file: applications/solubility/solubility-calcite-on-acidity-and-temperature.ipynb
+        - file: applications/solubility/solubility-co2-on-salinity-and-temperature.ipynb
+    - file: applications/geochemistry/index
+      sections:
+        - file: applications/geochemistry/ph-dependence-on-co2-addition-in-seawater.ipynb
+        - file: applications/geochemistry/ph-dependence-on-contaminants-in-water.ipynb
+        - file: applications/geochemistry/evian-water-analysis.ipynb
+        - file: applications/geochemistry/opening-bottle-with-sparkling-water.ipynb
+        - file: applications/geochemistry/uraniun-speciation-vs-pH.ipynb
+        - file: applications/geochemistry/cement-simulation-with-solid-solutions.ipynb
+        - file: applications/geochemistry/ion-exchange-dune-sand.ipynb
+        - file: applications/geochemistry/ion-exchange-mix-porewater-extractant.ipynb
+        - file: applications/geochemistry/ion-exchange-cax2-nax-kx-vs-changing-ca-k.ipynb
+        - file: applications/geochemistry/ion-exchange-calcite-cax-vs-ph.ipynb
+    - file: applications/geobiology/index
+      sections:
+        - file: applications/geobiology/geobiology-streammodel-fixed-fugacity.ipynb
+        - file: applications/geobiology/geobiology-phreeqc-fixed-fugacity.ipynb
+    - file: applications/biomass-gasification/index
+      sections:
+        - file: applications/biomass-gasification/biomass-gasification.ipynb
+  - caption: General
+    chapters:
+    - file: general/citing
+    - file: general/faq
+    - file: general/troubleshooting
+    - file: general/contributing
+    - file: general/license
+    - file: general/development

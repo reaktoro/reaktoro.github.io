@@ -1,0 +1,21 @@
+name: reaktoro-jupyter-book
+
+channels:
+  - conda-forge
+
+dependencies:
+  - bokeh=2
+  - importlib_metadata
+  - jsonschema-with-format-nongpl
+  - jupyter-book=0.13.2
+  - matplotlib-base
+  - numba
+  - numpy
+  - pandas
+  - pip
+  - python=3.11
+  - reaktoro>=2.8.0
+  - reaktplot
+  - sphinx-book-theme
+  - sphinx-inline-tabs
+  - webcolors

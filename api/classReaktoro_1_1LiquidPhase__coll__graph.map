@@ -1,0 +1,4 @@
+<map id="LiquidPhase" name="LiquidPhase">
+<area shape="rect" id="node1" title="The class used to configure a liquid solution phase." alt="" coords="11,82,111,111"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1GeneralPhase.html" title="The base type for all other classes defining more specific phases." alt="" coords="5,5,117,34"/>
+</map>
