@@ -62,7 +62,7 @@
                 <td id="projectlogo"><a href="https://www.reaktoro.org"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.9.4</span>
+                    &#160;<span id="projectnumber">v2.11.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Reaktoro is a unified framework for modeling chemically reactive systems.</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright © 2014-2022 Allan Leal</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright © 2014-2024 Allan Leal</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// This library is free software; you can redistribute it and/or</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// modify it under the terms of the GNU Lesser General Public</span></div>
@@ -233,7 +233,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="ttc" id="aclassReaktoro_1_1ChemicalSystem_html"><div class="ttname"><a href="classReaktoro_1_1ChemicalSystem.html">Reaktoro::ChemicalSystem</a></div><div class="ttdoc">The class used to represent a chemical system and its attributes and properties.</div><div class="ttdef"><b>Definition:</b> ChemicalSystem.hpp:70</div></div>
 <div class="ttc" id="aclassReaktoro_1_1EquilibriumConditions_html"><div class="ttname"><a href="classReaktoro_1_1EquilibriumConditions.html">Reaktoro::EquilibriumConditions</a></div><div class="ttdoc">The class used to define conditions to be satisfied at chemical equilibrium.</div><div class="ttdef"><b>Definition:</b> EquilibriumConditions.hpp:32</div></div>
 <div class="ttc" id="aclassReaktoro_1_1EquilibriumRestrictions_html"><div class="ttname"><a href="classReaktoro_1_1EquilibriumRestrictions.html">Reaktoro::EquilibriumRestrictions</a></div><div class="ttdoc">The class used to define reactivity restrictions in a chemical equilibrium calculation.</div><div class="ttdef"><b>Definition:</b> EquilibriumRestrictions.hpp:28</div></div>
-<div class="ttc" id="aclassReaktoro_1_1EquilibriumSensitivity_html"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSensitivity.html">Reaktoro::EquilibriumSensitivity</a></div><div class="ttdoc">The sensitivity derivatives of a chemical equilibrium state.</div><div class="ttdef"><b>Definition:</b> EquilibriumSensitivity.hpp:38</div></div>
+<div class="ttc" id="aclassReaktoro_1_1EquilibriumSensitivity_html"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSensitivity.html">Reaktoro::EquilibriumSensitivity</a></div><div class="ttdoc">The sensitivity derivatives of a chemical equilibrium state.</div><div class="ttdef"><b>Definition:</b> EquilibriumSensitivity.hpp:37</div></div>
 <div class="ttc" id="aclassReaktoro_1_1EquilibriumSolver_html"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSolver.html">Reaktoro::EquilibriumSolver</a></div><div class="ttdoc">Used for calculating chemical equilibrium states.</div><div class="ttdef"><b>Definition:</b> EquilibriumSolver.hpp:39</div></div>
 <div class="ttc" id="aclassReaktoro_1_1EquilibriumSolver_html_a11d33845e91c487d7bf3adff741a603b"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSolver.html#a11d33845e91c487d7bf3adff741a603b">Reaktoro::EquilibriumSolver::~EquilibriumSolver</a></div><div class="ttdeci">~EquilibriumSolver()</div><div class="ttdoc">Destroy this EquilibriumSolver object.</div></div>
 <div class="ttc" id="aclassReaktoro_1_1EquilibriumSolver_html_a30b2a03243e164a32407538eda2c894b"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSolver.html#a30b2a03243e164a32407538eda2c894b">Reaktoro::EquilibriumSolver::setOptions</a></div><div class="ttdeci">auto setOptions(EquilibriumOptions const &amp;options) -&gt; void</div><div class="ttdoc">Set the options of the equilibrium solver.</div></div>
@@ -249,7 +249,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="ttc" id="aclassReaktoro_1_1EquilibriumSolver_html_adbc4354961402b5f8f195b5a10caaeaa"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSolver.html#adbc4354961402b5f8f195b5a10caaeaa">Reaktoro::EquilibriumSolver::solve</a></div><div class="ttdeci">auto solve(ChemicalState &amp;state, EquilibriumRestrictions const &amp;restrictions) -&gt; EquilibriumResult</div><div class="ttdoc">Equilibrate a chemical state respecting given reactivity restrictions.</div></div>
 <div class="ttc" id="aclassReaktoro_1_1EquilibriumSolver_html_ae27ca499671c411fa87d915c19092074"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSolver.html#ae27ca499671c411fa87d915c19092074">Reaktoro::EquilibriumSolver::EquilibriumSolver</a></div><div class="ttdeci">EquilibriumSolver(EquilibriumSpecs const &amp;specs)</div><div class="ttdoc">Construct an EquilibriumSolver object with given chemical equilibrium specifications.</div></div>
 <div class="ttc" id="aclassReaktoro_1_1EquilibriumSolver_html_aed97d29dadd7236a21f6102d7205dccf"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSolver.html#aed97d29dadd7236a21f6102d7205dccf">Reaktoro::EquilibriumSolver::operator=</a></div><div class="ttdeci">auto operator=(EquilibriumSolver other) -&gt; EquilibriumSolver &amp;</div><div class="ttdoc">Assign a copy of an EquilibriumSolver object to this.</div></div>
-<div class="ttc" id="aclassReaktoro_1_1EquilibriumSpecs_html"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSpecs.html">Reaktoro::EquilibriumSpecs</a></div><div class="ttdoc">The class used to define conditions to be satisfied at chemical equilibrium.</div><div class="ttdef"><b>Definition:</b> EquilibriumSpecs.hpp:291</div></div>
+<div class="ttc" id="aclassReaktoro_1_1EquilibriumSpecs_html"><div class="ttname"><a href="classReaktoro_1_1EquilibriumSpecs.html">Reaktoro::EquilibriumSpecs</a></div><div class="ttdoc">The class used to define conditions to be satisfied at chemical equilibrium.</div><div class="ttdef"><b>Definition:</b> EquilibriumSpecs.hpp:281</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:29</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_a6b46abcd7303a8f484bd03805eb49bbc"><div class="ttname"><a href="namespaceReaktoro.html#a6b46abcd7303a8f484bd03805eb49bbc">Reaktoro::Ptr</a></div><div class="ttdeci">std::unique_ptr&lt; T &gt; Ptr</div><div class="ttdoc">Convenient alias for std::unique_ptr&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> Types.hpp:102</div></div>
 <div class="ttc" id="astructReaktoro_1_1EquilibriumOptions_html"><div class="ttname"><a href="structReaktoro_1_1EquilibriumOptions.html">Reaktoro::EquilibriumOptions</a></div><div class="ttdoc">The options for the equilibrium calculations.</div><div class="ttdef"><b>Definition:</b> EquilibriumOptions.hpp:43</div></div>
@@ -263,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 8 2023 13:05:51 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jan 18 2024 21:12:44 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

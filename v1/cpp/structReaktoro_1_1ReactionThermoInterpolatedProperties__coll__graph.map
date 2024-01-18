@@ -1,6 +1,6 @@
 <map id="ReactionThermoInterpolatedProperties" name="ReactionThermoInterpolatedProperties">
-<area shape="rect" id="node1" title="A type for storing thermodynamic properties of a reaction over a range of temperatures and pressures." alt="" coords="105,331,313,372"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1SpeciesThermoInterpolatedProperties.html" title="A type for storing thermodynamic properties of a species over a range of temperatures and pressures." alt="" coords="108,227,309,268"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1BilinearInterpolator.html" title="A class used to calculate bilinear interpolation of data in two dimensions." alt="" coords="5,5,153,32"/>
-<area shape="rect" id="node4" href="$classReaktoro_1_1ReactionEquation.html" title="Define a type that describes the equation of a reaction." alt="" coords="334,234,470,261"/>
+<area shape="rect" id="node1" title="A type for storing thermodynamic properties of a reaction over a range of temperatures and pressures." alt="" coords="92,331,279,372"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1SpeciesThermoInterpolatedProperties.html" title="A type for storing thermodynamic properties of a species over a range of temperatures and pressures." alt="" coords="95,227,276,268"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1BilinearInterpolator.html" title="A class used to calculate bilinear interpolation of data in two dimensions." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1ReactionEquation.html" title="Define a type that describes the equation of a reaction." alt="" coords="300,234,425,261"/>
 </map>

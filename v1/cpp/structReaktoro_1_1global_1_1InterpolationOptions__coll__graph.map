@@ -1,6 +1,6 @@
 <map id="InterpolationOptions" name="InterpolationOptions">
-<area shape="rect" id="node1" title="A type used to describe all options related to interpolation." alt="" coords="83,185,238,212"/>
-<area shape="rect" id="node2" title="STL class." alt="" coords="55,81,114,108"/>
-<area shape="rect" id="node3" title="STL class." alt="" coords="5,5,164,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="168,81,305,108"/>
+<area shape="rect" id="node1" title="A type used to describe all options related to interpolation." alt="" coords="75,185,213,212"/>
+<area shape="rect" id="node2" title="STL class." alt="" coords="49,81,103,108"/>
+<area shape="rect" id="node3" title="STL class." alt="" coords="5,5,147,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="152,81,272,108"/>
 </map>

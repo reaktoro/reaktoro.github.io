@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+  File "/home/allanleal/miniforge3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/allanleal/miniforge3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/allanleal/miniforge3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/allanleal/miniforge3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/allanleal/miniforge3/envs/reaktoro-jupyter-book/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/allanleal/miniforge3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/allanleal/miniforge3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/allanleal/miniforge3/envs/reaktoro-jupyter-book/lib/python3.11/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+temperatures = []
+
+table = Table()
+
+for fAir in fAirs:
+    state = ChemicalState(system)
+    state.temperature(25.0, "°C")
+    state.pressure(1.0, "bar")
+    state.set("Fuel", 1.0, "mol")
+    state.set("O2", fAir * factor * 0.21, "mol")
+    state.set("N2", fAir * factor * 0.79, "mol")
+
+    props = ChemicalProps(state)
+    conditions = EquilibriumConditions(specs)
+
+    conditions.pressure(props.pressure())
+    conditions.enthalpy(heatDuty, "kJ")
+
+    conditions.setLowerBoundTemperature(298.15, "°C")
+    conditions.setUpperBoundTemperature(3000.0, "°C")
+
+    result = solver.solve(state, conditions)
+
+    assert result.succeeded()
+
+    table.column("Air:Fuel") << fAir
+    table.column("Temperature") << state.temperature()
+    table.column(f"n(Gases)") << state.props().phaseProps("GaseousPhase").amount()
+    
+    if output_all_species:
+        for species in system.species():
+            table.column(f"n({species.name()})") << state.speciesAmount(species.name())
+    else:
+        table.column("n(C(gr))")    << state.speciesAmount("C(gr)")
+        table.column("n(CH4)")      << state.speciesAmount("CH4")
+        table.column("n(CO)")       << state.speciesAmount("CO")
+        table.column("n(CO2)")      << state.speciesAmount("CO2")
+        table.column("n(H2)")       << state.speciesAmount("H2")
+        table.column("n(H2O)")      << state.speciesAmount("H2O")
+        table.column("n(N2)")       << state.speciesAmount("N2")
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAssertionError[0m                            Traceback (most recent call last)
+Cell [0;32mIn[9], line 24[0m
+[1;32m     20[0m conditions.[38;5;21msetUpperBoundTemperature[39m([38;5;241m3000.0[39m, [38;5;124m"[39m[38;5;124m°C[39m[38;5;124m"[39m)
+[1;32m     22[0m result [38;5;241m=[39m solver.[38;5;21msolve[39m(state, conditions)
+[0;32m---> 24[0m [38;5;28;01massert[39;00m result.[38;5;21msucceeded[39m()
+[1;32m     26[0m table.[38;5;21mcolumn[39m([38;5;124m"[39m[38;5;124mAir:Fuel[39m[38;5;124m"[39m) [38;5;241m<<[39m fAir
+[1;32m     27[0m table.[38;5;21mcolumn[39m([38;5;124m"[39m[38;5;124mTemperature[39m[38;5;124m"[39m) [38;5;241m<<[39m state.[38;5;21mtemperature[39m()
+
+[0;31mAssertionError[0m: 
+AssertionError: 
+

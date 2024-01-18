@@ -932,7 +932,7 @@ Halite
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Reaktoro has default names for phases, such as <code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code> and <code class="docutils literal notranslate"><span class="pre">GaseousPhase``</span> <span class="pre">for</span> <span class="pre">aqueous</span> <span class="pre">and</span> <span class="pre">gaseous</span> <span class="pre">phases.</span> <span class="pre">For</span> <span class="pre">pure</span> <span class="pre">mineral</span> <span class="pre">phases,</span> <span class="pre">the</span> <span class="pre">phase</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">as</span> <span class="pre">the</span> <span class="pre">name</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">mineral</span> <span class="pre">species</span> <span class="pre">composing</span> <span class="pre">it.</span> <span class="pre">That's</span> <span class="pre">is</span> <span class="pre">why</span> <span class="pre">the</span> <span class="pre">mineral</span> <span class="pre">phase</span> <span class="pre">above</span> <span class="pre">is</span> <span class="pre">named</span> </code>Halite<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">whose</span> <span class="pre">only</span> <span class="pre">composing</span> <span class="pre">species</span> <span class="pre">is</span> <span class="pre">called</span> </code>Halite`. Note also that Reaktoro supports as many phases as you wish, each phase containing any number of species. We will demonstrate this in subsequent tutorials.</p>
+<p>Reaktoro has default names for phases, such as <code class="docutils literal notranslate"><span class="pre">AqueousPhase</span></code> and <code class="docutils literal notranslate"><span class="pre">GaseousPhase</span></code> for aqueous and gaseous phases. For pure mineral phases, the phase name is the same as the name of the mineral species composing it. That’s is why the mineral phase above is named <code class="docutils literal notranslate"><span class="pre">Halite</span></code>, whose only composing species is called <code class="docutils literal notranslate"><span class="pre">Halite</span></code>. Note also that Reaktoro supports as many phases as you wish, each phase containing any number of species. We will demonstrate this in subsequent tutorials.</p>
 </div>
 <p>We can also inspect how the chemical species are ordered in the system:</p>
 <div class="cell docutils container">
@@ -1026,37 +1026,6 @@ Cl
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name                     Formula                  Molar Mass (kg/mol) 
-H2O(aq)                  H2O                      0.018015            
-CaOH+                    CaOH+                    0.057085            
-CO(aq)                   CO                       0.028010            
-CO2(aq)                  CO2                      0.044010            
-CO3-2                    CO3-2                    0.060010            
-Ca(HCO3)+                Ca(HCO3)+                0.101095            
-Ca+2                     Ca+2                     0.040077            
-CaCl+                    CaCl+                    0.075530            
-CaCl2(aq)                CaCl2                    0.110983            
-Cl-                      Cl-                      0.035453            
-HClO(aq)                 HClO                     0.052460            
-ClO-                     ClO-                     0.051453            
-ClO2-                    ClO2-                    0.067452            
-ClO3-                    ClO3-                    0.083451            
-ClO4-                    ClO4-                    0.099451            
-H+                       H+                       0.001007            
-H2(aq)                   H2                       0.002016            
-HCO3-                    HCO3-                    0.061018            
-HO2-                     HO2-                     0.033007            
-Na+                      Na+                      0.022989            
-NaCl(aq)                 NaCl                     0.058442            
-NaOH(aq)                 NaOH                     0.039997            
-O2(aq)                   O2                       0.031999            
-OH-                      OH-                      0.017008            
-H2O2(aq)                 H2O2                     0.034015            
-HClO2(aq)                HClO2                    0.068459            
-HCl(aq)                  HCl                      0.036461            
-CaCO3(aq)                CaCO3                    0.100087            
-CH4(aq)                  CH4                      0.016043            
-H-Acetate(aq)            C2H4O2                   0.060053            
-Acetate-                 C2H3O2-                  0.059045            
 1-Butanol(aq)            C4H9OH                   0.074123            
 1-Butene(aq)             C4H8                     0.056108            
 1-Butyne(aq)             C4H6                     0.054092            
@@ -1075,6 +1044,10 @@ Acetate-                 C2H3O2-                  0.059045
 1-Propanol(aq)           C3H7OH                   0.060096            
 1-Propene(aq)            C3H6                     0.042081            
 1-Propyne(aq)            C3H4                     0.040065            
+2,3-DMP(aq)              C6H3OHCH3CH3             0.122167            
+2,4-DMP(aq)              C6H3OHCH3CH3             0.122167            
+2,5-DMP(aq)              C6H3OHCH3CH3             0.122167            
+2,6-DMP(aq)              C6H3OHCH3CH3             0.122167            
 2-Butanone(aq)           C4H8O                    0.072107            
 2-Heptanone(aq)          C7H14O                   0.114188            
 2-Hexanone(aq)           C6H12O                   0.100161            
@@ -1092,6 +1065,10 @@ Acetate-                 C2H3O2-                  0.059045
 2-Hydroxypentanoic       C5H10O3                  0.118133            
 2-Octanone(aq)           C8H16O                   0.128214            
 2-Pentanone(aq)          C5H10O                   0.086134            
+3,4-DMP(aq)              C6H3OHCH3CH3             0.122167            
+3,5-DMP(aq)              C6H3OHCH3CH3             0.122167            
+Acetaldehyde(aq)         CH3CHO                   0.044053            
+Acetate-                 C2H3O2-                  0.059045            
 Acetone(aq)              C3H6O                    0.058080            
 Adipate                  C6H8O4-2                 0.144128            
 Adipic-Acid(aq)          C6H10O4                  0.146143            
@@ -1100,17 +1077,41 @@ Azelate                  C9H14O4-2                0.186209
 Benzene(aq)              C6H6                     0.078114            
 Benzoate                 C7H5O2-                  0.121116            
 Benzoic-Acid(aq)         C7H6O2                   0.122123            
-o-Cresol(aq)             C6H4OHCH3                0.108140            
-m-Cresol(aq)             C6H4OHCH3                0.108140            
-p-Cresol(aq)             C6H4OHCH3                0.108140            
+Butanal(aq)              CH3(CH2)2CHO             0.072107            
+Butanoate                C4H7O2-                  0.087099            
+Butanoic-Acid(aq)        C4H8O2                   0.088106            
+CH4(aq)                  CH4                      0.016043            
+CO(aq)                   CO                       0.028010            
+CO2(aq)                  CO2                      0.044010            
+CO3-2                    CO3-2                    0.060010            
+Ca(Ac)+                  CaCH3COO+                0.099122            
+Ca(Ac)2(aq)              Ca(CH3COO)2              0.158167            
+Ca(But)+                 CaCH3(CH2)2CO2+          0.127176            
+Ca(But)2(aq)             Ca(CH3CH2CH2CO2)2        0.214275            
+Ca(For)+                 CaCHO2+                  0.085095            
+Ca(For)2(aq)             Ca(CHO2)2                0.130113            
+Ca(Glyc)+                CaCH3OCO2+               0.115121            
+Ca(Glyc)2(aq)            Ca(CH3OCO2)2             0.190166            
+Ca(HCO3)+                Ca(HCO3)+                0.101095            
+Ca(Lac)+                 CaCH3CH2OCO2+            0.129148            
+Ca(Lac)2(aq)             Ca(CH3CH2OCO2)2          0.218220            
+Ca(Pent)+                CaCH3(CH2)3CO2+          0.141203            
+Ca(Pent)2(aq)            Ca(CH3CH2CH2CH2CO2)2     0.242329            
+Ca(Prop)+                CaCH3CH2CO2+             0.113149            
+Ca(Prop)2(aq)            Ca(CH3CH2CO2)2           0.186221            
+Ca+2                     Ca+2                     0.040077            
+CaCO3(aq)                CaCO3                    0.100087            
+CaCl+                    CaCl+                    0.075530            
+CaCl2(aq)                CaCl2                    0.110983            
+CaOH+                    CaOH+                    0.057085            
+Cl-                      Cl-                      0.035453            
+ClO-                     ClO-                     0.051453            
+ClO2-                    ClO2-                    0.067452            
+ClO3-                    ClO3-                    0.083451            
+ClO4-                    ClO4-                    0.099451            
+Decanal(aq)              CH3(CH2)8CHO             0.156268            
 Decanoate                C10H19O2-                0.171260            
 Decanoic-Acid(aq)        C10H20O2                 0.172268            
-2,3-DMP(aq)              C6H3OHCH3CH3             0.122167            
-2,4-DMP(aq)              C6H3OHCH3CH3             0.122167            
-2,5-DMP(aq)              C6H3OHCH3CH3             0.122167            
-2,6-DMP(aq)              C6H3OHCH3CH3             0.122167            
-3,4-DMP(aq)              C6H3OHCH3CH3             0.122167            
-3,5-DMP(aq)              C6H3OHCH3CH3             0.122167            
 Dodecanoate              C12H23O2-                0.199314            
 Dodecanoic-Acid(aq)      C12H24O2                 0.200321            
 Ethane(aq)               C2H6                     0.030070            
@@ -1119,8 +1120,15 @@ Ethylacetate(aq)         CH3COOCH2CH3             0.088106
 Ethylbenzene(aq)         C6H5C2H5                 0.106167            
 Ethylene(aq)             C2H4                     0.028054            
 Ethyne(aq)               C2H2                     0.026038            
+Formaldehyde(aq)         HCHO                     0.030026            
+Formate                  HCO2-                    0.045018            
+Formic-Acid(aq)          H2CO2                    0.046026            
 Glutarate                C5H6O4-2                 0.130101            
 Glutaric-Acid(aq)        C5H8O4                   0.132116            
+Glycolate                C2H3O3-                  0.075045            
+Glycolic-Acid(aq)        C2H4O3                   0.076052            
+H+                       H+                       0.001007            
+H-Acetate(aq)            C2H4O2                   0.060053            
 H-Adipate                C6H9O4-                  0.145136            
 H-Azelate                C9H15O4-                 0.187216            
 H-Glutarate              C5H7O4-                  0.131109            
@@ -1130,15 +1138,74 @@ H-Pimelate               C7H11O4-                 0.159162
 H-Sebacate               C10H17O4-                0.201243            
 H-Suberate               C8H13O4-                 0.173189            
 H-Succinate              C4H5O4-                  0.117082            
+H2(aq)                   H2                       0.002016            
+H2O(aq)                  H2O                      0.018015            
+H2O2(aq)                 H2O2                     0.034015            
+HCO3-                    HCO3-                    0.061018            
+HCl(aq)                  HCl                      0.036461            
+HClO(aq)                 HClO                     0.052460            
+HClO2(aq)                HClO2                    0.068459            
+HO2-                     HO2-                     0.033007            
+Heptanal(aq)             CH3(CH2)5CHO             0.114188            
 Heptanoate               C7H13O2-                 0.129180            
 Heptanoic-Acid(aq)       C7H14O2                  0.130187            
+Hexanal(aq)              CH3(CH2)4CHO             0.100161            
 Hexanoate                C6H11O2-                 0.115153            
 Hexanoic-Acid(aq)        C6H12O2                  0.116160            
-m-Toluate                C8H7O2-                  0.135143            
-m-Toluic-Acid(aq)        C8H8O2                   0.136150            
+Lactate                  C3H5O3-                  0.089071            
+Lactic-Acid(aq)          C3H6O3                   0.090079            
 Malonate                 C3H2O4-2                 0.102048            
 Malonic-Acid(aq)         C3H4O4                   0.104062            
 Methanol(aq)             CH3OH                    0.032042            
+Na(Ac)(aq)               NaCH3COO                 0.082034            
+Na(Ac)2-                 Na(CH3COO)2-             0.141080            
+Na(But)(aq)              NaCH3(CH2)2CO2           0.110088            
+Na(But)2-                Na(CH3CH2CH2CO2)2-       0.197187            
+Na(For)(aq)              NaCHO2                   0.068008            
+Na(For)2-                Na(CHO2)2-               0.113026            
+Na(Glyc)(aq)             Na(CH3OCO2)              0.098034            
+Na(Glyc)2-               Na(CH3OCO2)2-            0.173078            
+Na(Lac)(aq)              NaCH3CH2OCO2             0.112061            
+Na(Lac)2-                Na(CH3CH2OCO2)2-         0.201132            
+Na(Pent)(aq)             NaCH3(CH2)3CO2           0.124115            
+Na(Pent)2-               Na(CH3CH2CH2CH2CO2)2-    0.225241            
+Na(Prop)(aq)             NaCH3CH2CO2              0.096061            
+Na(Prop)2-               Na(CH3CH2CO2)2-          0.169133            
+Na+                      Na+                      0.022989            
+NaCl(aq)                 NaCl                     0.058442            
+NaOH(aq)                 NaOH                     0.039997            
+Nonanal(aq)              CH3(CH2)7CHO             0.142241            
+Nonanoate                C9H17O2-                 0.157233            
+Nonanoic-Acid(aq)        C9H18O2                  0.158241            
+O2(aq)                   O2                       0.031999            
+OH-                      OH-                      0.017008            
+Octanal(aq)              CH3(CH2)6CHO             0.128214            
+Octanoate                C8H15O2-                 0.143206            
+Octanoic-Acid(aq)        C8H16O2                  0.144214            
+Oxalate                  C2O4-2                   0.088021            
+Oxalic-Acid(aq)          C2H2O4                   0.090035            
+Pentanal(aq)             CH3(CH2)3CHO             0.086134            
+Pentanoate               C5H9O2-                  0.101126            
+Pentanoic-Acid(aq)       C5H10O2                  0.102133            
+Phenol(aq)               C6H5OH                   0.094113            
+Pimelate                 C7H10O4-2                0.158155            
+Pimelic-Acid(aq)         C7H12O4                  0.160170            
+Propanal(aq)             CH3CH2CHO                0.058080            
+Propane(aq)              C3H8                     0.044097            
+Propanoate               C3H5O2-                  0.073072            
+Propanoic-Acid(aq)       C3H6O2                   0.074079            
+Sebacate                 C10H16O4-2               0.200236            
+Sebacic-Acid(aq)         C10H18O4                 0.202251            
+Suberate                 C8H12O4-2                0.172182            
+Suberic-Acid(aq)         C8H14O4                  0.174197            
+Succinate                C4H4O4-2                 0.116074            
+Succinic-Acid(aq)        C4H6O4                   0.118089            
+Toluene(aq)              C6H5CH3                  0.092141            
+Undecanoate              C11H21O2-                0.185287            
+Undecanoic-Acid(aq)      C11H22O2                 0.186294            
+m-Cresol(aq)             C6H4OHCH3                0.108140            
+m-Toluate                C8H7O2-                  0.135143            
+m-Toluic-Acid(aq)        C8H8O2                   0.136150            
 n-Butane(aq)             C4H10                    0.058123            
 n-Butylbenzene(aq)       C6H5C4H9                 0.134221            
 n-Heptane(aq)            C7H16                    0.100204            
@@ -1150,90 +1217,23 @@ n-Octylbenzene(aq)       C6H5C8H17                0.190329
 n-Pentane(aq)            C5H12                    0.072150            
 n-Pentylbenzene(aq)      C6H5C5H1                 0.148248            
 n-Propylbenzene(aq)      C6H5C3H7                 0.120194            
-Nonanoate                C9H17O2-                 0.157233            
-Nonanoic-Acid(aq)        C9H18O2                  0.158241            
+o-Cresol(aq)             C6H4OHCH3                0.108140            
 o-Toluate                C8H7O2-                  0.135143            
 o-Toluic-Acid(aq)        C8H8O2                   0.136150            
-Octanoate                C8H15O2-                 0.143206            
-Octanoic-Acid(aq)        C8H16O2                  0.144214            
-Oxalate                  C2O4-2                   0.088021            
-Oxalic-Acid(aq)          C2H2O4                   0.090035            
+p-Cresol(aq)             C6H4OHCH3                0.108140            
 p-Toluate                C8H7O2-                  0.135143            
 p-Toluic-Acid(aq)        C8H8O2                   0.136150            
-Phenol(aq)               C6H5OH                   0.094113            
-Pimelate                 C7H10O4-2                0.158155            
-Pimelic-Acid(aq)         C7H12O4                  0.160170            
-Propane(aq)              C3H8                     0.044097            
-Sebacate                 C10H16O4-2               0.200236            
-Sebacic-Acid(aq)         C10H18O4                 0.202251            
-Suberate                 C8H12O4-2                0.172182            
-Suberic-Acid(aq)         C8H14O4                  0.174197            
-Succinate                C4H4O4-2                 0.116074            
-Succinic-Acid(aq)        C4H6O4                   0.118089            
-Toluene(aq)              C6H5CH3                  0.092141            
-Undecanoate              C11H21O2-                0.185287            
-Undecanoic-Acid(aq)      C11H22O2                 0.186294            
-Acetaldehyde(aq)         CH3CHO                   0.044053            
-Butanal(aq)              CH3(CH2)2CHO             0.072107            
-Decanal(aq)              CH3(CH2)8CHO             0.156268            
-Formaldehyde(aq)         HCHO                     0.030026            
-Heptanal(aq)             CH3(CH2)5CHO             0.114188            
-Hexanal(aq)              CH3(CH2)4CHO             0.100161            
-Nonanal(aq)              CH3(CH2)7CHO             0.142241            
-Octanal(aq)              CH3(CH2)6CHO             0.128214            
-Pentanal(aq)             CH3(CH2)3CHO             0.086134            
-Propanal(aq)             CH3CH2CHO                0.058080            
-Na(Ac)(aq)               NaCH3COO                 0.082034            
-Na(Ac)2-                 Na(CH3COO)2-             0.141080            
-Ca(Ac)+                  CaCH3COO+                0.099122            
-Ca(Ac)2(aq)              Ca(CH3COO)2              0.158167            
-Lactate                  C3H5O3-                  0.089071            
-Lactic-Acid(aq)          C3H6O3                   0.090079            
-Ca(Lac)+                 CaCH3CH2OCO2+            0.129148            
-Ca(Lac)2(aq)             Ca(CH3CH2OCO2)2          0.218220            
-Na(Lac)(aq)              NaCH3CH2OCO2             0.112061            
-Na(Lac)2-                Na(CH3CH2OCO2)2-         0.201132            
-Glycolic-Acid(aq)        C2H4O3                   0.076052            
-Glycolate                C2H3O3-                  0.075045            
-Ca(Glyc)+                CaCH3OCO2+               0.115121            
-Ca(Glyc)2(aq)            Ca(CH3OCO2)2             0.190166            
-Na(Glyc)(aq)             Na(CH3OCO2)              0.098034            
-Na(Glyc)2-               Na(CH3OCO2)2-            0.173078            
-Formic-Acid(aq)          H2CO2                    0.046026            
-Formate                  HCO2-                    0.045018            
-Ca(For)+                 CaCHO2+                  0.085095            
-Ca(For)2(aq)             Ca(CHO2)2                0.130113            
-Na(For)(aq)              NaCHO2                   0.068008            
-Na(For)2-                Na(CHO2)2-               0.113026            
-Propanoic-Acid(aq)       C3H6O2                   0.074079            
-Propanoate               C3H5O2-                  0.073072            
-Ca(Prop)+                CaCH3CH2CO2+             0.113149            
-Ca(Prop)2(aq)            Ca(CH3CH2CO2)2           0.186221            
-Na(Prop)(aq)             NaCH3CH2CO2              0.096061            
-Na(Prop)2-               Na(CH3CH2CO2)2-          0.169133            
-Butanoic-Acid(aq)        C4H8O2                   0.088106            
-Butanoate                C4H7O2-                  0.087099            
-Ca(But)+                 CaCH3(CH2)2CO2+          0.127176            
-Ca(But)2(aq)             Ca(CH3CH2CH2CO2)2        0.214275            
-Na(But)(aq)              NaCH3(CH2)2CO2           0.110088            
-Na(But)2-                Na(CH3CH2CH2CO2)2-       0.197187            
-Pentanoic-Acid(aq)       C5H10O2                  0.102133            
-Pentanoate               C5H9O2-                  0.101126            
-Ca(Pent)+                CaCH3(CH2)3CO2+          0.141203            
-Ca(Pent)2(aq)            Ca(CH3CH2CH2CH2CO2)2     0.242329            
-Na(Pent)(aq)             NaCH3(CH2)3CO2           0.124115            
-Na(Pent)2-               Na(CH3CH2CH2CH2CO2)2-    0.225241            
 CH4(g)                   CH4                      0.016043            
 CO(g)                    CO                       0.028010            
 CO2(g)                   CO2                      0.044010            
-H2(g)                    H2                       0.002016            
-O2(g)                    O2                       0.031999            
-H2O(g)                   H2O                      0.018015            
-Phenol(g)                C6H5OH                   0.094113            
-o-Cresol(g)              CH3C6H4(OH)              0.108140            
-m-Cresol(g)              CH3C6H4(OH)              0.108140            
-p-Cresol(g)              CH3C6H4(OH)              0.108140            
 Ethylene(g)              C2H4                     0.028054            
+H2(g)                    H2                       0.002016            
+H2O(g)                   H2O                      0.018015            
+O2(g)                    O2                       0.031999            
+Phenol(g)                C6H5OH                   0.094113            
+m-Cresol(g)              CH3C6H4(OH)              0.108140            
+o-Cresol(g)              CH3C6H4(OH)              0.108140            
+p-Cresol(g)              CH3C6H4(OH)              0.108140            
 </pre></div>
 </div>
 </div>
@@ -1274,34 +1274,34 @@ you will get a runtime exception!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H2O(aq)
-CaOH+
-CO(aq)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CO(aq)
 CO2(aq)
 CO3-2
 Ca(HCO3)+
 Ca+2
+CaCO3(aq)
 CaCl+
 CaCl2(aq)
+CaOH+
 Cl-
-HClO(aq)
 ClO-
 ClO2-
 ClO3-
 ClO4-
 H+
 H2(aq)
+H2O(aq)
+H2O2(aq)
 HCO3-
+HCl(aq)
+HClO(aq)
+HClO2(aq)
 HO2-
 Na+
 NaCl(aq)
 NaOH(aq)
 O2(aq)
 OH-
-H2O2(aq)
-HClO2(aq)
-HCl(aq)
-CaCO3(aq)
 CO2(g)
 </pre></div>
 </div>
@@ -1463,7 +1463,6 @@ ThermoFun, which is suitable for modeling cement chemistry.</p>
 :: O2@
 :: OH-
 :: S2O3-2
-:: SO2@
 :: SO3-2
 :: SO4-2
 :: Si4O10-4
@@ -1559,8 +1558,6 @@ CSHQ-TobH
 :: CSHQ-TobH
 Cal
 :: Cal
-Corundum
-:: Corundum
 Dis-Dol
 :: Dis-Dol
 ECSH1-KSH
@@ -1595,8 +1592,6 @@ Fe-monosulph05
 :: Fe-monosulph05
 Fe-monosulphate
 :: Fe-monosulphate
-Fe2O3
-:: Fe2O3
 FeOOHmic
 :: FeOOHmic
 Femonocarbonate
@@ -1661,8 +1656,6 @@ NaSiOH
 :: NaSiOH
 Ord-Dol
 :: Ord-Dol
-Periclase
-:: Periclase
 Portlandite
 :: Portlandite
 Py

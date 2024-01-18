@@ -1,4 +1,4 @@
 <map id="SpeciesThermoInterpolatedProperties" name="SpeciesThermoInterpolatedProperties">
-<area shape="rect" id="node1" title="A type for storing thermodynamic properties of a species over a range of temperatures and pressures." alt="" coords="5,227,207,268"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1BilinearInterpolator.html" title="A class used to calculate bilinear interpolation of data in two dimensions." alt="" coords="32,5,180,32"/>
+<area shape="rect" id="node1" title="A type for storing thermodynamic properties of a species over a range of temperatures and pressures." alt="" coords="5,227,187,268"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1BilinearInterpolator.html" title="A class used to calculate bilinear interpolation of data in two dimensions." alt="" coords="31,5,161,32"/>
 </map>

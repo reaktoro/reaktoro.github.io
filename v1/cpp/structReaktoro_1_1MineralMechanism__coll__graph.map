@@ -1,7 +1,7 @@
 <map id="MineralMechanism" name="MineralMechanism">
-<area shape="rect" id="node1" title=" " alt="" coords="29,379,176,405"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,275,200,316"/>
-<area shape="rect" id="node3" href="$structReaktoro_1_1MineralCatalyst.html" title=" " alt="" coords="40,185,165,212"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="73,81,132,108"/>
-<area shape="rect" id="node5" title="STL class." alt="" coords="23,5,182,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="27,379,157,405"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,275,179,316"/>
+<area shape="rect" id="node3" href="$structReaktoro_1_1MineralCatalyst.html" title=" " alt="" coords="35,185,149,212"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="65,81,119,108"/>
+<area shape="rect" id="node5" title="STL class." alt="" coords="21,5,163,32"/>
 </map>

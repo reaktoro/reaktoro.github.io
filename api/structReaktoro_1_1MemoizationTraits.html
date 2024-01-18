@@ -62,7 +62,7 @@
                 <td id="projectlogo"><a href="https://www.reaktoro.org"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.9.4</span>
+                    &#160;<span id="projectnumber">v2.11.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -189,10 +189,9 @@ struct Reaktoro::MemoizationTraits&lt; T &gt;</h3>
 
 <p>The type of the object constructed with a given object of type <code>T</code>. </p>
 <p>Consider three cases for type <code>T</code> and the respective default type for <code>CacheType</code> using <code>Type = Decay&lt;T&gt;</code>:</p>
-<p><b>Case 1:</b> <code>T</code> is <code>const real&amp;</code> and <code>CacheType</code> is <code>real</code>. <b>Case 2:</b> <code>T</code> is <code>ArrayXrConstRef</code> and <code>CacheType</code> is also <code>ArrayXrConstRef</code>. <b>Case 3:</b> <code>T</code> is <code>const <a class="el" href="classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds.">Param</a>&amp;</code> and <code>CacheType</code> is <code><a class="el" href="classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds.">Param</a></code>.</p>
+<p><b>Case 1:</b> <code>T</code> is <code>const real&amp;</code> and <code>CacheType</code> is <code>real</code>. <b>Case 2:</b> <code>T</code> is <code>ArrayXrConstRef</code> and <code>CacheType</code> is also <code>ArrayXrConstRef</code>.</p>
 <p>In Case 1, the default type for <code>CacheType</code> is suitable, since <code>real</code> implements a default constructor, which will be used to construct a cache object for arguments of this type.</p>
-<p>In Case 2, <code>CacheType</code> is not a suitable type for a cache object, because <code>ArrayXrConstRef</code> does not implement a default constructor. In this case, <code>CacheType</code> should be defined to be <code>ArrayXr</code> instead.</p>
-<p>In Case 3, <code>CacheType</code> is also not a suitable type for a cache object because <code><a class="el" href="classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds.">Param</a></code> is a wrapper to a shared pointer to a <code>real</code> object. If the cached <code><a class="el" href="classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds.">Param</a></code> object was changed somewhere in the application, this change would reflect in the cache as well, and equality check of a <code><a class="el" href="classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds.">Param</a></code> argument and the previously cached <code><a class="el" href="classReaktoro_1_1Param.html" title="A type used to represent the value of a parameter and its lower and upper bounds.">Param</a></code> argument would result to true always. In this case, <code>CacheType</code> should be defined to be <code>real</code> instead. </p>
+<p>In Case 2, <code>CacheType</code> is not a suitable type for a cache object, because <code>ArrayXrConstRef</code> does not implement a default constructor. In this case, <code>CacheType</code> should be defined to be <code>ArrayXr</code> instead. </p>
 
 </div>
 </div>
@@ -288,7 +287,7 @@ struct Reaktoro::MemoizationTraits&lt; T &gt;</h3>
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 8 2023 13:05:51 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jan 18 2024 21:12:44 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

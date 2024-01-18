@@ -1,5 +1,5 @@
 <map id="LiquidPhase" name="LiquidPhase">
-<area shape="rect" id="node1" title=" " alt="" coords="5,155,105,181"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1FluidPhase.html" title="Class that defines a fluid (gaseous or liquid) phase." alt="" coords="9,80,102,107"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes." alt="" coords="25,5,86,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,155,99,181"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1FluidPhase.html" title="Class that defines a fluid (gaseous or liquid) phase." alt="" coords="9,80,95,107"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1Phase.html" title="A type used to define a phase and its attributes." alt="" coords="23,5,81,32"/>
 </map>

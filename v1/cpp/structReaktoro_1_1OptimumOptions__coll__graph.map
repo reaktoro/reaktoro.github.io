@@ -1,19 +1,19 @@
 <map id="OptimumOptions" name="OptimumOptions">
-<area shape="rect" id="node1" title="A type that describes the options of a optimisation calculation." alt="" coords="1019,231,1152,257"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1OptimumParamsIpAction.html" title=" " alt="" coords="671,5,855,32"/>
-<area shape="rect" id="node3" href="$structReaktoro_1_1OptimumParamsIpOpt.html" title=" " alt="" coords="680,56,847,83"/>
-<area shape="rect" id="node4" title=" " alt="" coords="397,56,535,83"/>
-<area shape="rect" id="node5" href="$structReaktoro_1_1OptimumParamsIpActive.html" title=" " alt="" coords="671,107,855,133"/>
-<area shape="rect" id="node6" href="$structReaktoro_1_1OptimumParamsIpNewton.html" title=" " alt="" coords="667,157,860,184"/>
-<area shape="rect" id="node7" href="$structReaktoro_1_1KktOptions.html" title="A type to describe the options for the KKT calculation." alt="" coords="716,208,811,235"/>
-<area shape="rect" id="node8" href="$structReaktoro_1_1OptimumParamsRegularization.html" title="A type that describes the regularization options for the optimisation calculation." alt="" coords="651,259,876,285"/>
-<area shape="rect" id="node9" href="$structReaktoro_1_1RegularizerOptions.html" title="A type that describes the options for regularizing linear constraints." alt="" coords="393,259,539,285"/>
-<area shape="rect" id="node10" href="$structReaktoro_1_1OptimumParamsRefiner.html" title=" " alt="" coords="675,309,852,336"/>
-<area shape="rect" id="node11" href="$structReaktoro_1_1OptimumParamsKarpov.html" title=" " alt="" coords="675,360,852,387"/>
-<area shape="rect" id="node12" href="$structReaktoro_1_1OptimumParamsActNewton.html" title=" " alt="" coords="662,411,865,437"/>
-<area shape="rect" id="node13" href="$structReaktoro_1_1OptimumOutputOptions.html" title="A type that describes the options for the output of a optimisation calculation." alt="" coords="675,461,852,488"/>
-<area shape="rect" id="node14" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="399,475,533,501"/>
-<area shape="rect" id="node15" title="STL class." alt="" coords="213,475,272,501"/>
-<area shape="rect" id="node17" title=" " alt="" coords="387,525,545,552"/>
-<area shape="rect" id="node16" title="STL class." alt="" coords="5,475,164,501"/>
+<area shape="rect" id="node1" title="A type that describes the options of a optimisation calculation." alt="" coords="928,231,1048,257"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1OptimumParamsIpAction.html" title=" " alt="" coords="613,5,781,32"/>
+<area shape="rect" id="node3" href="$structReaktoro_1_1OptimumParamsIpOpt.html" title=" " alt="" coords="621,56,773,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="367,56,487,83"/>
+<area shape="rect" id="node5" href="$structReaktoro_1_1OptimumParamsIpActive.html" title=" " alt="" coords="613,107,781,133"/>
+<area shape="rect" id="node6" href="$structReaktoro_1_1OptimumParamsIpNewton.html" title=" " alt="" coords="609,157,785,184"/>
+<area shape="rect" id="node7" href="$structReaktoro_1_1KktOptions.html" title="A type to describe the options for the KKT calculation." alt="" coords="654,208,741,235"/>
+<area shape="rect" id="node8" href="$structReaktoro_1_1OptimumParamsRegularization.html" title="A type that describes the regularization options for the optimisation calculation." alt="" coords="596,259,799,285"/>
+<area shape="rect" id="node9" href="$structReaktoro_1_1RegularizerOptions.html" title="A type that describes the options for regularizing linear constraints." alt="" coords="361,259,494,285"/>
+<area shape="rect" id="node10" href="$structReaktoro_1_1OptimumParamsRefiner.html" title=" " alt="" coords="616,309,779,336"/>
+<area shape="rect" id="node11" href="$structReaktoro_1_1OptimumParamsKarpov.html" title=" " alt="" coords="617,360,778,387"/>
+<area shape="rect" id="node12" href="$structReaktoro_1_1OptimumParamsActNewton.html" title=" " alt="" coords="605,411,790,437"/>
+<area shape="rect" id="node13" href="$structReaktoro_1_1OptimumOutputOptions.html" title="A type that describes the options for the output of a optimisation calculation." alt="" coords="618,461,777,488"/>
+<area shape="rect" id="node14" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="367,475,488,501"/>
+<area shape="rect" id="node15" title="STL class." alt="" coords="196,475,251,501"/>
+<area shape="rect" id="node17" title=" " alt="" coords="357,525,497,552"/>
+<area shape="rect" id="node16" title="STL class." alt="" coords="5,475,147,501"/>
 </map>

@@ -1,8 +1,8 @@
 <map id="MineralMixtureState" name="MineralMixtureState">
-<area shape="rect" id="node1" title="A type used to describe the state of a mineral mixture." alt="" coords="96,276,251,303"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1MixtureState.html" title="A type used to describe the state of a mixture." alt="" coords="120,200,227,227"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1Temperature.html" title="A type that describes temperature in units of K." alt="" coords="5,96,109,123"/>
-<area shape="rect" id="node4" href="$classReaktoro_1_1ThermoScalarBase.html" title=" " alt="" coords="59,5,171,32"/>
-<area shape="rect" id="node5" href="$classReaktoro_1_1Pressure.html" title="A type that describes pressure in units of Pa." alt="" coords="134,96,213,123"/>
-<area shape="rect" id="node6" href="$classReaktoro_1_1ChemicalVectorBase.html" title=" " alt="" coords="237,81,417,137"/>
+<area shape="rect" id="node1" title="A type used to describe the state of a mineral mixture." alt="" coords="93,276,231,303"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1MixtureState.html" title="A type used to describe the state of a mixture." alt="" coords="114,200,210,227"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1Temperature.html" title="A type that describes temperature in units of K." alt="" coords="5,96,100,123"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1ThermoScalarBase.html" title="A template base class to represent a thermodynamic scalar and its partial derivatives." alt="" coords="55,5,157,32"/>
+<area shape="rect" id="node5" href="$classReaktoro_1_1Pressure.html" title="A type that describes pressure in units of Pa." alt="" coords="125,96,199,123"/>
+<area shape="rect" id="node6" href="$classReaktoro_1_1ChemicalVectorBase.html" title=" " alt="" coords="223,81,391,137"/>
 </map>

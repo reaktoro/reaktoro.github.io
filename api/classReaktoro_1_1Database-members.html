@@ -62,7 +62,7 @@
                 <td id="projectlogo"><a href="https://www.reaktoro.org"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.9.4</span>
+                    &#160;<span id="projectnumber">v2.11.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -155,16 +155,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
   <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#aa0ab7d2582e8a3790316f60ca9e72a15">Database</a>(Vec&lt; Species &gt; const &amp;species)</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a11ce743376f2bfd77d3a6c7406f321fd">element</a>(String const &amp;symbol) const -&gt; Element const &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#ade49424cab53fab1819b6cec543dfbf2">elements</a>() const -&gt; ElementList const &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a983cf80f1d517766bd8c28cae307dcaa">extend</a>(Database const &amp;other) -&gt; void</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#afb48b5f99d385d8ac12c5f6facdd4bb5">fromContents</a>(String const &amp;contents) -&gt; Database</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a2bdc45dd925074a00672f706f6889a85">embedded</a>(String const &amp;path) -&gt; Database</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a983cf80f1d517766bd8c28cae307dcaa">extend</a>(Database const &amp;other) -&gt; void</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#afb48b5f99d385d8ac12c5f6facdd4bb5">fromContents</a>(String const &amp;contents) -&gt; Database</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a65edccd7435041cb55e2fa8aa81a3c9d">fromEmbeddedFile</a>(String const &amp;path) -&gt; Database</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#af103db941c97782d34259e110a515073">fromFile</a>(String const &amp;path) -&gt; Database</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a8d1845abdb46a38bb02241273391913a">fromStream</a>(std::istream &amp;stream) -&gt; Database</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#acfc1422d66627660cb69ab215288907c">operator=</a>(Database other) -&gt; Database &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a1e3b13661e1fd963d8d21c3308e4d586">reaction</a>(String const &amp;equation) const -&gt; Reaction</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a7f3ca7a9c687f64dbe19157c423952ab">species</a>() const -&gt; SpeciesList const &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a14c20e333e937ac70f0f2dbb021bba73">species</a>(String const &amp;name) const -&gt; Species const &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a7809acf7cc318b0c08ab294d74ab844f">speciesWithAggregateState</a>(AggregateState option) const -&gt; SpeciesList</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a342c80a368f70212c6a7b8c21b1f8648">~Database</a>()</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#abd17e5c0ef82d2e9ac382988f5136359">local</a>(String const &amp;path) -&gt; Database</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#acfc1422d66627660cb69ab215288907c">operator=</a>(Database other) -&gt; Database &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a1e3b13661e1fd963d8d21c3308e4d586">reaction</a>(String const &amp;equation) const -&gt; Reaction</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a7f3ca7a9c687f64dbe19157c423952ab">species</a>() const -&gt; SpeciesList const &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a14c20e333e937ac70f0f2dbb021bba73">species</a>(String const &amp;name) const -&gt; Species const &amp;</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a7809acf7cc318b0c08ab294d74ab844f">speciesWithAggregateState</a>(AggregateState option) const -&gt; SpeciesList</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classReaktoro_1_1Database.html#a342c80a368f70212c6a7b8c21b1f8648">~Database</a>()</td><td class="entry"><a class="el" href="classReaktoro_1_1Database.html">Database</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -174,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 8 2023 13:05:51 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jan 18 2024 21:12:44 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

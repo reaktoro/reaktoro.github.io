@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dissolution of carbonate minerals in a CO2-saturated brine &mdash; Reaktoro  documentation</title>
@@ -15,7 +15,9 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -30,11 +32,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Reaktoro
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Reaktoro
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -80,9 +86,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Tutorials: Chemical Kinetics</a> &raquo;</li>
-      <li>Dissolution of carbonate minerals in a CO<sub>2</sub>-saturated brine</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorials: Chemical Kinetics</a></li>
+      <li class="breadcrumb-item active">Dissolution of carbonate minerals in a CO<sub>2</sub>-saturated brine</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/tutorials/kinetics/kineticpath-carbonates-co2.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -93,7 +99,7 @@
            <div itemprop="articleBody">
              
   <section id="dissolution-of-carbonate-minerals-in-a-co2-saturated-brine">
-<h1>Dissolution of carbonate minerals in a CO<sub>2</sub>-saturated brine<a class="headerlink" href="#dissolution-of-carbonate-minerals-in-a-co2-saturated-brine" title="Permalink to this headline">¶</a></h1>
+<h1>Dissolution of carbonate minerals in a CO<sub>2</sub>-saturated brine<a class="headerlink" href="#dissolution-of-carbonate-minerals-in-a-co2-saturated-brine" title="Permalink to this heading">¶</a></h1>
 <p>In this tutorial, we demonstrate how Reaktoro can be used to kinetically model
 the dissolution of carbonate minerals (calcite, magnesite and dolomite) in a
 CO<sub>2</sub>-saturated brine.</p>
@@ -198,7 +204,7 @@ detailed discussion!</p>
 </pre></div>
 </div>
 <section id="importing-the-reaktoro-python-package">
-<h2>Importing the reaktoro Python package<a class="headerlink" href="#importing-the-reaktoro-python-package" title="Permalink to this headline">¶</a></h2>
+<h2>Importing the reaktoro Python package<a class="headerlink" href="#importing-the-reaktoro-python-package" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Import the reaktoro Python package</span>
 <span class="kn">from</span> <span class="nn">reaktoro</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -207,7 +213,7 @@ detailed discussion!</p>
 components (classes, methods, constants).</p>
 </section>
 <section id="defining-the-chemical-system">
-<h2>Defining the chemical system<a class="headerlink" href="#defining-the-chemical-system" title="Permalink to this headline">¶</a></h2>
+<h2>Defining the chemical system<a class="headerlink" href="#defining-the-chemical-system" title="Permalink to this heading">¶</a></h2>
 <p>In this simulation, we consider an <em>aqueous phase</em> (to model the brine
 solution), a <em>gaseous phase</em> (to model the CO<sub>2</sub>-rich phase with water vapour),
 and four pure <em>mineral phases</em>: halite, calcite, magnesite, and dolomite. These
@@ -243,7 +249,7 @@ CO<sub>2</sub>(g) are considered. There are four pure mineral phases: calcite (C
 magnesite (MgCO<sub>3</sub>), dolomite (CaMg(CO<sub>3</sub>)<sub>2</sub>), and halite (NaCl).</p>
 </section>
 <section id="defining-the-kinetically-controlled-reactions">
-<h2>Defining the kinetically-controlled reactions<a class="headerlink" href="#defining-the-kinetically-controlled-reactions" title="Permalink to this headline">¶</a></h2>
+<h2>Defining the kinetically-controlled reactions<a class="headerlink" href="#defining-the-kinetically-controlled-reactions" title="Permalink to this heading">¶</a></h2>
 <p>A <em>partial equilibrium assumption</em> is considered in this simulation. This
 simplifies the problem by assuming that those species that react at much faster
 rates are <em>continually in chemical equilibrium</em>. They are referred to as
@@ -308,7 +314,7 @@ California</em>.</p>
 </div>
 </section>
 <section id="creating-the-chemical-and-reaction-systems">
-<h2>Creating the chemical and reaction systems<a class="headerlink" href="#creating-the-chemical-and-reaction-systems" title="Permalink to this headline">¶</a></h2>
+<h2>Creating the chemical and reaction systems<a class="headerlink" href="#creating-the-chemical-and-reaction-systems" title="Permalink to this heading">¶</a></h2>
 <p>Create instances of <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalSystem.html">ChemicalSystem</a> and <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ReactionSystem.html">ReactionSystem</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 4: Construct the chemical system</span>
 <span class="n">system</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ChemicalSystem</span><span class="p">(</span><span class="n">editor</span><span class="p">)</span>
@@ -329,7 +335,7 @@ kinetics. These classes provide convenient methods for the calculation of
 equilibrium constants, reaction quotients, and rates of the reactions.</p>
 </section>
 <section id="specifying-equilibrium-and-kinetic-species">
-<h2>Specifying equilibrium and kinetic species<a class="headerlink" href="#specifying-equilibrium-and-kinetic-species" title="Permalink to this headline">¶</a></h2>
+<h2>Specifying equilibrium and kinetic species<a class="headerlink" href="#specifying-equilibrium-and-kinetic-species" title="Permalink to this heading">¶</a></h2>
 <p>In Reaktoro, the species in a chemical system can be partitioned into groups of:</p>
 <ul class="simple">
 <li><p><em>equilibrium species</em>,</p></li>
@@ -362,7 +368,7 @@ method <code class="docutils literal notranslate"><span class="pre">setKineticSp
 </div>
 </section>
 <section id="defining-the-initial-state-of-the-equilibrium-species">
-<h2>Defining the initial state of the equilibrium species<a class="headerlink" href="#defining-the-initial-state-of-the-equilibrium-species" title="Permalink to this headline">¶</a></h2>
+<h2>Defining the initial state of the equilibrium species<a class="headerlink" href="#defining-the-initial-state-of-the-equilibrium-species" title="Permalink to this heading">¶</a></h2>
 <p>In a chemical kinetics calculation, an <em>initial condition</em> is needed for the
 amounts of both equilibrium and kinetic species.</p>
 <p>The equilibrium problem formulated below, using class <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1EquilibriumProblem.html">EquilibriumProblem</a>, is
@@ -397,7 +403,7 @@ afterwards!</p>
 </div>
 </section>
 <section id="calculating-the-initial-amounts-of-the-equilibrium-species">
-<h2>Calculating the initial amounts of the equilibrium species<a class="headerlink" href="#calculating-the-initial-amounts-of-the-equilibrium-species" title="Permalink to this headline">¶</a></h2>
+<h2>Calculating the initial amounts of the equilibrium species<a class="headerlink" href="#calculating-the-initial-amounts-of-the-equilibrium-species" title="Permalink to this heading">¶</a></h2>
 <p>We now use the convenient <code class="docutils literal notranslate"><span class="pre">equilibrate</span></code> function to calculate the amounts of
 the equilibrium species by minimizing the Gibbs energy of the equilibrium
 partition only, and not of the entire system. The result is stored in the
@@ -412,7 +418,7 @@ chemical state to a file.</p>
 </div>
 </section>
 <section id="setting-the-initial-mass-of-minerals">
-<h2>Setting the initial mass of minerals<a class="headerlink" href="#setting-the-initial-mass-of-minerals" title="Permalink to this headline">¶</a></h2>
+<h2>Setting the initial mass of minerals<a class="headerlink" href="#setting-the-initial-mass-of-minerals" title="Permalink to this heading">¶</a></h2>
 <p>We have now to prescribe the initial amounts of the kinetic species (i.e., the
 carbonate minerals). This is done below by setting the initial mass of calcite
 to 100 g and of dolomite to 50 g. The initial amount of magnesite is zero.</p>
@@ -423,7 +429,7 @@ to 100 g and of dolomite to 50 g. The initial amount of magnesite is zero.</p>
 </div>
 </section>
 <section id="setting-the-kinetic-path-calculations">
-<h2>Setting the kinetic path calculations<a class="headerlink" href="#setting-the-kinetic-path-calculations" title="Permalink to this headline">¶</a></h2>
+<h2>Setting the kinetic path calculations<a class="headerlink" href="#setting-the-kinetic-path-calculations" title="Permalink to this heading">¶</a></h2>
 <p>To be able to run the simulation of the kinetic process of mineral
 dissolution/precipitation, we introduce the instance of the class
 <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1KineticPath.html">KineticPath</a> that enables this functionality.</p>
@@ -444,7 +450,7 @@ instead of method <code class="docutils literal notranslate"><span class="pre">e
 </div>
 </section>
 <section id="plotting-the-evolution-of-thermochemical-properties">
-<h2>Plotting the evolution of thermochemical properties<a class="headerlink" href="#plotting-the-evolution-of-thermochemical-properties" title="Permalink to this headline">¶</a></h2>
+<h2>Plotting the evolution of thermochemical properties<a class="headerlink" href="#plotting-the-evolution-of-thermochemical-properties" title="Permalink to this heading">¶</a></h2>
 <p>Usage of the <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1ChemicalPlot.html">ChemicalPlot</a> allows us to create plots illustrating the
 evolution of different properties of the chemical system over the time interval
 in which kinetics is calculated.</p>
@@ -492,7 +498,7 @@ state and the tag, we want to illustrate it with.</p>
 </div>
 </section>
 <section id="solving-the-chemical-kinetics-problem">
-<h2>Solving the chemical kinetics problem<a class="headerlink" href="#solving-the-chemical-kinetics-problem" title="Permalink to this headline">¶</a></h2>
+<h2>Solving the chemical kinetics problem<a class="headerlink" href="#solving-the-chemical-kinetics-problem" title="Permalink to this heading">¶</a></h2>
 <p>Finally, we calculate the transient state of the entire system comprised of the
 carbonate minerals, the CO<sub>2</sub>-saturated brine fluid, and the CO<sub>2</sub>-rich gaseous
 phase. This is performed by using the method <code class="docutils literal notranslate"><span class="pre">solve</span></code> of the <a class="reference external" href="https://reaktoro.org/cpp/classReaktoro_1_1KineticPath.html">KineticPath</a>
@@ -506,7 +512,7 @@ the specified time (e.g., <cite>s</cite>, <cite>minute</cite>, <cite>hour</cite>
 </div>
 </section>
 <section id="have-you-got-an-issue">
-<h2>Have you got an issue?<a class="headerlink" href="#have-you-got-an-issue" title="Permalink to this headline">¶</a></h2>
+<h2>Have you got an issue?<a class="headerlink" href="#have-you-got-an-issue" title="Permalink to this heading">¶</a></h2>
 <p>Have you found any issue or error in this tutorial? Do you have any
 recommendations or you think something is not clear enough? Please, let us know
 by filling a new issue here:</p>

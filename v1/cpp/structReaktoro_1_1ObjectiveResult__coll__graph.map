@@ -1,4 +1,4 @@
 <map id="ObjectiveResult" name="ObjectiveResult">
-<area shape="rect" id="node1" title="A type that describes the result of the evaluation of an objective function." alt="" coords="5,95,131,121"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1Hessian.html" title="A type to describe the Hessian of an objective function." alt="" coords="31,5,105,32"/>
+<area shape="rect" id="node1" title="A type that describes the result of the evaluation of an objective function." alt="" coords="5,95,120,121"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1Hessian.html" title="A type to describe the Hessian of an objective function." alt="" coords="27,5,98,32"/>
 </map>

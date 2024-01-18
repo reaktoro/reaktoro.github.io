@@ -62,7 +62,7 @@
                 <td id="projectlogo"><a href="https://www.reaktoro.org"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.9.4</span>
+                    &#160;<span id="projectnumber">v2.11.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Reaktoro is a unified framework for modeling chemically reactive systems.</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright © 2014-2022 Allan Leal</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright © 2014-2024 Allan Leal</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// This library is free software; you can redistribute it and/or</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// modify it under the terms of the GNU Lesser General Public</span></div>
@@ -161,13 +161,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#ae004783b7b14fd74db483e34a0c8cbe0">   37</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#ae004783b7b14fd74db483e34a0c8cbe0">ReactionStandardThermoModelPressureCorrection</a>(<a class="code" href="classReaktoro_1_1Param.html">Param</a> Pr) -&gt; <a class="code" href="namespaceReaktoro.html#aad19f03cbf78f8a987c42b4a943a628a">ReactionStandardThermoModel</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceReaktoro.html#a55b9a29cdf35e98a6b07e67ed2edbc25">   37</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespaceReaktoro.html#a55b9a29cdf35e98a6b07e67ed2edbc25">ReactionStandardThermoModelPressureCorrection</a>(<a class="code" href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">real</a> <span class="keyword">const</span>&amp; Pr) -&gt; <a class="code" href="namespaceReaktoro.html#aad19f03cbf78f8a987c42b4a943a628a">ReactionStandardThermoModel</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
-<div class="ttc" id="aclassReaktoro_1_1Param_html"><div class="ttname"><a href="classReaktoro_1_1Param.html">Reaktoro::Param</a></div><div class="ttdoc">A type used to represent the value of a parameter and its lower and upper bounds.</div><div class="ttdef"><b>Definition:</b> Param.hpp:32</div></div>
 <div class="ttc" id="anamespaceReaktoro_html"><div class="ttname"><a href="namespaceReaktoro.html">Reaktoro</a></div><div class="ttdoc">The namespace containing all components of the Reaktoro library.</div><div class="ttdef"><b>Definition:</b> Algorithms.hpp:29</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a55b9a29cdf35e98a6b07e67ed2edbc25"><div class="ttname"><a href="namespaceReaktoro.html#a55b9a29cdf35e98a6b07e67ed2edbc25">Reaktoro::ReactionStandardThermoModelPressureCorrection</a></div><div class="ttdeci">auto ReactionStandardThermoModelPressureCorrection(real const &amp;Pr) -&gt; ReactionStandardThermoModel</div><div class="ttdoc">Return a function that calculates pressure correction for standard Gibbs energy and enthalpy a reacti...</div></div>
+<div class="ttc" id="anamespaceReaktoro_html_a60d9c89846499b1ea9c6cba13f462983"><div class="ttname"><a href="namespaceReaktoro.html#a60d9c89846499b1ea9c6cba13f462983">Reaktoro::real</a></div><div class="ttdeci">autodiff::real real</div><div class="ttdoc">The number type used throughout the library.</div><div class="ttdef"><b>Definition:</b> Real.hpp:26</div></div>
 <div class="ttc" id="anamespaceReaktoro_html_aad19f03cbf78f8a987c42b4a943a628a"><div class="ttname"><a href="namespaceReaktoro.html#aad19f03cbf78f8a987c42b4a943a628a">Reaktoro::ReactionStandardThermoModel</a></div><div class="ttdeci">Model&lt; ReactionStandardThermoProps(ReactionStandardThermoModelArgs)&gt; ReactionStandardThermoModel</div><div class="ttdoc">The function type for calculation of standard thermodynamic properties of a reaction.</div><div class="ttdef"><b>Definition:</b> ReactionStandardThermoModel.hpp:40</div></div>
-<div class="ttc" id="anamespaceReaktoro_html_ae004783b7b14fd74db483e34a0c8cbe0"><div class="ttname"><a href="namespaceReaktoro.html#ae004783b7b14fd74db483e34a0c8cbe0">Reaktoro::ReactionStandardThermoModelPressureCorrection</a></div><div class="ttdeci">auto ReactionStandardThermoModelPressureCorrection(Param Pr) -&gt; ReactionStandardThermoModel</div><div class="ttdoc">Return a function that calculates pressure correction for standard Gibbs energy and enthalpy a reacti...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.20-->
 <!-- start footer part -->
@@ -177,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 8 2023 13:05:51 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jan 18 2024 21:12:44 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

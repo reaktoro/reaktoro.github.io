@@ -1,4 +1,4 @@
 <map id="NonlinearOutput" name="NonlinearOutput">
-<area shape="rect" id="node1" title="A type that describes the options for the output of a non&#45;linear problem calculation." alt="" coords="8,80,137,107"/>
-<area shape="rect" id="node2" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node1" title="A type that describes the options for the output of a non&#45;linear problem calculation." alt="" coords="8,80,124,107"/>
+<area shape="rect" id="node2" href="$structReaktoro_1_1OutputterOptions.html" title=" " alt="" coords="5,5,127,32"/>
 </map>

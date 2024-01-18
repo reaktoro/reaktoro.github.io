@@ -62,7 +62,7 @@
                 <td id="projectlogo"><a href="https://www.reaktoro.org"><img alt="Logo" src="reaktoro.svg" /></a></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                   <div id="projectname">Reaktoro
-                    &#160;<span id="projectnumber">v2.9.4</span>
+                    &#160;<span id="projectnumber">v2.11.0</span>
                   </div>
                   <div id="projectbrief">A unified framework for modeling chemically reactive systems</div>
                 </td>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Reaktoro is a unified framework for modeling chemically reactive systems.</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright (C) 2014-2020 Allan Leal</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright © 2014-2024 Allan Leal</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// This library is free software; you can redistribute it and/or</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// modify it under the terms of the GNU Lesser General Public</span></div>
@@ -159,38 +159,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Reaktoro includes</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Common/Types.hpp&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/Data.hpp&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;Reaktoro/Core/Param.hpp&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classReaktoro_1_1Params.html">Params</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">   33</a></span>&#160;    <a class="code" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Params</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a48258e880df70810ef2c57f1ed175d91">   36</a></span>&#160;    <a class="code" href="classReaktoro_1_1Params.html#a48258e880df70810ef2c57f1ed175d91">Params</a>(<a class="code" href="classReaktoro_1_1Data.html">Data</a> <span class="keyword">const</span>&amp; params);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a84d397447445a9295777f696fff0d4a6">   39</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Params.html#a84d397447445a9295777f696fff0d4a6">embedded</a>(<a class="code" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> <span class="keyword">const</span>&amp; path) -&gt; <a class="code" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Params</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#ae73e29c0f64ae38115688485a39bdc25">   42</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Params.html#ae73e29c0f64ae38115688485a39bdc25">local</a>(<a class="code" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> <span class="keyword">const</span>&amp; path) -&gt; <a class="code" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Params</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#adc9f10516018c412ab328514d3e9a06f">   45</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Params.html#adc9f10516018c412ab328514d3e9a06f">data</a>() const -&gt; <a class="code" href="classReaktoro_1_1Data.html">Data</a> const&amp;;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">   48</a></span>&#160;    auto <a class="code" href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">append</a>(<a class="code" href="classReaktoro_1_1Params.html">Params</a> const&amp; other) -&gt; <a class="code" href="classReaktoro_1_1Params.html">Params</a>&amp;;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a89ffe78f3ea0d5390454db284b3586be">   51</a></span>&#160;    auto <a class="code" href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">append</a>(<a class="code" href="classReaktoro_1_1Data.html">Data</a> const&amp; other) -&gt; <a class="code" href="classReaktoro_1_1Params.html">Params</a>&amp;;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a1ae27491686e712735d5e28c93220615">   54</a></span>&#160;    auto operator+=(<a class="code" href="classReaktoro_1_1Params.html">Params</a> const&amp; other) -&gt; <a class="code" href="classReaktoro_1_1Params.html">Params</a>&amp;;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a5e9b47ed3e8927d84e6470493802d552">   57</a></span>&#160;    auto operator[](<a class="code" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const&amp; name) const -&gt; <a class="code" href="classReaktoro_1_1Data.html">Data</a> const&amp;;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;private:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classReaktoro_1_1Data.html">Data</a> m_data;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
-<div class="ttc" id="aclassReaktoro_1_1Data_html"><div class="ttname"><a href="classReaktoro_1_1Data.html">Reaktoro::Data</a></div><div class="ttdoc">The class used to store and retrieve data for assemblying chemical systems.</div><div class="ttdef"><b>Definition:</b> Data.hpp:41</div></div>
-<div class="ttc" id="aclassReaktoro_1_1Params_html"><div class="ttname"><a href="classReaktoro_1_1Params.html">Reaktoro::Params</a></div><div class="ttdoc">Used to store and retrieve model parameters.</div><div class="ttdef"><b>Definition:</b> Params.hpp:30</div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceReaktoro.html">Reaktoro</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classReaktoro_1_1Params.html">Params</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">   32</a></span>&#160;    <a class="code" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Params</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a48258e880df70810ef2c57f1ed175d91">   35</a></span>&#160;    <a class="code" href="classReaktoro_1_1Params.html#a48258e880df70810ef2c57f1ed175d91">Params</a>(<a class="code" href="classReaktoro_1_1Data.html">Data</a> <span class="keyword">const</span>&amp; params);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a84d397447445a9295777f696fff0d4a6">   38</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Params.html#a84d397447445a9295777f696fff0d4a6">embedded</a>(<a class="code" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> <span class="keyword">const</span>&amp; path) -&gt; <a class="code" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Params</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#ae73e29c0f64ae38115688485a39bdc25">   41</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Params.html#ae73e29c0f64ae38115688485a39bdc25">local</a>(<a class="code" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> <span class="keyword">const</span>&amp; path) -&gt; <a class="code" href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Params</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#adc9f10516018c412ab328514d3e9a06f">   44</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classReaktoro_1_1Params.html#adc9f10516018c412ab328514d3e9a06f">data</a>() const -&gt; <a class="code" href="classReaktoro_1_1Data.html">Data</a> const&amp;;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">   47</a></span>&#160;    auto <a class="code" href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">append</a>(<a class="code" href="classReaktoro_1_1Params.html">Params</a> const&amp; other) -&gt; <a class="code" href="classReaktoro_1_1Params.html">Params</a>&amp;;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a89ffe78f3ea0d5390454db284b3586be">   50</a></span>&#160;    auto <a class="code" href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">append</a>(<a class="code" href="classReaktoro_1_1Data.html">Data</a> const&amp; other) -&gt; <a class="code" href="classReaktoro_1_1Params.html">Params</a>&amp;;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a1ae27491686e712735d5e28c93220615">   53</a></span>&#160;    auto operator+=(<a class="code" href="classReaktoro_1_1Params.html">Params</a> const&amp; other) -&gt; <a class="code" href="classReaktoro_1_1Params.html">Params</a>&amp;;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classReaktoro_1_1Params.html#a5e9b47ed3e8927d84e6470493802d552">   56</a></span>&#160;    auto operator[](<a class="code" href="namespaceReaktoro.html#a5573b97b9e5129f61d289e037d7e806c">String</a> const&amp; name) const -&gt; <a class="code" href="classReaktoro_1_1Data.html">Data</a> const&amp;;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;private:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classReaktoro_1_1Data.html">Data</a> m_data;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <span class="comment">// namespace Reaktoro</span></div>
+<div class="ttc" id="aclassReaktoro_1_1Data_html"><div class="ttname"><a href="classReaktoro_1_1Data.html">Reaktoro::Data</a></div><div class="ttdoc">The class used to store and retrieve data for assemblying chemical systems.</div><div class="ttdef"><b>Definition:</b> Data.hpp:30</div></div>
+<div class="ttc" id="aclassReaktoro_1_1Params_html"><div class="ttname"><a href="classReaktoro_1_1Params.html">Reaktoro::Params</a></div><div class="ttdoc">Used to store and retrieve model parameters.</div><div class="ttdef"><b>Definition:</b> Params.hpp:29</div></div>
 <div class="ttc" id="aclassReaktoro_1_1Params_html_a09e1d34403ad020e682279270671ec46"><div class="ttname"><a href="classReaktoro_1_1Params.html#a09e1d34403ad020e682279270671ec46">Reaktoro::Params::append</a></div><div class="ttdeci">auto append(Params const &amp;other) -&gt; Params &amp;</div><div class="ttdoc">Append another Params object into this.</div></div>
 <div class="ttc" id="aclassReaktoro_1_1Params_html_a48258e880df70810ef2c57f1ed175d91"><div class="ttname"><a href="classReaktoro_1_1Params.html#a48258e880df70810ef2c57f1ed175d91">Reaktoro::Params::Params</a></div><div class="ttdeci">Params(Data const &amp;params)</div><div class="ttdoc">Construct a Params object with given parameters as Data object.</div></div>
 <div class="ttc" id="aclassReaktoro_1_1Params_html_a7974597e9d3c848fd265d9445f7cf8cb"><div class="ttname"><a href="classReaktoro_1_1Params.html#a7974597e9d3c848fd265d9445f7cf8cb">Reaktoro::Params::Params</a></div><div class="ttdeci">Params()</div><div class="ttdoc">Construct a default Params object.</div></div>
@@ -208,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div> <!-- DOXYSTRAP RELATED -->
 </div> <!-- DOXYSTRAP RELATED -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 8 2023 13:05:51 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jan 18 2024 21:12:44 for Reaktoro by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

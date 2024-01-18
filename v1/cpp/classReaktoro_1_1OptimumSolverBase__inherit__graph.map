@@ -1,12 +1,12 @@
 <map id="OptimumSolverBase" name="OptimumSolverBase">
-<area shape="rect" id="node1" title="The base class for all optimization algorithms." alt="" coords="5,208,161,235"/>
-<area shape="rect" id="node2" href="$classReaktoro_1_1OptimumSolverActNewton.html" title="The class that implements the ActNewton algorithm using an active&#45;set strategy." alt="" coords="209,5,404,32"/>
-<area shape="rect" id="node3" href="$classReaktoro_1_1OptimumSolverIpAction.html" title="The class that implements the IpAction algorithm using an interior&#45;point method with a null&#45;space KKT..." alt="" coords="218,56,395,83"/>
-<area shape="rect" id="node4" href="$classReaktoro_1_1OptimumSolverIpActive.html" title="The class that implements the IpActive algorithm using an interior&#45;point method combined with an acti..." alt="" coords="218,107,395,133"/>
-<area shape="rect" id="node5" href="$classReaktoro_1_1OptimumSolverIpBounds.html" title="The class that implements the IpBounds algorithm using an interior&#45;point method." alt="" coords="215,157,399,184"/>
-<area shape="rect" id="node6" href="$classReaktoro_1_1OptimumSolverIpNewton.html" title="The class that implements the IpNewton algorithm using an interior&#45;point method." alt="" coords="213,208,400,235"/>
-<area shape="rect" id="node7" href="$classReaktoro_1_1OptimumSolverIpOpt.html" title="The class that implements the IpOpt algorithm using an interior&#45;point method." alt="" coords="227,259,386,285"/>
-<area shape="rect" id="node8" href="$classReaktoro_1_1OptimumSolverKarpov.html" title="The class that implements an optimization algorithm based on Karpov&#39;s method." alt="" coords="221,309,392,336"/>
-<area shape="rect" id="node9" href="$classReaktoro_1_1OptimumSolverRefiner.html" title="The class that implements a refinement operation of the optimal solution." alt="" coords="221,360,392,387"/>
-<area shape="rect" id="node10" href="$classReaktoro_1_1OptimumSolverSimplex.html" title="The class that implements the simplex algorithm for linear programming problems." alt="" coords="218,411,395,437"/>
+<area shape="rect" id="node1" title="The base class for all optimization algorithms." alt="" coords="5,208,148,235"/>
+<area shape="rect" id="node2" href="$classReaktoro_1_1OptimumSolverActNewton.html" title="The class that implements the ActNewton algorithm using an active&#45;set strategy." alt="" coords="196,5,373,32"/>
+<area shape="rect" id="node3" href="$classReaktoro_1_1OptimumSolverIpAction.html" title="The class that implements the IpAction algorithm using an interior&#45;point method with a null&#45;space KKT..." alt="" coords="205,56,365,83"/>
+<area shape="rect" id="node4" href="$classReaktoro_1_1OptimumSolverIpActive.html" title="The class that implements the IpActive algorithm using an interior&#45;point method combined with an acti..." alt="" coords="205,107,365,133"/>
+<area shape="rect" id="node5" href="$classReaktoro_1_1OptimumSolverIpBounds.html" title="The class that implements the IpBounds algorithm using an interior&#45;point method." alt="" coords="201,157,368,184"/>
+<area shape="rect" id="node6" href="$classReaktoro_1_1OptimumSolverIpNewton.html" title="The class that implements the IpNewton algorithm using an interior&#45;point method." alt="" coords="201,208,369,235"/>
+<area shape="rect" id="node7" href="$classReaktoro_1_1OptimumSolverIpOpt.html" title="The class that implements the IpOpt algorithm using an interior&#45;point method." alt="" coords="213,259,357,285"/>
+<area shape="rect" id="node8" href="$classReaktoro_1_1OptimumSolverKarpov.html" title="The class that implements an optimization algorithm based on Karpov&#39;s method." alt="" coords="208,309,361,336"/>
+<area shape="rect" id="node9" href="$classReaktoro_1_1OptimumSolverRefiner.html" title="The class that implements a refinement operation of the optimal solution." alt="" coords="207,360,362,387"/>
+<area shape="rect" id="node10" href="$classReaktoro_1_1OptimumSolverSimplex.html" title="The class that implements the simplex algorithm for linear programming problems." alt="" coords="205,411,364,437"/>
 </map>
