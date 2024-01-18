@@ -6,8 +6,8 @@ script_path=$(realpath "$0")
 script_dir=$(dirname $script_path)
 root_dir=$script_dir/../
 
-git checkout main
-git reset --hard origin/main
+git checkout master
+git reset --hard origin/master
 
 mkdir -p $root_dir/_workspace_
 cd $root_dir/_workspace_
@@ -24,4 +24,4 @@ cd $root_dir
 
 git add --all
 git commit -a -m "Automatic website update"
-git push origin
+git push origin master
